@@ -1,0 +1,90 @@
+/*  Chat bubble css in sharedcomponents.css */
+
+.ai-body {
+    margin-bottom: 100px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.ai-showcase-container {
+    padding: 20px; /* Add spacing inside the container */
+    max-width: 1600px;
+    margin: 0 auto; /* Center the container on the page */
+    font-family: 'Arial', sans-serif; /* Clean, readable font */
+}
+
+.ai-showcase-container h1 {
+    font-size: 32px; /* Large, prominent title */
+    font-weight: bold; /* Make the title stand out */
+    margin-bottom: 20px; /* Space below the title */
+    color: #24292f; /* Neutral dark text color */
+    text-align: center; /* Center the title */
+}
+
+@media (max-width: 768px) {
+    .ai-showcase-container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .ai-showcase-container h1 {
+        font-size: 24px; /* Adjust title size for smaller screens */
+    }
+}
+
+/***********************************************************************************/
+/*                            Prompt section                                       */
+/***********************************************************************************/
+
+.markdown-container {
+    background-color: #f9f9f9; /* Light background color */
+    font-family: 'Courier New', monospace; /* Keep the monospaced font */
+    color: #24292f; /* GitHub-like dark text color */
+    max-width: 1500px; /* Limit width for readability */
+    margin: 20px auto; /* Center the container */
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 900px; /* Ensures the content doesn’t exceed the container height */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+}
+
+.markdown-container h1, 
+.markdown-container h2, 
+.markdown-container h3 {
+    color: #0366d6; /* GitHub blue for headings */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.markdown-container pre {
+    background-color: #eeeeee; /* Light background for code blocks */
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto; /* Horizontal scrolling for long code */
+}
+
+.markdown-container code {
+    background-color: #eeeeee; /* Inline code background */
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #d73a49; /* Red for inline code */
+}
+
+.markdown-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.markdown-container li {
+    margin-bottom: 5px;
+}
+
+.markdown-container a {
+    color: #0366d6; /* GitHub link color */
+    text-decoration: none;
+}
+
+.markdown-container a:hover {
+    text-decoration: underline;
+}
+
+
