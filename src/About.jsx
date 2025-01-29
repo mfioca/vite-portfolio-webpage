@@ -82,7 +82,7 @@ const Card = ({ icon, title, image, children }) => {
                 </div>
                 { image && (
                     <img 
-                    src={ image }
+                    src={`${import.meta.env.BASE_URL}/${image }`}
                         alt="Card visual" 
                         className="card-image" 
                     />

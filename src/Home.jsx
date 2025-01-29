@@ -39,7 +39,7 @@ const Home = () => {
                         cross-functional teams has honed my problem-solving skills, and I’m passionate about finding creative, data-centered solutions that drive results.
                     </p>
                     <img 
-                        src="/image.png" 
+                        src={`${import.meta.env.BASE_URL}image.png`} 
                         alt="Your Name" 
                         className="home-image" 
                     />
