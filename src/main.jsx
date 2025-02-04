@@ -109,7 +109,7 @@ root.render(
           <Route path="/Dashboard" element={ <Dashboard /> } /> 
           <Route path="/AIShowcase" element={ <AIShowcase /> } />
         </Routes>
-      <Footer />
+        <Footer />
     </HashRouter>
   </React.StrictMode>
 );
