@@ -17,6 +17,10 @@ body h2 {
   text-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
 
+.base-max-width {
+  max-width: 1600px;
+}
+
 .box-background {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
   background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */

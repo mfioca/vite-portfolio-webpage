@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef  } from 'react';
 import './SharedComponents.css';
+import ReactMarkdown from 'react-markdown';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 
 export const IntroSection = ({ title, children }) => {
@@ -75,6 +78,62 @@ export const WindowHeightDisplay = () => {
 /***********************************************************************************/
 /*                          AI Showcase Page                                       */
 /***********************************************************************************/
+
+export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, chatDescription }) => {
+    return (
+        <div>
+            <IntroSection title={ `${title} Prompt` }>
+                { titleDescription }
+            </IntroSection>
+            <DividerLine />
+                <div className="box-style markdown-container">
+                    <ReactMarkdown>{ prompt }</ReactMarkdown>
+                </div>
+            <DividerLine />
+            <IntroSection title="Simulated Chat Conversation">
+                { chatDescription }
+            </IntroSection>
+            <DividerLine />
+            { chatData }    
+        </div>
+    );
+};
+
+export const ShowcaseComponentTabs = ({ title, titleDescription, tabs, chatData, chatDescription }) => {
+    return (
+        <div>
+            <IntroSection title={ `${title} Prompt` }>
+                { titleDescription }
+            </IntroSection>
+            <DividerLine />
+            {/* Render Dynamic Tabs */}
+            <Tabs>
+                <TabList>
+                    {tabs.map((tab, index) => (
+                        <Tab key={ index }>{ tab.label }</Tab>
+                    ))}
+                </TabList>
+                { tabs.map((tab, index) => (
+                    <TabPanel key={ index }>
+                        <div className="box-style markdown-container">
+                            { typeof tab.content === 'string' ? (
+                                <ReactMarkdown>{ tab.content }</ReactMarkdown>
+                            ) : (
+                                tab.content
+                            )}
+                        </div>
+                    </TabPanel>
+                ))}
+            </Tabs>
+            <DividerLine />
+            <IntroSection title="Simulated Chat Conversation">
+                { chatDescription }
+            </IntroSection>
+            <DividerLine />
+            { chatData }    
+        </div>
+    );
+};
 
 
 export const ChatBubble = ({ data }) => {
