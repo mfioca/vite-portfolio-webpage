@@ -66,7 +66,7 @@ const TvMaze = () => {
             <DividerLine />
             {/* Tabs Section for Show and Person Search */}
             <div className="tabs-container">
-                <Tabs
+                <Tabs className="standard-tabs"
                     onSelect={() => setSearchTerm('')} // Clear searchTerm on tab change
                 >
                     <TabList>

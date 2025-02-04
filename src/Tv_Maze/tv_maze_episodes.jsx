@@ -46,7 +46,7 @@ const TvMazeEpisodes = ({ showId }) => {
     return (
         <div className="tvmaze-episodes-container">
             <h2 className="section-title">Episodes by Season</h2>
-            <Tabs>
+            <Tabs className="standard-tabs">
                 <TabList>
                     {seasons.map((season) => (
                         <Tab key={season.id}>Season {season.number}</Tab>

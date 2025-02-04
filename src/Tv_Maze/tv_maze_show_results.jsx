@@ -77,7 +77,7 @@ const TvMazeShowResults = () => {
                     </div>
             </div>
             <div className="results-tabs-container">
-                <Tabs
+                <Tabs className="standard-tabs"
                     forceRenderTabPanel
                     onSelect={(index) => {
                         // Log the selected tab index if needed

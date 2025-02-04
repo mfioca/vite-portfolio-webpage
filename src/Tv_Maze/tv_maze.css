@@ -129,6 +129,23 @@
     align-items: flex-start; /* Align items to the top of the row */
 }
 
+/*needed for a few pages, in this section due to results name */
+.tvmaze-results-intro {
+    display: flex;
+    flex-direction: row; /* Arrange children in a row */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    gap: 10px; /* Add space between the columns */
+    max-width: 1600px; /* Limit the total width of the container */
+    margin: 10px; /* Center the container on the page */
+    padding: 10px; /* Add padding for spacing */
+    font-family: 'Courier New', sans-serif; /* Consistent font */
+    align-items: flex-start; /* Align items to the top of the row */
+    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #ccc; /* Add a border matching the theme */
+}
+
 .main-info {
     flex: 1; /* Let this column take up one part of the available space */
     gap: 15px; /* Add spacing between elements in this column */
@@ -155,74 +172,7 @@
 
 /* Tabs container */
 
-.results-tabs-container .tabs-container :focus
-.tvmaze-episodes-container .tabs-container :focus {
-    outline: none;
-}
 
-.results-tabs-container 
-.tvmaze-episodes-container {
-    scroll-margin-top: 100px; /* Adjust to match your navbar or header height*/
-}
-
-.react-tabs__tab {
-    text-align: center; /* Center-align text */
-    padding: 10px 70px; /* Add padding for a larger click area */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for background */
-    margin: 0 10px; /* Add horizontal spacing */
-    margin-bottom: 1px;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.react-tabs__tab:hover {
-    background: #e0e0e0; /* Darker shade on hover */
-    cursor: pointer;
-    text-decoration: underline; /* Optional underline */
-}
-
-.react-tabs__tab--selected {
-    font-weight: bold;
-    border-bottom: 2px solid #0078d4; /* Highlight active tab */
-    color: #0078d4;
-}
-
-.results-tabs-container .react-tabs__tab-list {
-    margin: 0 auto;
-    justify-content: center;
-    width: 80%; /* Ensure the TabList doesn't exceed its container */
-    display: flex;
-    justify-content: space-evenly; /* Evenly space the tabs within the list */
-}
-
-.tvmaze-episodes-container .react-tabs__tab-list {
-    justify-content: center; /* Center-align tabs within each row */
-    gap: 10px; /* Add spacing between rows and tabs */
-    margin: 0 auto;
-    justify-content: left;
-    width: 100%; /* Ensure the TabList doesn't exceed its container */
-}
-
-@media (max-width: 768px) {
-    .react-tabs__tab {
-        flex: 1 0 22%; /* Each tab takes 22% of the row's width, adjusts based on available space */
-        text-align: center; /* Center the text inside each tab */
-        padding: 2px;
-        margin: 2px;
-        font-size: 1rem;
-    }
-
-    .react-tabs__tab-list {
-        display: flex; /* Use flexbox for layout */
-        flex-wrap: wrap; /* Allow tabs to wrap to the next line */
-        justify-content: center; /* Center-align tabs within each row */
-        gap: 10px; /* Add spacing between rows and tabs */
-    }
-
-    .results-tabs-container .react-tabs__tab-list {
-        width: 100%;
-    }
-}
 
 /***********************************************************************************/
 /*                      Cast Page  / Person Cast Page                              */
@@ -309,8 +259,8 @@
 }
 
 .season-image {
-    /*display: block; /* Ensure it's treated as a block element */
-    max-width: 100%; /* Prevent it from overflowing */
+    display: block; /* Ensure it's treated as a block element */
+    max-width: 800px; /* Prevent it from overflowing */
     height: auto; /* Maintain aspect ratio */
     margin: 5px auto; /* Center the image */
     border-radius: 8px;

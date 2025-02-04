@@ -107,7 +107,7 @@ export const ShowcaseComponentTabs = ({ title, titleDescription, tabs, chatData,
             </IntroSection>
             <DividerLine />
             {/* Render Dynamic Tabs */}
-            <Tabs>
+            <Tabs className="standard-tabs">
                 <TabList>
                     {tabs.map((tab, index) => (
                         <Tab key={ index }>{ tab.label }</Tab>

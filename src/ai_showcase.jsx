@@ -4,23 +4,12 @@ import { DividerLine, ChatBubble, IntroSection, ShowcaseComponent, ShowcaseCompo
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 import { Link } from 'react-router-dom';
-
-/*import { ShowcaseComponent, ShowcaseComponentTabs } from './AI_showcase/showcase_component.jsx';*/
 import { 
     tarotReaderPrompt, DisenchantedOraclePrompt, DeveloperPrompt1, 
     DeveloperPrompt1Negative, DeveloperPrompt1Postive, DeveloperPrompt2, 
     DeveloperPrompt2TalkTrack, DeveloperPrompt3, PersonalizationAssistant 
 } from './AI_showcase/ai_prompts.jsx'
 import chatData from './AI_showcase/chatData.json';
-
-    /*
-import tarot1Data from './AI_showcase/tarot_reader_1.json';
-import OracleData from './AI_showcase/disenchanted_oracle.json';
-import developerPrompt1Data from './AI_showcase/developer.json';
-import developer2Data from './AI_showcase/developer_2.0.json';
-*/
-
-
 
 const ghostsLink = (
     <Link 
@@ -49,7 +38,7 @@ const AIShowcase = () => {
             </IntroSection>
             <DividerLine />
             <div className="box-background border base-max-width ai-showcase-container">
-                <Tabs>
+                <Tabs className="standard-tabs">
                     <TabList>
                         <Tab>Tarot Reader / Salesman</Tab>
                         <Tab>Disenchanted Oracle</Tab>
@@ -59,31 +48,31 @@ const AIShowcase = () => {
                         <Tab>Developer 3.0 Prompt</Tab>
                     </TabList>
                     <TabPanel>
-                   <ShowcaseComponent
-                        title= "Tarot Reader and Herb salesman"
-                        titleDescription = {
-                            <>
-                            <p>
-                                Inspired by my brother’s support in learning AI prompt engineering, I decided to build upon one of his examples: a Tarot Reader. This prompt features a sarcastic, burnt-out reader who works in a whimsical herbal remedy shop. What sets this character apart is their unique approach to delivering readings—they blend sharp, irreverent humor with a playful, child-like fairy-tale storytelling style.  
-                            </p>
-                            <p>
-                                The result is a reading that’s as entertaining as it is insightful, with the reader crafting whimsical tales for each card drawn, all while maintaining their jaded, no-nonsense attitude. This project pushed my skills in blending storytelling, humor, and interactive design, proving that even a disenchanted oracle can create a truly magical experience.
-                            </p>
-                            </>
-                        }
-                        prompt = { tarotReaderPrompt }
-                        chatDescription = {
-                            <>
+                        <ShowcaseComponent
+                            title= "Tarot Reader and Herb salesman"
+                            titleDescription = {
+                                <>
                                 <p>
-                                    The chat box below shows an example of a chat simulation between a "customer" and the salesman.
+                                    Inspired by my brother’s support in learning AI prompt engineering, I decided to build upon one of his examples: a Tarot Reader. This prompt features a sarcastic, burnt-out reader who works in a whimsical herbal remedy shop. What sets this character apart is their unique approach to delivering readings—they blend sharp, irreverent humor with a playful, child-like fairy-tale storytelling style.  
                                 </p>
                                 <p>
-                                    You can hover over the chat box and scroll with your mouse wheel or use the "next Message" button below.
+                                    The result is a reading that’s as entertaining as it is insightful, with the reader crafting whimsical tales for each card drawn, all while maintaining their jaded, no-nonsense attitude. This project pushed my skills in blending storytelling, humor, and interactive design, proving that even a disenchanted oracle can create a truly magical experience.
                                 </p>
-                            </>
-                        }
-                        chatData= {<ChatBubble data={ chatData.tarotReader } />}
-                   />
+                                </>
+                            }
+                            prompt = { tarotReaderPrompt }
+                            chatDescription = {
+                                <>
+                                    <p>
+                                        The chat box below shows an example of a chat simulation between a "customer" and the salesman.
+                                    </p>
+                                    <p>
+                                        You can hover over the chat box and scroll with your mouse wheel or use the "next Message" button below.
+                                    </p>
+                                </>
+                            }
+                            chatData= {<ChatBubble data={ chatData.tarotReader } />}
+                        />
                     </TabPanel>
                     <TabPanel>
                         <ShowcaseComponent
@@ -239,68 +228,3 @@ const AIShowcase = () => {
 export default AIShowcase;
 
 
-
-
-
-
-
-
-
-
-
-/*   old setup 
-import React from 'react';
-import './ai_showcase.css';
-import { DividerLine, IntroSection } from './SharedComponents.jsx'; 
-import TarotReader1 from './AI_showcase/tarot_reader_1.jsx';
-import Developer from './AI_showcase/developer.jsx';
-import DeveloperV2 from './AI_showcase/developer_2.0.jsx'
-import DisenchantedOracle from './AI_showcase/disenchanted_oracle.jsx'
-
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
-
-const AIShowcase = () => {
-    return (
-        <div className="ai-body">
-            <IntroSection title="AI Showcase">
-                <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase serves as a demonstration of advanced prompt engineering and AI collaboration 
-                    techniques. This page highlights a curated collection of interactive conversations designed to showcase the power of OpenAI’s language models when combined with 
-                    creative and technical expertise. Each example illustrates unique prompts, custom-tailored to generate engaging, insightful, and dynamic interactions.
-                </p>
-                <p>
-                    By exploring this page, you’ll gain insight into how carefully crafted prompts can shape AI behavior, enabling applications in storytelling, education, 
-                    decision support, and more. The AI Showcase is not just a testament to the potential of AI but also a reflection of the innovative approaches used to push 
-                    its boundaries.
-                </p>
-            </IntroSection>
-            <DividerLine />
-            <div className="box-background border ai-showcase-container">
-                <Tabs>
-                    <TabList>
-                        <Tab>Tarot Reader / Salesman</Tab>
-                        <Tab>Disenchanted Oracle</Tab>
-                        <Tab>Developer Prompt</Tab>
-                        <Tab>Developer 2.0 Prompt</Tab>
-                    </TabList>
-                    <TabPanel>
-                        <TarotReader1 />
-                    </TabPanel>
-                    <TabPanel>
-                        <DisenchantedOracle />
-                    </TabPanel>
-                    <TabPanel>
-                        <Developer />
-                    </TabPanel>
-                    <TabPanel>
-                        <DeveloperV2 />
-                    </TabPanel>
-                </Tabs>
-            </div>
-        </div>
-    );
-};
-
-export default AIShowcase;
-
-*/
