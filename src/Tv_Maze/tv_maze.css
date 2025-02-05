@@ -52,21 +52,6 @@
     outline: none; /* Remove default outline */
 }
 
-.tvmaze-search button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #0078d4; /* Theme color for button */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.tvmaze-search button:hover {
-    background-color: #005a9e; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight scale-up effect on hover */
-}
 
 /* Container for the search results */
 
