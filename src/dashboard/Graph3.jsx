@@ -65,7 +65,7 @@ const Graph3 = () => {
                 },
                 formatter: (value) => {
                     if (typeof value === 'number') {
-                        return `${value.toFixed(2)} hours`; // Ensure only 2 decimal points
+                        return `${value.toFixed(2)}`; // Ensure only 2 decimal points
                     }
                     return value; // Fallback in case value isn't a number
                 },

@@ -99,7 +99,7 @@ const Card = ({ icon, title, image, children }) => {
 
 const About = () => {
     return (
-        <div className="about-body">
+        <div className="standard-padding-margin">
             <IntroSection title="Welcome to My Story">
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;
                     This page is a window into who I am—my passions, skills, and philosophies. Whether it’s through my projects, gaming insights, 

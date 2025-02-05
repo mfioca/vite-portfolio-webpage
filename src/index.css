@@ -1,3 +1,13 @@
+:root {
+  --padding: 10px;
+  --padding10: 10px;
+  --margin: 10px;
+  --margin10: 10px;
+}
+
+
+
+
 body {
   padding-top: 120px;
   margin: auto;
@@ -44,6 +54,28 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
+
+/********** NEW POSSIBLE DEFAULT **********/
+.flex-wrap-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  margin: auto;
+}
+
+.flex-column-center {
+  display: flex; /* Optional: if using flex for layout */
+  flex-direction: column; /* Stack children vertically */
+  padding: var(--padding10);
+  margin: var(--margin10) auto;
+}
+
+.standard-padding-margin {
+  padding: var(--padding);
+  margin: var(--margin);
+}
+/********** NEW POSSIBLE DEFAULT **********/
 
 .index-shared {
   color: white;

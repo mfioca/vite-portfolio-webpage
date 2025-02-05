@@ -50,7 +50,7 @@ function Dashboard() {
                     </p>
                 </IntroSection>
                 <DividerLine />
-                <div className="flex-wrap box-background border graph-flexbox">
+                <div className="box-background border base-max-width flex-wrap-center">
                     <div className="flex-wrap box-style graph-container">
                         <Graph />
                         <TextSection>

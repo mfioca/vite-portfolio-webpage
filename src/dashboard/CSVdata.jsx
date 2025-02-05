@@ -161,7 +161,7 @@ const CSVdata = () => {
     const currentData = filteredData.slice(startIndex, endIndex);
  
     return (
-        <div className="box-background border flex-column dashboard-container">
+        <div className="box-background border base-max-width flex-column-center">
             <div className="box-style dashboard-hub">        
                 <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>

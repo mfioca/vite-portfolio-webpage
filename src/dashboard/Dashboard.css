@@ -18,13 +18,6 @@
 /*                   main dashboard page - 3 charts                                */
 /***********************************************************************************/
 
-.graph-flexbox {
-  justify-content: center; /* Center items horizontally */
-  margin: auto;
-  padding: 10px;
-  max-width: 1600px;
-}
-
 .graph-container {
   justify-content: space-between; /* Distribute items evenly */
   gap: 10px; /* Add space between items */
@@ -34,16 +27,17 @@
 }
 
 .text-section {
-  flex-shrink: 1; /* Allow the text to take available space */
   max-width: 250px;
   background-color: #f8f9fa; /* Light beige or cream */
-  color: #333; /* Dark gray text for readability */
+  /*color: #333; /* Dark gray text for readability */
+  color: pink;
 }
 
 .chart-container {
   width: 350px;
   height: 375px;
-  background-color: #ffffff; /* White */
+  /*background-color: #ffffff; /* White */
+  background-color: chartreuse;
 }
 
 .chart3-data-box {
@@ -57,11 +51,12 @@
   font-size: 14px; /* Font size */
 }
 
-@media (max-width: 800px) { /* Adjust this breakpoint as needed */
+@media (max-width: 1000px) { /* Adjust this breakpoint as needed */
   .chart-container {
     grid-template-columns: 1fr; /* Switch to a single column layout */
     justify-content: center; /* Center the pagination controls */
     margin: auto;
+    padding: 3px;
   }
   .text-section {
     width: 95%; /* Make it full width below the graph */
@@ -80,12 +75,6 @@
 /***********************************************************************************/
 /*               CSV data display with 2 responsive charts                         */
 /***********************************************************************************/
-
-.dashboard-container {
-  padding: 10px; /* Add padding for spacing */
-  margin: 10px auto;
-  max-width: 1600px;
-}
 
 .dashboard-container ul {
   list-style-position: inside;
@@ -120,7 +109,6 @@
 
 .graph-wrapper {
   justify-content: center; /* Center graphs horizontally */
-  align-items: flex-start; /* Align items at the top */
   gap: 0; /* Remove unnecessary space between graphs */
   margin: 0 auto; /* Center the container itself */
   padding: 0; /* Remove padding */
