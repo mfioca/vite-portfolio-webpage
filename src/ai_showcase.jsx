@@ -37,7 +37,8 @@ const AIShowcase = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <div className="box-background border base-max-width ai-showcase-container">
+            {/*<div className="box-background border base-max-width ai-showcase-container">*/}
+            <div className="tabs-container">
                 <Tabs className="standard-tabs">
                     <TabList>
                         <Tab>Tarot Reader / Salesman</Tab>
@@ -47,6 +48,7 @@ const AIShowcase = () => {
                         <Tab>Developer 2.0 Prompt</Tab>
                         <Tab>Developer 3.0 Prompt</Tab>
                     </TabList>
+                    <div className="box-background border base-max-width ai-showcase-container">
                     <TabPanel>
                         <ShowcaseComponent
                             title= "Tarot Reader and Herb salesman"
@@ -219,8 +221,10 @@ const AIShowcase = () => {
                             }
                         />
                     </TabPanel>
+                    </div>
                 </Tabs>
-            </div>
+                </div>
+            {/*</div>*/}
         </div>
     );
 };

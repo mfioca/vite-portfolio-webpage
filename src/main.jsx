@@ -23,26 +23,32 @@ const Navigation = () => {
   }, [location]);
 
   // Determine the title based on the current path
-  let title = 'Explore My Web Page'; // Ensure it always has a value
-  switch (location.pathname) {
-    case '/':
-      title = 'Introduction Page';
-      break;
-    case '/About':
-      title = 'Learn More About Me';
-      break;
-    case '/Dashboard':
-      title = 'Activity Analysis Dashboard';
-      break;
-    case '/AIShowcase':
-      title = 'AI Showcase';
-      break;
-    case '/tv_maze':
-      title = 'TV Maze';
-      break;
+  let title; // Ensure it always has a value
+  switch (true) {
+    case location.pathname === '/':
+        title = 'Introduction Page';
+        break;
+    case location.pathname === '/About':
+        title = 'Learn More About Me';
+        break;
+    case location.pathname === '/Dashboard':
+        title = 'Activity Analysis Dashboard';
+        break;
+    case location.pathname === '/AIShowcase':
+        title = 'AI Showcase';
+        break;
+    case location.pathname === '/tv_maze':
+        title = 'TV Maze';
+        break;
+    case location.pathname.startsWith('/show/'):
+        title = 'TV Show Details';
+        break;
+    case location.pathname.startsWith('/person/'):
+        title = 'Person Profile';
+        break;
     default:
-      title = 'Explore My Web Page'; // A more general fallback title
-  }
+        title = 'Explore My Web Page'; // A general fallback title
+}
 
   return (
     <nav className="index-shared navbar">

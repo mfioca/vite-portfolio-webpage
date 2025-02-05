@@ -31,7 +31,7 @@ const TvMazeShowResults = () => {
     }
 
     if (!showDetails) {
-        return <p>Loading...</p>;
+        return <div className="loading-overlay"><p>Loading...</p></div>; // Display loading message;
     }
 
     return (
@@ -76,7 +76,7 @@ const TvMazeShowResults = () => {
                         <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
                     </div>
             </div>
-            <div className="results-tabs-container">
+            <div>
                 <Tabs className="standard-tabs"
                     forceRenderTabPanel
                     onSelect={(index) => {

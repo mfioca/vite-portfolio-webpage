@@ -94,7 +94,7 @@ const TvMaze = () => {
                         </div>
                         <div>
                             { results.length > 0 ? (
-                                <div className="box-background flex-wrap tvmaze-search-results">
+                                <div className="box-background border flex-wrap tvmaze-search-results">
                                     { results.map((item) => (
                                         <div key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>
@@ -135,7 +135,7 @@ const TvMaze = () => {
                         </div>
                         <div>
                             { results.length > 0 ? (
-                                <div className="box-background flex-wrap tvmaze-search-results">
+                                <div className="box-background border flex-wrap tvmaze-search-results">
                                     { results.map((item) => (
                                         <div key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>

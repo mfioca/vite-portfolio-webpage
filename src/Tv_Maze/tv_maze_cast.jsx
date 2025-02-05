@@ -27,12 +27,14 @@ const TvMazeCast = ({ id }) => {
     }
 
     if (!cast.length) {
-        return <p>Loading cast information...</p>;
+        return <div className="loading-overlay"><p>Loading cast information...</p></div>;
     }
 
     return (
-        <div className="box-background border cast-container">
+        <div className="box-background border cast-container ">
+        {/*<div className="box-background border cast-container">*/}
             <h2 className="section-title">Cast</h2>
+            {/*<h2 className="section-title">Cast</h2>*/}
             <div className="flex-wrap cast-grid">
                 {cast.map((person, index) => (
                     <div key={ index } className="box-style cast-member">
@@ -70,5 +72,4 @@ const TvMazeCast = ({ id }) => {
 };
 
 export default TvMazeCast;
-
 

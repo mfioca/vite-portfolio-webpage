@@ -51,7 +51,7 @@ const TvMazePeopleCast = ({ id }) => {
     }
 
     if (!castCredits.length) {
-        return <p>Loading cast credits...</p>;
+        return <div className="loading-overlay"><p>Loading cast credits...</p></div>;
     }
 
     return (

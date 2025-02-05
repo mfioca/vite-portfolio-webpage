@@ -7,9 +7,10 @@ body {
   justify-content: center;
 }
 
-body h2 {
+ h2 {
   font-weight: 600; /* Semi-bold */
   letter-spacing: 0.5px; /* Adjust as needed */
+  text-align: center;
 }
 
 /*used for shadowing text */
@@ -72,6 +73,24 @@ body h2 {
 button:hover {
   background-color: #005a9e; /* Darker shade on hover */
   transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+.loading-overlay {
+  position: fixed; /* Fix to viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Lighter semi-transparent background */
+  display: flex; /* Flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  z-index: 1000; /* Ensure it sits above other content */
+}
+
+.loading-overlay p {
+  color: white; /* Text color */
+  font-size: 1.5em; /* Adjust font size */
 }
 
 /***********************************************************************************/

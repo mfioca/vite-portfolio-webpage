@@ -45,6 +45,7 @@ const TvMazeEpisodes = ({ showId }) => {
 
     return (
         <div className="tvmaze-episodes-container">
+        {/*<div className="tvmaze-episodes-container">*/}
             <h2 className="section-title">Episodes by Season</h2>
             <Tabs className="standard-tabs">
                 <TabList>

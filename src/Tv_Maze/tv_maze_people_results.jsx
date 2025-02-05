@@ -36,7 +36,7 @@ const TvMazePeopleResults = () => {
     
 
     if (!personDetails) {
-        return <p>Loading...</p>;
+        return <div className="loading-overlay"><p>Loading...</p></div>;
     }
 
     const calculateAge = (birthday) => {
