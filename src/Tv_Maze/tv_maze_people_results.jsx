@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { IntroSection, DividerLine } from '../SharedComponents.jsx';
 import TvMazePeopleCast from './tv_maze_people_cast.jsx'
@@ -66,30 +66,39 @@ const TvMazePeopleResults = () => {
             <DividerLine />
             <h1 className="section-title">{ personDetails.name }</h1>
             <div className="box-background border flex-wrap tvmaze-results">
-                
-                    <div className="flex-column main-info">
-                        { personDetails.image && personDetails.image.original && (
-                            <img
-                                src={ personDetails.image.original }
-                                alt={ personDetails.name }
-                                loading="lazy"
-                            />
-                        )}
-                    </div>
-                    <div className="box-style show-details">
-                        <p><strong>Born in:</strong> { personDetails.country.name }</p>
-                        <p><strong>Birthday:</strong> { personDetails.birthday || 'Unknown' }</p>
-                        <p><strong>Age:</strong> { calculateAge(personDetails.birthday) }</p>
-                        <p><strong>Number of Shows Featured In:</strong> { personDetails._embedded?.castcredits?.length || 0 }</p>
-                        <p>
-                            <strong>More details at: </strong> 
-                            <a href={ personDetails.url } target="_blank" rel="noopener noreferrer">
-                                TVMaze Profile
-                            </a>
-                        </p>
-                    </div>
+                <div className="flex-column main-info">
+                    { personDetails.image && personDetails.image.original && (
+                        <img
+                            src={ personDetails.image.original }
+                            alt={ personDetails.name }
+                            loading="lazy"
+                        />
+                    )}
                 </div>
-            
+                <div className="box-style show-details">
+                    <p><strong>Born in:</strong> { personDetails.country ? personDetails.country.name : 'Unknown' }</p>
+                    <p><strong>Birthday:</strong> { personDetails.birthday || 'Unknown' }</p>
+                    <p><strong>Age:</strong> { calculateAge(personDetails.birthday) }</p>
+                    <p><strong>Number of Shows Featured In:</strong> { personDetails._embedded?.castcredits?.length || 0 }</p>
+                    <p>
+                        <strong>More details at: </strong> 
+                        <a href={ personDetails.url } target="_blank" rel="noopener noreferrer">
+                            TVMaze Profile
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <button className="center-div button" type="submit">
+                <Link 
+                    to="/tv_maze" 
+                    style={{
+                        color: 'white',
+                        textDecoration: 'none',
+                    }}
+                >
+                    ⬅ Back to TV Maze Search
+                </Link>
+            </button>
             <div className="results-tabs-container">
                 <Tabs className="standard-tabs"
                     forceRenderTabPanel

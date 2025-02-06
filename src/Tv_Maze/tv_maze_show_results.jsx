@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { DividerLine, IntroSection } from '../SharedComponents.jsx';
@@ -76,6 +76,17 @@ const TvMazeShowResults = () => {
                         <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
                     </div>
             </div>
+            <button className="center-div button" type="submit">
+                <Link 
+                    to="/tv_maze" 
+                    style={{
+                        color: 'white',
+                        textDecoration: 'none',
+                    }}
+                >
+                 ⬅ Back to TV Maze Search
+                </Link>
+            </button>
             <div>
                 <Tabs className="standard-tabs"
                     forceRenderTabPanel

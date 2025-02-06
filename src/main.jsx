@@ -51,7 +51,7 @@ const Navigation = () => {
 }
 
   return (
-    <nav className="index-shared navbar">
+    <nav className="index-shared flex-wrap navbar">
       <div className="navbar-brand">{ title }</div>
       <ul className="navbar-links">
         <li>

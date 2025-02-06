@@ -75,6 +75,15 @@ body {
   padding: var(--padding);
   margin: var(--margin);
 }
+
+.center-div {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+
 /********** NEW POSSIBLE DEFAULT **********/
 
 .index-shared {
@@ -100,11 +109,13 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
 }
 
 button:hover {
   background-color: #005a9e; /* Darker shade on hover */
   transform: scale(1.05); /* Slight scale-up effect on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
 }
 
 .loading-overlay {
@@ -125,13 +136,18 @@ button:hover {
   font-size: 1.5em; /* Adjust font size */
 }
 
+.no-data-overlay {
+  text-align: center;
+  color: #ff4d4f; /* Light red or any other subtle color */
+  margin-top: 50px;
+  font-size: 1.2rem;
+}
+
 /***********************************************************************************/
 /*                            Nav Bar and Footer                                   */
 /***********************************************************************************/
 
 .navbar {
-  display: flex;
-  flex-wrap: wrap; /* Allow items to wrap onto the next row */
   justify-content: space-between;
   align-items: center;
   position: fixed; /* Fix the navbar to the top */
@@ -179,7 +195,6 @@ button:hover {
   padding: 20px;
 }
 
-
 .contact-link {
   color: #fff;
   text-decoration: none;
@@ -212,7 +227,6 @@ button:hover {
 /***********************************************************************************/
 
 .home-body  {
-  flex-grow: 1; /* Allow the content to take the remaining space */
   font-family: 'Courier New'; /* A clean sans-serif font */
   margin-top: 50px;
   margin-bottom: 50px;

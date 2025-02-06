@@ -46,12 +46,23 @@ const TvMazePeopleCast = ({ id }) => {
         return dateB - dateA; // Sort in descending order (most recent first)
     });
 
+    // Show error if there's an issue fetching data
     if (error) {
         return <p style={{ color: 'red' }}>{ error }</p>;
     }
 
-    if (!castCredits.length) {
+    // Show loading message while data is being fetched
+    if (castCredits === null) {
         return <div className="loading-overlay"><p>Loading cast credits...</p></div>;
+    }
+
+    // Display a message if no cast credits are available
+    if (castCredits.length === 0) {
+        return (
+            <div className="no-data-overlay">
+                <p>No cast credits found for this person.</p>
+            </div>
+        );
     }
 
     return (
@@ -112,5 +123,7 @@ const TvMazePeopleCast = ({ id }) => {
 };
 
 export default TvMazePeopleCast;
+
+
 
 

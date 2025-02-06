@@ -82,9 +82,19 @@ const TvMazePeopleGuestCast = ({ id }) => {
     if (error) {
         return <p style={{ color: 'red' }}>{ error }</p>;
     }
-
-    if (!guestCredits.length) {
+    
+    // If data is still loading
+    if (guestCredits === null) {
         return <div className="loading-overlay"><p>Loading guest credits...</p></div>;
+    }
+    
+    // If no guest credits are available
+    if (guestCredits.length === 0) {
+        return (
+            <div className="no-data-overlay">
+                <p>No guest appearances found for this person.</p>
+            </div>
+        );
     }
 
     return (
