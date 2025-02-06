@@ -3,6 +3,7 @@
   --padding10: 10px;
   --margin: 10px;
   --margin10: 10px;
+  --margin20: 20px;
 }
 
 body {
@@ -64,6 +65,7 @@ body {
 .flex-column-center {
   display: flex; /* Optional: if using flex for layout */
   flex-direction: column; /* Stack children vertically */
+  justify-content: center;
   padding: var(--padding10);
   margin: var(--margin10) auto;
 }
@@ -76,11 +78,13 @@ body {
 .center-div {
   display: flex;
   justify-content: center;
-  margin: 10px auto;
-  padding: 10px;
+  padding: var(--padding10);
+  margin: var(--margin10) auto;
 }
 
-
+.center-margin {
+  margin: var(--margin) auto;
+}
 /********** NEW POSSIBLE DEFAULT **********/
 
 .index-shared {

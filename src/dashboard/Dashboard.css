@@ -76,12 +76,12 @@
 /*               CSV data display with 2 responsive charts                         */
 /***********************************************************************************/
 
-.dashboard-container ul {
+.dashboard-hub ul {
   list-style-position: inside;
   text-align: center;
 }
 
-.dashboard-container li {
+.dashboard-hub li {
   margin-bottom: 5px; /* Space between list items */
   line-height: 1.5; /* Increase line height for readability */
 }

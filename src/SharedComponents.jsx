@@ -86,7 +86,7 @@ export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, c
                 { titleDescription }
             </IntroSection>
             <DividerLine />
-                <div className="box-style markdown-container">
+                <div className="box-style center-margin markdown-container">
                     <ReactMarkdown>{ prompt }</ReactMarkdown>
                 </div>
             <DividerLine />
@@ -115,7 +115,7 @@ export const ShowcaseComponentTabs = ({ title, titleDescription, tabs, chatData,
                 </TabList>
                 { tabs.map((tab, index) => (
                     <TabPanel key={ index }>
-                        <div className="box-style markdown-container">
+                        <div className="box-style center-margin markdown-container">
                             { typeof tab.content === 'string' ? (
                                 <ReactMarkdown>{ tab.content }</ReactMarkdown>
                             ) : (
@@ -216,10 +216,12 @@ export const ChatBubble = ({ data }) => {
     };
 
     return (
-        <div className="box-background border flex-column example-container">
+       
+       <div className="flex-column-center example-container">
+        {/* <div className="box-background border flex-column-center example-container"> */}
             <h2>{ title }</h2>
             <div
-                className="flex-column box-style chat-window"
+                className=" box-style flex-column-center chat-window"
                 ref={ chatWindowRef }
                 onMouseEnter={ handleMouseEnter }
                 onMouseLeave={ handleMouseLeave }
@@ -238,7 +240,7 @@ export const ChatBubble = ({ data }) => {
                     </div>
                 ))}
             </div>
-            <div>
+            <div className="center-div">
                 { visibleCount < messages.length ? (
                     <button
                     className=" button next-message-btn"
@@ -256,6 +258,7 @@ export const ChatBubble = ({ data }) => {
                 )}
             </div>
         </div>
+        
     );
 };
 
