@@ -23,7 +23,7 @@ const Home = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <div className="home-content">
+            <div className="base-max-width home-content">
             <h2 className="shadow" >Professional Profile</h2>
                 <div className="home-container">
                     <p className="home-text">

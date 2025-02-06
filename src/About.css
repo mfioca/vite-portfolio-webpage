@@ -8,8 +8,7 @@
 /***********************************************************************************/
 
 .scrolling-quotes {
-    justify-content: center;
-    margin: auto;
+    flex-direction: column; /* Stack children vertically */
     align-items: center;
     letter-spacing: 0.5px; /* Adds slight spacing between letters for clarity */
 }
@@ -45,14 +44,8 @@
 
 .about-swiper {
     justify-content: flex-start; /* Content starts at the top */
-    max-width: 1600px;
-    margin-top: 20px;
-    margin-bottom: 20px;
     font-family: 'Courier New'; /* A clean sans-serif font */
     box-sizing: border-box; /* Include padding in size calculations */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition */
     line-height: 3; /* Adjust line height for better spacing */
     overflow-y: auto; /* Allow vertical scrolling if content overflows */
 }
@@ -86,8 +79,6 @@
     height: 50px; /* Fixed height for the footer */
     width: 100%; /* Full width */
     margin-bottom: auto; /* Pushes the footer to the bottom of the screen */
-    padding: 10px; /* Add padding at the bottom */
-    margin: 10px;
     text-align: center;
     font-size: 40px; /* Adjust icon size */
     line-height: 50px; /* Vertically center text */

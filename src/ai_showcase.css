@@ -8,7 +8,6 @@
 
 .ai-showcase-container {
     padding: 20px; /* Add spacing inside the container */
-    max-width: 1600px;
     margin: 0 auto; /* Center the container on the page */
     font-family: 'Arial', sans-serif; /* Clean, readable font */
 }

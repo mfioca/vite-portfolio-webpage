@@ -38,7 +38,7 @@ const AIShowcase = () => {
             </IntroSection>
             <DividerLine />
             {/*<div className="box-background border base-max-width ai-showcase-container">*/}
-            <div className="tabs-container">
+            <div className="center-div tabs-container">
                 <Tabs className="standard-tabs">
                     <TabList>
                         <Tab>Tarot Reader / Salesman</Tab>
