@@ -213,11 +213,11 @@ const CSVdata = () => {
                     </div>
                 </div>
                 <div className="flex-wrap graph-wrapper">
-                    <div className="donut-chart">
-                        <div className="bar-chart-title">
+                    <div className="standard-padding-margin csv-chart">
+                        <div className="center-div csv-chart-title">
                         <h3>Top Applications</h3>
                         </div>
-                        <div className="bar-chart-content">
+                        <div className="center-div csv-chart-content">
                             <Doughnut
                                 data={ createChartData(top5Applications) }
                                 options={{
@@ -242,24 +242,24 @@ const CSVdata = () => {
                         </div>
                     </div>
                     {top5ActivitySubtypes.length === 0 ? (
-                        <div className="bar-chart">
-                        <div className="bar-chart-title">
+                        <div className="standard-padding-margin csv-chart">
+                        <div className="center-div csv-chart-title">
                                 <h3>Top Activity Subtypes</h3>
                         </div>
                         {/*<h3 >Top Activity Subtypes</h3>
                         <p>Filter Activity Types for more analytical data.</p>*/}
-                        <div className="bar-chart-content">
+                        <div className="center-div csv-chart-content">
                         <p>
                             Filter Activity Types for more analytical data.
                         </p>
                         </div>
                         </div>
                     ) : (
-                        <div className="bar-chart">
-                            <div className="bar-chart-title">
+                        <div className="standard-padding-margin csv-chart">
+                            <div className="center-div csv-chart-title">
                                 <h3>Top Activity Subtypes</h3>
                             </div>
-                            <div className="bar-chart-content">
+                            <div className="center-div csv-chart-content">
                             <Bar
                                 data={createBarChartData(top5ActivitySubtypes)}
                                 options={{
@@ -288,55 +288,53 @@ const CSVdata = () => {
                     )}
                 </div>
             </div>
-            {/*<div className = "box-background dashboard-csv"> */}
-                <div className="filtered-data">
-                    { currentData.length > 0 ? (
-                        <table className="csv-data">
-                            <thead>
-                                <tr>
-                                    {Object.keys(currentData[0]).map((key, index) => {
+            <div className="filtered-data">
+                { currentData.length > 0 ? (
+                    <table className="csv-data">
+                        <thead>
+                            <tr>
+                                {Object.keys(currentData[0]).map((key, index) => {
+                                    if (key !== 'timestamp' && key !== 'hour') {
+                                        return <th key={ index }>{ key }</th>; // Table headers
+                                    }
+                                    return null; // Exclude timestamp from headers
+                                })}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {currentData.map((row, index) => (
+                                <tr key={ index }>
+                                    { Object.keys(row).map((key) => {
                                         if (key !== 'timestamp' && key !== 'hour') {
-                                            return <th key={ index }>{ key }</th>; // Table headers
+                                            return <td key={ key }>{row[key]}</td>; // Table data cells
                                         }
-                                        return null; // Exclude timestamp from headers
+                                        return null; // Exclude timestamp from data
                                     })}
                                 </tr>
-                            </thead>
-                            <tbody>
-                                {currentData.map((row, index) => (
-                                    <tr key={ index }>
-                                        { Object.keys(row).map((key) => {
-                                            if (key !== 'timestamp' && key !== 'hour') {
-                                                return <td key={ key }>{row[key]}</td>; // Table data cells
-                                            }
-                                            return null; // Exclude timestamp from data
-                                        })}
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    ) : (
-                        <p>No data available</p> // Message when there is no data
-                    )}
-                </div>
-                <div className="pagination">
-                    <button 
-                        className="button"
-                        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
-                        disabled={currentPage === 1}>
-                        Previous
-                    </button>
-                    <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 10px' }}>
-                        Page { currentPage } of { totalPages }
-                    </span>
-                    <button 
-                        className="button"
-                        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
-                        disabled={ currentPage === totalPages }>
-                        Next
-                    </button>
-                </div>
-            {/*</div>*/}
+                            ))}
+                        </tbody>
+                    </table>
+                ) : (
+                    <p>No data available</p> // Message when there is no data
+                )}
+            </div>
+            <div className="pagination">
+                <button 
+                    className="button"
+                    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
+                    disabled={currentPage === 1}>
+                    Previous
+                </button>
+                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 10px' }}>
+                    Page { currentPage } of { totalPages }
+                </span>
+                <button 
+                    className="button"
+                    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
+                    disabled={ currentPage === totalPages }>
+                    Next
+                </button>
+            </div>
         </div>
     );
 };

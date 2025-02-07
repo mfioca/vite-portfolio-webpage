@@ -1,16 +1,14 @@
 .Dashboard {
   text-align: center;
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
-  margin: auto;
-  padding: 10px;
 }
 
+/*rescuetime link */
 .data-source {
   font-style: italic; /* Keep the elegant style */
   margin-top: 15px; /* Provide spacing from other content */
   margin-bottom: 15px;
   font-size: 16px; /* Slightly larger for emphasis */
-  color: #333; /* Darker color for better contrast */
   text-align: center; /* Center the citation text */
 }
 
@@ -21,23 +19,18 @@
 .graph-container {
   justify-content: space-between; /* Distribute items evenly */
   gap: 10px; /* Add space between items */
-  padding: 10px; /* Padding for inner spacing */
-  margin: 10px;
   background-color: #ffffff;
 }
 
 .text-section {
   max-width: 250px;
   background-color: #f8f9fa; /* Light beige or cream */
-  /*color: #333; /* Dark gray text for readability */
-  color: pink;
 }
 
 .chart-container {
   width: 350px;
   height: 375px;
-  /*background-color: #ffffff; /* White */
-  background-color: chartreuse;
+  background-color: #ffffff; /* White */
 }
 
 .chart3-data-box {
@@ -70,11 +63,18 @@
     max-width: 300px; /* Remove max-width constraint */
     min-width: 200px;
   }
+  .graph-container {
+    padding: 3px;
+  }
 }
 
 /***********************************************************************************/
 /*               CSV data display with 2 responsive charts                         */
 /***********************************************************************************/
+
+.dashboard-hub {
+  background-color: #e0e0e0;
+}
 
 .dashboard-hub ul {
   list-style-position: inside;
@@ -84,10 +84,6 @@
 .dashboard-hub li {
   margin-bottom: 5px; /* Space between list items */
   line-height: 1.5; /* Increase line height for readability */
-}
-
-.dashboard-hub {
-  background-color: #e0e0e0;
 }
 
 .dropdowns {
@@ -114,33 +110,20 @@
   padding: 0; /* Remove padding */
 }
 
-.donut-chart,
-.bar-chart {
+.csv-chart {
   flex: 1 1 45%; /* Allow flexibility and set a basis width */
   max-width: 45%; /* Ensure graphs don’t exceed this width */
   min-width: 350px;
   box-sizing: border-box; /* Include padding and border in the width */
-  margin: 10px; /* Minimal margin to prevent overlap */
-  padding: 10px;
 }
 
-.bar-chart-title {
+.csv-chart-title {
   height: 50px; /* Allocate 20% of the height to the title */
-  display: flex;
-  justify-content: center;
-  text-align: center; /* Center text */
 }
 
-.bar-chart-content {
+.csv-chart-content {
   height: 450px; /* Allocate 80% of the height to the chart area */
-  display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.dashboard-csv {
-  padding: 10px; /* Padding inside the wrapper */
-  margin-top: 10px;
 }
 
 .filtered-data {

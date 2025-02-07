@@ -21,7 +21,7 @@ function Dashboard() {
     return (
         // Wrap the App component with Provider for Redoux functions
         <Provider store={ store }> 
-            <div className="Dashboard">
+            <div className="standard-padding-margin Dashboard">
                 <IntroSection title="Dashboard Overview">
                     <p><strong className="shadow">Purpose:</strong>&nbsp;&nbsp;This dashboard presents a comprehensive visualization of activity data collected over 
                         four years with a single organization. By highlighting trends in job focus and time allocation, it offers valuable insights into 
@@ -51,7 +51,7 @@ function Dashboard() {
                 </IntroSection>
                 <DividerLine />
                 <div className="box-background border base-max-width flex-wrap-center">
-                    <div className="flex-wrap box-style graph-container">
+                    <div className="flex-wrap box-style standard-padding-margin graph-container">
                         <Graph />
                         <TextSection>
                             <p>
@@ -73,7 +73,7 @@ function Dashboard() {
                             </p>
                         </TextSection>
                     </div>
-                    <div className="flex-wrap box-style graph-container">
+                    <div className="flex-wrap box-style standard-padding-margin graph-container">
                         <SecondGraph />
                         <TextSection>
                             <p>
@@ -90,7 +90,7 @@ function Dashboard() {
                             </p>
                         </TextSection>
                     </div>
-                    <div className="flex-wrap box-style graph-container">
+                    <div className="flex-wrap box-style standard-padding-margin graph-container">
                         <ThirdGraph />
                         <TextSection>
                             <p>

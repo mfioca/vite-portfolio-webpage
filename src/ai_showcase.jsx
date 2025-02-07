@@ -1,5 +1,5 @@
 import React from 'react';
-import './ai_showcase.css';
+
 import { DividerLine, ChatBubble, IntroSection, ShowcaseComponent, ShowcaseComponentTabs } from './SharedComponents.jsx'; 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs

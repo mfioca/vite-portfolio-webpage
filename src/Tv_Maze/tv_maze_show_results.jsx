@@ -76,7 +76,7 @@ const TvMazeShowResults = () => {
                         <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
                     </div>
             </div>
-            <button className="center-div button" type="submit">
+            <button className="center-div center-margin button" type="submit">
                 <Link 
                     to="/tv_maze" 
                     style={{
