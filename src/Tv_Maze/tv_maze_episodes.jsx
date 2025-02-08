@@ -55,7 +55,7 @@ const TvMazeEpisodes = ({ showId }) => {
                 </TabList>
                 {seasons.map((season) => (
                     <TabPanel key={season.id}>
-                        <div className="tvmaze-results-intro">
+                        <div className="base-max-width box-background border flex-wrap tvmaze-season-intro">
                             <div className="season-header">
                                 {season.image ? (
                                     <img

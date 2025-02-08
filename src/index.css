@@ -4,6 +4,9 @@
   --margin: 10px;
   --margin10: 10px;
   --margin20: 20px;
+  --colortest: pink;
+  --color: #e0e0e0;
+  --background-image: linear-gradient(var(--color), #ffffff); /* Light gradient for the background */
 }
 
 body, #root {
@@ -35,7 +38,7 @@ body, #root {
 
 .box-background {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
-  background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
+  background-image: var(--background-image);
   transition: opacity 0.5s ease-in-out; /* Smooth transition */
   border-radius: 8px; /* Rounded corners */
   padding: 10px;

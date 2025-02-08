@@ -108,7 +108,6 @@
 .tvmaze-results {
     flex-direction: row; /* Arrange children in a row */
     gap: 10px; /* Add space between the columns */
-    max-width: 1600px; /* Limit the total width of the container */
     margin: 20px auto; /* Center the container */
     padding: 10px; /* Add padding for spacing */
     font-family: 'Courier New', sans-serif; /* Consistent font */
@@ -116,21 +115,14 @@
 }
 
 /*needed for a few pages, in this section due to results name */
-.tvmaze-results-intro {
-    display: flex;
+.tvmaze-season-intro {
+    /*display: flex;*/
     flex-direction: row; /* Arrange children in a row */
-    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
     gap: 10px; /* Add space between the columns */
-    max-width: 1600px; /* Limit the total width of the container */
     margin: 10px; /* Center the container on the page */
-    padding: 10px; /* Add padding for spacing */
     font-family: 'Courier New', sans-serif; /* Consistent font */
     align-items: flex-start; /* Align items to the top of the row */
-    background-image: linear-gradient(#e0e0e0, #ffffff); /* Light gradient for the background */
-    transition: opacity 0.5s ease-in-out; /* Smooth transition */
-    border-radius: 8px; /* Rounded corners */
-    border: 2px solid #ccc; /* Add a border matching the theme */
-}
+    }
 
 .main-info {
     flex: 1; /* Let this column take up one part of the available space */

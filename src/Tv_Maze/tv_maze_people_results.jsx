@@ -65,7 +65,7 @@ const TvMazePeopleResults = () => {
             </IntroSection>
             <DividerLine />
             <h1 className="section-title">{ personDetails.name }</h1>
-            <div className="box-background border flex-wrap tvmaze-results">
+            <div className="base-max-width box-background border flex-wrap tvmaze-results">
                 <div className="flex-column main-info">
                     { personDetails.image && personDetails.image.original && (
                         <img

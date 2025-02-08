@@ -133,6 +133,7 @@
   margin: 20px 0; /* Add margin for spacing */
   border: 1px solid #ccc; /* Light border for structure */
   border-radius: 5px; /* Rounded corners */
+  background-color: white;
   overflow-x: auto; /* Enable horizontal scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
