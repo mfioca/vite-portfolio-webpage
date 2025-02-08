@@ -46,9 +46,20 @@ export const BorderBox = ({ children, className = '' }) => {
 };
 
 
+/* Suggestion from Tank (chatgpt)
+export const BodyContainer = ({ children, className = '', hasBackground = true }) => {
+    const backgroundClass = hasBackground ? 'box-background-standard' : 'box-Nobackground-standard';
+    return (
+        <div className={`${backgroundClass} border base-max-width standard-padding-margin-center ${className}`}>
+            {children}
+        </div>
+    );
+};
 
-
-
+<BodyContainer className="custom-class" hasBackground={false}>
+    <p>No background here!</p>
+</BodyContainer>
+*/
 
 
 
