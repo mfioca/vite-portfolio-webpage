@@ -18,6 +18,41 @@ export const DividerLine = ({ width = '80%' }) => {
     return <hr className="divider-line" style={{ width }} />;
 };
 
+
+
+export const BodyContainer = ({ children, className = '' }) => {
+    return (
+        <div className={`box-background-standard border base-max-width standard-padding-margin-center ${ className }` }>
+            { children }
+        </div>
+    );
+};
+
+export const BodyContainer_noBackground = ({ children, className = '' }) => {
+    return (
+        <div className={`box-Nobackground-standard border base-max-width standard-padding-margin-center ${ className }` }>
+            { children }
+        </div>
+    );
+};
+
+
+export const BorderBox = ({ children, className = '' }) => {
+    return (
+        <div className={`box-style-standard standard-padding ${ className }` }>
+            { children }
+        </div>
+    );
+};
+
+
+
+
+
+
+
+
+
 /***********************************************************************************/
 /*           Elements to help with CSS on smaller screens                          */
 /***********************************************************************************/

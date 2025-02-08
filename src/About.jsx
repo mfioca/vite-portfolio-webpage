@@ -1,6 +1,6 @@
 import React, { useState, useEffect  } from 'react';
 import './About.css'; 
-import { DividerLine, IntroSection } from './SharedComponents';
+import { DividerLine, IntroSection, BodyContainer } from './SharedComponents';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';

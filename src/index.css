@@ -48,6 +48,23 @@ body, #root {
   padding: 10px;
 }
 
+.box-background-standard {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+  background-image: var(--background-image);
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+  border-radius: 8px; /* Rounded corners */
+}
+.box-Nobackground-standard {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.box-style-standard {
+  border: var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .box-style {
   border: var(--border);
   border-radius: 8px;
@@ -88,9 +105,21 @@ body, #root {
   margin: var(--margin10) auto;
 }
 
+.standard-padding {
+  padding: var(--padding);
+}
+.standard-margin {
+  margin: var(--margin);
+}
+
 .standard-padding-margin {
   padding: var(--padding);
   margin: var(--margin);
+}
+
+.standard-padding-margin-center {
+  padding: var(--padding);
+  margin: var(--margin) auto;
 }
 
 .center-div {

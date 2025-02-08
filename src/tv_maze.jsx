@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Link from React Router
-import { DividerLine, IntroSection } from './SharedComponents.jsx';
+import { DividerLine, IntroSection, BodyContainer, BorderBox } from './SharedComponents.jsx';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './Tv_Maze/tv_maze.css';
@@ -75,7 +75,7 @@ const TvMaze = () => {
                     </TabList>
                     {/* TV Show Search Panel */}
                     <TabPanel>
-                        <div className="box-style tvmaze-search">
+                        <BorderBox className="center-margin tvmaze-search">
                             <h1>TV Show Search</h1>
                             <form onSubmit={(e) => {
                                 e.preventDefault();
@@ -91,10 +91,10 @@ const TvMaze = () => {
                                 <button className="button" type="submit">Search</button>
                             </form>
                             { error && <p style={{ color: 'red' }}>{ error }</p> }
-                        </div>
+                        </BorderBox>
                         <div>
                             { results.length > 0 ? (
-                                <div className="box-background border flex-wrap tvmaze-search-results">
+                                <BodyContainer className="flex-wrap tvmaze-search-results">
                                     { results.map((item) => (
                                         <div key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>
@@ -103,20 +103,19 @@ const TvMaze = () => {
                                             ) : (
                                                 <p>No Image Available</p>
                                             )}
-                                            {/* Use Link to navigate to the details page */}
                                             <Link to={item.link}>View Details</Link>
                                         </div>
                                     ))}
-                                </div>
+                                </BodyContainer>
                             ) : (
-                                <div className="tvmaze-search-placeholder">
+                                <BodyContainer className="tvmaze-search-placeholder">
                                     <p>No results found. Try entering a search.</p>
-                                </div>
+                                </BodyContainer>
                             )}
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <div className="box-style tvmaze-search">
+                        <BorderBox className="center-margin tvmaze-search">
                             <h1>Person Search</h1>
                             <form onSubmit={(e) => {
                                 e.preventDefault();
@@ -132,10 +131,10 @@ const TvMaze = () => {
                                 <button className="button" type="submit">Search</button>
                             </form>
                             { error && <p style={{ color: 'red' }}>{ error }</p> }
-                        </div>
+                        </BorderBox>
                         <div>
                             { results.length > 0 ? (
-                                <div className="box-background border flex-wrap tvmaze-search-results">
+                                <BodyContainer className="tvmaze-search-results">
                                     { results.map((item) => (
                                         <div key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>
@@ -144,15 +143,14 @@ const TvMaze = () => {
                                             ) : (
                                                 <p>No Image Available</p>
                                             )}
-                                            {/* Use Link to navigate to the person's details page */}
                                             <Link to={ item.link }>View Details</Link>
                                         </div>
                                     ))}
-                                </div>
+                                </BodyContainer>
                             ) : (
-                                <div className="tvmaze-search-placeholder">
+                                <BodyContainer className="tvmaze-search-placeholder">
                                     <p>No results found. Try entering a search.</p>
-                                </div>
+                                </BodyContainer>
                             )}
                         </div>
                     </TabPanel>
@@ -163,3 +161,44 @@ const TvMaze = () => {
 };
 
 export default TvMaze;
+
+
+/*  show search
+
+                                <div className="box-background border flex-wrap base-max-width tvmaze-search-results">
+                                    { results.map((item) => (
+                                        <div key={ item.id } className="result-box">
+                                            <h3>{ item.name }</h3>
+                                            { item.image ? (
+                                                <img src={ item.image } alt={ item.name } style={{ width: '100%', borderRadius: '5px' }} />
+                                            ) : (
+                                                <p>No Image Available</p>
+                                            )}
+                                            <Link to={item.link}>View Details</Link>
+                                        </div>
+                                    ))}
+                                </div>
+                                */
+
+/* person search
+
+{ results.length > 0 ? (
+                                <div className="box-background border flex-wrap tvmaze-search-results">
+                                    { results.map((item) => (
+                                        <div key={ item.id } className="result-box">
+                                            <h3>{ item.name }</h3>
+                                            { item.image ? (
+                                                <img src={ item.image } alt={ item.name } style={{ width: '100%', borderRadius: '5px' }} />
+                                            ) : (
+                                                <p>No Image Available</p>
+                                            )}
+                                            <Link to={ item.link }>View Details</Link>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <div className="tvmaze-search-placeholder">
+                                    <p>No results found. Try entering a search.</p>
+                                </div>
+                            )}
+*/

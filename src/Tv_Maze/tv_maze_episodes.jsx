@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BodyContainer, BodyContainer_noBackground, BorderBox } from '../SharedComponents.jsx';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import axios from 'axios';
@@ -44,7 +45,7 @@ const TvMazeEpisodes = ({ showId }) => {
     }
 
     return (
-        <div className="tvmaze-episodes-container">
+        <BodyContainer_noBackground className="tvmaze-episodes-container">
         {/*<div className="tvmaze-episodes-container">*/}
             <h2 className="section-title">Episodes by Season</h2>
             <Tabs className="standard-tabs">
@@ -55,7 +56,8 @@ const TvMazeEpisodes = ({ showId }) => {
                 </TabList>
                 {seasons.map((season) => (
                     <TabPanel key={season.id}>
-                        <div className="base-max-width box-background border flex-wrap tvmaze-season-intro">
+                        <BodyContainer className="flex-wrap tvmaze-season-intro">
+                        {/*<div className="base-max-width box-background border flex-wrap tvmaze-season-intro">*/}
                             <div className="season-header">
                                 {season.image ? (
                                     <img
@@ -68,7 +70,7 @@ const TvMazeEpisodes = ({ showId }) => {
                                     <p>No image available</p>
                                 )}
                             </div>
-                            <div className="season-details-extra">
+                            <BorderBox className="standard-margin season-details-extra">
                                 <p><strong>Season {season.number}</strong></p>
                                 <p><strong>Premiere Date:</strong> {season.premiereDate || 'Unknown'}</p>
                                 <p><strong>End Date:</strong> {season.endDate || 'Unknown'}</p>
@@ -78,8 +80,8 @@ const TvMazeEpisodes = ({ showId }) => {
                                         View Season on TVMaze
                                     </a>
                                 </p>
-                            </div>
-                        </div>
+                            </BorderBox>
+                        </BodyContainer>
                         <table className="episodes-table">
                             <thead>
                                 <tr>
@@ -113,7 +115,7 @@ const TvMazeEpisodes = ({ showId }) => {
                     </TabPanel>
                 ))}
             </Tabs>
-        </div>
+        </BodyContainer_noBackground>
     );
 };
 

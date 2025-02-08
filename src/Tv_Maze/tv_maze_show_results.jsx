@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { DividerLine, IntroSection } from '../SharedComponents.jsx';
+import { BodyContainer, DividerLine, IntroSection, BorderBox } from '../SharedComponents.jsx';
 import 'react-tabs/style/react-tabs.css'; // Default styling for react-tabs
 import TvMazeCast from './tv_maze_cast.jsx';
 import TvMazeEpisodes from './tv_maze_episodes.jsx';
@@ -47,7 +47,7 @@ const TvMazeShowResults = () => {
             </IntroSection>
             <DividerLine />
             <h1 className="section-title">{ showDetails.name }</h1>
-            <div className="base-max-width box-background border flex-wrap tvmaze-results">
+            <BodyContainer className="flex-wrap tvmaze-results">
                     <div className="flex-column main-info">
                         { showDetails.image && showDetails.image.original && (
                             <img
@@ -57,7 +57,7 @@ const TvMazeShowResults = () => {
                             />
                         )}
                     </div>
-                    <div className="box-style show-details">
+                    <BorderBox className="standard-padding-margin show-details">
                         <p><strong>Language:</strong> { showDetails.language || 'N/A' }</p>
                         <p><strong>Type:</strong> { showDetails.type || 'N/A' }</p>
                         <p><strong>Genres:</strong> { showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A' }</p>
@@ -70,12 +70,12 @@ const TvMazeShowResults = () => {
                                 More details at: <a href={ showDetails.url } target="_blank" rel="noopener noreferrer">Tvmaze.com</a>
                             </p>
                         )}
-                    </div>
+                    </BorderBox>
                     <div className="show-summary">
                         <h2>Summary</h2>
                         <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
                     </div>
-            </div>
+            </BodyContainer>
             <button className="center-div center-margin button" type="submit">
                 <Link 
                     to="/tv_maze" 
