@@ -5,8 +5,12 @@
   --margin10: 10px;
   --margin20: 20px;
   --colortest: pink;
+  --bordercolortest: pink;
   --color: #e0e0e0;
+  --bordercolor: #ccc;
   --background-image: linear-gradient(var(--color), #ffffff); /* Light gradient for the background */
+  --border: 2px solid var(--bordercolor); /* Light gray border */
+  /*border: 2px solid #ccc; /* Light gray border */
 }
 
 body, #root {
@@ -44,6 +48,13 @@ body, #root {
   padding: 10px;
 }
 
+.box-style {
+  border: var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
 .flex-column {
   display: flex; /* Optional: if using flex for layout */
   flex-direction: column; /* Stack children vertically */
@@ -51,7 +62,8 @@ body, #root {
 
 .border {
   box-sizing: border-box; /* Include padding and borders in element's total width/height */
-  border: 2px solid #ccc; /* Add a border matching the theme */
+  /*border: 2px solid #ccc; /* Add a border matching the theme */
+  border: var(--border);
 }
 
 .flex-wrap {
@@ -95,13 +107,6 @@ body, #root {
   color: white;
   background-color: #282c34;
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
-}
-
-.box-style {
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px;
 }
 
 .button {
