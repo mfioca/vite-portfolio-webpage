@@ -96,7 +96,7 @@ const TvMaze = () => {
                             { results.length > 0 ? (
                                 <BodyContainer hasBackground={ true } className="flex-wrap content-box-container">
                                     { results.map((item) => (
-                                        <div key={ item.id } className="result-box">
+                                        <BorderBox key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>
                                             { item.image ? (
                                                 <img src={ item.image } alt={ item.name } style={{ width: '100%', borderRadius: '5px' }} />
@@ -104,7 +104,7 @@ const TvMaze = () => {
                                                 <p>No Image Available</p>
                                             )}
                                             <Link to={ item.link }>View Details</Link>
-                                        </div>
+                                        </BorderBox>
                                     ))}
                                 </BodyContainer>
                             ) : (
@@ -136,7 +136,7 @@ const TvMaze = () => {
                             { results.length > 0 ? (
                                 <BodyContainer hasBackground={ true } className="flex-wrap content-box-container">
                                     { results.map((item) => (
-                                        <div key={ item.id } className="result-box">
+                                        <BorderBox key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>
                                             { item.image ? (
                                                 <img src={ item.image } alt={ item.name } />
@@ -144,7 +144,7 @@ const TvMaze = () => {
                                                 <p>No Image Available</p>
                                             )}
                                             <Link to={ item.link }>View Details</Link>
-                                        </div>
+                                        </BorderBox>
                                     ))}
                                 </BodyContainer>
                             ) : (
@@ -163,42 +163,3 @@ const TvMaze = () => {
 export default TvMaze;
 
 
-/*  show search
-
-                                <div className="box-background border flex-wrap base-max-width tvmaze-search-results">
-                                    { results.map((item) => (
-                                        <div key={ item.id } className="result-box">
-                                            <h3>{ item.name }</h3>
-                                            { item.image ? (
-                                                <img src={ item.image } alt={ item.name } style={{ width: '100%', borderRadius: '5px' }} />
-                                            ) : (
-                                                <p>No Image Available</p>
-                                            )}
-                                            <Link to={item.link}>View Details</Link>
-                                        </div>
-                                    ))}
-                                </div>
-                                */
-
-/* person search
-
-{ results.length > 0 ? (
-                                <div className="box-background border flex-wrap tvmaze-search-results">
-                                    { results.map((item) => (
-                                        <div key={ item.id } className="result-box">
-                                            <h3>{ item.name }</h3>
-                                            { item.image ? (
-                                                <img src={ item.image } alt={ item.name } style={{ width: '100%', borderRadius: '5px' }} />
-                                            ) : (
-                                                <p>No Image Available</p>
-                                            )}
-                                            <Link to={ item.link }>View Details</Link>
-                                        </div>
-                                    ))}
-                                </div>
-                            ) : (
-                                <div className="tvmaze-search-placeholder">
-                                    <p>No results found. Try entering a search.</p>
-                                </div>
-                            )}
-*/

@@ -48,7 +48,7 @@ const TvMazeShowResults = () => {
             <DividerLine />
             <h1 className="section-title">{ showDetails.name }</h1>
             <BodyContainer hasBackground={ true } className="flex-wrap tvmaze-results">
-                    <div className="flex-column main-info">
+                    <div className="main-info">
                         { showDetails.image && showDetails.image.original && (
                             <img
                                 src={ showDetails.image.original }

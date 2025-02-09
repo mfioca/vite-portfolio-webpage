@@ -18,8 +18,10 @@ export const DividerLine = ({ width = '80%' }) => {
     return <hr className="divider-line" style={{ width }} />;
 };
 
+/***********************************************************************************/
+/*                              TvMaze Pagge                                       */
+/***********************************************************************************/
 
-/* Suggestion from Tank (chatgpt) */
 export const BodyContainer = ({ children, className = '', hasBackground = true }) => {
     const backgroundClass = hasBackground ? 'box-background-standard' : 'box-Nobackground-standard';
     return (
@@ -29,24 +31,6 @@ export const BodyContainer = ({ children, className = '', hasBackground = true }
     );
 };
 
-/*
-export const BodyContainer = ({ children, className = '' }) => {
-    return (
-        <div className={`box-background-standard border base-max-width standard-padding-margin-center ${ className }` }>
-            { children }
-        </div>
-    );
-};
-
-export const BodyContainer_noBackground = ({ children, className = '' }) => {
-    return (
-        <div className={`box-Nobackground-standard border base-max-width standard-padding-margin-center ${ className }` }>
-            { children }
-        </div>
-    );
-};
-*/
-
 export const BorderBox = ({ children, className = '' }) => {
     return (
         <div className={`box-style-standard standard-padding ${ className }` }>
@@ -54,16 +38,6 @@ export const BorderBox = ({ children, className = '' }) => {
         </div>
     );
 };
-
-
-/*
-<BodyContainer className="custom-class" hasBackground={false}>
-    <p>No background here!</p>
-</BodyContainer>
-*/
-
-
-
 
 /***********************************************************************************/
 /*           Elements to help with CSS on smaller screens                          */
