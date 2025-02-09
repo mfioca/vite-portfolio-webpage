@@ -187,8 +187,9 @@
 /***********************************************************************************/
 
 .tvmaze-episodes-container {
-    font-family: 'Courier New', sans-serif;
-    color: #333;
+    margin: 0 auto;
+    /*font-family: 'Courier New', sans-serif;*/
+    /*color: #333;*/
     background-color: #fff;
 }
   
