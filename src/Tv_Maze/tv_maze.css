@@ -139,7 +139,7 @@
 .cast-container {
     /*font-family: 'Courier New', sans-serif; /* Consistent font */
     /*color: #333; /* Text color */
-    margin: 0px;
+    margin: 0px auto;
     gap: 20px; /* Space between the result items */
     justify-content: center; /* Center the items */
 }
