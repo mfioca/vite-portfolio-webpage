@@ -19,7 +19,17 @@ export const DividerLine = ({ width = '80%' }) => {
 };
 
 
+/* Suggestion from Tank (chatgpt) */
+export const BodyContainer = ({ children, className = '', hasBackground = true }) => {
+    const backgroundClass = hasBackground ? 'box-background-standard' : 'box-Nobackground-standard';
+    return (
+        <div className={`${backgroundClass} border base-max-width standard-padding-margin-center ${className}`}>
+            {children}
+        </div>
+    );
+};
 
+/*
 export const BodyContainer = ({ children, className = '' }) => {
     return (
         <div className={`box-background-standard border base-max-width standard-padding-margin-center ${ className }` }>
@@ -35,7 +45,7 @@ export const BodyContainer_noBackground = ({ children, className = '' }) => {
         </div>
     );
 };
-
+*/
 
 export const BorderBox = ({ children, className = '' }) => {
     return (
@@ -46,16 +56,7 @@ export const BorderBox = ({ children, className = '' }) => {
 };
 
 
-/* Suggestion from Tank (chatgpt)
-export const BodyContainer = ({ children, className = '', hasBackground = true }) => {
-    const backgroundClass = hasBackground ? 'box-background-standard' : 'box-Nobackground-standard';
-    return (
-        <div className={`${backgroundClass} border base-max-width standard-padding-margin-center ${className}`}>
-            {children}
-        </div>
-    );
-};
-
+/*
 <BodyContainer className="custom-class" hasBackground={false}>
     <p>No background here!</p>
 </BodyContainer>

@@ -27,7 +27,7 @@ const TvMazeShowResults = () => {
     }, [id]);
 
     if (error) {
-        return <p style={{ color: 'red' }}>{ error }</p>;
+        return <p style={ { color: 'red' } }>{ error }</p>;
     }
 
     if (!showDetails) {
@@ -47,7 +47,7 @@ const TvMazeShowResults = () => {
             </IntroSection>
             <DividerLine />
             <h1 className="section-title">{ showDetails.name }</h1>
-            <BodyContainer className="flex-wrap tvmaze-results">
+            <BodyContainer hasBackground={ true } className="flex-wrap tvmaze-results">
                     <div className="flex-column main-info">
                         { showDetails.image && showDetails.image.original && (
                             <img
@@ -57,11 +57,11 @@ const TvMazeShowResults = () => {
                             />
                         )}
                     </div>
-                    <BorderBox className="standard-padding-margin show-details">
+                    <BorderBox className="standard-margin extra-details">
                         <p><strong>Language:</strong> { showDetails.language || 'N/A' }</p>
                         <p><strong>Type:</strong> { showDetails.type || 'N/A' }</p>
                         <p><strong>Genres:</strong> { showDetails.genres.length > 0 ? showDetails.genres.join(', ') : 'N/A' }</p>
-                        <p><strong>Country:</strong> {showDetails.network?.country?.name || showDetails.webChannel?.country?.name || 'N/A'}</p>
+                        <p><strong>Country:</strong> { showDetails.network?.country?.name || showDetails.webChannel?.country?.name || 'N/A' }</p>
                         <p><strong>Network:</strong> { showDetails.network ? `${ showDetails.network.name } (${ showDetails.network.country.code })` : 'N/A' }</p>
                         <p><strong>Premiered:</strong> { showDetails.premiered || 'N/A' }</p>
                         <p><strong>Ended:</strong> { showDetails.ended || 'N/A' }</p>
@@ -73,7 +73,7 @@ const TvMazeShowResults = () => {
                     </BorderBox>
                     <div className="show-summary">
                         <h2>Summary</h2>
-                        <p dangerouslySetInnerHTML={{ __html: showDetails.summary || 'No summary available.' }} />
+                        <p dangerouslySetInnerHTML={ { __html: showDetails.summary || 'No summary available.' } } />
                     </div>
             </BodyContainer>
             <button className="center-div center-margin button" type="submit">
@@ -87,7 +87,7 @@ const TvMazeShowResults = () => {
                  ⬅ Back to TV Maze Search
                 </Link>
             </button>
-            <div>
+            <div className="results-tabs-container">
                 <Tabs className="standard-tabs"
                     forceRenderTabPanel
                     onSelect={(index) => {

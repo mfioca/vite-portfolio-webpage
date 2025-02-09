@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BodyContainer, BorderBox } from '../SharedComponents.jsx';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -31,19 +32,18 @@ const TvMazeCast = ({ id }) => {
     }
 
     return (
-        <div className="box-background border cast-container ">
-        {/*<div className="box-background border cast-container">*/}
+        <BodyContainer hasBackground={ true } className="cast-container">
+        {/*<div className="box-background border cast-container">  className="cast-container" */}
             <h2 className="section-title">Cast</h2>
             {/*<h2 className="section-title">Cast</h2>*/}
-            <div className="flex-wrap cast-grid">
+            <div className="flex-wrap content-box-container">
                 {cast.map((person, index) => (
-                    <div key={ index } className="box-style cast-member">
+                    <BorderBox key={ index } className="cast-member">
                         <h3>{ person.person.name }</h3>
                         { person.person.image ? (
                             <img
                                 src={person.person.image.medium}
                                 alt={person.person.name}
-                                style={{ width: '100%', borderRadius: '5px' }}
                                 loading="lazy"
                             />
                         ) : (
@@ -64,10 +64,10 @@ const TvMazeCast = ({ id }) => {
                                 View More Details
                             </Link>
                         )}
-                    </div>
+                    </BorderBox>
                 ))}
             </div>
-        </div>
+        </BodyContainer>
     );
 };
 

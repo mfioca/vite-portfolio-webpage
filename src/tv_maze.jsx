@@ -33,8 +33,8 @@ const fetchTvMazeData = async ( searchTerm, searchType, setResults, setError ) =
                     ? item.person.image.medium || item.person.image.original
                     : null,
             link: searchType === "shows"
-                ? `/show/${item.show.id}`
-                : `/person/${item.person.id}`,
+                ? `/show/${ item.show.id }`
+                : `/person/${ item.person.id }`,
         }));
 
         setResults(results);
@@ -67,7 +67,7 @@ const TvMaze = () => {
             {/* Tabs Section for Show and Person Search */}
             <div className="tabs-container">
                 <Tabs className="standard-tabs"
-                    onSelect={() => setSearchTerm('')} // Clear searchTerm on tab change
+                    onSelect={ () => setSearchTerm('') } // Clear searchTerm on tab change
                 >
                     <TabList>
                         <Tab>TV Show Search</Tab>
@@ -85,7 +85,7 @@ const TvMaze = () => {
                                     type="text"
                                     placeholder="Search for a TV show..."
                                     value={ searchTerm }
-                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    onChange={ (e) => setSearchTerm(e.target.value) }
                                     aria-label="Search for a TV show"
                                 />
                                 <button className="button" type="submit">Search</button>
@@ -94,7 +94,7 @@ const TvMaze = () => {
                         </BorderBox>
                         <div>
                             { results.length > 0 ? (
-                                <BodyContainer className="flex-wrap tvmaze-search-results">
+                                <BodyContainer hasBackground={ true } className="flex-wrap content-box-container">
                                     { results.map((item) => (
                                         <div key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>
@@ -103,12 +103,12 @@ const TvMaze = () => {
                                             ) : (
                                                 <p>No Image Available</p>
                                             )}
-                                            <Link to={item.link}>View Details</Link>
+                                            <Link to={ item.link }>View Details</Link>
                                         </div>
                                     ))}
                                 </BodyContainer>
                             ) : (
-                                <BodyContainer className="tvmaze-search-placeholder">
+                                <BodyContainer hasBackground={ true } className="tvmaze-search-placeholder">
                                     <p>No results found. Try entering a search.</p>
                                 </BodyContainer>
                             )}
@@ -134,12 +134,12 @@ const TvMaze = () => {
                         </BorderBox>
                         <div>
                             { results.length > 0 ? (
-                                <BodyContainer className="tvmaze-search-results">
+                                <BodyContainer hasBackground={ true } className="flex-wrap content-box-container">
                                     { results.map((item) => (
                                         <div key={ item.id } className="result-box">
                                             <h3>{ item.name }</h3>
                                             { item.image ? (
-                                                <img src={ item.image } alt={ item.name } style={{ width: '100%', borderRadius: '5px' }} />
+                                                <img src={ item.image } alt={ item.name } />
                                             ) : (
                                                 <p>No Image Available</p>
                                             )}
@@ -148,7 +148,7 @@ const TvMaze = () => {
                                     ))}
                                 </BodyContainer>
                             ) : (
-                                <BodyContainer className="tvmaze-search-placeholder">
+                                <BodyContainer hasBackground={ true } className="tvmaze-search-placeholder">
                                     <p>No results found. Try entering a search.</p>
                                 </BodyContainer>
                             )}

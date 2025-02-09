@@ -108,6 +108,7 @@ body, #root {
 .standard-padding {
   padding: var(--padding);
 }
+
 .standard-margin {
   margin: var(--margin);
 }

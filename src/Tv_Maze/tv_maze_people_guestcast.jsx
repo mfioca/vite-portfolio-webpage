@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BodyContainer, BorderBox } from '../SharedComponents.jsx';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -98,17 +99,16 @@ const TvMazePeopleGuestCast = ({ id }) => {
     }
 
     return (
-        <div className="box-background  border cast-container">
+        <BodyContainer hasBackground={ true } className="cast-container">
             <h2 className="section-title">Guest Appearances</h2>
-            <div className="flex-wrap cast-grid">
+            <div className="flex-wrap content-box-container">
                 { guestCredits.map((credit, index) => (
-                    <div key={ index } className="box-style cast-member">
+                    <BorderBox key={ index } className="cast-member">
                         <h3>{ credit.name }</h3>
                         { credit.image ? (
                             <img
                                 src={ credit.image }
                                 alt={ credit.name }
-                                style={{ width: '100%', borderRadius: '5px' }}
                                 loading="lazy"
                             />
                         ) : (
@@ -147,10 +147,10 @@ const TvMazePeopleGuestCast = ({ id }) => {
                         >
                             View on TVMaze
                         </a>
-                    </div>
+                    </BorderBox>
                 ))}
             </div>
-        </div>
+        </BodyContainer>
     );
 };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import { IntroSection, DividerLine } from '../SharedComponents.jsx';
+import { BodyContainer, DividerLine, IntroSection, BorderBox } from '../SharedComponents.jsx';
 import TvMazePeopleCast from './tv_maze_people_cast.jsx'
 import TvMazePeopleGuestCast from './tv_maze_people_guestcast.jsx'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -29,7 +29,7 @@ const TvMazePeopleResults = () => {
     if (error && error.trim() !== '') {
         return (
             <div>
-                <p style={{ color: 'red' }}>{ error }</p>
+                <p style={ { color: 'red' } }>{ error }</p>
             </div>
         );
     }
@@ -65,7 +65,7 @@ const TvMazePeopleResults = () => {
             </IntroSection>
             <DividerLine />
             <h1 className="section-title">{ personDetails.name }</h1>
-            <div className="base-max-width box-background border flex-wrap tvmaze-results">
+            <BodyContainer hasBackground={ true } className="flex-wrap tvmaze-results">
                 <div className="flex-column main-info">
                     { personDetails.image && personDetails.image.original && (
                         <img
@@ -75,7 +75,7 @@ const TvMazePeopleResults = () => {
                         />
                     )}
                 </div>
-                <div className="box-style show-details">
+                <BorderBox className="standard-margin extra-details">
                     <p><strong>Born in:</strong> { personDetails.country ? personDetails.country.name : 'Unknown' }</p>
                     <p><strong>Birthday:</strong> { personDetails.birthday || 'Unknown' }</p>
                     <p><strong>Age:</strong> { calculateAge(personDetails.birthday) }</p>
@@ -86,8 +86,8 @@ const TvMazePeopleResults = () => {
                             TVMaze Profile
                         </a>
                     </p>
-                </div>
-            </div>
+                </BorderBox>
+            </BodyContainer>
             <button className="center-div center-margin button" type="submit">
                 <Link 
                     to="/tv_maze" 
