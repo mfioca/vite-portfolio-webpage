@@ -1,7 +1,9 @@
 .tvmaze-body  {
     font-family: 'Courier New'; /* A clean sans-serif font */
-    margin: 10px;
-    padding: 5px;
+    /*margin: 10px;*/
+    margin: var(--margin);
+    /*padding: 5px;*/
+    padding: var(--padding);
     min-height: 100vh;
     justify-content: center;
 }
@@ -10,15 +12,16 @@
     text-align: center;
     font-size: 2.5rem; /* Emphasized font size */
     color: #0078d4; /* Theme color */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    margin: auto; /* Add spacing above and below */
+    /*text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-shadow: var(--textshadow);
+    margin: 10px auto; /* Add spacing above and below */
     font-family: 'Courier New', monospace; /* Consistent font family */
-    margin: 10px;
 }
 
 .extra-details {
     flex: 1; /* Let this column take up one part of the available space */
-    background-color: #f9f9f9; /* Light background color */
+    /*background-color: #f9f9f9; */
+    background-color: var(--lightbackgroundcolor); /* Light background color */
     padding: 15px; /* Add padding for spacing */
     max-width: 500px;
 }
@@ -31,15 +34,15 @@
     max-width: 800px;
     text-align: center;
     font-family: 'Courier New', sans-serif; /* Match the font style in index.css */
-    color: #333;
-    background-color: #ffffff; /* White background for contrast */
+    color: var(--fontcolor);
+    background-color: var(--lightbackgroundcolor); /* White background for contrast */
 }
 
 .tvmaze-search h1 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #0078d4; /* Theme color for the title */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: var(--fontblue);
+    text-shadow: var(--textshadow);
 }
 
 .tvmaze-search input[type="text"] {
@@ -47,19 +50,19 @@
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: var(--borderradius);
     margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--boxshadow);
     transition: border-color 0.3s ease;
 }
 
 .tvmaze-search input[type="text"]:focus {
-    border-color: #0078d4; /* Highlighted border on focus */
+    color: var(--fontblue);
     outline: none; /* Remove default outline */
 }
 
 .content-box-container {
-    gap: 20px; /* Space between the result items */
+    gap: var(--gap20);
     justify-content: center; /* Center the items */
 }
 
@@ -75,12 +78,12 @@
     padding: 15px;
     width: 250px; /* Set a fixed width for each box */
     text-align: center; /* Center-align the content */
-    background-color: #ffffff; /* White background color */
+    background-color: var(--lightbackgroundcolor);
 }
 
 .result-box:hover {
     transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    box-shadow: var(--boxshadow);
 }
 
 .result-box img {
@@ -95,22 +98,21 @@
 
 .tvmaze-results {
     flex-direction: row; /* Arrange children in a row */
-    gap: 10px; /* Add space between the columns */
+    gap: var(--gap20);
     font-family: 'Courier New', sans-serif; /* Consistent font */
     align-items: flex-start; /* Align items to the top of the row */
 }
 
 .main-info {
     flex: 1; /* Let this column take up one part of the available space */
-    gap: 15px; /* Add spacing between elements in this column */
+    gap: var(--gap20);
 }
   
 .main-info img {
     display: block;
-    /*width: 100%; /* Ensure the image scales to fit the column */
     max-width: 800px; /* Limit the maximum width of the image */
     border-radius: 10px; /* Add rounded corners to the image */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--boxshadow);
 }
   
 .show-summary {
@@ -125,14 +127,14 @@
   
 .cast-container {
     margin: 0px auto;
-    gap: 20px; /* Space between the result items */
+    gap: var(--gap20);
     justify-content: center; /* Center the items */
 }
   
 .cast-container h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #0078d4;
+    color: var(--fontblue);
     text-align: center;
   }
   
@@ -140,13 +142,15 @@
     padding: 15px;
     width: 250px; /* Fixed width for uniformity */
     text-align: center; /* Center-align the content */
-    background-color: white; /* Light background color */
+    /*background-color: white; /* Light background color */
+    background-color: var(--lightbackgroundcolor); /* White background for contrast */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
 }
   
 .cast-member:hover {
     transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    box-shadow: var(--boxshadow);
 }
   
 .cast-member img {
@@ -158,7 +162,7 @@
 .cast-member h3 {
     font-size: 1.2rem;
     margin: 10px 0; /* Add spacing around the name */
-    color: #0078d4; /* Theme color */
+    color: var(--fontblue);
 }
   
 .cast-member p {
@@ -172,19 +176,20 @@
 
 .tvmaze-episodes-container {
     margin: 0 auto;
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: var(--lightbackgroundcolor); /* White background for contrast */
 }
   
 .tvmaze-episodes-container h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #0078d4;
+    color: var(--fontblue);
     text-align: center;
 }
 
 .season-header {
     flex: 1; /* Let this column take up one part of the available space */
-    gap: 15px; /* Add spacing between elements in this column */
+    gap: var(--gap20);
 }
 
 .season-image {
@@ -193,14 +198,15 @@
     /*height: auto; /* Maintain aspect ratio */
     /*margin: 5px auto; /* Center the image */
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--boxshadow);
 }
 
 .main-info-CHECK img {
     /*width: 100%; /* Ensure the image scales to fit the column */
     max-width: 800px; /* Limit the maximum width of the image */
     border-radius: 10px; /* Add rounded corners to the image */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+    box-shadow: var(--boxshadow);
 }
 
 @media (max-width: 1000px) {
@@ -223,12 +229,14 @@
     border-collapse: collapse;
     margin-top: 20px;
     table-layout: fixed; /* Prevents table from expanding beyond the container */
+    background-color: white;
 }
 
 .episodes-table th {
-    background-color: #e0e0e0; /* Light theme color */
-    color: #333; /* Darker text for contrast */
-    padding: 10px;
+    /*background-color: #e0e0e0; /* Light theme color */
+    background-color: var( --tableTHbackgroundcolor);
+    color: var(--fontcolor);
+    padding: var(--padding);
     text-align: left;
     font-weight: bold;
 }
@@ -236,7 +244,7 @@
 .episodes-table th,
 .episodes-table td {
     border: 1px solid #000000;
-    padding: 10px;
+    padding: var(--padding);
     width: 40px;
     text-align: left;
     word-wrap: break-word; /* Ensures content wraps within the column */
