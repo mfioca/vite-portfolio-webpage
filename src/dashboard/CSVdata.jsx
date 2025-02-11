@@ -5,6 +5,7 @@ import { Doughnut } from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2'; // Import the Bar component for the bar chart
 import { Chart, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { BodyContainer, BorderBox } from '../SharedComponents.jsx';
 
  
 Chart.register( ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, ChartDataLabels );
@@ -161,8 +162,8 @@ const CSVdata = () => {
     const currentData = filteredData.slice(startIndex, endIndex);
  
     return (
-        <div className="box-background border base-max-width flex-column-center">
-            <div className="box-style dashboard-hub">        
+        <BodyContainer hasBackground = { true } className="flex-column-center">
+            <BorderBox className="dashboard-hub">        
                 <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>
                 <p><strong>How to Use:</strong></p>
@@ -287,7 +288,7 @@ const CSVdata = () => {
                         </div>
                     )}
                 </div>
-            </div>
+            </BorderBox>
             <div className="filtered-data">
                 { currentData.length > 0 ? (
                     <table className="csv-data">
@@ -335,7 +336,7 @@ const CSVdata = () => {
                     Next
                 </button>
             </div>
-        </div>
+        </BodyContainer>
     );
 };
 

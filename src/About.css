@@ -7,6 +7,7 @@
     flex-direction: column; /* Stack children vertically */
     align-items: center;
     letter-spacing: 0.5px; /* Adds slight spacing between letters for clarity */
+    max-width: 95%;
 }
 
 .scrolling-quotes .quote-text {
@@ -19,7 +20,7 @@
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: #007bff; /* Lighter color for the source */
+    color: var(--fontblue); /* Lighter color for the source */
 }
 
 @media (min-width: 1000px) {
@@ -39,11 +40,19 @@
 /***********************************************************************************/
 
 .about-swiper {
+    display: flex; /* Optional: if using flex for layout */
+    flex-direction: column; /* Stack children vertically */
     justify-content: flex-start; /* Content starts at the top */
-    font-family: 'Courier New'; /* A clean sans-serif font */
+    max-width: 1600px;
+    padding: var(--padding);
+    margin: var(--margin);
     box-sizing: border-box; /* Include padding in size calculations */
-    line-height: 3; /* Adjust line height for better spacing */
-    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    box-shadow: var(--boxshadow);
+    background-image: var(--background-image);
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+    border-radius: var(--borderradius);
+    border: var(--border);
+    line-height: 2; /* Adjust line height for better spacing */
 }
 
 .about-swiper p,
@@ -59,7 +68,7 @@
 .about-swiper h2 {
     line-height: 1; /* Adjust line height for better spacing */
     text-align: center; /* Center the title */
-    color: #007bff; /* Primary color for section headings */
+    color: var(--fontblue); /* Primary color for section headings */
     font-size: 32px; /* Section heading font size */
 }
 
@@ -87,24 +96,16 @@
     margin-bottom: 10px;
 }
 
-.swiper-slide img {
-    display: block;
-    max-width: 100%; /* Make the image responsive to its container */
-    max-height: 700px; /* Prevent the image from growing too tall */
-    object-fit: contain; /* Scale the image to fit without cropping */
-    border-radius: 8px; /* Match card styling if needed */
-}
-
 .card-image {
+    display: block;
     flex-shrink: 1; /* Allow the image to shrink if necessary */
-    margin: auto; /* Center the image horizontally */
-    max-width: 100%; /* Ensure the image stays within its container */
-    height: auto; /* Maintain the aspect ratio */
-    width: auto; /* Maintain the aspect ratio */
-    margin-bottom: 20px; /* Add space below the image */
-    padding: 20px;
     object-fit: contain; /* Prevent cropping while fitting the container */
     box-sizing: border-box; /* Include padding/borders in size calculations */
+    margin: auto; /* Center the image horizontally */
+    max-width: 100%; /* Ensure the image stays within its container */
+    max-height: 700px;
+    margin-bottom: 20px; /* Add space below the image */
+    padding: 20px;
 }
 
 .about-swiper .swiper-button-next,

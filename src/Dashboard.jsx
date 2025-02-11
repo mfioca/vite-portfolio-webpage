@@ -5,7 +5,7 @@ import Graph from './dashboard/Graph.jsx';
 import SecondGraph from './dashboard/Graph2.jsx'; // Import your new graph component
 import ThirdGraph from './dashboard/Graph3.jsx'; // Import your new graph component
 import CSVdata from './dashboard/CSVdata.jsx'; // Import your new graph component
-import { DividerLine, IntroSection } from './SharedComponents.jsx';
+import { DividerLine, IntroSection, BodyContainer, BorderBox } from './SharedComponents.jsx';
 
 
 const TextSection = ({ children }) => {
@@ -50,8 +50,8 @@ function Dashboard() {
                     </p>
                 </IntroSection>
                 <DividerLine />
-                <div className="box-background border base-max-width flex-wrap-center">
-                    <div className="flex-wrap box-style standard-padding-margin graph-container">
+                <BodyContainer hasBackground = { true } className="flex-wrap-center graph-flexbox">
+                    <BorderBox className="flex-wrap standard-margin graph-container">
                         <Graph />
                         <TextSection>
                             <p>
@@ -72,8 +72,8 @@ function Dashboard() {
                                 specific applications that reflect the evolving focus of the work.
                             </p>
                         </TextSection>
-                    </div>
-                    <div className="flex-wrap box-style standard-padding-margin graph-container">
+                    </BorderBox>
+                    <BorderBox className="flex-wrap standard-margin graph-container">
                         <SecondGraph />
                         <TextSection>
                             <p>
@@ -89,8 +89,8 @@ function Dashboard() {
                                 Key insights to look for in the graph include a very distinct shift in activities due to the job title change.
                             </p>
                         </TextSection>
-                    </div>
-                    <div className="flex-wrap box-style standard-padding-margin graph-container">
+                    </BorderBox>
+                    <BorderBox className="flex-wrap standard-margin graph-container">
                         <ThirdGraph />
                         <TextSection>
                             <p>
@@ -109,8 +109,8 @@ function Dashboard() {
                                 making it easier to identify shifts in focus and the growing importance of data-driven decision-making over time.
                             </p>
                         </TextSection>
-                    </div>
-                </div>
+                    </BorderBox>
+                </BodyContainer>
                 <CSVdata />
             </div>
         </Provider>

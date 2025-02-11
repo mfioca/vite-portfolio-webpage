@@ -61,10 +61,10 @@ const ScrollingQuotes = () => {
     }, []);
 
     return (
-        <div className="box-background border center-div scrolling-quotes">
+        <BodyContainer hasBackground={ true } className="center-div scrolling-quotes">
             <p className="quote-text">{ quotes[currentQuoteIndex].text }</p>
             <p className="quote-source">{ quotes[currentQuoteIndex].source }</p>
-        </div>
+        </BodyContainer>
     );
 };
 
@@ -118,7 +118,7 @@ const About = () => {
                 }}
                 navigation={ true }
                 modules={ [Pagination, Navigation] }
-                className="box-background flex-column border base-max-width standard-padding-margin about-swiper"
+                className="about-swiper"
             >
                 <SwiperSlide>
                     <Card 

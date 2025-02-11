@@ -1,6 +1,5 @@
 .Dashboard {
   text-align: center;
-  font-family: 'Roboto', sans-serif; /* A clean, modern font */
 }
 
 /*rescuetime link */
@@ -16,15 +15,22 @@
 /*                   main dashboard page - 3 charts                                */
 /***********************************************************************************/
 
+
+.graph-flexbox {
+  font-family: 'Roboto', sans-serif; /* A clean, modern font */
+
+}
 .graph-container {
   justify-content: space-between; /* Distribute items evenly */
-  gap: 10px; /* Add space between items */
-  background-color: #ffffff;
+  gap: var(--gap10); /* Add space between items */
+  /*background-color: #ffffff;*/
+  background-color: var(--lightbackgroundcolor);
 }
 
 .text-section {
   max-width: 250px;
-  background-color: #f8f9fa; /* Light beige or cream */
+  background-color: #f8f9fa; 
+  font-size: 14px;
 }
 
 .chart-container {
@@ -40,7 +46,7 @@
   padding: 5px; /* Adjust padding */
   margin-bottom: 5px; 
   border-radius: 2px; /* Rounded corners */
-  background-color: #f9f9f9; /* Background color */
+  background-color: var(--lightbackgroundcolor); /* Background color */
   font-size: 14px; /* Font size */
 }
 
@@ -74,6 +80,7 @@
 
 .dashboard-hub {
   background-color: #e0e0e0;
+  font-family: 'Roboto', sans-serif; /* A clean, modern font */
 }
 
 .dashboard-hub ul {
