@@ -20,8 +20,19 @@
   --gap20: 20px;
   --boxshadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
   --textshadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  --fontfamily: 'Courier New';
+  --fontfamilyH: 'Courier New', monospace;;
   /*border: 2px solid #ccc; /* Light gray border */
 }
+
+
+/*
+font-family: 'Arial', sans-serif; 
+font-family: 'Courier New', monospace; 
+font-family: 'Courier New';
+font-family: 'Roboto', sans-serif; 
+*/
+
 
 body, #root {
   display: flex;
@@ -34,9 +45,11 @@ body, #root {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   justify-content: center;
+  font-family: var(--fontfamily);
 }
 
  h2 {
+  font-family: var(--fontfamilyH);
   font-weight: 600; /* Semi-bold */
   letter-spacing: 0.5px; /* Adjust as needed */
   text-align: center;
@@ -342,14 +355,12 @@ button:hover {
   }
 }
 
-
 /***********************************************************************************/
 /*                            Home Page Section                                    */
 /***********************************************************************************/
 
 .home-body  {
   flex-grow: 1;
-  font-family: 'Courier New'; /* A clean sans-serif font */
   margin-bottom: 50px;
   padding: 10px;
   justify-content: center;
@@ -425,24 +436,13 @@ button:hover {
 
 .ai-showcase-container {
   margin: 0 auto; /* Center the container on the page */
-  font-family: 'Arial', sans-serif; /* Clean, readable font */
-}
-
-.ai-showcase-container h1 {
-  font-size: 32px; /* Large, prominent title */
-  font-weight: bold; /* Make the title stand out */
-  margin-bottom: 20px; /* Space below the title */
-  color: #24292f; /* Neutral dark text color */
-  text-align: center; /* Center the title */
+  /*font-family: 'Arial', sans-serif; /* Clean, readable font */
+  font-family: var(--fontfamily);
 }
 
 @media (max-width: 768px) {
   .ai-showcase-container {
       padding: 10px; /* Reduce padding for smaller screens */
-  }
-
-  .ai-showcase-container h1 {
-      font-size: 24px; /* Adjust title size for smaller screens */
   }
 }
 

@@ -11,11 +11,11 @@
 .section-title {
     text-align: center;
     font-size: 2.5rem; /* Emphasized font size */
-    color: #0078d4; /* Theme color */
+    color: var(--fontblue); /* Theme color */
     /*text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     text-shadow: var(--textshadow);
-    margin: 10px auto; /* Add spacing above and below */
-    font-family: 'Courier New', monospace; /* Consistent font family */
+    margin: var(--margin) auto; /* Add spacing above and below */
+    /*font-family: 'Courier New', monospace; /* Consistent font family */
 }
 
 .extra-details {
@@ -57,7 +57,7 @@
 }
 
 .tvmaze-search input[type="text"]:focus {
-    color: var(--fontblue);
+    color: var(--fontcolor);
     outline: none; /* Remove default outline */
 }
 

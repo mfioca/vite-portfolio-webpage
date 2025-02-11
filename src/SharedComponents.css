@@ -5,14 +5,11 @@
 }
 
 .Intro {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    width: 98%;
-    border: 5px;
-    padding: 5px;
     text-align: center;
-    font-family: 'Courier New'; /* A clean sans-serif font */
+    width: 90%;
+    /*border: 5px;*/
+    /*padding: 5px;*/
 }
   
 .Intro p {
@@ -20,17 +17,8 @@
     line-height: 1.5; /* Adjust line spacing for readability */
 }
 
-.Intro-shadow {
-    text-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
-}
-
-
 /***********************************************************************************/
-/*                                  AI Showcase                                    */
-/***********************************************************************************/
-
-/***********************************************************************************/
-/*                            Prompt section                                       */
+/*                          AI Showcase  Prompt section                            */
 /***********************************************************************************/
 
 .markdown-container {
@@ -86,7 +74,7 @@
 
 
 /***********************************************************************************/
-/*                         Chat Simulation Container                               */
+/*                     AI Showcase Chat Simulation Container                       */
 /***********************************************************************************/
 
 .example-container {

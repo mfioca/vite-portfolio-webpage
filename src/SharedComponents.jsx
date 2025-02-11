@@ -7,8 +7,8 @@ import 'react-tabs/style/react-tabs.css';
 
 export const IntroSection = ({ title, children }) => {
     return (
-        <section className="Intro">
-            <h2 className="Intro-shadow">{ title }</h2>
+        <section className="flex-column standard-padding-margin-center Intro">
+            <h2 className="shadow">{ title }</h2>
             { children } 
         </section>
     );
