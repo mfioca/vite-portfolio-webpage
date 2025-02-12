@@ -27,14 +27,15 @@
 
 .text-section {
   max-width: 250px;
-  background-color: #f8f9fa; 
+  /*background-color: #f8f9fa; */
+  background-color: var(--textsectioncolor);
   font-size: 14px;
 }
 
 .chart-container {
   width: 350px;
   height: 375px;
-  background-color: #ffffff; /* White */
+  background-color: var(--colorwhite);
 }
 
 .chart3-data-box {
@@ -141,7 +142,7 @@
   margin: 20px 0; /* Add margin for spacing */
   border: var(--border);
   border-radius: var(--borderradius);
-  background-color: white;
+  background-color: var(--colorwhite);
   overflow-x: auto; /* Enable horizontal scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
@@ -155,7 +156,8 @@
 
 .csv-data th,
 .csv-data td {
-  border: 1px solid #ddd; /* Add cell borders */
+  /*border: 1px solid #ddd; /* Add cell borders */
+  border: var(--tableborder);
   padding: 8px; /* Tighter padding for compactness */
   text-align: left; /* Align text to the left */
   width: 40px; /* Ensure minimum column width */
@@ -169,14 +171,16 @@
   position: sticky; /* Sticky header on scroll */
   top: 0; /* Stick to the top of the container */
   z-index: 10; /* Ensure header stays above other content */
-  background-color: #444444; /* Darker header background color */
-  color: #ffffff; /* White text for contrast */
+  /*background-color: #444444; /* Darker header background color */
+  background-color: var(--tableheaderdarkcolor);
+  color: var(--colorwhite); /* White text for contrast */
   font-weight: bold; /* Bold text for headers */
   text-align: center; /* Center-align header text */
 }
 
 .csv-data tr:hover {
-  background-color: #f5f5f5; /* Highlight row on hover */
+  /*background-color: #f5f5f5; /* Highlight row on hover */
+  background-color: var(--tablemouseovercolor);
 }
 
 @media (max-width: 768px) {

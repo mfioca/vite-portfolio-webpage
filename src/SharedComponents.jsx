@@ -107,9 +107,9 @@ export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, c
                 { titleDescription }
             </IntroSection>
             <DividerLine />
-                <div className="box-style center-margin markdown-container">
+                <BorderBox className="center-margin markdown-container">
                     <ReactMarkdown>{ prompt }</ReactMarkdown>
-                </div>
+                </BorderBox>
             <DividerLine />
             <IntroSection title="Simulated Chat Conversation">
                 { chatDescription }
@@ -136,13 +136,13 @@ export const ShowcaseComponentTabs = ({ title, titleDescription, tabs, chatData,
                 </TabList>
                 { tabs.map((tab, index) => (
                     <TabPanel key={ index }>
-                        <div className="box-style center-margin markdown-container">
+                        <BorderBox className="center-margin markdown-container">
                             { typeof tab.content === 'string' ? (
                                 <ReactMarkdown>{ tab.content }</ReactMarkdown>
                             ) : (
                                 tab.content
                             )}
-                        </div>
+                        </BorderBox>
                     </TabPanel>
                 ))}
             </Tabs>
@@ -242,7 +242,7 @@ export const ChatBubble = ({ data }) => {
         {/* <div className="box-background border flex-column-center example-container"> */}
             <h2>{ title }</h2>
             <div
-                className=" box-style flex-column-center chat-window"
+                className="box-style flex-column-center chat-window"
                 ref={ chatWindowRef }
                 onMouseEnter={ handleMouseEnter }
                 onMouseLeave={ handleMouseLeave }
@@ -264,7 +264,7 @@ export const ChatBubble = ({ data }) => {
             <div className="center-div">
                 { visibleCount < messages.length ? (
                     <button
-                    className=" button next-message-btn"
+                    className="button next-message-btn"
                     onClick={() => {
                         setVisibleCount((prev) => prev + 1); // Increment visible messages
                         setTimeout(() => scrollToBottom(), 0); // Ensure smooth scrolling

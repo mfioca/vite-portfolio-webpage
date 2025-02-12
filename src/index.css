@@ -7,12 +7,20 @@
   --colortest: pink;
   --bordercolortest: pink;
   --defaultColor: #e0e0e0;
+  --colorwhite: #ffffff;
+  --githubblue: #0366d6;
+  --githubdark: #24292f;
+  --textsectioncolor: #f8f9fa;
+  --tablemouseovercolor: #f5f5f5;
   --bordercolor: #ccc;
   --fontcolortest: rgb(242, 128, 147);
   --fontcolor: #333;
   --fontblue: #0078d4;
+  --buttonbluehover: #005a9e;
   --lightbackgroundcolor: #f9f9f9;
   --tableTHbackgroundcolor: #e0e0e0;
+  --tableheaderdarkcolor: #444444;
+  --tableborder: 1px solid #ddd;
   --background-image: linear-gradient(var(--defaultColor), #ffffff); /* Light gradient for the background */
   --border: 2px solid var(--bordercolor); /* Light gray border */
   --borderradius: 8px;
@@ -165,18 +173,19 @@ body, #root {
 .button {
   padding: 10px 20px;
   background-color: var(--fontblue);
-  color: white;
+  color: var(--colorwhite);
   border: none;
   border-radius: var(--borderradius);
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+  /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+  box-shadow: var(--boxshadow);
 }
 
 button:hover {
-  background-color: #005a9e; /* Darker shade on hover */
+  background-color: var(--buttonbluehover); /* Darker shade on hover */
   transform: scale(1.05); /* Slight scale-up effect on hover */
   box-shadow: var(--boxshadow);
 }
