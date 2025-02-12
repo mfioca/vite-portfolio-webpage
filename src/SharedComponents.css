@@ -8,8 +8,6 @@
     justify-content: center;
     text-align: center;
     width: 90%;
-    /*border: 5px;*/
-    /*padding: 5px;*/
 }
   
 .Intro p {
@@ -22,7 +20,7 @@
 /***********************************************************************************/
 
 .markdown-container {
-    background-color: #f9f9f9; /* Light background color */
+    background-color: var(--lightbackgroundcolor); /* Light background color */
     font-family: 'Courier New', monospace; /* Keep the monospaced font */
     color: #24292f; /* GitHub-like dark text color */
     max-width: 1500px; /* Limit width for readability */
@@ -46,13 +44,17 @@
     overflow-x: auto; /* Horizontal scrolling for long code */
 }
 
+/*  do not think this is being used 
+
 .markdown-container code {
-    background-color: #eeeeee; /* Inline code background */
+    /*background-color: #eeeeee; 
+    background-color: pink;
     padding: 2px 4px;
-    border-radius: 3px;
+    border-radius: var(--borderradius);
     font-size: 14px;
-    color: #d73a49; /* Red for inline code */
+    color: #d73a49; Red for inline code 
 }
+*/
 
 .markdown-container ul {
     list-style-type: disc;
@@ -90,6 +92,7 @@
     height: 100%; 
     padding: 10px;
     background-color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow-y: auto; /* Enable vertical scrolling */
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */

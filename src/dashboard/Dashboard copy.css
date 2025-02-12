@@ -15,13 +15,15 @@
 /*                   main dashboard page - 3 charts                                */
 /***********************************************************************************/
 
+
 .graph-flexbox {
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
-}
 
+}
 .graph-container {
   justify-content: space-between; /* Distribute items evenly */
   gap: var(--gap10); /* Add space between items */
+  /*background-color: #ffffff;*/
   background-color: var(--lightbackgroundcolor);
 }
 
@@ -55,21 +57,18 @@
     margin: auto;
     padding: 3px;
   }
-
   .text-section {
     width: 95%; /* Make it full width below the graph */
     max-width: 95%; /* Ensure it doesn't exceed the width of its container */
     margin: 5px; /* Reset margin if necessary */
     padding: 10px;
-  }
-
+}
   .chart3-data-box {
     margin: 10px 0; /* Add margin to separate it from the title */
     width: 100%; /* Full width in small screens */
     max-width: 300px; /* Remove max-width constraint */
     min-width: 200px;
   }
-
   .graph-container {
     padding: 3px;
   }
@@ -80,6 +79,7 @@
 /***********************************************************************************/
 
 .dashboard-hub {
+  /*background-color: #e0e0e0;*/
   background-color: var(--defaultColor);
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
 }
@@ -98,7 +98,7 @@
   justify-content: space-between; /* Distribute items evenly */
   align-items: stretch; /* Make all items the same height */
   margin: auto; /* Center the container */
-  gap: var(--gap20); /* Add consistent spacing between items */
+  gap: 20px; /* Add consistent spacing between items */
 }
 
 .dropdowns > div {
@@ -136,11 +136,11 @@
 
 .filtered-data {
   max-height: 500px; /* Set a maximum height for the container */
-  padding: var(--padding); /* Inner padding */
+  padding: 10px; /* Inner padding */
   padding-top: 0; /* Align with sticky header */
   margin: 20px 0; /* Add margin for spacing */
-  border: var(--border);
-  border-radius: var(--borderradius);
+  border: 1px solid #ccc; /* Light border for structure */
+  border-radius: 5px; /* Rounded corners */
   background-color: white;
   overflow-x: auto; /* Enable horizontal scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
@@ -148,8 +148,10 @@
 }
 
 .csv-data {
-  width: 100%; /* Ensure the table overflows horizontally */
+  width: 120%; /* Ensure the table overflows horizontally */
+  min-width: 800px; /* Set a minimum width for the table to ensure scrolling */
   border-collapse: collapse; /* Collapse borders for a clean look */
+  table-layout: auto; /* Allow dynamic column widths */
   word-wrap: break-word; /* Wrap long words within cells */
 }
 
@@ -158,11 +160,10 @@
   border: 1px solid #ddd; /* Add cell borders */
   padding: 8px; /* Tighter padding for compactness */
   text-align: left; /* Align text to the left */
-  width: 40px; /* Ensure minimum column width */
+  min-width: 100px; /* Ensure minimum column width */
   overflow: hidden; /* Prevent text overflow */
-  word-wrap: break-word; /* Ensures content wraps within the column */
-  overflow-wrap: break-word;
-  white-space: normal; /* Allows text to wrap */
+  text-overflow: ellipsis; /* Add ellipsis for truncated text */
+  white-space: nowrap; /* Prevent wrapping for consistent spacing */
 }
 
 .csv-data thead tr th {
@@ -193,7 +194,7 @@
 .pagination {
   display: flex; /* Align pagination items in a row */
   justify-content: center; /* Center the pagination controls */
-  margin-top: 10px; /* Space above pagination */
+  margin-top: 20px; /* Space above pagination */
 }
 
 

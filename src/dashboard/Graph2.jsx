@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
+import { BorderBox } from '../SharedComponents.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { Chart, CategoryScale, LinearScale, LineController, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
@@ -66,10 +67,10 @@ const Graph2 = () => {
     console.log('Graph Data:', graphData); // Log the graph data to verify
 
     return (
-        <div className="box-style chart-container">
+        <BorderBox className="chart-container">
             <h2 className="shadow">Job Focus and Activities Over Time by Month</h2>
             <Line data={ graphData } options={ options } width={ 350 } height={ 250 } /> {/* Use Redux graph data */}
-        </div>
+        </BorderBox>
     );
 };
 

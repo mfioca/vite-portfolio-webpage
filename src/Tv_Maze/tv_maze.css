@@ -237,13 +237,13 @@
     background-color: var( --tableTHbackgroundcolor);
     color: var(--fontcolor);
     padding: var(--padding);
-    text-align: left;
     font-weight: bold;
 }
 
 .episodes-table th,
 .episodes-table td {
-    border: 1px solid #000000;
+    /*border: 1px solid #000000;*/
+    border: var(--border);
     padding: var(--padding);
     width: 40px;
     text-align: left;

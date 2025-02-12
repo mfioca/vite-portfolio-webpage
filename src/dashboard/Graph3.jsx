@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { BorderBox } from '../SharedComponents.jsx';
 import { Bar } from 'react-chartjs-2';
 import { Chart, CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { useDispatch, useSelector } from 'react-redux';
@@ -116,13 +117,13 @@ const Graph3 = () => {
     }
 
     return (
-        <div className="box-style chart-container">
+        <BorderBox className="chart-container">
             <h2 className="shadow">Application Usage Over Time by Month</h2>
             <div className="chart3-data-box">
                 { textBoxContent }
             </div>
             <Bar data={ graphData } options={ options } width={ 350 } height={ 250 } /> 
-        </div>
+        </BorderBox>
     );
 };
 
