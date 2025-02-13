@@ -234,8 +234,8 @@
 
 .episodes-table th {
     /*background-color: #e0e0e0; /* Light theme color */
-    background-color: var( --tableTHbackgroundcolor);
-    color: var(--fontcolor);
+    background-color: var(--tableheaderdarkcolor);
+    color: var(--colorwhite);
     padding: var(--padding);
     font-weight: bold;
 }

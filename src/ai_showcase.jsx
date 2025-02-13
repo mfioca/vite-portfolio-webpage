@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DividerLine, ChatBubble, IntroSection, ShowcaseComponent, ShowcaseComponentTabs } from './SharedComponents.jsx'; 
+import { DividerLine, ChatBubble, IntroSection, BodyContainer, ShowcaseComponent, ShowcaseComponentTabs } from './SharedComponents.jsx'; 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 import { Link } from 'react-router-dom';
@@ -47,7 +47,7 @@ const AIShowcase = () => {
                         <Tab>Developer 2.0 Prompt</Tab>
                         <Tab>Developer 3.0 Prompt</Tab>
                     </TabList>
-                    <div className="box-background border base-max-width ai-showcase-container">
+                    <BodyContainer hasBackground = { true } className="ai-showcase-container">
                         <TabPanel>
                             <ShowcaseComponent
                                 title= "Tarot Reader and Herb salesman"
@@ -220,7 +220,7 @@ const AIShowcase = () => {
                                 }
                             />
                         </TabPanel>
-                    </div>
+                    </BodyContainer>
                 </Tabs>
             </div>
         </div>

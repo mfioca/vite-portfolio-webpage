@@ -1,7 +1,8 @@
 .divider-line {
     margin: 20px auto;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--bordercolor);
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+    box-shadow: var(--thinshadow);
 }
 
 .Intro {
@@ -88,17 +89,16 @@
     margin-bottom: 20px;
 }
 
-
+/* duplicate of default button class
 .next-message-btn:hover {
-    background-color: #005a9e; /* Darker shade on hover */
+    background-color: #005a9e; 
 }
-
+*/
 
 .next-message-btn:disabled {
     background-color: #c1c1c1; 
     cursor: not-allowed;
 }
-
 
 .reset-message-btn:hover {
     background-color: #e65550;
@@ -126,7 +126,6 @@
     }
 }
 
-
 /***** Chat Bubble Styles *****/
 .chat-bubble {
     max-width: 75%; /* Prevent bubbles from stretching too wide */
@@ -135,15 +134,14 @@
     border-radius: 15px;
     font-size: 16px;
     line-height: 1.5;
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    box-shadow: var(--boxshadow);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* User Chat Bubble (Right Side) */
 .user-bubble {
     align-self: flex-end;
-    background-color: var(--fontblue); /* Blue for the user */
-    color: var(--colorwhite); /* Contrast for readability */
+    background-color: var(--chatbubbleUser); /* Blue for the user */
+    color: var(--chatbubbleUserFont); /* Contrast for readability */
     text-align: left;
 }
 
@@ -151,9 +149,9 @@
 .ai-bubble {
     align-self: flex-start;
     /*background-color: #e5e5e5; /* Light gray for the AI */
-    background-color: var(--defaultColor);
+    background-color: var(--chatbubbleAI);
     /*color: #333; /* Darker text for readability */
-    color: var(--fontcolor);
+    color: var(--chatbubbleAIFont);
     text-align: left;
 }
 
@@ -162,6 +160,11 @@
     width: 8px;
 }
 
+/***** Scrollbar Styling (Optional) *****/
+.chat-window::-webkit-scrollbar {
+    width: 8px;
+}
+/*
 .chat-window::-webkit-scrollbar-thumb {
     background-color: #c1c1c1;
     border-radius: var(--borderradius);
@@ -170,6 +173,7 @@
 .chat-window::-webkit-scrollbar-track {
     background-color: #f5f5f5;
 }
+    */
 
 /***** Typing Animation Placeholder (Optional Future Feature) *****/
 .typing-indicator {

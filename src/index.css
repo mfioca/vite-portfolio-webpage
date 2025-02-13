@@ -7,30 +7,58 @@
   --colortest: pink;
   --bordercolortest: pink;
   --defaultColor: #e0e0e0;
+  --defaultColor-1: var(--colortest);
+  --navcolor: #282c34;
   --colorwhite: #ffffff;
+  --colorblue: #0078d4;
   --githubblue: #0366d6;
   --githubdark: #24292f;
+  --chatbubbleAI: #e5e5e5;
+  --chatbubbleAIFont: var(--fontcolor);
+  --chatbubbleUser: #0078d4;
+  --chatbubbleUserFont: var(--colorwhite);
   --textsectioncolor: #f8f9fa;
   --tablemouseovercolor: #f5f5f5;
   --bordercolor: #ccc;
+  --bordercolor-1: var(--bordercolortest);
   --fontcolortest: rgb(242, 128, 147);
   --fontcolor: #333;
-  --fontblue: #0078d4;
+  --fontblue: var(--colorblue);
   --buttonbluehover: #005a9e;
   --lightbackgroundcolor: #f9f9f9;
   --tableTHbackgroundcolor: #e0e0e0;
   --tableheaderdarkcolor: #444444;
   --tableborder: 1px solid #ddd;
-  --background-image: linear-gradient(var(--defaultColor), #ffffff); /* Light gradient for the background */
+  --background-image: linear-gradient(var(--defaultColor), var(--colorwhite)); /* Light gradient for the background */
   --border: 2px solid var(--bordercolor); /* Light gray border */
   --borderradius: 8px;
   --gap10: 10px;
   --gap20: 20px;
   --boxshadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+  --thinshadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*dividerline and chat bubble */
   --textshadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
   --fontfamily: 'Courier New';
-  --fontfamilyH: 'Courier New', monospace;;
+  --fontfamilyH: 'Courier New', monospace;
+  --fontfamilyNav: 'Roboto', sans-serif;
   /*border: 2px solid #ccc; /* Light gray border */
+}
+
+.standard-padding {
+  padding: var(--padding);
+}
+
+.standard-margin {
+  margin: var(--margin);
+}
+
+.standard-padding-margin {
+  padding: var(--padding);
+  margin: var(--margin);
+}
+
+.standard-padding-margin-center {
+  padding: var(--padding);
+  margin: var(--margin) auto;
 }
 
 
@@ -54,7 +82,28 @@ body, #root {
   -moz-osx-font-smoothing: grayscale;
   justify-content: center;
   font-family: var(--fontfamily);
+  
 }
+
+body *::-webkit-scrollbar-thumb {
+  background-color: var(--bordercolor);
+  border-radius: var(--borderradius);
+}
+
+body *::-webkit-scrollbar {
+  width: 10px;
+}
+
+body *::-webkit-scrollbar-track {
+  /*background-color: var(--backgroundcolor);*/
+  background-color: #f5f5f5;
+}
+
+/* firefox support */
+* {
+  scrollbar-color: var(--bordercolor) #f5f5f5; /* Thumb color & track color */
+}
+
 
  h2 {
   font-family: var(--fontfamilyH);
@@ -72,23 +121,31 @@ body, #root {
   max-width: 1600px;
 }
 
+/* possibly no longer used
 .box-background {
   box-shadow: var(--boxshadow);
   background-image: var(--background-image);
-  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+  transition: opacity 0.5s ease-in-out; 
+  box-sizing: border-box; 
+  border: var(--border);
   border-radius: var(--borderradius);
   padding: 10px;
 }
+  */
 
 .box-background-standard {
   box-shadow: var(--boxshadow);
   background-image: var(--background-image);
   transition: opacity 0.5s ease-in-out; /* Smooth transition */
   border-radius: var(--borderradius);
+  box-sizing: border-box; /* Include padding and borders in element's total width/height */
+  border: var(--border);
 }
 .box-Nobackground-standard {
   box-shadow: var(--boxshadow);
   border-radius: var(--borderradius);
+  box-sizing: border-box; /* Include padding and borders in element's total width/height */
+  border: var(--border);
 }
 
 .box-style-standard {
@@ -97,6 +154,7 @@ body, #root {
   box-shadow: var(--boxshadow);
 }
 
+/* possibly no longer being used */
 .box-style {
   border: var(--border);
   border-radius: var(--borderradius);
@@ -104,23 +162,32 @@ body, #root {
   padding: 10px;
 }
 
+.center-div {
+  display: flex;
+  justify-content: center;
+}
+
+.center-margin {
+  margin: var(--margin) auto;
+}
+
 .flex-column {
   display: flex; /* Optional: if using flex for layout */
   flex-direction: column; /* Stack children vertically */
 }
 
+/**possibly no longer used
 .border {
-  box-sizing: border-box; /* Include padding and borders in element's total width/height */
+  box-sizing: border-box; 
   border: var(--border);
 }
+*/
 
 .flex-wrap {
   display: flex;
   flex-wrap: wrap;
 }
 
-
-/********** NEW POSSIBLE DEFAULT **********/
 .flex-wrap-center {
   display: flex;
   flex-wrap: wrap;
@@ -134,40 +201,6 @@ body, #root {
   justify-content: center;
   padding: var(--padding10);
   margin: var(--margin10) auto;
-}
-
-.standard-padding {
-  padding: var(--padding);
-}
-
-.standard-margin {
-  margin: var(--margin);
-}
-
-.standard-padding-margin {
-  padding: var(--padding);
-  margin: var(--margin);
-}
-
-.standard-padding-margin-center {
-  padding: var(--padding);
-  margin: var(--margin) auto;
-}
-
-.center-div {
-  display: flex;
-  justify-content: center;
-}
-
-.center-margin {
-  margin: var(--margin) auto;
-}
-/********** NEW POSSIBLE DEFAULT **********/
-
-.index-shared {
-  color: white;
-  background-color: #282c34;
-  font-family: 'Roboto', sans-serif; /* A clean, modern font */
 }
 
 .button {
@@ -219,6 +252,14 @@ button:hover {
 /*                            Nav Bar and Footer                                   */
 /***********************************************************************************/
 
+.index-shared {
+  color: var(--colorwhite);
+  /*background-color: #282c34;*/
+  background-color: var(--navcolor);
+  font-family: var(--fontfamilyNav); /* A clean, modern font */
+}
+
+
 .navbar {
   justify-content: space-between;
   align-items: center;
@@ -245,7 +286,7 @@ button:hover {
 }
 
 .nav-link {
-  color: white; /* Link color */
+  color: var(--colorwhite); /* Link color */
   text-decoration: none; /* Remove underline */
   transition: color 0.3s; /* Transition effect */
 }
@@ -268,7 +309,7 @@ button:hover {
 }
 
 .contact-link {
-  color: #fff;
+  color: var(--colorwhite);
   text-decoration: none;
 }
 

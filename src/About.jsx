@@ -75,7 +75,7 @@ const ScrollingQuotes = () => {
 const Card = ({ icon, title, image, children }) => {
     return (
         <div className="flex-column card-container">
-            <div className="standard-padding-margin top-icon">{ icon }</div>
+            <div className="standard-padding-margin-center top-icon">{ icon }</div>
             <div className="card-body">
                 <div>
                     <h2>{ title }</h2>
