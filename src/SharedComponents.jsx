@@ -241,7 +241,7 @@ export const ChatBubble = ({ data }) => {
         {/* <div className="box-background border flex-column-center example-container"> */}
             <h2>{ title }</h2>
             <div
-                className="box-style flex-column-center chat-window"
+                className="box-style-standard flex-column-center chat-window"
                 ref={ chatWindowRef }
                 onMouseEnter={ handleMouseEnter }
                 onMouseLeave={ handleMouseLeave }

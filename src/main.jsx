@@ -53,7 +53,7 @@ const Navigation = () => {
   return (
     <nav className="index-shared flex-wrap navbar">
       <div className="navbar-brand">{ title }</div>
-      <ul className="navbar-links">
+      <ul className="flex-wrap navbar-links">
         <li>
           <Link to="/" className="nav-link">Home</Link>
         </li>

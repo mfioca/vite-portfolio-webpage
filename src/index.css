@@ -1,11 +1,12 @@
 :root {
-  --padding: 10px;
-  --padding10: 10px;
-  --margin: 10px;
-  --margin10: 10px;
+  --maxwidth: 1600px;
+  --default-spacing: 10px;
+  --padding: var(--default-spacing);
+  --margin: var(--default-spacing);
   --margin20: 20px;
+  --gap10: 10px;
+  --gap20: 20px;
   --colortest: pink;
-  --bordercolortest: pink;
   --defaultColor: #e0e0e0;
   --defaultColor-1: var(--colortest);
   --navcolor: #282c34;
@@ -20,7 +21,7 @@
   --textsectioncolor: #f8f9fa;
   --tablemouseovercolor: #f5f5f5;
   --bordercolor: #ccc;
-  --bordercolor-1: var(--bordercolortest);
+  --bordercolor-1: var(--colortest);
   --fontcolortest: rgb(242, 128, 147);
   --fontcolor: #333;
   --fontblue: var(--colorblue);
@@ -30,10 +31,11 @@
   --tableheaderdarkcolor: #444444;
   --tableborder: 1px solid #ddd;
   --background-image: linear-gradient(var(--defaultColor), var(--colorwhite)); /* Light gradient for the background */
+  --transition-opacity: opacity 0.5s ease-in-out; /* Smooth transition */;
+  --transition-background-color: background-color 0.5s ease-in-out;
+  --transition-color: color 0.5s;
   --border: 2px solid var(--bordercolor); /* Light gray border */
   --borderradius: 8px;
-  --gap10: 10px;
-  --gap20: 20px;
   --boxshadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
   --thinshadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*dividerline and chat bubble */
   --textshadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
@@ -42,6 +44,13 @@
   --fontfamilyNav: 'Roboto', sans-serif;
   /*border: 2px solid #ccc; /* Light gray border */
 }
+
+/*
+font-family: 'Arial', sans-serif; 
+font-family: 'Courier New', monospace; 
+font-family: 'Courier New';
+font-family: 'Roboto', sans-serif; 
+*/
 
 .standard-padding {
   padding: var(--padding);
@@ -61,28 +70,17 @@
   margin: var(--margin) auto;
 }
 
-
-/*
-font-family: 'Arial', sans-serif; 
-font-family: 'Courier New', monospace; 
-font-family: 'Courier New';
-font-family: 'Roboto', sans-serif; 
-*/
-
-
 body, #root {
   display: flex;
   flex-direction: column;
   padding-top: 70px;
-  margin: auto;
+  margin: 0;
   min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
-  margin: 0; /* Resets default body margin */
+  justify-content: center;
+  font-family: var(--fontfamily);
   color: var(--fontcolor);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  justify-content: center;
-  font-family: var(--fontfamily);
-  
 }
 
 body *::-webkit-scrollbar-thumb {
@@ -104,8 +102,7 @@ body *::-webkit-scrollbar-track {
   scrollbar-color: var(--bordercolor) #f5f5f5; /* Thumb color & track color */
 }
 
-
- h2 {
+h2 {
   font-family: var(--fontfamilyH);
   font-weight: 600; /* Semi-bold */
   letter-spacing: 0.5px; /* Adjust as needed */
@@ -118,7 +115,7 @@ body *::-webkit-scrollbar-track {
 }
 
 .base-max-width {
-  max-width: 1600px;
+  max-width: var(--maxwidth);
 }
 
 /* possibly no longer used
@@ -134,33 +131,36 @@ body *::-webkit-scrollbar-track {
   */
 
 .box-background-standard {
+  box-sizing: border-box; /* Include padding and borders in element's total width/height */
   box-shadow: var(--boxshadow);
   background-image: var(--background-image);
-  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+  transition: var(--transition-opacity);
   border-radius: var(--borderradius);
-  box-sizing: border-box; /* Include padding and borders in element's total width/height */
   border: var(--border);
 }
+
 .box-Nobackground-standard {
+  box-sizing: border-box; 
   box-shadow: var(--boxshadow);
   border-radius: var(--borderradius);
-  box-sizing: border-box; /* Include padding and borders in element's total width/height */
   border: var(--border);
 }
 
 .box-style-standard {
+  box-sizing: border-box;
   border: var(--border);
   border-radius: var(--borderradius);
   box-shadow: var(--boxshadow);
 }
 
-/* possibly no longer being used */
+
 .box-style {
   border: var(--border);
   border-radius: var(--borderradius);
   box-shadow: var(--boxshadow);
   padding: 10px;
 }
+
 
 .center-div {
   display: flex;
@@ -175,13 +175,6 @@ body *::-webkit-scrollbar-track {
   display: flex; /* Optional: if using flex for layout */
   flex-direction: column; /* Stack children vertically */
 }
-
-/**possibly no longer used
-.border {
-  box-sizing: border-box; 
-  border: var(--border);
-}
-*/
 
 .flex-wrap {
   display: flex;
@@ -199,8 +192,8 @@ body *::-webkit-scrollbar-track {
   display: flex; /* Optional: if using flex for layout */
   flex-direction: column; /* Stack children vertically */
   justify-content: center;
-  padding: var(--padding10);
-  margin: var(--margin10) auto;
+  padding: var(--padding);
+  margin: var(--margin) auto;
 }
 
 .button {
@@ -212,8 +205,7 @@ body *::-webkit-scrollbar-track {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+  transition: var(--transition-background-color);
   box-shadow: var(--boxshadow);
 }
 
@@ -254,11 +246,9 @@ button:hover {
 
 .index-shared {
   color: var(--colorwhite);
-  /*background-color: #282c34;*/
   background-color: var(--navcolor);
   font-family: var(--fontfamilyNav); /* A clean, modern font */
 }
-
 
 .navbar {
   justify-content: space-between;
@@ -279,8 +269,6 @@ button:hover {
 
 .navbar-links {
   list-style: none; /* Remove bullet points */
-  display: flex;
-  flex-wrap: wrap; /* Allow items to wrap onto the next row */
   gap: var(--gap20);
   padding: 2px;
 }
@@ -288,11 +276,12 @@ button:hover {
 .nav-link {
   color: var(--colorwhite); /* Link color */
   text-decoration: none; /* Remove underline */
-  transition: color 0.3s; /* Transition effect */
+  transition: var(--transition-color);
 }
 
 .nav-link:hover {
-  color: #e0e0e0; /* Change color on hover */
+  color: var(--defaultColor);
+  text-decoration: underline;
 }
 
 .footer {
@@ -352,7 +341,6 @@ button:hover {
   text-align: center; /* Center-align text */
   padding: 10px 50px; /* Add padding for a larger click area */
   background-image:  var( --background-image);
-  /*linear-gradient(#e0e0e0, #ffffff); /* Light gradient for background */
   margin-bottom: 1px;
   font-family: var(--fontfamilyH);
   font-size: 1.2rem;
@@ -368,7 +356,6 @@ button:hover {
 }
 
 .standard-tabs .react-tabs__tab:hover {
-  /*background: #e0e0e0; /* Darker shade on hover */
   background: var(--defaultColor);
   cursor: pointer;
   text-decoration: underline; /* Optional underline */
@@ -413,7 +400,7 @@ button:hover {
 .home-body  {
   flex-grow: 1;
   margin-bottom: 50px;
-  padding: 10px;
+  padding: var(--padding);
   justify-content: center;
 }
 
