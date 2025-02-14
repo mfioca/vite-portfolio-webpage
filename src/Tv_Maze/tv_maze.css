@@ -1,8 +1,6 @@
 .tvmaze-body  {
     font-family: 'Courier New'; /* A clean sans-serif font */
-    /*margin: 10px;*/
     margin: var(--margin);
-    /*padding: 5px;*/
     padding: var(--padding);
     min-height: 100vh;
     justify-content: center;
@@ -12,10 +10,8 @@
     text-align: center;
     font-size: 2.5rem; /* Emphasized font size */
     color: var(--fontblue); /* Theme color */
-    /*text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     text-shadow: var(--textshadow);
     margin: var(--margin) auto; /* Add spacing above and below */
-    /*font-family: 'Courier New', monospace; /* Consistent font family */
 }
 
 .extra-details {
@@ -47,7 +43,7 @@
 
 .tvmaze-search input[type="text"] {
     width: 90%; /* Wider input box for easier typing */
-    padding: 10px;
+    padding: var(--padding);
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: var(--borderradius);
@@ -88,8 +84,8 @@
 
 .result-box img {
     width: 100%; 
-    border-radius: 5px; 
-    margin-bottom: 10px; 
+    border-radius: var(--borderradius); 
+    margin-bottom: var(--default-spacing); 
 }
   
 /***********************************************************************************/
@@ -111,14 +107,14 @@
 .main-info img {
     display: block;
     max-width: 800px; /* Limit the maximum width of the image */
-    border-radius: 10px; /* Add rounded corners to the image */
+    border-radius: var(--borderradius); /* Add rounded corners to the image */
     box-shadow: var(--boxshadow);
 }
   
 .show-summary {
     font-size: 1rem;
     line-height: 1.5;
-    margin-top: 20px;
+    margin-top: var(--default-spacing);
 }
 
 /***********************************************************************************/
@@ -142,32 +138,31 @@
     padding: 15px;
     width: 250px; /* Fixed width for uniformity */
     text-align: center; /* Center-align the content */
-    /*background-color: white; /* Light background color */
     background-color: var(--lightbackgroundcolor); /* White background for contrast */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
 }
   
 .cast-member:hover {
     transform: scale(1.05); /* Slight zoom effect */
-    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
     box-shadow: var(--boxshadow);
 }
   
 .cast-member img {
     width: 100%; /* Ensure the image fits the card width */
     border-radius: 5px; /* Match the card's rounded corners */
-    margin-bottom: 10px; /* Space between the image and text */
+    margin-bottom: var(--default-spacing); /* Space between the image and text */
 }
   
 .cast-member h3 {
     font-size: 1.2rem;
-    margin: 10px 0; /* Add spacing around the name */
+    margin: var(--default-spacing) 0; /* Add spacing around the name */
     color: var(--fontblue);
 }
   
 .cast-member p {
     font-size: 0.9rem;
-    color: #666; /* Subtle gray for less emphasis */
+    /*color: #666; /* Subtle gray for less emphasis */
+    color: var(--tvmazegraycolor);
 }
   
 /***********************************************************************************/
@@ -176,10 +171,13 @@
 
 .tvmaze-episodes-container {
     margin: 0 auto;
-    /*background-color: #fff;*/
     background-color: var(--lightbackgroundcolor); /* White background for contrast */
 }
-  
+
+.episodes_zero-margin {
+    margin: 0px;
+}
+
 .tvmaze-episodes-container h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
@@ -195,19 +193,10 @@
 .season-image {
     display: block; /* Ensure it's treated as a block element */
     max-width: 500px; /* Prevent it from overflowing */
-    /*height: auto; /* Maintain aspect ratio */
-    /*margin: 5px auto; /* Center the image */
-    border-radius: 10px;
+    border-radius: var(--borderradius);
     box-shadow: var(--boxshadow);
 }
 
-.main-info-CHECK img {
-    /*width: 100%; /* Ensure the image scales to fit the column */
-    max-width: 800px; /* Limit the maximum width of the image */
-    border-radius: 10px; /* Add rounded corners to the image */
-    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
-    box-shadow: var(--boxshadow);
-}
 
 @media (max-width: 1000px) {
     .season-image {
@@ -216,6 +205,7 @@
         display: block;
         margin: 0 auto; /* Center the image */
     }
+
     .main-info img {
         max-width: 100%;
         min-width: 300px;
@@ -229,11 +219,10 @@
     border-collapse: collapse;
     margin-top: 20px;
     table-layout: fixed; /* Prevents table from expanding beyond the container */
-    background-color: white;
+    background-color: var(--colorwhite);
 }
 
 .episodes-table th {
-    /*background-color: #e0e0e0; /* Light theme color */
     background-color: var(--tableheaderdarkcolor);
     color: var(--colorwhite);
     padding: var(--padding);
@@ -242,7 +231,6 @@
 
 .episodes-table th,
 .episodes-table td {
-    /*border: 1px solid #000000;*/
     border: var(--border);
     padding: var(--padding);
     width: 40px;

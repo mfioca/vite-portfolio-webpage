@@ -17,25 +17,28 @@
 
 .graph-flexbox {
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
+  padding: 3px;
 }
 
 .graph-container {
   justify-content: space-between; /* Distribute items evenly */
   gap: var(--gap10); /* Add space between items */
   background-color: var(--lightbackgroundcolor);
+  padding: var(--padding)
 }
 
 .text-section {
   max-width: 250px;
-  /*background-color: #f8f9fa; */
   background-color: var(--textsectioncolor);
   font-size: 14px;
 }
 
 .chart-container {
-  width: 350px;
+  max-width: 350px;
   height: 375px;
   background-color: var(--colorwhite);
+  margin: 0;
+  padding: 5px;
 }
 
 .chart3-data-box {
@@ -57,22 +60,22 @@
     padding: 3px;
   }
 
+  .graph-container {
+    padding: 3px;
+  }
+
   .text-section {
     width: 95%; /* Make it full width below the graph */
     max-width: 95%; /* Ensure it doesn't exceed the width of its container */
     margin: 5px; /* Reset margin if necessary */
-    padding: 10px;
+    padding: var(--padding);
   }
 
   .chart3-data-box {
-    margin: 10px 0; /* Add margin to separate it from the title */
+    margin: var(--margin) 0; /* Add margin to separate it from the title */
     width: 100%; /* Full width in small screens */
     max-width: 300px; /* Remove max-width constraint */
     min-width: 200px;
-  }
-
-  .graph-container {
-    padding: 3px;
   }
 }
 
@@ -109,7 +112,7 @@
 
 .dropdowns h2 {
   font-size: 16px; /* Adjust to a consistent size */
-  margin-bottom: 10px; /* Add spacing below the title */
+  margin-bottom: var(--default-spacing); /* Add spacing below the title */
 }
 
 .graph-wrapper {
@@ -156,7 +159,6 @@
 
 .csv-data th,
 .csv-data td {
-  /*border: 1px solid #ddd; /* Add cell borders */
   border: var(--tableborder);
   padding: 8px; /* Tighter padding for compactness */
   text-align: left; /* Align text to the left */
@@ -179,8 +181,13 @@
 }
 
 .csv-data tr:hover {
-  /*background-color: #f5f5f5; /* Highlight row on hover */
   background-color: var(--tablemouseovercolor);
+}
+
+.pagination {
+  display: flex; /* Align pagination items in a row */
+  justify-content: center; /* Center the pagination controls */
+  margin-top: var(--default-spacing); /* Space above pagination */
 }
 
 @media (max-width: 768px) {
@@ -194,11 +201,6 @@
   }
 }
 
-.pagination {
-  display: flex; /* Align pagination items in a row */
-  justify-content: center; /* Center the pagination controls */
-  margin-top: 10px; /* Space above pagination */
-}
 
 
 

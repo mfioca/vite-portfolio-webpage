@@ -20,7 +20,7 @@ const Graph2 = () => {
                 top: 30, // Add padding at the top
                 bottom: 20, // Add padding at the bottom
                 left: 10, // Add padding to the left
-                right: 10, // Add padding to the right
+                right: 30, // Add padding to the right
             },
             margin: 10,
         },

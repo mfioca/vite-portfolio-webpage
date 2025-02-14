@@ -43,7 +43,7 @@
     display: flex; /* Optional: if using flex for layout */
     flex-direction: column; /* Stack children vertically */
     justify-content: flex-start; /* Content starts at the top */
-    max-width: 1600px;
+    max-width: var(--maxwidth);
     padding: var(--padding);
     margin: var(--margin);
     box-sizing: border-box; /* Include padding in size calculations */
@@ -59,7 +59,7 @@
 .about-swiper ul {
     margin-right: 20px;
     margin-left: 20px;
-    padding: 10px;
+    padding: var(--padding);
     letter-spacing: 0.5px; /* Adjust as needed */
     font-weight: 300; /* Semi-bold */
     font-size: 16px; /* Standard text size */
@@ -93,7 +93,7 @@
     flex: 1; /* Fills the available vertical space in the parent */
     width: 100%; /* Ensures it spans the full width of the about-card */
     box-sizing: border-box; /* Include padding/borders */
-    margin-bottom: 10px;
+    margin-bottom: var(--default-spacing);
 }
 
 .card-image {

@@ -95,6 +95,16 @@ const Footer = () =>{
             LinkedIn Profile
           </a>
         </p>
+        <p>
+          <a 
+            href="https://mfioca.github.io/portfolio-webpage/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="footer-link"
+          >
+            Old React-App Version
+          </a>
+        </p>
       </footer>
     </div>
   )
