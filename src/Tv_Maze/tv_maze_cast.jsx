@@ -31,6 +31,14 @@ const TvMazeCast = ({ id }) => {
         return <div className="loading-overlay"><p>Loading cast information...</p></div>;
     }
 
+    if (cast.length === 0) {
+        return (
+            <div className="no-data-overlay">
+                <p>No cast appearances found for this person.</p>
+            </div>
+        );
+    }
+
     return (
         <BodyContainer hasBackground={ true } className="cast-container">
         {/*<div className="box-background border cast-container">  className="cast-container" */}

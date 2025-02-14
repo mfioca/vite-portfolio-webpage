@@ -44,6 +44,14 @@ const TvMazeEpisodes = ({ showId }) => {
         return <p>Loading...</p>;
     }
 
+    if (seasons.length === 0) {
+        return (
+            <div className="no-data-overlay">
+                <p>No season data found for this show.</p>
+            </div>
+        );
+    }
+
     return (
         <BodyContainer hasBackground={ false } className="tvmaze-episodes-container">
         {/*<div className="tvmaze-episodes-container">*/}
