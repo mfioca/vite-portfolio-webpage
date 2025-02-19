@@ -29,7 +29,8 @@
     overflow-y: auto; /* Enables vertical scrolling */
     max-height: 900px; /* Ensures the content doesn’t exceed the container height */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
-    margin: 0px;
+    margin: 50px;
+    padding: 50px;
 }
 
 .markdown-container h1, 
@@ -64,7 +65,7 @@
 /***********************************************************************************/
 
 .example-container {
-    height: 80vh; /* Adjust as needed */
+    height: 1200px;/*80vh; /* Adjust as needed */
     overflow: hidden; /* Prevent elements from overflowing the container */
     overflow-y: auto; /* Allow scrolling inside this container */
 }
