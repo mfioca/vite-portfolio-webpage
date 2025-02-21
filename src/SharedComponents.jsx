@@ -58,13 +58,7 @@ export const WindowWidthDisplay = () => {
     }, []);
 
     return (
-        <div style={{
-            width: `${window.innerWidth - 50}px`, // Dynamically set width to the window's width minus 10px
-            margin: 'auto',
-            border: '2px solid black', // Adds a black border with a thickness of 2px
-            textAlign: 'center', // Center-align the text inside the div
-            /*padding: '10px' // Add padding for better spacing*/
-        }}>
+        <div className="windowMeasurement">
             <p>{ `Window width: ${windowWidth}px` }</p>
         </div>
     );
@@ -85,12 +79,7 @@ export const WindowHeightDisplay = () => {
     }, []);
   
     return (
-        <div style={{
-            width: '80%',
-            margin: 'auto',
-            border: '2px solid black', // Adds a black border with a thickness of 2px
-            textAlign: 'center', // Center-align the text inside the div
-        }}>
+        <div className="windowMeasurement">
             <p>{ `Window height: ${windowHeight}px` }</p>
         </div>
     );

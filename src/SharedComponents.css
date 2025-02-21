@@ -15,16 +15,26 @@
     line-height: 1.5; /* Adjust line spacing for readability */
 }
 
+.windowMeasurement { 
+    max-width: 90%;
+    min-width: 300px;
+    margin: auto;
+    border: 2px solid black; /* Adds a black border with a thickness of 2px */
+    text-align: center; /* Center-align the text inside the div */
+    padding: var(--padding); 
+    margin-top: var(--default-spacing);
+    margin-bottom: var(--default-spacing);
+}
+
+
 /***********************************************************************************/
 /*                          AI Showcase  Prompt section                            */
 /***********************************************************************************/
 
 .markdown-container {
     background-color: var(--lightbackgroundcolor); /* Light background color */
-    font-family: 'Courier New', monospace; /* Keep the monospaced font */
-    /*color: #24292f; /* GitHub-like dark text color */
+    font-family: var(--markdownfont); /* Keep the monospaced font */
     color: var(--githubdark);
-    /*max-width: 1500px; /* Limit width for readability */
     max-width: var(--maxwidth);
     overflow-y: auto; /* Enables vertical scrolling */
     max-height: 900px; /* Ensures the content doesn’t exceed the container height */
@@ -89,12 +99,6 @@
     margin-top: 20px; /* Space above the button */
     margin-bottom: 20px;
 }
-
-/* duplicate of default button class
-.next-message-btn:hover {
-    background-color: #005a9e; 
-}
-*/
 
 .next-message-btn:disabled {
     background-color: #c1c1c1; 

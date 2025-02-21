@@ -173,7 +173,6 @@
   position: sticky; /* Sticky header on scroll */
   top: 0; /* Stick to the top of the container */
   z-index: 10; /* Ensure header stays above other content */
-  /*background-color: #444444; /* Darker header background color */
   background-color: var(--tableheaderdarkcolor);
   color: var(--colorwhite); /* White text for contrast */
   font-weight: bold; /* Bold text for headers */
