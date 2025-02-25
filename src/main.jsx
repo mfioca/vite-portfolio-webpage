@@ -11,6 +11,7 @@ import AIShowcase from './ai_showcase';
 import TvMaze from './tv_maze'
 import TvMazeShowResults from './Tv_Maze/tv_maze_show_results';
 import TvMazePeopleResults from './Tv_Maze/tv_maze_people_results';
+import MinecraftProjects from './minecraftProjects';
 
 
 
@@ -46,6 +47,9 @@ const Navigation = () => {
     case location.pathname.startsWith('/person/'):
         title = 'Person Profile';
         break;
+    case location.pathname === '/MinecraftProjects':
+        title = 'Minecraft Projects';
+        break;
     default:
         title = 'Explore My Web Page'; // A general fallback title
 }
@@ -68,6 +72,9 @@ const Navigation = () => {
         </li>
         <li>
           <Link to="/AIShowcase" className="nav-link">AI Showcase</Link>
+        </li>
+        <li>
+          <Link to="/MinecraftProjects" className="nav-link">Minecraft Projects</Link>
         </li>
         {/* Add more links as needed */}
       </ul>
@@ -124,6 +131,7 @@ root.render(
           <Route path="/person/:id" element={ <TvMazePeopleResults /> } />
           <Route path="/Dashboard" element={ <Dashboard /> } /> 
           <Route path="/AIShowcase" element={ <AIShowcase /> } />
+          <Route path="/MinecraftProjects" element={ <MinecraftProjects /> } />
         </Routes>
         <Footer />
     </HashRouter>

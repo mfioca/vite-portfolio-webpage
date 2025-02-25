@@ -147,3 +147,16 @@
   }
 }
 
+
+.album { 
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+  
+
+  .react-photo-album img {
+    width: 100%; /* Fills the container */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%;
+    object-fit: cover; /* Or 'contain' depending on your need */
+}
