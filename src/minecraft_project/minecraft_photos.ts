@@ -8,7 +8,7 @@ function assetLink(folder: string, asset: string, width: number) {
   
 export { breakpoints, assetLink };
 
-export const enterance_photos = [
+export const building_enterance = [
     {
       asset: "building_101.jpeg",
       width: 1080,
@@ -78,7 +78,7 @@ export const enterance_photos = [
 ].map(
     ({ asset, alt, width, height }) =>
         ({
-            src: assetLink(asset, width),
+            src: assetLink("enterance", asset, width),
             alt,
             width,
             height,
@@ -90,7 +90,7 @@ export const enterance_photos = [
     }) as Photo,
 );
 
-export const section_1 = [
+export const building_section_1 = [
   {
     asset: "building_201.jpeg",
     width: 1080,
@@ -202,7 +202,7 @@ export const section_1 = [
 ].map(
   ({ asset, alt, width, height }) =>
       ({
-        src: assetLink(asset, width),
+        src: assetLink("section_1", asset, width),
           alt,
           width,
           height,
@@ -214,6 +214,280 @@ export const section_1 = [
   }) as Photo,
 );
 
-
+export const building_section_2 = [
+  {
+    asset: "building_301.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 301",
+  },
+  {
+    asset: "building_302.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 302",
+  },
+  {
+    asset: "building_303.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 303",
+  },
+  {
+    asset: "building_304.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 304",
+  },
+  {
+    asset: "building_305.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 305",
+  },
+  {
+    asset: "building_306.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 306",
+  },
+  {
+    asset: "building_307.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 307",
+  },
+  {
+    asset: "building_308.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 308",
+  },
+  {
+    asset: "building_309.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 309",
+  },
+  {
+    asset: "building_310.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 310",
+  },
+  {
+    asset: "building_311.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 311",
+  },
+  {
+    asset: "building_312.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 312",
+  },
+  {
+    asset: "building_313.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 313",
+  },
+  {
+    asset: "building_314.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 314",
+  },
+  {
+    asset: "building_315.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 315",
+  },
+  {
+    asset: "building_316.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 316",
+  },
+  {
+    asset: "building_317.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 317",
+  },
+  {
+    asset: "building_318.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 318",
+  },
+  {
+    asset: "building_319.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 319",
+  },
+  {
+    asset: "building_320.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 320",
+  },
+  {
+    asset: "building_321.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 321",
+  },
+  {
+    asset: "building_322.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 322",
+  },
+  {
+    asset: "building_323.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 323",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+      ({
+          src: assetLink("section_2", asset, width),
+          alt,
+          width,
+          height,
+          srcSet: breakpoints.map((breakpoint) => ({
+              src: assetLink("section_2", asset, width),
+              width: breakpoint,
+              height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
+          })),
+  }) as Photo,
+);
   
- 
+export const building_keep = [
+  {
+    asset: "building_401.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 401",
+  },
+  {
+    asset: "building_402.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 402",
+  },
+  {
+    asset: "building_403.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 403",
+  },
+  {
+    asset: "building_404.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 404",
+  },
+  {
+    asset: "building_405.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 405",
+  },
+  {
+    asset: "building_406.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 406",
+  },
+  {
+    asset: "building_407.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 407",
+  },
+  {
+    asset: "building_408.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 408",
+  },
+  {
+    asset: "building_409.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 409",
+  },
+  {
+    asset: "building_410.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 410",
+  },
+  {
+    asset: "building_411.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 411",
+  },
+  {
+    asset: "building_412.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 412",
+  },
+  {
+    asset: "building_413.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 413",
+  },
+  {
+    asset: "building_414.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 414",
+  },
+  {
+    asset: "building_415.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 415",
+  },
+  {
+    asset: "building_416.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 416",
+  },
+  {
+    asset: "building_417.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 417",
+  },
+  {
+    asset: "building_418.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for building 418",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+      ({
+          src: assetLink("keep", asset, width),
+          alt,
+          width,
+          height,
+          srcSet: breakpoints.map((breakpoint) => ({
+              src: assetLink("keep", asset, width),
+              width: breakpoint,
+              height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
+          })),
+  }) as Photo,
+);

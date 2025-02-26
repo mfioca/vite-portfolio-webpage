@@ -503,6 +503,37 @@ button:hover {
 }
 
 
+.album { 
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+
+.react-photo-album img {
+  width: 100%; /* Fills the container */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 100%;
+  object-fit: cover; /* Or 'contain' depending on your need */
+}
+
+.test {
+  width: 1250px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.section-title {
+  cursor: pointer;  /* Makes the mouse cursor act like it's over a button */
+  user-select: none; /* Prevents accidental text selection */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+.section-title:hover {
+  text-decoration: underline; /* Adds an underline on hover */
+  color: var(--buttonbluehover); /* Optional: Change color slightly on hover */
+}
+
+
 /* css for possible youtube video imbedding on my about page.
 .video-container {
   width: 400px; 
