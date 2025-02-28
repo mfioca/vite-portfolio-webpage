@@ -88,16 +88,6 @@
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
 }
 
-.dashboard-hub ul {
-  list-style-position: inside;
-  text-align: center;
-}
-
-.dashboard-hub li {
-  margin-bottom: 5px; /* Space between list items */
-  line-height: 1.5; /* Increase line height for readability */
-}
-
 .dropdowns {
   justify-content: space-between; /* Distribute items evenly */
   align-items: stretch; /* Make all items the same height */

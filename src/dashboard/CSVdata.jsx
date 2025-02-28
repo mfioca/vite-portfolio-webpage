@@ -167,12 +167,12 @@ const CSVdata = () => {
                 <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>
                 <p><strong>How to Use:</strong></p>
-                    <ul>
+                    <ul className="default-list">
                         <li>Use the dropdowns to filter data by activity type, month, or year.</li>
                         <li>The charts will dynamically update based on your selections, providing insights into your productivity patterns.</li>
                     </ul>
                     <p><strong>Data Visualizations:</strong></p>
-                    <ul>
+                    <ul className="default-list">
                         <li>The Donut Chart displays the proportion of time spent on different applications.</li>
                         <li>The Bar Chart shows detailed breakdowns of activity subtypes, enabling you to identify trends and focus areas.</li>
                     </ul>

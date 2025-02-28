@@ -113,6 +113,16 @@ h2 {
   text-align: center;
 }
 
+.default-list  {
+  list-style-position: inside;
+  text-align: center;
+}
+
+.default-list li {
+  margin-bottom: 5px; /* Space between list items */
+  line-height: 1.5; /* Increase line height for readability */
+}
+
 /*used for shadowing text */
 .shadow {
   text-shadow: var(--textshadow);
@@ -503,6 +513,18 @@ button:hover {
 }
 
 
+
+
+
+
+.minecraft-body  {
+  font-family: 'Courier New'; /* A clean sans-serif font */
+  margin: var(--margin);
+  padding: var(--padding);
+  min-height: 100vh;
+  justify-content: center;
+}
+
 .album { 
   margin-inline: auto;
   box-sizing: border-box;
@@ -532,6 +554,8 @@ button:hover {
   text-decoration: underline; /* Adds an underline on hover */
   color: var(--buttonbluehover); /* Optional: Change color slightly on hover */
 }
+/*dashboard hub */
+
 
 
 /* css for possible youtube video imbedding on my about page.

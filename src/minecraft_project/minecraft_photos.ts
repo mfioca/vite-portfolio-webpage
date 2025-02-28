@@ -24,55 +24,55 @@ export const building_enterance = [
     {
       asset: "building_103.jpeg",
       width: 1280,
-      height: 720,
+      height: 1420,
       alt: "Placeholder description for building 103",
     },
     {
       asset: "building_104.jpeg",
-      width: 1280,
-      height: 720,
+      width: 1680,
+      height: 800,
       alt: "Placeholder description for building 104",
     },
     {
       asset: "building_105.jpeg",
       width: 1280,
-      height: 720,
+      height: 900,
       alt: "Placeholder description for building 105",
     },
     {
       asset: "building_106.jpeg",
       width: 1280,
-      height: 720,
+      height: 600,
       alt: "Placeholder description for building 106",
     },
     {
       asset: "building_107.jpeg",
       width: 1280,
-      height: 720,
+      height: 700,
       alt: "Placeholder description for building 107",
     },
     {
       asset: "building_108.jpeg",
       width: 1280,
-      height: 720,
+      height: 1500,
       alt: "Placeholder description for building 108",
     },
     {
       asset: "building_109.jpeg",
-      width: 1280,
-      height: 720,
+      width: 1000,
+      height: 900,
       alt: "Placeholder description for building 109",
     },
     {
       asset: "building_110.jpeg",
       width: 1280,
-      height: 720,
+      height: 800,
       alt: "Placeholder description for building 110",
     },
     {
       asset: "building_111.jpeg",
       width: 1280,
-      height: 720,
+      height: 350,
       alt: "Placeholder description for building 111",
     },
 ].map(
@@ -100,7 +100,7 @@ export const building_section_1 = [
   {
     asset: "building_202.jpeg",
     width: 1280,
-    height: 720,
+    height: 400,
     alt: "Placeholder description for building 202",
   },
   {
@@ -111,8 +111,8 @@ export const building_section_1 = [
   },
   {
     asset: "building_204.jpeg",
-    width: 1280,
-    height: 720,
+    width: 1000,
+    height: 900,
     alt: "Placeholder description for building 204",
   },
   {

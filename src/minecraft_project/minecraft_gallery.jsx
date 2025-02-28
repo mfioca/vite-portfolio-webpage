@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { DividerLine, IntroSection, BodyContainer } from '../SharedComponents';
-import { MasonryPhotoAlbum } from 'react-photo-album';
+import { MasonryPhotoAlbum, RowsPhotoAlbum, ColumnsPhotoAlbum } from 'react-photo-album';
 import 'react-photo-album/masonry.css';
+import "react-photo-album/rows.css";
+import "react-photo-album/columns.css";
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
@@ -11,6 +13,78 @@ import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
+
+const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry" }) => {
+    const initialOpenState = sections.reduce((acc, section) => {
+        acc[section.key] = false;
+        return acc;
+    }, {});
+
+    const [openSections, setOpenSections] = useState(initialOpenState);
+    const [lightboxImages, setLightboxImages] = useState([]);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const toggleSection = (key) => {
+        setOpenSections((prev) => ({
+            ...prev,
+            [key]: !prev[key],
+        }));
+    };
+
+    const openLightbox = (photos, index) => {
+        setLightboxImages(photos.map((photo) => ({ src: photo.src })));
+        setCurrentSlide(index);
+        setLightboxOpen(true);
+    };
+
+    // Choose the correct Photo Album Component based on albumStyle prop
+    const getPhotoAlbumComponent = (photos, albumStyle) => {
+        switch (albumStyle.toLowerCase()) {
+            case "rows":
+                return <RowsPhotoAlbum photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
+            case "columns":
+                return <ColumnsPhotoAlbum photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
+            case "masonry":
+            default:
+                return <MasonryPhotoAlbum photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
+        }
+    };
+
+    return (
+        <BodyContainer className="minecraft-gallery">
+            <IntroSection title={title}>
+                <p>{description}</p>
+            </IntroSection>
+            <DividerLine />
+            <div className="base-max-width">
+            {sections.map(({ key, name, photos, description, albumStyle }) => (
+    <div key={key}>
+        <h2 className="section-title" onClick={() => toggleSection(key)}>
+            {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
+        </h2>
+        <p>{description}</p>
+        {openSections[key] && getPhotoAlbumComponent(photos, albumStyle)}
+        <DividerLine />
+    </div>
+))}
+            </div>
+
+            <Lightbox
+                open={lightboxOpen}
+                close={() => setLightboxOpen(false)}
+                slides={lightboxImages}
+                index={currentSlide}
+                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+            />
+        </BodyContainer>
+    );
+};
+
+export default MinecraftGallery;
+
+
+/*
 
 const MinecraftGallery = ({ sections, title, description }) => {
     // Initialize openSections state dynamically based on sections array
@@ -42,42 +116,37 @@ const MinecraftGallery = ({ sections, title, description }) => {
 
     return (
         <BodyContainer className="minecraft-gallery">
-            <IntroSection title={title}>
-                <p>{description}</p>
+            <IntroSection title={ title }>
+                <p>{ description }</p>
             </IntroSection>
             <DividerLine />
-
             <div className="base-max-width">
                 {sections.map(({ key, name, photos, description }) => (
-                    <div key={key}>
-                        {/* Section Name Always Visible */}
+                    <div key={ key }>
+                        
                         <h2 className="section-title" onClick={() => toggleSection(key)}>
-                            {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
+                            { openSections[key] ? `▼ ${name}` : `▶ ${name}` }
                         </h2>
-
-                        {/* Description Always Visible */}
-                        <p>{description}</p>
-
-                        {/* Expandable Section (Only Images) */}
+                        <p>{ description }</p>
+                        
                         {openSections[key] && (
                             <MasonryPhotoAlbum
                                 photos={photos}
                                 onClick={({ index }) => openLightbox(photos, index)}
                             />
                         )}
-
                         <DividerLine />
                     </div>
                 ))}
             </div>
 
-            {/* Lightbox Component */}
+            
             <Lightbox
-                open={lightboxOpen}
+                open={ lightboxOpen }
                 close={() => setLightboxOpen(false)}
-                slides={lightboxImages}
-                index={currentSlide} // Ensure Lightbox starts on the correct image
-                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                slides={ lightboxImages }
+                index={ currentSlide } // Ensure Lightbox starts on the correct image
+                plugins={ [Fullscreen, Slideshow, Thumbnails, Zoom] }
             />
         </BodyContainer>
     );
@@ -86,22 +155,5 @@ const MinecraftGallery = ({ sections, title, description }) => {
 export default MinecraftGallery;
 
 
-/*
-<div className="base-max-width">
-                {sections.map(({ key, name, photos }) => (
-                    <div key={key}>
-                        <button className="test" onClick={() => toggleSection(key)}>
-                            {openSections[key] ? 'Collapse' : 'Expand'} {name}
-                        </button>
-                        {openSections[key] && (
-                            <MasonryPhotoAlbum
-                                photos={photos}
-                                onClick={({ index }) => openLightbox(photos, index)} 
 
-                              
-                               />
-                            )}
-                        </div>
-                    ))}
-                </div>
 */
