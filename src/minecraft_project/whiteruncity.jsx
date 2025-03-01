@@ -39,7 +39,7 @@ const WhiterunProject = () => {
     return (
         <MinecraftGallery
 
-            className="album"
+            
             title="Whiterun City from Elder Scrolls Skyrim"
             description="Explore the different stages of my Whiterun Minecraft build, from early construction to the final touches."
             sections={construction}

@@ -58,18 +58,17 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
             </IntroSection>
             <DividerLine />
             <div className="base-max-width">
-            {sections.map(({ key, name, photos, description, albumStyle }) => (
-    <div key={key}>
-        <h2 className="section-title" onClick={() => toggleSection(key)}>
-            {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
-        </h2>
-        <p>{description}</p>
-        {openSections[key] && getPhotoAlbumComponent(photos, albumStyle)}
-        <DividerLine />
-    </div>
-))}
+                {sections.map(({ key, name, photos, description, albumStyle }) => (
+                    <div key={key}>
+                        <h2 className="section-title" onClick={() => toggleSection(key)}>
+                            {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
+                        </h2>
+                        <p>{description}</p>
+                        {openSections[key] && getPhotoAlbumComponent(photos, albumStyle)}
+                        <DividerLine />
+                    </div>
+                ))}
             </div>
-
             <Lightbox
                 open={lightboxOpen}
                 close={() => setLightboxOpen(false)}

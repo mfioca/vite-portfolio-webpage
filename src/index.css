@@ -528,15 +528,22 @@ button:hover {
 .album { 
   margin-inline: auto;
   box-sizing: border-box;
+  
 }
 
 
 .react-photo-album img {
-  width: 100%; /* Fills the container */
-  height: auto; /* Maintains aspect ratio */
+  padding: 5px;
+  max-height: 100%;
   max-width: 100%;
-  object-fit: cover; /* Or 'contain' depending on your need */
+  object-fit: cover; 
+  border: 2px solid var(--bordercolor); /* Light gray border */
+  border-radius: var(--borderradius);
+  box-shadow: var(--boxshadow);
 }
+ 
+
+
 
 .test {
   width: 1250px;
