@@ -1,6 +1,8 @@
 import React from 'react';
 import WhiterunProject from './minecraft_project/whiteruncity';
-import { BodyContainer, IntroSection, DividerLine } from './SharedComponents';
+import { BodyContainer, IntroSection, DividerLine, WindowWidthDisplay } from './SharedComponents';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 
 const MinecraftProjects = () => {
     return (
@@ -25,14 +27,32 @@ const MinecraftProjects = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <BodyContainer>
-            <DividerLine />
-            
-            {/* Whiterun Project */}
-            <WhiterunProject />
-            
-            {/* Additional Minecraft projects can be added below */}
-            </BodyContainer>
+            <WindowWidthDisplay/>
+            <div className="center-div tabs-container">
+                <Tabs className="standard-tabs">
+                    <TabList>
+                        <Tab>"Elder Scrolls: Skyrim" Whiterun City</Tab>
+                        <Tab>Dwarven Kingdom</Tab>
+                    </TabList>
+                        
+                            <TabPanel>
+                                {/* Whiterun Project */}
+                                <WhiterunProject />
+
+                            </TabPanel>
+                            <TabPanel>
+                            <p>PLACEHOLDER</p>
+                            </TabPanel>
+                        
+
+                
+                
+                
+                   
+                    
+                    {/* Additional Minecraft projects can be added below */}
+                </Tabs>
+            </div>
         </div>
     );
 };

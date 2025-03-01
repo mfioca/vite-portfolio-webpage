@@ -52,18 +52,18 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
     };
 
     return (
-        <BodyContainer className="minecraft-gallery">
+        <div className="standard-padding-margin">
             <IntroSection title={title}>
-                <p>{description}</p>
+                {description}
             </IntroSection>
             <DividerLine />
             <div className="base-max-width">
                 {sections.map(({ key, name, photos, description, albumStyle }) => (
-                    <div key={key}>
+                    <div key={key} className="collapsible-section">
                         <h2 className="section-title" onClick={() => toggleSection(key)}>
                             {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
                         </h2>
-                        <p>{description}</p>
+                        {description}
                         {openSections[key] && getPhotoAlbumComponent(photos, albumStyle)}
                         <DividerLine />
                     </div>
@@ -76,7 +76,7 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
                 index={currentSlide}
                 plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
             />
-        </BodyContainer>
+        </div>
     );
 };
 
@@ -84,6 +84,24 @@ export default MinecraftGallery;
 
 
 /*
+
+
+
+
+
+<div key={key}>
+                        <h2 className="section-title" onClick={() => toggleSection(key)}>
+                            {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
+                        </h2>
+                        <p>{description}</p>
+                        {openSections[key] && getPhotoAlbumComponent(photos, albumStyle)}
+                        <DividerLine />
+                    </div>
+
+
+
+
+
 
 const MinecraftGallery = ({ sections, title, description }) => {
     // Initialize openSections state dynamically based on sections array

@@ -403,6 +403,131 @@ button:hover {
   justify-content: space-evenly; /* Evenly space the tabs within the list */
 }
 
+.vertical-tabs {
+  padding: 10px;
+  margin-top: -5px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px; /* Space between tabs and content */
+}
+
+
+
+/* Container to align tabs & content side by side */
+.vertical-tabs-layout-1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px; /* Increase spacing between tabs and content */
+}
+
+.vertical-tabs-layout {
+  
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  position: relative; /* Ensure proper stacking */
+  z-index: 1;
+}
+
+/* Push the content further from the tabs */
+.vertical-tab-content-1 {
+  flex-grow: 1;
+  padding: var(--padding);
+  margin-left: 30px; /* Creates a clear separation from the tabs */
+}
+
+.vertical-tab-content {
+  flex-grow: 1;
+  padding: 20px; /* Give it breathing room */
+  margin-left: 80px; /* Adjust as needed to clear the tabs */
+  margin-top: -5px; /* Adjust this to align properly */
+  background-color: var(--colorwhite); /* Ensure it has a background */
+  z-index: 2; /* Make sure it's above the tab */
+  position: relative;
+}
+
+/* Ensure collapsible section titles have space */
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 15px; /* Adds spacing between the sections */
+  margin-right: 5px;
+  cursor: pointer; /* Makes the mouse cursor act like a button */
+  user-select: none; /* Prevents accidental text selection */
+}
+
+/* Increase spacing between collapsible sections */
+.collapsible-section {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: var(--borderradius); /* Keep consistent styling */
+}
+
+/* Tab list (left side) */
+.vertical-tabs .react-tabs__tab-list {
+  display: flex;
+  flex-direction: column; /* Stack tabs vertically */
+  width: 60px; /* Adjust width */
+  margin-right: 20px; /* Space between tabs and content */
+  margin-top: -5px;
+}
+
+
+
+/* Style for individual tabs */
+.vertical-tabs .react-tabs__tab {
+  /*padding: 10px 15px;*/
+  padding: 50px 15px;
+  
+  text-align: left; /* Align text */
+  border-left: 3px solid transparent; /* Side indicator */
+  white-space: normal;
+word-wrap: break-word;
+overflow-wrap: break-word;
+background: none;
+background-color: VAR(--defaultColor);/* White background for unselected tabs */
+color: var(--fontcolor); /* Ensure text is visible */
+    border-left: 3px solid transparent; /* Keep the left indicator */
+   
+}
+
+/* Highlight selected tab */
+.vertical-tabs .react-tabs__tab--selected {
+  
+  font-weight: bold;
+  background-color: var(--colorwhite); /* Light grey blue background */
+    border-left: 3px solid var(--fontblue); /* Keep the left indicator */
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .vertical-tabs-layout {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    flex-direction: column; /* Stack tabs on top of the content */
+    align-items: center; /* Center align */
+  }
+
+  .vertical-tabs .react-tabs__tab-list {
+    flex-direction: row; /* Display tabs horizontally on small screens */
+    width: 100%; /* Take up full width */
+    justify-content: center; /* Center tabs */
+    margin-bottom: var(--margin20);
+  }
+
+  .vertical-tab-content {
+    margin-left: 0; /* Remove the left margin */
+    margin-top: -25px;
+    width: 100%; /* Ensure full width */
+  }
+}
+
+
+
+
+
+
+
 @media (max-width: 768px) {
   .standard-tabs .react-tabs__tab {
     flex: 1 0 22%; /* Each tab takes 22% of the row's width, adjusts based on available space */

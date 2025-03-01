@@ -1,4 +1,6 @@
 import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { BodyContainer } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
 import { building_enterance, building_section_1, building_section_2, building_keep } from './minecraft_photos';
 
@@ -37,13 +39,30 @@ const construction = [
 
 const WhiterunProject = () => {
     return (
-        <MinecraftGallery
-
-            
-            title="Whiterun City from Elder Scrolls Skyrim"
-            description="Explore the different stages of my Whiterun Minecraft build, from early construction to the final touches."
-            sections={construction}
-        />
+        <div className="vertical-tabs-container">
+            <Tabs className="vertical-tabs">
+                <div className="vertical-tabs-layout">
+                    <TabList>
+                        <Tab>Construction of City</Tab>
+                        <Tab>Skyrim / Minecraft side by side comparison</Tab>
+                        <Tab>After Project pictures</Tab>
+                    </TabList>
+                    <BodyContainer hasBackground = { true } className="vertical-tab-content">
+                    
+                        <TabPanel>
+                            <MinecraftGallery
+                                title="Whiterun City from Elder Scrolls Skyrim"
+                                description="Explore the different stages of my Whiterun Minecraft build, from early construction to the final touches."
+                                sections={construction}
+                            />
+                        </TabPanel>
+                        <TabPanel><p>PLACEHOLDER</p></TabPanel>
+                        <TabPanel><p>PLACEHOLDER</p></TabPanel>
+                    
+                    </BodyContainer>
+                </div>
+            </Tabs>
+        </div>
     );
 };
 
