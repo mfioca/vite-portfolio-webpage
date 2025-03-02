@@ -408,20 +408,10 @@ button:hover {
   margin-top: -5px;
   display: flex;
   align-items: flex-start;
-  gap: 30px; /* Space between tabs and content */
-}
-
-
-
-/* Container to align tabs & content side by side */
-.vertical-tabs-layout-1 {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px; /* Increase spacing between tabs and content */
+  gap: 10px; /* Space between tabs and content */
 }
 
 .vertical-tabs-layout {
-  
   display: flex;
   align-items: flex-start;
   gap: 11px;
@@ -430,73 +420,63 @@ button:hover {
 }
 
 /* Push the content further from the tabs */
-.vertical-tab-content-1 {
-  flex-grow: 1;
-  padding: var(--padding);
-  margin-left: 30px; /* Creates a clear separation from the tabs */
-}
 
 .vertical-tab-content {
   flex-grow: 1;
-  padding: 20px; /* Give it breathing room */
-  margin-left: 80px; /* Adjust as needed to clear the tabs */
+  padding: 10px; /* Give it breathing room */
+  /*margin-left: 80px; /* Adjust as needed to clear the tabs */
   margin-top: -5px; /* Adjust this to align properly */
   background-color: var(--colorwhite); /* Ensure it has a background */
   z-index: 2; /* Make sure it's above the tab */
   position: relative;
 }
 
-/* Ensure collapsible section titles have space */
-.section-title {
-  margin-top: 20px;
-  margin-bottom: 15px; /* Adds spacing between the sections */
-  margin-right: 5px;
-  cursor: pointer; /* Makes the mouse cursor act like a button */
-  user-select: none; /* Prevents accidental text selection */
-}
-
-/* Increase spacing between collapsible sections */
-.collapsible-section {
-  margin-top: 25px;
-  padding: 15px;
-  border-radius: var(--borderradius); /* Keep consistent styling */
-}
-
 /* Tab list (left side) */
 .vertical-tabs .react-tabs__tab-list {
   display: flex;
   flex-direction: column; /* Stack tabs vertically */
-  width: 60px; /* Adjust width */
-  margin-right: 20px; /* Space between tabs and content */
+  width: 170px; /* Adjust width */
+  
   margin-top: -5px;
+  margin-right: -12px;
+  
+  gap: 0px;
+  padding: -5px;
+  
 }
-
 
 
 /* Style for individual tabs */
 .vertical-tabs .react-tabs__tab {
-  /*padding: 10px 15px;*/
+  outline: none; /* Removes default focus outline */
+  border: var(--border); /* Ensure border applies */
+  border-bottom: var(--border);
+  width: 150px;
   padding: 50px 15px;
-  
-  text-align: left; /* Align text */
-  border-left: 3px solid transparent; /* Side indicator */
+  text-align: left;
   white-space: normal;
-word-wrap: break-word;
-overflow-wrap: break-word;
-background: none;
-background-color: VAR(--defaultColor);/* White background for unselected tabs */
-color: var(--fontcolor); /* Ensure text is visible */
-    border-left: 3px solid transparent; /* Keep the left indicator */
-   
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background: none;
+  background-color: var(--defaultColor);
+  color: var(--fontcolor);
 }
 
 /* Highlight selected tab */
-.vertical-tabs .react-tabs__tab--selected {
-  
+.vertical-tabs .react-tabs__tab--selected,
+.vertical-tabs .react-tabs__tab:focus,
+.vertical-tabs .react-tabs__tab:active,
+.vertical-tabs .react-tabs__tab:hover {
+  outline: none; /* Keeps focus from affecting layout */
+  border: var(--border); /* Make sure all borders apply */
+  border-bottom: var(--border); /* Ensure bottom border persists */
   font-weight: bold;
-  background-color: var(--colorwhite); /* Light grey blue background */
-    border-left: 3px solid var(--fontblue); /* Keep the left indicator */
-    font-weight: bold;
+  background-color: var(--colorwhite);
+}
+
+/* Make sure the panel has a consistent border */
+.vertical-tabs .react-tabs__panel--selected {
+  border: var(--border);
 }
 
 
@@ -521,6 +501,24 @@ color: var(--fontcolor); /* Ensure text is visible */
     width: 100%; /* Ensure full width */
   }
 }
+
+/* Ensure collapsible section titles have space */
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 15px; /* Adds spacing between the sections */
+  margin-right: 5px;
+  cursor: pointer; /* Makes the mouse cursor act like a button */
+  user-select: none; /* Prevents accidental text selection */
+}
+
+/* Increase spacing between collapsible sections */
+.collapsible-section {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: var(--borderradius); /* Keep consistent styling */
+}
+
+
 
 
 
