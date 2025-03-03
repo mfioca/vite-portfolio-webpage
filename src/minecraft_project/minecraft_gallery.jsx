@@ -57,18 +57,33 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
                 {description}
             </IntroSection>
             <DividerLine />
+
             <div className="base-max-width">
-                {sections.map(({ key, name, photos, description, albumStyle }) => (
+                {sections.map(({ key, name, photos, description, collapsible = true }) => (
                     <div key={key} className="collapsible-section">
+                    {collapsible ? (
                         <h2 className="section-title" onClick={() => toggleSection(key)}>
-                            {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
+                        {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
                         </h2>
-                        {description}
-                        {openSections[key] && getPhotoAlbumComponent(photos, albumStyle)}
-                        <DividerLine />
+                    ) : (
+                        <h2 className="section-title">{ name }</h2> // No toggle for non-collapsible sections
+                    )}
+
+                    { description }
+
+                    {/* Auto-open section if it's non-collapsible */}
+                    { (openSections[key] || !collapsible) && getPhotoAlbumComponent(photos, albumStyle) }
+
+                    {collapsible && <DividerLine />} {/* No divider if it's a single section */}
                     </div>
                 ))}
             </div>
+            
+
+
+
+
+
             <Lightbox
                 open={lightboxOpen}
                 close={() => setLightboxOpen(false)}
@@ -86,17 +101,20 @@ export default MinecraftGallery;
 /*
 
 
-
-
-
-<div key={key}>
+<div className="base-max-width">
+                {sections.map(({ key, name, photos, description, albumStyle }) => (
+                    <div key={key} className="collapsible-section">
                         <h2 className="section-title" onClick={() => toggleSection(key)}>
                             {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
                         </h2>
-                        <p>{description}</p>
+                        {description}
                         {openSections[key] && getPhotoAlbumComponent(photos, albumStyle)}
                         <DividerLine />
                     </div>
+                ))}
+            </div>
+
+
 
 
 

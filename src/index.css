@@ -519,13 +519,6 @@ button:hover {
 }
 
 
-
-
-
-
-
-
-
 @media (max-width: 768px) {
   .standard-tabs .react-tabs__tab {
     flex: 1 0 22%; /* Each tab takes 22% of the row's width, adjusts based on available space */
@@ -680,10 +673,12 @@ button:hover {
   transition: color 0.3s ease-in-out; /* Smooth transition for color change */
 }
 
-.section-title:hover {
+.section-title-1:hover {
   text-decoration: underline; /* Adds an underline on hover */
   color: var(--buttonbluehover); /* Optional: Change color slightly on hover */
 }
+
+
 /*dashboard hub */
 
 

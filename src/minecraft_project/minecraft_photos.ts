@@ -2,11 +2,15 @@ import type { Photo } from "react-photo-album";
 
 const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 
-function assetLink(folder: string, asset: string, width: number) {
+function whiterunConstructionLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}whiterun_building_city/${folder}/${asset}?w=${width}&q=75`;
 }
+
+function whiterunSplitScreenLink(asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}whiterun_minecraft_split_screen/${asset}?w=${width}&q=75`;
+}
   
-export { breakpoints, assetLink };
+export { breakpoints, whiterunConstructionLink, whiterunSplitScreenLink };
 
 export const building_enterance = [
     {
@@ -78,12 +82,12 @@ export const building_enterance = [
 ].map(
     ({ asset, alt, width, height }) =>
         ({
-            src: assetLink("enterance", asset, width),
+            src: whiterunConstructionLink("enterance", asset, width),
             alt,
             width,
             height,
             srcSet: breakpoints.map((breakpoint) => ({
-                src: assetLink("enterance", asset, width),
+                src: whiterunConstructionLink("enterance", asset, width),
                 width: breakpoint,
                 height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
         })),
@@ -202,12 +206,12 @@ export const building_section_1 = [
 ].map(
   ({ asset, alt, width, height }) =>
       ({
-        src: assetLink("section_1", asset, width),
+        src: whiterunConstructionLink("section_1", asset, width),
           alt,
           width,
           height,
           srcSet: breakpoints.map((breakpoint) => ({
-              src: assetLink("section_1", asset, width),
+              src: whiterunConstructionLink("section_1", asset, width),
               width: breakpoint,
               height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
       })),
@@ -356,12 +360,12 @@ export const building_section_2 = [
 ].map(
   ({ asset, alt, width, height }) =>
       ({
-          src: assetLink("section_2", asset, width),
+          src: whiterunConstructionLink("section_2", asset, width),
           alt,
           width,
           height,
           srcSet: breakpoints.map((breakpoint) => ({
-              src: assetLink("section_2", asset, width),
+              src: whiterunConstructionLink("section_2", asset, width),
               width: breakpoint,
               height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
           })),
@@ -456,14 +460,170 @@ export const building_keep = [
 ].map(
   ({ asset, alt, width, height }) =>
       ({
-          src: assetLink("keep", asset, width),
+          src: whiterunConstructionLink("keep", asset, width),
           alt,
           width,
           height,
           srcSet: breakpoints.map((breakpoint) => ({
-              src: assetLink("keep", asset, width),
+              src: whiterunConstructionLink("keep", asset, width),
               width: breakpoint,
               height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
           })),
   }) as Photo,
+);
+
+
+
+
+/***********************************************************************************/
+/*                          SIDE BY SIDE SECTION                                   */
+/***********************************************************************************/
+
+
+export const side_by_side = [
+  {
+    asset: "side_by_side101.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side101",
+  },
+  {
+    asset: "side_by_side102.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side102",
+  },
+  {
+    asset: "side_by_side103.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side103",
+  },
+  {
+    asset: "side_by_side104.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side104",
+  },
+  {
+    asset: "side_by_side105.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side105",
+  },
+  {
+    asset: "side_by_side106.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side106",
+  },
+  {
+    asset: "side_by_side107.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side107",
+  },
+  {
+    asset: "side_by_side108.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side108",
+  },
+  {
+    asset: "side_by_side109.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side109",
+  },
+  {
+    asset: "side_by_side110.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side110",
+  },
+  {
+    asset: "side_by_side111.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side111",
+  },
+  {
+    asset: "side_by_side112.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side112",
+  },
+  {
+    asset: "side_by_side113.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side113",
+  },
+  {
+    asset: "side_by_side114.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side114",
+  },
+  {
+    asset: "side_by_side115.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side115",
+  },
+  {
+    asset: "side_by_side116.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side116",
+  },
+  {
+    asset: "side_by_side117.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side117",
+  },
+  {
+    asset: "side_by_side118.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side118",
+  },
+  {
+    asset: "side_by_side119.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side119",
+  },
+  {
+    asset: "side_by_side120.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side120",
+  },
+  {
+    asset: "side_by_side121.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side121",
+  },
+  {
+    asset: "side_by_side122.jpg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for side_by_side122",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: whiterunSplitScreenLink(asset, width),
+      alt,
+      width,
+      height,
+      srcSet: breakpoints.map((breakpoint) => ({
+        src: whiterunSplitScreenLink(asset, width),
+        width: breakpoint,
+        height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
+      })),
+    }) as Photo
 );
