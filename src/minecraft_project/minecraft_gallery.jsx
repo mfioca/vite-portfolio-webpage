@@ -32,6 +32,8 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
         }));
     };
 
+    
+
     const openLightbox = (photos, index) => {
         setLightboxImages(photos.map((photo) => ({ src: photo.src })));
         setCurrentSlide(index);
@@ -50,6 +52,8 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
                 return <MasonryPhotoAlbum photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
         }
     };
+
+    
 
     return (
         <div className="standard-padding-margin">

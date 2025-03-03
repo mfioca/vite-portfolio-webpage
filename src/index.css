@@ -649,6 +649,7 @@ button:hover {
 
 
 .react-photo-album img {
+  display: block;
   padding: 5px;
   max-height: 100%;
   max-width: 100%;
@@ -658,14 +659,6 @@ button:hover {
   box-shadow: var(--boxshadow);
 }
  
-
-
-
-.test {
-  width: 1250px;
-  margin: 20px;
-  padding: 20px;
-}
 
 .section-title {
   cursor: pointer;  /* Makes the mouse cursor act like it's over a button */
