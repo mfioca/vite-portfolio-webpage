@@ -403,6 +403,24 @@ button:hover {
   justify-content: space-evenly; /* Evenly space the tabs within the list */
 }
 
+@media (max-width: 768px) {
+  .standard-tabs .react-tabs__tab {
+    flex: 1 0 22%; /* Each tab takes 22% of the row's width, adjusts based on available space */
+    text-align: center; /* Center the text inside each tab */
+    padding: 2px;
+    margin: 2px;
+    font-size: 1rem;
+  }
+
+  .standard-tabs .react-tabs__tab-list {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow tabs to wrap to the next line */
+    justify-content: center; /* Center-align tabs within each row */
+    gap: var(--gap10);
+    width: 100%;
+  }
+}
+
 .vertical-tabs {
   padding: 10px;
   margin-top: -5px;
@@ -436,13 +454,10 @@ button:hover {
   display: flex;
   flex-direction: column; /* Stack tabs vertically */
   width: 170px; /* Adjust width */
-  
   margin-top: -5px;
   margin-right: -12px;
-  
   gap: 0px;
   padding: -5px;
-  
 }
 
 
@@ -479,7 +494,6 @@ button:hover {
   border: var(--border);
 }
 
-
 @media (max-width: 768px) {
   .vertical-tabs-layout {
     margin-top: 10px;
@@ -499,41 +513,6 @@ button:hover {
     margin-left: 0; /* Remove the left margin */
     margin-top: -25px;
     width: 100%; /* Ensure full width */
-  }
-}
-
-/* Ensure collapsible section titles have space */
-.section-title {
-  margin-top: 20px;
-  margin-bottom: 15px; /* Adds spacing between the sections */
-  margin-right: 5px;
-  cursor: pointer; /* Makes the mouse cursor act like a button */
-  user-select: none; /* Prevents accidental text selection */
-}
-
-/* Increase spacing between collapsible sections */
-.collapsible-section {
-  margin-top: 25px;
-  padding: 15px;
-  border-radius: var(--borderradius); /* Keep consistent styling */
-}
-
-
-@media (max-width: 768px) {
-  .standard-tabs .react-tabs__tab {
-    flex: 1 0 22%; /* Each tab takes 22% of the row's width, adjusts based on available space */
-    text-align: center; /* Center the text inside each tab */
-    padding: 2px;
-    margin: 2px;
-    font-size: 1rem;
-  }
-
-  .standard-tabs .react-tabs__tab-list {
-    display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow tabs to wrap to the next line */
-    justify-content: center; /* Center-align tabs within each row */
-    gap: var(--gap10);
-    width: 100%;
   }
 }
 
@@ -628,10 +607,9 @@ button:hover {
   }
 }
 
-
-
-
-
+/***********************************************************************************/
+/*                         Minecraft Projects Section                              */
+/***********************************************************************************/
 
 .minecraft-body  {
   font-family: 'Courier New'; /* A clean sans-serif font */
@@ -658,7 +636,22 @@ button:hover {
   border-radius: var(--borderradius);
   box-shadow: var(--boxshadow);
 }
- 
+ /* Ensure collapsible section titles have space */
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 15px; /* Adds spacing between the sections */
+  margin-right: 5px;
+  cursor: pointer; /* Makes the mouse cursor act like a button */
+  user-select: none; /* Prevents accidental text selection */
+}
+
+/* Increase spacing between collapsible sections */
+.collapsible-section {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: var(--borderradius); /* Keep consistent styling */
+}
+
 
 .section-title {
   cursor: pointer;  /* Makes the mouse cursor act like it's over a button */
@@ -671,7 +664,25 @@ button:hover {
   color: var(--buttonbluehover); /* Optional: Change color slightly on hover */
 }
 
+.placeholder-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Adjust as needed */
+  width: 1000px;
+  border: var(--border);
+  border-radius: var(--borderradius);
+  background-color: var(--lightgreyblue);
+  text-align: center;
+  box-shadow: var(--boxshadow);
+}
 
+.placeholder-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--fontcolor);
+  opacity: 0.8;
+}
 /*dashboard hub */
 
 

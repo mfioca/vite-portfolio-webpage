@@ -39,7 +39,7 @@ const MinecraftProjects = () => {
                         <WhiterunProject />
                     </TabPanel>
                     <TabPanel>
-                        <p>PLACEHOLDER</p>
+                        <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
                     </TabPanel>
                     {/* Additional Minecraft projects can be added below */}
                 </Tabs>
