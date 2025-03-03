@@ -32,8 +32,6 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
         }));
     };
 
-    
-
     const openLightbox = (photos, index) => {
         setLightboxImages(photos.map((photo) => ({ src: photo.src })));
         setCurrentSlide(index);
@@ -53,21 +51,18 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
         }
     };
 
-    
-
     return (
         <div className="standard-padding-margin">
-            <IntroSection title={title}>
-                {description}
+            <IntroSection title={ title }>
+                { description }
             </IntroSection>
             <DividerLine />
-
             <div className="base-max-width">
                 {sections.map(({ key, name, photos, description, collapsible = true }) => (
-                    <div key={key} className="collapsible-section">
+                    <div key={ key } className="collapsible-section">
                     {collapsible ? (
                         <h2 className="section-title" onClick={() => toggleSection(key)}>
-                        {openSections[key] ? `▼ ${name}` : `▶ ${name}`}
+                        {openSections[key] ? `▼ ${ name }` : `▶ ${ name }`}
                         </h2>
                     ) : (
                         <h2 className="section-title">{ name }</h2> // No toggle for non-collapsible sections
@@ -78,22 +73,16 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
                     {/* Auto-open section if it's non-collapsible */}
                     { (openSections[key] || !collapsible) && getPhotoAlbumComponent(photos, albumStyle) }
 
-                    {collapsible && <DividerLine />} {/* No divider if it's a single section */}
+                    { collapsible && <DividerLine /> } {/* No divider if it's a single section */}
                     </div>
                 ))}
             </div>
-            
-
-
-
-
-
             <Lightbox
-                open={lightboxOpen}
-                close={() => setLightboxOpen(false)}
-                slides={lightboxImages}
-                index={currentSlide}
-                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                open={ lightboxOpen }
+                close={ () => setLightboxOpen(false) }
+                slides={ lightboxImages }
+                index={ currentSlide }
+                plugins={ [Fullscreen, Slideshow, Thumbnails, Zoom] }
             />
         </div>
     );

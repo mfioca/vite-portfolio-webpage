@@ -69,7 +69,6 @@ const WhiterunProject = () => {
                         <Tab>After Project pictures</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
-                    
                         <TabPanel>
                             <MinecraftGallery
                                 title="Whiterun City from Elder Scrolls Skyrim"
@@ -83,11 +82,8 @@ const WhiterunProject = () => {
                                 description="Explore direct comparisons between my Minecraft recreation and the original Whiterun from Skyrim."
                                 sections={ side_by_side_section } // Single section, auto-opens
                             />
-                            </TabPanel>
-
-
+                        </TabPanel>
                         <TabPanel><p>PLACEHOLDER</p></TabPanel>
-                    
                     </BodyContainer>
                 </div>
             </Tabs>

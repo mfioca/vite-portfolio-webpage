@@ -34,22 +34,13 @@ const MinecraftProjects = () => {
                         <Tab>"Elder Scrolls: Skyrim" Whiterun City</Tab>
                         <Tab>Dwarven Kingdom</Tab>
                     </TabList>
-                        
-                            <TabPanel>
-                                {/* Whiterun Project */}
-                                <WhiterunProject />
-
-                            </TabPanel>
-                            <TabPanel>
-                            <p>PLACEHOLDER</p>
-                            </TabPanel>
-                        
-
-                
-                
-                
-                   
-                    
+                    <TabPanel>
+                        {/* Whiterun Project */}
+                        <WhiterunProject />
+                    </TabPanel>
+                    <TabPanel>
+                        <p>PLACEHOLDER</p>
+                    </TabPanel>
                     {/* Additional Minecraft projects can be added below */}
                 </Tabs>
             </div>
