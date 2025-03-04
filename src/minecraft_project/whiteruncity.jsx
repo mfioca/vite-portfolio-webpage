@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { BodyContainer } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
-import { building_enterance, building_section_1, building_section_2, building_keep, side_by_side } from './minecraft_photos';
+import { building_enterance, building_section_1, building_section_2, building_keep, side_by_side } from './whiterun_photoes';
 
 const construction = [
     { key: 'enterance', name: 'Entrance', photos: building_enterance, albumStyle: "Masonry", description: (
@@ -48,7 +48,7 @@ const construction = [
     ) }
 ];
 
-export const side_by_side_section = [
+const sideByside_section = [
     {
       key: "side_by_side",
       name: "Skyrim / Minecraft Side-by-Side",
@@ -70,7 +70,7 @@ export const side_by_side_section = [
 
 const WhiterunProject = () => {
     return (
-        <div className="vertical-tabs-container">
+        <div>
             <Tabs className="vertical-tabs">
                 <div className="vertical-tabs-layout">
                     <TabList>
@@ -89,7 +89,7 @@ const WhiterunProject = () => {
                                             It showcases a combination of creativity, planning, and problem-solving.
                                         </p>
                                         <p><strong>Key aspects of the build:</strong></p>
-                                        <ul>
+                                        <ul className="default-list">
                                             <li><strong>Accuracy & Scale</strong> – Careful attention to proportions, ensuring structures match the in-game city layout.</li>
                                             <li><strong>Design Challenges</strong> – Adapting Skyrim’s curved architecture and terrain to Minecraft’s block-based system.</li>
                                             <li><strong>Problem-Solving</strong> – Adjusting details to maintain immersion while staying true to the source material.</li>
@@ -107,7 +107,7 @@ const WhiterunProject = () => {
                             <MinecraftGallery
                                 title="Skyrim vs Minecraft Side-by-Side"
                                 description="Explore direct comparisons between my Minecraft recreation and the original Whiterun from Skyrim."
-                                sections={ side_by_side_section } // Single section, auto-opens
+                                sections={ sideByside_section } // Single section, auto-opens
                             />
                         </TabPanel>
                         <TabPanel>

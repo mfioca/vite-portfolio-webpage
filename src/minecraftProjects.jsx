@@ -1,6 +1,6 @@
 import React from 'react';
 import WhiterunProject from './minecraft_project/whiteruncity';
-import { BodyContainer, IntroSection, DividerLine } from './SharedComponents';
+import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 

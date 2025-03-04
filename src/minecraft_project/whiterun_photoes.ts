@@ -74,17 +74,17 @@ export const building_enterance = [
       alt: "Placeholder description for building 111",
     },
 ].map(
-    ({ asset, alt, width, height }) =>
-        ({
-            src: whiterunConstructionLink("enterance", asset, width),
-            alt,
-            width,
-            height,
-            srcSet: breakpoints.map((breakpoint) => ({
-                src: whiterunConstructionLink("enterance", asset, width),
-                width: breakpoint,
-                height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
-        })),
+  ({ asset, alt, width, height }) =>
+    ({
+      src: whiterunConstructionLink("enterance", asset, width),
+      alt,
+      width,
+      height,
+      srcSet: breakpoints.map((breakpoint) => ({
+          src: whiterunConstructionLink("enterance", asset, width),
+          width: breakpoint,
+          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
+      })),
     }) as Photo,
 );
 
@@ -205,17 +205,17 @@ export const building_section_1 = [
   },
 ].map(
   ({ asset, alt, width, height }) =>
-      ({
-        src: whiterunConstructionLink("section_1", asset, width),
-          alt,
-          width,
-          height,
-          srcSet: breakpoints.map((breakpoint) => ({
-              src: whiterunConstructionLink("section_1", asset, width),
-              width: breakpoint,
-              height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
+    ({
+      src: whiterunConstructionLink("section_1", asset, width),
+      alt,
+      width,
+      height,
+      srcSet: breakpoints.map((breakpoint) => ({
+          src: whiterunConstructionLink("section_1", asset, width),
+          width: breakpoint,
+          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
       })),
-  }) as Photo,
+    }) as Photo,
 );
 
 export const building_section_2 = [
@@ -359,17 +359,17 @@ export const building_section_2 = [
   },
 ].map(
   ({ asset, alt, width, height }) =>
-      ({
+    ({
+      src: whiterunConstructionLink("section_2", asset, width),
+      alt,
+      width,
+      height,
+      srcSet: breakpoints.map((breakpoint) => ({
           src: whiterunConstructionLink("section_2", asset, width),
-          alt,
-          width,
-          height,
-          srcSet: breakpoints.map((breakpoint) => ({
-              src: whiterunConstructionLink("section_2", asset, width),
-              width: breakpoint,
-              height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
-          })),
-  }) as Photo,
+          width: breakpoint,
+          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
+      })),
+    }) as Photo,
 );
   
 export const building_keep = [
@@ -459,21 +459,18 @@ export const building_keep = [
   },
 ].map(
   ({ asset, alt, width, height }) =>
-      ({
+    ({
+      src: whiterunConstructionLink("keep", asset, width),
+      alt,
+      width,
+      height,
+      srcSet: breakpoints.map((breakpoint) => ({
           src: whiterunConstructionLink("keep", asset, width),
-          alt,
-          width,
-          height,
-          srcSet: breakpoints.map((breakpoint) => ({
-              src: whiterunConstructionLink("keep", asset, width),
-              width: breakpoint,
-              height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
-          })),
-  }) as Photo,
+          width: breakpoint,
+          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
+      })),
+    }) as Photo,
 );
-
-
-
 
 /***********************************************************************************/
 /*                          SIDE BY SIDE SECTION                                   */

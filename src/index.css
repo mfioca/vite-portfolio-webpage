@@ -175,7 +175,6 @@ h2 {
   padding: var(--padding)
 }
 
-
 .center-div {
   display: flex;
   justify-content: center;
@@ -437,8 +436,6 @@ button:hover {
   z-index: 1;
 }
 
-/* Push the content further from the tabs */
-
 .vertical-tab-content {
   flex-grow: 1;
   padding: 10px; /* Give it breathing room */
@@ -679,7 +676,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   height: 400px; /* Adjust as needed */
-  width: 1000px;
+  max-width: 1000px;
   border: var(--border);
   border-radius: var(--borderradius);
   background-color: var(--lightgreyblue);
