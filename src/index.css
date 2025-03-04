@@ -380,7 +380,7 @@ button:hover {
   flex-wrap: wrap;               /* Allow tabs to wrap to the next line if there's not enough space */
   gap: var(--gap10);
   margin: 0 auto;
-  width: 100%;                   /* Ensure full width usage */
+  max-width: 90%; /* Prevents it from stretching full width */
 }
 
 .standard-tabs .react-tabs__tab:hover {
@@ -495,6 +495,9 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+  .vertical-tabs {
+    margin-top: 0;
+  }
   .vertical-tabs-layout {
     margin-top: 10px;
     margin-bottom: 0px;
@@ -507,12 +510,16 @@ button:hover {
     width: 100%; /* Take up full width */
     justify-content: center; /* Center tabs */
     margin-bottom: var(--margin20);
+    margin-top: 10px;
+    margin: 10px auto;
+    gap: 0px;
+    padding: 5px;
   }
 
   .vertical-tab-content {
-    margin-left: 0; /* Remove the left margin */
+    margin: 0 auto; /* Remove the left margin */
     margin-top: -25px;
-    width: 100%; /* Ensure full width */
+    width: 95%; /* Ensure full width */
   }
 }
 
@@ -521,9 +528,9 @@ button:hover {
 /***********************************************************************************/
 
 .home-body  {
-  flex-grow: 1;
   margin-bottom: 50px;
-  padding: var(--padding);
+  margin-top: 50px;
+  padding: 5px;
   justify-content: center;
 }
 
@@ -544,8 +551,8 @@ button:hover {
 .home-content p {
   margin-bottom: 5px; /* Smaller space below each paragraph */
   line-height: 3; /* Adjust line height for better text flow */
-  margin-right: var(--default-spacing);
-  margin-left: var(--default-spacing);
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .home-container {
@@ -553,6 +560,7 @@ button:hover {
   align-items: flex-start; /* Align items at the top */
   gap: var(--gap10);
 }
+
 
 .home-image-original {
   float: right;
@@ -584,6 +592,7 @@ button:hover {
   .home-image {
     order: 1; /* Ensure the image appears above the text */
     margin: 0 auto; /* Center the image within the container */
+    max-width: 100%;
   }
 
   .home-text {
@@ -595,15 +604,19 @@ button:hover {
 /*                                  AI Showcase                                    */
 /***********************************************************************************/
 
+
 .ai-showcase-container {
-  margin: 0 auto; /* Center the container on the page */
+  margin-top: 0; /* Center the container on the page */
   /*font-family: 'Arial', sans-serif; /* Clean, readable font */
   font-family: var(--fontfamily);
+  padding: 0 15px; /* Adds space on left/right */
+  
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
   .ai-showcase-container {
-    padding: 10px; /* Reduce padding for smaller screens */
+    padding: 10px 15px; /* Adds space on left/right */
   }
 }
 
@@ -622,9 +635,7 @@ button:hover {
 .album { 
   margin-inline: auto;
   box-sizing: border-box;
-  
 }
-
 
 .react-photo-album img {
   display: block;
@@ -651,7 +662,6 @@ button:hover {
   padding: 15px;
   border-radius: var(--borderradius); /* Keep consistent styling */
 }
-
 
 .section-title {
   cursor: pointer;  /* Makes the mouse cursor act like it's over a button */
@@ -682,6 +692,14 @@ button:hover {
   font-weight: bold;
   color: var(--fontcolor);
   opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .placeholder-container {
+    padding: 5px; /* Adds space on left/right */
+    margin: 5px auto;
+    width: 90%;
+  }
 }
 /*dashboard hub */
 

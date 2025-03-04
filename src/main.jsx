@@ -73,6 +73,7 @@ const Navigation = () => {
         <li>
           <Link to="/AIShowcase" className="nav-link">AI Showcase</Link>
         </li>
+        
         <li>
           <Link to="/MinecraftProjects" className="nav-link">Minecraft Projects</Link>
         </li>
@@ -123,6 +124,7 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <Navigation /> {/* Place Navigation here */}
+      <React.StrictMode>
         <Routes>
           <Route path="/" element={ <Home /> } /> 
           <Route path="/About" element={ <AboutPage /> } /> 
@@ -133,9 +135,9 @@ root.render(
           <Route path="/AIShowcase" element={ <AIShowcase /> } />
           <Route path="/MinecraftProjects" element={ <MinecraftProjects /> } />
         </Routes>
-        <Footer />
+      </React.StrictMode>
+      <Footer />
     </HashRouter>
   </React.StrictMode>
 );
-
 

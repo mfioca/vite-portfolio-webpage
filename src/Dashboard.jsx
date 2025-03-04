@@ -50,7 +50,7 @@ function Dashboard() {
                     </p>
                 </IntroSection>
                 <DividerLine />
-                <BodyContainer hasBackground = { true } className="flex-wrap-center graph-flexbox">
+                <BodyContainer hasBackground = { true } className=" graph-flexbox">
                     <BorderBox className="flex-wrap standard-margin graph-container">
                         <Graph />
                         <TextSection>

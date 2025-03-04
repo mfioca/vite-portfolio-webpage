@@ -162,7 +162,7 @@ const CSVdata = () => {
     const currentData = filteredData.slice(startIndex, endIndex);
  
     return (
-        <BodyContainer hasBackground = { true } className="flex-column-center">
+        <BodyContainer hasBackground = { true } className="flex-column-center dashboard_flexbox">
             <BorderBox className="dashboard-hub">        
                 <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>

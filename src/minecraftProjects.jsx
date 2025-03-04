@@ -1,6 +1,6 @@
 import React from 'react';
 import WhiterunProject from './minecraft_project/whiteruncity';
-import { BodyContainer, IntroSection, DividerLine, WindowWidthDisplay } from './SharedComponents';
+import { BodyContainer, IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 
@@ -27,7 +27,6 @@ const MinecraftProjects = () => {
                 </p>
             </IntroSection>
             <DividerLine />
-            <WindowWidthDisplay/>
             <div className="center-div tabs-container">
                 <Tabs className="standard-tabs">
                     <TabList>
@@ -49,24 +48,3 @@ const MinecraftProjects = () => {
 };
 
 export default MinecraftProjects;
-
-
-/*
-<IntroSection title="AI Showcase">
-                <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase serves as a demonstration of advanced prompt engineering and AI  collaboration techniques. This page highlights a curated collection of interactive conversations designed to showcase the power of OpenAI’s language models when combined with creative and technical expertise. Each example illustrates unique prompts, custom-tailored to generate engaging, insightful, and dynamic interactions.
-                </p>
-                <p>
-                    By exploring this page, you’ll gain insight into how carefully crafted prompts can shape AI behavior, enabling applications in storytelling, education, decision support, and more. The AI Showcase is not just a testament to the potential of AI but also a reflection of the innovative approaches used to push its boundaries.
-                </p>
-            </IntroSection>
-
-
-             <IntroSection title="Minecraft Projects">
-                    
-                    <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;
-                        This section showcases my various Minecraft builds, including detailed recreations of iconic locations.
-                        Each project represents months of effort, capturing architectural and environmental details as accurately as possible.
-                    </p>
-                    <DividerLine />
-                </IntroSection>
-*/

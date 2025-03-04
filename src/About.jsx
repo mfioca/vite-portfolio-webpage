@@ -1,6 +1,7 @@
 import React, { useState, useEffect  } from 'react';
 import './About.css'; 
 import { DividerLine, IntroSection, BodyContainer } from './SharedComponents';
+import { Link } from 'react-router-dom';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -238,6 +239,19 @@ const About = () => {
                             The process required persistence and the ability to adapt, as I constantly refined my work to match the original design. These traits—along with my passion 
                             for tackling complex tasks—reflect how I approach professional challenges, striving for accuracy and excellence in every detail.
                         </p>
+                        <Link 
+                            to="/MinecraftProjects"
+                            style={{
+                                display: 'block', 
+                                marginTop: '10px', 
+                                fontSize: '0.9rem', 
+                                color: '#0078d4', 
+                                textDecoration: 'none',
+                                fontWeight: 'bold'
+                            }}
+                        >
+                            <p>View the Full Minecraft Project →</p>
+                        </Link>
                     </Card>
                 </SwiperSlide>
             </Swiper>

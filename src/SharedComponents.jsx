@@ -267,7 +267,6 @@ export const ChatBubble = ({ data }) => {
                 )}
             </div>
         </div>
-        
     );
 };
 

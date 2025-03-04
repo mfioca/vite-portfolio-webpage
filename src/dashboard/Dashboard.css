@@ -1,5 +1,6 @@
 .Dashboard {
   text-align: center;
+  margin-top: 50px;
 }
 
 /*rescuetime link */
@@ -15,8 +16,19 @@
 /*                   main dashboard page - 3 charts                                */
 /***********************************************************************************/
 
-.graph-flexbox {
+.graph-flexbox-1 {
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
+  padding: 3px;
+}
+
+.graph-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  padding: 3px;
+}
+
+.dashboard_flexbox {
   padding: 3px;
 }
 
@@ -53,11 +65,30 @@
 }
 
 @media (max-width: 1000px) { /* Adjust this breakpoint as needed */
+  .Dashboard {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
   .chart-container {
     grid-template-columns: 1fr; /* Switch to a single column layout */
     justify-content: center; /* Center the pagination controls */
     margin: auto;
     padding: 3px;
+  }
+
+  .graph-flexbox,
+  .dashboard_flexbox {
+    margin: -7px;
+    padding: -7px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .csv-chart-content {
+    width: 80%;
+    padding: 5px;
+    margin: auto;
   }
 
   .graph-container {
@@ -126,6 +157,7 @@
 .csv-chart-content {
   height: 450px; /* Allocate 80% of the height to the chart area */
   align-items: center;
+  padding: 10px;
 }
 
 .filtered-data {
