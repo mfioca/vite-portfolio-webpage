@@ -472,6 +472,58 @@ export const building_keep = [
     }) as Photo,
 );
 
+export const building_random_extras = [
+  {
+    asset: "random101.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for random101",
+  },
+  {
+    asset: "random102.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for random102",
+  },
+  {
+    asset: "random103.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for random103",
+  },
+  {
+    asset: "random104.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for random104",
+  },
+  {
+    asset: "random105.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for random105",
+  },
+  {
+    asset: "random106.jpeg",
+    width: 1280,
+    height: 720,
+    alt: "Placeholder description for random106",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: whiterunConstructionLink("random_extras", asset, width),
+      alt,
+      width,
+      height,
+      srcSet: breakpoints.map((breakpoint) => ({
+          src: whiterunConstructionLink("random_extras", asset, width),
+          width: breakpoint,
+          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
+      })),
+    }) as Photo,
+);
+
 /***********************************************************************************/
 /*                          SIDE BY SIDE SECTION                                   */
 /***********************************************************************************/

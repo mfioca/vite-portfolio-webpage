@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { BodyContainer } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
-import { building_enterance, building_section_1, building_section_2, building_keep, side_by_side } from './whiterun_photoes';
+import { building_enterance, building_section_1, building_section_2, building_keep, side_by_side, building_random_extras } from './whiterun_photoes';
 
 const construction = [
     { key: 'enterance', name: 'Entrance', photos: building_enterance, albumStyle: "Masonry", description: (
@@ -45,7 +45,21 @@ const construction = [
                 As construction progressed, structural details were refined, bringing the keep closer to its final form while maintaining the integrity of the landscape.
             </p>
         </>
-    ) }
+    ) },
+    { key: 'random_extras', name: 'Construction Overview & Terrain Work', photos: building_random_extras, albumStyle: "Rows", description: (
+        <>
+            <p>
+                These images provide a broader, zoomed-out perspective of Whiterun’s construction progress. 
+                They capture the overall layout of the city as it was being built, allowing for a better 
+                assessment of scale and structural alignment.
+            </p>
+            <p>
+                Some images highlight the significant amount of empty space beneath the city, showcasing the process of filling it with dirt 
+                using fill console commands to create a solid foundation. This step was crucial in ensuring the terrain closely matched the elevation 
+                changes and natural topography of the original Whiterun.
+            </p>
+        </>
+    ) },
 ];
 
 const sideByside_section = [
