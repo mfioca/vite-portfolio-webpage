@@ -132,18 +132,6 @@ h2 {
   max-width: var(--maxwidth);
 }
 
-/* possibly no longer used
-.box-background {
-  box-shadow: var(--boxshadow);
-  background-image: var(--background-image);
-  transition: opacity 0.5s ease-in-out; 
-  box-sizing: border-box; 
-  border: var(--border);
-  border-radius: var(--borderradius);
-  padding: 10px;
-}
-  */
-
 .box-background-standard {
   box-sizing: border-box; /* Include padding and borders in element's total width/height */
   box-shadow: var(--boxshadow);
@@ -166,7 +154,6 @@ h2 {
   border-radius: var(--borderradius);
   box-shadow: var(--boxshadow);
 }
-
 
 .box-style {
   border: var(--border);
@@ -439,7 +426,6 @@ button:hover {
 .vertical-tab-content {
   flex-grow: 1;
   padding: 10px; /* Give it breathing room */
-  /*margin-left: 80px; /* Adjust as needed to clear the tabs */
   margin-top: -5px; /* Adjust this to align properly */
   background-color: var(--colorwhite); /* Ensure it has a background */
   z-index: 2; /* Make sure it's above the tab */
@@ -456,7 +442,6 @@ button:hover {
   gap: 0px;
   padding: -5px;
 }
-
 
 /* Style for individual tabs */
 .vertical-tabs .react-tabs__tab {
@@ -651,6 +636,12 @@ button:hover {
   margin-right: 5px;
   cursor: pointer; /* Makes the mouse cursor act like a button */
   user-select: none; /* Prevents accidental text selection */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+.section-title-1:hover {
+  text-decoration: underline; /* Adds an underline on hover */
+  color: var(--buttonbluehover); /* Optional: Change color slightly on hover */
 }
 
 /* Increase spacing between collapsible sections */
@@ -658,17 +649,6 @@ button:hover {
   margin-top: 25px;
   padding: 15px;
   border-radius: var(--borderradius); /* Keep consistent styling */
-}
-
-.section-title {
-  cursor: pointer;  /* Makes the mouse cursor act like it's over a button */
-  user-select: none; /* Prevents accidental text selection */
-  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
-}
-
-.section-title-1:hover {
-  text-decoration: underline; /* Adds an underline on hover */
-  color: var(--buttonbluehover); /* Optional: Change color slightly on hover */
 }
 
 .placeholder-container {

@@ -125,9 +125,9 @@ const WhiterunProject = () => {
                             />
                         </TabPanel>
                         <TabPanel>
-                        <div className=" standard-padding-margin placeholder-container">
-                            <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
-                        </div>
+                            <div className=" standard-padding-margin placeholder-container">
+                                <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
+                            </div>
                         </TabPanel>
                     </BodyContainer>
                 </div>
