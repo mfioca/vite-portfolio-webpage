@@ -1,15 +1,8 @@
 import React from 'react';
 import WhiterunProject from './minecraft_project/whiteruncity';
-import { building_enterance, building_section_1, building_section_2, building_keep, side_by_side, building_random_extras } from './minecraft_project/whiterun_photoes'; 
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
-
-import { MasonryPhotoAlbum, RowsPhotoAlbum, ColumnsPhotoAlbum } from 'react-photo-album';
-import 'react-photo-album/masonry.css';
-import "react-photo-album/rows.css";
-import "react-photo-album/columns.css";
-import Imgix from 'react-imgix';
 
 const MinecraftProjects = () => {
     return (
@@ -40,106 +33,13 @@ const MinecraftProjects = () => {
                         <Tab>"Elder Scrolls: Skyrim" Whiterun City</Tab>
                         <Tab>Dwarven Kingdom</Tab>
                     </TabList>
-                    
                     <TabPanel>
-                    {/* Whiterun Project   <WhiterunProject />*/}
-<div className="base-max-width">
-                        <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
-                        <MasonryPhotoAlbum photos= { building_enterance } 
-                        renderPhoto={({ photo, imageProps }) => (
-                            <Imgix
-                            src={photo.src}
-                            width={photo.width}
-                            height={photo.height}
-                            alt={photo.alt}
-                            /*sizes="(max-width: 768px) 100vw, 50vw"*/
-                            /* imgixParams={{ auto: "format,compress", fit: "crop" }} */
-                           imgixParams={{ auto: "format,compress"}}
-                           {...imageProps}
-                            /> 
-                        )}imageProps={{ loading: "lazy" }} />
-                        <DividerLine />
-                        <RowsPhotoAlbum photos= { building_section_1 } 
-                        renderPhoto={({ photo, imageProps }) => (
-                            <Imgix
-                            src={photo.src}
-                            width={photo.width}
-                            height={photo.height}
-                            alt={photo.alt}
-                            /*sizes="(max-width: 768px) 100vw, 50vw"*/
-                            /* imgixParams={{ auto: "format,compress", fit: "crop" }} */
-                           imgixParams={{ auto: "format,compress"}}
-                           {...imageProps}
-                            />
-                        )}imageProps={{ loading: "lazy" }} />
-                        <DividerLine />
-                        <ColumnsPhotoAlbum photos= { building_section_2 } 
-                        renderPhoto={({ photo, imageProps }) => (
-                            <Imgix
-                            src={photo.src}
-                            width={photo.width}
-                            height={photo.height}
-                            alt={photo.alt}
-                            /*sizes="(max-width: 768px) 100vw, 50vw"*/
-                            /* imgixParams={{ auto: "format,compress", fit: "crop" }} */
-                           imgixParams={{ auto: "format,compress"}}
-                           {...imageProps}
-                            />
-                        )}imageProps={{ loading: "lazy" }} />
-                        <DividerLine />
-                        <MasonryPhotoAlbum photos= { building_keep} 
-                        renderPhoto={({ photo, imageProps }) => (
-                            <Imgix
-                            src={photo.src}
-                            width={photo.width}
-                            height={photo.height}
-                            alt={photo.alt}
-                            /*sizes="(max-width: 768px) 100vw, 50vw"*/
-                            /* imgixParams={{ auto: "format,compress", fit: "crop" }} */
-                           imgixParams={{ auto: "format,compress"}}
-                           {...imageProps}
-                            />
-                        )}imageProps={{ loading: "lazy" }} />
-                        <DividerLine />
-                        <RowsPhotoAlbum photos= { side_by_side } 
-                        renderPhoto={({ photo, imageProps }) => (
-                            <Imgix
-                            src={photo.src}
-                            width={photo.width}
-                            height={photo.height}
-                            alt={photo.alt}
-                            /*sizes="(max-width: 768px) 100vw, 50vw"*/
-                            /* imgixParams={{ auto: "format,compress", fit: "crop" }} */
-                           imgixParams={{ auto: "format,compress"}}
-                           {...imageProps}
-                            />
-                        )}imageProps={{ loading: "lazy" }} />
-                        <DividerLine />
-                        <ColumnsPhotoAlbum photos= { building_random_extras } 
-                        renderPhoto={({ photo, imageProps }) => (
-                            <Imgix
-                            src={photo.src}
-                            width={photo.width}
-                            height={photo.height}
-                            alt={photo.alt}
-                            /*sizes="(max-width: 768px) 100vw, 50vw"*/
-                           /* imgixParams={{ auto: "format,compress", fit: "crop" }} */
-                           imgixParams={{ auto: "format,compress"}}
-                            {...imageProps}
-                            />
-                        )}imageProps={{ loading: "lazy" }} /> 
-                        </div>
-
-
-
-
-
-
-
+                        {/* Whiterun Project */}
+                        <WhiterunProject />
                     </TabPanel>
-
-
-                    
+                    <TabPanel>
+                        <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
+                    </TabPanel>
                     {/* Additional Minecraft projects can be added below */}
                 </Tabs>
             </div>

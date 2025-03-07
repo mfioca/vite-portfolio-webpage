@@ -81,11 +81,7 @@ export const building_enterance = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-          src: whiterunConstructionLink("enterance", asset, width),
-          width: breakpoint,
-          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
-      })),
+      srcSet: undefined, // Disable srcSet
     }) as Photo,
 );
 
@@ -211,11 +207,7 @@ export const building_section_1 = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-          src: whiterunConstructionLink("section_1", asset, width),
-          width: breakpoint,
-          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
-      })),
+      srcSet: undefined, // Disable srcSet
     }) as Photo,
 );
 
@@ -365,11 +357,7 @@ export const building_section_2 = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-          src: whiterunConstructionLink("section_2", asset, width),
-          width: breakpoint,
-          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
-      })),
+      srcSet: undefined, // Disable srcSet
     }) as Photo,
 );
   
@@ -465,11 +453,7 @@ export const building_keep = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-          src: whiterunConstructionLink("keep", asset, width),
-          width: breakpoint,
-          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
-      })),
+      srcSet: undefined, // Disable srcSet
     }) as Photo,
 );
 
@@ -517,11 +501,7 @@ export const building_random_extras = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-          src: whiterunConstructionLink("random_extras", asset, width),
-          width: breakpoint,
-          height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
-      })),
+      srcSet: undefined, // Disable srcSet
     }) as Photo,
 );
 
@@ -671,7 +651,7 @@ export const side_by_side = [
       width,
       height,
       srcSet: breakpoints.map((breakpoint) => ({
-        src: whiterunSplitScreenLink(asset, width),
+        src: whiterunSplitScreenLink(asset, breakpoint),
         width: breakpoint,
         height: Math.round(breakpoint * (height / width)), // Maintain aspect ratio
       })),

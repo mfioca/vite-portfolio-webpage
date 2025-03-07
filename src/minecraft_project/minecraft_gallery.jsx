@@ -6,7 +6,6 @@ import "react-photo-album/rows.css";
 import "react-photo-album/columns.css";
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-import Imgix from 'react-imgix';
 
 // Lightbox plugins
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
@@ -25,6 +24,7 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
     const [lightboxImages, setLightboxImages] = useState([]);
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [renderKey, setRenderKey] = useState(0);
 
     const toggleSection = (key) => {
         setOpenSections((prev) => ({
@@ -32,9 +32,7 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
             [key]: !prev[key],
         }));
     
-        setTimeout(() => {
-            window.dispatchEvent(new Event("resize"));  // Forces browser to recalculate layout
-        }, 100);
+        setRenderKey((prev) => prev + 1); // Forces a small re-render
     };
 
     const openLightbox = (photos, index) => {
@@ -45,29 +43,38 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
 
     // Choose the correct Photo Album Component based on albumStyle prop
     const getPhotoAlbumComponent = (photos, albumStyle) => {
-        const renderPhoto = ({ photo, imageProps }) => (
-            <Imgix
-                src={photo.src}
-                width={photo.width}
-                height={photo.height}
-                alt={photo.alt}
-                /*sizes="(max-width: 768px) 100vw, 50vw"*/
-                            /* imgixParams={{ auto: "format,compress", fit: "crop" }} */
-                            imgixParams={{ auto: "format,compress"}}
-                            {...imageProps}
-            />
-        );
-    
         switch (albumStyle.toLowerCase()) {
             case "rows":
-                return <RowsPhotoAlbum photos={photos} imageProps={{ loading: "eager" }} renderPhoto={renderPhoto} onClick={({ index }) => openLightbox(photos, index)} />;
+                return <RowsPhotoAlbum 
+                    photos={photos} 
+                    onClick={({ index }) => openLightbox(photos, index)}
+                    targetRowHeight={250}
+                    spacing={15}
+                    layout="rows"
+                    imageProps={{ loading: "eager" }} // Force immediate image load
+                />;
             case "columns":
-                return <ColumnsPhotoAlbum photos={photos} imageProps={{ loading: "eager" }} renderPhoto={renderPhoto} onClick={({ index }) => openLightbox(photos, index)} />;
+                return <ColumnsPhotoAlbum 
+                    photos={photos} 
+                    onClick={({ index }) => openLightbox(photos, index)}
+                    targetRowHeight={250}
+                    spacing={15}
+                    layout="columns"
+                    imageProps={{ loading: "eager" }} // Force immediate image load
+                />;
             case "masonry":
             default:
-                return <MasonryPhotoAlbum photos={photos} imageProps={{ loading: "eager" }} renderPhoto={renderPhoto} onClick={({ index }) => openLightbox(photos, index)} />;
+                return <MasonryPhotoAlbum
+                    photos={photos}
+                    onClick={({ index }) => openLightbox(photos, index)}
+                    targetRowHeight={250}
+                    spacing={15}
+                    layout="masonry"
+                    imageProps={{ loading: "eager" }} // Force immediate image load
+                />;
         }
     };
+    
 
     return (
         <div className="standard-padding-margin">
@@ -89,7 +96,11 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
                     { description }
 
                     {/* Auto-open section if it's non-collapsible */}
-                    { (openSections[key] || !collapsible) && getPhotoAlbumComponent(photos, albumStyle) }
+                    { (openSections[key] || !collapsible) && (
+    <div key={renderKey}>
+        {getPhotoAlbumComponent(photos, albumStyle)}
+    </div>
+)}
 
                     { collapsible && <DividerLine /> } {/* No divider if it's a single section */}
                     </div>
@@ -108,27 +119,4 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
 
 export default MinecraftGallery;
 
-/*
-
-{sections.map(({ key, name, photos, description, collapsible = true }) => (
-                    <div key={ key } className="collapsible-section">
-                    {collapsible ? (
-                        <h2 className="section-title" onClick={() => toggleSection(key)}>
-                        {openSections[key] ? `▼ ${ name }` : `▶ ${ name }`}
-                        </h2>
-                    ) : (
-                        <h2 className="section-title">{ name }</h2> // No toggle for non-collapsible sections
-                    )}
-
-                    { description }
-
-                   
-                    { (openSections[key] || !collapsible) && getPhotoAlbumComponent(photos, albumStyle) }
-
-                    
-                    </div>
-                ))}
-*/
-
-
-
+/*<MasonryPhotoAlbum photos={photos} onClick={({ index }) => openLightbox(photos, index)} />; */
