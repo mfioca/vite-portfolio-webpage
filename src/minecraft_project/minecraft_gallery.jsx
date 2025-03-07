@@ -6,6 +6,7 @@ import "react-photo-album/rows.css";
 import "react-photo-album/columns.css";
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+import Imgix from 'react-imgix';
 
 // Lightbox plugins
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
@@ -44,16 +45,27 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
 
     // Choose the correct Photo Album Component based on albumStyle prop
     const getPhotoAlbumComponent = (photos, albumStyle) => {
-        const commonProps = { imageProps: { loading: "eager", onLoad: (e) => e.target.style.opacity = 1 } };
+        const renderPhoto = ({ photo, imageProps }) => (
+            <Imgix
+                src={photo.src}
+                width={photo.width}
+                height={photo.height}
+                alt={photo.alt}
+                /*sizes="(max-width: 768px) 100vw, 50vw"*/
+                            /* imgixParams={{ auto: "format,compress", fit: "crop" }} */
+                            imgixParams={{ auto: "format,compress"}}
+                            {...imageProps}
+            />
+        );
     
         switch (albumStyle.toLowerCase()) {
             case "rows":
-                return <RowsPhotoAlbum {...commonProps} photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
+                return <RowsPhotoAlbum photos={photos} imageProps={{ loading: "eager" }} renderPhoto={renderPhoto} onClick={({ index }) => openLightbox(photos, index)} />;
             case "columns":
-                return <ColumnsPhotoAlbum {...commonProps} photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
+                return <ColumnsPhotoAlbum photos={photos} imageProps={{ loading: "eager" }} renderPhoto={renderPhoto} onClick={({ index }) => openLightbox(photos, index)} />;
             case "masonry":
             default:
-                return <MasonryPhotoAlbum {...commonProps} photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
+                return <MasonryPhotoAlbum photos={photos} imageProps={{ loading: "eager" }} renderPhoto={renderPhoto} onClick={({ index }) => openLightbox(photos, index)} />;
         }
     };
 
@@ -64,16 +76,22 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
             </IntroSection>
             <DividerLine />
             <div className="base-max-width">
-            {sections.map(({ key, name, photos, description }) => (
+                {sections.map(({ key, name, photos, description, collapsible = true }) => (
                     <div key={ key } className="collapsible-section">
-                    <h2 className="section-title">{ name }</h2>
+                    {collapsible ? (
+                        <h2 className="section-title" onClick={() => toggleSection(key)}>
+                        {openSections[key] ? `▼ ${ name }` : `▶ ${ name }`}
+                        </h2>
+                    ) : (
+                        <h2 className="section-title">{ name }</h2> // No toggle for non-collapsible sections
+                    )}
 
                     { description }
 
                     {/* Auto-open section if it's non-collapsible */}
-                    { getPhotoAlbumComponent(photos, albumStyle) }
+                    { (openSections[key] || !collapsible) && getPhotoAlbumComponent(photos, albumStyle) }
 
-                    
+                    { collapsible && <DividerLine /> } {/* No divider if it's a single section */}
                     </div>
                 ))}
             </div>
@@ -89,4 +107,28 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
 };
 
 export default MinecraftGallery;
+
+/*
+
+{sections.map(({ key, name, photos, description, collapsible = true }) => (
+                    <div key={ key } className="collapsible-section">
+                    {collapsible ? (
+                        <h2 className="section-title" onClick={() => toggleSection(key)}>
+                        {openSections[key] ? `▼ ${ name }` : `▶ ${ name }`}
+                        </h2>
+                    ) : (
+                        <h2 className="section-title">{ name }</h2> // No toggle for non-collapsible sections
+                    )}
+
+                    { description }
+
+                   
+                    { (openSections[key] || !collapsible) && getPhotoAlbumComponent(photos, albumStyle) }
+
+                    
+                    </div>
+                ))}
+*/
+
+
 

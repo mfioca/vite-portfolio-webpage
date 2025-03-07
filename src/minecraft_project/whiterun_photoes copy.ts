@@ -1,6 +1,5 @@
 import type { Photo } from "react-photo-album";
 
-
 const breakpoints = [1600, 1550, 1500, 1200, 1080, 640, 384, 256, 128, 96, 64, 48];
 
 function whiterunConstructionLink(folder: string, asset: string, width: number) {
@@ -116,8 +115,8 @@ export const building_section_1 = [
   },
   {
     asset: "building_204.jpeg",
-    width: 600,
-    height: 300,
+    width: 1000,
+    height: 400,
     alt: "Placeholder description for building 204",
   },
   {
@@ -557,8 +556,8 @@ export const side_by_side = [
   },
   {
     asset: "side_by_side105.jpg",
-    width: 900,
-    height: 900,
+    width: 1394,
+    height: 1531,
     alt: "Placeholder description for side_by_side105",
   },
   {

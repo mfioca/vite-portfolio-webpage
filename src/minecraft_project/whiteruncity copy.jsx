@@ -4,10 +4,6 @@ import { BodyContainer } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
 import { building_enterance, building_section_1, building_section_2, building_keep, side_by_side, building_random_extras } from './whiterun_photoes';
 
-
-
-
-
 const construction = [
     { key: 'enterance', name: 'Entrance', photos: building_enterance, albumStyle: "Masonry", description: (
         <>
@@ -98,7 +94,6 @@ const WhiterunProject = () => {
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
-                            
                             <MinecraftGallery
                                 title="Whiterun City from Elder Scrolls Skyrim"
                                 description={
@@ -120,7 +115,7 @@ const WhiterunProject = () => {
                                     </>
                                 }
                                 sections={ construction }
-                            /> 
+                            />
                         </TabPanel>
                         <TabPanel>
                             
