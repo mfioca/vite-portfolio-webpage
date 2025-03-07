@@ -21,26 +21,26 @@ export const building_enterance = [
     },
     {
       asset: "building_102.jpeg",
-      width: 1280,
+      width: 600,
       height: 300,
       alt: "Placeholder description for building 102",
     },
     {
       asset: "building_103.jpeg",
       width: 1280,
-      height: 1420,
+      height: 900,
       alt: "Placeholder description for building 103",
     },
     {
       asset: "building_104.jpeg",
-      width: 1680,
-      height: 800,
+      width: 900,
+      height: 550,
       alt: "Placeholder description for building 104",
     },
     {
       asset: "building_105.jpeg",
-      width: 1280,
-      height: 900,
+      width: 800,
+      height: 700,
       alt: "Placeholder description for building 105",
     },
     {
@@ -57,8 +57,8 @@ export const building_enterance = [
     },
     {
       asset: "building_108.jpeg",
-      width: 1280,
-      height: 1500,
+      width: 600,
+      height: 800,
       alt: "Placeholder description for building 108",
     },
     {
@@ -139,8 +139,8 @@ export const building_section_1 = [
   },
   {
     asset: "building_208.jpeg",
-    width: 1900,
-    height: 720,
+    width: 800,
+    height: 400,
     alt: "Placeholder description for building 208",
   },
   {
@@ -169,8 +169,8 @@ export const building_section_1 = [
   },
   {
     asset: "building_213.jpeg",
-    width: 2400,
-    height: 800,
+    width: 800,
+    height: 900,
     alt: "Placeholder description for building 213",
   },
   {
@@ -193,8 +193,8 @@ export const building_section_1 = [
   },
   {
     asset: "building_217.jpeg",
-    width: 2400,
-    height: 1100,
+    width: 1000,
+    height: 800,
     alt: "Placeholder description for building 217",
   },
   {
@@ -240,13 +240,13 @@ export const building_section_2 = [
   {
     asset: "building_304.jpeg",
     width: 1280,
-    height: 1500,
+    height: 700,
     alt: "Placeholder description for building 304",
   },
   {
     asset: "building_305.jpeg",
     width: 1000,
-    height: 1100,
+    height: 500,
     alt: "Placeholder description for building 305",
   },
   {
@@ -258,7 +258,7 @@ export const building_section_2 = [
   {
     asset: "building_307.jpeg",
     width: 1280,
-    height: 1100,
+    height: 500,
     alt: "Placeholder description for building 307",
   },
   {
@@ -269,14 +269,14 @@ export const building_section_2 = [
   },
   {
     asset: "building_309.jpeg",
-    width: 1280,
-    height: 1800,
+    width: 900,
+    height: 600,
     alt: "Placeholder description for building 309",
   },
   {
     asset: "building_310.jpeg",
-    width: 1280,
-    height: 1400,
+    width: 900,
+    height: 400,
     alt: "Placeholder description for building 310",
   },
   {
@@ -288,13 +288,13 @@ export const building_section_2 = [
   {
     asset: "building_312.jpeg",
     width: 900,
-    height: 1200,
+    height: 400,
     alt: "Placeholder description for building 312",
   },
   {
     asset: "building_313.jpeg",
-    width: 1400,
-    height: 1250,
+    width: 800,
+    height: 600,
     alt: "Placeholder description for building 313",
   },
   {
@@ -305,8 +305,8 @@ export const building_section_2 = [
   },
   {
     asset: "building_315.jpeg",
-    width: 1400,
-    height: 600,
+    width: 1000,
+    height: 400,
     alt: "Placeholder description for building 315",
   },
   {
@@ -335,8 +335,8 @@ export const building_section_2 = [
   },
   {
     asset: "building_320.jpeg",
-    width: 900,
-    height: 1100,
+    width: 800,
+    height: 300,
     alt: "Placeholder description for building 320",
   },
   {
@@ -347,8 +347,8 @@ export const building_section_2 = [
   },
   {
     asset: "building_322.jpeg",
-    width: 1300,
-    height: 1100,
+    width: 900,
+    height: 400,
     alt: "Placeholder description for building 322",
   },
   {
@@ -375,8 +375,8 @@ export const building_section_2 = [
 export const building_keep = [
   {
     asset: "building_401.jpeg",
-    width: 1280,
-    height: 1100,
+    width: 1000,
+    height: 900,
     alt: "Placeholder description for building 401",
   },
   {
@@ -387,20 +387,20 @@ export const building_keep = [
   },
   {
     asset: "building_403.jpeg",
-    width: 1600,
-    height: 600,
+    width: 1000,
+    height: 500,
     alt: "Placeholder description for building 403",
   },
   {
     asset: "building_404.jpeg",
-    width: 2500,
-    height: 2000,
+    width: 1200,
+    height: 800,
     alt: "Placeholder description for building 404",
   },
   {
     asset: "building_405.jpeg",
-    width: 1700,
-    height: 1300,
+    width: 800,
+    height: 900,
     alt: "Placeholder description for building 405",
   },
   {
@@ -435,14 +435,14 @@ export const building_keep = [
   },
   {
     asset: "building_415.jpeg",
-    width: 1600,
-    height: 1200,
+    width: 900,
+    height: 400,
     alt: "Placeholder description for building 415",
   },
   {
     asset: "building_416.jpeg",
-    width: 1300,
-    height: 1200,
+    width: 1100,
+    height: 600,
     alt: "Placeholder description for building 416",
   },
   {
@@ -532,8 +532,8 @@ export const building_random_extras = [
 export const side_by_side = [
   {
     asset: "side_by_side101.jpg",
-    width: 1300,
-    height: 1500,
+    width: 800,
+    height: 900,
     alt: "Placeholder description for side_by_side101",
   },
   {
@@ -544,26 +544,26 @@ export const side_by_side = [
   },
   {
     asset: "side_by_side103.jpg",
-    width: 1000,
-    height: 1600,
+    width: 600,
+    height: 800,
     alt: "Placeholder description for side_by_side103",
   },
   {
     asset: "side_by_side104.jpg",
-    width: 1400,
-    height: 1300,
+    width: 600,
+    height: 500,
     alt: "Placeholder description for side_by_side104",
   },
   {
     asset: "side_by_side105.jpg",
-    width: 800,
-    height: 1300,
+    width: 300,
+    height: 600,
     alt: "Placeholder description for side_by_side105",
   },
   {
     asset: "side_by_side106.jpg",
-    width: 900,
-    height: 1100,
+    width: 600,
+    height: 900,
     alt: "Placeholder description for side_by_side106",
   },
   {
@@ -574,8 +574,8 @@ export const side_by_side = [
   },
   {
     asset: "side_by_side108.jpg",
-    width: 1280,
-    height: 1400,
+    width: 900,
+    height: 800,
     alt: "Placeholder description for side_by_side108",
   },
   {
@@ -586,26 +586,26 @@ export const side_by_side = [
   },
   {
     asset: "side_by_side110.jpg",
-    width: 1500,
-    height: 1200,
+    width: 800,
+    height: 600,
     alt: "Placeholder description for side_by_side110",
   },
   {
     asset: "side_by_side111.jpg",
-    width: 1280,
-    height: 1000,
+    width: 900,
+    height: 800,
     alt: "Placeholder description for side_by_side111",
   },
   {
     asset: "side_by_side112.jpg",
-    width: 1000,
-    height: 1300,
+    width: 800,
+    height: 700,
     alt: "Placeholder description for side_by_side112",
   },
   {
     asset: "side_by_side113.jpg",
-    width: 1600,
-    height: 1600,
+    width: 800,
+    height: 800,
     alt: "Placeholder description for side_by_side113",
   },
   {
@@ -616,20 +616,20 @@ export const side_by_side = [
   },
   {
     asset: "side_by_side115.jpg",
-    width: 1600,
-    height: 1200,
+    width: 800,
+    height: 600,
     alt: "Placeholder description for side_by_side115",
   },
   {
     asset: "side_by_side116.jpg",
-    width: 1280,
-    height: 1300,
+    width: 1000,
+    height: 900,
     alt: "Placeholder description for side_by_side116",
   },
   {
     asset: "side_by_side117.jpg",
-    width: 1500,
-    height: 1100,
+    width: 900,
+    height: 700,
     alt: "Placeholder description for side_by_side117",
   },
   {
@@ -640,14 +640,14 @@ export const side_by_side = [
   },
   {
     asset: "side_by_side119.jpg",
-    width: 1600,
-    height: 1300,
+    width: 1100,
+    height: 700,
     alt: "Placeholder description for side_by_side119",
   },
   {
     asset: "side_by_side120.jpg",
-    width: 1280,
-    height: 1100,
+    width: 800,
+    height: 600,
     alt: "Placeholder description for side_by_side120",
   },
   {

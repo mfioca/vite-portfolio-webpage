@@ -622,13 +622,20 @@ button:hover {
 .react-photo-album img {
   display: block;
   padding: 5px;
-  max-height: 100%;
-  max-width: 100%;
   object-fit: cover; 
   border: 2px solid var(--bordercolor); /* Light gray border */
   border-radius: var(--borderradius);
-  box-shadow: var(--boxshadow);
+  box-shadow: var(--boxshadow); 
 }
+
+.react-photo-album-1 img {
+  display: block;
+  padding: 5px;
+  object-fit: cover; 
+
+}
+
+
  /* Ensure collapsible section titles have space */
 .section-title {
   margin-top: 20px;
