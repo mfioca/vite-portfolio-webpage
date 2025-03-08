@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { BodyContainer } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
@@ -69,6 +69,7 @@ const sideByside_section = [
   ];
 
 const WhiterunProject = () => {
+    
     return (
         <div>
             <Tabs className="vertical-tabs">
@@ -80,6 +81,7 @@ const WhiterunProject = () => {
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
+                            
                             <MinecraftGallery
                                 title="Whiterun City from Elder Scrolls Skyrim"
                                 description={
@@ -100,15 +102,13 @@ const WhiterunProject = () => {
                                         </p>
                                     </>
                                 }
-                                sections={ construction }
+                                sections={ construction } 
                             />
                         </TabPanel>
                         <TabPanel>
-                            <MinecraftGallery
-                                title="Skyrim vs Minecraft Side-by-Side"
-                                description="Explore direct comparisons between my Minecraft recreation and the original Whiterun from Skyrim."
-                                sections={ sideByside_section } // Single section, auto-opens
-                            />
+                        <div className=" standard-padding-margin placeholder-container">
+                            <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
+                        </div>
                         </TabPanel>
                         <TabPanel>
                         <div className=" standard-padding-margin placeholder-container">
@@ -123,3 +123,14 @@ const WhiterunProject = () => {
 };
 
 export default WhiterunProject;
+
+
+/*
+
+<MinecraftGallery
+                                title="Skyrim vs Minecraft Side-by-Side"
+                                description="Explore direct comparisons between my Minecraft recreation and the original Whiterun from Skyrim."
+                                sections={ sideByside_section } // Single section, auto-opens
+                            />
+
+*/
