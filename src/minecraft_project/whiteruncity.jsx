@@ -84,7 +84,7 @@ const sideByside_section = [
   ];
 
 const WhiterunProject = () => {
-    
+
     return (
         <div>
             <Tabs className="vertical-tabs">
