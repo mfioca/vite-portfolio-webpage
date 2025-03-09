@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import WhiterunProject from './minecraft_project/whiteruncity';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -54,14 +54,14 @@ const MinecraftProjects = () => {
                         <Tab>Dwarven Kingdom</Tab>
                     </TabList>
                     <TabPanel>
-                        {/* Whiterun Project <WhiterunProject /> */}
+                        {/*Whiterun Project <WhiterunProject/>*/}
                         <WhiterunProject />
                         
                     </TabPanel>
                     <TabPanel>
                         <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
                     </TabPanel>
-                    {/* Additional Minecraft projects can be added below */}
+                     {/*Additional Minecraft projects can be added below */}
                 </Tabs>
             </div>
         </div>
@@ -70,54 +70,83 @@ const MinecraftProjects = () => {
 
 export default MinecraftProjects;
 
+/*
+<div className="center-div tabs-container">
+                <Tabs className="standard-tabs">
+                    <TabList>
+                        <Tab>"Elder Scrolls: Skyrim" Whiterun City</Tab>
+                        <Tab>Dwarven Kingdom</Tab>
+                    </TabList>
+                    <TabPanel>
+                        Whiterun Project <WhiterunProject 
+                        <WhiterunProject />
+                        
+                    </TabPanel>
+                    <TabPanel>
+                        <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
+                    </TabPanel>
+                     Additional Minecraft projects can be added below 
+                </Tabs>
+            </div>
+*/
+
 
 
 /*
-
-<MasonryPhotoAlbum 
+<div className="base-max-width">
+                        <MasonryPhotoAlbum 
                             photos={building_enterance}
-                            debounce={250} // Adjust debounce value as needed
+                            //debounce={250} // Adjust debounce value as needed
                             columns={3}
+                            //targetRowHeight={250}  // Adjust this value as needed
+                            spacing={5}            // Optional: Adjust spacing between images
+                            onClick={({ index }) => openLightbox(building_enterance, index)}
                         />
+                        
                         <DividerLine/>
                         <RowsPhotoAlbum photos={building_section_1}
-                            debounce={250} // Adjust debounce value as needed
+                            //debounce={250} // Adjust debounce value as needed
                             rowConstraints={{
                                 maxPhotos: 4
                             }}
-                            sizes={{
-                                size: "992px",
-                                sizes: [
-                                  { viewport: "(max-width: 767px)", size: "calc(100vw - 32px)" },
-                                  { viewport: "(max-width: 1279px)", size: "calc(100vw - 288px)" },
-                                ],
-                              }}
+                            targetRowHeight={250}  // Adjust this value as needed
+                            spacing={5}            // Optional: Adjust spacing between images
+                            onClick={({ index }) => openLightbox(building_section_1, index)}
+                            
                             
                         />
+                        
                         <DividerLine/>
                         <ColumnsPhotoAlbum 
                             photos={building_section_2} 
-                            debounce={250} // Adjust debounce value as needed
-                            rowConstraints={{
-                                maxPhotos: 4
-                            }}
+                            //debounce={250} // Adjust debounce value as needed
+                            columns={3}
+                            
+                            spacing={5}            // Optional: Adjust spacing between images
+                            onClick={({ index }) => openLightbox(building_section_2, index)}
                             
                              />
-
+                             
                         <DividerLine/>
                         <MasonryPhotoAlbum photos={building_keep}
                             columns={3} 
-                            
+                            //targetRowHeight={250}  // Adjust this value as needed
+                            spacing={5}            // Optional: Adjust spacing between images
+                            onClick={({ index }) => openLightbox(building_keep, index)}
                             />
+                            
                     <DividerLine/>  
                     <RowsPhotoAlbum 
                         photos={building_random_extras} 
-                        debounce={250} // Adjust debounce value as needed
+                        
+                        //debounce={250} // Adjust debounce value as needed
                         rowConstraints={{
                             maxPhotos: 4
                         }} 
-                       
+                        targetRowHeight={250}  // Adjust this value as needed
+                            spacing={5}            // Optional: Adjust spacing between images
+                            onClick={({ index }) => openLightbox(building_random_extras, index)}
                         />
                         
-
-                        */
+                </div>
+*/

@@ -690,3 +690,22 @@ text-align: left;
 
 */
 
+.testimage {
+  display: block;
+  padding: 5px;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover; 
+  border: 2px solid var(--bordercolor); /* Light gray border */
+  border-radius: var(--borderradius);
+  box-shadow: var(--boxshadow);
+}
+
+/*
+
+.react-photo-album img {
+  display: block;
+
+  object-fit: cover; 
+  }
+  */
