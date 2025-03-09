@@ -22,7 +22,6 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
 const MinecraftProjects = () => {
-  
 
     return (
         <div className="minecraft-body">
