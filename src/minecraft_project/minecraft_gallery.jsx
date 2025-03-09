@@ -31,21 +31,23 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
             case "rows":
                 return <RowsPhotoAlbum 
                     photos={photos} 
-                    defaultContainerWidth = { 800 } 
-                    debounce={500} // Adjust debounce value as needed
+                    debounce={250} // Adjust debounce value as needed
+                    rowConstraints={{
+                        maxPhotos: 4
+                    }}
                     onClick={({ index }) => openLightbox(photos, index)} />;
             case "columns":
                 return <ColumnsPhotoAlbum 
                     photos={photos} 
-                    defaultContainerWidth = { 800 } 
-                    debounce={500} // Adjust debounce value as needed
+                    debounce={250} // Adjust debounce value as needed
+                    columns={4}
                     onClick={({ index }) => openLightbox(photos, index)} />;
             case "masonry":
             default:
                 return <MasonryPhotoAlbum 
                     photos={photos} 
-                    defaultContainerWidth = { 800 } 
-                    debounce={500} // Adjust debounce value as needed
+                    debounce={250} // Adjust debounce value as needed
+                    columns={4}
                     onClick={({ index }) => openLightbox(photos, index)} />;
         }
     };

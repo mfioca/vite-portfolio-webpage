@@ -15,11 +15,11 @@ function whiterunSplitScreenLink(asset: string, width: number) {
 export { breakpoints, whiterunConstructionLink, whiterunSplitScreenLink };
 
 export const building_enterance = [
-  {
-    asset: "building_101.jpeg",
-    width: 1280,
-    height: 680,
-    alt: "Placeholder description for building 101",
+{
+  asset: "building_101.jpeg",
+  width: 1280,
+  height: 680,
+  alt: "Placeholder description for building 101",        
 },
 {
     asset: "building_102.jpeg",
@@ -93,11 +93,11 @@ export const building_enterance = [
 );
 
 export const building_section_1 = [
-  {
-    asset: "building_200.jpeg",
-    width: 1280,
-    height: 680,
-    alt: "Placeholder description for building 200",
+{
+  asset: "building_200.jpeg",
+  width: 1280,
+  height: 680,
+  alt: "Placeholder description for building 200",
 },
 {
     asset: "building_201.jpeg",
@@ -225,11 +225,11 @@ export const building_section_1 = [
 );
 
 export const building_section_2 = [
-  {
-    asset: "building_301.jpeg",
-    width: 1280,
-    height: 680,
-    alt: "Placeholder description for building 301",
+{
+  asset: "building_301.jpeg",
+  width: 1280,
+  height: 680,
+  alt: "Placeholder description for building 301",
 },
 {
     asset: "building_302.jpeg",

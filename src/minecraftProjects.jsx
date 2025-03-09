@@ -4,7 +4,26 @@ import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 
+
+
+import { building_enterance, building_section_1, building_section_2, building_keep, side_by_side, building_random_extras } from './minecraft_project/whiterun_photoes';
+import { MasonryPhotoAlbum, RowsPhotoAlbum, ColumnsPhotoAlbum } from 'react-photo-album';
+import 'react-photo-album/masonry.css';
+import "react-photo-album/rows.css";
+import "react-photo-album/columns.css";
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
+
+// Lightbox plugins
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
+import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
+
 const MinecraftProjects = () => {
+  
+
     return (
         <div className="minecraft-body">
             <IntroSection title="Welcome to My Minecraft Realm">
@@ -34,8 +53,13 @@ const MinecraftProjects = () => {
                         <Tab>Dwarven Kingdom</Tab>
                     </TabList>
                     <TabPanel>
-                        {/* Whiterun Project */}
+                        {/* Whiterun Project <WhiterunProject /> */}
                         <WhiterunProject />
+                        
+
+
+
+
                     </TabPanel>
                     <TabPanel>
                         <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
@@ -48,3 +72,43 @@ const MinecraftProjects = () => {
 };
 
 export default MinecraftProjects;
+
+
+
+/*
+                        <ColumnsPhotoAlbum 
+                            photos={building_enterance}
+                            debounce={250} // Adjust debounce value as needed
+                            columns={3}
+                            
+                            
+                        />
+                        <DividerLine/>
+                        <MasonryPhotoAlbum photos={building_section_1}
+                        columns={3}
+                            
+                            
+                            
+                        />
+                        <DividerLine/>
+                        <RowsPhotoAlbum 
+                                            photos={building_section_2} 
+                                            debounce={250} // Adjust debounce value as needed
+                                            rowConstraints={{
+                                                maxPhotos: 4
+                                            }} />
+
+                        <DividerLine/>
+                        <MasonryPhotoAlbum photos={building_keep}
+                        columns={3} />
+                    <DividerLine/>  
+                    <RowsPhotoAlbum 
+                        photos={building_random_extras} 
+                        debounce={250} // Adjust debounce value as needed
+                        rowConstraints={{
+                            maxPhotos: 4
+                        }} />
+
+                        
+
+                        */
