@@ -44,6 +44,8 @@ const MinecraftProjects = () => {
                 <p>
                     This world is constantly evolving, with every build adding new depth and character. Whether it’s medieval cities, ancient wonders, or hidden secrets, there’s always something to explore. With each new build, the world continues to expand, bringing new challenges, inspirations, and stories to life.
                 </p>
+                <DividerLine/>
+                <p><strong>Note:</strong> There is an issue regarding images not rendering correctly. You may need to refresh the page or interact with it for all images to load. If you know how to fix this please email me at the link below.</p>
             </IntroSection>
             <DividerLine />
             <div className="center-div tabs-container">
@@ -54,7 +56,26 @@ const MinecraftProjects = () => {
                     </TabList>
                     <TabPanel>
                         {/* Whiterun Project <WhiterunProject /> */}
-                        <MasonryPhotoAlbum 
+                        <WhiterunProject />
+                        
+                    </TabPanel>
+                    <TabPanel>
+                        <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
+                    </TabPanel>
+                    {/* Additional Minecraft projects can be added below */}
+                </Tabs>
+            </div>
+        </div>
+    );
+};
+
+export default MinecraftProjects;
+
+
+
+/*
+
+<MasonryPhotoAlbum 
                             photos={building_enterance}
                             debounce={250} // Adjust debounce value as needed
                             columns={3}
@@ -98,60 +119,6 @@ const MinecraftProjects = () => {
                         }} 
                        
                         />
-                        
-
-
-
-
-                    </TabPanel>
-                    <TabPanel>
-                        <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
-                    </TabPanel>
-                    {/* Additional Minecraft projects can be added below */}
-                </Tabs>
-            </div>
-        </div>
-    );
-};
-
-export default MinecraftProjects;
-
-
-
-/*
-                        <ColumnsPhotoAlbum 
-                            photos={building_enterance}
-                            debounce={250} // Adjust debounce value as needed
-                            columns={3}
-                            
-                            
-                        />
-                        <DividerLine/>
-                        <MasonryPhotoAlbum photos={building_section_1}
-                        columns={3}
-                            
-                            
-                            
-                        />
-                        <DividerLine/>
-                        <RowsPhotoAlbum 
-                                            photos={building_section_2} 
-                                            debounce={250} // Adjust debounce value as needed
-                                            rowConstraints={{
-                                                maxPhotos: 4
-                                            }} />
-
-                        <DividerLine/>
-                        <MasonryPhotoAlbum photos={building_keep}
-                        columns={3} />
-                    <DividerLine/>  
-                    <RowsPhotoAlbum 
-                        photos={building_random_extras} 
-                        debounce={250} // Adjust debounce value as needed
-                        rowConstraints={{
-                            maxPhotos: 4
-                        }} />
-
                         
 
                         */
