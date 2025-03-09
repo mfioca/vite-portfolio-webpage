@@ -15,22 +15,9 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
 const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry" }) => {
-    const initialOpenState = sections.reduce((acc, section) => {
-        acc[section.key] = false;
-        return acc;
-    }, {});
-
-    const [openSections, setOpenSections] = useState(initialOpenState);
     const [lightboxImages, setLightboxImages] = useState([]);
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
-
-    const toggleSection = (key) => {
-        setOpenSections((prev) => ({
-            ...prev,
-            [key]: !prev[key],
-        }));
-    };
 
     const openLightbox = (photos, index) => {
         setLightboxImages(photos.map((photo) => ({ src: photo.src })));
@@ -42,12 +29,24 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
     const getPhotoAlbumComponent = (photos, albumStyle) => {
         switch (albumStyle.toLowerCase()) {
             case "rows":
-                return <RowsPhotoAlbum photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
+                return <RowsPhotoAlbum 
+                    photos={photos} 
+                    defaultContainerWidth = { 800 } 
+                    debounce={500} // Adjust debounce value as needed
+                    onClick={({ index }) => openLightbox(photos, index)} />;
             case "columns":
-                return <ColumnsPhotoAlbum photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
+                return <ColumnsPhotoAlbum 
+                    photos={photos} 
+                    defaultContainerWidth = { 800 } 
+                    debounce={500} // Adjust debounce value as needed
+                    onClick={({ index }) => openLightbox(photos, index)} />;
             case "masonry":
             default:
-                return <MasonryPhotoAlbum photos={photos} onClick={({ index }) => openLightbox(photos, index)} />;
+                return <MasonryPhotoAlbum 
+                    photos={photos} 
+                    defaultContainerWidth = { 800 } 
+                    debounce={500} // Adjust debounce value as needed
+                    onClick={({ index }) => openLightbox(photos, index)} />;
         }
     };
 
@@ -60,14 +59,12 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
             <div className="base-max-width">
                 {sections.map(({ key, name, photos, description }) => (
                     <div key={ key } className="collapsible-section">
-                    <h2 className="section-title">{ name }</h2>
+                        <h2 className="section-title">{ name }</h2>
 
-                    { description }
+                        { description }
 
-                    {/* Auto-open section if it's non-collapsible */}
-                    { getPhotoAlbumComponent(photos, albumStyle) }
-
-                    
+                        {/* Auto-open section if it's non-collapsible */}
+                        { getPhotoAlbumComponent(photos, albumStyle) }
                     </div>
                 ))}
             </div>
