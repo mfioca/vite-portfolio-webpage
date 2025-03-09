@@ -54,7 +54,50 @@ const MinecraftProjects = () => {
                     </TabList>
                     <TabPanel>
                         {/* Whiterun Project <WhiterunProject /> */}
-                        <WhiterunProject />
+                        <MasonryPhotoAlbum 
+                            photos={building_enterance}
+                            debounce={250} // Adjust debounce value as needed
+                            columns={3}
+                        />
+                        <DividerLine/>
+                        <RowsPhotoAlbum photos={building_section_1}
+                            debounce={250} // Adjust debounce value as needed
+                            rowConstraints={{
+                                maxPhotos: 4
+                            }}
+                            sizes={{
+                                size: "992px",
+                                sizes: [
+                                  { viewport: "(max-width: 767px)", size: "calc(100vw - 32px)" },
+                                  { viewport: "(max-width: 1279px)", size: "calc(100vw - 288px)" },
+                                ],
+                              }}
+                            
+                        />
+                        <DividerLine/>
+                        <ColumnsPhotoAlbum 
+                            photos={building_section_2} 
+                            debounce={250} // Adjust debounce value as needed
+                            rowConstraints={{
+                                maxPhotos: 4
+                            }}
+                            
+                             />
+
+                        <DividerLine/>
+                        <MasonryPhotoAlbum photos={building_keep}
+                            columns={3} 
+                            
+                            />
+                    <DividerLine/>  
+                    <RowsPhotoAlbum 
+                        photos={building_random_extras} 
+                        debounce={250} // Adjust debounce value as needed
+                        rowConstraints={{
+                            maxPhotos: 4
+                        }} 
+                       
+                        />
                         
 
 
