@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,  } from 'react';
 import { DividerLine, IntroSection } from '../SharedComponents';
+
 import { MasonryPhotoAlbum, RowsPhotoAlbum, ColumnsPhotoAlbum } from 'react-photo-album';
 import 'react-photo-album/masonry.css';
 import "react-photo-album/rows.css";
@@ -19,6 +20,10 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
 
+
+   
+
+
     const openLightbox = (photos, index) => {
         setLightboxImages(photos.map((photo) => ({ src: photo.src })));
         setCurrentSlide(index);
@@ -30,23 +35,26 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
         switch (albumStyle.toLowerCase()) {
             case "rows":
                 return <RowsPhotoAlbum 
+                defaultContainerWidth={800}
                     photos={photos} 
-                    debounce={250} // Adjust debounce value as needed
+                    //debounce={250} // Adjust debounce value as needed
                     rowConstraints={{
                         maxPhotos: 4
                     }}
                     onClick={({ index }) => openLightbox(photos, index)} />;
             case "columns":
                 return <ColumnsPhotoAlbum 
+                defaultContainerWidth={800}
                     photos={photos} 
-                    debounce={250} // Adjust debounce value as needed
+                    //debounce={250} // Adjust debounce value as needed
                     columns={4}
                     onClick={({ index }) => openLightbox(photos, index)} />;
             case "masonry":
             default:
                 return <MasonryPhotoAlbum 
+                defaultContainerWidth={800}
                     photos={photos} 
-                    debounce={250} // Adjust debounce value as needed
+                    //debounce={250} // Adjust debounce value as needed
                     columns={4}
                     onClick={({ index }) => openLightbox(photos, index)} />;
         }

@@ -22,7 +22,16 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
 const MinecraftProjects = () => {
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+const [currentSlide, setCurrentSlide] = useState(0);
+const [lightboxImages, setLightboxImages] = useState([]);
 
+
+const openLightbox = (photos, index) => {
+    setLightboxImages(photos.map(photo => ({ src: photo.src })));
+    setCurrentSlide(index);
+    setLightboxOpen(true);
+};
     return (
         <div className="minecraft-body">
             <IntroSection title="Welcome to My Minecraft Realm">
@@ -55,8 +64,114 @@ const MinecraftProjects = () => {
                     </TabList>
                     <TabPanel>
                         {/*Whiterun Project <WhiterunProject/>*/}
-                        <WhiterunProject />
-                        
+
+
+                        <div className="custom-gallery-grid">
+    {building_enterance.map((photo, index) => (
+         <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_enterance, index)}>
+            <img 
+                src={photo.src} 
+                alt={photo.alt} 
+                width={photo.width} 
+                height={photo.height} 
+                className="custom-gallery-image"
+            />
+        </div>
+    ))}
+</div>
+
+<DividerLine />
+
+<div className="custom-gallery-grid">
+    {building_section_1.map((photo, index) => (
+         <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_section_1, index)}>
+            <img 
+                src={photo.src} 
+                alt={photo.alt} 
+                width={photo.width} 
+                height={photo.height} 
+                className="custom-gallery-image"
+            />
+        </div>
+    ))}
+</div>
+
+<DividerLine />
+
+<div className="custom-gallery-grid">
+    {building_section_2.map((photo, index) => (
+        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_section_2, index)}>
+            <img 
+                src={photo.src} 
+                alt={photo.alt} 
+                width={photo.width} 
+                height={photo.height} 
+                className="custom-gallery-image"
+            />
+        </div>
+    ))}
+</div>
+
+<DividerLine />
+
+<div className="custom-gallery-grid">
+    {building_keep.map((photo, index) => (
+        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_keep, index)}>
+            <img 
+                src={photo.src} 
+                alt={photo.alt} 
+                width={photo.width} 
+                height={photo.height} 
+                className="custom-gallery-image"
+            />
+        </div>
+    ))}
+</div>
+
+<DividerLine />
+
+<div className="custom-gallery-grid">
+    {side_by_side.map((photo, index) => (
+        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(side_by_side, index)}>
+            <img 
+                src={photo.src} 
+                alt={photo.alt} 
+                width={photo.width} 
+                height={photo.height} 
+                className="custom-gallery-image"
+            />
+        </div>
+    ))}
+</div>
+
+<DividerLine />
+
+<div className="custom-gallery-grid">
+    {building_random_extras.map((photo, index) => (
+        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_random_extras, index)}>
+            <img 
+                src={photo.src} 
+                alt={photo.alt} 
+                width={photo.width} 
+                height={photo.height} 
+                className="custom-gallery-image"
+            />
+        </div>
+    ))}
+</div>
+
+
+<Lightbox
+    open={lightboxOpen}
+    close={() => setLightboxOpen(false)}
+    slides={lightboxImages}
+    index={currentSlide}
+    plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+/>
+
+
+
+
                     </TabPanel>
                     <TabPanel>
                         <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
