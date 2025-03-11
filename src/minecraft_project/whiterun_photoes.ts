@@ -1,11 +1,11 @@
 
 function whiterunConstructionLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}whiterun_building_city/${folder}/${asset}?w=${width}&q=75`;
+  return `${import.meta.env.BASE_URL}whiterun_building_city/${folder}/${asset}?w=${width}&q=50`;
 }
 
 
 function whiterunSplitScreenLink(asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}whiterun_minecraft_split_screen/${asset}?w=${width}&q=75`;
+  return `${import.meta.env.BASE_URL}whiterun_minecraft_split_screen/${asset}?w=${width}&q=50`;
 }
   
 export { whiterunConstructionLink, whiterunSplitScreenLink };
