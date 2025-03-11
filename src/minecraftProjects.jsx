@@ -1,37 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import WhiterunProject from './minecraft_project/whiteruncity';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 
 
-
-import { building_enterance, building_section_1, building_section_2, building_keep, side_by_side, building_random_extras } from './minecraft_project/whiterun_photoes';
-import { MasonryPhotoAlbum, RowsPhotoAlbum, ColumnsPhotoAlbum } from 'react-photo-album';
-import 'react-photo-album/masonry.css';
-import "react-photo-album/rows.css";
-import "react-photo-album/columns.css";
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
-
-// Lightbox plugins
-import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
-import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
-import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
-import 'yet-another-react-lightbox/plugins/thumbnails.css';
-
 const MinecraftProjects = () => {
-    const [lightboxOpen, setLightboxOpen] = useState(false);
-const [currentSlide, setCurrentSlide] = useState(0);
-const [lightboxImages, setLightboxImages] = useState([]);
 
 
-const openLightbox = (photos, index) => {
-    setLightboxImages(photos.map(photo => ({ src: photo.src })));
-    setCurrentSlide(index);
-    setLightboxOpen(true);
-};
     return (
         <div className="minecraft-body">
             <IntroSection title="Welcome to My Minecraft Realm">
@@ -52,8 +28,6 @@ const openLightbox = (photos, index) => {
                 <p>
                     This world is constantly evolving, with every build adding new depth and character. Whether it’s medieval cities, ancient wonders, or hidden secrets, there’s always something to explore. With each new build, the world continues to expand, bringing new challenges, inspirations, and stories to life.
                 </p>
-                <DividerLine/>
-                <p><strong>Note:</strong> There is an issue regarding images not rendering correctly. You may need to refresh the page or interact with it for all images to load. If you know how to fix this please email me at the link below.</p>
             </IntroSection>
             <DividerLine />
             <div className="center-div tabs-container">
@@ -64,114 +38,7 @@ const openLightbox = (photos, index) => {
                     </TabList>
                     <TabPanel>
                         {/*Whiterun Project <WhiterunProject/>*/}
-
-
-                        <div className="custom-gallery-grid">
-    {building_enterance.map((photo, index) => (
-         <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_enterance, index)}>
-            <img 
-                src={photo.src} 
-                alt={photo.alt} 
-                width={photo.width} 
-                height={photo.height} 
-                className="custom-gallery-image"
-            />
-        </div>
-    ))}
-</div>
-
-<DividerLine />
-
-<div className="custom-gallery-grid">
-    {building_section_1.map((photo, index) => (
-         <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_section_1, index)}>
-            <img 
-                src={photo.src} 
-                alt={photo.alt} 
-                width={photo.width} 
-                height={photo.height} 
-                className="custom-gallery-image"
-            />
-        </div>
-    ))}
-</div>
-
-<DividerLine />
-
-<div className="custom-gallery-grid">
-    {building_section_2.map((photo, index) => (
-        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_section_2, index)}>
-            <img 
-                src={photo.src} 
-                alt={photo.alt} 
-                width={photo.width} 
-                height={photo.height} 
-                className="custom-gallery-image"
-            />
-        </div>
-    ))}
-</div>
-
-<DividerLine />
-
-<div className="custom-gallery-grid">
-    {building_keep.map((photo, index) => (
-        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_keep, index)}>
-            <img 
-                src={photo.src} 
-                alt={photo.alt} 
-                width={photo.width} 
-                height={photo.height} 
-                className="custom-gallery-image"
-            />
-        </div>
-    ))}
-</div>
-
-<DividerLine />
-
-<div className="custom-gallery-grid">
-    {side_by_side.map((photo, index) => (
-        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(side_by_side, index)}>
-            <img 
-                src={photo.src} 
-                alt={photo.alt} 
-                width={photo.width} 
-                height={photo.height} 
-                className="custom-gallery-image"
-            />
-        </div>
-    ))}
-</div>
-
-<DividerLine />
-
-<div className="custom-gallery-grid">
-    {building_random_extras.map((photo, index) => (
-        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(building_random_extras, index)}>
-            <img 
-                src={photo.src} 
-                alt={photo.alt} 
-                width={photo.width} 
-                height={photo.height} 
-                className="custom-gallery-image"
-            />
-        </div>
-    ))}
-</div>
-
-
-<Lightbox
-    open={lightboxOpen}
-    close={() => setLightboxOpen(false)}
-    slides={lightboxImages}
-    index={currentSlide}
-    plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-/>
-
-
-
-
+                        <WhiterunProject/>
                     </TabPanel>
                     <TabPanel>
                         <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
@@ -185,83 +52,3 @@ const openLightbox = (photos, index) => {
 
 export default MinecraftProjects;
 
-/*
-<div className="center-div tabs-container">
-                <Tabs className="standard-tabs">
-                    <TabList>
-                        <Tab>"Elder Scrolls: Skyrim" Whiterun City</Tab>
-                        <Tab>Dwarven Kingdom</Tab>
-                    </TabList>
-                    <TabPanel>
-                        Whiterun Project <WhiterunProject 
-                        <WhiterunProject />
-                        
-                    </TabPanel>
-                    <TabPanel>
-                        <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
-                    </TabPanel>
-                     Additional Minecraft projects can be added below 
-                </Tabs>
-            </div>
-*/
-
-
-
-/*
-<div className="base-max-width">
-                        <MasonryPhotoAlbum 
-                            photos={building_enterance}
-                            //debounce={250} // Adjust debounce value as needed
-                            columns={3}
-                            //targetRowHeight={250}  // Adjust this value as needed
-                            spacing={5}            // Optional: Adjust spacing between images
-                            onClick={({ index }) => openLightbox(building_enterance, index)}
-                        />
-                        
-                        <DividerLine/>
-                        <RowsPhotoAlbum photos={building_section_1}
-                            //debounce={250} // Adjust debounce value as needed
-                            rowConstraints={{
-                                maxPhotos: 4
-                            }}
-                            targetRowHeight={250}  // Adjust this value as needed
-                            spacing={5}            // Optional: Adjust spacing between images
-                            onClick={({ index }) => openLightbox(building_section_1, index)}
-                            
-                            
-                        />
-                        
-                        <DividerLine/>
-                        <ColumnsPhotoAlbum 
-                            photos={building_section_2} 
-                            //debounce={250} // Adjust debounce value as needed
-                            columns={3}
-                            
-                            spacing={5}            // Optional: Adjust spacing between images
-                            onClick={({ index }) => openLightbox(building_section_2, index)}
-                            
-                             />
-                             
-                        <DividerLine/>
-                        <MasonryPhotoAlbum photos={building_keep}
-                            columns={3} 
-                            //targetRowHeight={250}  // Adjust this value as needed
-                            spacing={5}            // Optional: Adjust spacing between images
-                            onClick={({ index }) => openLightbox(building_keep, index)}
-                            />
-                            
-                    <DividerLine/>  
-                    <RowsPhotoAlbum 
-                        photos={building_random_extras} 
-                        
-                        //debounce={250} // Adjust debounce value as needed
-                        rowConstraints={{
-                            maxPhotos: 4
-                        }} 
-                        targetRowHeight={250}  // Adjust this value as needed
-                            spacing={5}            // Optional: Adjust spacing between images
-                            onClick={({ index }) => openLightbox(building_random_extras, index)}
-                        />
-                        
-                </div>
-*/

@@ -1,7 +1,3 @@
-import type { Photo } from "react-photo-album";
-
-
-const breakpoints = [1600, 1200, 1024, 768, 480, 320];
 
 function whiterunConstructionLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}whiterun_building_city/${folder}/${asset}?w=${width}&q=75`;
@@ -12,7 +8,7 @@ function whiterunSplitScreenLink(asset: string, width: number) {
   return `${import.meta.env.BASE_URL}whiterun_minecraft_split_screen/${asset}?w=${width}&q=75`;
 }
   
-export { breakpoints, whiterunConstructionLink, whiterunSplitScreenLink };
+export { whiterunConstructionLink, whiterunSplitScreenLink };
 
 export const building_enterance = [
   {
@@ -82,11 +78,6 @@ export const building_enterance = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-          src: whiterunConstructionLink("enterance", asset, breakpoint), 
-          width: breakpoint,
-          height: Math.round((height / width) * breakpoint),
-      })),
     }) as Photo,
 );
 
@@ -212,11 +203,6 @@ export const building_section_1 = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-        src: whiterunConstructionLink("section_1", asset, breakpoint), 
-        width: breakpoint,
-        height: Math.round((height / width) * breakpoint),
-      })),
     }) as Photo,
 );
 
@@ -366,11 +352,6 @@ export const building_section_2 = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-        src: whiterunConstructionLink("section_2", asset, breakpoint), 
-        width: breakpoint,
-        height: Math.round((height / width) * breakpoint),
-      })),
     }) as Photo,
 );
   
@@ -466,11 +447,6 @@ export const building_keep = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-        src: whiterunConstructionLink("keep", asset, breakpoint), 
-        width: breakpoint,
-        height: Math.round((height / width) * breakpoint),
-      })),
     }) as Photo,
 );
 
@@ -518,11 +494,6 @@ export const building_random_extras = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-        src: whiterunConstructionLink("random_extras", asset, breakpoint), 
-        width: breakpoint,
-        height: Math.round((height / width) * breakpoint),
-      })),
     }) as Photo,
 );
 
@@ -671,12 +642,5 @@ export const side_by_side = [
       alt,
       width,
       height,
-      srcSet: breakpoints.map((breakpoint) => ({
-        src: whiterunSplitScreenLink(asset, breakpoint), 
-        width: breakpoint,
-        height: Math.round((height / width) * breakpoint),
-      })),
-      //loading: "eager", // Forces immediate image loading
-      onLoad: () => window.requestAnimationFrame(() => window.dispatchEvent(new Event("scroll"))),
     }) as Photo
 );

@@ -1,10 +1,5 @@
 import React, { useState,  } from 'react';
-import { DividerLine, IntroSection } from '../SharedComponents';
-
-import { MasonryPhotoAlbum, RowsPhotoAlbum, ColumnsPhotoAlbum } from 'react-photo-album';
-import 'react-photo-album/masonry.css';
-import "react-photo-album/rows.css";
-import "react-photo-album/columns.css";
+import { IntroSection } from '../SharedComponents';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
@@ -15,13 +10,12 @@ import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
-const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry" }) => {
+const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680", gridRowHeight = "150px", collapsible = true}) => {
     const [lightboxImages, setLightboxImages] = useState([]);
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [isGalleryOpen, setIsGalleryOpen] = useState(!collapsible); // Open by default if non-collapsible
 
-
-   
 
 
     const openLightbox = (photos, index) => {
@@ -30,51 +24,72 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
         setLightboxOpen(true);
     };
 
-    // Choose the correct Photo Album Component based on albumStyle prop
-    const getPhotoAlbumComponent = (photos, albumStyle) => {
-        switch (albumStyle.toLowerCase()) {
-            case "rows":
-                return <RowsPhotoAlbum 
-                defaultContainerWidth={800}
-                    photos={photos} 
-                    //debounce={250} // Adjust debounce value as needed
-                    rowConstraints={{
-                        maxPhotos: 4
-                    }}
-                    onClick={({ index }) => openLightbox(photos, index)} />;
-            case "columns":
-                return <ColumnsPhotoAlbum 
-                defaultContainerWidth={800}
-                    photos={photos} 
-                    //debounce={250} // Adjust debounce value as needed
-                    columns={4}
-                    onClick={({ index }) => openLightbox(photos, index)} />;
-            case "masonry":
-            default:
-                return <MasonryPhotoAlbum 
-                defaultContainerWidth={800}
-                    photos={photos} 
-                    //debounce={250} // Adjust debounce value as needed
-                    columns={4}
-                    onClick={({ index }) => openLightbox(photos, index)} />;
-        }
-    };
-
     return (
+        <div className="standard-padding-margin">
+            {/* Title as the Toggle Button (Only for collapsible sections) */}
+            {collapsible ? (
+                    <h2 
+                        className="toggle-gallery-title" 
+                        onClick={() => setIsGalleryOpen(!isGalleryOpen)}
+                        style={{ cursor: "pointer" }}
+                    >
+                        {isGalleryOpen ? `▼ ${title}` : `▶ ${title}`}
+                    </h2>
+                ) : (
+                    <h2 className="non-collapsable-title">{title}</h2> // Non-collapsible sections just display title
+                )}
+            {/* Description Stays Visible */}
+                {description}
+
+            {/* Collapsible Image Grid */}
+            {isGalleryOpen && (
+                <div className="custom-gallery-grid" style={{ gridAutoRows: gridRowHeight }}>
+                    {photos.map((photo, index) => (
+                        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(photos, index)}>
+                            <img 
+                                src={photo.src} 
+                                alt={photo.alt} 
+                                width={photo.width} 
+                                height={photo.height} 
+                                style={{ aspectRatio: testprop }}
+                                className="custom-gallery-image"
+                            />
+                        </div>
+                    ))}
+                </div>
+            )}
+            <Lightbox
+                open={lightboxOpen}
+                close={() => setLightboxOpen(false)}
+                slides={lightboxImages}
+                index={currentSlide}
+                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+            />
+        </div>
+    );
+};
+
+export default MinecraftGallery;
+
+
+
+/*  oder version keep for now
+return (
         <div className="standard-padding-margin">
             <IntroSection title={ title }>
                 { description }
             </IntroSection>
-            <DividerLine />
-            <div className="base-max-width">
-                {sections.map(({ key, name, photos, description }) => (
-                    <div key={ key } className="collapsible-section">
-                        <h2 className="section-title">{ name }</h2>
-
-                        { description }
-
-                        {/* Auto-open section if it's non-collapsible */}
-                        { getPhotoAlbumComponent(photos, albumStyle) }
+            <div className="custom-gallery-grid" style={{ gridAutoRows: gridRowHeight }}>
+                {photos.map((photo, index) => (
+                    <div key={index} className="custom-gallery-item" onClick={() => openLightbox(photos, index)}>
+                        <img 
+                            src={ photo.src } 
+                            alt={ photo.alt } 
+                            width={ photo.width } 
+                            height={ photo.height } 
+                            style={{ aspectRatio: testprop }}
+                            className="custom-gallery-image"
+                        />
                     </div>
                 ))}
             </div>
@@ -88,12 +103,4 @@ const MinecraftGallery = ({ sections, title, description, albumStyle = "Masonry"
         </div>
     );
 };
-
-export default MinecraftGallery;
-
-/*<MasonryPhotoAlbum photos={photos} onClick={({ index }) => openLightbox(photos, index)} />; 
-
-{ (openSections[key] || !collapsible) && getPhotoAlbumComponent(photos, albumStyle) }
-
-
 */
