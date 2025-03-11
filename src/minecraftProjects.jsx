@@ -7,7 +7,6 @@ import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 
 const MinecraftProjects = () => {
 
-
     return (
         <div className="minecraft-body">
             <IntroSection title="Welcome to My Minecraft Realm">

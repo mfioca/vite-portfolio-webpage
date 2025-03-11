@@ -16,8 +16,6 @@ const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680",
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isGalleryOpen, setIsGalleryOpen] = useState(!collapsible); // Open by default if non-collapsible
 
-
-
     const openLightbox = (photos, index) => {
         setLightboxImages(photos.map((photo) => ({ src: photo.src })));
         setCurrentSlide(index);

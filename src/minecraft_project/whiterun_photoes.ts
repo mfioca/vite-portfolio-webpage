@@ -78,7 +78,7 @@ export const building_enterance = [
       alt,
       width,
       height,
-    }) as Photo,
+    }),
 );
 
 export const building_section_1 = [
@@ -203,7 +203,7 @@ export const building_section_1 = [
       alt,
       width,
       height,
-    }) as Photo,
+    }),
 );
 
 export const building_section_2 = [
@@ -352,7 +352,7 @@ export const building_section_2 = [
       alt,
       width,
       height,
-    }) as Photo,
+    }),
 );
   
 export const building_keep = [
@@ -447,7 +447,7 @@ export const building_keep = [
       alt,
       width,
       height,
-    }) as Photo,
+    }),
 );
 
 export const building_random_extras = [
@@ -494,7 +494,7 @@ export const building_random_extras = [
       alt,
       width,
       height,
-    }) as Photo,
+    }),
 );
 
 /***********************************************************************************/
@@ -642,5 +642,5 @@ export const side_by_side = [
       alt,
       width,
       height,
-    }) as Photo
+    })
 );
