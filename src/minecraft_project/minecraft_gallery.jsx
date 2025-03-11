@@ -53,6 +53,7 @@ const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680",
                                 height={photo.height} 
                                 style={{ aspectRatio: testprop }}
                                 className="custom-gallery-image"
+                                loading="lazy"
                             />
                         </div>
                     ))}
