@@ -2,7 +2,17 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { BodyContainer, IntroSection, DividerLine } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
-import { building_enterance, building_section_1, building_section_2, building_keep, side_by_side, building_random_extras } from './whiterun_photoes';
+import { 
+    building_enterance, 
+    building_section_1, 
+    building_section_2, 
+    building_keep, 
+    side_by_side, 
+    building_random_extras,
+    city_gates_details,
+    section_1_details,
+    section_2_details
+ } from './whiterun_photos';
 
 
 
@@ -137,9 +147,85 @@ const WhiterunProject = () => {
                             />
                         </TabPanel>
                         <TabPanel>
-                        <div className=" standard-padding-margin placeholder-container">
-                            <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
-                        </div>
+                            <IntroSection title="After Build Detail Screenshots">
+                                <p>
+                                    This section highlights detailed views of the completed Whiterun build in <i>Minecraft</i>. 
+                                    These screenshots capture the final structure, intricate design elements, and the overall atmosphere 
+                                    that brings the city to life.
+                                </p>
+                                <p>
+                                    <strong>Key focus areas include:</strong>
+                                </p>
+                                <ul className="default-list">
+                                    <li><strong>Architectural Details</strong> – Close-up shots showcasing the craftsmanship and accuracy of the build.</li>
+                                    <li><strong>Environmental Details</strong> – Careful placement of grass, flowers, and small decorative elements to enhance immersion.</li>
+                                    <li><strong>Final Adjustments</strong> – Small tweaks and refinements that improved the overall aesthetic.</li>
+                                </ul>
+                                <p>
+                                    These images offer a closer look at the effort that went into replicating <i>Skyrim’s</i> Whiterun in a block-based world. 
+                                    Explore the gallery to see how all the elements came together in the final version.
+                                </p>
+                            </IntroSection>
+                            <DividerLine />
+                            <MinecraftGallery 
+                                title="Whiterun City Gates - Final Details"
+                                photos = { city_gates_details }
+                                description = {
+                                    <>
+                                        <p>
+                                            The Whiterun City Gates serve as the primary entrance to the bustling city, 
+                                            standing as a fortified barrier between the outside world and the heart of Skyrim. 
+                                            This section showcases detailed screenshots of the gates, surrounding walls, and 
+                                            their architectural integration into the overall city structure.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Main Street & Market District - Final Details"
+                                photos={ section_1_details }
+                                description={
+                                    <>
+                                        <p>
+                                            This section highlights the <i>final detailing and structural refinements</i> of the <i>Main Street & Market District</i>. 
+                                            With the core buildings completed, attention shifts to <i>exterior decorations, interior layouts, and immersive elements</i> that bring Whiterun to life. 
+                                        </p>
+                                        <p>
+                                            From the <i>market stalls and vendor setups</i> to the <i>interior furnishings of homes and shops</i>, every detail has been carefully considered to 
+                                            maintain authenticity while adapting to Minecraft’s block-based constraints. This phase ensures that the district not only <i>resembles its Skyrim counterpart</i> but 
+                                            also feels like a functional and lived-in space within the game world.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title= "Residential & Guild Districts - Final Details"
+                                photos = { section_2_details }
+                                description={
+                                    <>
+                                        <p>
+                                            This section of Whiterun features a mix of homes, guild halls, and key locations such as <i>Jorrvaskr</i>, the <i>Skyforge</i>, and the <i>Temple of Kynareth</i>. 
+                                            While maintaining accurate exteriors was a priority, some interior layouts required slight distortions to fit within Minecraft’s block limitations, 
+                                            ensuring the city’s overall proportions remained true to <i>Skyrim</i>.
+                                        </p>
+                                        <p>
+                                            Larger buildings, such as the Companions' longhouse and the temple, were particularly challenging due to their unique designs and scale.
+                                            In some cases, adjustments were made to interior walls, staircases, and spacing to accommodate the outer framework while keeping the essential 
+                                            look and feel of the structures intact.
+                                        </p>
+                                        <p>
+                                            One of the biggest challenges was recreating the <i>hawk statue at the Skyforge</i>. With no direct reference images available, 
+                                            the statue had to be constructed entirely by eye, using in-game views from <i>Skyrim</i> to estimate its shape and proportions.
+                                            Despite the limitations, the final version captures the essence of the original monument overlooking the forge.
+                                        </p>
+                                        <p>
+                                            This area reflects the blend of careful planning and necessary compromises involved in translating a 3D-rendered RPG world into <i>Minecraft</i>'s block-based aesthetic.
+                                        </p>
+                                    </>
+                                }
+                            />
                         </TabPanel>
                     </BodyContainer>
                 </div>
@@ -149,3 +235,12 @@ const WhiterunProject = () => {
 };
 
 export default WhiterunProject;
+
+
+/*  placeholder section
+<TabPanel>
+                        <div className=" standard-padding-margin placeholder-container">
+                            <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
+                        </div>
+                        </TabPanel>
+*/

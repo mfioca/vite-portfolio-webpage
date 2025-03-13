@@ -7,8 +7,12 @@ function whiterunConstructionLink(folder: string, asset: string, width: number) 
 function whiterunSplitScreenLink(asset: string, width: number) {
   return `${import.meta.env.BASE_URL}whiterun_minecraft_split_screen/${asset}?w=${width}&q=50`;
 }
+
+function whiterundetailLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}whiterun_city_after/${folder}/${asset}?w=${width}&q=50`;
+}
   
-export { whiterunConstructionLink, whiterunSplitScreenLink };
+export { whiterunConstructionLink, whiterunSplitScreenLink, whiterundetailLink };
 
 export const building_enterance = [
   {
@@ -643,4 +647,480 @@ export const side_by_side = [
       width,
       height,
     })
+);
+
+
+/***********************************************************************************/
+/*                          After Build detail pictures                            */
+/***********************************************************************************/
+
+export const city_gates_details = [
+  {
+    asset: "gates_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_101",
+  },
+  {
+    asset: "gates_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_102",
+  },
+  {
+    asset: "gates_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_103",
+  },
+  {
+    asset: "gates_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_104",
+  },
+  {
+    asset: "gates_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_105",
+  },
+  {
+    asset: "gates_106.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_106",
+  },
+  {
+    asset: "gates_107.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_107",
+  },
+  {
+    asset: "gates_108.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_108",
+  },
+  {
+    asset: "gates_109.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_109",
+  },
+  {
+    asset: "gates_110.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_110",
+  },
+  {
+    asset: "gates_111.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_111",
+  },
+  {
+    asset: "gates_112.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_112",
+  },
+  {
+    asset: "gates_113.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_113",
+  },
+  {
+    asset: "gates_114.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_114",
+  },
+  {
+    asset: "gates_115.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_115",
+  },
+  {
+    asset: "gates_116.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for gates_116",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${whiterundetailLink("city_gates", asset, width)}`,
+      alt,
+      width,
+      height,
+    })
+);
+
+export const section_1_details = [
+  {
+    asset: "section1_dets_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_101",
+  },
+  {
+    asset: "section1_dets_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_102",
+  },
+  {
+    asset: "section1_dets_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_103",
+  },
+  {
+    asset: "section1_dets_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_104",
+  },
+  {
+    asset: "section1_dets_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_105",
+  },
+  {
+    asset: "section1_dets_106.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_106",
+  },
+  {
+    asset: "section1_dets_107.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_107",
+  },
+  {
+    asset: "section1_dets_108.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_108",
+  },
+  {
+    asset: "section1_dets_109.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_109",
+  },
+  {
+    asset: "section1_dets_110.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section1_dets_110",
+  },
+  {
+    asset: "warmaidens_e_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for warmaidens_e_1.jpg",
+  },
+  {
+    asset: "warmaidens_e_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for warmaidens_e_2.jpg",
+  },
+  {
+    asset: "warmaidens_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for warmaidens_i.jpg",
+  },
+  {
+    asset: "breezehome_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for breezehome_e.jpg",
+  },
+  {
+    asset: "breezehome_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for breezehome_i.jpg",
+  },
+  {
+    asset: "the_drunken_huntsman_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for the_drunken_huntsman_e.jpg",
+  },
+  {
+    asset: "the_drunken_huntsman_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for the_drunken_huntsman_i.jpg",
+  },
+  {
+    asset: "severio_pelagias_house_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for severio_pelagias_house_e.jpg",
+  },
+  {
+    asset: "belethors_general_goods_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for belethors_general_goods_e.jpg",
+  },
+  {
+    asset: "belethors_general_goods_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for belethors_general_goods_i.jpg",
+  },
+  {
+    asset: "arcadias_cauldron_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for arcadias_cauldron_e.jpg",
+  },
+  {
+    asset: "arcadias_cauldron_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for arcadias_cauldron_i.jpg",
+  },
+  {
+    asset: "the_bannered_mare_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for the_bannered_mare_e.jpg",
+  },
+  {
+    asset: "the_bannered_mare_i_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for the_bannered_mare_i_1.jpg",
+  },
+  {
+    asset: "the_bannered_mare_i_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for the_bannered_mare_i_2.jpg",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${whiterundetailLink("section_1", asset, width)}`,
+      alt,
+      width,
+      height,
+    })
+);
+
+export const section_2_details = [
+  {
+    asset: "section2_dets_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section2_dets_101",
+  },
+  {
+    asset: "section2_dets_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section2_dets_102",
+  },
+  {
+    asset: "section2_dets_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section2_dets_103",
+  },
+  {
+    asset: "section2_dets_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section2_dets_104",
+  },
+  {
+    asset: "section2_dets_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section2_dets_105",
+  },
+  {
+    asset: "section2_dets_106.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section2_dets_106",
+  },
+  {
+    asset: "section2_dets_107.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section2_dets_107",
+  },
+  {
+    asset: "section2_dets_108.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section2_dets_108",
+  },
+  {
+    asset: "section2_dets_109.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section2_dets_109",
+  },
+  {
+    asset: "house_gray_mane_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for house_gray_mane_e.jpg",
+  },
+  {
+    asset: "house_gray_mane_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for house_gray_mane_i.jpg",
+  },
+  {
+    asset: "temple_of_kynareth_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for temple_of_kynareth_e.jpg",
+  },
+  {
+    asset: "temple_of_kynareth_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for temple_of_kynareth_i.jpg",
+  },
+  {
+    asset: "hall_of_the_dead_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for hall_of_the_dead_e.jpg",
+  },
+  {
+    asset: "hall_of_the_dead_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for hall_of_the_dead_i.jpg",
+  },
+  {
+    asset: "hall_of_the_dead_crypt_i_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for hall_of_the_dead_crypt_i_1.jpg",
+  },
+  {
+    asset: "hall_of_the_dead_crypt_i_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for hall_of_the_dead_crypt_i_2.jpg",
+  },
+  {
+    asset: "house_of_clan_battle-born_e_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for house_of_clan_battle-born_e_1.jpg",
+  },
+  {
+    asset: "house_of_clan_battle-born_e_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for house_of_clan_battle-born_e_2.jpg",
+  },
+  {
+    asset: "house_of_clan_battle-born_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for house_of_clan_battle-born_i.jpg",
+  },
+  {
+    asset: "amrens_house_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for amrens_house_i.jpg",
+  },
+  {
+    asset: "carlotta_valentias_house_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for carlotta_valentias_house_i.jpg",
+  },
+  {
+    asset: "uthgerds_house_i.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for uthgerds_house_i.jpg",
+  },
+  {
+    asset: "heimskrs_house_e.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for heimskrs_house_e.jpg",
+  },
+  {
+    asset: "jorrvaskar_e_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for jorrvaskar_e_1.jpg",
+  },
+  {
+    asset: "jorrvaskar_e_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for jorrvaskar_e_2.jpg",
+  },
+  {
+    asset: "jorrvaskar_e_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for jorrvaskar_e_3.jpg",
+  },
+  {
+    asset: "jorrvaskar_top_level.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for jorrvaskar_top_level.jpg",
+  },
+  {
+    asset: "jorrvaskar_lower_level.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for jorrvaskar_lower_level.jpg",
+  },
+  {
+    asset: "skyforge_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for skyforge_1.jpg",
+  },
+  {
+    asset: "skyforge_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for skyforge_2.jpg",
+  },
+  {
+    asset: "underforge.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for underforge.jpg",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${whiterundetailLink("section_2", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
 );
