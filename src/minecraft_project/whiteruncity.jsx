@@ -131,7 +131,7 @@ const WhiterunProject = () => {
                             <MinecraftGallery
                                 title= "Skyrim / Minecraft Side-by-Side"
                                 photos = { side_by_side }
-                                testprop = { 800 / 1000 }
+                                testprop = { 800 / 1050 }
                                 gridRowHeight="400px" // Custom row height
                                 collapsible={false} // Ensures this section is always open
                                 description = {
