@@ -11,7 +11,9 @@ import {
     building_random_extras,
     city_gates_details,
     section_1_details,
-    section_2_details
+    section_2_details,
+    keep_external_details,
+    keep_interior_details
  } from './whiterun_photos';
 
 
@@ -222,6 +224,47 @@ const WhiterunProject = () => {
                                         </p>
                                         <p>
                                             This area reflects the blend of careful planning and necessary compromises involved in translating a 3D-rendered RPG world into <i>Minecraft</i>'s block-based aesthetic.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title= "Dragonsreach Exterior - Final Details"
+                                photos = { keep_external_details }
+                                description = {
+                                    <>
+                                        <p>
+                                            The exterior of Dragonsreach stands as the pinnacle of Whiterun’s skyline, towering over the city with its distinct Nordic architecture. 
+                                            This section showcases the detailed stonework, intricate wooden beams, and the grand bridge leading to the Jarl’s keep. Every aspect was carefully 
+                                            recreated, ensuring the proportions and structural elements remained faithful to the original <i>Skyrim</i> design.
+                                        </p>
+                                        <p>
+                                            The surrounding environment also plays a crucial role in bringing Dragonsreach to life. The winding stairways, torch-lit paths, 
+                                            and open courtyards create a sense of majesty fitting for Whiterun’s ruling seat. Additional details include sections of the outer walls 
+                                            where stonework has crumbled over time to help capture the weathered and aged look of the keep. These subtle deteriorations reflect the structure’s long history, 
+                                            showing areas of reinforced repairs while maintaining the overall integrity of the build.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title= "Dragonsreach Interrior - Final Details"
+                                photos = { keep_interior_details }
+                                description={
+                                    <>
+                                        <p>
+                                            The grand interior of <i>Dragonsreach</i> is one of the most recognizable locations in <i>Skyrim</i>, and recreating its vast audience hall, key rooms, 
+                                            and intricate layout within <i>Minecraft</i> was a significant challenge. The towering ceilings, wooden beams, and detailed architecture surrounding 
+                                            the Jarl’s throne were carefully constructed to capture the majesty of this historic seat of power. The build also features <i>The Whispering Door</i>, a reference to Ebony Blade sealed beneath Dragonsreach—an eerie detail preserved for authenticity.
+                                        </p>
+                                        <p>
+                                            One of the greatest challenges in designing this interior was adapting <i>Skyrim</i>’s space-distorting interiors to a consistent external structure. 
+                                            Many interior spaces in the game do not adhere to their corresponding exterior dimensions, requiring careful planning to ensure a believable and functional layout. 
+                                            This was particularly true for the Jarl’s living quarters, the <i>map room</i>, and the <i>Great Porch</i>, all of which had to be stacked 
+                                            vertically within the structure without compromising exterior accuracy. Strategic adjustments and spacing allowed these sections to fit seamlessly within the 
+                                            walls of Dragonsreach while maintaining their unique in-game scale and proportions.
                                         </p>
                                     </>
                                 }

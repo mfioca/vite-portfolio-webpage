@@ -1124,3 +1124,217 @@ export const section_2_details = [
       height,
     }),
 );
+
+export const keep_external_details = [
+  {
+    asset: "dragonsreach_dets_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_101",
+  },
+  {
+    asset: "dragonsreach_dets_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_102",
+  },
+  {
+    asset: "dragonsreach_dets_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_103",
+  },
+  {
+    asset: "dragonsreach_dets_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_104",
+  },
+  {
+    asset: "dragonsreach_dets_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_105",
+  },
+  {
+    asset: "dragonsreach_dets_106.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_106",
+  },
+  {
+    asset: "dragonsreach_dets_107.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_107",
+  },
+  {
+    asset: "dragonsreach_dets_108.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_108",
+  },
+  {
+    asset: "dragonsreach_dets_109.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_109",
+  },
+  {
+    asset: "dragonsreach_dets_110.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_110",
+  },
+  {
+    asset: "dragonsreach_dets_111.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_111",
+  },
+  {
+    asset: "dragonsreach_dets_112.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_112",
+  },
+  {
+    asset: "dragonsreach_dets_113.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_dets_113",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${whiterundetailLink("keep", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const keep_interior_details = [
+  {
+    asset: "dragonsreach_int_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_101",
+  },
+  {
+    asset: "dragonsreach_int_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_102",
+  },
+  {
+    asset: "dragonsreach_int_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_103",
+  },
+  {
+    asset: "dragonsreach_int_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_104",
+  },
+  {
+    asset: "dragonsreach_int_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_105",
+  },
+  {
+    asset: "dragonsreach_int_106.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_106",
+  },
+  {
+    asset: "dragonsreach_int_107.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_107",
+  },
+  {
+    asset: "dragonsreach_int_108.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_108",
+  },
+  {
+    asset: "dragonsreach_int_109.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_109",
+  },
+  {
+    asset: "dragonsreach_int_110.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_110",
+  },
+  {
+    asset: "dragonsreach_int_111.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_111",
+  },
+  {
+    asset: "dragonsreach_int_112.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_112",
+  },
+  {
+    asset: "dragonsreach_int_113.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_113",
+  },
+  {
+    asset: "dragonsreach_int_114.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_114",
+  },
+  {
+    asset: "dragonsreach_int_115.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_115",
+  },
+  {
+    asset: "dragonsreach_int_116.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_116",
+  },
+  {
+    asset: "dragonsreach_int_117.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_117",
+  },
+  {
+    asset: "dragonsreach_int_118.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_118",
+  },
+  {
+    asset: "dragonsreach_int_119.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for dragonsreach_int_119",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${whiterundetailLink("keep", asset, width)}`,
+      alt,
+      width,
+      height,
+    })
+);
