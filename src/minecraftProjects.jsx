@@ -1,5 +1,6 @@
 import React from 'react';
 import WhiterunProject from './minecraft_project/whiteruncity';
+import DwarvenKingdom from './minecraft_project/dwarvenkingdom';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
@@ -22,7 +23,7 @@ const MinecraftProjects = () => {
                     <li>A second city beyond the mountains, featuring a mining district, an abandoned underground mineshaft, a town square, a fortified keep, and another port.</li>
                     <li>A crumbling abandoned house with a collapsing tower, adding mystery to the journey between cities.</li>
                     <li>A massive 100x100 block recreation of Chichen Itza, rising from the ocean, waiting for its purpose.</li>
-                    <li>A new city in the jungle, blending hobbit hole dwellings into the mountain and featuring dense, old-European-inspired row houses in the valley below.</li>
+                    <li>A new city in the jungle, blending hobbit hole dwellings into the mountain and featuring dense, old-European-inspired row houses in the valley below. <strong>Currently in development.</strong></li>
                 </ul>
                 <p>
                     This world is constantly evolving, with every build adding new depth and character. Whether it’s medieval cities, ancient wonders, or hidden secrets, there’s always something to explore. With each new build, the world continues to expand, bringing new challenges, inspirations, and stories to life.
@@ -40,7 +41,7 @@ const MinecraftProjects = () => {
                         <WhiterunProject/>
                     </TabPanel>
                     <TabPanel>
-                        <p>More detailed descriptions of pictures of additional builds in this realm coming soon</p>
+                        <DwarvenKingdom />
                     </TabPanel>
                      {/*Additional Minecraft projects can be added below */}
                 </Tabs>
