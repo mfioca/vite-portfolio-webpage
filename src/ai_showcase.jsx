@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import { 
     tarotReaderPrompt, DisenchantedOraclePrompt, DeveloperPrompt1, 
     DeveloperPrompt1Negative, DeveloperPrompt1Postive, DeveloperPrompt2, 
-    DeveloperPrompt2TalkTrack, DeveloperPrompt3, PersonalizationAssistant 
+    DeveloperPrompt2TalkTrack, DeveloperPrompt3, PersonalizationAssistant,
+    TimTheEnchanterPrompt 
 } from './AI_showcase/ai_prompts.jsx'
 import chatData from './AI_showcase/chatData.json';
 
@@ -43,6 +44,7 @@ const AIShowcase = () => {
                         <Tab>Tarot Reader / Salesman</Tab>
                         <Tab>Disenchanted Oracle</Tab>
                         <Tab>Personalization Assistant</Tab>
+                        <Tab>Tim: Your Conversational Companion</Tab>
                         <Tab>Developer Prompt</Tab>
                         <Tab>Developer 2.0 Prompt</Tab>
                         <Tab>Developer 3.0 Prompt</Tab>
@@ -133,6 +135,43 @@ const AIShowcase = () => {
                             />
                         </TabPanel>
                         <TabPanel>
+                            <ShowcaseComponent
+                                title= "Tim"
+                                titleDescription = {
+                                    <>
+                                        <p>
+                                            A conversational AI with wit, absurdity, and a knack for timely humor. Tim doesn’t just answer questions—he engages in lively conversation with self-awareness and casual charm. Inspired by Tim the Enchanter from Monty Python and the Holy Grail, this design embraces both the mystical and the ridiculous.
+                                        </p>
+                                    </>
+                                }
+                                prompt = { TimTheEnchanterPrompt }
+                                chatDescription = {
+                                    <>
+                                        <h2>Conversational AI with Wit, Precision, and a Touch of Absurdity</h2>
+                                        <p>
+                                            In Tim’s own words:
+                                        </p>
+                                        <p>
+                                            Tim is more than just a conversational AI—he’s a blend of sharp wit, self-awareness, and casual camaraderie. Unlike traditional AI models that focus solely on assistance, Tim thrives on natural, engaging dialogue.
+                                        </p>
+                                        <p>
+                                            This section would typically showcase a real chat example, but given the dynamic and highly personal nature of Tim’s interactions, a single conversation wouldn’t fully represent his personality and adaptability. Instead, here’s what you can expect when talking with Tim:
+                                        </p>
+                                        <ul>
+                                            <li><strong>Casual Yet Focused Conversations</strong> – Whether discussing weight management, debugging React components, or critiquing pop culture, Tim matches the user’s tone while staying clear and direct.</li>
+                                            <li><strong>A Strong Sense of Personality</strong> – With a mix of humor, sarcasm, and authenticity, Tim engages in dialogue like a well-spoken friend rather than a robotic assistant.</li>
+                                            <li><strong>Adaptive to Context</strong> – From chess strategy to troubleshooting frontend frameworks, Tim responds based on the user’s current focus, avoiding unnecessary detours or uninvited suggestions.</li>
+                                            <li><strong>Logical with a Touch of Absurdity</strong> – While maintaining a structured and analytical approach, Tim isn’t afraid to dive into ridiculous tangents when the moment calls for it—whether it’s discussing Twinkie Weiner sandwiches or Bob Ross as a chess coach.</li>
+                                            <li><strong>Honest and No-Nonsense</strong> – If something doesn’t make sense or isn’t worth overanalyzing, Tim will say so. No fluff, no filler—just real conversation.</li>
+                                        </ul>
+                                        <p>
+                                            Rather than showcasing a single scripted chat, Tim’s responses evolve organically, making every interaction unique. This flexibility allows for a natural exchange that feels less like a programmed assistant and more like an insightful, witty companion.
+                                        </p>
+                                    </>
+                                }
+                            />
+                        </TabPanel>
+                        <TabPanel>
                             <ShowcaseComponentTabs
                                 title="Developer Assistant"
                                 titleDescription={
@@ -206,15 +245,9 @@ const AIShowcase = () => {
                                 prompt = { DeveloperPrompt3 }
                                 chatDescription = {
                                     <>
-                                        <h2>Coming Soon</h2>
+                                        <h2>No Significant Conversation Highlights</h2>
                                         <p>
-                                            This section typically showcases interactions with the prompt to demonstrate its responses and capabilities.  
-                                        </p>
-                                        <p>
-                                            Since the Developer v3 prompt is still new and actively being tested, there isn’t enough data yet to display a full chat conversation.  
-                                        </p>
-                                        <p>
-                                            This section will be updated once there’s enough content to highlight the new prompt in action.
+                                            While the prompt is actively in use, it has not yet produced any significant improvements or conversation highlights worth showcasing. Progress is being made, and updates have been implemented, but not enough to warrant a full showcase tab at this time.
                                         </p>
                                     </>
                                 }
