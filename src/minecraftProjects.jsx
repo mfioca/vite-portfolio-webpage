@@ -45,41 +45,41 @@ const MinecraftProjects = () => {
                                 key role in shaping various aspects of my world.
                             </p>
                             <ul className="default-list">
-                        <li>
-                            <a href="https://www.youtube.com/@lorddakr" target="_blank" rel="noopener noreferrer">
-                                Lord Dakr
-                            </a> – Known for medieval, historical, and fantasy builds with an emphasis on accuracy and detail.
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@ItsMarloe" target="_blank" rel="noopener noreferrer">
-                                ItsMarloe
-                            </a> – Creator of intricate, immersive medieval structures and world-building techniques.
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@BigTonyMC" target="_blank" rel="noopener noreferrer">
-                                BigTonyMC
-                            </a> – Specializes in detailed and creative Minecraft designs, from medieval to modern builds.
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@BlueNerdMC" target="_blank" rel="noopener noreferrer">
-                                BlueNerd
-                            </a> – Known for step-by-step tutorials on stunning fantasy and medieval-inspired builds.
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@Goldrobin" target="_blank" rel="noopener noreferrer">
-                                Goldrobin
-                            </a> – Expert in unique and aesthetically pleasing architectural styles, including custom towns and villages.
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@Gorillo" target="_blank" rel="noopener noreferrer">
-                                Gorillo
-                            </a> – Creates immersive builds and tutorials that blend creativity with functional design.
-                        </li>
-                    </ul>
-                    <p>
-                        These creators' work has provided both guidance and inspiration throughout the construction of my Minecraft 
-                        realm. Their tutorials helped refine details, improve layouts, and bring ambitious ideas to life.
-                    </p>
+                                <li>
+                                    <a href="https://www.youtube.com/@lorddakr" target="_blank" rel="noopener noreferrer">
+                                        Lord Dakr
+                                    </a> – Known for medieval, historical, and fantasy builds with an emphasis on accuracy and detail.
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@ItsMarloe" target="_blank" rel="noopener noreferrer">
+                                        ItsMarloe
+                                    </a> – Creator of intricate, immersive medieval structures and world-building techniques.
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@BigTonyMC" target="_blank" rel="noopener noreferrer">
+                                        BigTonyMC
+                                    </a> – Specializes in detailed and creative Minecraft designs, from medieval to modern builds.
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@BlueNerdMC" target="_blank" rel="noopener noreferrer">
+                                        BlueNerd
+                                    </a> – Known for step-by-step tutorials on stunning fantasy and medieval-inspired builds.
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@Goldrobin" target="_blank" rel="noopener noreferrer">
+                                        Goldrobin
+                                    </a> – Expert in unique and aesthetically pleasing architectural styles, including custom towns and villages.
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@Gorillo" target="_blank" rel="noopener noreferrer">
+                                        Gorillo
+                                    </a> – Creates immersive builds and tutorials that blend creativity with functional design.
+                                </li>
+                            </ul>
+                            <p>
+                                These creators' work has provided both guidance and inspiration throughout the construction of my Minecraft 
+                                realm. Their tutorials helped refine details, improve layouts, and bring ambitious ideas to life.
+                            </p>
                         </div>
                     )}
                 </div>
