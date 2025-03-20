@@ -4,15 +4,15 @@ function portCityTownLink(folder: string, asset: string, width: number) {
 }
 
 
-function whiterunSplitScreenLink(asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}whiterun/whiterun_minecraft_split_screen/${asset}?w=${width}&q=50`;
+function portCityPortLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}Port_city/port/${folder}/${asset}?w=${width}&q=50`;
 }
 
 function whiterundetailLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}whiterun/whiterun_city_after/${folder}/${asset}?w=${width}&q=50`;
 }
   
-export { portCityTownLink, whiterunSplitScreenLink, whiterundetailLink };
+export { portCityTownLink, portCityPortLink, whiterundetailLink };
 
 
 export const town_generalviews = [
@@ -289,3 +289,177 @@ export const town_scenery = [
     }),
 );
 
+/***********************************************************************************/
+/*                          PORT AND MARKETPLACE                                   */
+/***********************************************************************************/
+
+export const port_general_views = [
+  {
+    asset: "general_views_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for general_views_101",
+  },
+  {
+    asset: "general_views_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for general_views_102",
+  },
+  {
+    asset: "general_views_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for general_views_103",
+  },
+  {
+    asset: "general_views_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for general_views_104",
+  },
+  {
+    asset: "general_views_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for general_views_105",
+  },
+  {
+    asset: "general_views_106.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for general_views_106",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${portCityPortLink("general_views", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const port_buildings_details = [
+  {
+    asset: "buildings_dets_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_1",
+  },
+  {
+    asset: "buildings_dets_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_2",
+  },
+  {
+    asset: "buildings_dets_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_3",
+  },
+  {
+    asset: "buildings_dets_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_4",
+  },
+  {
+    asset: "buildings_dets_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_5",
+  },
+  {
+    asset: "buildings_dets_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_6",
+  },
+  {
+    asset: "buildings_dets_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_7",
+  },
+  {
+    asset: "buildings_dets_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_8",
+  },
+  {
+    asset: "buildings_dets_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_9",
+  },
+  {
+    asset: "buildings_dets_10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_10",
+  },
+  {
+    asset: "buildings_dets_11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_11",
+  },
+  {
+    asset: "buildings_dets_12.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for buildings_dets_12",
+  },
+].map(({ asset, alt, width, height }) => ({
+  src: `${portCityPortLink("buildings_and_details", asset, width)}`,
+  alt,
+  width,
+  height,
+}));
+
+export const port_boats = [
+  {
+    asset: "boats_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for boats_101",
+  },
+  {
+    asset: "boats_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for boats_102",
+  },
+  {
+    asset: "boats_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for boats_103",
+  },
+  {
+    asset: "boats_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for boats_104",
+  },
+  {
+    asset: "boats_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for boats_105",
+  },
+  {
+    asset: "boats_106.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for boats_106",
+  },
+].map(({ asset, alt, width, height }) => ({
+  src: `${portCityPortLink("boats", asset, width)}`,
+  alt,
+  width,
+  height,
+}));

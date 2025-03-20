@@ -5,8 +5,10 @@ import MinecraftGallery from './minecraft_gallery';
 import { 
     town_generalviews,
     town_buildings,
-    town_scenery
-
+    town_scenery,
+    port_general_views,
+    port_buildings_details,
+    port_boats
  } from './port_city_photos';
 
 
@@ -22,22 +24,23 @@ const PortCityProject = () => {
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
-                            <IntroSection title="Whiterun City from Elder Scrolls Skyrim">
-                                <p>
-                                    This project is a detailed recreation of Whiterun from <i>The Elder Scrolls: Skyrim</i>, built entirely in <i>Minecraft</i>. 
-                                    It showcases a combination of creativity, planning, and problem-solving.
-                                </p>
-                                <p><strong>Key aspects of the build:</strong></p>
-                                <ul className="default-list">
-                                    <li><strong>Accuracy & Scale</strong> – Careful attention to proportions, ensuring structures match the in-game city layout.</li>
-                                    <li><strong>Design Challenges</strong> – Adapting Skyrim’s curved architecture and terrain to Minecraft’s block-based system.</li>
-                                    <li><strong>Problem-Solving</strong> – Adjusting details to maintain immersion while staying true to the source material.</li>
-                                    <li><strong>Persistence & Refinement</strong> – Iterative improvements to align with Skyrim’s design, refining details over time.</li>
-                                </ul>
-                                <p>
-                                    Explore the different stages of the build, from its early framework to the final immersive details.
-                                </p>
-                            </IntroSection>
+                        <IntroSection title="Port City & Town District">
+                            <p>
+                                Nestled along the coast and bordering <i>Whiterun</i>, the <i>Port City</i> extends beyond its bustling harbor into a thriving town filled with essential infrastructure and rich details. 
+                                Positioned as a key waypoint for travelers and traders, the town runs parallel to <i>Whiterun</i>, serving as both an extension of the city and a final waypoint before travelers venture 
+                                through the mountain tunnel to distant locations across the realm.
+                            </p>
+                            <p><strong>Key aspects of the build:</strong></p>
+                            <ul className="default-list">
+                                <li><strong>Diverse Architecture</strong> – Featuring a blacksmith, an inn and pub, a towering town hall, and a small homestead with a hidden underground farm.</li>
+                                <li><strong>Defensive & Watch Points</strong> – A strategically placed watchtower oversees both the town and port, ensuring safety and security.</li>
+                                <li><strong>Natural & Historical Elements</strong> – A peaceful cemetery and remnants of an old ruined house add character and depth to the settlement.</li>
+                                <li><strong>Industry & Sustainability</strong> – A logging platform inspired by <i>Skyrim’s</i> Riverwood ensures the town remains self-sufficient in resources.</li>
+                            </ul>
+                            <p>
+                                The combination of well-planned infrastructure and environmental storytelling brings this settlement to life, making it a unique and immersive part of the realm.
+                            </p>
+                        </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
                                 title="Aerial Views"
@@ -91,13 +94,74 @@ const PortCityProject = () => {
                                     </>
                                 }
                             />
-                            <DividerLine />
-                            
+                            <DividerLine />          
                         </TabPanel>
                         <TabPanel>
-                        <div className=" standard-padding-margin placeholder-container">
-                            <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
-                        </div>
+                            <IntroSection title="Harbor District">
+                                <p>
+                                    This bustling <i>Harbor District</i> serves as a crucial trade hub, seamlessly integrating functionality and aesthetic appeal. Designed with careful attention to detail, 
+                                    the city balances practical infrastructure with vibrant market activity, making it a dynamic and immersive addition to the realm.
+                                </p>
+                                <p><strong>Key aspects of the build:</strong></p>
+                                <ul className="default-list">
+                                    <li><strong>Marketplace & Trade</strong> – A lively collection of market stalls and cargo storage facilities, ensuring a steady flow of goods.</li>
+                                    <li><strong>Harbor Infrastructure</strong> – Dedicated loading cranes for each vessel, facilitating efficient trade and transport.</li>
+                                    <li><strong>Decorative Features</strong> – A fish enclosure in the heart of the boardwalk, covered by a uniquely designed canopy, alongside seating areas for travelers and traders.</li>
+                                    <li><strong>Lighthouse & Harbor Control</strong> – A towering lighthouse guiding ships safely to shore, complemented by two harbor houses overseeing port operations.</li>
+                                </ul>
+                                <p>
+                                    This section showcases the interplay between commerce, travel, and architectural planning, capturing the essence of a thriving maritime settlement.
+                                </p>
+                            </IntroSection>
+                            <MinecraftGallery
+                                title="Harbor District - General Views"
+                                photos={ port_general_views }
+                                description={
+                                    <>
+                                        <p>
+                                            These aerial shots provide a sweeping look at the Port City’s harbor district, capturing its connection to the open sea and its role as a vital trading hub.  
+                                            The port is designed with both function and detail in mind, ensuring ships can dock, unload, and restock efficiently while maintaining a visually immersive setting.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Harbor District Buildings & Key Details"
+                                photos={ port_buildings_details }
+                                description={
+                                    <>
+                                        <p>
+                                            This section highlights the essential structures that define the <i>Harbor District</i> and its role as a vital trade hub.  
+                                            Two harbor master buildings oversee the daily operations, ensuring the smooth movement of goods and ships.  
+                                            The cargo storage area, while open-air, is secured by a perimeter wall lined with iron bars,  
+                                            simulating the feel of a fenced-off shipping yard. A fully functional lighthouse stands watch over the harbor, naturally carved into the coastline like a protective crescent,  
+                                            guiding ships safely to port while serving as a landmark for travelers navigating the open waters.
+                                        </p>
+                                        <p>
+                                            Additional details include towering cranes designed for efficiently loading and unloading docked vessels,  
+                                            as well as various marketplace stalls that create a lively trading environment.  
+                                            A decorative covered fishery adds an extra touch of maritime charm, reinforcing the harbor’s character  
+                                            as a bustling point of commerce and seafaring activity.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Harbor Ships & Boats"
+                                photos={ port_boats }
+                                description={
+                                    <>
+                                        <p>
+                                            This section highlights the ships docked at the <i>Port City</i>, each designed with functionality and realism in mind. 
+                                            While two of the vessels serve as modest cargo ships, the third is a larger, more intricate design reflecting the craftsmanship and trade essential to the harbor’s economy. 
+                                            Cranes positioned along the docks assist in loading and unloading goods, reinforcing the port’s role as a vital hub for maritime activity.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            
                         </TabPanel>
                         
                     </BodyContainer>
