@@ -21,6 +21,10 @@ const Home = () => {
                     This web page serves as both a showcase and a testament to the potential of combining AI-driven assistance with hands-on learning, 
                     demonstrating how even challenging concepts can be tackled with the right tools and support.
                 </p>
+                <p>
+                    This site is not intended to showcase cutting-edge web design because, frankly, that is not my expertise. Instead, it is built with a focus on functionality, clarity, and effectively presenting my projects. 
+                    The styling may not be flashy, but the content speaks for itself.
+                </p>
             </IntroSection>
             <DividerLine />
             <div className="base-max-width home-content">
