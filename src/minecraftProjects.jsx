@@ -31,60 +31,58 @@ const MinecraftProjects = () => {
                     This world is constantly evolving, with every build adding new depth and character. Whether it’s medieval cities, ancient wonders, or hidden secrets, there’s always something to explore. With each new build, the world continues to expand, bringing new challenges, inspirations, and stories to life.
                 </p>
                 <div className="collapsible-section">
-    <h3 
-        className="toggle-gallery-title" 
-        onClick={() => setIsAcknowledgementsOpen(!isAcknowledgementsOpen)}
-    >
-        {isAcknowledgementsOpen ? `▼ Creator Special Thanks & Acknowledgements` : `▶ Creator Special Thanks & Acknowledgements`}
-    </h3>
-
-    {isAcknowledgementsOpen && (
-        <div className="collapsible-content">
-            <p>
-                Many of the structures and towns in my Minecraft realm were heavily influenced by or directly inspired by 
-                the incredible work of several Minecraft builders. Their detailed tutorials and design insights played a 
-                key role in shaping various aspects of my world.
-            </p>
-            <ul className="default-list">
-        <li>
-            <a href="https://www.youtube.com/@lorddakr" target="_blank" rel="noopener noreferrer">
-                Lord Dakr
-            </a> – Known for medieval, historical, and fantasy builds with an emphasis on accuracy and detail.
-        </li>
-        <li>
-            <a href="https://www.youtube.com/@ItsMarloe" target="_blank" rel="noopener noreferrer">
-                ItsMarloe
-            </a> – Creator of intricate, immersive medieval structures and world-building techniques.
-        </li>
-        <li>
-            <a href="https://www.youtube.com/@BigTonyMC" target="_blank" rel="noopener noreferrer">
-                BigTonyMC
-            </a> – Specializes in detailed and creative Minecraft designs, from medieval to modern builds.
-        </li>
-        <li>
-            <a href="https://www.youtube.com/@BlueNerdMC" target="_blank" rel="noopener noreferrer">
-                BlueNerd
-            </a> – Known for step-by-step tutorials on stunning fantasy and medieval-inspired builds.
-        </li>
-        <li>
-            <a href="https://www.youtube.com/@Goldrobin" target="_blank" rel="noopener noreferrer">
-                Goldrobin
-            </a> – Expert in unique and aesthetically pleasing architectural styles, including custom towns and villages.
-        </li>
-        <li>
-            <a href="https://www.youtube.com/@Gorillo" target="_blank" rel="noopener noreferrer">
-                Gorillo
-            </a> – Creates immersive builds and tutorials that blend creativity with functional design.
-        </li>
-    </ul>
-    <p>
-        These creators' work has provided both guidance and inspiration throughout the construction of my Minecraft 
-        realm. Their tutorials helped refine details, improve layouts, and bring ambitious ideas to life.
-    </p>
-        </div>
-    )}
-</div>
-                
+                    <h3 
+                        className="toggle-gallery-title" 
+                        onClick={() => setIsAcknowledgementsOpen(!isAcknowledgementsOpen)}
+                    >
+                        {isAcknowledgementsOpen ? `▼ Creator Special Thanks & Acknowledgements` : `▶ Creator Special Thanks & Acknowledgements`}
+                    </h3>
+                    {isAcknowledgementsOpen && (
+                        <div className="collapsible-content">
+                            <p>
+                                Many of the structures and towns in my Minecraft realm were heavily influenced by or directly inspired by 
+                                the incredible work of several Minecraft builders. Their detailed tutorials and design insights played a 
+                                key role in shaping various aspects of my world.
+                            </p>
+                            <ul className="default-list">
+                        <li>
+                            <a href="https://www.youtube.com/@lorddakr" target="_blank" rel="noopener noreferrer">
+                                Lord Dakr
+                            </a> – Known for medieval, historical, and fantasy builds with an emphasis on accuracy and detail.
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@ItsMarloe" target="_blank" rel="noopener noreferrer">
+                                ItsMarloe
+                            </a> – Creator of intricate, immersive medieval structures and world-building techniques.
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@BigTonyMC" target="_blank" rel="noopener noreferrer">
+                                BigTonyMC
+                            </a> – Specializes in detailed and creative Minecraft designs, from medieval to modern builds.
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@BlueNerdMC" target="_blank" rel="noopener noreferrer">
+                                BlueNerd
+                            </a> – Known for step-by-step tutorials on stunning fantasy and medieval-inspired builds.
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@Goldrobin" target="_blank" rel="noopener noreferrer">
+                                Goldrobin
+                            </a> – Expert in unique and aesthetically pleasing architectural styles, including custom towns and villages.
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@Gorillo" target="_blank" rel="noopener noreferrer">
+                                Gorillo
+                            </a> – Creates immersive builds and tutorials that blend creativity with functional design.
+                        </li>
+                    </ul>
+                    <p>
+                        These creators' work has provided both guidance and inspiration throughout the construction of my Minecraft 
+                        realm. Their tutorials helped refine details, improve layouts, and bring ambitious ideas to life.
+                    </p>
+                        </div>
+                    )}
+                </div>
             </IntroSection>
             <DividerLine />
             <div className="center-div tabs-container">
