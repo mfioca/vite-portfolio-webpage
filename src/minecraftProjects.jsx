@@ -88,7 +88,7 @@ const MinecraftProjects = () => {
             <div className="center-div tabs-container">
                 <Tabs className="standard-tabs">
                     <TabList>
-                        <Tab>"Elder Scrolls: Skyrim" Whiterun City</Tab>
+                        <Tab>Whiterun City</Tab>
                         <Tab>Dwarven Kingdom</Tab>
                         <Tab>Port City</Tab>
                     </TabList>
