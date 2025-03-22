@@ -24,7 +24,7 @@ const CrowHaven = () => {
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
-                        <IntroSection title="Crow Haven Town District">
+                        <IntroSection title="Crowhaven Town District">
                             <p>
                                 Nestled along the coast and bordering <i>Whiterun</i>, the <i>Port City</i> extends beyond its bustling harbor into a thriving town filled with essential infrastructure and rich details. 
                                 Positioned as a key waypoint for travelers and traders, the town runs parallel to <i>Whiterun</i>, serving as both an extension of the city and a final waypoint before travelers venture 
@@ -97,7 +97,7 @@ const CrowHaven = () => {
                             <DividerLine />          
                         </TabPanel>
                         <TabPanel>
-                            <IntroSection title="Crow Haven Harbor District">
+                            <IntroSection title="Crowhaven Harbor District">
                                 <p>
                                     This bustling <i>Harbor District</i> serves as a crucial trade hub, seamlessly integrating functionality and aesthetic appeal. Designed with careful attention to detail, 
                                     the city balances practical infrastructure with vibrant market activity, making it a dynamic and immersive addition to the realm.

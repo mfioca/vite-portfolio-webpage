@@ -90,7 +90,7 @@ const MinecraftProjects = () => {
                     <TabList>
                         <Tab>Whiterun City</Tab>
                         <Tab>Dwarven Kingdom</Tab>
-                        <Tab>Crow Haven</Tab>
+                        <Tab>Crowhaven</Tab>
                     </TabList>
                     <TabPanel>
                         {/*Whiterun Project <WhiterunProject/>*/}
