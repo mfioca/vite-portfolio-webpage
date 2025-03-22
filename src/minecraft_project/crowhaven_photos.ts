@@ -1,18 +1,14 @@
 
 function portCityTownLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}Port_city/town/${folder}/${asset}?w=${width}&q=50`;
+  return `${import.meta.env.BASE_URL}crowhaven/town/${folder}/${asset}?w=${width}&q=50`;
 }
 
 
 function portCityPortLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}Port_city/port/${folder}/${asset}?w=${width}&q=50`;
-}
-
-function whiterundetailLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}whiterun/whiterun_city_after/${folder}/${asset}?w=${width}&q=50`;
+  return `${import.meta.env.BASE_URL}crowhaven/port/${folder}/${asset}?w=${width}&q=50`;
 }
   
-export { portCityTownLink, portCityPortLink, whiterundetailLink };
+export { portCityTownLink, portCityPortLink };
 
 
 export const town_generalviews = [

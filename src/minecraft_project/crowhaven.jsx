@@ -9,22 +9,22 @@ import {
     port_general_views,
     port_buildings_details,
     port_boats
- } from './port_city_photos';
+ } from './crowhaven_photos';
 
 
 
-const PortCityProject = () => {
+const CrowHaven = () => {
     return (
         <div>
             <Tabs className="vertical-tabs">
                 <div className="vertical-tabs-layout">
                     <TabList>
                         <Tab>Town</Tab>
-                        <Tab>Port and marketplace</Tab>
+                        <Tab>Port and Marketplace</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
-                        <IntroSection title="Town District">
+                        <IntroSection title="Crow Haven Town District">
                             <p>
                                 Nestled along the coast and bordering <i>Whiterun</i>, the <i>Port City</i> extends beyond its bustling harbor into a thriving town filled with essential infrastructure and rich details. 
                                 Positioned as a key waypoint for travelers and traders, the town runs parallel to <i>Whiterun</i>, serving as both an extension of the city and a final waypoint before travelers venture 
@@ -97,7 +97,7 @@ const PortCityProject = () => {
                             <DividerLine />          
                         </TabPanel>
                         <TabPanel>
-                            <IntroSection title="Harbor District">
+                            <IntroSection title="Crow Haven Harbor District">
                                 <p>
                                     This bustling <i>Harbor District</i> serves as a crucial trade hub, seamlessly integrating functionality and aesthetic appeal. Designed with careful attention to detail, 
                                     the city balances practical infrastructure with vibrant market activity, making it a dynamic and immersive addition to the realm.
@@ -171,7 +171,7 @@ const PortCityProject = () => {
     );
 };
 
-export default PortCityProject;
+export default CrowHaven;
 
 
 /*  placeholder section

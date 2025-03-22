@@ -1,7 +1,7 @@
 import React, { useState,  } from 'react';
 import WhiterunProject from './minecraft_project/whiteruncity';
 import DwarvenKingdom from './minecraft_project/dwarvenkingdom';
-import PortCityProject from './minecraft_project/port_city';
+import CrowHaven from './minecraft_project/crowhaven';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
@@ -90,7 +90,7 @@ const MinecraftProjects = () => {
                     <TabList>
                         <Tab>Whiterun City</Tab>
                         <Tab>Dwarven Kingdom</Tab>
-                        <Tab>Port City</Tab>
+                        <Tab>Crow Haven</Tab>
                     </TabList>
                     <TabPanel>
                         {/*Whiterun Project <WhiterunProject/>*/}
@@ -100,7 +100,7 @@ const MinecraftProjects = () => {
                         <DwarvenKingdom />
                     </TabPanel>
                     <TabPanel>
-                        <PortCityProject />
+                        <CrowHaven />
                     </TabPanel>
                      {/*Additional Minecraft projects can be added below */}
                 </Tabs>
