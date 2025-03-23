@@ -3,48 +3,49 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { BodyContainer, IntroSection, DividerLine } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
 import { 
-    town_generalviews,
-    town_buildings,
-    town_scenery,
-    port_general_views,
-    port_buildings_details,
-    port_boats
- } from './crowhaven_photos';
+    emberhold_general_views,
+    emberhold_fort,
+    mining_district,
+    town_hall,
+    town_square
+ } from './emberhold_photos';
 
 
 
-const CrowHaven = () => {
+const Emberhold = () => {
     return (
         <div>
             <Tabs className="vertical-tabs">
                 <div className="vertical-tabs-layout">
                     <TabList>
-                        <Tab>Town</Tab>
-                        <Tab>Port and Marketplace</Tab>
+                        <Tab>General Views and Fort</Tab>
+                        <Tab>Commercial Districts</Tab>
+                        <Tab>Residential Districts</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
-                        <IntroSection title="Crowhaven Town District">
+                        <IntroSection title="Emberhold: The Southern Watch of Whiterun">
                             <p>
-                                Nestled along the coast and bordering <i>Whiterun</i>, the <i>Port City</i> extends beyond its bustling harbor into a thriving town filled with essential infrastructure and rich details. 
-                                Positioned as a key waypoint for travelers and traders, the town runs parallel to <i>Whiterun</i>, serving as both an extension of the city and a final waypoint before travelers venture 
-                                through the mountain tunnel to distant locations across the realm.
+                                Located just beyond a mountain tunnel south of <i>Whiterun</i>, <i>Emberhold</i> serves as a fortified frontier town guarding the southern reaches of the realm. 
+                                Designed with both utility and defense in mind, Emberhold acts as a stronghold, economic hub, and refuge for its citizens.
                             </p>
                             <p><strong>Key aspects of the build:</strong></p>
                             <ul className="default-list">
-                                <li><strong>Diverse Architecture</strong> – Featuring a blacksmith, an inn and pub, a towering town hall, and a small homestead with a hidden underground farm.</li>
-                                <li><strong>Defensive & Watch Points</strong> – A strategically placed watchtower oversees both the town and port, ensuring safety and security.</li>
-                                <li><strong>Natural & Historical Elements</strong> – A peaceful cemetery and remnants of an old ruined house add character and depth to the settlement.</li>
-                                <li><strong>Industry & Sustainability</strong> – A logging platform inspired by <i>Skyrim’s</i> Riverwood ensures the town remains self-sufficient in resources.</li>
+                                <li><strong>Strategic Location</strong> – Acts as a southern defense point for Whiterun, accessible via a mountain tunnel that connects the heart of the realm to its borderlands.</li>
+                                <li><strong>Economic Backbone</strong> – Anchored by a sprawling mining district with a massive, naturally generated abandoned mine that supplied the region with vital resources.</li>
+                                <li><strong>Community Hubs</strong> – Features a vibrant town square centered around a towering fountain, twin inns and pubs that offer rest to travelers and locals alike.</li>
+                                <li><strong>Civic Infrastructure</strong> – A town hall district includes a meeting hall, mayor’s residence, offices, and a small market, reinforcing Emberhold’s organized governance.</li>
+                                <li><strong>Fortified stronghold</strong> – Wooden walls, guard towers, and lookout stations defend the town, especially its fortified keep with a small port overlooking a lake and nearby peasant village.</li>
+                                <li><strong>Emergency Escape Route</strong> – Beneath the town lies a hidden cave system with functional elevators leading to a deepslate cavern, offering an escape path for citizens if danger arises.</li>
                             </ul>
                             <p>
-                                The combination of well-planned infrastructure and environmental storytelling brings this settlement to life, making it a unique and immersive part of the realm.
+                                Emberhold blends natural formations with deliberate design, creating a rugged yet welcoming settlement that serves both as a home and a bastion on the edge of the realm.
                             </p>
                         </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
                                 title="Aerial Views"
-                                photos={ town_generalviews }
+                                photos={ emberhold_general_views }
                                 description={
                                     <>
                                         <p>
@@ -60,8 +61,8 @@ const CrowHaven = () => {
                             />
                             <DividerLine />
                             <MinecraftGallery
-                                title="Buildings and key places"
-                                photos={ town_buildings }
+                                title="Emberhold fortification"
+                                photos={ emberhold_fort }
                                 description={
                                     <>
                                         <p>
@@ -77,27 +78,10 @@ const CrowHaven = () => {
                                     </>
                                 }
                             />
-                            <DividerLine />
-                            <MinecraftGallery
-                                title="Town Scenery & Decorative Details"
-                                photos={ town_scenery }
-                                description={
-                                    <>
-                                        <p>
-                                            These close-up shots highlight the finer details that bring the <i>Port City</i> to life, showcasing the effort put into its atmosphere and aesthetic.  
-                                            From carefully placed fences lining the pathways to subtle variations in the cobblestone streets—like scattered mossy stones that don’t always show up clearly in images—every element is designed to create a lived-in feel.  
-                                        </p>
-                                        <p>
-                                            The town’s decorative elements extend beyond just roads and structures. Flowers and greenery are placed throughout, while light poles fitted with lanterns cast a warm glow over the walkways.  
-                                            Among these scenes is a barely-visible house ruin, its foundation just peeking out from the ground, with scattered oak logs marking the remnants of a long-forgotten structure, adding a touch of history and mystery to the town.
-                                        </p>
-                                    </>
-                                }
-                            />
-                            <DividerLine />          
+                            <DividerLine />         
                         </TabPanel>
                         <TabPanel>
-                            <IntroSection title="Crowhaven Harbor District">
+                            <IntroSection title="Ember Hold Commercial Districts">
                                 <p>
                                     This bustling <i>Harbor District</i> serves as a crucial trade hub, seamlessly integrating functionality and aesthetic appeal. Designed with careful attention to detail, 
                                     the city balances practical infrastructure with vibrant market activity, making it a dynamic and immersive addition to the realm.
@@ -114,8 +98,8 @@ const CrowHaven = () => {
                                 </p>
                             </IntroSection>
                             <MinecraftGallery
-                                title="Harbor District - General Views"
-                                photos={ port_general_views }
+                                title="Mining District"
+                                photos={ mining_district }
                                 description={
                                     <>
                                         <p>
@@ -127,8 +111,8 @@ const CrowHaven = () => {
                             />
                             <DividerLine />
                             <MinecraftGallery
-                                title="Harbor District Buildings & Key Details"
-                                photos={ port_buildings_details }
+                                title="Town Hall and Market"
+                                photos={ town_hall }
                                 description={
                                     <>
                                         <p>
@@ -149,8 +133,8 @@ const CrowHaven = () => {
                             />
                             <DividerLine />
                             <MinecraftGallery
-                                title="Harbor Ships & Boats"
-                                photos={ port_boats }
+                                title="Town Square"
+                                photos={ town_square }
                                 description={
                                     <>
                                         <p>
@@ -171,7 +155,7 @@ const CrowHaven = () => {
     );
 };
 
-export default CrowHaven;
+export default Emberhold;
 
 
 /*  placeholder section

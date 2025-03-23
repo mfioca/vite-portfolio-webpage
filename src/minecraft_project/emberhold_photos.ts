@@ -1,17 +1,20 @@
 
-function portCityTownLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}crowhaven/town/${folder}/${asset}?w=${width}&q=50`;
+function emberholdSectionOne(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}emberhold/general_views_fort/${folder}/${asset}?w=${width}&q=50`;
 }
 
+function emberholdSectionTwo(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}emberhold/commercial_districts/${folder}/${asset}?w=${width}&q=50`;
+}
 
-function portCityPortLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}crowhaven/port/${folder}/${asset}?w=${width}&q=50`;
+function emberholdSectionThree(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}emberhold/commercial_districts/${folder}/${asset}?w=${width}&q=50`;
 }
   
-export { portCityTownLink, portCityPortLink };
+export { emberholdSectionOne, emberholdSectionTwo, emberholdSectionThree };
 
 
-export const town_generalviews = [
+export const emberhold_general_views = [
   {
     asset: "general_views101.jpg",
     width: 1280,
@@ -23,6 +26,12 @@ export const town_generalviews = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for general_views102",
+  },
+  {
+    asset: "general_views103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for general_views103",
   },
   {
     asset: "general_views104.jpg",
@@ -53,232 +62,52 @@ export const town_generalviews = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for general_views108",
-  },
-  {
-    asset: "general_views109.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for general_views109",
-  },
-  {
-    asset: "general_views110.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for general_views110",
-  },
-  {
-    asset: "general_views111.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for general_views111",
-  },
-  {
-    asset: "general_views112.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for general_views112",
-  },
+  }
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${portCityTownLink("general_views", asset, width)}`,
+      src: `${emberholdSectionOne("general_views", asset, width)}`,
       alt,
       width,
       height,
     }),
 );
 
-
-export const town_buildings = [
+export const emberhold_fort = [
   {
-    asset: "buildings_101.jpg",
+    asset: "fort101.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for buildings_101",
+    alt: "Placeholder description for fort101",
   },
   {
-    asset: "buildings_102.jpg",
+    asset: "fort102.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for buildings_102",
+    alt: "Placeholder description for fort102",
   },
   {
-    asset: "buildings_103.jpg",
+    asset: "fort103.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for buildings_103",
+    alt: "Placeholder description for fort103",
   },
   {
-    asset: "buildings_104.jpg",
+    asset: "fort104.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for buildings_104",
+    alt: "Placeholder description for fort104",
   },
   {
-    asset: "buildings_105.jpg",
+    asset: "fort105.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for buildings_105",
-  },
-  {
-    asset: "buildings_106.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_106",
-  },
-  {
-    asset: "buildings_107.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_107",
-  },
-  {
-    asset: "buildings_108.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_108",
-  },
-  {
-    asset: "buildings_109.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_109",
-  },
-  {
-    asset: "buildings_110.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_110",
-  },
-  {
-    asset: "buildings_111.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_111",
-  },
-  {
-    asset: "buildings_112.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_112",
-  },
-  {
-    asset: "buildings_113.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_113",
-  },
-  {
-    asset: "buildings_114.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_114",
-  },
-  {
-    asset: "buildings_115.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_115",
-  },
-  {
-    asset: "buildings_116.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_116",
-  },
-  {
-    asset: "buildings_117.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_117",
-  },
-  {
-    asset: "buildings_118.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_118",
+    alt: "Placeholder description for fort105",
   },
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${portCityTownLink("buildings", asset, width)}`,
-      alt,
-      width,
-      height,
-    }),
-);
-
-export const town_scenery = [
-  {
-    asset: "details_1.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_1",
-  },
-  {
-    asset: "details_2.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_2",
-  },
-  {
-    asset: "details_3.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_3",
-  },
-  {
-    asset: "details_4.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_4",
-  },
-  {
-    asset: "details_5.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_5",
-  },
-  {
-    asset: "details_6.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_6",
-  },
-  {
-    asset: "details_7.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_7",
-  },
-  {
-    asset: "details_8.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_8",
-  },
-  {
-    asset: "details_9.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_9",
-  },
-  {
-    asset: "details_10.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_10",
-  },
-  {
-    asset: "details_11.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for details_11",
-  },
-].map(
-  ({ asset, alt, width, height }) =>
-    ({
-      src: `${portCityTownLink("detail", asset, width)}`,
+      src: `${emberholdSectionOne("fort", asset, width)}`,
       alt,
       width,
       height,
@@ -286,176 +115,199 @@ export const town_scenery = [
 );
 
 /***********************************************************************************/
-/*                          PORT AND MARKETPLACE                                   */
+/*                          COMMERCIAL DISTRICTS                                   */
 /***********************************************************************************/
 
-export const port_general_views = [
+export const mining_district = [
   {
-    asset: "general_views_101.jpg",
+    asset: "mining_district101.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for general_views_101",
+    alt: "Placeholder description for mining_district101",
   },
   {
-    asset: "general_views_102.jpg",
+    asset: "mining_district102.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for general_views_102",
+    alt: "Placeholder description for mining_district102",
   },
   {
-    asset: "general_views_103.jpg",
+    asset: "mining_district103.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for general_views_103",
+    alt: "Placeholder description for mining_district103",
   },
   {
-    asset: "general_views_104.jpg",
+    asset: "mining_district104.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for general_views_104",
+    alt: "Placeholder description for mining_district104",
   },
   {
-    asset: "general_views_105.jpg",
+    asset: "mining_district105.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for general_views_105",
+    alt: "Placeholder description for mining_district105",
   },
   {
-    asset: "general_views_106.jpg",
+    asset: "mining_district106.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for general_views_106",
+    alt: "Placeholder description for mining_district106",
+  },
+  {
+    asset: "mining_district107.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mining_district107",
+  },
+  {
+    asset: "mining_district108.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mining_district108",
+  },
+  {
+    asset: "mining_district109.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mining_district109",
   },
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${portCityPortLink("general_views", asset, width)}`,
+      src: `${emberholdSectionTwo("mining_district", asset, width)}`,
       alt,
       width,
       height,
     }),
 );
 
-export const port_buildings_details = [
+export const town_hall = [
   {
-    asset: "buildings_dets_1.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_1",
+    "asset": "town_hall101.jpg",
+    "width": 1280,
+    "height": 704,
+    "alt": "Placeholder description for town_hall101"
   },
   {
-    asset: "buildings_dets_2.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_2",
+    "asset": "town_hall102.jpg",
+    "width": 1280,
+    "height": 704,
+    "alt": "Placeholder description for town_hall102"
   },
   {
-    asset: "buildings_dets_3.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_3",
+    "asset": "town_hall103.jpg",
+    "width": 1280,
+    "height": 704,
+    "alt": "Placeholder description for town_hall103"
   },
   {
-    asset: "buildings_dets_4.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_4",
+    "asset": "town_hall104.jpg",
+    "width": 1280,
+    "height": 704,
+    "alt": "Placeholder description for town_hall104"
   },
   {
-    asset: "buildings_dets_5.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_5",
+    "asset": "town_hall105.jpg",
+    "width": 1280,
+    "height": 704,
+    "alt": "Placeholder description for town_hall105"
   },
   {
-    asset: "buildings_dets_6.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_6",
+    "asset": "town_hall106.jpg",
+    "width": 1280,
+    "height": 704,
+    "alt": "Placeholder description for town_hall106"
   },
   {
-    asset: "buildings_dets_7.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_7",
+    "asset": "town_hall107.jpg",
+    "width": 1280,
+    "height": 704,
+    "alt": "Placeholder description for town_hall107"
   },
   {
-    asset: "buildings_dets_8.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_8",
+    "asset": "town_hall108.jpg",
+    "width": 1280,
+    "height": 704,
+    "alt": "Placeholder description for town_hall108"
   },
   {
-    asset: "buildings_dets_9.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_9",
+    "asset": "town_hall109.jpg",
+    "width": 1280,
+    "height": 704,
+    "alt": "Placeholder description for town_hall109"
   },
-  {
-    asset: "buildings_dets_10.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_10",
-  },
-  {
-    asset: "buildings_dets_11.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_11",
-  },
-  {
-    asset: "buildings_dets_12.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for buildings_dets_12",
-  },
-].map(({ asset, alt, width, height }) => ({
-  src: `${portCityPortLink("buildings_and_details", asset, width)}`,
-  alt,
-  width,
-  height,
-}));
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${emberholdSectionTwo("town_hall", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
 
-export const port_boats = [
+export const town_square = [
   {
-    asset: "boats_101.jpg",
+    asset: "town_square101.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for boats_101",
+    alt: "Placeholder description for town_square101",
   },
   {
-    asset: "boats_102.jpg",
+    asset: "town_square102.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for boats_102",
+    alt: "Placeholder description for town_square102",
   },
   {
-    asset: "boats_103.jpg",
+    asset: "town_square103.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for boats_103",
+    alt: "Placeholder description for town_square103",
   },
   {
-    asset: "boats_104.jpg",
+    asset: "town_square104.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for boats_104",
+    alt: "Placeholder description for town_square104",
   },
   {
-    asset: "boats_105.jpg",
+    asset: "town_square105.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for boats_105",
+    alt: "Placeholder description for town_square105",
   },
   {
-    asset: "boats_106.jpg",
+    asset: "town_square106.jpg",
     width: 1280,
     height: 704,
-    alt: "Placeholder description for boats_106",
+    alt: "Placeholder description for town_square106",
   },
-].map(({ asset, alt, width, height }) => ({
-  src: `${portCityPortLink("boats", asset, width)}`,
-  alt,
-  width,
-  height,
-}));
+  {
+    asset: "town_square107.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for town_square107",
+  },
+  {
+    asset: "town_square108.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for town_square108",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${emberholdSectionTwo("town_square", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+
+/***********************************************************************************/
+/*                          RESIDENTIAL SECTIONS                                   */
+/***********************************************************************************/
