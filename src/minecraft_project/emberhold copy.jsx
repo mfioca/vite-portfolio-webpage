@@ -153,30 +153,19 @@ const Emberhold = () => {
                             
                         </TabPanel>
                         <TabPanel>
-                            <IntroSection title="Emberhold Residential Districts">
-                                <p>
-                                    The <i>Residential Districts</i> are composed of three distinct groups, each thoughtfully shaped around the terrain to create naturally flowing neighborhoods that emphasize connection and community.
-                                </p>
-                                <p><strong>Key aspects of the build:</strong></p>
-                                <ul className="default-list">
-                                    <li><strong>Central Gathering Areas</strong> – Centrally located around vibrant communal hubs, uniting the houses and serving as the heart of the section</li>
-                                    <li><strong>Community Engagement and Purpose</strong> – These districts blend intimate farming communities with strategically placed guard residences, 
-                                        reflecting a balance of rural livelihood, protective oversight, and everyday functionality within the town’s layout.</li>
-                                </ul>
-                                <p>
-                                    Together, these sections create a cohesive environment where each area not only complements the others but also emphasizes community spirit and practical design.
-                                </p>
+                        <IntroSection title="Emberhold Residential Districts">
+                        <p>
+                            This Minecraft realm city build features three distinct sections, each carefully integrated with the natural topography to foster a strong sense of community.
+                        </p>
+                        <p><strong>Key aspects of the build:</strong></p>
+                        <ul className="default-list">
+                            <li><strong>Central Gathering Areas</strong> – Two sections are centrally located around a vibrant communal hub, uniting a group of houses and serving as the heart of the build.</li>
+                            <li><strong>Port & Fortified Keep</strong> – The third section winds down toward the port, a fortified keep, and a nearby farming area, blending defense, trade, and sustenance.</li>
+                        </ul>
+                        <p>
+                            Together, these sections create a cohesive environment where each area not only complements the others but also emphasizes community spirit and practical design.
+                        </p>
                             </IntroSection>
-                            <DividerLine />
-                            <MinecraftGallery
-                                title="Section 1"
-                                photos={ residential_section1 }
-                            />
-                            <DividerLine />
-                            <MinecraftGallery
-                                title="Section 2"
-                                photos={ residential_section2 }
-                            />
                         </TabPanel>
                     </BodyContainer>
                 </div>

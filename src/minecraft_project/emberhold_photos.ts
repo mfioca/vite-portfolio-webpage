@@ -8,7 +8,7 @@ function emberholdSectionTwo(folder: string, asset: string, width: number) {
 }
 
 function emberholdSectionThree(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}emberhold/commercial_districts/${folder}/${asset}?w=${width}&q=50`;
+  return `${import.meta.env.BASE_URL}emberhold/residential_sections/${folder}/${asset}?w=${width}&q=50`;
 }
   
 export { emberholdSectionOne, emberholdSectionTwo, emberholdSectionThree };
@@ -311,3 +311,216 @@ export const town_square = [
 /***********************************************************************************/
 /*                          RESIDENTIAL SECTIONS                                   */
 /***********************************************************************************/
+
+export const residential_section1 = [
+  {
+    asset: "section_1_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_1_101",
+  },
+  {
+    asset: "section_1_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_1_102",
+  },
+  {
+    asset: "section_1_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_1_103",
+  },
+  {
+    asset: "section_1_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_1_104",
+  },
+  {
+    asset: "section_1_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_1_105",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${emberholdSectionThree("section_1", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const residential_section2 = [
+  {
+    asset: "section_3_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_101",
+  },
+  {
+    asset: "section_3_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_102",
+  },
+  {
+    asset: "section_3_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_103",
+  },
+  {
+    asset: "section_3_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_104",
+  },
+  {
+    asset: "section_3_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_105",
+  },
+  {
+    asset: "section_3_106.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_106",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${emberholdSectionThree("section_2", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const residential_section3 = [
+  {
+    asset: "section_3_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_101",
+  },
+  {
+    asset: "section_3_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_102",
+  },
+  {
+    asset: "section_3_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_103",
+  },
+  {
+    asset: "section_3_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_104",
+  },
+  {
+    asset: "section_3_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_3_105",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${emberholdSectionThree("section_3", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const residential_buildings = [
+  {
+    asset: "specific_buildings_inn_100.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings_inn_100.jpg",
+  },
+  {
+    asset: "specific_buildings_inn_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings_inn_101.jpg",
+  },
+  {
+    asset: "specific_buildings_inn_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings_inn_102.jpg",
+  },
+  {
+    asset: "specific_buildings_inn_200.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings_inn_200.jpg",
+  },
+  {
+    asset: "specific_buildings_inn_201.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings_inn_201.jpg",
+  },
+  {
+    asset: "specific_buildings_inn_202.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings_inn_202.jpg",
+  },
+  {
+    asset: "specific_buildings_inn_203.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings_inn_203.jpg",
+  },
+  {
+    asset: "specific_buildings3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings3.jpg",
+  },
+  {
+    asset: "specific_buildings4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings4.jpg",
+  },
+  {
+    asset: "specific_buildings5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings5.jpg",
+  },
+  {
+    asset: "specific_buildings6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings6.jpg",
+  },
+  {
+    asset: "specific_buildings7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for specific_buildings7.jpg",
+  },
+
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${emberholdSectionThree("specific_buildings", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
