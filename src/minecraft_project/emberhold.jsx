@@ -49,12 +49,13 @@ const Emberhold = () => {
                                 description={
                                     <>
                                         <p>
-                                            These aerial views provide a sweeping look at the <i>Port City</i>, showcasing its unique layout, architectural planning, and integration with the surrounding landscape. 
-                                            From high above, the city’s structure comes into focus, revealing the carefully arranged districts, winding streets, and the connection between the town and its bustling port.
+                                            These aerial views offer a sweeping overview of <i>Emberhold</i>, showcasing its tiered layout, fortified edges, and central districts. 
+                                            Built across a diverse terrain, the town seamlessly blends functionality with defensive structure, while maintaining a cohesive architectural flow.
                                         </p>
                                         <p>
-                                            The aerial perspectives highlight the strategic positioning of key locations, including the market square, residential areas, and the watchtower overseeing both the town and the port. 
-                                            On the opposite side, a smaller tower stands as part of the kingdom’s beacon warning system, inspired by the Beacons of Minas Tirith. Additionally, a Skyrim-inspired logging platform, similar to the one found in Riverwood, sits at the edge of town, reinforcing its role as a functional and self-sustaining settlement. These images capture the town’s balance between functionality and design, offering a bird’s-eye view of its intricate details and overall aesthetic.
+                                            From above, key features like the central fountain plaza, clustered residential hubs, and the perimeter walls become more pronounced, 
+                                            reflecting the thoughtful planning behind its design. The positioning of the fortified keep and its vantage over the lake and neighboring village 
+                                            further emphasizes Emberhold’s strategic importance within the realm.
                                         </p>
                                     </>
                                 }
@@ -66,14 +67,9 @@ const Emberhold = () => {
                                 description={
                                     <>
                                         <p>
-                                            The <i>Port City</i> is more than just a hub for trade—it’s a fully realized settlement with key locations that serve both practical and cultural roles. 
-                                            Each building contributes to the town’s identity, from its blacksmith and bustling inn to its central town hall, which resembles a cathedral.
-                                        </p>
-                                        <p>
-                                            Among these structures is a seemingly modest farmhouse, which conceals a vast underground farm that helps sustain both the port city and nearby Whiterun. 
-                                            A quiet cemetery rests on the outskirts, adding a sense of history and reverence. Overlooking the landscape, the watchtower provides a defensive vantage 
-                                            point, while the logging camp, inspired by Skyrim’s Riverwood, reinforces the town’s self-sufficiency. These images highlight the town’s essential locations, 
-                                            blending practicality with architectural charm.
+                                            Perched atop a natural hill, the <i>Emberhold Fort</i> commands a view of the lake, a small single-ship port, and the neighboring peasant village. 
+                                            The terrain’s natural shape forms a protective peninsula and river channel, creating a lower level ideal for gatherings or future expansions. 
+                                            A multi-tiered keep with striking red stained-glass windows serves as the fort’s focal point, blending form and function atop this elevated stronghold.
                                         </p>
                                     </>
                                 }
@@ -81,20 +77,19 @@ const Emberhold = () => {
                             <DividerLine />         
                         </TabPanel>
                         <TabPanel>
-                            <IntroSection title="Ember Hold Commercial Districts">
+                            <IntroSection title="Emberhold Commercial Districts">
                                 <p>
-                                    This bustling <i>Harbor District</i> serves as a crucial trade hub, seamlessly integrating functionality and aesthetic appeal. Designed with careful attention to detail, 
-                                    the city balances practical infrastructure with vibrant market activity, making it a dynamic and immersive addition to the realm.
+                                    The <i>Commercial Districts</i> of Emberhold encompass several key areas that contribute to the town’s economy, governance, and daily life. 
+                                    Though spread across different parts of the city, these districts work together to form the functional and cultural backbone of the settlement.
                                 </p>
                                 <p><strong>Key aspects of the build:</strong></p>
                                 <ul className="default-list">
-                                    <li><strong>Marketplace & Trade</strong> – A lively collection of market stalls and cargo storage facilities, ensuring a steady flow of goods.</li>
-                                    <li><strong>Harbor Infrastructure</strong> – Dedicated loading cranes for each vessel, facilitating efficient trade and transport.</li>
-                                    <li><strong>Decorative Features</strong> – A fish enclosure in the heart of the boardwalk, covered by a uniquely designed canopy, alongside seating areas for travelers and traders.</li>
-                                    <li><strong>Lighthouse & Harbor Control</strong> – A towering lighthouse guiding ships safely to shore, complemented by two harbor houses overseeing port operations.</li>
+                                    <li><strong>Mining District</strong> – A vital source of resources featuring a vast mine, with a functional rail system that transports minerals to both a storage shed and a nearby smelting area.</li>
+                                    <li><strong>Town Hall Area</strong> – A civic center with administrative and meeting building, a mayoral residence, and a small marketplace.</li>
+                                    <li><strong>Town Square</strong> – A central gathering space anchored by a large fountain, flanked by a Pub and decorative public structures.</li>
                                 </ul>
                                 <p>
-                                    This section showcases the interplay between commerce, travel, and architectural planning, capturing the essence of a thriving maritime settlement.
+                                    These distinct yet interwoven districts highlight Emberhold’s development as a thriving hub of commerce, leadership, and community life.
                                 </p>
                             </IntroSection>
                             <MinecraftGallery
@@ -103,8 +98,13 @@ const Emberhold = () => {
                                 description={
                                     <>
                                         <p>
-                                            These aerial shots provide a sweeping look at the Port City’s harbor district, capturing its connection to the open sea and its role as a vital trading hub.  
-                                            The port is designed with both function and detail in mind, ensuring ships can dock, unload, and restock efficiently while maintaining a visually immersive setting.
+                                            Nestled into the landscape, the <i>Mining District</i> serves as one of Emberhold’s primary sources of wealth and resources. 
+                                            This area features a sprawling, naturally formed abandoned mine that has been worked into the build to preserve its rugged authenticity. 
+                                            A working rail system transports mined materials from the depths to a large storage shed, then onward to the smelting station for processing.
+                                        </p>
+                                        <p>
+                                            Surrounding the industrial core are supporting structures, including a blacksmith’s forge and modest residential housing for the district’s workers. 
+                                            These buildings provide both function and atmosphere, reinforcing the district’s role as a working-class hub within the broader town.
                                         </p>
                                     </>
                                 }
@@ -116,17 +116,14 @@ const Emberhold = () => {
                                 description={
                                     <>
                                         <p>
-                                            This section highlights the essential structures that define the <i>Harbor District</i> and its role as a vital trade hub.  
-                                            Two harbor master buildings oversee the daily operations, ensuring the smooth movement of goods and ships.  
-                                            The cargo storage area, while open-air, is secured by a perimeter wall lined with iron bars,  
-                                            simulating the feel of a fenced-off shipping yard. A fully functional lighthouse stands watch over the harbor, naturally carved into the coastline like a protective crescent,  
-                                            guiding ships safely to port while serving as a landmark for travelers navigating the open waters.
+                                            The <i>Town Hall District</i> sits at the heart of Emberhold, nestled into a natural dip in the terrain that subtly conceals much of the central building below the surrounding ground level. 
+                                            Adapted from the same structural blueprint as the mining shed, the town hall has been reimagined to house administrative offices and features an attached watchtower, 
+                                            reinforcing its role in both governance and defense.
                                         </p>
                                         <p>
-                                            Additional details include towering cranes designed for efficiently loading and unloading docked vessels,  
-                                            as well as various marketplace stalls that create a lively trading environment.  
-                                            A decorative covered fishery adds an extra touch of maritime charm, reinforcing the harbor’s character  
-                                            as a bustling point of commerce and seafaring activity.
+                                            Scattered throughout the area are small market stalls, some integrated into nearby homes, contributing to the lived-in feel of this civic hub. 
+                                            The mayor’s house, tucked into a slight hillside and accessible only via a back door connected to the ground floor of the watchtower, 
+                                            adds a subtle yet commanding presence to the district’s layout.
                                         </p>
                                     </>
                                 }
@@ -138,9 +135,13 @@ const Emberhold = () => {
                                 description={
                                     <>
                                         <p>
-                                            This section highlights the ships docked at the <i>Port City</i>, each designed with functionality and realism in mind. 
-                                            While two of the vessels serve as modest cargo ships, the third is a larger, more intricate design reflecting the craftsmanship and trade essential to the harbor’s economy. 
-                                            Cranes positioned along the docks assist in loading and unloading goods, reinforcing the port’s role as a vital hub for maritime activity.
+                                            The <i>Town Square</i> serves as the heart of Emberhold’s community, anchored by a striking multi-story fountain surrounded by benches, flowers, and greenery. 
+                                            This open space offers a peaceful setting for gathering, relaxation, and reflection—bringing a sense of life to the town’s center.
+                                        </p>
+                                        <p>
+                                            Overlooking the square is a single pub, positioned to provide a welcoming view of the fountain and communal activity. 
+                                            Though modest in scale, this central plaza ties together the surrounding residential and civic areas, 
+                                            reinforcing Emberhold’s balance between functionality and charm.
                                         </p>
                                     </>
                                 }
