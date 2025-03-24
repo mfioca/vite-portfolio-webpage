@@ -12,7 +12,6 @@ import {
  } from './crowhaven_photos';
 
 
-
 const CrowHaven = () => {
     return (
         <div>
@@ -24,23 +23,23 @@ const CrowHaven = () => {
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
-                        <IntroSection title="Crowhaven Town District">
-                            <p>
-                                Nestled along the coast and bordering <i>Whiterun</i>, the <i>Port City</i> extends beyond its bustling harbor into a thriving town filled with essential infrastructure and rich details. 
-                                Positioned as a key waypoint for travelers and traders, the town runs parallel to <i>Whiterun</i>, serving as both an extension of the city and a final waypoint before travelers venture 
-                                through the mountain tunnel to distant locations across the realm.
-                            </p>
-                            <p><strong>Key aspects of the build:</strong></p>
-                            <ul className="default-list">
-                                <li><strong>Diverse Architecture</strong> – Featuring a blacksmith, an inn and pub, a towering town hall, and a small homestead with a hidden underground farm.</li>
-                                <li><strong>Defensive & Watch Points</strong> – A strategically placed watchtower oversees both the town and port, ensuring safety and security.</li>
-                                <li><strong>Natural & Historical Elements</strong> – A peaceful cemetery and remnants of an old ruined house add character and depth to the settlement.</li>
-                                <li><strong>Industry & Sustainability</strong> – A logging platform inspired by <i>Skyrim’s</i> Riverwood ensures the town remains self-sufficient in resources.</li>
-                            </ul>
-                            <p>
-                                The combination of well-planned infrastructure and environmental storytelling brings this settlement to life, making it a unique and immersive part of the realm.
-                            </p>
-                        </IntroSection>
+                            <IntroSection title="Crowhaven Town District">
+                                <p>
+                                    Nestled along the coast and bordering <i>Whiterun</i>, the <i>Port City</i> extends beyond its bustling harbor into a thriving town filled with essential infrastructure and rich details. 
+                                    Positioned as a key waypoint for travelers and traders, the town runs parallel to <i>Whiterun</i>, serving as both an extension of the city and a final waypoint before travelers venture 
+                                    through the mountain tunnel to distant locations across the realm.
+                                </p>
+                                <p><strong>Key aspects of the build:</strong></p>
+                                <ul className="default-list">
+                                    <li><strong>Diverse Architecture</strong> – Featuring a blacksmith, an inn and pub, a towering town hall, and a small homestead with a hidden underground farm.</li>
+                                    <li><strong>Defensive & Watch Points</strong> – A strategically placed watchtower oversees both the town and port, ensuring safety and security.</li>
+                                    <li><strong>Natural & Historical Elements</strong> – A peaceful cemetery and remnants of an old ruined house add character and depth to the settlement.</li>
+                                    <li><strong>Industry & Sustainability</strong> – A logging platform inspired by <i>Skyrim’s</i> Riverwood ensures the town remains self-sufficient in resources.</li>
+                                </ul>
+                                <p>
+                                    The combination of well-planned infrastructure and environmental storytelling brings this settlement to life, making it a unique and immersive part of the realm.
+                                </p>
+                            </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
                                 title="Aerial Views"
@@ -93,8 +92,7 @@ const CrowHaven = () => {
                                         </p>
                                     </>
                                 }
-                            />
-                            <DividerLine />          
+                            />       
                         </TabPanel>
                         <TabPanel>
                             <IntroSection title="Crowhaven Harbor District">
@@ -161,9 +159,7 @@ const CrowHaven = () => {
                                     </>
                                 }
                             />
-                            
                         </TabPanel>
-                        
                     </BodyContainer>
                 </div>
             </Tabs>

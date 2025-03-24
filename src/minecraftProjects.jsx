@@ -95,7 +95,6 @@ const MinecraftProjects = () => {
                         <Tab>Emberhold</Tab>
                     </TabList>
                     <TabPanel>
-                        {/*Whiterun Project <WhiterunProject/>*/}
                         <WhiterunProject/>
                     </TabPanel>
                     <TabPanel>
@@ -107,7 +106,6 @@ const MinecraftProjects = () => {
                     <TabPanel>
                         <Emberhold />
                     </TabPanel>
-                     {/*Additional Minecraft projects can be added below */}
                 </Tabs>
             </div>
         </div>

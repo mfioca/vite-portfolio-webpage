@@ -3,7 +3,6 @@ function dwarvenKingdomLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}dwarven_kingdom/${folder}/${asset}?w=${width}&q=50`;
 }
 
-
 function whiterunSplitScreenLink(asset: string, width: number) {
   return `${import.meta.env.BASE_URL}whiterun_minecraft_split_screen/${asset}?w=${width}&q=50`;
 }

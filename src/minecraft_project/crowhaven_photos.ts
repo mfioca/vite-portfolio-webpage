@@ -3,13 +3,11 @@ function portCityTownLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}crowhaven/town/${folder}/${asset}?w=${width}&q=50`;
 }
 
-
 function portCityPortLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}crowhaven/port/${folder}/${asset}?w=${width}&q=50`;
 }
   
 export { portCityTownLink, portCityPortLink };
-
 
 export const town_generalviews = [
   {
@@ -87,7 +85,6 @@ export const town_generalviews = [
       height,
     }),
 );
-
 
 export const town_buildings = [
   {

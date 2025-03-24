@@ -17,7 +17,6 @@ import {
  } from './whiterun_photos';
 
 
-
 const WhiterunProject = () => {
     return (
         <div>
@@ -127,7 +126,6 @@ const WhiterunProject = () => {
                                 <p>
                                     Explore direct comparisons between my Minecraft recreation and the original Whiterun from Skyrim.
                                 </p>
-                                
                             </IntroSection>
                             <DividerLine />
                             <MinecraftGallery

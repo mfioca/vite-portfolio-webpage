@@ -1,5 +1,4 @@
 import React, { useState,  } from 'react';
-import { IntroSection } from '../SharedComponents';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
@@ -38,17 +37,16 @@ const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680",
                 )}
             {/* Description Stays Visible */}
                 {description}
-
             {/* Collapsible Image Grid */}
             {isGalleryOpen && (
                 <div className="custom-gallery-grid" style={{ gridAutoRows: gridRowHeight }}>
                     {photos.map((photo, index) => (
-                        <div key={index} className="custom-gallery-item" onClick={() => openLightbox(photos, index)}>
+                        <div key={ index } className="custom-gallery-item" onClick={() => openLightbox(photos, index)}>
                             <img 
-                                src={photo.src} 
-                                alt={photo.alt} 
-                                width={photo.width} 
-                                height={photo.height} 
+                                src={ photo.src } 
+                                alt={ photo.alt } 
+                                width={ photo.width } 
+                                height={ photo.height } 
                                 style={{ aspectRatio: testprop }}
                                 className="custom-gallery-image"
                                 loading="lazy"
@@ -57,41 +55,6 @@ const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680",
                     ))}
                 </div>
             )}
-            <Lightbox
-                open={lightboxOpen}
-                close={() => setLightboxOpen(false)}
-                slides={lightboxImages}
-                index={currentSlide}
-                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-            />
-        </div>
-    );
-};
-
-export default MinecraftGallery;
-
-
-
-/*  oder version keep for now
-return (
-        <div className="standard-padding-margin">
-            <IntroSection title={ title }>
-                { description }
-            </IntroSection>
-            <div className="custom-gallery-grid" style={{ gridAutoRows: gridRowHeight }}>
-                {photos.map((photo, index) => (
-                    <div key={index} className="custom-gallery-item" onClick={() => openLightbox(photos, index)}>
-                        <img 
-                            src={ photo.src } 
-                            alt={ photo.alt } 
-                            width={ photo.width } 
-                            height={ photo.height } 
-                            style={{ aspectRatio: testprop }}
-                            className="custom-gallery-image"
-                        />
-                    </div>
-                ))}
-            </div>
             <Lightbox
                 open={ lightboxOpen }
                 close={ () => setLightboxOpen(false) }
@@ -102,4 +65,5 @@ return (
         </div>
     );
 };
-*/
+
+export default MinecraftGallery;

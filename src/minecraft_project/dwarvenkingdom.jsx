@@ -12,7 +12,6 @@ import {
  } from './dwarvenkingdom_photos';
 
 
-
 const DwarvenKingdom = () => {
     return (
         <div>
@@ -43,7 +42,6 @@ const DwarvenKingdom = () => {
                                     Explore the different sections, each crafted to reflect the culture, industry, and mystery of an ancient underground empire.
                                 </p>
                             </IntroSection>
-                            
                             <DividerLine />
                             <MinecraftGallery
                                 title="Mountain exterior"
@@ -93,7 +91,7 @@ const DwarvenKingdom = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Great Forge District: Industry & Legacy"
-                                photos={great_forge_district}
+                                photos={ great_forge_district }
                                 description={
                                     <>
                                         <p>
@@ -112,13 +110,12 @@ const DwarvenKingdom = () => {
                                             uncharted caverns below—a gateway to even greater dwarven secrets.
                                         </p>
                                     </>
-                                
                                 }
                             />
                             <DividerLine />
                             <MinecraftGallery
                                 title="Dwarven Bath Houses: A Touch of Luxury"
-                                photos={bath_houses}
+                                photos={ bath_houses }
                                 description={
                                     <>
                                         <p>
@@ -141,7 +138,7 @@ const DwarvenKingdom = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="The Deep Caverns: Mines & The Balrog’s Lair"
-                                photos={under_cave}
+                                photos={ under_cave }
                                 description={
                                     <>
                                         <p>
@@ -159,9 +156,7 @@ const DwarvenKingdom = () => {
                                     </>
                                 }
                             />
-                            
                         </TabPanel>
-                        
                     </BodyContainer>
                 </div>
             </Tabs>
@@ -170,12 +165,3 @@ const DwarvenKingdom = () => {
 };
 
 export default DwarvenKingdom;
-
-
-/*  placeholder section
-<TabPanel>
-                        <div className=" standard-padding-margin placeholder-container">
-                            <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
-                        </div>
-                        </TabPanel>
-*/

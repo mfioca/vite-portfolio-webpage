@@ -13,7 +13,6 @@ import {
  } from './emberhold_photos';
 
 
-
 const Emberhold = () => {
     return (
         <div>
@@ -26,24 +25,24 @@ const Emberhold = () => {
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
-                        <IntroSection title="Emberhold: The Southern Watch of Whiterun">
-                            <p>
-                                Located just beyond a mountain tunnel south of <i>Whiterun</i>, <i>Emberhold</i> serves as a fortified frontier town guarding the southern reaches of the realm. 
-                                Designed with both utility and defense in mind, Emberhold acts as a stronghold, economic hub, and refuge for its citizens.
-                            </p>
-                            <p><strong>Key aspects of the build:</strong></p>
-                            <ul className="default-list">
-                                <li><strong>Strategic Location</strong> – Acts as a southern defense point for Whiterun, accessible via a mountain tunnel that connects the heart of the realm to its borderlands.</li>
-                                <li><strong>Economic Backbone</strong> – Anchored by a sprawling mining district with a massive, naturally generated abandoned mine that supplied the region with vital resources.</li>
-                                <li><strong>Community Hubs</strong> – Features a vibrant town square centered around a towering fountain, twin inns and pubs that offer rest to travelers and locals alike.</li>
-                                <li><strong>Civic Infrastructure</strong> – A town hall district includes a meeting hall, mayor’s residence, offices, and a small market, reinforcing Emberhold’s organized governance.</li>
-                                <li><strong>Fortified stronghold</strong> – Wooden walls, guard towers, and lookout stations defend the town, especially its fortified keep with a small port overlooking a lake and nearby peasant village.</li>
-                                <li><strong>Emergency Escape Route</strong> – Beneath the town lies a hidden cave system with functional elevators leading to a deepslate cavern, offering an escape path for citizens if danger arises.</li>
-                            </ul>
-                            <p>
-                                Emberhold blends natural formations with deliberate design, creating a rugged yet welcoming settlement that serves both as a home and a bastion on the edge of the realm.
-                            </p>
-                        </IntroSection>
+                            <IntroSection title="Emberhold: The Southern Watch of Whiterun">
+                                <p>
+                                    Located just beyond a mountain tunnel south of <i>Whiterun</i>, <i>Emberhold</i> serves as a fortified frontier town guarding the southern reaches of the realm. 
+                                    Designed with both utility and defense in mind, Emberhold acts as a stronghold, economic hub, and refuge for its citizens.
+                                </p>
+                                <p><strong>Key aspects of the build:</strong></p>
+                                <ul className="default-list">
+                                    <li><strong>Strategic Location</strong> – Acts as a southern defense point for Whiterun, accessible via a mountain tunnel that connects the heart of the realm to its borderlands.</li>
+                                    <li><strong>Economic Backbone</strong> – Anchored by a sprawling mining district with a massive, naturally generated abandoned mine that supplied the region with vital resources.</li>
+                                    <li><strong>Community Hubs</strong> – Features a vibrant town square centered around a towering fountain, twin inns and pubs that offer rest to travelers and locals alike.</li>
+                                    <li><strong>Civic Infrastructure</strong> – A town hall district includes a meeting hall, mayor’s residence, offices, and a small market, reinforcing Emberhold’s organized governance.</li>
+                                    <li><strong>Fortified stronghold</strong> – Wooden walls, guard towers, and lookout stations defend the town, especially its fortified keep with a small port overlooking a lake and nearby peasant village.</li>
+                                    <li><strong>Emergency Escape Route</strong> – Beneath the town lies a hidden cave system with functional elevators leading to a deepslate cavern, offering an escape path for citizens if danger arises.</li>
+                                </ul>
+                                <p>
+                                    Emberhold blends natural formations with deliberate design, creating a rugged yet welcoming settlement that serves both as a home and a bastion on the edge of the realm.
+                                </p>
+                            </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
                                 title="Aerial Views"
@@ -75,8 +74,7 @@ const Emberhold = () => {
                                         </p>
                                     </>
                                 }
-                            />
-                            <DividerLine />         
+                            />        
                         </TabPanel>
                         <TabPanel>
                             <IntroSection title="Emberhold Commercial Districts">
@@ -148,7 +146,6 @@ const Emberhold = () => {
                                     </>
                                 }
                             />
-                            
                         </TabPanel>
                         <TabPanel>
                             <IntroSection title="Emberhold Residential Districts">
@@ -171,14 +168,14 @@ const Emberhold = () => {
                                 photos={ residential_sections }
                                 description={
                                     <>
-                                      <p>
-                                        These aerial shots showcase the three residential sections of <i>Emberhold</i>, each arranged around shared central gathering spaces that reinforce the community-driven design of the town. 
-                                        The layout follows the natural contours of the land, allowing each cluster of homes to feel both connected and distinct.
-                                      </p>
-                                      <p>
-                                        From above, the planning behind each district becomes clear—pathways, farms, and guard housing all positioned to balance daily life with defense and functionality, 
-                                        helping define the lived-in character of the realm’s southern stronghold.
-                                      </p>
+                                        <p>
+                                            These aerial shots showcase the three residential sections of <i>Emberhold</i>, each arranged around shared central gathering spaces that reinforce the community-driven design of the town. 
+                                            The layout follows the natural contours of the land, allowing each cluster of homes to feel both connected and distinct.
+                                        </p>
+                                        <p>
+                                            From above, the planning behind each district becomes clear—pathways, farms, and guard housing all positioned to balance daily life with defense and functionality, 
+                                            helping define the lived-in character of the realm’s southern stronghold.
+                                        </p>
                                     </>
                                 }
                             />
@@ -188,14 +185,14 @@ const Emberhold = () => {
                                 photos={ residential_buildings }
                                 description={
                                     <>
-                                      <p>
-                                        This section highlights Emberhold’s key support structures—its two prominent inns and pubs, each offering a place of rest and social gathering for townsfolk and travelers alike. 
-                                        Interior shots reveal warm, welcoming spaces designed for community and respite.
-                                      </p>
-                                      <p>
-                                        Alongside these are the town’s defensive outposts, including strategically placed guard towers and watch houses. 
-                                        These structures emphasize Emberhold’s role as both a place of hospitality and a vigilant frontier settlement.
-                                      </p>
+                                        <p>
+                                            This section highlights Emberhold’s key support structures—its two prominent inns and pubs, each offering a place of rest and social gathering for townsfolk and travelers alike. 
+                                            Interior shots reveal warm, welcoming spaces designed for community and respite.
+                                        </p>
+                                        <p>
+                                            Alongside these are the town’s defensive outposts, including strategically placed guard towers and watch houses. 
+                                            These structures emphasize Emberhold’s role as both a place of hospitality and a vigilant frontier settlement.
+                                        </p>
                                     </>
                                 }
                             />
