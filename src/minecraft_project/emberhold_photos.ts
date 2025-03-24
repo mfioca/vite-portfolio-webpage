@@ -312,7 +312,7 @@ export const town_square = [
 /*                          RESIDENTIAL SECTIONS                                   */
 /***********************************************************************************/
 
-export const residential_section1 = [
+export const residential_sections = [
   {
     asset: "section_1_101.jpg",
     width: 1280,
@@ -343,17 +343,42 @@ export const residential_section1 = [
     height: 704,
     alt: "Placeholder description for section_1_105",
   },
-].map(
-  ({ asset, alt, width, height }) =>
-    ({
-      src: `${emberholdSectionThree("section_1", asset, width)}`,
-      alt,
-      width,
-      height,
-    }),
-);
-
-export const residential_section2 = [
+  {
+    asset: "section_2_101.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_2_101",
+  },
+  {
+    asset: "section_2_102.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_2_102",
+  },
+  {
+    asset: "section_2_103.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_2_103",
+  },
+  {
+    asset: "section_2_104.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_2_104",
+  },
+  {
+    asset: "section_2_105.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_2_105",
+  },
+  {
+    asset: "section_2_106.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for section_2_106",
+  },
   {
     asset: "section_3_101.jpg",
     width: 1280,
@@ -384,57 +409,10 @@ export const residential_section2 = [
     height: 704,
     alt: "Placeholder description for section_3_105",
   },
-  {
-    asset: "section_3_106.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for section_3_106",
-  },
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${emberholdSectionThree("section_2", asset, width)}`,
-      alt,
-      width,
-      height,
-    }),
-);
-
-export const residential_section3 = [
-  {
-    asset: "section_3_101.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for section_3_101",
-  },
-  {
-    asset: "section_3_102.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for section_3_102",
-  },
-  {
-    asset: "section_3_103.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for section_3_103",
-  },
-  {
-    asset: "section_3_104.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for section_3_104",
-  },
-  {
-    asset: "section_3_105.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for section_3_105",
-  },
-].map(
-  ({ asset, alt, width, height }) =>
-    ({
-      src: `${emberholdSectionThree("section_3", asset, width)}`,
+      src: `${emberholdSectionThree("general_pictures", asset, width)}`,
       alt,
       width,
       height,

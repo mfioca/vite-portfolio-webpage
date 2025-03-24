@@ -8,9 +8,7 @@ import {
     mining_district,
     town_hall,
     town_square,
-    residential_section1,
-    residential_section2,
-    residential_section3,
+    residential_sections,
     residential_buildings
  } from './emberhold_photos';
 
@@ -66,7 +64,7 @@ const Emberhold = () => {
                             />
                             <DividerLine />
                             <MinecraftGallery
-                                title="Emberhold fortification"
+                                title="Emberhold Fortification"
                                 photos={ emberhold_fort }
                                 description={
                                     <>
@@ -169,13 +167,37 @@ const Emberhold = () => {
                             </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
-                                title="Section 1"
-                                photos={ residential_section1 }
+                                title="General Views"
+                                photos={ residential_sections }
+                                description={
+                                    <>
+                                      <p>
+                                        These aerial shots showcase the three residential sections of <i>Emberhold</i>, each arranged around shared central gathering spaces that reinforce the community-driven design of the town. 
+                                        The layout follows the natural contours of the land, allowing each cluster of homes to feel both connected and distinct.
+                                      </p>
+                                      <p>
+                                        From above, the planning behind each district becomes clear—pathways, farms, and guard housing all positioned to balance daily life with defense and functionality, 
+                                        helping define the lived-in character of the realm’s southern stronghold.
+                                      </p>
+                                    </>
+                                }
                             />
                             <DividerLine />
                             <MinecraftGallery
-                                title="Section 2"
-                                photos={ residential_section2 }
+                                title="Inns, Pubs & Watchposts"
+                                photos={ residential_buildings }
+                                description={
+                                    <>
+                                      <p>
+                                        This section highlights Emberhold’s key support structures—its two prominent inns and pubs, each offering a place of rest and social gathering for townsfolk and travelers alike. 
+                                        Interior shots reveal warm, welcoming spaces designed for community and respite.
+                                      </p>
+                                      <p>
+                                        Alongside these are the town’s defensive outposts, including strategically placed guard towers and watch houses. 
+                                        These structures emphasize Emberhold’s role as both a place of hospitality and a vigilant frontier settlement.
+                                      </p>
+                                    </>
+                                }
                             />
                         </TabPanel>
                     </BodyContainer>
