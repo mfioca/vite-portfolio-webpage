@@ -1,14 +1,14 @@
 
 function emberholdSectionOne(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}emberhold/general_views_fort/${folder}/${asset}?w=${width}&q=50`;
+  return `${import.meta.env.BASE_URL}minecraft_pictures/emberhold/general_views_fort/${folder}/${asset}?w=${width}&q=50`;
 }
 
 function emberholdSectionTwo(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}emberhold/commercial_districts/${folder}/${asset}?w=${width}&q=50`;
+  return `${import.meta.env.BASE_URL}minecraft_pictures/emberhold/commercial_districts/${folder}/${asset}?w=${width}&q=50`;
 }
 
 function emberholdSectionThree(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}emberhold/residential_sections/${folder}/${asset}?w=${width}&q=50`;
+  return `${import.meta.env.BASE_URL}minecraft_pictures/emberhold/residential_sections/${folder}/${asset}?w=${width}&q=50`;
 }
   
 export { emberholdSectionOne, emberholdSectionTwo, emberholdSectionThree };

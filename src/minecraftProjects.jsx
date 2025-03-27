@@ -3,6 +3,7 @@ import WhiterunProject from './minecraft_project/whiteruncity';
 import DwarvenKingdom from './minecraft_project/dwarvenkingdom';
 import CrowHaven from './minecraft_project/crowhaven';
 import Emberhold from './minecraft_project/emberhold';
+import RandomPlaces from './minecraft_project/random_places'
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
@@ -93,6 +94,7 @@ const MinecraftProjects = () => {
                         <Tab>Dwarven Kingdom</Tab>
                         <Tab>Crowhaven</Tab>
                         <Tab>Emberhold</Tab>
+                        <Tab>Random Places</Tab>
                     </TabList>
                     <TabPanel>
                         <WhiterunProject/>
@@ -105,6 +107,9 @@ const MinecraftProjects = () => {
                     </TabPanel>
                     <TabPanel>
                         <Emberhold />
+                    </TabPanel>
+                    <TabPanel>
+                        <RandomPlaces />
                     </TabPanel>
                 </Tabs>
             </div>
