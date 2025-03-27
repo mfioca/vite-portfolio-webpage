@@ -429,6 +429,7 @@ button:hover {
 .vertical-tab-content {
   position: relative;
   flex-grow: 1;
+  min-height: 600px; 
   padding: var(--padding); /* Give it breathing room */
   margin-top: -5px; /* Adjust this to align properly */
   background-color: var(--colorwhite); /* Ensure it has a background */

@@ -21,66 +21,85 @@ const RandomPlaces = () => {
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
-                            <IntroSection title="Whiterun City from Elder Scrolls Skyrim">
+                            <IntroSection title="Random Places Across the Realm">
                                 <p>
-                                    This project is a detailed recreation of Whiterun from <i>The Elder Scrolls: Skyrim</i>, built entirely in <i>Minecraft</i>. 
-                                    It showcases a combination of creativity, planning, and problem-solving.
+                                    Scattered throughout the realm are smaller, standalone locations that add depth, lore, and a sense of lived-in history to the world. 
+                                    These places may not be part of the larger cities or districts, but they carry their own unique charm and purpose.
                                 </p>
                                 <p><strong>Key aspects of the build:</strong></p>
                                 <ul className="default-list">
-                                    <li><strong>Accuracy & Scale</strong> – Careful attention to proportions, ensuring structures match the in-game city layout.</li>
-                                    <li><strong>Design Challenges</strong> – Adapting Skyrim’s curved architecture and terrain to Minecraft’s block-based system.</li>
-                                    <li><strong>Problem-Solving</strong> – Adjusting details to maintain immersion while staying true to the source material.</li>
-                                    <li><strong>Persistence & Refinement</strong> – Iterative improvements to align with Skyrim’s design, refining details over time.</li>
+                                    <li><strong>Environmental Storytelling</strong> – Each location hints at a larger story, from a crumbling tower to an isolated outpost in the mountains standing guard.</li>
+                                    <li><strong>Integration with the Landscape</strong> – Built to complement Minecraft’s natural terrain rather than override it.</li>
+                                    <li><strong>Functional Design</strong> – Some locations, like the tunnel, serve practical roles in travel and defense.</li>
+                                    <li><strong>Atmospheric Detailing</strong> – Use of lighting, ruined elements, and placement helps convey mood and mystery.</li>
                                 </ul>
                                 <p>
-                                    Explore the different stages of the build, from its early framework to the final immersive details.
+                                    These scenes provide a glimpse into the world beyond the major cities, offering moments of curiosity, reflection, and discovery.
                                 </p>
                             </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
                                 title="Whiterun Tunnel"
                                 photos = { whiterun_tunnel  }
-                                description = {
+                                collapsible={ false }
+                                description={
                                     <>
-                                        <p>
-                                            The entrance to Whiterun serves as the foundation of the city’s design, carefully adapting Skyrim’s natural topography into 
-                                            the structured world of <i>Minecraft</i>. These images highlight the early construction phases, starting from a flat surface 
-                                            and gradually shaping the elevation changes seen in the original game. The space beneath the city was intentionally left open 
-                                            at this stage, demonstrating the planning process before the full terrain was completed.
-                                        </p>
+                                      <p>
+                                        The <i>Whiterun Tunnel</i> carves through the heart of a mountain, serving as both a functional passage and a visually striking feature of the realm. 
+                                        Reinforced with wooden support structures, the tunnel blends utility with immersive detail.
+                                      </p>
+                                      <p>
+                                        Lining both sides of the interior are massive, aquarium-like channels filled with fish, aquatic plants, and soft lighting from below—turning an otherwise 
+                                        dark corridor into a vibrant, underwater experience. At the midpoint, a glass-covered bridge spans a naturally formed river cut, offering a scenic moment 
+                                        along the journey. Near the entrance, an open view into a naturally generated chamber reveals a mob spawner and chest, adding a layer of mystery to this 
+                                        otherwise peaceful route.
+                                      </p>
                                     </>
                                 }
                             />
-                            <DividerLine />
-                           
                         </TabPanel>
                         <TabPanel>
                             <MinecraftGallery
                                 title="Lonely Outpost"
                                 photos = { lonely_outpost }
-                                description = {
+                                collapsible={ false }
+                                description={
                                     <>
-                                        <p>
-                                            placeholder   
-                                        </p>
+                                      <p>
+                                        Perched high atop the mountain range that houses the Whiterun Tunnel, the <i>Lonely Outpost</i> stands in quiet isolation. 
+                                        Overlooking a vast lake, this outpost serves as a critical midpoint in the realm’s beacon-based warning system, 
+                                        inspired by the Beacons of Minas Tirith, linking <i>Emberhold</i> to <i>Whiterun</i>.
+                                      </p>
+                                      <p>
+                                        The outpost includes a two-story main living space, with an attached tower that functions as both watch post and 
+                                        utility hub—each floor offering a specific purpose, culminating in a lookout point near the top. 
+                                        A narrow natural ridge leads to a smaller guard post, providing a wide vantage over the surrounding landscape and 
+                                        waters below.
+                                      </p>
                                     </>
                                 }
                             />
                             
                         </TabPanel>
                         <TabPanel>
-                            <MinecraftGallery
-                                title="Lonely Outpost"
-                                photos = { abandoned_tower }
-                                description = {
-                                    <>
-                                        <p>
-                                            placeholder   
-                                        </p>
-                                    </>
-                                }
-                            />
+                        <MinecraftGallery
+                            title="Abandoned Tower Ruins"
+                            photos={ abandoned_tower }
+                            collapsible={ false }
+                            description={
+                                <>
+                                    <p>
+                                        Tucked beside a quiet mountain and lake, this crumbling structure marks the path between Emberhold and the eastern frontier. 
+                                        The ruins feature a partially collapsed tower with just one tall side still intact, a second-story wooden platform, and an open-air enchantment area below. 
+                                    </p>
+                                    <p>
+                                        Opposite the tower stands the remains of a roofless living quarter with bunk beds, a kitchen, and hints of past shelter. 
+                                        A crumbling stone wall loosely encloses the courtyard, where a broken gate still guards the entrance. 
+                                        Though worn by time, the structure adds a sense of forgotten history to the surrounding road.
+                                    </p>
+                                </>
+                            }
+                        />
                         </TabPanel>
                     </BodyContainer>
                 </div>

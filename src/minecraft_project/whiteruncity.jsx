@@ -133,7 +133,7 @@ const WhiterunProject = () => {
                                 photos = { side_by_side }
                                 testprop = { 800 / 1050 }
                                 gridRowHeight="350px" // Custom row height
-                                collapsible={false} // Ensures this section is always open
+                                collapsible={ false } // Ensures this section is always open
                                 description = {
                                     <>
                                         <p>
