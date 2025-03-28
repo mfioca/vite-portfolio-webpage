@@ -547,17 +547,6 @@ button:hover {
   gap: var(--gap10);
 }
 
-
-.home-image-original {
-  float: right;
-  width: 100%; /* Ensures the image scales based on its parent container */
-  max-width: 700px; /* Maximum width to avoid the image getting too big */
-  height: auto; /* Maintain the aspect ratio */
-  margin-right: 50px;
-  margin-left: 100px;
-  margin-bottom: 100px;
-}
-
 .home-image {
   flex-shrink: 0; /* Prevent image from shrinking */
   width: 80%; /* Ensures the image scales based on its parent container */
@@ -593,10 +582,8 @@ button:hover {
 
 .ai-showcase-container {
   margin-top: 0; /* Center the container on the page */
-  /*font-family: 'Arial', sans-serif; /* Clean, readable font */
   font-family: var(--fontfamily);
   padding: 0 15px; /* Adds space on left/right */
-  
   justify-content: center;
 }
 

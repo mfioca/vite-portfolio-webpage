@@ -123,27 +123,26 @@
         width: 90%;
         margin: auto;
     }
+
+    .about-swiper .swiper-button-next {
+        right: 10px;
+        top: auto;
+        bottom: 10px;
+        transform: translateY(-50%);
+        z-index: 10;
+        padding: 10px; /* Increase padding to enlarge the clickable area */
+        touch-action: manipulation; /* Optimize touch interaction */
+    }
+    
+    .about-swiper .swiper-button-prev {
+        left: 10px;
+        top: auto;
+        bottom: 10px;
+        transform: translateY(-50%);
+        z-index: 10;
+        padding: 10px; /* Increase padding to enlarge the clickable area */
+        touch-action: manipulation; /* Optimize touch interaction */
+    }
 }
 
-@media (max-width: 1000px) {
-  .about-swiper .swiper-button-next {
-    right: 10px;
-    top: auto;
-    bottom: 10px;
-    transform: translateY(-50%);
-    z-index: 10;
-    padding: 10px; /* Increase padding to enlarge the clickable area */
-    touch-action: manipulation; /* Optimize touch interaction */
-  }
-
-  .about-swiper .swiper-button-prev {
-    left: 10px;
-    top: auto;
-    bottom: 10px;
-    transform: translateY(-50%);
-    z-index: 10;
-    padding: 10px; /* Increase padding to enlarge the clickable area */
-    touch-action: manipulation; /* Optimize touch interaction */
-  }
-}
 
