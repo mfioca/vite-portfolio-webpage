@@ -14,7 +14,7 @@ import {
     section_2_details,
     keep_external_details,
     keep_interior_details
- } from './whiterun_photos';
+} from './whiterun_photos';
 
 
 const WhiterunProject = () => {
@@ -280,8 +280,8 @@ export default WhiterunProject;
 
 /*  placeholder section
 <TabPanel>
-                        <div className=" standard-padding-margin placeholder-container">
-                            <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
-                        </div>
-                        </TabPanel>
+    <div className=" standard-padding-margin placeholder-container">
+        <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
+    </div>
+</TabPanel>
 */
