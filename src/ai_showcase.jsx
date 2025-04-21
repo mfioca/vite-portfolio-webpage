@@ -8,7 +8,7 @@ import {
     tarotReaderPrompt, DisenchantedOraclePrompt, DeveloperPrompt1, 
     DeveloperPrompt1Negative, DeveloperPrompt1Postive, DeveloperPrompt2, 
     DeveloperPrompt2TalkTrack, DeveloperPrompt3, PersonalizationAssistant,
-    TimTheEnchanterPrompt 
+    TimTheEnchanterPrompt, PersonalizationAssistant_2 
 } from './AI_showcase/ai_prompts.jsx'
 import chatData from './AI_showcase/chatData.json';
 
@@ -40,10 +40,11 @@ const AIShowcase = () => {
             <DividerLine />
             <div className="center-div tabs-container">
                 <Tabs className="standard-tabs">
-                    <TabList>
+                    <TabList className="grid-tablist">
                         <Tab>Tarot Reader / Salesman</Tab>
                         <Tab>Disenchanted Oracle</Tab>
                         <Tab>Personalization Assistant</Tab>
+                        <Tab>Personalization Assistant 2.0</Tab>
                         <Tab>Tim: Your Conversational Companion</Tab>
                         <Tab>Developer Prompt</Tab>
                         <Tab>Developer 2.0 Prompt</Tab>
@@ -133,6 +134,36 @@ const AIShowcase = () => {
                                 }
                                 chatData = { <ChatBubble data={ chatData.personalizationAssistant } /> }
                             />
+                        </TabPanel>
+                        <TabPanel>
+                            <ShowcaseComponent
+                                    title="Personalization Assistant 2.0"
+                                    titleDescription = {
+                                        <>
+                                            <p>
+                                                Personalization Assistant 2.0 builds on the original by aligning more closely with ChatGPT’s latest customization settings. The update reflects a deeper understanding of how prompt structure influences assistant behavior and user experience.
+                                            </p>
+                                            <p>
+                                                I created this version to incorporate everything I’ve learned about prompt design, tone control, and user-guided interaction. It introduces clearer formatting, phase-based conversation structure, and rule-driven guidance—refining the assistant's ability to mirror the user’s intent and communication style.
+                                            </p>
+                                            <p>
+                                                This evolution wasn’t just about making improvements—it was about precision. By applying new knowledge and cleaner logic, this version creates a more effective, user-centered tool for crafting personalized AI responses that feel intuitive and intentional.
+                                            </p>
+                                        </>
+                                    }
+                                    prompt = { PersonalizationAssistant_2 }
+                                    chatDescription = {
+                                        <>
+                                            <p>
+                                                This update is brand new, and I’m still in the process of generating a representative chat simulation to showcase how the revised prompt performs in action.
+                                            </p>
+                                            <p>
+                                                Please stay tuned for updates.
+                                            </p>
+                                        </>
+                                    }
+                                    
+                                />
                         </TabPanel>
                         <TabPanel>
                             <ShowcaseComponent

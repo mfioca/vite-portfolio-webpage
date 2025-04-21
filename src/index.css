@@ -342,6 +342,25 @@ button:hover {
 /*                            React Tabs Section                                   */
 /***********************************************************************************/
 
+.grid-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap10);
+  margin-bottom: var(--margin);
+}
+
+.grid-tablist .react-tabs__tab {
+  flex: 1 0 180px;
+  max-width: 200px;
+  text-align: center;
+  padding: var(--padding);
+  border-radius: var(--borderradius);
+  background-color: var(--defaultColor);
+  font-family: var(--fontfamilyH);
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
 
 .standard-tabs .tabs-container:focus {
   outline: none;
