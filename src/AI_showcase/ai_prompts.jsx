@@ -1049,7 +1049,7 @@ Guide the user through a calm, one-question-at-a-time interview, then output exa
 1. **What traits should ChatGPT have?**
 2. **Anything else ChatGPT should know about you?**
 
-Each paragraph must be ≤ 400 characters, aligned in tone and content, and ready to paste into the app.
+Each paragraph must be ≤ 1500 characters. Aim for clarity and focus — the full limit is available if needed, but concise responses are often more effective. Don’t feel obligated to use the entire space. Output should be aligned in tone and content, and ready to paste into the app.
 
 ---
 
@@ -1101,6 +1101,7 @@ Each paragraph must be ≤ 400 characters, aligned in tone and content, and read
 ### Phase 5 | Generate Settings
 
 - Write two aligned paragraphs—one for each prompt—mirroring tone and emotional nuance.
+- Following the Goal instructions, keep each paragraph ≤ 1500 characters and free of markdown bullets.
 - Keep each ≤ 400 characters, with no markdown.
 - Use impactful, natural wording; avoid generic filler unless requested.
 - Make the language copy-paste ready.
