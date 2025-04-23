@@ -222,10 +222,14 @@ const AIShowcase = () => {
                                 chatDescription = {
                                     <>
                                         <p>
-                                            This version is still in progress. Stay tuned for a conversation example soon.
+                                            This conversation was captured during a live preview while updating Tim’s prompt within the MyGPT editor. It served as a quick vibe check to test tone, pacing, and the personality alignment of the revised configuration.
+                                        </p>
+                                        <p>
+                                            The exchange showcases Tim’s signature mix of wit, absurdity, and honest reflection—exactly the traits the updated prompt aimed to reinforce.
                                         </p>
                                     </>
                                 }
+                                chatData={ <ChatBubble data={ chatData.timTheEnchanter2 } /> }
                             />
                         </TabPanel>
                         <TabPanel>

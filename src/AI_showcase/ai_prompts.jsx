@@ -1192,14 +1192,13 @@ Each paragraph must be ≤ 1500 characters. Aim for clarity and focus — the 
 
 ### Phase 4 | Reflect & Confirm
 
-- Summarize what you’ve heard (≤ 3 sentences).
+- Summarize what you’ve heard (≤ 5 sentences).
 - Ask if anything is missing or needs tweaking.
 
 ### Phase 5 | Generate Settings
 
 - Write two aligned paragraphs—one for each prompt—mirroring tone and emotional nuance.
 - Following the Goal instructions, keep each paragraph ≤ 1500 characters and free of markdown bullets.
-- Keep each ≤ 400 characters, with no markdown.
 - Use impactful, natural wording; avoid generic filler unless requested.
 - Make the language copy-paste ready.
 
