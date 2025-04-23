@@ -8,7 +8,8 @@ import {
     tarotReaderPrompt, DisenchantedOraclePrompt, DeveloperPrompt1, 
     DeveloperPrompt1Negative, DeveloperPrompt1Postive, DeveloperPrompt2, 
     DeveloperPrompt2TalkTrack, DeveloperPrompt3, PersonalizationAssistant,
-    TimTheEnchanterPrompt, PersonalizationAssistant_2 
+    TimTheEnchanterPrompt, PersonalizationAssistant_2, TimTheEnchanterPrompt2,
+    DeveloperPrompt4
 } from './AI_showcase/ai_prompts.jsx'
 import chatData from './AI_showcase/chatData.json';
 
@@ -46,9 +47,11 @@ const AIShowcase = () => {
                         <Tab>Personalization Assistant</Tab>
                         <Tab>Personalization Assistant 2.0</Tab>
                         <Tab>Tim: Your Conversational Companion</Tab>
+                        <Tab>Tim: Your Conversational Companion 2.0</Tab>
                         <Tab>Developer Prompt</Tab>
                         <Tab>Developer 2.0 Prompt</Tab>
                         <Tab>Developer 3.0 Prompt</Tab>
+                        <Tab>Developer 4.0 Prompt</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="ai-showcase-container">
                         <TabPanel>
@@ -203,6 +206,29 @@ const AIShowcase = () => {
                             />
                         </TabPanel>
                         <TabPanel>
+                            <ShowcaseComponent
+                                title= "Tim 2.0"
+                                titleDescription = {
+                                    <>
+                                        <p>
+                                            This updated version of Tim retains his signature wit, absurdity, and charm—but introduces a more structured, personalized foundation. Still inspired by Tim the Enchanter from *Monty Python and the Holy Grail*, this prompt blends mystical ridiculousness with deeper conversational adaptability.
+                                        </p>
+                                        <p>
+                                            I created this update to better reflect my evolving approach to prompt design and to embed personalization details that guide Tim’s tone, pacing, and interaction style. The result is a smarter, more context-aware conversational partner who matches not only the moment—but me.
+                                        </p>
+                                    </>
+                                }
+                                prompt = { TimTheEnchanterPrompt2 }
+                                chatDescription = {
+                                    <>
+                                        <p>
+                                            This version is still in progress. Stay tuned for a conversation example soon.
+                                        </p>
+                                    </>
+                                }
+                            />
+                        </TabPanel>
+                        <TabPanel>
                             <ShowcaseComponentTabs
                                 title="Developer Assistant"
                                 titleDescription={
@@ -276,9 +302,34 @@ const AIShowcase = () => {
                                 prompt = { DeveloperPrompt3 }
                                 chatDescription = {
                                     <>
-                                        <h2>No Significant Conversation Highlights</h2>
                                         <p>
-                                            While the prompt is actively in use, it has not yet produced any significant improvements or conversation highlights worth showcasing. Progress is being made, and updates have been implemented, but not enough to warrant a full showcase tab at this time.
+                                            This version is being sunsetted and will no longer be updated. While it served as a pivotal step in shaping future versions, it no longer represents the current prompt architecture or design philosophy.
+                                        </p>
+                                        <p>
+                                            No chat transcript is provided for this version. It did not produce responses that were distinct enough from version 2 to warrant a dedicated chat example.
+                                        </p>
+                                    </>
+                                }
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                            <ShowcaseComponent
+                                title= "Developer Assitant 4.0"
+                                titleDescription = {
+                                    <>
+                                        <p>
+                                            The Developer 4.0 prompt, known as Tank 4.0, represents a major refinement in both behavior and alignment with my interaction preferences. Built on lessons learned from previous iterations, this version focuses on responsiveness, minimalism, and strict user-led control—delivering technical collaboration that is efficient, respectful, and precise.
+                                        </p>
+                                        <p>
+                                            In an effort to continue improving the prompt and refine specific preferences, I asked the assistant to summarize its understanding of our working style. That insight became the foundation for this updated prompt, ensuring every response is shaped by clear structure, intentional flow, and a deeper awareness of how I like to think, build, and troubleshoot.
+                                        </p>
+                                    </>
+                                }
+                                prompt = { DeveloperPrompt4 }
+                                chatDescription = {
+                                    <>
+                                        <p>
+                                            This version is still in progress. Stay tuned for a conversation example soon.
                                         </p>
                                     </>
                                 }
