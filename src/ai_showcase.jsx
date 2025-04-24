@@ -45,7 +45,7 @@ const AIShowcase = () => {
                         <Tab>Tarot Reader / Salesman</Tab>
                         <Tab>Disenchanted Oracle</Tab>
                         <Tab>Personalization Assistant</Tab>
-                        <Tab>Personalization Assistant 2.0</Tab>
+                        <Tab>Modula - GPT Personalization Assistant 2.0</Tab>
                         <Tab>Tim: Your Conversational Companion</Tab>
                         <Tab>Tim: Your Conversational Companion 2.0</Tab>
                         <Tab>Developer Prompt</Tab>
@@ -140,7 +140,7 @@ const AIShowcase = () => {
                         </TabPanel>
                         <TabPanel>
                             <ShowcaseComponent
-                                    title="Personalization Assistant 2.0"
+                                    title="Modula - GPT Personalization Assistant"
                                     titleDescription = {
                                         <>
                                             <p>
@@ -158,14 +158,17 @@ const AIShowcase = () => {
                                     chatDescription = {
                                         <>
                                             <p>
-                                                This update is brand new, and I’m still in the process of generating a representative chat simulation to showcase how the revised prompt performs in action.
+                                                This chat simulation showcases a live walkthrough of the updated Personalization Assistant prompt, tested within a brand-new ChatGPT account. Unlike prior sessions, this interaction took place in an environment with no saved long-term memory or behavioral history.
                                             </p>
                                             <p>
-                                                Please stay tuned for updates.
+                                                The assistant guides the user through the setup of personalization settings from scratch, focusing on tone, communication preferences, and boundaries around assistant behavior. The conversation demonstrates how well the new prompt captures user intent with clarity and precision.
+                                            </p>
+                                            <p>
+                                                This test highlights the assistant's ability to adapt responsively within a clean state—ensuring that even first-time users can establish deeply aligned settings that reflect their working style, tone, and expectations.
                                             </p>
                                         </>
                                     }
-                                    
+                                    chatData = { <ChatBubble data={ chatData.personalizationAssistant2_chat } /> }
                                 />
                         </TabPanel>
                         <TabPanel>
