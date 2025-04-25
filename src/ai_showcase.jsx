@@ -336,10 +336,17 @@ const AIShowcase = () => {
                                 chatDescription = {
                                     <>
                                         <p>
-                                            This version is still in progress. Stay tuned for a conversation example soon.
+                                            This conversation tests how the assistant responds across three distinct interaction modes: brainstorming, conversational updates, and early-stage troubleshooting. The goal was to observe whether it could maintain boundaries, adapt to context, and only offer support when explicitly invited.
+                                        </p>
+                                        <p>
+                                            The assistant navigates a THAC0 calculator concept, a state management update, and a reducer logic issue—demonstrating its ability to stay in a supporting role, ask clarifying questions, and avoid overstepping. Each segment was designed to simulate natural developer dialogue rather than isolated test prompts.
+                                        </p>
+                                        <p>
+                                            This transcript reflects realistic pacing, scattered focus, and evolving context—an environment where the assistant must track intent, respect boundaries, and communicate like a thoughtful collaborator rather than a proactive fixer.
                                         </p>
                                     </>
                                 }
+                                chatData={ <ChatBubble data={ chatData.developer4 } /> }
                             />
                         </TabPanel>
                     </BodyContainer>
