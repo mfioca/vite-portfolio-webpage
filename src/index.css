@@ -284,6 +284,26 @@ button:hover {
   text-decoration: underline;
 }
 
+.navbar-dropdown-container {
+  position: relative;
+}
+
+.navbar-dropdown-list {
+  position: absolute;
+  line-height: 30px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: normal;
+  background-color: var(--navcolor);
+  padding: 10px;
+  z-index: 999;
+  box-shadow: var(--boxshadow);
+  min-width: 200px;
+  max-width: 90vw;
+  overflow-x: auto;
+}
+
 .footer {
   position: relative;
   margin: 0;

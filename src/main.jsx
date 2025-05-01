@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
 import { Routes, Route } from 'react-router-dom';
@@ -17,6 +17,7 @@ import MinecraftProjects from './minecraftProjects';
 
 const Navigation = () => {
   const location = useLocation(); // Get the current location
+  const [isAcknowledgementsOpen, setIsAcknowledgementsOpen] = useState(false);
 
   // Scroll to the top when location changes
   useEffect(() => {
@@ -64,20 +65,25 @@ const Navigation = () => {
         <li>
           <Link to="/About" className="nav-link">About</Link>
         </li>
-        <li>
-          <Link to="/tv_maze" className="nav-link">TV Maze</Link>
-        </li>
-        <li>
-          <Link to="/Dashboard" className="nav-link">Job Activity Analysis</Link>
-        </li>
-        <li>
-          <Link to="/AIShowcase" className="nav-link">AI Showcase</Link>
-        </li>
         
-        <li>
-          <Link to="/MinecraftProjects" className="nav-link">Minecraft Projects</Link>
+        <li className="navbar-dropdown-container">
+          <div 
+            className="toggle-gallery-title"
+            onClick={() => setIsAcknowledgementsOpen(!isAcknowledgementsOpen)}
+          >
+            {isAcknowledgementsOpen ? '▼ Projects' : '▶ Projects'}
+          </div>
+          {isAcknowledgementsOpen && (
+            <ul className="navbar-dropdown-list"
+                onMouseLeave={() => setIsAcknowledgementsOpen(false)}
+            >
+              <li><Link to="/tv_maze" className="nav-link">TV Maze</Link></li>
+              <li><Link to="/Dashboard" className="nav-link">Job Activity Analysis</Link></li>
+              <li><Link to="/AIShowcase" className="nav-link">AI Showcase</Link></li>
+              <li><Link to="/MinecraftProjects" className="nav-link">Minecraft Projects</Link></li>
+            </ul>
+          )}
         </li>
-        {/* Add more links as needed */}
       </ul>
     </nav>
   );
