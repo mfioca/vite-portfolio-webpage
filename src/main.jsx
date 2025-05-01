@@ -77,10 +77,26 @@ const Navigation = () => {
             <ul className="navbar-dropdown-list"
                 onMouseLeave={() => setIsAcknowledgementsOpen(false)}
             >
-              <li><Link to="/tv_maze" className="nav-link">TV Maze</Link></li>
-              <li><Link to="/Dashboard" className="nav-link">Job Activity Analysis</Link></li>
-              <li><Link to="/AIShowcase" className="nav-link">AI Showcase</Link></li>
-              <li><Link to="/MinecraftProjects" className="nav-link">Minecraft Projects</Link></li>
+              <li>
+                <Link to="/tv_maze" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
+                  TV Maze
+                </Link>
+              </li>
+              <li>
+                <Link to="/Dashboard" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
+                  Job Activity Analysis
+                </Link>
+              </li>
+              <li>
+                <Link to="/AIShowcase" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
+                  AI Showcase
+                </Link>
+              </li>
+              <li>
+                <Link to="/MinecraftProjects" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
+                  Minecraft Projects
+                </Link>
+              </li>
             </ul>
           )}
         </li>
