@@ -288,6 +288,14 @@ button:hover {
   position: relative;
 }
 
+.toggle-gallery-title {
+  display: inline-block;
+  vertical-align: top;
+  
+  color: var(--colorwhite);
+  cursor: pointer;
+}
+
 .navbar-dropdown-list {
   position: absolute;
   line-height: 30px;
