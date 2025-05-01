@@ -67,12 +67,12 @@ const Navigation = () => {
         </li>
         
         <li className="navbar-dropdown-container">
-          <div 
-            className="toggle-gallery-title"
+          <span 
+            className="nav-link"
             onClick={() => setIsAcknowledgementsOpen(!isAcknowledgementsOpen)}
           >
             {isAcknowledgementsOpen ? '▼ Projects' : '▶ Projects'}
-          </div>
+          </span>
           {isAcknowledgementsOpen && (
             <ul className="navbar-dropdown-list"
                 onMouseLeave={() => setIsAcknowledgementsOpen(false)}
