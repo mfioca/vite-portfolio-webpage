@@ -66,13 +66,15 @@ const Navigation = () => {
           <Link to="/About" className="nav-link">About</Link>
         </li>
         
-        <li className="navbar-dropdown-container">
-          <span 
-            className="nav-link"
-            onClick={() => setIsAcknowledgementsOpen(!isAcknowledgementsOpen)}
-          >
-            {isAcknowledgementsOpen ? '▼ Projects' : '▶ Projects'}
-          </span>
+        <li className="navbar-dropdown-container nav-link"
+          onClick={(e) => {
+            e.preventDefault();
+            setIsAcknowledgementsOpen(!isAcknowledgementsOpen);
+          }}
+        >
+          {isAcknowledgementsOpen ? 'Projects' : 'Projects'}
+        
+        
           {isAcknowledgementsOpen && (
             <ul className="navbar-dropdown-list"
                 onMouseLeave={() => setIsAcknowledgementsOpen(false)}
