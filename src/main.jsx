@@ -73,8 +73,6 @@ const Navigation = () => {
           }}
         >
           {isAcknowledgementsOpen ? 'Projects' : 'Projects'}
-        
-        
           {isAcknowledgementsOpen && (
             <ul className="navbar-dropdown-list"
                 onMouseLeave={() => setIsAcknowledgementsOpen(false)}
