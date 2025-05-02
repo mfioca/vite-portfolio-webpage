@@ -89,7 +89,7 @@ const MinecraftProjects = () => {
             <DividerLine />
             <div className="center-div tabs-container">
                 <Tabs className="standard-tabs">
-                    <TabList>
+                    <TabList className="grid-tablist">
                         <Tab>Whiterun City</Tab>
                         <Tab>Dwarven Kingdom</Tab>
                         <Tab>Crowhaven</Tab>

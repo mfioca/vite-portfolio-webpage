@@ -260,6 +260,7 @@ button:hover {
   right: 0; /* Ensure it spans the full width */
   z-index: 1000; /* Ensure the navbar stays above other elements */
   min-height: 100px;
+  font-size: 1.5em;
 }
 
 .navbar-brand {
@@ -294,7 +295,7 @@ button:hover {
   line-height: 30px;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-60%);
   white-space: normal;
   background-color: var(--navcolor);
   padding: 10px;
@@ -303,6 +304,7 @@ button:hover {
   min-width: 200px;
   max-width: 90vw;
   overflow-x: auto;
+  font-size: .75em;
 }
 
 .footer {

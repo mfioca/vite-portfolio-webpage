@@ -77,14 +77,14 @@ const Navigation = () => {
             <ul className="navbar-dropdown-list"
                 onMouseLeave={() => setIsAcknowledgementsOpen(false)}
             >
+                <li>
+                  <Link to="/Dashboard" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
+                    Job Activity Analysis
+                  </Link>
+                </li>
               <li>
                 <Link to="/tv_maze" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
                   TV Maze
-                </Link>
-              </li>
-              <li>
-                <Link to="/Dashboard" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
-                  Job Activity Analysis
                 </Link>
               </li>
               <li>
@@ -94,7 +94,7 @@ const Navigation = () => {
               </li>
               <li>
                 <Link to="/MinecraftProjects" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
-                  Minecraft Projects
+                  Minecraft Realm
                 </Link>
               </li>
             </ul>
