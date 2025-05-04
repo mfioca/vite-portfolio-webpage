@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
 import { Routes, Route } from 'react-router-dom';
@@ -18,11 +18,30 @@ import MinecraftProjects from './minecraftProjects';
 const Navigation = () => {
   const location = useLocation(); // Get the current location
   const [isAcknowledgementsOpen, setIsAcknowledgementsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   // Scroll to the top when location changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
+  //event listener to close dropdown list if you touch outside of the dropdown on phones
+  
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsAcknowledgementsOpen(false);
+      }
+    };
+  
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+  
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, []);
 
   // Determine the title based on the current path
   let title; // Ensure it always has a value
@@ -66,7 +85,7 @@ const Navigation = () => {
           <Link to="/About" className="nav-link">About</Link>
         </li>
         
-        <li className="navbar-dropdown-container nav-link"
+        <li ref={dropdownRef} className="navbar-dropdown-container nav-link"
           onClick={(e) => {
             e.preventDefault();
             setIsAcknowledgementsOpen(!isAcknowledgementsOpen);
@@ -78,22 +97,37 @@ const Navigation = () => {
                 onMouseLeave={() => setIsAcknowledgementsOpen(false)}
             >
                 <li>
-                  <Link to="/Dashboard" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
+                  <Link 
+                    to="/Dashboard" 
+                    className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}
+                  >
                     Job Activity Analysis
                   </Link>
                 </li>
               <li>
-                <Link to="/tv_maze" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
+                <Link 
+                  to="/tv_maze" 
+                  className="nav-link" 
+                  onClick={() => setIsAcknowledgementsOpen(false)}
+                >
                   TV Maze
                 </Link>
               </li>
               <li>
-                <Link to="/AIShowcase" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
+                <Link 
+                  to="/AIShowcase" 
+                  className="nav-link" 
+                  onClick={() => setIsAcknowledgementsOpen(false)}
+                >
                   AI Showcase
                 </Link>
               </li>
               <li>
-                <Link to="/MinecraftProjects" className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}>
+                <Link 
+                  to="/MinecraftProjects" 
+                  className="nav-link" 
+                  onClick={() => setIsAcknowledgementsOpen(false)}
+                >
                   Minecraft Realm
                 </Link>
               </li>
