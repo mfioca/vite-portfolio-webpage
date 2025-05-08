@@ -161,12 +161,17 @@ const Footer = () =>{
         </p>
         <p>
           <a 
-            href="https://mfioca.github.io/portfolio-webpage/" 
+            href="https://github.com/mfioca" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="footer-link"
+            className="linkedin-link"
           >
-            Old React-App Version
+            <img 
+              src={`${import.meta.env.BASE_URL}github-white.png`} 
+              alt="GitHub Profile" 
+              className="github-icon"
+            />
+            GitHub Profile
           </a>
         </p>
       </footer>
