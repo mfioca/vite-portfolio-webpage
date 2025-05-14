@@ -80,7 +80,7 @@ body, #root {
   padding-top: 70px;
   margin: 0;
   min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
-  justify-content: center;
+  /*justify-content: center; */
   font-family: var(--fontfamily);
   color: var(--fontcolor);
   -webkit-font-smoothing: antialiased;
@@ -194,6 +194,10 @@ h2 {
   justify-content: center;
   padding: var(--padding);
   margin: var(--margin) auto;
+}
+
+.flex-grow {
+  flex: 1;
 }
 
 .button {
