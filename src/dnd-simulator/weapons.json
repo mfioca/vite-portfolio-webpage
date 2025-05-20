@@ -1,0 +1,77 @@
+[
+    {
+      "name": "Battle Axe",
+      "type": "1-handed",
+      "damage": { "dice": 1, "sides": 8 }
+    },
+    {
+      "name": "Two-Handed Axe",
+      "type": "2-handed",
+      "damage": { "dice": 2, "sides": 8 }
+    },
+    {
+      "name": "Short Sword",
+      "type": "1-handed",
+      "damage": { "dice": 1, "sides": 6 }
+    },
+    {
+      "name": "Long Sword",
+      "type": "1-handed",
+      "damage": { "dice": 1, "sides": 12 }
+    },
+    {
+      "name": "Two-Handed Sword",
+      "type": "2-handed",
+      "damage": { "dice": 3, "sides": 6 }
+    },
+    {
+      "name": "Dagger",
+      "type": "1-handed",
+      "damage": { "dice": 1, "sides": 4 }
+    },
+    {
+      "name": "Club",
+      "type": "1-handed",
+      "damage": { "dice": 1, "sides": 6 }
+    },
+    {
+      "name": "Hand Axe",
+      "type": "1-handed",
+      "damage": { "dice": 1, "sides": 6 }
+    },
+    {
+      "name": "Morning Star",
+      "type": "1-handed",
+      "damage": { "dice": 2, "sides": 4 }
+    },
+    {
+      "name": "Warhammer",
+      "type": "1-handed",
+      "damage": { "dice": 1, "sides": 4 }
+    },
+    {
+      "name": "Halberd",
+      "type": "2-handed",
+      "damage": { "dice": 1, "sides": 10 }
+    },
+    {
+      "name": "Glaive",
+      "type": "2-handed",
+      "damage": { "dice": 1, "sides": 6 }
+    },
+    {
+      "name": "Quarterstaff",
+      "type": "2-handed",
+      "damage": { "dice": 1, "sides": 6 }
+    },
+    {
+      "name": "Scimitar",
+      "type": "1-handed",
+      "damage": { "dice": 1, "sides": 8 }
+    },
+    {
+      "name": "Broad Sword",
+      "type": "1-handed",
+      "damage": { "dice": 2, "sides": 4 }
+    }
+  ]

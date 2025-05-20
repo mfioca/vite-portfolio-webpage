@@ -106,6 +106,12 @@ body *::-webkit-scrollbar-track {
   scrollbar-color: var(--bordercolor) #f5f5f5; /* Thumb color & track color */
 }
 
+.page-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 h2 {
   font-family: var(--fontfamilyH);
   font-weight: 600; /* Semi-bold */
@@ -242,6 +248,17 @@ button:hover {
   color: #ff4d4f; /* Light red or any other subtle color */
   margin-top: 50px;
   font-size: 1.5rem;
+}
+
+.mobile-warning {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border: 2px solid #000;
+  border-radius: 8px;
+  text-align: center;
 }
 
 /***********************************************************************************/
@@ -621,9 +638,7 @@ button:hover {
   height: auto; /* Maintain the aspect ratio */
 }
 
-.home-text {
-  flex: 1; /* Allow the text to grow and take available space */
-}
+
 
 /* Media query for small screens */
 @media (max-width: 1400px) {
@@ -768,3 +783,201 @@ text-align: left;
 }
 
 */
+
+
+
+/***********************************************************************************/
+/*                              Combat Simulator                                   */
+/***********************************************************************************/
+
+
+
+
+
+
+.max-width {
+  flex-grow: 1;
+  max-width: 500px;
+  min-width: 300px;
+  height: 425px; /* or whatever feels balanced */
+  overflow-y: auto;
+}
+
+
+.blue-border {
+  border: 5px solid blue;
+}
+
+
+.default-container {
+  display: block;
+  border: 5px solid #888;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+
+.combat-summary-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.combat-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  
+}
+
+
+
+
+
+.combat-table {
+  flex-grow: 1;
+  display: block;
+  line-height: 1.0;
+  max-width: 550px;
+  min-width: 200px;
+  height: 425px; /* match or align with .max-width from character sheets */
+  overflow-y: auto;
+}
+
+.combat-bottom-block > div {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.character-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.character-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 100px;
+}
+
+.character-main-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+
+}
+
+.button-slot {
+  max-width: 500px;
+  min-width: 300px;
+  height: 40px; /* match your button height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+
+.initiative {
+  flex-grow: 1;
+  max-width: 400px;
+  min-width: 100px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 5px solid #888;
+}
+
+
+
+.avatar-and-stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.avatar-slot {
+  width: 200px;
+  height: 200px;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.stat-block {
+  flex-grow: 1;
+}
+
+.stat-block table {
+  text-align: left;
+}
+
+.stat-block table td:first-child {
+  text-align: left;
+}
+
+.weapon-display {
+  min-height: 30px; /* reserve vertical space */
+}
+
+.character-avatar {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.weapon-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* ✅ centers contents horizontally */
+  text-align: center;   /* ✅ centers text inside the labels or headers */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  padding: 5px 10px;
+}
+
+.weapon-section select {
+  width: 80%;
+  max-width: 300px;
+}
+
+
+
+@media (max-width: 900px) {
+  .character-main-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .character-main-row > .initiative {
+    order: 3; /* Push initiative below both character sheets */
+  }
+
+  .character-main-row > .max-width {
+    order: 1;
+  }
+  .character-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .avatar-slot {
+    width: 120px;
+    height: 120px;
+  }
+}
+

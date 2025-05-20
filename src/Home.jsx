@@ -4,7 +4,7 @@ import { DividerLine, IntroSection } from './SharedComponents.jsx';
 
 const Home = () => {
     return (
-        <div className="standard-padding-margin flex-grow">      
+        <div className="standard-padding-margin page-content">      
             <IntroSection title="Welcome to to my home page">
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;This web page began as a personal project to explore 
                     the capabilities of OpenAI’s ChatGPT and delve into prompt engineering and customizations. I chose this as a foundation because 

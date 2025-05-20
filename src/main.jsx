@@ -12,6 +12,7 @@ import TvMaze from './tv_maze'
 import TvMazeShowResults from './Tv_Maze/tv_maze_show_results';
 import TvMazePeopleResults from './Tv_Maze/tv_maze_people_results';
 import MinecraftProjects from './minecraftProjects';
+import DndSimulator from './dnd-simulator';
 
 
 
@@ -69,6 +70,9 @@ const Navigation = () => {
         break;
     case location.pathname === '/MinecraftProjects':
         title = 'Minecraft Projects';
+        break;
+    case location.pathname === '/dnd-simulator':
+        title = 'D&D Combat Simulator';
         break;
     default:
         title = 'Explore My Web Page'; // A general fallback title
@@ -129,6 +133,15 @@ const Navigation = () => {
                   onClick={() => setIsAcknowledgementsOpen(false)}
                 >
                   Minecraft Realm
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/dnd-simulator" 
+                  className="nav-link" 
+                  onClick={() => setIsAcknowledgementsOpen(false)}
+                >
+                  D&D Combat Simulator
                 </Link>
               </li>
             </ul>
@@ -194,6 +207,7 @@ root.render(
           <Route path="/Dashboard" element={ <Dashboard /> } /> 
           <Route path="/AIShowcase" element={ <AIShowcase /> } />
           <Route path="/MinecraftProjects" element={ <MinecraftProjects /> } />
+          <Route path="/dnd-simulator" element={ <DndSimulator /> } />
         </Routes>
       <Footer />
     </HashRouter>
