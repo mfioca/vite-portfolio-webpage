@@ -1,0 +1,260 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+
+
+.max-width {
+  flex-grow: 1;
+  max-width: 500px;
+  min-width: 300px;
+  height: 425px; /* or whatever feels balanced */
+  overflow-y: auto;
+}
+
+
+.blue-border {
+  border: 5px solid blue;
+}
+
+
+.default-container {
+  display: block;
+  border: 5px solid #888;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+
+.combat-summary-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.combat-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  
+}
+
+
+
+
+
+.combat-table {
+  flex-grow: 1;
+  display: block;
+  line-height: 1.0;
+  max-width: 550px;
+  min-width: 200px;
+  height: 425px; /* match or align with .max-width from character sheets */
+  padding: 10px;
+  margin: 10px 0;
+  overflow-y: auto;
+}
+
+.combat-bottom-block > div {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.character-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.character-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 100px;
+}
+
+.character-main-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+
+}
+
+.button-slot {
+  max-width: 500px;
+  min-width: 300px;
+  height: 40px; /* match your button height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+
+.initiative {
+  flex-grow: 1;
+  max-width: 400px;
+  min-width: 100px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 5px solid #888;
+}
+
+
+
+.avatar-and-stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.avatar-slot {
+  width: 200px;
+  height: 200px;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.stat-block {
+  flex-grow: 1;
+}
+
+.stat-block table {
+  text-align: left;
+}
+
+.stat-block table td:first-child {
+  text-align: left;
+}
+
+.weapon-display {
+  min-height: 30px; /* reserve vertical space */
+}
+
+.character-avatar {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.weapon-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* ✅ centers contents horizontally */
+  text-align: center;   /* ✅ centers text inside the labels or headers */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  padding: 5px 10px;
+}
+
+.weapon-section select {
+  width: 80%;
+  max-width: 300px;
+}
+
+
+
+@media (max-width: 900px) {
+  .character-main-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .character-main-row > .initiative {
+    order: 3; /* Push initiative below both character sheets */
+  }
+
+  .character-main-row > .max-width {
+    order: 1;
+  }
+  .character-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .avatar-slot {
+    width: 120px;
+    height: 120px;
+  }
+}
+

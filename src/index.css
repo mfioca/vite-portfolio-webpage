@@ -275,12 +275,12 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   position: fixed; /* Fix the navbar to the top */
-  padding: 15px 30px; /* Add padding */
+  padding: 10px 20px; /* Add padding */
   top: 0; /* Stick it to the top */
   left: 0; /* Ensure it spans the full width */
   right: 0; /* Ensure it spans the full width */
   z-index: 1000; /* Ensure the navbar stays above other elements */
-  min-height: 100px;
+  min-height: 40px;
   font-size: 1.5em;
 }
 
@@ -799,14 +799,10 @@ text-align: left;
   flex-grow: 1;
   max-width: 500px;
   min-width: 300px;
-  height: 425px; /* or whatever feels balanced */
+  height: 375px; /* or whatever feels balanced */
   overflow-y: auto;
 }
 
-
-.blue-border {
-  border: 5px solid blue;
-}
 
 
 .default-container {
@@ -832,13 +828,10 @@ text-align: left;
 }
 
 
-
-
-
 .combat-table {
   flex-grow: 1;
   display: block;
-  line-height: 1.0;
+  line-height: .75;
   max-width: 550px;
   min-width: 200px;
   height: 425px; /* match or align with .max-width from character sheets */
@@ -858,14 +851,14 @@ text-align: left;
 .character-layout-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  line-height: 1.0;
 }
 
 .character-top-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 100px;
+  gap: 350px;
 }
 
 .character-main-row {
@@ -885,6 +878,8 @@ text-align: left;
   align-items: center;
   justify-content: center;
   flex: 1;
+  
+  
 }
 
 
@@ -909,8 +904,8 @@ text-align: left;
 }
 
 .avatar-slot {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   background-color: #444;
   display: flex;
   justify-content: center;
@@ -935,8 +930,8 @@ text-align: left;
 }
 
 .character-avatar {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 }
 

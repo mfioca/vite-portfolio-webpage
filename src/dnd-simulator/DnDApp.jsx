@@ -139,7 +139,10 @@ function Simulator() {
           <div className="button-slot">
           {/*   Button to generate hero stats  */}
             { !state.hero && 
-              <button className="center-div center-margin button" onClick={ handleGenerateHero } >
+              <button 
+                className="center-div center-margin button" 
+                onClick={ handleGenerateHero } 
+              >
                 Generate Hero
               </button> 
             }
@@ -150,7 +153,12 @@ function Simulator() {
                 generated and the hero has won the battle to continue fighting
               */}
               { state.hero && (!state.monster || state.winner === "Hero") && (
-                <button className="center-div center-margin button" onClick={ handleGenerateMonster }>Generate Monster</button>
+                <button 
+                  className="center-div center-margin button" 
+                  onClick={ handleGenerateMonster }
+                >
+                  Generate Monster
+                </button>
               )}
             </div>
         </div>
@@ -165,7 +173,12 @@ function Simulator() {
             <div className="button-slot">
               { 
                 !state.winner && !state.currentTurn && state.hero && state.monster && (
-                  <button className="center-div center-margin button" onClick={handleRollInitiative}>Roll Initiative</button>
+                  <button 
+                    className="center-div center-margin button" 
+                    onClick={handleRollInitiative}
+                  >
+                    Roll Initiative
+                  </button>
                 )
               }
             </div>
@@ -214,7 +227,7 @@ function Simulator() {
 {/*           DEBUG SECTION              */}
 
 
-<div>
+      <div>
         <h1><p>debug section</p></h1>
 
         {state.hero && (
@@ -236,7 +249,7 @@ function Simulator() {
         )}
       </div>
       
-    </div>
+  </div>
     
   );
 }

@@ -90,7 +90,10 @@ const CharacterCombatBlock = ({
           typeof currentTurn === 'string' && 
           currentTurn === label.toLowerCase() && 
           !hasAttacked && (
-            <button className="center-div center-margin button" onClick={handleAttack}>
+            <button 
+              className="center-div center-margin button" 
+              onClick={handleAttack}
+            >
               { label } Attacks
             </button>
         )}
