@@ -202,10 +202,6 @@ h2 {
   margin: var(--margin) auto;
 }
 
-.flex-grow {
-  flex: 1;
-}
-
 .button {
   padding: var(--default-spacing) 20px;
   background-color: var(--fontblue);
@@ -791,10 +787,10 @@ text-align: left;
 /***********************************************************************************/
 
 
-.max-width {
+.section-height {
   flex-grow: 1;
-  max-width: 500px;
-  min-width: 300px;
+  /*max-width: 500px;*/
+  /*min-width: 300px;*/
   height: 375px; /* or whatever feels balanced */
   overflow-y: auto;
 }
@@ -818,17 +814,6 @@ text-align: left;
   align-items: flex-start;
   gap: 20px;
   
-}
-
-
-.combat-table {
-  flex-grow: 1;
-  display: block;
-  line-height: .75;
-  max-width: 550px;
-  min-width: 200px;
-  height: 425px; /* match or align with .max-width from character sheets */
-  overflow-y: auto;
 }
 
 .combat-bottom-block > div {
@@ -871,8 +856,6 @@ text-align: left;
   align-items: center;
   justify-content: center;
   flex: 1;
-  
-  
 }
 
 
@@ -906,6 +889,16 @@ text-align: left;
   flex-shrink: 0;
 }
 
+.combat-table {
+  flex-grow: 1;
+  display: block;
+
+  max-width: 550px;
+  min-width: 200px;
+  height: 425px; /* match or align with .max-width from character sheets */
+  overflow-y: auto;
+}
+
 .stat-block {
   flex-grow: 1;
 }
@@ -916,6 +909,7 @@ text-align: left;
 
 .stat-block table td:first-child {
   text-align: left;
+  padding-right: 7px; /* or however much spacing you want */
 }
 
 .weapon-display {
@@ -944,6 +938,33 @@ text-align: left;
 }
 
 
+.reminder-warning {
+  background-color: var(--lightbackgroundcolor);
+  color: var(--fontcolor);
+  border-left: 4px solid var(--fontblue);
+  border-right: 4px solid var(--fontblue);
+  padding: 8px 12px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+  border-radius: var(--borderradius);
+  box-shadow: var(--thinshadow);
+}
+
+.result-hit {
+  color: green;
+  font-weight: bold;
+}
+
+.result-miss {
+  color: red;
+  font-weight: bold;
+}
+
+
+
+
+
 
 @media (max-width: 900px) {
   .character-main-row {
@@ -969,3 +990,24 @@ text-align: left;
   }
 }
 
+
+
+
+.combat-table-centered-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.combat-table-centered-table td {
+  padding: 6px 12px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.combat-table-centered-table tr:first-child td {
+  font-weight: bold;
+  border-bottom: var(--tableborder);
+}

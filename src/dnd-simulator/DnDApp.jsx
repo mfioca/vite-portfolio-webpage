@@ -133,7 +133,7 @@ function Simulator() {
   };
 
   return (
-    <div className="base-max-width standard-padding-margin-center content-grow">
+    <BodyContainer hasBackground = { false } >
       <div className="character-layout-wrapper">
         <div className="character-top-row">
           <div className="button-slot">
@@ -169,7 +169,7 @@ function Simulator() {
             isRealHero={ !!state.hero }
           />
           
-            <BorderBox className="max-width box-background-standard standard-padding-margin">
+            <BorderBox className="section-height box-background-standard standard-padding-margin">
             <div className="button-slot">
               { 
                 !state.winner && !state.currentTurn && state.hero && state.monster && (
@@ -249,7 +249,7 @@ function Simulator() {
         )}
       </div>
       
-  </div>
+  </BodyContainer>
     
   );
 }

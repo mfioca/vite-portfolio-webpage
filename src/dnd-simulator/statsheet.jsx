@@ -6,7 +6,7 @@ const CharacterSheet = ({ character, dispatch, isRealHero }) => {
   const { name, baseStats, combat } = character;
 
   return (
-    <BorderBox className="max-width box-background-standard standard-padding-margin">
+    <BorderBox className="section-height box-background-standard standard-padding-margin">
       <h2>{ name }</h2>
 
       <div className="avatar-and-stats-row">

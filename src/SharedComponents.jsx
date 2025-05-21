@@ -25,7 +25,7 @@ export const DividerLine = ({ width = '80%' }) => {
 export const BodyContainer = ({ children, className = '', hasBackground = true }) => {
     const backgroundClass = hasBackground ? 'box-background-standard' : 'box-Nobackground-standard';
     return (
-        <div className={ `${backgroundClass} base-max-width standard-padding-margin-center ${className}` }>
+        <div className={ `${ backgroundClass } base-max-width standard-padding-margin-center ${ className }` }>
             { children }
         </div>
     );

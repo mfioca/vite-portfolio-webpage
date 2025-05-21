@@ -73,58 +73,65 @@ const CharacterCombatBlock = ({
   };
 
   return (
-    <div className= "combat-table max-width box-background-standard standard-padding-margin-center">
+    <div className= "combat-table section-height box-background-standard standard-padding-margin-center">
       <h3>{ label }</h3>
-      <p>Hitpoints: { hitpoints }</p>
-      <p>Armor Class: { armorClass }</p>
-      <p>Number to Hit: { numberToHit }</p>
-
-    
-      
-        { label === "Hero" && character.weapon === null && (
-          <p><strong>Reminder:</strong> Don't forget to equip a weapon.</p> // reminder to equip a weapon before attacking
-        )}
-        
-
-        {!winner && 
-          typeof currentTurn === 'string' && 
-          currentTurn === label.toLowerCase() && 
-          !hasAttacked && (
-            <button 
-              className="center-div center-margin button" 
-              onClick={handleAttack}
-            >
-              { label } Attacks
-            </button>
-        )}
-        
-
-        {result.roll && (
+      {weaponData && (
           <>
-            <p>Attack Roll: { result.roll }</p>
-            <p>Target: { result.target }</p>
-            <p>Result: { result.hit ? "Hit" : "Miss" }</p>
-
-            {/* SECTION FOR ADDITIONAL MESSAGES FOR CRITICAL MISS / CRITICAL HIT AND TOTAL DAMAGE DEALT */}
-            { result.roll === 1 && (
-              <p><strong>Critical Miss!</strong> You hurt yourself for 2 HP.</p>
-            )}
-            { result.roll === 20 && (
-              <p><strong>Critical Hit!</strong> Damage was doubled.</p>
-            )}
-            { result.hit && opponent._lastDamage !== undefined && (
-              <p>Damage Dealt: {opponent._lastDamage}</p>
-            )}
+            <p><strong>Weapon:</strong> { weaponData.name } ({ weaponData.type } ) //
+            Damage: { weaponData.damage.dice }d{ weaponData.damage.sides }</p>
           </>
         )}
+      <div >
+        <table className="combat-table-centered-table">
+          <tbody>
+            <tr>
+              <td>Hitpoints</td>
+              <td>Armor Class</td>
+              <td>Number to Hit</td>
+            </tr>
+            <tr>
+              <td>{ hitpoints }</td>
+              <td>{ armorClass }</td>
+              <td>{ numberToHit }</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      { label === "Hero" && character.weapon === null && (
+        <p className="reminder-warning"><strong>Reminder:</strong> Don't forget to equip a weapon.</p> // reminder to equip a weapon before attacking
+      )}
+      {!winner && 
+        typeof currentTurn === 'string' && 
+        currentTurn === label.toLowerCase() && 
+        !hasAttacked && (
+          <button 
+            className="center-div center-margin button" 
+            onClick={handleAttack}
+          >
+            { label } Attacks
+          </button>
+      )}
+      {result.roll && (
+        <>
+          <p>Attack Roll: { result.roll }</p>
+          
+          <p className={ result.hit ? 'result-hit' : 'result-miss' }>
+            
+            Result: { result.hit ? "Hit" : "Miss" }
+          </p>
 
-        {weaponData && (
-          <>
-            <p>Weapon: { weaponData.name } ({ weaponData.type } )</p>
-            <p>Damage: { weaponData.damage.dice }d{ weaponData.damage.sides }</p>
-          </>
-        )}
-    
+          {/* SECTION FOR ADDITIONAL MESSAGES FOR CRITICAL MISS / CRITICAL HIT AND TOTAL DAMAGE DEALT */}
+          { result.roll === 1 && (
+            <p><strong>Critical Miss!</strong> You hurt yourself for 2 HP.</p>
+          )}
+          { result.roll === 20 && (
+            <p><strong>Critical Hit!</strong> Damage was doubled.</p>
+          )}
+          { result.hit && opponent._lastDamage !== undefined && (
+            <p>Damage Dealt: {opponent._lastDamage}</p>
+          )}
+        </>
+      )}
     </div>
   );
 };
@@ -152,7 +159,7 @@ const CombatSummary = ({
   }, [winner]);
 
   return (
-    <BorderBox  className="combat-summary-wrapper">
+    <div className="combat-summary-wrapper">
       <div className="combat-summary-row">
         <CharacterCombatBlock
           label="Hero"
@@ -177,8 +184,33 @@ const CombatSummary = ({
           setResult={ setMonsterResult }
         />
       </div>
-    </BorderBox>
+    </div>
   );
 };
 
 export default CombatSummary;
+
+
+
+
+/*
+old version of the combat summary stat table
+<div className="stat-block">
+      <table >
+        <tbody>
+          <tr>
+            <td>Hitpoints:</td>
+            <td>{ hitpoints }</td>
+          </tr>
+          <tr>
+            <td>Armor Class:</td>
+            <td>{ armorClass }</td>
+          </tr>
+          <tr>
+            <td>Number to Hit:</td>
+            <td>{ numberToHit }</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+*/
