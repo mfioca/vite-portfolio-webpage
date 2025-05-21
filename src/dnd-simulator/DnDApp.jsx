@@ -148,19 +148,19 @@ function Simulator() {
             }
           </div>
           <div className="button-slot">
-              {/* 
-                This button triggers after hero is generated,when there is no monster 
-                generated and the hero has won the battle to continue fighting
-              */}
-              { state.hero && (!state.monster || state.winner === "Hero") && (
-                <button 
-                  className="center-div center-margin button" 
-                  onClick={ handleGenerateMonster }
-                >
-                  Generate Monster
-                </button>
-              )}
-            </div>
+            {/* 
+              This button triggers after hero is generated,when there is no monster 
+              generated and the hero has won the battle to continue fighting
+            */}
+            { state.hero && (!state.monster || state.winner === "Hero") && (
+              <button 
+                className="center-div center-margin button" 
+                onClick={ handleGenerateMonster }
+              >
+                Generate Monster
+              </button>
+            )}
+          </div>
         </div>
         <div className="character-main-row">
           <CharacterSheet 

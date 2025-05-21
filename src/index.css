@@ -791,10 +791,6 @@ text-align: left;
 /***********************************************************************************/
 
 
-
-
-
-
 .max-width {
   flex-grow: 1;
   max-width: 500px;
@@ -803,15 +799,12 @@ text-align: left;
   overflow-y: auto;
 }
 
-
-
 .default-container {
   display: block;
   border: 5px solid #888;
   padding: 10px;
   margin: 10px 0;
 }
-
 
 .combat-summary-wrapper {
   display: flex;
