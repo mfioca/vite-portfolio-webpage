@@ -26,6 +26,20 @@ export const hero = {
   avatar: `DnD-avatars/hero.jpg`
 };
 
+export function getHPColorClass(currentHP, maxHP) {
+  if (!maxHP || maxHP <= 0) return ''; // avoid division by zero or bad data
+
+  const hpPercentage = (currentHP / maxHP) * 100;
+
+  if (hpPercentage >= 75) {
+    return 'result-hit'; // green
+  } else if (hpPercentage < 35) {
+    return 'result-miss'; // red
+  } else {
+    return 'result-warning'; // yellow
+  }
+}
+
 
 /***********************************************************************************/
 /*                            Stat Generation Functions                            */
@@ -98,6 +112,7 @@ export function generateCharacter(name = "Hero") {
   const strengthAdjustment = getStrengthAdjustment(strength);
   const constitutionAdjustment = getConstitutionAdjustment(constitution);
   const dexterityAdjustment = getDexterityAdjustment(dexterity);
+  const baseHP = (baseSource.combat?.hitpoints ?? 0) + constitutionAdjustment;
 
   return {
     name,
@@ -117,10 +132,11 @@ export function generateCharacter(name = "Hero") {
     },
     combat: {
       armorClass: (baseSource.combat?.armorClass ?? 10) - dexterityAdjustment,
-      hitpoints: (baseSource.combat?.hitpoints ?? 0) + constitutionAdjustment,
+      hitpoints: baseHP,
     },
     weapon: baseSource.weapon,
-    avatar: baseSource.avatar
+    avatar: baseSource.avatar,
+    maxHitpoints: baseHP
   };
 }
 

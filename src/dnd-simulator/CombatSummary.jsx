@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { rollForHit, applyDamage, applyCriticalMiss } from './functions';
+import { applyDamage, applyCriticalMiss, getHPColorClass, rollForHit } from './functions';
 import weapons from './weapons.json';
 import { BorderBox, BodyContainer }from '../SharedComponents.jsx';
 
 
-/* function created to test attack roll results
+ /*function created to test attack roll results
 function rollForHit(attacker, defender) {
   const attackAdjustment = attacker.adjustments?.hit || 0;
   const targetAC = defender.combat?.armorClass ?? 0;
@@ -20,6 +20,7 @@ function rollForHit(attacker, defender) {
   };
 }
 */
+
 
 //Handles most of combat functions and calculations standardized so hero and monster can be plugged in.  
 // reduces redundant code.
@@ -40,10 +41,14 @@ const CharacterCombatBlock = ({
   const thaco = character.baseStats?.THACO ?? 20;
   const targetAC = opponent?.combat?.armorClass ?? 0;
   const numberToHit = thaco - attackerAdjustment - targetAC;
-
+  
   const { hitpoints, armorClass } = character.combat;
   const weaponName = character.weapon;
   const weaponData = weapons.find(w => w.name === weaponName);
+
+  // added to track max hitpoints for conditional rendering of font color classnames
+  const maxHP = character.maxHitpoints || character.combat?.hitpoints;
+  const hpClass = getHPColorClass(character.combat.hitpoints, maxHP);
 
   const handleAttack = () => {
     const rollResult = rollForHit(character, opponent);
@@ -54,6 +59,13 @@ const CharacterCombatBlock = ({
         const updatedSelf = applyCriticalMiss(character);
         const updateType = label === "Hero" ? 'GENERATE_HERO' : 'GENERATE_MONSTER';
         dispatch({ type: updateType, payload: updatedSelf });
+
+        // ✅ Check for self-death
+        if (updatedSelf.combat.hitpoints <= 0) {
+          const winner = label === "Hero" ? "Monster" : "Hero";
+          dispatch({ type: 'SET_WINNER', payload: winner });
+          return; // stop further logic
+        }
       }
 
       else if (rollResult.hit) {
@@ -70,10 +82,10 @@ const CharacterCombatBlock = ({
 
     const attackType = label === "Hero" ? 'HERO_ATTACKED' : 'MONSTER_ATTACKED';
     dispatch({ type: attackType });
-  };
+  }; 
 
   return (
-    <div className= "combat-table section-height box-background-standard standard-padding-margin-center">
+    <BodyContainer className= "combat-table section-height">
       <h3>{ label }</h3>
       {weaponData && (
           <>
@@ -90,7 +102,7 @@ const CharacterCombatBlock = ({
               <td>Number to Hit</td>
             </tr>
             <tr>
-              <td>{ hitpoints }</td>
+              <td className={ hpClass }>{ hitpoints }</td>
               <td>{ armorClass }</td>
               <td>{ numberToHit }</td>
             </tr>
@@ -98,41 +110,53 @@ const CharacterCombatBlock = ({
         </table>
       </div>
       { label === "Hero" && character.weapon === null && (
-        <p className="reminder-warning"><strong>Reminder:</strong> Don't forget to equip a weapon.</p> // reminder to equip a weapon before attacking
+        <p className="reminder-warning">Reminder: Don't forget to equip a weapon.</p> // reminder to equip a weapon before attacking
       )}
+      <span className="button-slot">
       {!winner && 
         typeof currentTurn === 'string' && 
         currentTurn === label.toLowerCase() && 
         !hasAttacked && (
           <button 
             className="center-div center-margin button" 
-            onClick={handleAttack}
+            onClick={ handleAttack }
           >
             { label } Attacks
           </button>
       )}
+      </span>
       {result.roll && (
-        <>
-          <p>Attack Roll: { result.roll }</p>
-          
-          <p className={ result.hit ? 'result-hit' : 'result-miss' }>
-            
-            Result: { result.hit ? "Hit" : "Miss" }
-          </p>
-
-          {/* SECTION FOR ADDITIONAL MESSAGES FOR CRITICAL MISS / CRITICAL HIT AND TOTAL DAMAGE DEALT */}
-          { result.roll === 1 && (
-            <p><strong>Critical Miss!</strong> You hurt yourself for 2 HP.</p>
-          )}
-          { result.roll === 20 && (
-            <p><strong>Critical Hit!</strong> Damage was doubled.</p>
-          )}
-          { result.hit && opponent._lastDamage !== undefined && (
-            <p>Damage Dealt: {opponent._lastDamage}</p>
-          )}
-        </>
+        <div>
+          <table className="combat-table-centered-table">
+            <tbody>
+              <tr>
+                <td>Attack Roll</td>
+                <td>Result</td>
+                {result.hit && opponent._lastDamage !== undefined && <td>Damage Dealt</td>}
+              </tr>
+              <tr>
+                <td>{ result.roll }</td>
+                <td>
+                  <span className={ result.hit ? 'result-hit' : 'result-miss' }>
+                    { result.hit ? "Hit" : "Miss" }
+                  </span>
+                </td>
+                {result.hit && opponent._lastDamage !== undefined && (
+                  <td>{ opponent._lastDamage }</td>
+                )}
+              </tr>
+            </tbody>
+          </table>
+        </div>
       )}
-    </div>
+      {/* SECTION FOR ADDITIONAL MESSAGES FOR CRITICAL MISS / CRITICAL HIT AND TOTAL DAMAGE DEALT */}
+      { result.roll === 1 && (
+        <p className="reminder-warning result-miss">Critical Miss! You hurt yourself for 2 HP.</p>
+      )}
+      { result.roll === 20 && (
+        <p className="reminder-warning result-hit">Critical Hit! Damage was doubled.</p>
+      )}
+    </BodyContainer>
   );
 };
 

@@ -169,7 +169,7 @@ function Simulator() {
             isRealHero={ !!state.hero }
           />
           
-            <BorderBox className="section-height box-background-standard standard-padding-margin">
+            <BorderBox className="section-height box-background-standard standard-margin initiative">
             <div className="button-slot">
               { 
                 !state.winner && !state.currentTurn && state.hero && state.monster && (
@@ -200,13 +200,15 @@ function Simulator() {
           />
         </div>
       </div>
-      <div className="default-container">
+      <BorderBox >
         { state.winner && (
-          <div className="battle-result">
-            <h2>{ state.winner } wins the battle!</h2>
+          <div >
+            <h2 className={ state.winner === 'Hero' ? 'result-hit' : 'result-miss' }>
+              { state.winner } wins the battle!
+            </h2>
           </div>
         )}
-      </div>
+      </BorderBox>
       
 
       <div>

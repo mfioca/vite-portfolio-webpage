@@ -1,9 +1,11 @@
 import React from 'react';
 import weapons from './weapons.json';
 import { BorderBox } from '../SharedComponents.jsx';
+import { getHPColorClass } from './functions';
 
 const CharacterSheet = ({ character, dispatch, isRealHero }) => {
   const { name, baseStats, combat } = character;
+  const hpClass = getHPColorClass(combat.hitpoints, character.maxHitpoints);
 
   return (
     <BorderBox className="section-height box-background-standard standard-padding-margin">
@@ -34,8 +36,10 @@ const CharacterSheet = ({ character, dispatch, isRealHero }) => {
                   <tr key={ `combat-${key}` }>
                     <td>{ key.charAt(0).toUpperCase() + key.slice(1) }:</td>
                     <td>
-                      { key === "hitpoints" && value === "Dead" ? (
+                      {key === "hitpoints" && value === "Dead" ? (
                         <span>{ value }</span>
+                      ) : key === "hitpoints" ? (
+                        <span className={ hpClass }>{ value === 0 ? "Dead" : value }</span>
                       ) : (
                         value
                       )}

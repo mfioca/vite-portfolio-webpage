@@ -860,12 +860,7 @@ text-align: left;
 
 
 .initiative {
-  flex-grow: 1;
-  max-width: 400px;
-  min-width: 100px;
-  padding: 10px;
-  margin: 10px 0;
-  border: 5px solid #888;
+  text-align: center;
 }
 
 
@@ -958,6 +953,11 @@ text-align: left;
 
 .result-miss {
   color: red;
+  font-weight: bold;
+}
+
+.result-warning {
+  color: #d4aa00; /* a readable gold/yellow */
   font-weight: bold;
 }
 
