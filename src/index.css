@@ -789,22 +789,13 @@ text-align: left;
 
 .section-height {
   flex-grow: 1;
-  /*max-width: 500px;*/
-  /*min-width: 300px;*/
   height: 375px; /* or whatever feels balanced */
   overflow-y: auto;
 }
 
-.default-container {
-  display: block;
-  border: 5px solid #888;
-  padding: 10px;
-  margin: 10px 0;
-}
+
 
 .combat-summary-wrapper {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 }
 
@@ -815,16 +806,6 @@ text-align: left;
   gap: 20px;
   
 }
-
-.combat-bottom-block > div {
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-
 
 .character-layout-wrapper {
   display: flex;
@@ -862,8 +843,6 @@ text-align: left;
 .initiative {
   text-align: center;
 }
-
-
 
 .avatar-and-stats-row {
   display: flex;

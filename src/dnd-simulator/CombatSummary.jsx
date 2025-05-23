@@ -183,7 +183,7 @@ const CombatSummary = ({
   }, [winner]);
 
   return (
-    <div className="combat-summary-wrapper">
+    <div className="combat-summary-wrapper flex-column">
       <div className="combat-summary-row">
         <CharacterCombatBlock
           label="Hero"
