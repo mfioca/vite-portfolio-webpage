@@ -202,6 +202,12 @@ h2 {
   margin: var(--margin) auto;
 }
 
+.flex-row-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .button {
   padding: var(--default-spacing) 20px;
   background-color: var(--fontblue);
@@ -800,57 +806,45 @@ text-align: left;
 }
 
 .combat-summary-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  
   gap: 20px;
   
 }
 
 .character-layout-wrapper {
-  display: flex;
-  flex-direction: column;
+
   line-height: 1.0;
 }
 
 .character-top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 350px;
+  
+  gap: 20px
 }
 
 .character-main-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
   gap: 20px;
 
 }
 
 .button-slot {
-  max-width: 500px;
-  min-width: 300px;
   height: 40px; /* match your button height */
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
+  border: var(--border);
 }
 
 
 .initiative {
+  margin: auto;
   text-align: center;
 }
 
 .avatar-and-stats-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  
   gap: 30px;
-  padding: 10px;
-  margin: 10px;
+
 }
 
 .avatar-slot {
@@ -866,7 +860,6 @@ text-align: left;
 .combat-table {
   flex-grow: 1;
   display: block;
-
   max-width: 550px;
   min-width: 200px;
   height: 425px; /* match or align with .max-width from character sheets */

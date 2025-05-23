@@ -134,8 +134,8 @@ function Simulator() {
 
   return (
     <BodyContainer hasBackground = { false } >
-      <div className="character-layout-wrapper">
-        <div className="character-top-row">
+      <div className="flex-column character-layout-wrapper">
+        <div className="character-top-row flex-row-space-between">
           <div className="button-slot">
           {/*   Button to generate hero stats  */}
             { !state.hero && 
@@ -162,7 +162,7 @@ function Simulator() {
             )}
           </div>
         </div>
-        <div className="character-main-row">
+        <div className="flex-row-space-between character-main-row">
           <CharacterSheet 
             character={ state.hero || hero }
             dispatch={ dispatch }
@@ -209,10 +209,8 @@ function Simulator() {
           </div>
         )}
       </BorderBox>
-      
-
-      <div>
 {/*           COMBAT SECTION              */}
+      <div>
         <CombatSummary 
           hero={ state.hero || { combat: { hitpoints: 0, armorClass: 0 } } }
           monster={ state.monster || { combat: { hitpoints: 0, armorClass: 0 } } }
