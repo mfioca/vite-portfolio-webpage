@@ -1,5 +1,6 @@
 import React from 'react';
-import Simulator from './dnd-simulator/DnDApp'
+import Simulator from './dnd-simulator/DnDApp';
+import './dnd-simulator/dnd.css';
 import { IntroSection, DividerLine } from './SharedComponents';
 
 const DndSimulator = () => {

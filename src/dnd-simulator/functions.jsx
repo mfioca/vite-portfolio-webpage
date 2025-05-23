@@ -4,6 +4,7 @@ import weapons from './weapons.json';
 
 export const hero = {
   name: "Hero",
+  exp: 0,
   baseStats: {
     level: 1,
     strength: 0,
@@ -20,11 +21,20 @@ export const hero = {
   },
   combat: {
     armorClass: 5,
-    hitpoints: 10,
+    hitpoints: 20,
   },
   weapon: null,
   avatar: `DnD-avatars/hero.jpg`
 };
+
+export function calculateLevel(exp) {
+  if (exp < 140) return 1;
+  if (exp < 340) return 2;
+  if (exp < 640) return 3;
+  if (exp < 1040) return 4;
+  if (exp < 1540) return 5;
+  return 6; // cap or keep extending as needed
+}
 
 export function getHPColorClass(currentHP, maxHP) {
   if (!maxHP || maxHP <= 0) return ''; // avoid division by zero or bad data

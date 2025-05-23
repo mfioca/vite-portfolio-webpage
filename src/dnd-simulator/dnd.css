@@ -1,0 +1,158 @@
+.section-height {
+  flex-grow: 1;
+  height: 375px; /* or whatever feels balanced */
+  overflow-y: auto;
+}
+
+.character-layout-wrapper {
+  line-height: 1.0;
+}
+
+.button-slot {
+  height: 40px; /* match your button height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.initiative {
+  margin: auto;
+  text-align: center;
+}
+
+.avatar-slot {
+  width: 100px;
+  height: 100px;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.combat-table {
+  flex-grow: 1;
+  display: block;
+  max-width: 550px;
+  min-width: 200px;
+  height: 425px; /* match or align with .max-width from character sheets */
+  overflow-y: auto;
+}
+
+.stat-block {
+  flex-grow: 1;
+}
+
+.stat-block table {
+  text-align: left;
+}
+
+.stat-block table td:first-child {
+  text-align: left;
+  padding-right: 7px; /* or however much spacing you want */
+}
+
+.weapon-display {
+  min-height: 30px; /* reserve vertical space */
+}
+
+.character-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: var(--border);
+}
+
+.weapon-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* ✅ centers contents horizontally */
+  text-align: center;   /* ✅ centers text inside the labels or headers */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  padding: 5px 10px;
+}
+
+.weapon-section select {
+  width: 80%;
+  max-width: 300px;
+}
+
+.combat-table-centered-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.combat-table-centered-table td {
+  padding: 6px 12px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.combat-table-centered-table tr:first-child td {
+  font-weight: bold;
+  border-bottom: var(--tableborder);
+}
+
+
+.reminder-warning {
+  background-color: var(--lightbackgroundcolor);
+  color: var(--fontcolor);
+  border-left: 4px solid var(--fontblue);
+  border-right: 4px solid var(--fontblue);
+  padding: 8px 12px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+  border-radius: var(--borderradius);
+  box-shadow: var(--thinshadow);
+}
+
+.result-hit {
+  color: green;
+  font-weight: bold;
+}
+
+.result-miss {
+  color: red;
+  font-weight: bold;
+}
+
+.result-warning {
+  color: #d4aa00; /* a readable gold/yellow */
+  font-weight: bold;
+}
+
+
+
+
+
+
+@media (max-width: 900px) {
+  .character-main-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .character-main-row > .initiative {
+    order: 3; /* Push initiative below both character sheets */
+  }
+
+  .character-main-row > .max-width {
+    order: 1;
+  }
+  .character-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .avatar-slot {
+    width: 120px;
+    height: 120px;
+  }
+}
+

@@ -6,6 +6,7 @@ import Emberhold from './minecraft_project/emberhold';
 import RandomPlaces from './minecraft_project/random_places'
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import './minecraft_project/minecraft.css';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 
 

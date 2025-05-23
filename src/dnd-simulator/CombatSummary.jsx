@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
-import { applyDamage, applyCriticalMiss, getHPColorClass, rollForHit } from './functions';
+import { applyDamage, 
+  applyCriticalMiss, 
+  getHPColorClass, 
+  rollForHit,
+} from './functions';
 import weapons from './weapons.json';
 import { BorderBox, BodyContainer }from '../SharedComponents.jsx';
 
@@ -60,12 +64,19 @@ const CharacterCombatBlock = ({
         const updateType = label === "Hero" ? 'GENERATE_HERO' : 'GENERATE_MONSTER';
         dispatch({ type: updateType, payload: updatedSelf });
 
-        // ✅ Check for self-death
+        // Check if self-death occurred
         if (updatedSelf.combat.hitpoints <= 0) {
-          const winner = label === "Hero" ? "Monster" : "Hero";
-          dispatch({ type: 'SET_WINNER', payload: winner });
-          return; // stop further logic
+          if (label === "Hero") {
+            dispatch({ type: 'APPLY_EXP_GAIN', payload: opponent.exp });
+          }
+          dispatch({ type: 'SET_WINNER', payload: label });
+          return;
         }
+
+        // Move to next turn if still alive
+        const attackType = label === "Hero" ? 'HERO_ATTACKED' : 'MONSTER_ATTACKED';
+        dispatch({ type: attackType });
+        return;
       }
 
       else if (rollResult.hit) {
@@ -75,8 +86,11 @@ const CharacterCombatBlock = ({
         dispatch({ type: updateType, payload: updatedTarget });
 
         if (updatedTarget.combat.hitpoints <= 0) {
+          if (label === "Hero") {
+            dispatch({ type: 'APPLY_EXP_GAIN', payload: opponent.exp });
+          }
           dispatch({ type: 'SET_WINNER', payload: label });
-          return; // Prevent round from continuing
+          return;
         }
       }
 
@@ -183,8 +197,8 @@ const CombatSummary = ({
   }, [winner]);
 
   return (
-    <div className="combat-summary-wrapper flex-column">
-      <div className="combat-summary-row flex-row-space-between  ">
+    <div className="flex-column gap-20">
+      <div className="flex-row-space-between gap-20">
         <CharacterCombatBlock
           label="Hero"
           character={ hero }

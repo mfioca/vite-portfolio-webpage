@@ -3,7 +3,7 @@ import weapons from './weapons.json';
 import monsters from './monsters.json';
 import CharacterSheet from './statsheet';
 import CombatSummary from './CombatSummary';
-import { hero, generateCharacter, rollInitiative } from './functions';
+import { hero, generateCharacter, rollInitiative, calculateLevel } from './functions';
 import { BodyContainer, BorderBox } from '../SharedComponents.jsx';
 
 
@@ -23,7 +23,17 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case 'GENERATE_HERO':
-      return { ...state, hero: action.payload };
+      return { 
+        ...state, 
+        hero: {
+          ...action.payload,
+          exp: state.hero?.exp || 0,
+          baseStats: {
+            ...action.payload.baseStats,
+            level: state.hero?.baseStats?.level || 1
+          }
+        }
+      };
 
     case 'GENERATE_MONSTER':
       return { ...state, monster: action.payload };
@@ -87,6 +97,25 @@ function reducer(state, action) {
         winner: action.payload,
         heroWins: action.payload === 'Hero' ? state.heroWins + 1 : state.heroWins
       };
+
+      case 'APPLY_EXP_GAIN': {
+        if (!state.hero || !action.payload) return state;
+
+        const newExp = state.hero.exp + action.payload;
+        const newLevel = calculateLevel(newExp);
+
+        return {
+          ...state,
+          hero: {
+            ...state.hero,
+            exp: newExp,
+            baseStats: {
+              ...state.hero.baseStats,
+              level: newLevel
+            }
+          }
+        };
+      }
     
     case 'RESET_FOR_NEW_MONSTER':
       return {
@@ -135,7 +164,7 @@ function Simulator() {
   return (
     <BodyContainer hasBackground = { false } >
       <div className="flex-column character-layout-wrapper">
-        <div className="character-top-row flex-row-space-between">
+        <div className="flex-row-space-between gap-20">
           <div className="button-slot">
           {/*   Button to generate hero stats  */}
             { !state.hero && 
@@ -162,7 +191,7 @@ function Simulator() {
             )}
           </div>
         </div>
-        <div className="flex-row-space-between character-main-row">
+        <div className="flex-row-space-between gap-20">
           <CharacterSheet 
             character={ state.hero || hero }
             dispatch={ dispatch }

@@ -56,6 +56,10 @@ font-family: 'Courier New';
 font-family: 'Roboto', sans-serif; 
 */
 
+.gap-20 {
+  gap: var(--gap20);
+}
+
 .standard-padding {
   padding: var(--padding);
 }
@@ -315,13 +319,16 @@ button:hover {
 
 .navbar-dropdown-list {
   position: absolute;
+  
+  list-style: none;
+  text-align: left;
   line-height: 30px;
   top: 100%;
   left: 50%;
-  transform: translateX(-60%);
+  transform: translateX(-70%);
   white-space: normal;
   background-color: var(--navcolor);
-  padding: 10px;
+  padding: var(--padding);
   z-index: 999;
   box-shadow: var(--boxshadow);
   min-width: 200px;
@@ -677,309 +684,5 @@ button:hover {
   }
 }
 
-/***********************************************************************************/
-/*                         Minecraft Projects Section                              */
-/***********************************************************************************/
 
-.minecraft-body  {
-  font-family: 'Courier New'; /* A clean sans-serif font */
-  justify-content: center;
-  margin: var(--margin);
-  padding: var(--padding);
-  min-height: 100vh;
-}
 
-.toggle-gallery-title {
-  cursor: pointer; /* Makes the cursor act like a button */
-  user-select: none; /* Prevents accidental text selection */
-  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
-}
-
-.non-collapsable-title {
-  user-select: none; /* Prevents accidental text selection */
-  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
-}
-
-.toggle-gallery-title:hover {
-    text-decoration: underline; /* Adds an underline on hover */
-    color: var(--buttonbluehover); /* Optional: Change color slightly on hover */
-}
-
-.custom-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: 150px; /* Controls row height */
-  gap: 15px;
-  padding: 10px;
-}
-
-.custom-gallery-item {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  border: var(--border);
-  border-radius: var(--borderradius);
-  box-shadow: var(--boxshadow);
-}
-
-.custom-gallery-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1280 / 680; /* Forces 1.88:1 aspect ratio */
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
-}
-
-.custom-gallery-image:hover {
-    transform: scale(1.05);
-}
-
-.placeholder-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px; /* Adjust as needed */
-  max-width: 1000px;
-  border: var(--border);
-  border-radius: var(--borderradius);
-  background-color: var(--lightgreyblue);
-  text-align: center;
-  box-shadow: var(--boxshadow);
-}
-
-.placeholder-text {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--fontcolor);
-  opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-  .placeholder-container {
-    padding: 5px; /* Adds space on left/right */
-    margin: 5px auto;
-    width: 90%;
-  }
-}
-/*dashboard hub */
-
-
-
-/* css for possible youtube video imbedding on my about page.
-.video-container {
-  width: 400px; 
-  height: 225px; 
-  margin: 20px auto; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0; 
-text-align: left;
-}
-
-.video-container iframe {
-  width: 100%; /* Keep within container 
-  height: 100%;
-  border-radius: 8px; 
-}
-
-*/
-
-
-
-/***********************************************************************************/
-/*                              Combat Simulator                                   */
-/***********************************************************************************/
-
-
-.section-height {
-  flex-grow: 1;
-  height: 375px; /* or whatever feels balanced */
-  overflow-y: auto;
-}
-
-
-
-.combat-summary-wrapper {
-  gap: 20px;
-}
-
-.combat-summary-row {
-  
-  gap: 20px;
-  
-}
-
-.character-layout-wrapper {
-
-  line-height: 1.0;
-}
-
-.character-top-row {
-  
-  gap: 20px
-}
-
-.character-main-row {
-  gap: 20px;
-
-}
-
-.button-slot {
-  height: 40px; /* match your button height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  border: var(--border);
-}
-
-
-.initiative {
-  margin: auto;
-  text-align: center;
-}
-
-.avatar-and-stats-row {
-  
-  gap: 30px;
-
-}
-
-.avatar-slot {
-  width: 100px;
-  height: 100px;
-  background-color: #444;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.combat-table {
-  flex-grow: 1;
-  display: block;
-  max-width: 550px;
-  min-width: 200px;
-  height: 425px; /* match or align with .max-width from character sheets */
-  overflow-y: auto;
-}
-
-.stat-block {
-  flex-grow: 1;
-}
-
-.stat-block table {
-  text-align: left;
-}
-
-.stat-block table td:first-child {
-  text-align: left;
-  padding-right: 7px; /* or however much spacing you want */
-}
-
-.weapon-display {
-  min-height: 30px; /* reserve vertical space */
-}
-
-.character-avatar {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
-
-.weapon-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;  /* ✅ centers contents horizontally */
-  text-align: center;   /* ✅ centers text inside the labels or headers */
-  word-break: break-word;
-  overflow-wrap: anywhere;
-  padding: 5px 10px;
-}
-
-.weapon-section select {
-  width: 80%;
-  max-width: 300px;
-}
-
-
-.reminder-warning {
-  background-color: var(--lightbackgroundcolor);
-  color: var(--fontcolor);
-  border-left: 4px solid var(--fontblue);
-  border-right: 4px solid var(--fontblue);
-  padding: 8px 12px;
-  font-weight: bold;
-  text-align: center;
-  margin: 10px 0;
-  border-radius: var(--borderradius);
-  box-shadow: var(--thinshadow);
-}
-
-.result-hit {
-  color: green;
-  font-weight: bold;
-}
-
-.result-miss {
-  color: red;
-  font-weight: bold;
-}
-
-.result-warning {
-  color: #d4aa00; /* a readable gold/yellow */
-  font-weight: bold;
-}
-
-
-
-
-
-
-@media (max-width: 900px) {
-  .character-main-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .character-main-row > .initiative {
-    order: 3; /* Push initiative below both character sheets */
-  }
-
-  .character-main-row > .max-width {
-    order: 1;
-  }
-  .character-avatar {
-    width: 120px;
-    height: 120px;
-  }
-
-  .avatar-slot {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-
-
-
-.combat-table-centered-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.combat-table-centered-table td {
-  padding: 6px 12px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.combat-table-centered-table tr:first-child td {
-  font-weight: bold;
-  border-bottom: var(--tableborder);
-}

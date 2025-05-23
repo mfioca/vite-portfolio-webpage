@@ -1,0 +1,104 @@
+.minecraft-body  {
+  font-family: 'Courier New'; /* A clean sans-serif font */
+  justify-content: center;
+  margin: var(--margin);
+  padding: var(--padding);
+  min-height: 100vh;
+}
+
+.toggle-gallery-title {
+  cursor: pointer; /* Makes the cursor act like a button */
+  user-select: none; /* Prevents accidental text selection */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+.non-collapsable-title {
+  user-select: none; /* Prevents accidental text selection */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+.toggle-gallery-title:hover {
+    text-decoration: underline; /* Adds an underline on hover */
+    color: var(--buttonbluehover); /* Optional: Change color slightly on hover */
+}
+
+.custom-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 150px; /* Controls row height */
+  gap: 15px;
+  padding: 10px;
+}
+
+.custom-gallery-item {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border: var(--border);
+  border-radius: var(--borderradius);
+  box-shadow: var(--boxshadow);
+}
+
+.custom-gallery-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1280 / 680; /* Forces 1.88:1 aspect ratio */
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.custom-gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.placeholder-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Adjust as needed */
+  max-width: 1000px;
+  border: var(--border);
+  border-radius: var(--borderradius);
+  background-color: var(--lightgreyblue);
+  text-align: center;
+  box-shadow: var(--boxshadow);
+}
+
+.placeholder-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--fontcolor);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .placeholder-container {
+    padding: 5px; /* Adds space on left/right */
+    margin: 5px auto;
+    width: 90%;
+  }
+}
+/*dashboard hub */
+
+
+
+/* css for possible youtube video imbedding on my about page.
+.video-container {
+  width: 400px; 
+  height: 225px; 
+  margin: 20px auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; 
+text-align: left;
+}
+
+.video-container iframe {
+  width: 100%; /* Keep within container 
+  height: 100%;
+  border-radius: 8px; 
+}
+
+*/
