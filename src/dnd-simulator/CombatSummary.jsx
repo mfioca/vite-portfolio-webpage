@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { applyDamage, 
   applyCriticalMiss, 
   getHPColorClass, 
-  rollForHit,
+  rollForHit
+  
 } from './functions';
 import weapons from './weapons.json';
 import { BorderBox, BodyContainer }from '../SharedComponents.jsx';
@@ -15,7 +16,7 @@ function rollForHit(attacker, defender) {
   const THAC0 = attacker.baseStats?.THACO ?? 20;
 
   const numberToHit = THAC0 - attackAdjustment - targetAC;
-  const roll = 20; // hardcoded for critical miss testing
+  const roll = 19; // hardcoded for critical miss testing
 
   return {
     hit: roll >= numberToHit,
@@ -23,7 +24,8 @@ function rollForHit(attacker, defender) {
     target: numberToHit,
   };
 }
-*/
+  */
+
 
 
 //Handles most of combat functions and calculations standardized so hero and monster can be plugged in.  
@@ -66,10 +68,8 @@ const CharacterCombatBlock = ({
 
         // Check if self-death occurred
         if (updatedSelf.combat.hitpoints <= 0) {
-          if (label === "Hero") {
-            dispatch({ type: 'APPLY_EXP_GAIN', payload: opponent.exp });
-          }
-          dispatch({ type: 'SET_WINNER', payload: label });
+          const winnerLabel = label === "Hero" ? "Monster" : "Hero";
+          dispatch({ type: 'SET_WINNER', payload: winnerLabel });
           return;
         }
 
