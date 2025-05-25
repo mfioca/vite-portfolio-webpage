@@ -16,10 +16,10 @@ const CharacterSheet = ({ character, dispatch, isRealHero }) => {
             <img
               src={
                 character.avatar
-                  ? `${import.meta.env.BASE_URL}${character.avatar}`
-                  : `${import.meta.env.BASE_URL}DnD-avatars/monster-placeholder.png`
+                  ? `${ import.meta.env.BASE_URL }${ character.avatar }`
+                  : `${ import.meta.env.BASE_URL }DnD-avatars/monster-placeholder.png`
               }
-              alt={`${character.name} Avatar`}
+              alt={`${ character.name } Avatar`}
               className="character-avatar"
             />
           </div>

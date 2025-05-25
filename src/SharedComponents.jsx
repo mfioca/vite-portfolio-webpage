@@ -18,10 +18,6 @@ export const DividerLine = ({ width = '80%' }) => {
     return <hr className="divider-line" style={{ width }} />;
 };
 
-/***********************************************************************************/
-/*                              TvMaze Pagge                                       */
-/***********************************************************************************/
-
 export const BodyContainer = ({ children, className = '', hasBackground = true }) => {
     const backgroundClass = hasBackground ? 'box-background-standard' : 'box-Nobackground-standard';
     return (
@@ -33,7 +29,7 @@ export const BodyContainer = ({ children, className = '', hasBackground = true }
 
 export const BorderBox = ({ children, className = '' }) => {
     return (
-        <div className={`box-style-standard standard-padding ${ className }` }>
+        <div className={ `box-style-standard standard-padding ${ className }` }>
             { children }
         </div>
     );
