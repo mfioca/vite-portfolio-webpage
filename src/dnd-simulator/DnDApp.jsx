@@ -249,16 +249,10 @@ function Simulator() {
           dispatch={ dispatch }
           winner={ state.winner }
         />
-      </div>
-      
-
-      
+      </div>  
 {/*           DEBUG SECTION              */}
-
-
       <div>
         <h1><p>debug section</p></h1>
-
         {state.hero && (
           <div>
             <h4>Debug: Hero Data</h4>
@@ -277,9 +271,7 @@ function Simulator() {
           </div>
         )}
       </div>
-      
   </BodyContainer>
-    
   );
 }
 

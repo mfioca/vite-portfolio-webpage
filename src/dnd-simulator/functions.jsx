@@ -20,7 +20,7 @@ export const hero = {
     damage: 0,
   },
   combat: {
-    armorClass: 5,
+    armorClass: 7,
     hitpoints: 20,
   },
   weapon: null,

@@ -18,9 +18,9 @@
     },
     "combat": { 
         "armorClass": 9, 
-        "hitpoints": 7 
+        "hitpoints": 12 
     },
-    "maxHitpoints": 7,
+    "maxHitpoints": 12,
     "weapon": "Quarterstaff",
     "avatar": "DnD-avatars/goblin.png"
   },
@@ -42,9 +42,9 @@
     },
     "combat": { 
         "armorClass": 9, 
-        "hitpoints": 4 
+        "hitpoints": 9 
     },
-    "maxHitpoints": 4,
+    "maxHitpoints": 9,
     "weapon": "Club",
     "avatar": "DnD-avatars/kobold.png"
   },
@@ -67,9 +67,9 @@
     },
     "combat": { 
         "armorClass": 10, 
-        "hitpoints": 4 
+        "hitpoints": 9 
     },
-    "maxHitpoints": 4,
+    "maxHitpoints": 9,
     "weapon": "Dagger",
     "avatar": "DnD-avatars/rat.png"
   },
@@ -92,9 +92,9 @@
     },
     "combat": { 
         "armorClass": 11, 
-        "hitpoints": 5 
+        "hitpoints": 10 
     },
-    "maxHitpoints": 5,
+    "maxHitpoints": 10,
     "weapon": "Short Sword",
     "avatar": "DnD-avatars/skeleton.jpg"
   },
@@ -116,10 +116,10 @@
         "damage": -1 
     },
     "combat": { 
-        "armorClass": 10, 
-        "hitpoints": 5 
+        "armorClass": 9, 
+        "hitpoints": 10 
     },
-    "maxHitpoints": 5,
+    "maxHitpoints": 10,
     "weapon": "Morning Star",
     "avatar": "DnD-avatars/bandit.png"
   },
@@ -141,10 +141,10 @@
         "damage": 0 
     },
     "combat": { 
-        "armorClass": 9, 
-        "hitpoints": 9 
+        "armorClass": 7, 
+        "hitpoints": 14 
     },
-    "maxHitpoints": 9,
+    "maxHitpoints": 14,
     "weapon": "Hand Axe",
     "avatar": "DnD-avatars/orc.png"
   },
@@ -166,10 +166,10 @@
         "damage": 0 
     },
     "combat": { 
-        "armorClass": 10, 
-        "hitpoints": 10 
+        "armorClass": 8, 
+        "hitpoints": 16
     },
-    "maxHitpoints": 10,
+    "maxHitpoints": 16,
     "weapon": "Scimitar",
     "avatar": "DnD-avatars/gnoll.png"
   },
@@ -191,10 +191,10 @@
         "damage": 2 
     },
     "combat": { 
-        "armorClass": 9, 
-        "hitpoints": 10 
+        "armorClass": 7, 
+        "hitpoints": 18
     },
-    "maxHitpoints": 10,
+    "maxHitpoints": 18,
     "weapon": "Warhammer",
     "avatar": "DnD-avatars/stonegolem.png"
   },
@@ -216,10 +216,10 @@
         "damage": -2 
     },
     "combat": { 
-        "armorClass": 10, 
-        "hitpoints": 10 
+        "armorClass": 8, 
+        "hitpoints": 13 
     },
-    "maxHitpoints": 10,
+    "maxHitpoints": 13,
     "weapon": "Club",
     "avatar": "DnD-avatars/wolf.png"
   },
@@ -241,10 +241,10 @@
         "damage": 0 
     },
     "combat": { 
-        "armorClass": 11, 
-        "hitpoints": 12 
+        "armorClass": 9, 
+        "hitpoints": 17 
     },
-    "maxHitpoints": 12,
+    "maxHitpoints": 17,
     "weapon": "Battle Axe",
     "avatar": "DnD-avatars/hobgoblin.png"
   }
