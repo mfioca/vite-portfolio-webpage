@@ -118,7 +118,7 @@ const Graph3 = () => {
 
     return (
         <BorderBox className="chart-container">
-            <h2 className="shadow">Application Usage Over Time by Month</h2>
+            <h2 className="shadow">Analytics Activity by Year vs Total Work</h2>
             <div className="chart3-data-box">
                 { textBoxContent }
             </div>
