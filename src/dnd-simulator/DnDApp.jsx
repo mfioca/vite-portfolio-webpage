@@ -3,7 +3,7 @@ import weapons from './weapons.json';
 import monsters from './monsters.json';
 import CharacterSheet from './statsheet';
 import CombatSummary from './CombatSummary';
-import { hero, generateCharacter, rollInitiative, calculateLevel } from './functions';
+import { hero, generateCharacter, rollInitiative, calculateLevel, AvatarTest } from './functions';
 import { BodyContainer, BorderBox } from '../SharedComponents.jsx';
 
 
@@ -30,7 +30,7 @@ function reducer(state, action) {
           exp: state.hero?.exp || 0,
           baseStats: {
             ...action.payload.baseStats,
-            level: state.hero?.baseStats?.level || 1
+            level: action.payload.baseStats?.level || 1
           }
         }
       };
@@ -270,6 +270,7 @@ function Simulator() {
             <pre>{ JSON.stringify(state.monster, null, 2) }</pre>
           </div>
         )}
+        <AvatarTest />
       </div>
   </BodyContainer>
   );

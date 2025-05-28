@@ -247,5 +247,130 @@
     "maxHitpoints": 17,
     "weapon": "Battle Axe",
     "avatar": "DnD-avatars/hobgoblin.png"
+  },
+  {
+    "name": "Bugbear",
+    "exp": 75,
+    "baseStats": {
+      "level": 3,
+      "strength": 16,
+      "constitution": 17,
+      "dexterity": 14,
+      "THACO": 18
+    },
+    "adjustments": {
+      "strength": 0,
+      "constitution": 3,
+      "dexterity": 0,
+      "hit": 0,
+      "damage": 0
+    },
+    "combat": {
+      "armorClass": 6,
+      "hitpoints": 21
+    },
+    "maxHitpoints": 21,
+    "weapon": "Two-Handed Sword",
+    "avatar": "DnD-avatars/bugbear.png"
+  },
+  {
+    "name": "Wight",
+    "exp": 75,
+    "baseStats": {
+      "level": 3,
+      "strength": 7,
+      "constitution": 9,
+      "dexterity": 13,
+      "THACO": 18
+    },
+    "adjustments": {
+      "strength": -1,
+      "constitution": 0,
+      "dexterity": 0,
+      "hit": -1,
+      "damage": -1
+    },
+    "combat": {
+      "armorClass": 7,
+      "hitpoints": 22
+    },
+    "maxHitpoints": 22,
+    "weapon": "Morning Star",
+    "avatar": "DnD-avatars/wight.png"
+  },
+  {
+    "name": "Beholder",
+    "exp": 75,
+    "baseStats": {
+      "level": 3,
+      "strength": 4,
+      "constitution": 8,
+      "dexterity": 16,
+      "THACO": 18
+    },
+    "adjustments": {
+      "strength": -2,
+      "constitution": 0,
+      "dexterity": 2,
+      "hit": -2,
+      "damage": -2
+    },
+    "combat": {
+      "armorClass": 6,
+      "hitpoints": 20
+    },
+    "maxHitpoints": 20,
+    "weapon": "Warhammer",
+    "avatar": "DnD-avatars/beholder.png"
+  },
+  {
+    "name": "Troll",
+    "exp": 75,
+    "baseStats": {
+      "level": 3,
+      "strength": 19,
+      "constitution": 15,
+      "dexterity": 5,
+      "THACO": 18
+    },
+    "adjustments": {
+      "strength": 3,
+      "constitution": 1,
+      "dexterity": -2,
+      "hit": 3,
+      "damage": 3
+    },
+    "combat": {
+      "armorClass": 6,
+      "hitpoints": 22
+    },
+    "maxHitpoints": 22,
+    "weapon": "Glaive",
+    "avatar": "DnD-avatars/troll.png"
+  },
+  {
+    "name": "Dark Elf",
+    "exp": 75,
+    "baseStats": {
+      "level": 3,
+      "strength": 11,
+      "constitution": 8,
+      "dexterity": 17,
+      "THACO": 18
+    },
+    "adjustments": {
+      "strength": 0,
+      "constitution": 0,
+      "dexterity": 3,
+      "hit": 0,
+      "damage": 0
+    },
+    "combat": {
+      "armorClass": 6,
+      "hitpoints": 20
+    },
+    "maxHitpoints": 20,
+    "weapon": "Long Sword",
+    "avatar": "DnD-avatars/darkelf.png"
   }
 ]

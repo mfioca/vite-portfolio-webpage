@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import weapons from './weapons.json';
+import monsters from './monsters.json';
 
 
 export const hero = {
@@ -48,6 +49,24 @@ export function getHPColorClass(currentHP, maxHP) {
   } else {
     return 'result-warning'; // yellow
   }
+}
+
+
+export function AvatarTest() {
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+      {monsters.map((m, i) => (
+        <div key={i} style={{ textAlign: 'center' }}>
+          <img
+            src={m.avatar}
+            alt={m.name}
+            style={{ width: '100px', height: '100px', objectFit: 'cover', border: '1px solid #ccc' }}
+          />
+          <div>{m.name}</div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 
@@ -123,6 +142,7 @@ export function generateCharacter(name = "Hero") {
   const constitutionAdjustment = getConstitutionAdjustment(constitution);
   const dexterityAdjustment = getDexterityAdjustment(dexterity);
   const baseHP = (baseSource.combat?.hitpoints ?? 0) + constitutionAdjustment;
+  
 
   return {
     name,
@@ -146,7 +166,7 @@ export function generateCharacter(name = "Hero") {
     },
     weapon: baseSource.weapon,
     avatar: baseSource.avatar,
-    maxHitpoints: baseHP
+    maxHitpoints: baseHP,
   };
 }
 
