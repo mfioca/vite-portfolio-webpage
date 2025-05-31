@@ -1,22 +1,21 @@
 import { useState, useEffect } from 'react';
 import { applyDamage, 
   applyCriticalMiss, 
-  getHPColorClass, 
-  rollForHit
+  getHPColorClass
   
 } from './functions';
 import weapons from './weapons.json';
 import { BorderBox, BodyContainer }from '../SharedComponents.jsx';
 
 
- /*function created to test attack roll results
+ //function created to test attack roll results
 function rollForHit(attacker, defender) {
   const attackAdjustment = attacker.adjustments?.hit || 0;
   const targetAC = defender.combat?.armorClass ?? 0;
   const THAC0 = attacker.baseStats?.THACO ?? 20;
 
   const numberToHit = THAC0 - attackAdjustment - targetAC;
-  const roll = 19; // hardcoded for critical miss testing
+  const roll = 20; // hardcoded for critical miss testing
 
   return {
     hit: roll >= numberToHit,
@@ -24,7 +23,7 @@ function rollForHit(attacker, defender) {
     target: numberToHit,
   };
 }
-  */
+  
 
 
 
@@ -99,7 +98,7 @@ const CharacterCombatBlock = ({
   }; 
 
   return (
-    <BodyContainer className= "combat-table section-height">
+    <BodyContainer className= "combat-height">
       <h3>{ label }</h3>
       {weaponData && (
           <>
@@ -151,7 +150,7 @@ const CharacterCombatBlock = ({
               <tr>
                 <td>{ result.roll }</td>
                 <td>
-                  <span className={ result.hit ? 'result-hit' : 'result-miss' }>
+                  <span className={ result.hit ? 'result-good' : 'result-bad' }>
                     { result.hit ? "Hit" : "Miss" }
                   </span>
                 </td>
@@ -165,10 +164,10 @@ const CharacterCombatBlock = ({
       )}
       {/* SECTION FOR ADDITIONAL MESSAGES FOR CRITICAL MISS / CRITICAL HIT AND TOTAL DAMAGE DEALT */}
       { result.roll === 1 && (
-        <p className="reminder-warning result-miss">Critical Miss! You hurt yourself for 2 HP.</p>
+        <p className="reminder-warning result-bad">Critical Miss! You hurt yourself for 2 HP.</p>
       )}
       { result.roll === 20 && (
-        <p className="reminder-warning result-hit">Critical Hit! Damage was doubled.</p>
+        <p className="reminder-warning result-good">Critical Hit! Damage was doubled.</p>
       )}
     </BodyContainer>
   );

@@ -4,6 +4,20 @@
   overflow-y: auto;
 }
 
+.combat-height {
+  flex-grow: 1;
+  height: 375px; /* or whatever feels balanced */
+  max-width: 550px;
+  min-width: 200px;
+}
+
+.battle-winner {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* optional: centers horizontally too */
+}
+
 .character-layout-wrapper {
   line-height: 1.0;
 }
@@ -31,12 +45,18 @@
   flex-shrink: 0;
 }
 
-.combat-table {
+.combat-table-original {
   flex-grow: 1;
   display: block;
   max-width: 550px;
   min-width: 200px;
-  height: 425px; /* match or align with .max-width from character sheets */
+  height: 375px; /* match or align with .max-width from character sheets */
+  overflow-y: auto;
+}
+
+.combat-table {
+  display: block;
+   /* match or align with .max-width from character sheets */
   overflow-y: auto;
 }
 
@@ -112,12 +132,12 @@
   box-shadow: var(--thinshadow);
 }
 
-.result-hit {
+.result-good {
   color: green;
   font-weight: bold;
 }
 
-.result-miss {
+.result-bad {
   color: red;
   font-weight: bold;
 }
@@ -127,7 +147,22 @@
   font-weight: bold;
 }
 
+.debug-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
 
+.debug-box {
+  flex: 1 1 45%;
+  min-width: 300px;
+  background-color: #fff;
+  border: var(--border);
+  border-radius: var(--borderradius);
+  padding: 10px;
+  box-shadow: var(--thinshadow);
+}
 
 
 

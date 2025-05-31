@@ -43,9 +43,9 @@ export function getHPColorClass(currentHP, maxHP) {
   const hpPercentage = (currentHP / maxHP) * 100;
 
   if (hpPercentage >= 75) {
-    return 'result-hit'; // green
+    return 'result-good'; // green
   } else if (hpPercentage < 35) {
-    return 'result-miss'; // red
+    return 'result-bad'; // red
   } else {
     return 'result-warning'; // yellow
   }

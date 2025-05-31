@@ -136,6 +136,7 @@ function reducer(state, action) {
 
 function Simulator() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const DEBUG_VISIBLE = true; // toggle this to false to hide the debug section
 
   const handleGenerateHero = () => {
     const newHero = generateCharacter("Hero");
@@ -166,6 +167,7 @@ function Simulator() {
       <div className="flex-column character-layout-wrapper">
         <div className="flex-row-space-between gap-20">
           <div className="button-slot">
+{/* ------------------------------GENERATE HERO/MONSTER------------------------------*/}
           {/*   Button to generate hero stats  */}
             { !state.hero && 
               <button 
@@ -191,13 +193,14 @@ function Simulator() {
             )}
           </div>
         </div>
+{/* ------------------------------HERO CHARACTER SHEET------------------------------*/}
         <div className="flex-row-space-between gap-20">
           <CharacterSheet 
             character={ state.hero || hero }
             dispatch={ dispatch }
             isRealHero={ !!state.hero }
           />
-          
+{/* ------------------------------INITIATIVE SECTION------------------------------*/}
             <BorderBox className="section-height box-background-standard standard-margin initiative">
             <div className="button-slot">
               { 
@@ -218,6 +221,7 @@ function Simulator() {
             <p>Current Turn: { state.currentTurn ? (state.currentTurn === 'hero' ? 'Hero' : 'Monster') : '' }</p>
             <p>Hero Win streak: { state.heroWins }</p>
           </BorderBox>
+{/* ------------------------------MONSTER CHARACTER SHEET------------------------------*/}
           <CharacterSheet character={state.monster || 
             { 
               name: 'Monster', baseStats: { strength: 0, constitution: 0, dexterity: 0, THACO: 0 }, 
@@ -231,14 +235,14 @@ function Simulator() {
       </div>
       <BorderBox >
         { state.winner && (
-          <div >
-            <h2 className={ state.winner === 'Hero' ? 'result-hit' : 'result-miss' }>
+          <div className="battle-winner">
+            <h2 className={ state.winner === 'Hero' ? 'result-good' : 'result-bad' }>
               { state.winner } wins the battle!
             </h2>
           </div>
         )}
       </BorderBox>
-{/*           COMBAT SECTION              */}
+{/* ------------------------------COMBAT SECTION------------------------------*/}
       <div>
         <CombatSummary 
           hero={ state.hero || { combat: { hitpoints: 0, armorClass: 0 } } }
@@ -250,57 +254,34 @@ function Simulator() {
           winner={ state.winner }
         />
       </div>  
-{/*           DEBUG SECTION              */}
-      <div>
-        <h1><p>debug section</p></h1>
-        {state.hero && (
-          <div>
-            <h4>Debug: Hero Data</h4>
-            <pre>
-              {JSON.stringify({
-                ...state.hero,
-                weaponStats: weapons.find(w => w.name === state.hero?.weapon)
-              }, null, 2)}
-            </pre>
+{/* ------------------------------DEBUG SECTION------------------------------*/}
+      {DEBUG_VISIBLE && (
+        <div className="debug-section">
+          <h1><p>debug section</p></h1>
+          <div className="debug-row">
+            {state.hero && (
+              <div className="debug-box">
+                <h4>Debug: Hero Data</h4>
+                <pre>
+                  {JSON.stringify({
+                    ...state.hero,
+                    weaponStats: weapons.find(w => w.name === state.hero?.weapon)
+                  }, null, 2)}
+                </pre>
+              </div>
+            )}
+            {state.monster && (
+              <div className="debug-box">
+                <h4>Debug: Monster Data</h4>
+                <pre>{ JSON.stringify(state.monster, null, 2) }</pre>
+              </div>
+            )}
           </div>
-        )}
-        {state.monster && (
-          <div>
-            <h4>Debug: Monster Data</h4>
-            <pre>{ JSON.stringify(state.monster, null, 2) }</pre>
-          </div>
-        )}
-        <AvatarTest />
-      </div>
+          <AvatarTest />
+        </div>
+      )}
   </BodyContainer>
   );
 }
 
 export default Simulator;
-
-
-
-/*
-
-      <div>
-        <h1><p>debug section</p></h1>
-
-        {state.hero && (
-          <div>
-            <h4>Debug: Hero Data</h4>
-            <pre>
-              {JSON.stringify({
-                ...state.hero,
-                weaponStats: weapons.find(w => w.name === state.hero?.weapon)
-              }, null, 2)}
-            </pre>
-          </div>
-        )}
-        {state.monster && (
-          <div>
-            <h4>Debug: Monster Data</h4>
-            <pre>{ JSON.stringify(state.monster, null, 2) }</pre>
-          </div>
-        )}
-      </div>
-*/
