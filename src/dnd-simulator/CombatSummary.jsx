@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { applyDamage, 
   applyCriticalMiss, 
-  getHPColorClass
+  getHPColorClass,
+  rollForHit
   
 } from './functions';
 import weapons from './weapons.json';
 import { BorderBox, BodyContainer }from '../SharedComponents.jsx';
 
 
- //function created to test attack roll results
+ /*function created to test attack roll results
 function rollForHit(attacker, defender) {
   const attackAdjustment = attacker.adjustments?.hit || 0;
   const targetAC = defender.combat?.armorClass ?? 0;
@@ -23,6 +24,7 @@ function rollForHit(attacker, defender) {
     target: numberToHit,
   };
 }
+  */
   
 
 
