@@ -58,11 +58,11 @@ export function AvatarTest() {
       {monsters.map((m, i) => (
         <div key={i} style={{ textAlign: 'center' }}>
           <img
-            src={m.avatar}
-            alt={m.name}
+            src={ m.avatar }
+            alt= {m.name }
             style={{ width: '100px', height: '100px', objectFit: 'cover', border: '1px solid #ccc' }}
           />
-          <div>{m.name}</div>
+          <div>{ m.name }</div>
         </div>
       ))}
     </div>
