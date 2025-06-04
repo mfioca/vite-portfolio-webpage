@@ -199,7 +199,7 @@ const CombatSummary = ({
 
   return (
     <div className="flex-column gap-20">
-      <div className="flex-row-space-between gap-20">
+      <div className="combat-summary-row">
         <CharacterCombatBlock
           label="Hero"
           character={ hero }

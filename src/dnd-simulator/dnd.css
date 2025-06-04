@@ -1,3 +1,4 @@
+
 .section-height {
   flex-grow: 1;
   height: 375px; /* or whatever feels balanced */
@@ -12,10 +13,13 @@
 }
 
 .battle-winner {
-  height: 25px;
+  min-height: 25px;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
-  justify-content: center; /* optional: centers horizontally too */
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 .character-layout-wrapper {
@@ -35,15 +39,7 @@
   text-align: center;
 }
 
-.avatar-slot {
-  width: 100px;
-  height: 100px;
-  background-color: #444;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
+
 
 .combat-table-original {
   flex-grow: 1;
@@ -60,21 +56,124 @@
   overflow-y: auto;
 }
 
-.stat-block {
-  flex-grow: 1;
+
+
+
+
+
+.outer {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center horizontally */
+  justify-content: center; /* center vertically within the box */
+  border: 2px solid var(--fontcolor);
+  width: 500px;
+  height: 300px;
+  margin: 10px auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.stat-block table {
-  text-align: left;
+
+.outer2 {
+  display: flex;
+  flex-direction: row; /* 🔥 row layout */
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--fontcolor);
+  width: 100%;
+  gap: 50px;
+  margin: 10px auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.stat-block table td:first-child {
-  text-align: left;
-  padding-right: 7px; /* or however much spacing you want */
+.a, .b, .c {
+  margin: 10px 0;
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  text-align: center;
+  
+  
 }
 
-.weapon-display {
-  min-height: 30px; /* reserve vertical space */
+.d {
+  margin: 10px 0;
+  width: 100%;
+  
+  
+  text-align: center;
+  
+}
+
+.E, .F {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  margin: 10px;
+}
+
+
+
+.stat-layout-test {
+  display: flex;
+  justify-content: center;  /* ✅ centers content horizontally */
+  align-items: flex-start;
+  width: 100%;
+}
+
+.stat-layout-test-1 {
+  margin: 10px 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+
+
+
+
+
+
+.character-sheet-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center vertically within the box */
+  align-items: center;
+  max-width: 450px;
+  min-width: 250px;
+  width: 100%;
+}
+
+.character-sheet-wrapper {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center horizontally */
+  
+  
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stat-layout-test-2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 auto; /* ✅ This will center the block itself inside .character-sheet-wrapper */
+  width: fit-content; /* ✅ Forces it to shrink to content size */
+}
+
+.stat-layout-test {
+  display: flex;
+  justify-content: center;  /* ✅ centers content horizontally */
+  align-items: flex-start;
+  width: 100%;
 }
 
 .character-avatar {
@@ -84,19 +183,84 @@
   border: var(--border);
 }
 
+.avatar-slot-original {
+  width: 100px;
+  height: 100px;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.avatar-slot {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #444; /* Optional for visibility */
+  border: var(--border);
+  box-sizing: border-box;
+}
+
+.stat-block {
+  width: auto;
+  min-width: 150px;
+  
+  background-color: gray; /* Optional for visual debugging */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 10px;
+  
+}
+
+
+.stat-block-original {
+  width: 100%;
+  margin-left: 20px;
+  
+}
+
+/*
+.stat-block table {
+  table-layout: fixed;
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+  */
+
+.stat-block table td:first-child {
+  text-align: left;
+  width: 125px;
+  padding-right: 7px; /* or however much spacing you want */
+}
+
+.weapon-display {
+  min-height: 30px; /* reserve vertical space */
+}
+
+
 .weapon-section {
   display: flex;
   flex-direction: column;
   align-items: center;  /* ✅ centers contents horizontally */
   text-align: center;   /* ✅ centers text inside the labels or headers */
   word-break: break-word;
-  overflow-wrap: anywhere;
+  
   padding: 5px 10px;
 }
 
 .weapon-section select {
-  width: 80%;
-  max-width: 300px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .combat-table-centered-table {
@@ -167,7 +331,32 @@
 
 
 
-@media (max-width: 900px) {
+
+.generate-button-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.generate-button-slot {
+  flex: 1 1 200px;
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.combat-summary-wrapper {
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  font-size: 1rem;
+}
+
+
+@media (max-width: 1000px) {
   .character-main-row {
     flex-direction: column;
     align-items: center;
@@ -181,13 +370,90 @@
     order: 1;
   }
   .character-avatar {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 
   .avatar-slot {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
+
   }
+}
+
+.simulator-wrapper {
+  max-width: var(--maxwidth);
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.combat-summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+@media (max-width: 1000px) {
+  .simulator-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 5px;
+  }
+  .character-sheet-container {
+    max-width: 375px;
+  }
+  .generate-button-row {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap10);
+  }
+
+  .generate-button-slot {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    flex: none;
+  }
+
+  .generate-button-slot button {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px; /* Tighten vertical space */
+    font-size: 1rem;
+  }
+  .combat-summary-wrapper {
+    font-size: 0.9rem;
+  }
+  .combat-summary-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .battle-winner h2 {
+    font-size: 1rem;
+  }
+
+  .stat-block table td:first-child {
+    text-align: left;
+    width: 90px;
+    padding-right: 7px; /* or however much spacing you want */
+    font-size: 0.7rem;
+  }
+  .stat-block table td:nth-child(2) {
+    text-align: left;
+    width: 75px;
+    padding-right: 7px; /* or however much spacing you want */
+    font-size: 0.7rem;
+  }
+  .character-sheet-wrapper {
+    max-width: 95%;
+      padding: 4px;
+      margin: 4px;
+  }
+  
 }
 

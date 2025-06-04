@@ -136,7 +136,7 @@ function reducer(state, action) {
 
 function Simulator() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const DEBUG_VISIBLE = true; // toggle this to false to hide the debug section
+  const DEBUG_VISIBLE = false; // toggle this to false to hide the debug section
 
   const handleGenerateHero = () => {
     const newHero = generateCharacter("Hero");
@@ -163,10 +163,11 @@ function Simulator() {
   };
 
   return (
-    <BodyContainer hasBackground = { false } >
+    <BodyContainer hasBackground = { false } className="simulator-wrapper">
       <div className="flex-column character-layout-wrapper">
-        <div className="flex-row-space-between gap-20">
-          <div className="button-slot">
+        {/*<div className="flex-row-space-between gap-20">*/}
+        <div className="generate-button-row">
+          <div className="generate-button-slot">
 {/* ------------------------------GENERATE HERO/MONSTER------------------------------*/}
           {/*   Button to generate hero stats  */}
             { !state.hero && 
@@ -178,7 +179,7 @@ function Simulator() {
               </button> 
             }
           </div>
-          <div className="button-slot">
+          <div className="generate-button-slot">
             {/* 
               This button triggers after hero is generated,when there is no monster 
               generated and the hero has won the battle to continue fighting
@@ -194,12 +195,14 @@ function Simulator() {
           </div>
         </div>
 {/* ------------------------------HERO CHARACTER SHEET------------------------------*/}
-        <div className="flex-row-space-between gap-20">
-          <CharacterSheet 
-            character={ state.hero || hero }
-            dispatch={ dispatch }
-            isRealHero={ !!state.hero }
-          />
+        <div className="flex-row-space-between gap-20 character-main-row">
+          <div className="character-sheet-container">
+            <CharacterSheet 
+              character={ state.hero || hero }
+              dispatch={ dispatch }
+              isRealHero={ !!state.hero }
+            />
+          </div>
 {/* ------------------------------INITIATIVE SECTION------------------------------*/}
             <BorderBox className="section-height box-background-standard standard-margin initiative">
             <div className="button-slot">
@@ -218,19 +221,29 @@ function Simulator() {
             <p>Round: { state.round }</p>
             <p>Hero Initiative: { state.heroInitiative ?? 0 }</p>
             <p>Monster Initiative: { state.monsterInitiative ?? 0 }</p>
-            <p>Current Turn: { state.currentTurn ? (state.currentTurn === 'hero' ? 'Hero' : 'Monster') : '' }</p>
+            <p className={
+              state.currentTurn === 'hero'
+                ? 'result-good'
+                : state.currentTurn === 'monster'
+                ? 'result-bad'
+                : ''
+            }>
+              Current Turn: { state.currentTurn ? (state.currentTurn === 'hero' ? 'Hero' : 'Monster') : '' }
+            </p>
             <p>Hero Win streak: { state.heroWins }</p>
           </BorderBox>
 {/* ------------------------------MONSTER CHARACTER SHEET------------------------------*/}
-          <CharacterSheet character={state.monster || 
-            { 
-              name: 'Monster', baseStats: { strength: 0, constitution: 0, dexterity: 0, THACO: 0 }, 
-              combat: { armorClass: 0, hitpoints: 0 },
-              weapon: "Unarmed"
-            }}
-            dispatch={ dispatch } 
-            isRealHero={ false }
-          />
+          <div className="character-sheet-container">
+            <CharacterSheet character={state.monster || 
+              { 
+                name: 'Monster', baseStats: { strength: 0, constitution: 0, dexterity: 0, THACO: 0 }, 
+                combat: { armorClass: 0, hitpoints: 0 },
+                weapon: "Unarmed"
+              }}
+              dispatch={ dispatch } 
+              isRealHero={ false }
+            />
+          </div>
         </div>
       </div>
       <BorderBox >
@@ -243,7 +256,7 @@ function Simulator() {
         )}
       </BorderBox>
 {/* ------------------------------COMBAT SECTION------------------------------*/}
-      <div>
+      <div className="combat-summary-wrapper">
         <CombatSummary 
           hero={ state.hero || { combat: { hitpoints: 0, armorClass: 0 } } }
           monster={ state.monster || { combat: { hitpoints: 0, armorClass: 0 } } }
@@ -280,6 +293,12 @@ function Simulator() {
           <AvatarTest />
         </div>
       )}
+
+      <div class="outer">
+  <div class="a">A</div>
+  <div class="b">B</div>
+  <div class="c">C</div>
+</div>
   </BodyContainer>
   );
 }
