@@ -293,12 +293,6 @@ function Simulator() {
           <AvatarTest />
         </div>
       )}
-
-      <div class="outer">
-  <div class="a">A</div>
-  <div class="b">B</div>
-  <div class="c">C</div>
-</div>
   </BodyContainer>
   );
 }

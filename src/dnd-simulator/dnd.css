@@ -37,6 +37,9 @@
 .initiative {
   margin: auto;
   text-align: center;
+  max-width: 450px;
+  min-width: 250px;
+  width: 100%;
 }
 
 
@@ -74,72 +77,15 @@
   box-sizing: border-box;
 }
 
-
-.outer2 {
+.avatar-stat-layout {
   display: flex;
   flex-direction: row; /* 🔥 row layout */
   justify-content: center;
   align-items: center;
-  border: 2px solid var(--fontcolor);
   width: 100%;
   gap: 50px;
-  margin: 10px auto;
-  padding: 10px;
   box-sizing: border-box;
 }
-
-.a, .b, .c {
-  margin: 10px 0;
-  width: 50px;
-  height: 50px;
-  background-color: gray;
-  text-align: center;
-  
-  
-}
-
-.d {
-  margin: 10px 0;
-  width: 100%;
-  
-  
-  text-align: center;
-  
-}
-
-.E, .F {
-  width: 50px;
-  height: 50px;
-  background-color: gray;
-  text-align: center;
-  line-height: 50px;
-  color: white;
-  margin: 10px;
-}
-
-
-
-.stat-layout-test {
-  display: flex;
-  justify-content: center;  /* ✅ centers content horizontally */
-  align-items: flex-start;
-  width: 100%;
-}
-
-.stat-layout-test-1 {
-  margin: 10px 0;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 50px;
-}
-
-
-
-
-
-
 
 .character-sheet-container {
   display: flex;
@@ -155,8 +101,6 @@
   display: flex;
   flex-direction: column; /* stack vertically */
   align-items: center;    /* center horizontally */
-  
-  
   width: 100%;
   box-sizing: border-box;
 }
@@ -183,7 +127,7 @@
   border: var(--border);
 }
 
-.avatar-slot-original {
+.avatar-slot {
   width: 100px;
   height: 100px;
   background-color: #444;
@@ -193,24 +137,9 @@
   flex-shrink: 0;
 }
 
-.avatar-slot {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  background-color: #444; /* Optional for visibility */
-  border: var(--border);
-  box-sizing: border-box;
-}
-
 .stat-block {
   width: auto;
   min-width: 150px;
-  
-  background-color: gray; /* Optional for visual debugging */
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,7 +182,7 @@
   align-items: center;  /* ✅ centers contents horizontally */
   text-align: center;   /* ✅ centers text inside the labels or headers */
   word-break: break-word;
-  
+  width: 70%;
   padding: 5px 10px;
 }
 

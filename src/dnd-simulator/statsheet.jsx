@@ -12,7 +12,7 @@ const CharacterSheet = ({ character, dispatch, isRealHero }) => {
       <h2>{ name }</h2>
 
 
-<div className="outer2">
+<div className="avatar-stat-layout">
           <div className="avatar-slot">
               <img
                 src={
@@ -50,39 +50,8 @@ const CharacterSheet = ({ character, dispatch, isRealHero }) => {
               </tbody>
             </table>
           </div>
-            
-
-
-
-
-
-         
           
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div>
     {character.weapon ? (
       <h4>
