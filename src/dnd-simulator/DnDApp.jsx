@@ -136,7 +136,7 @@ function reducer(state, action) {
 
 function Simulator() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const DEBUG_VISIBLE = false; // toggle this to false to hide the debug section
+  const DEBUG_VISIBLE = true; // toggle this to false to hide the debug section
 
   const handleGenerateHero = () => {
     const newHero = generateCharacter("Hero");
@@ -246,9 +246,9 @@ function Simulator() {
           </div>
         </div>
       </div>
-      <BorderBox >
+      <BorderBox className="battle-winner">
         { state.winner && (
-          <div className="battle-winner">
+          <div >
             <h2 className={ state.winner === 'Hero' ? 'result-good' : 'result-bad' }>
               { state.winner } wins the battle!
             </h2>

@@ -228,28 +228,3 @@ const CombatSummary = ({
 };
 
 export default CombatSummary;
-
-
-
-
-/*
-old version of the combat summary stat table
-<div className="stat-block">
-      <table >
-        <tbody>
-          <tr>
-            <td>Hitpoints:</td>
-            <td>{ hitpoints }</td>
-          </tr>
-          <tr>
-            <td>Armor Class:</td>
-            <td>{ armorClass }</td>
-          </tr>
-          <tr>
-            <td>Number to Hit:</td>
-            <td>{ numberToHit }</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-*/

@@ -10,7 +10,6 @@ const CharacterSheet = ({ character, dispatch, isRealHero }) => {
   return (
     <BorderBox className="section-height box-background-standard character-sheet-wrapper ">
       <h2>{ name }</h2>
-
       {/*<div className="flex-row-space-between standard-padding-margin gap-20">*/ }
       <div className="stat-layout-test">
           <div className="avatar-slot">
