@@ -287,10 +287,11 @@ function Simulator() {
               <div className="debug-box">
                 <h4>Debug: Monster Data</h4>
                 <pre>{ JSON.stringify(state.monster, null, 2) }</pre>
+                <AvatarTest />
               </div>
             )}
           </div>
-          <AvatarTest />
+          
         </div>
       )}
   </BodyContainer>

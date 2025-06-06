@@ -8,16 +8,16 @@ const DndSimulator = () => {
     <div className="standard-padding-margin page-content">
         <IntroSection title="Welcome to the D&D Combat Simulator">
             <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;
-                This Dungeons & Dragons-inspired app is a turn-based combat simulator built in React, using a structured reducer for state management. It features two characters—a hero and a monster—each generated with randomized base stats (strength, dexterity, constitution), along with calculated adjustments for hit chance, damage, armor class, and hitpoints. These adjustments follow AD&D-style logic, with THAC0 used to determine hit thresholds.
+                This D&D-inspired combat simulator demonstrates modular system design, structured state management, and interaction logic in a React-based frontend. Built with a reducer-driven architecture, the app models turn-based combat between two characters—each dynamically generated with base stats and derived modifiers for attack, defense, and hitpoints.
             </p>
             <p>
-                Combat follows an initiative system using a 1d10 roll, where the lower result acts first. Attacks are turn-based and resolved with a d20 roll compared against the calculated number needed to hit. Weapon data, including damage dice and type, is centralized in a weapons.json file, and damage rolls pull directly from this source. Hitpoints are reduced accordingly, and a winner is declared when one character reaches zero HP.
+                The mechanics are grounded in classic tabletop logic (THAC0, initiative rolls, damage dice), but abstracted into reusable functions and components. Weapon data and combat stats are externalized into structured JSON sources, allowing flexible expansion and clean separation of logic from content.
             </p>
             <p>
-                The system tracks rounds, alternating turns, and manages state transitions automatically. Once both sides have attacked, the round increments, initiative resets, and combat continues. The UI displays all combat results in real time, including attack rolls, hit/miss results, and damage dealt. When a battle ends, attack buttons are disabled and a clear win message is shown.
+                Combat proceeds through initiative, alternating turns, and real-time state transitions. Actions are resolved through a central reducer, which manages rounds, turn control, damage application, and win conditions. The UI reflects combat flow step-by-step, with all calculations and outcomes surfaced in real time.
             </p>
             <p>
-                Combat logic is cleanly encapsulated into modular components, including a reusable CharacterCombatBlock and a coordinator CombatSummary that handles round flow. A debug section is included for real-time inspection of character data and logic output. The app is fully functional and now positioned for visual polish and presentation refinement.
+                From a development perspective, the project focuses on clarity, scalability, and maintainability—prioritizing logical structure over aesthetic polish. Components like <code>CharacterCombatBlock</code> and <code>CombatSummary</code> encapsulate flow control and data presentation cleanly. A dedicated debug panel exposes internal state for transparency and iterative testing.
             </p>
         </IntroSection>
         <div className="mobile-warning">
