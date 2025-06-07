@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import weapons from './weapons.json';
 import monsters from './monsters.json';
 import CharacterSheet from './statsheet';
@@ -136,7 +136,7 @@ function reducer(state, action) {
 
 function Simulator() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const DEBUG_VISIBLE = true; // toggle this to false to hide the debug section
+  const [debugVisible, setDebugVisible] = useState(true);
 
   const handleGenerateHero = () => {
     const newHero = generateCharacter("Hero");
@@ -268,9 +268,22 @@ function Simulator() {
         />
       </div>  
 {/* ------------------------------DEBUG SECTION------------------------------*/}
-      {DEBUG_VISIBLE && (
+      <div className="toggle-wrapper">
+        <label className="toggle-switch">
+          <input
+            type="checkbox"
+            checked={debugVisible}
+            onChange={() => setDebugVisible(prev => !prev)}
+          />
+          <span className="slider" />
+        </label>
+        <span className="toggle-label">
+          Debug {debugVisible ? 'On' : 'Off'}
+        </span>
+      </div>
+      {debugVisible && (
         <div className="debug-section">
-          <h1><p>debug section</p></h1>
+          <h1><p>Debug Section</p></h1>
           <div className="debug-row">
             {state.hero && (
               <div className="debug-box">
@@ -287,9 +300,9 @@ function Simulator() {
               <div className="debug-box">
                 <h4>Debug: Monster Data</h4>
                 <pre>{ JSON.stringify(state.monster, null, 2) }</pre>
-                <AvatarTest />
               </div>
             )}
+            <AvatarTest />
           </div>
           
         </div>
