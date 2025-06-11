@@ -255,6 +255,12 @@
   box-shadow: var(--thinshadow);
 }
 
+.debug-box pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
 .toggle-wrapper {
   display: flex;
   align-items: center;
@@ -350,7 +356,10 @@
     max-width: 375px;
   }
   .generate-button-row {
-    flex-direction: column;
+    padding: 10px;
+    height: 20x;
+    margin: 10px;
+    justify-content: center;
     align-items: center;
     gap: var(--gap10);
   }
@@ -359,6 +368,7 @@
     width: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 0;
     flex: none;
   }
