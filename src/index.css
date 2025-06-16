@@ -319,7 +319,6 @@ button:hover {
 
 .navbar-dropdown-list {
   position: absolute;
-  
   list-style: none;
   text-align: left;
   line-height: 30px;
@@ -646,8 +645,6 @@ button:hover {
   max-width: 700px; /* Maximum width to avoid the image getting too big */
   height: auto; /* Maintain the aspect ratio */
 }
-
-
 
 /* Media query for small screens */
 @media (max-width: 1400px) {

@@ -27,8 +27,6 @@ function rollForHit(attacker, defender) {
   */
   
 
-
-
 //Handles most of combat functions and calculations standardized so hero and monster can be plugged in.  
 // reduces redundant code.
 const CharacterCombatBlock = ({

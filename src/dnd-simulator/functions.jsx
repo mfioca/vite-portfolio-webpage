@@ -51,7 +51,6 @@ export function getHPColorClass(currentHP, maxHP) {
   }
 }
 
-
 export function AvatarTest() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
@@ -194,7 +193,6 @@ export function rollForHit(attacker, defender) {
   };
 }
 
-
 //function to cause the attacker to hit themselves for 2 points of damage due to critical miss
 //critical miss is a natural 1 on a 1D20 roll
 export function applyCriticalMiss(attacker) {
@@ -211,7 +209,6 @@ export function applyCriticalMiss(attacker) {
     debugDamageCalc: `Critical Miss → You hurt yourself for 2 HP`
   };
 }
-
 
 export function applyDamage(defender, attacker, isCriticalHit = false) {
   const weaponName = attacker.weapon;
