@@ -9,7 +9,7 @@ import {
     DeveloperPrompt1Negative, DeveloperPrompt1Postive, DeveloperPrompt2, 
     DeveloperPrompt2TalkTrack, DeveloperPrompt3, PersonalizationAssistant,
     TimTheEnchanterPrompt, PersonalizationAssistant_2, TimTheEnchanterPrompt2,
-    DeveloperPrompt4
+    DeveloperPrompt4, LegislativeGuidePrompt
 } from './AI_showcase/ai_prompts.jsx'
 import chatData from './AI_showcase/chatData.json';
 
@@ -52,6 +52,7 @@ const AIShowcase = () => {
                         <Tab>Developer 2.0 Prompt</Tab>
                         <Tab>Developer 3.0 Prompt</Tab>
                         <Tab>Developer 4.0 Prompt</Tab>
+                        <Tab>Legislative Guide</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="ai-showcase-container">
                         <TabPanel>
@@ -347,6 +348,30 @@ const AIShowcase = () => {
                                     </>
                                 }
                                 chatData={ <ChatBubble data={ chatData.developer4 } /> }
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                            <ShowcaseComponent
+                                title="Legislative Guide: One Big Beautiful Bill"
+                                titleDescription={
+                                    <>
+                                        <p>
+                                            This assistant functions as a legislative law professor, focused on educating users about the structure, language, and procedural mechanics of the One Big Beautiful Bull Act—a comprehensive, 1100+ page bill uploaded directly into the system as a reference document. Drawing only from the contents of this PDF, the assistant provides precise, section-based explanations using legal citations, historical framing, and neutral instructional tone. Designed to mimic a “Legislative Bills 101” classroom experience, this assistant is ideal for legal researchers, policy students, or anyone needing a clear and faithful breakdown of complex bill language.
+                                        </p>
+                                    </>
+                                }
+                                prompt={ LegislativeGuidePrompt }
+                                chatDescription={
+                                    <>
+                                        <p>
+                                            This sample conversation highlights the assistant’s role as an academic legislative interpreter. The user inquires about geothermal leasing, geothermal royalties, and Medicaid-related provisions in the bill. Each response is delivered in “Lecture Mode,” offering structured, section-based summaries drawn directly from the bill’s text.
+                                        </p>
+                                        <p>
+                                            The assistant also handles a follow-up clarification about eligibility for the bill’s community engagement (work/volunteering) requirements, demonstrating its ability to cite exact line references and explain exemptions cleanly and without editorializing.
+                                        </p>
+                                    </>
+                                }
+                                chatData={ <ChatBubble data={ chatData.LegislativeGuidePromptTest } /> }
                             />
                         </TabPanel>
                     </BodyContainer>
