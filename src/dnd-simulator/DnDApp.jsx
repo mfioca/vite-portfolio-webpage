@@ -1,4 +1,5 @@
 import { useReducer, useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 import weapons from './weapons.json';
 import monsters from './monsters.json';
 import CharacterSheet from './statsheet';
@@ -266,7 +267,17 @@ function Simulator() {
           dispatch={ dispatch }
           winner={ state.winner }
         />
-      </div>  
+      </div>
+      <button className="center-div center-margin button" type="submit">
+        <Link 
+            to="/monster_compendium" 
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}>
+            Monster Compendium
+        </Link>
+      </button> 
 {/* ------------------------------DEBUG SECTION------------------------------*/}
       <div className="toggle-wrapper">
         <label className="toggle-switch">
@@ -302,7 +313,6 @@ function Simulator() {
                 <pre>{ JSON.stringify(state.monster, null, 2) }</pre>
               </div>
             )}
-            <AvatarTest />
           </div>
           
         </div>

@@ -13,6 +13,7 @@ import TvMazeShowResults from './Tv_Maze/tv_maze_show_results';
 import TvMazePeopleResults from './Tv_Maze/tv_maze_people_results';
 import MinecraftProjects from './minecraftProjects';
 import DndSimulator from './dnd-simulator';
+import MonsterCompendium from './dnd-simulator/monster_compendium';
 
 
 
@@ -73,6 +74,9 @@ const Navigation = () => {
         break;
     case location.pathname === '/dnd-simulator':
         title = 'D&D Combat Simulator';
+        break;
+    case location.pathname === '/monster_compendium':
+        title = 'Monster Compendium';
         break;
     default:
         title = 'Explore My Web Page'; // A general fallback title
@@ -208,6 +212,7 @@ root.render(
           <Route path="/AIShowcase" element={ <AIShowcase /> } />
           <Route path="/MinecraftProjects" element={ <MinecraftProjects /> } />
           <Route path="/dnd-simulator" element={ <DndSimulator /> } />
+          <Route path="/monster_compendium" element={ <MonsterCompendium /> } />
         </Routes>
       <Footer />
     </HashRouter>

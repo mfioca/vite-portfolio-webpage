@@ -51,6 +51,8 @@ export function getHPColorClass(currentHP, maxHP) {
   }
 }
 
+
+//No longer used
 export function AvatarTest() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
