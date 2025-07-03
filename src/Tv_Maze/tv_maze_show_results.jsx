@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { BodyContainer, DividerLine, IntroSection, BorderBox } from '../SharedComponents.jsx';
+import { BodyContainer, DividerLine, IntroSection, BorderBox, NavButton } from '../SharedComponents.jsx';
 import 'react-tabs/style/react-tabs.css'; // Default styling for react-tabs
 import TvMazeCast from './tv_maze_cast.jsx';
 import TvMazeEpisodes from './tv_maze_episodes.jsx';
@@ -76,17 +76,7 @@ const TvMazeShowResults = () => {
                         <p dangerouslySetInnerHTML={ { __html: showDetails.summary || 'No summary available.' } } />
                     </div>
             </BodyContainer>
-            <button className="center-div center-margin button" type="submit">
-                <Link 
-                    to="/tv_maze" 
-                    style={{
-                        color: 'white',
-                        textDecoration: 'none',
-                    }}
-                >
-                 ⬅ Back to TV Maze Search
-                </Link>
-            </button>
+            <NavButton to="/tv_maze" label="⬅ Back to TV Maze Search" />
             <div className="results-tabs-container">
                 <Tabs className="standard-tabs"
                     forceRenderTabPanel
@@ -112,3 +102,4 @@ const TvMazeShowResults = () => {
 };
 
 export default TvMazeShowResults;
+

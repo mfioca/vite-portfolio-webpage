@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef  } from 'react';
+import { Link } from 'react-router-dom';
 import './SharedComponents.css';
 import ReactMarkdown from 'react-markdown';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -32,6 +33,19 @@ export const BorderBox = ({ children, className = '' }) => {
         <div className={ `box-style-standard standard-padding ${ className }` }>
             { children }
         </div>
+    );
+};
+
+export const NavButton = ({ to, label }) => {
+    return (
+        <button className="center-div center-margin button" type="button">
+            <Link
+                to={ to }
+                style={{ color: 'white', textDecoration: 'none' }}
+            >
+                { label }
+            </Link>
+        </button>
     );
 };
 

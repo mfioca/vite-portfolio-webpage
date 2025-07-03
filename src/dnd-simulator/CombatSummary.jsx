@@ -24,7 +24,7 @@ function rollForHit(attacker, defender) {
     target: numberToHit,
   };
 }
-  */
+*/
   
 
 //Handles most of combat functions and calculations standardized so hero and monster can be plugged in.  
@@ -162,7 +162,7 @@ const CharacterCombatBlock = ({
           </table>
         </div>
       )}
-      {/* SECTION FOR ADDITIONAL MESSAGES FOR CRITICAL MISS / CRITICAL HIT AND TOTAL DAMAGE DEALT */}
+{/* SECTION FOR ADDITIONAL MESSAGES FOR CRITICAL MISS / CRITICAL HIT AND TOTAL DAMAGE DEALT */}
       { result.roll === 1 && (
         <p className="reminder-warning result-bad">Critical Miss! You hurt yourself for 2 HP.</p>
       )}

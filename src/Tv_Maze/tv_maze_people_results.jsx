@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { BodyContainer, DividerLine, IntroSection, BorderBox } from '../SharedComponents.jsx';
+import { BodyContainer, DividerLine, IntroSection, BorderBox, NavButton } from '../SharedComponents.jsx';
 import TvMazePeopleCast from './tv_maze_people_cast.jsx'
 import TvMazePeopleGuestCast from './tv_maze_people_guestcast.jsx'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -88,17 +88,7 @@ const TvMazePeopleResults = () => {
                     </p>
                 </BorderBox>
             </BodyContainer>
-            <button className="center-div center-margin button" type="submit">
-                <Link 
-                    to="/tv_maze" 
-                    style={{
-                        color: 'white',
-                        textDecoration: 'none',
-                    }}
-                >
-                    ⬅ Back to TV Maze Search
-                </Link>
-            </button>
+            <NavButton to="/tv_maze" label="⬅ Back to TV Maze Search" />
             <div className="results-tabs-container">
                 <Tabs className="standard-tabs"
                     forceRenderTabPanel
@@ -124,3 +114,4 @@ const TvMazePeopleResults = () => {
 };
 
 export default TvMazePeopleResults;
+

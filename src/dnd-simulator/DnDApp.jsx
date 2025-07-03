@@ -1,11 +1,10 @@
 import { useReducer, useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from React Router
 import weapons from './weapons.json';
 import monsters from './monsters.json';
 import CharacterSheet from './statsheet';
 import CombatSummary from './CombatSummary';
 import { hero, generateCharacter, rollInitiative, calculateLevel, AvatarTest } from './functions';
-import { BodyContainer, BorderBox } from '../SharedComponents.jsx';
+import { BodyContainer, BorderBox, NavButton } from '../SharedComponents.jsx';
 
 
 const initialState = {
@@ -268,28 +267,20 @@ function Simulator() {
           winner={ state.winner }
         />
       </div>
-      <button className="center-div center-margin button" type="submit">
-        <Link 
-            to="/monster_compendium" 
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}>
-            Monster Compendium
-        </Link>
-      </button> 
+      <NavButton to="/monster_compendium" label="Monster Compendium" />
+    
 {/* ------------------------------DEBUG SECTION------------------------------*/}
       <div className="toggle-wrapper">
         <label className="toggle-switch">
           <input
             type="checkbox"
-            checked={debugVisible}
+            checked={ debugVisible }
             onChange={() => setDebugVisible(prev => !prev)}
           />
           <span className="slider" />
         </label>
         <span className="toggle-label">
-          Debug {debugVisible ? 'On' : 'Off'}
+          Debug { debugVisible ? 'On' : 'Off' }
         </span>
       </div>
       {debugVisible && (
@@ -314,7 +305,6 @@ function Simulator() {
               </div>
             )}
           </div>
-          
         </div>
       )}
   </BodyContainer>
