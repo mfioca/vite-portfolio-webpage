@@ -663,23 +663,7 @@ button:hover {
   }
 }
 
-/***********************************************************************************/
-/*                                  AI Showcase                                    */
-/***********************************************************************************/
 
-
-.ai-showcase-container {
-  margin-top: 0; /* Center the container on the page */
-  font-family: var(--fontfamily);
-  padding: 0 15px; /* Adds space on left/right */
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .ai-showcase-container {
-    padding: 10px 15px; /* Adds space on left/right */
-  }
-}
 
 
 

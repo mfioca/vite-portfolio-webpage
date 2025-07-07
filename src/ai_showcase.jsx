@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { DividerLine, ChatBubble, IntroSection, BodyContainer, ShowcaseComponent, ShowcaseComponentTabs } from './SharedComponents.jsx'; 
+import { DividerLine, IntroSection, BodyContainer } from './SharedComponents.jsx';
+import { ChatBubble, ShowcaseComponent, ShowcaseComponentTabs } from './AI_showcase/ai_showcase_components.jsx';
+import './AI_showcase/ai_showcase.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default styles for react-tabs
 import { Link } from 'react-router-dom';
