@@ -31,6 +31,7 @@
     font-family: 'Courier New', sans-serif; /* Match the font style in index.css */
     color: var(--fontcolor);
     background-color: var(--lightbackgroundcolor); /* White background for contrast */
+    margin-top: -2px;
 }
 
 .tvmaze-search h1 {
