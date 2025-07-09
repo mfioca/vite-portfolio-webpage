@@ -62,7 +62,6 @@ export const ShowcaseComponentTabs = ({ title, titleDescription, tabs, chatData,
     );
 };
 
-
 export const ChatBubble = ({ data }) => {
     const [title] = useState(data[0]?.title || ''); // Dynamically set title from props
     const [messages] = useState(data[0]?.messages || []); // Dynamically set messages from props
