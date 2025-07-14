@@ -80,7 +80,7 @@ const Navigation = () => {
         break;
     default:
         title = 'Explore My Web Page'; // A general fallback title
-}
+  }
 
   return (
     <nav className="index-shared flex-wrap navbar">
@@ -92,7 +92,6 @@ const Navigation = () => {
         <li>
           <Link to="/About" className="nav-link">About</Link>
         </li>
-        
         <li ref={dropdownRef} className="navbar-dropdown-container nav-link"
           onClick={(e) => {
             e.preventDefault();
@@ -102,16 +101,16 @@ const Navigation = () => {
           {isAcknowledgementsOpen ? 'Projects' : 'Projects'}
           {isAcknowledgementsOpen && (
             <ul className="navbar-dropdown-list"
-                onMouseLeave={() => setIsAcknowledgementsOpen(false)}
+              onMouseLeave={() => setIsAcknowledgementsOpen(false)}
             >
-                <li>
-                  <Link 
-                    to="/Dashboard" 
-                    className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}
-                  >
-                    Job Activity Analysis
-                  </Link>
-                </li>
+              <li>
+                <Link 
+                  to="/Dashboard" 
+                  className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}
+                >
+                  Job Activity Analysis
+                </Link>
+              </li>
               <li>
                 <Link 
                   to="/tv_maze" 
