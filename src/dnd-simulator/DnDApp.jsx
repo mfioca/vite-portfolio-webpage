@@ -7,6 +7,10 @@ import { hero, generateCharacter, rollInitiative, calculateLevel, AvatarTest } f
 import { BodyContainer, BorderBox, NavButton } from '../SharedComponents.jsx';
 
 
+/***********************************************************************************/
+/*                            Reducer Elements                                     */
+/***********************************************************************************/
+
 const initialState = {
   hero: null,
   heroWins: 0,
@@ -134,6 +138,10 @@ function reducer(state, action) {
   }
 }
 
+/***********************************************************************************/
+/*                            Main Element                                         */
+/***********************************************************************************/
+
 function Simulator() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [debugVisible, setDebugVisible] = useState(true);
@@ -204,7 +212,7 @@ function Simulator() {
             />
           </div>
 {/* ------------------------------INITIATIVE SECTION------------------------------*/}
-            <BorderBox className="section-height box-background-standard standard-margin initiative">
+          <BorderBox className="section-height box-background-standard standard-margin initiative">
             <div className="button-slot">
               { 
                 !state.winner && !state.currentTurn && state.hero && state.monster && (
@@ -268,7 +276,6 @@ function Simulator() {
         />
       </div>
       <NavButton to="/monster_compendium" label="Monster Compendium" />
-    
 {/* ------------------------------DEBUG SECTION------------------------------*/}
       <div className="toggle-wrapper">
         <label className="toggle-switch">
@@ -307,7 +314,7 @@ function Simulator() {
           </div>
         </div>
       )}
-  </BodyContainer>
+    </BodyContainer>
   );
 }
 

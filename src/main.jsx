@@ -16,6 +16,10 @@ import DndSimulator from './dnd-simulator';
 import MonsterCompendium from './dnd-simulator/monster_compendium';
 
 
+/***********************************************************************************/
+/*                            Nav Bar                                              */
+/***********************************************************************************/
+
 
 const Navigation = () => {
   const location = useLocation(); // Get the current location
@@ -79,7 +83,7 @@ const Navigation = () => {
         title = 'Monster Compendium';
         break;
     default:
-        title = 'Explore My Web Page'; // A general fallback title
+        title = 'Explore My Web Page'; 
   }
 
   return (
@@ -155,6 +159,10 @@ const Navigation = () => {
   );
 };
 
+/***********************************************************************************/
+/*                            Footer                                               */
+/***********************************************************************************/
+
 const Footer = () =>{
   return (
     <div className="index-shared footer">
@@ -195,7 +203,10 @@ const Footer = () =>{
   )
 };
 
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 
 root.render(
   <React.StrictMode>

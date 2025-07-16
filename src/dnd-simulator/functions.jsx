@@ -51,7 +51,6 @@ export function getHPColorClass(currentHP, maxHP) {
   }
 }
 
-
 //No longer used
 export function AvatarTest() {
   return (
@@ -70,11 +69,9 @@ export function AvatarTest() {
   );
 }
 
-
 /***********************************************************************************/
 /*                            Stat Generation Functions                            */
 /***********************************************************************************/
-
 
 //sets hitpoints based on constitution stat number.
 export function getConstitutionAdjustment(con) {
@@ -138,13 +135,11 @@ export function generateCharacter(name = "Hero") {
   const dexterity = rollStat();
   const baseSource = name === "Hero" ? hero : monster;
   const THACO = baseSource.baseStats?.THACO;
-
   const strengthAdjustment = getStrengthAdjustment(strength);
   const constitutionAdjustment = getConstitutionAdjustment(constitution);
   const dexterityAdjustment = getDexterityAdjustment(dexterity);
   const baseHP = (baseSource.combat?.hitpoints ?? 0) + constitutionAdjustment;
   
-
   return {
     name,
     baseStats: {
@@ -184,7 +179,6 @@ export function rollForHit(attacker, defender) {
   const attackAdjustment = attacker.adjustments?.hit || 0;
   const targetAC = defender.combat?.armorClass ?? 0;
   const THAC0 = attacker.baseStats?.THACO ?? 20;
-
   const numberToHit = THAC0 - attackAdjustment - targetAC;
   const roll = Math.floor(Math.random() * 20) + 1;
 

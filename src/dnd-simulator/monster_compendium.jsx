@@ -12,13 +12,13 @@ function MonsterCompendium() {
             <h2>Monster Compendium</h2>
             <div className="flex-wrap-center">
                 {monsters.map((monster, index) => (
-                <div key={index} style={{ margin: '10px' }}>
-                    <CharacterSheet
-                        character={ monster }
-                        dispatch={() => {}}          // No-op function
-                        isRealHero={ false }
-                    />
-                </div>
+                    <div key={ index } style={{ margin: '10px' }}>
+                        <CharacterSheet
+                            character={ monster }
+                            dispatch={() => {}}          // No-op function
+                            isRealHero={ false }
+                        />
+                    </div>
                 ))}
             </div>
         </BodyContainer>

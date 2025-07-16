@@ -1,11 +1,9 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 import './About.css'; 
 import { DividerLine, IntroSection, BodyContainer } from './SharedComponents';
 import { Link } from 'react-router-dom';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
