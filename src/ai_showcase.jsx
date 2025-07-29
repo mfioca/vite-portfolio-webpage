@@ -6,13 +6,8 @@ import './AI_showcase/ai_showcase.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 
 import { Link } from 'react-router-dom';
-import { 
-    tarotReaderPrompt, DisenchantedOraclePrompt, DeveloperPrompt1, 
-    DeveloperPrompt1Negative, DeveloperPrompt1Postive, DeveloperPrompt2, 
-    DeveloperPrompt2TalkTrack, DeveloperPrompt3, PersonalizationAssistant,
-    TimTheEnchanterPrompt, PersonalizationAssistant_2, TimTheEnchanterPrompt2,
-    DeveloperPrompt4, LegislativeGuidePrompt
-} from './AI_showcase/ai_prompts.jsx'
+
+import * as prompts from './AI_showcase/ai_prompts.jsx';
 import chatData from './AI_showcase/chatData.json';
 
 const ghostsLink = (
@@ -70,7 +65,7 @@ const AIShowcase = () => {
                                     </p>
                                     </>
                                 }
-                                prompt = { tarotReaderPrompt }
+                                prompt = { prompts.tarotReaderPrompt }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -94,7 +89,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { DisenchantedOraclePrompt }
+                                prompt = { prompts.DisenchantedOraclePrompt }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -124,7 +119,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { PersonalizationAssistant }
+                                prompt = { prompts.PersonalizationAssistant }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -157,7 +152,7 @@ const AIShowcase = () => {
                                             </p>
                                         </>
                                     }
-                                    prompt = { PersonalizationAssistant_2 }
+                                    prompt = { prompts.PersonalizationAssistant_2 }
                                     chatDescription = {
                                         <>
                                             <p>
@@ -184,7 +179,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { TimTheEnchanterPrompt }
+                                prompt = { prompts.TimTheEnchanterPrompt }
                                 chatDescription = {
                                     <>
                                         <h2>Conversational AI with Wit, Precision, and a Touch of Absurdity</h2>
@@ -224,7 +219,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { TimTheEnchanterPrompt2 }
+                                prompt = { prompts.TimTheEnchanterPrompt2 }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -249,9 +244,9 @@ const AIShowcase = () => {
                                     </>
                                 }
                                 tabs={[
-                                    { label: 'Prompt', content: DeveloperPrompt1 },
-                                    { label: 'Negative Guidelines', content: DeveloperPrompt1Negative },
-                                    { label: 'Positive Guidelines', content: DeveloperPrompt1Postive }
+                                    { label: 'Prompt', content: prompts.DeveloperPrompt1 },
+                                    { label: 'Negative Guidelines', content: prompts.DeveloperPrompt1Negative },
+                                    { label: 'Positive Guidelines', content: prompts.DeveloperPrompt1Postive }
                                 ]}
                                 chatDescription={
                                     <>
@@ -277,8 +272,8 @@ const AIShowcase = () => {
                                     </>
                                 }
                                 tabs={[
-                                    { label: 'Prompt', content: DeveloperPrompt2 },
-                                    { label: 'Talk Track', content: DeveloperPrompt2TalkTrack }
+                                    { label: 'Prompt', content: prompts.DeveloperPrompt2 },
+                                    { label: 'Talk Track', content: prompts.DeveloperPrompt2TalkTrack }
                                 ]}
                                 chatDescription={
                                     <>
@@ -309,7 +304,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { DeveloperPrompt3 }
+                                prompt = { prompts.DeveloperPrompt3 }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -335,7 +330,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { DeveloperPrompt4 }
+                                prompt = { prompts.DeveloperPrompt4 }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -362,7 +357,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                prompt={ LegislativeGuidePrompt }
+                                prompt ={ prompts.LegislativeGuidePrompt }
                                 chatDescription={
                                     <>
                                         <p>
