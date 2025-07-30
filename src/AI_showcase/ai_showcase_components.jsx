@@ -33,9 +33,10 @@ export const ShowcaseComponentTabs = ({ title, titleDescription, tabs, chatData,
                 { titleDescription }
             </IntroSection>
             <DividerLine />
+            
             {/* Render Dynamic Tabs */}
-            <Tabs className="standard-tabs">
-                <TabList>
+            <Tabs className="nested-tabs">
+                <TabList className="grid-tablist">
                     {tabs.map((tab, index) => (
                         <Tab key={ index }>{ tab.label }</Tab>
                     ))}
@@ -52,6 +53,7 @@ export const ShowcaseComponentTabs = ({ title, titleDescription, tabs, chatData,
                     </TabPanel>
                 ))}
             </Tabs>
+            
             <DividerLine />
             <IntroSection title="Simulated Chat Conversation">
                 { chatDescription }
