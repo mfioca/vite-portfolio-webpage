@@ -71,36 +71,36 @@ const GPTAssistant = () => {
                         </TabPanel>
                         <TabPanel>
                             <ShowcaseComponent
-                                    title="Modula - GPT Personalization Assistant"
-                                    titleDescription = {
-                                        <>
-                                            <p>
-                                                Personalization Assistant 2.0 builds on the original by aligning more closely with ChatGPT’s latest customization settings. The update reflects a deeper understanding of how prompt structure influences assistant behavior and user experience.
-                                            </p>
-                                            <p>
-                                                I created this version to incorporate everything I’ve learned about prompt design, tone control, and user-guided interaction. It introduces clearer formatting, phase-based conversation structure, and rule-driven guidance—refining the assistant's ability to mirror the user’s intent and communication style.
-                                            </p>
-                                            <p>
-                                                This evolution wasn’t just about making improvements—it was about precision. By applying new knowledge and cleaner logic, this version creates a more effective, user-centered tool for crafting personalized AI responses that feel intuitive and intentional.
-                                            </p>
-                                        </>
-                                    }
-                                    prompt = { prompts.PersonalizationAssistant_2 }
-                                    chatDescription = {
-                                        <>
-                                            <p>
-                                                This chat simulation showcases a live walkthrough of the updated Personalization Assistant prompt, tested within a brand-new ChatGPT account. Unlike prior sessions, this interaction took place in an environment with no saved long-term memory or behavioral history.
-                                            </p>
-                                            <p>
-                                                The assistant guides the user through the setup of personalization settings from scratch, focusing on tone, communication preferences, and boundaries around assistant behavior. The conversation demonstrates how well the new prompt captures user intent with clarity and precision.
-                                            </p>
-                                            <p>
-                                                This test highlights the assistant's ability to adapt responsively within a clean state—ensuring that even first-time users can establish deeply aligned settings that reflect their working style, tone, and expectations.
-                                            </p>
-                                        </>
-                                    }
-                                    chatData = { <ChatBubble data={ chatData.personalizationAssistant2_chat } /> }
-                                />
+                                title="Modula - GPT Personalization Assistant"
+                                titleDescription = {
+                                    <>
+                                        <p>
+                                            Personalization Assistant 2.0 builds on the original by aligning more closely with ChatGPT’s latest customization settings. The update reflects a deeper understanding of how prompt structure influences assistant behavior and user experience.
+                                        </p>
+                                        <p>
+                                            I created this version to incorporate everything I’ve learned about prompt design, tone control, and user-guided interaction. It introduces clearer formatting, phase-based conversation structure, and rule-driven guidance—refining the assistant's ability to mirror the user’s intent and communication style.
+                                        </p>
+                                        <p>
+                                            This evolution wasn’t just about making improvements—it was about precision. By applying new knowledge and cleaner logic, this version creates a more effective, user-centered tool for crafting personalized AI responses that feel intuitive and intentional.
+                                        </p>
+                                    </>
+                                }
+                                prompt = { prompts.PersonalizationAssistant_2 }
+                                chatDescription = {
+                                    <>
+                                        <p>
+                                            This chat simulation showcases a live walkthrough of the updated Personalization Assistant prompt, tested within a brand-new ChatGPT account. Unlike prior sessions, this interaction took place in an environment with no saved long-term memory or behavioral history.
+                                        </p>
+                                        <p>
+                                            The assistant guides the user through the setup of personalization settings from scratch, focusing on tone, communication preferences, and boundaries around assistant behavior. The conversation demonstrates how well the new prompt captures user intent with clarity and precision.
+                                        </p>
+                                        <p>
+                                            This test highlights the assistant's ability to adapt responsively within a clean state—ensuring that even first-time users can establish deeply aligned settings that reflect their working style, tone, and expectations.
+                                        </p>
+                                    </>
+                                }
+                                chatData = { <ChatBubble data={ chatData.personalizationAssistant2_chat } /> }
+                            />
                         </TabPanel>
                     </BodyContainer>
                 </div>

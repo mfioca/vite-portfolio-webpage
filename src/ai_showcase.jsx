@@ -18,7 +18,8 @@ const AIShowcase = () => {
     return (
         <div className="standard-padding-margin">
             <IntroSection title="AI Showcase">
-                <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase serves as a demonstration of advanced prompt engineering and AI  collaboration techniques. This page highlights a curated collection of interactive conversations designed to showcase the power of OpenAI’s language models when combined with creative and technical expertise. Each example illustrates unique prompts, custom-tailored to generate engaging, insightful, and dynamic interactions.
+                <p>
+                    <strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase serves as a demonstration of advanced prompt engineering and AI  collaboration techniques. This page highlights a curated collection of interactive conversations designed to showcase the power of OpenAI’s language models when combined with creative and technical expertise. Each example illustrates unique prompts, custom-tailored to generate engaging, insightful, and dynamic interactions.
                 </p>
                 <p>
                     By exploring this page, you’ll gain insight into how carefully crafted prompts can shape AI behavior, enabling applications in storytelling, education, decision support, and more. The AI Showcase is not just a testament to the potential of AI but also a reflection of the innovative approaches used to push its boundaries.
@@ -70,8 +71,8 @@ const AIShowcase = () => {
                                 }
                                 chatData={ <ChatBubble data={ chatData.LegislativeGuidePromptTest } /> }
                             />
-                            </BodyContainer>
-                        </TabPanel>
+                        </BodyContainer>
+                    </TabPanel>
                 </Tabs>
             </div>
         </div>
