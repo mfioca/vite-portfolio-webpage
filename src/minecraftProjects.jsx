@@ -4,6 +4,7 @@ import DwarvenKingdom from './minecraft_project/dwarvenkingdom';
 import CrowHaven from './minecraft_project/crowhaven';
 import Emberhold from './minecraft_project/emberhold';
 import RandomPlaces from './minecraft_project/random_places'
+import SkyholdVale from './minecraft_project/skyhold_vale';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './minecraft_project/minecraft.css';
@@ -95,6 +96,7 @@ const MinecraftProjects = () => {
                         <Tab>Dwarven Kingdom</Tab>
                         <Tab>Crowhaven</Tab>
                         <Tab>Emberhold</Tab>
+                        <Tab>Skyhold Vale</Tab>
                         <Tab>Random Places</Tab>
                     </TabList>
                     <TabPanel>
@@ -108,6 +110,9 @@ const MinecraftProjects = () => {
                     </TabPanel>
                     <TabPanel>
                         <Emberhold />
+                    </TabPanel>
+                    <TabPanel>
+                        <SkyholdVale/>
                     </TabPanel>
                     <TabPanel>
                         <RandomPlaces />
