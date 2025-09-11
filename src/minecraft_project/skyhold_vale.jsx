@@ -14,7 +14,7 @@ const SkyholdVale = () => {
                         <Tab>Mountain</Tab>
                         <Tab>Outskirts</Tab>
                         <Tab>Inner City</Tab>
-                        <Tab>Castle</Tab>
+                        <Tab>Feature Buildings</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
@@ -95,19 +95,34 @@ const SkyholdVale = () => {
                             />
                         </TabPanel>
                         <TabPanel>
-                            <IntroSection title="Skyhold Vale Castle">
+                            <IntroSection title="Skyhold Specific buildings">
                                 <p>
-                                    The castle at the summit of Skyhold Vale was built using a tutorial by BigTonyMC and turned out to be the perfect fit for the top of the mountain. These images showcase the castle from multiple perspectives, including exterior views from both the summit and the valley floor. Several shots also highlight the view looking down from the castle over the rest of the city, emphasizing its role as a commanding presence and final architectural centerpiece of the build.
+                                    This section showcases key structures within Skyhold Vale, starting with the summit castle, a large inn nestled against the mountainside, and a stately two-story house that could serve as a mayor’s residence or city hall. Each structure adds to the architectural diversity of the city and sets the tone for future development across the inner city and surrounding districts.
                                 </p>
                             </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
-                                title="Castle Exterior"
+                                title="Castle"
                                 photos={ skyhold_vale_photos.skyvale_castle }
                                 description={
                                     <>
                                         <p>
+                                            The castle at the summit of Skyhold Vale was built using a tutorial by BigTonyMC and turned out to be the perfect fit for the top of the mountain. These images showcase the castle from multiple perspectives, including exterior views from both the summit and the valley floor. Several shots also highlight the view looking down from the castle over the rest of the city, emphasizing its role as a commanding presence and final architectural centerpiece of the build.
+                                        </p>
+                                        <p>
                                             This is the initial set of castle images. More pictures will be added as the build progresses.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Random Buildings"
+                                photos={ skyhold_vale_photos.Random_buildings }
+                                description={
+                                    <>
+                                       <p>
+                                            This gallery features close-up exterior views of individual buildings scattered throughout Skyhold Vale. Each image highlights architectural details, material choices, and stylistic variety. New images will be added over time as more structures are completed across the city.
                                         </p>
                                     </>
                                 }
