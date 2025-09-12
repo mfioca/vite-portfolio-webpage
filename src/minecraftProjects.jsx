@@ -79,6 +79,11 @@ const MinecraftProjects = () => {
                                         Gorillo
                                     </a> – Creates immersive builds and tutorials that blend creativity with functional design.
                                 </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@lioncheater" target="_blank" rel="noopener noreferrer">
+                                        LionCheater
+                                    </a> – Creator of functional and aesthetic survival builds with cozy, compact design work.
+                                </li>
                             </ul>
                             <p>
                                 These creators' work has provided both guidance and inspiration throughout the construction of my Minecraft 
