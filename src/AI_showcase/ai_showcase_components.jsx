@@ -6,12 +6,24 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 
-export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, chatDescription }) => {
+export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, chatDescription, link }) => {
     return (
         <div>
             <IntroSection title={ `${title} Prompt` }>
                 { titleDescription }
             </IntroSection>
+            {link && (
+                <p style={{ textAlign: 'center', marginTop: '10px' }}>
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#0078d4', textDecoration: 'underline' }}
+                    >
+                        Try this prompt on ChatGPT
+                    </a>
+                </p>
+            )}
             <DividerLine />
                 <BorderBox className="center-margin markdown-container">
                     <ReactMarkdown>{ prompt }</ReactMarkdown>

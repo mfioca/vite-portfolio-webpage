@@ -70,6 +70,7 @@ const AIShowcase = () => {
                                     </>
                                 }
                                 chatData={ <ChatBubble data={ chatData.LegislativeGuidePromptTest } /> }
+                                link="https://chatgpt.com/g/g-6862c2b5811c819185c1e7a346c56e53-legislative-guide-one-big-beautiful-bill"
                             />
                         </BodyContainer>
                     </TabPanel>

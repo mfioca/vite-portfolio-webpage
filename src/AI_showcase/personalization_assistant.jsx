@@ -100,6 +100,7 @@ const GPTAssistant = () => {
                                     </>
                                 }
                                 chatData = { <ChatBubble data={ chatData.personalizationAssistant2_chat } /> }
+                                link="https://chatgpt.com/g/g-6809abb94dd48191bb8a07c01000306b-modula-gpt-personalization-assistant"
                             />
                         </TabPanel>
                     </BodyContainer>
