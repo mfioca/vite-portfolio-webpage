@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { BodyContainer, IntroSection, DividerLine } from '../SharedComponents';
+import { BodyContainer, IntroSection, DividerLine, YouTubeEmbed } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
 import { 
     building_enterance, 
@@ -45,6 +45,16 @@ const WhiterunProject = () => {
                                     Explore the different stages of the build, from its early framework to the final immersive details.
                                 </p>
                             </IntroSection>
+                            <DividerLine />
+                            {/* Embed the YouTube video here */}
+                            <h2 >YouTube Video Showcase</h2>
+                            <p className="standard-padding-margin-center">
+                                This video provides a full walkthrough of the Whiterun build, including aerial views of the entire city and its districts, a walking tour of the exterior, and interior tours of key locations throughout the project.
+                            </p>
+                            <YouTubeEmbed
+                                videoId="NfSes0j3UF8"
+                                title="Whiterun City Build Showcase"
+                            />
                             <DividerLine />
                             <MinecraftGallery
                                 title="City Gates"
@@ -278,10 +288,3 @@ const WhiterunProject = () => {
 export default WhiterunProject;
 
 
-/*  placeholder section
-<TabPanel>
-    <div className=" standard-padding-margin placeholder-container">
-        <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
-    </div>
-</TabPanel>
-*/

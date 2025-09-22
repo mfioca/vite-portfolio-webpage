@@ -95,6 +95,18 @@ export const WindowHeightDisplay = () => {
 
 
 
-
+export const YouTubeEmbed = ({ videoId, title = "YouTube video" }) => {
+  return (
+    <div className="youtube-embed-wrapper center-div center-margin">
+      <iframe
+        className="youtube-embed"
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title={title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  );
+};
 
 
