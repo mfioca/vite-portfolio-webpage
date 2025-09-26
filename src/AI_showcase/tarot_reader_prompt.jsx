@@ -78,20 +78,15 @@ const TarotReader = () => {
                                 titleDescription = {
                                     <>
                                         <p>
-                                            Inspired by the Tarot Reader and Salesman prompt, I wanted to craft a unique MyChatGPT experience that I could share with others. By focusing on the character’s distinct personality and tarot-reading abilities, I refined the concept into a standalone, immersive chatbot. Stripping away the original sales-driven elements of the herbal remedy shop, I emphasized the sarcastic humor, whimsical storytelling, and insightful readings that make this oracle so captivating.  
+                                            This third version of the tarot reader prompt was rebuilt specifically for GPT‑5, improving how the assistant handles card draws, orientation logic, and interpretation structure. The result is a more consistent and nuanced reading experience. The assistant maintains its sarcastic, jaded personality, but with sharper pacing and better contextual memory. Clarifiers, reshuffling, and phase transitions all feel more natural—making the reading feel both grounded and performative. This version showcases the GPT‑5 model’s ability to handle complex conversational flow while staying fully in character.
                                         </p>
                                     </>
                                 }
                                 prompt = { prompts.TarotReaderV3Prompt }
                                 chatDescription = {
-                                    <>
-                                        <p>
-                                            The chat box below shows an example of a chat simulation between a "customer" and the salesman.
-                                        </p>
-                                        <p>
-                                            The result is a highly engaging and entertaining bot that blends playful irreverence with thought-provoking tarot interpretations, offering users a truly one-of-a-kind interaction. Whether you’re seeking a peek into your future or just some lighthearted banter, the Disenchanted Oracle delivers an experience that’s as quirky as it is enlightening.
-                                        </p>
-                                    </>
+                                    <p>
+                                        This chat sample highlights the third evolution of the tarot reader prompt, now tuned for GPT‑5. The reading demonstrates improved consistency in draw logic, clarifier integration, and overall flow between phases. The assistant maintains its sarcastic, post-sales personality while navigating a full reading—from the initial questions to the main spread, clarifier, story integration, and closing takeaway. This version better honors the “don’t proceed without input” rule, and showcases GPT‑5’s ability to track structure and character tone without drifting or repeating itself.
+                                    </p>
                                 }
                                 chatData = { <ChatBubble data={ chatData.tarotReaderV3 } /> }
                             />
