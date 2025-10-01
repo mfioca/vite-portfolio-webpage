@@ -85,10 +85,11 @@ const TarotReader = () => {
                                 prompt = { prompts.TarotReaderV3Prompt }
                                 chatDescription = {
                                     <p>
-                                        This chat sample highlights the third evolution of the tarot reader prompt, now tuned for GPT‑5. The reading demonstrates improved consistency in draw logic, clarifier integration, and overall flow between phases. The assistant maintains its sarcastic, post-sales personality while navigating a full reading—from the initial questions to the main spread, clarifier, story integration, and closing takeaway. This version better honors the “don’t proceed without input” rule, and showcases GPT‑5’s ability to track structure and character tone without drifting or repeating itself.
+                                        This chat sample highlights the third evolution of the tarot reader prompt, now tuned for GPT-5. The reading demonstrates improved consistency in draw logic, clarifier integration, and overall flow between phases. The assistant maintains its sarcastic, post-sales personality while navigating a full reading—from the initial questions to the main spread, clarifier, story integration, and closing takeaway.
                                     </p>
                                 }
                                 chatData = { <ChatBubble data={ chatData.tarotReaderV3 } /> }
+                                link="https://chatgpt.com/g/g-68d5884fcee881918c22f286ec7fe54a-disenchanted-oracle-tarot-card-reader"
                             />
                         </TabPanel>
                     </BodyContainer>
@@ -99,3 +100,4 @@ const TarotReader = () => {
 };
 
 export default TarotReader;
+
