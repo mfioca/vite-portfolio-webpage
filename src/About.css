@@ -1,148 +1,128 @@
-
 /***********************************************************************************/
 /*                            Scrolling quotes                                     */
 /***********************************************************************************/
 
 .scrolling-quotes {
-    flex-direction: column; /* Stack children vertically */
-    align-items: center;
-    letter-spacing: 0.5px; /* Adds slight spacing between letters for clarity */
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    align-items: center;    /* center horizontally */
+    justify-content: center;
+    text-align: center;
     max-width: 95%;
+    padding: 10px 20px;
 }
 
 .scrolling-quotes .quote-text {
-    font-size: 16px;
-    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.6;
+    font-family: 'Playfair Display', serif; 
+    font-weight: 400;
+    text-align: center;
+    opacity: 0; /* start hidden */
+    transition: opacity 1s ease-in-out; /* fade */
 }
 
 .scrolling-quotes .quote-source {
-    text-transform: capitalize;
     font-family: 'Raleway', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    color: var(--fontblue); /* Lighter color for the source */
+    margin-top: 8px;
+    color: var(--fontblue);
+    text-transform: none;
+    text-align: center;
+    opacity: 0; /* start hidden */
+    transition: opacity 1s ease-in-out; /* fade */
+}
+
+/* When "show" class is applied, fade in */
+.scrolling-quotes .quote-text.show,
+.scrolling-quotes .quote-source.show {
+    opacity: 1;
 }
 
 @media (min-width: 1000px) {
-    .scrolling-quotes {
-        height: 140px; /* Adjust height for smaller viewports */
-    }
+    .scrolling-quotes { height: 140px; }
 }
-
 @media (max-width: 1000px) {
-    .scrolling-quotes {
-        height: 240px; /* Adjust height for smaller viewports */
-    }
+    .scrolling-quotes { height: 240px; }
 }
 
 /***********************************************************************************/
-/*                            Swiper Section                                       */
+/*                            Feature Panels                                       */
 /***********************************************************************************/
 
-.about-swiper {
-    display: flex; /* Optional: if using flex for layout */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: flex-start; /* Content starts at the top */
+.feature-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap20);
     max-width: var(--maxwidth);
+    margin: 40px auto;
     padding: var(--padding);
-    margin: var(--margin);
-    box-sizing: border-box; /* Include padding in size calculations */
-    box-shadow: var(--boxshadow);
-    background-image: var(--background-image);
-    transition: opacity 0.5s ease-in-out; /* Smooth transition */
     border-radius: var(--borderradius);
     border: var(--border);
-    line-height: 2; /* Adjust line height for better spacing */
+    background-image: var(--background-image);
+    box-shadow: var(--boxshadow);
+    line-height: 1.8;
 }
 
-.about-swiper p,
-.about-swiper ul {
-    margin-right: 20px;
-    margin-left: 20px;
+.feature-panel.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    flex: 1;
     padding: var(--padding);
-    letter-spacing: 0.5px; /* Adjust as needed */
-    font-weight: 300; /* Semi-bold */
-    font-size: 16px; /* Standard text size */
 }
 
-.about-swiper h2 {
-    line-height: 1; /* Adjust line height for better spacing */
-    text-align: center; /* Center the title */
-    color: var(--fontblue); /* Primary color for section headings */
-    font-size: 32px; /* Section heading font size */
+.feature-text h2 {
+    text-align: left;
+    font-size: 32px;
+    color: var(--fontblue);
+    margin-bottom: 15px;
 }
 
-.card-container {
-    margin-bottom: 50px;
-    height: 100%; /* Ensure it occupies the full viewport */
-    width: 100%;
-    box-sizing: border-box; /* Include padding/borders */
+.feature-text ul {
+    padding-left: 20px;
+    list-style: disc;
+    line-height: 1.6;
 }
 
-.top-icon {
-    flex: 0 0 auto; /* Prevents shrinking or growing */
-    height: 50px; /* Fixed height for the footer */
-    width: 100%; /* Full width */
-    margin-bottom: auto; /* Pushes the footer to the bottom of the screen */
+.feature-image {
+    flex: 1;
     text-align: center;
-    font-size: 40px; /* Adjust icon size */
-    line-height: 50px; /* Vertically center text */
 }
 
-.card-body {
-    flex: 1; /* Fills the available vertical space in the parent */
-    width: 100%; /* Ensures it spans the full width of the about-card */
-    box-sizing: border-box; /* Include padding/borders */
-    margin-bottom: var(--default-spacing);
+.feature-image img {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: var(--borderradius);
+    box-shadow: var(--thinshadow);
 }
 
-.card-image {
-    display: block;
-    flex-shrink: 1; /* Allow the image to shrink if necessary */
-    object-fit: contain; /* Prevent cropping while fitting the container */
-    box-sizing: border-box; /* Include padding/borders in size calculations */
-    margin: auto; /* Center the image horizontally */
-    max-width: 100%; /* Ensure the image stays within its container */
-    max-height: 700px;
-    margin-bottom: 20px; /* Add space below the image */
-    padding: 20px;
+.feature-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--colorblue);
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.about-swiper .swiper-button-next,
-.about-swiper .swiper-button-prev {
-  position: absolute;
-  top: 50%;
-  z-index: 10;
-  transform: translateY(-50%);
+.feature-link:hover {
+    text-decoration: underline;
 }
 
-@media (min-width: 1000px) {
-    .card-container {
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        margin: auto;
+/* Responsive tweaks */
+@media (max-width: 1000px) {
+    .feature-panel {
+        flex-direction: column;
+        text-align: center;
     }
-
-    .about-swiper .swiper-button-next {
-        right: 10px;
-        top: auto;
-        bottom: 10px;
-        transform: translateY(-50%);
-        z-index: 10;
-        padding: 10px; /* Increase padding to enlarge the clickable area */
-        touch-action: manipulation; /* Optimize touch interaction */
+    .feature-panel.reverse {
+        flex-direction: column;
     }
-    
-    .about-swiper .swiper-button-prev {
-        left: 10px;
-        top: auto;
-        bottom: 10px;
-        transform: translateY(-50%);
-        z-index: 10;
-        padding: 10px; /* Increase padding to enlarge the clickable area */
-        touch-action: manipulation; /* Optimize touch interaction */
+    .feature-text h2 {
+        text-align: center;
     }
 }
-
-
