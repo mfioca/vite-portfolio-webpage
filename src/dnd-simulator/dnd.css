@@ -110,16 +110,6 @@
   box-sizing: border-box;
 }
 
-.character-sheet-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* center vertically within the box */
-  align-items: center;
-  max-width: 450px;
-  min-width: 250px;
-  width: 100%;
-}
-
 .avatar-stat-layout {
   display: flex;
   flex-direction: row; /* 🔥 row layout */

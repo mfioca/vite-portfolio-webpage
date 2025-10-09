@@ -238,7 +238,12 @@ function Simulator() {
             }>
               Current Turn: { state.currentTurn ? (state.currentTurn === 'hero' ? 'Hero' : 'Monster') : '' }
             </p>
-            <p>Hero Win streak: { state.heroWins }</p>
+            <p className="reminder-warning">
+              Hero Win streak:
+              <span style={{ marginLeft: '0.5rem' }}>
+                <b className="result-good">{ state.heroWins }</b>
+              </span>
+            </p>
           </BorderBox>
 {/* ------------------------------MONSTER CHARACTER SHEET------------------------------*/}
           <div className="character-sheet-container">
