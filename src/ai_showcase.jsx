@@ -5,7 +5,10 @@ import './AI_showcase/ai_showcase.css'
 import './AI_showcase/developer_project.jsx'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 
-
+import DeveloperPrompt from './AI_showcase/developer_project.jsx'
+import TimPrompt from './AI_showcase/tim_prompt.jsx'
+import GPTAssistant from './AI_showcase/personalization_assistant.jsx'
+import TarotReader from './AI_showcase/tarot_reader_prompt.jsx'
 
 import * as prompts from './AI_showcase/ai_prompts.jsx';
 import chatData from './AI_showcase/chatData.json';
