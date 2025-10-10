@@ -5,10 +5,7 @@ import './AI_showcase/ai_showcase.css'
 import './AI_showcase/developer_project.jsx'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 
-import DeveloperPrompt from './AI_showcase/developer_project.jsx'
-import TimPrompt from './AI_showcase/tim_prompt.jsx'
-import GPTAssistant from './AI_showcase/personalization_assistant.jsx'
-import TarotReader from './AI_showcase/tarot_reader_prompt.jsx'
+
 
 import * as prompts from './AI_showcase/ai_prompts.jsx';
 import chatData from './AI_showcase/chatData.json';
@@ -34,6 +31,7 @@ const AIShowcase = () => {
                         <Tab>Developer Prompt</Tab>
                         <Tab>Tim: Your Conversational Companion</Tab>
                         <Tab>Legislative Guide</Tab>
+                        <Tab>Stellarium Guide  Calm Astronomer</Tab>
                     </TabList>
                     <TabPanel>
                         <TarotReader />
@@ -71,6 +69,29 @@ const AIShowcase = () => {
                                 }
                                 chatData={ <ChatBubble data={ chatData.LegislativeGuidePromptTest } /> }
                                 link="https://chatgpt.com/g/g-6862c2b5811c819185c1e7a346c56e53-legislative-guide-one-big-beautiful-bill"
+                            />
+                        </BodyContainer>
+                    </TabPanel>
+                    <TabPanel>
+                        <BodyContainer hasBackground = { true } className="ai-showcase-container">
+                            <ShowcaseComponent
+                                title="Stellarium Guide  Calm Astronomer"
+                                titleDescription={
+                                    <>
+                                        <p>
+                                            This prompt creates a calm, knowledgeable astronomy guide with ten years of experience using Stellarium for telescope planning and sky observation. It's designed to help beginners feel confident navigating the software, referencing the official Stellarium PDF guide for step-by-step support. Ideal for users who want patient, plain-language help identifying planets, stars, and constellations without getting overwhelmed.
+                                        </p>
+                                    </>
+                                }
+                                prompt ={ prompts.StellariumGuidePrompt }
+                                chatDescription={
+                                    <>
+                                        <p>
+                                            Still needs testing example.
+                                        </p>
+                                    </>
+                                }
+                                link="https://chatgpt.com/g/g-68e93e6c08b88191b216b44eb0e5d8dc-stellarium-guide-calm-astronomer"
                             />
                         </BodyContainer>
                     </TabPanel>
