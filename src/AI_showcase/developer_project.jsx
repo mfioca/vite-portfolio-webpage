@@ -7,8 +7,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 
 
 
-import * as prompts from './ai_prompts.jsx';
-import chatData from './chatData.json';
+import * as tank from './prompts/developer_prompts.jsx';
+import chatData from './chats/developer_chats.json';
 
 const DeveloperPrompt = () => {
     return (
@@ -33,9 +33,9 @@ const DeveloperPrompt = () => {
                                     </>
                                 }
                                 tabs={[
-                                    { label: 'Prompt', content: prompts.DeveloperPrompt1 },
-                                    { label: 'Negative Guidelines', content: prompts.DeveloperPrompt1Negative },
-                                    { label: 'Positive Guidelines', content: prompts.DeveloperPrompt1Postive }
+                                    { label: 'Prompt', content: tank.DeveloperPrompt1 },
+                                    { label: 'Negative Guidelines', content: tank.DeveloperPrompt1Negative },
+                                    { label: 'Positive Guidelines', content: tank.DeveloperPrompt1Postive }
                                 ]}
                                 chatDescription={
                                     <>
@@ -61,8 +61,8 @@ const DeveloperPrompt = () => {
                                     </>
                                 }
                                 tabs={[
-                                    { label: 'Prompt', content: prompts.DeveloperPrompt2 },
-                                    { label: 'Talk Track', content: prompts.DeveloperPrompt2TalkTrack }
+                                    { label: 'Prompt', content: tank.DeveloperPrompt2 },
+                                    { label: 'Talk Track', content: tank.DeveloperPrompt2TalkTrack }
                                 ]}
                                 chatDescription={
                                     <>
@@ -93,7 +93,7 @@ const DeveloperPrompt = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { prompts.DeveloperPrompt3 }
+                                prompt = { tank.DeveloperPrompt3 }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -119,7 +119,7 @@ const DeveloperPrompt = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { prompts.DeveloperPrompt4 }
+                                prompt = { tank.DeveloperPrompt4 }
                                 chatDescription = {
                                     <>
                                         <p>

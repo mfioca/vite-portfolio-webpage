@@ -5,13 +5,14 @@ import './AI_showcase/ai_showcase.css'
 import './AI_showcase/developer_project.jsx'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 
-import DeveloperPrompt from './AI_showcase/developer_project.jsx'
-import TimPrompt from './AI_showcase/tim_prompt.jsx'
-import GPTAssistant from './AI_showcase/personalization_assistant.jsx'
-import TarotReader from './AI_showcase/tarot_reader_prompt.jsx'
+import DeveloperPrompt from './AI_showcase/developer_project.jsx';
+import TimPrompt from './AI_showcase/tim_prompt.jsx';
+import GPTAssistant from './AI_showcase/personalization_assistant.jsx';
+import TarotReader from './AI_showcase/tarot_reader_prompt.jsx';
 
-import * as prompts from './AI_showcase/ai_prompts.jsx';
-import chatData from './AI_showcase/chatData.json';
+import LegislativeGuidePrompt from './AI_showcase/prompts/legislativeguideprompt.jsx';
+import StellariumGuidePrompt from './AI_showcase/prompts/stellarium_prompt.jsx';
+import lgchat from './AI_showcase/chats/legislative_chat.json';
 
 
 const AIShowcase = () => {
@@ -34,7 +35,7 @@ const AIShowcase = () => {
                         <Tab>Developer Prompt</Tab>
                         <Tab>Tim: Your Conversational Companion</Tab>
                         <Tab>Legislative Guide</Tab>
-                        <Tab>Stellarium Guide  Calm Astronomer</Tab>
+                        <Tab>Stellarium Guide - Astronomer</Tab>
                     </TabList>
                     <TabPanel>
                         <TarotReader />
@@ -59,7 +60,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                prompt ={ prompts.LegislativeGuidePrompt }
+                                prompt ={ LegislativeGuidePrompt }
                                 chatDescription={
                                     <>
                                         <p>
@@ -70,7 +71,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                chatData={ <ChatBubble data={ chatData.LegislativeGuidePromptTest } /> }
+                                chatData={ <ChatBubble data={ lgchat.LegislativeGuidePromptTest[0].messages } /> }
                                 link="https://chatgpt.com/g/g-6862c2b5811c819185c1e7a346c56e53-legislative-guide-one-big-beautiful-bill"
                             />
                         </BodyContainer>
@@ -78,7 +79,7 @@ const AIShowcase = () => {
                     <TabPanel>
                         <BodyContainer hasBackground = { true } className="ai-showcase-container">
                             <ShowcaseComponent
-                                title="Stellarium Guide  Calm Astronomer"
+                                title="Stellarium Guide - Astronomer"
                                 titleDescription={
                                     <>
                                         <p>
@@ -86,7 +87,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                prompt ={ prompts.StellariumGuidePrompt }
+                                prompt ={ StellariumGuidePrompt }
                                 chatDescription={
                                     <>
                                         <p>

@@ -7,8 +7,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 
 import { Link } from 'react-router-dom';
 
-import * as prompts from './ai_prompts.jsx';
-import chatData from './chatData.json';
+import * as pa from './prompts/personalization_prompts.jsx';
+import chatData from './chats/personalization_chats.json';
 
 
 const ghostsLink = (
@@ -52,7 +52,7 @@ const GPTAssistant = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { prompts.PersonalizationAssistant }
+                                prompt = { pa.PersonalizationAssistant }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -85,7 +85,7 @@ const GPTAssistant = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { prompts.PersonalizationAssistant_2 }
+                                prompt = { pa.PersonalizationAssistant_2 }
                                 chatDescription = {
                                     <>
                                         <p>

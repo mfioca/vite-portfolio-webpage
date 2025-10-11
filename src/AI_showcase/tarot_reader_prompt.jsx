@@ -5,10 +5,8 @@ import { ChatBubble, ShowcaseComponent } from './ai_showcase_components.jsx';
 import './ai_showcase.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 
-
-
-import * as prompts from './ai_prompts.jsx';
-import chatData from './chatData.json';
+import * as tarot from './prompts/tarot_prompts.jsx';
+import chatData from './chats/tarot_chats.json';
 
 const TarotReader = () => {
     return (
@@ -34,7 +32,7 @@ const TarotReader = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { prompts.tarotReaderPrompt }
+                                prompt = { tarot.tarotReaderPrompt }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -58,7 +56,7 @@ const TarotReader = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { prompts.DisenchantedOraclePrompt }
+                                prompt = { tarot.DisenchantedOraclePrompt }
                                 chatDescription = {
                                     <>
                                         <p>
@@ -82,7 +80,7 @@ const TarotReader = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { prompts.TarotReaderV3Prompt }
+                                prompt = { tarot.TarotReaderV3Prompt }
                                 chatDescription = {
                                     <p>
                                         This chat sample highlights the third evolution of the tarot reader prompt, now tuned for GPT-5. The reading demonstrates improved consistency in draw logic, clarifier integration, and overall flow between phases. The assistant maintains its sarcastic, post-sales personality while navigating a full reading—from the initial questions to the main spread, clarifier, story integration, and closing takeaway.

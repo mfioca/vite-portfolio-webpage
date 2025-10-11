@@ -7,8 +7,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 
 
 
-import * as prompts from './ai_prompts.jsx';
-import chatData from './chatData.json';
+import * as tim from './prompts/timenchanter_prompts.jsx';
+import chatData from './chats/timenchanter_chats.json';
 
 const TimPrompt = () => {
     return (
@@ -30,7 +30,7 @@ const TimPrompt = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { prompts.TimTheEnchanterPrompt }
+                                prompt = { tim.TimTheEnchanterPrompt }
                                 chatDescription = {
                                     <>
                                         <h2>Conversational AI with Wit, Precision, and a Touch of Absurdity</h2>
@@ -70,7 +70,7 @@ const TimPrompt = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { prompts.TimTheEnchanterPrompt2 }
+                                prompt = { tim.TimTheEnchanterPrompt2 }
                                 chatDescription = {
                                     <>
                                         <p>
