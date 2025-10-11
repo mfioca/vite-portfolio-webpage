@@ -1,6 +1,6 @@
 import React from 'react';
 import { DividerLine, IntroSection, BodyContainer } from './SharedComponents.jsx';
-import { ChatBubble, ShowcaseComponent } from './AI_showcase/ai_showcase_components.jsx';
+import {  ChatBubble , ShowcaseComponent } from './AI_showcase/ai_showcase_components.jsx';
 import './AI_showcase/ai_showcase.css'
 import './AI_showcase/developer_project.jsx'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -9,11 +9,9 @@ import DeveloperPrompt from './AI_showcase/developer_project.jsx';
 import TimPrompt from './AI_showcase/tim_prompt.jsx';
 import GPTAssistant from './AI_showcase/personalization_assistant.jsx';
 import TarotReader from './AI_showcase/tarot_reader_prompt.jsx';
-
-import LegislativeGuidePrompt from './AI_showcase/prompts/legislativeguideprompt.jsx';
-import StellariumGuidePrompt from './AI_showcase/prompts/stellarium_prompt.jsx';
+import { LegislativeGuidePrompt } from './AI_showcase/prompts/legislativeguideprompt.jsx';
 import lgchat from './AI_showcase/chats/legislative_chat.json';
-
+import { StellariumGuidePrompt } from './AI_showcase/prompts/stellarium_prompt.jsx';
 
 const AIShowcase = () => {
     return (
@@ -71,7 +69,7 @@ const AIShowcase = () => {
                                         </p>
                                     </>
                                 }
-                                chatData={ <ChatBubble data={ lgchat.LegislativeGuidePromptTest[0].messages } /> }
+                                chatData={ <ChatBubble data={ lgchat.LegislativeGuidePromptTest } /> }
                                 link="https://chatgpt.com/g/g-6862c2b5811c819185c1e7a346c56e53-legislative-guide-one-big-beautiful-bill"
                             />
                         </BodyContainer>
@@ -98,7 +96,7 @@ const AIShowcase = () => {
                                 link="https://chatgpt.com/g/g-68e93e6c08b88191b216b44eb0e5d8dc-stellarium-guide-calm-astronomer"
                             />
                         </BodyContainer>
-                    </TabPanel>
+                    </TabPanel>          
                 </Tabs>
             </div>
         </div>
