@@ -7,10 +7,25 @@
   --gap10: 10px;
   --gap20: 20px;
   --colortest: pink;
-  --defaultColor: #e0e0e0;
+  /*--defaultColor: #e0e0e0;*/
   --defaultColor-1: var(--colortest);
-  --navcolor: #282c34;
-  --lightgrey: #f9f9f9;
+  --defaultColor-h: 0;
+  --defaultColor-s: 0%;
+  --defaultColor-l: 88%; /* #e0e0e0 in HSL = h:0, s:0%, l:88% */
+  /*--navcolor: #282c34;*/
+  --nav-h: 210;
+  --nav-s: 13%;
+  --nav-l: 18%;
+  /* --nav-color: hsl(var(--nav-h), var(--nav-s), var(--nav-l)); */
+
+  /* Constructed colors */
+  /* hsl(var(--defaultColor-h), var(--defaultColor-s), var(--defaultColor-l)); */
+  --defaultColor: hsl(var(--defaultColor-h), var(--defaultColor-s), var(--defaultColor-l)); 
+  --bordercolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 10%)); /*#ccc;*/
+ 
+  --bordercolor-1: var(--colortest);
+  --navcolor: hsl(var(--nav-h), var(--nav-s), var(--nav-l));/* #282c34;*/
+  --lightgrey: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) + 10%));  /*#f9f9f9;*/
   --colorwhite: #ffffff;
   --colorblue: #0078d4;
   --lightgreyblue: #f8f9fa;
@@ -19,20 +34,18 @@
   --chatbubbleAI: #e5e5e5;
   --chatbubbleAIFont: var(--fontcolor);
   --chatbubbleUser: #0078d4;
-  --tvmazegraycolor: #666; /* Subtle gray for less emphasis */
+  --tvmazegraycolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 48%)); /*#666; /* Subtle gray for less emphasis */
   --chatbubbleUserFont: var(--colorwhite);
   --textsectioncolor: var(--lightgreyblue);
   --tablemouseovercolor: var(--lightgrey);
-  --bordercolor: #ccc;
-  --bordercolor-1: var(--colortest);
   --fontcolortest: rgb(242, 128, 147);
   --fontcolor: #333;
   --fontblue: var(--colorblue);
   --buttonbluehover: #005a9e;
   --lightbackgroundcolor: var(--lightgrey);
-  --tableTHbackgroundcolor: #e0e0e0;
-  --tableheaderdarkcolor: #444444;
-  --tableborder: 1px solid #ddd;
+  --tableTHbackgroundcolor: var(--defaultColor); /*#e0e0e0;*/
+  --tableheaderdarkcolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 61%)); /*#444444;*/
+  --tableborder: 1px solid var(--bordercolor);
   --background-image: linear-gradient(var(--defaultColor), var(--colorwhite)); /* Light gradient for the background */
   --transition-opacity: opacity 0.5s ease-in-out; /* Smooth transition */;
   --transition-background-color: background-color 0.5s ease-in-out;
