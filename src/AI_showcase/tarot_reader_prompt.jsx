@@ -8,6 +8,8 @@ import 'react-tabs/style/react-tabs.css';
 import * as tarot from './prompts/tarot_prompts.jsx';
 import chatData from './chats/tarot_chats.json';
 
+
+
 const TarotReader = () => {
     return (
         <div className="standard-padding-margin">
@@ -44,6 +46,7 @@ const TarotReader = () => {
                                     </>
                                 }
                                 chatData= { <ChatBubble data={ chatData.tarotReader } /> }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/disenchanted_oracle.png`}
                             />
                         </TabPanel>
                         <TabPanel>
@@ -68,6 +71,7 @@ const TarotReader = () => {
                                     </>
                                 }
                                 chatData = { <ChatBubble data={ chatData.disenchantedOracle } /> }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/disenchanted_oracle.png`}
                             />
                         </TabPanel>
                         <TabPanel>
@@ -88,6 +92,7 @@ const TarotReader = () => {
                                 }
                                 chatData = { <ChatBubble data={ chatData.tarotReaderV3 } /> }
                                 link="https://chatgpt.com/g/g-68d5884fcee881918c22f286ec7fe54a-disenchanted-oracle-tarot-card-reader"
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/disenchanted_oracle.png`}
                             />
                         </TabPanel>
                     </BodyContainer>

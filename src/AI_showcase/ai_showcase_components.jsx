@@ -6,11 +6,18 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 
-export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, chatDescription, link }) => {
+export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, chatDescription, link, avatar }) => {
     return (
         <div>
             <IntroSection title={ `${title} Prompt` }>
-                { titleDescription }
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                    <img
+                        src={ avatar }
+                        alt="MyGPT Avatar"
+                        style={{ width: '300px', height: '200px' }}
+                    />
+                    <div >{ titleDescription }</div>
+                </div>
             </IntroSection>
             {link && (
                 <p style={{ textAlign: 'center', marginTop: '10px' }}>
@@ -202,6 +209,11 @@ export const ChatBubble = ({ data }) => {
 
 
 
+/*
 
+<IntroSection title={ `${title} Prompt` }>
+                { titleDescription }
+            </IntroSection>
+*/
 
 
