@@ -46,7 +46,7 @@ const TarotReader = () => {
                                     </>
                                 }
                                 chatData= { <ChatBubble data={ chatData.tarotReader } /> }
-                                avatar={`${import.meta.env.BASE_URL}ai_avatars/disenchanted_oracle.png`}
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/oracle.jpeg`}
                             />
                         </TabPanel>
                         <TabPanel>
@@ -71,7 +71,7 @@ const TarotReader = () => {
                                     </>
                                 }
                                 chatData = { <ChatBubble data={ chatData.disenchantedOracle } /> }
-                                avatar={`${import.meta.env.BASE_URL}ai_avatars/disenchanted_oracle.png`}
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/oracle.jpeg`}
                             />
                         </TabPanel>
                         <TabPanel>
@@ -92,7 +92,7 @@ const TarotReader = () => {
                                 }
                                 chatData = { <ChatBubble data={ chatData.tarotReaderV3 } /> }
                                 link="https://chatgpt.com/g/g-68d5884fcee881918c22f286ec7fe54a-disenchanted-oracle-tarot-card-reader"
-                                avatar={`${import.meta.env.BASE_URL}ai_avatars/disenchanted_oracle.png`}
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/oracle.jpeg`}
                             />
                         </TabPanel>
                     </BodyContainer>

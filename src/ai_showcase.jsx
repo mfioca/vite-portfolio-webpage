@@ -71,6 +71,7 @@ const AIShowcase = () => {
                                 }
                                 chatData={ <ChatBubble data={ lgchat.LegislativeGuidePromptTest } /> }
                                 link="https://chatgpt.com/g/g-6862c2b5811c819185c1e7a346c56e53-legislative-guide-one-big-beautiful-bill"
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/legislative.jpeg`}
                             />
                         </BodyContainer>
                     </TabPanel>
@@ -94,6 +95,7 @@ const AIShowcase = () => {
                                     </>
                                 }
                                 link="https://chatgpt.com/g/g-68e93e6c08b88191b216b44eb0e5d8dc-stellarium-guide-calm-astronomer"
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/stellarium.jpeg`}
                             />
                         </BodyContainer>
                     </TabPanel>          

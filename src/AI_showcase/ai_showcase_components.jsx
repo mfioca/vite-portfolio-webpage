@@ -10,13 +10,9 @@ export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, c
     return (
         <div>
             <IntroSection title={ `${title} Prompt` }>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
-                    <img
-                        src={ avatar }
-                        alt="MyGPT Avatar"
-                        style={{ width: '300px', height: '200px' }}
-                    />
-                    <div >{ titleDescription }</div>
+                <div className="prompt-intro-wrapper">
+                    <img className="prompt-avatar " src={ avatar } alt="MyGPT Avatar" />
+                    <div className="prompt-description">{ titleDescription }</div>
                 </div>
             </IntroSection>
             {link && (
@@ -45,11 +41,14 @@ export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, c
     );
 };
 
-export const ShowcaseComponentTabs = ({ title, titleDescription, tabs, chatData, chatDescription }) => {
+export const ShowcaseComponentTabs = ({ title, titleDescription, tabs, chatData, chatDescription, avatar }) => {
     return (
         <div>
             <IntroSection title={ `${title} Prompt` }>
-                { titleDescription }
+                <div className="prompt-intro-wrapper">
+                    <img className="prompt-avatar" src={ avatar } alt="MyGPT Avatar" />
+                    <div className="prompt-description">{ titleDescription }</div>
+                </div>
             </IntroSection>
             <DividerLine />
             

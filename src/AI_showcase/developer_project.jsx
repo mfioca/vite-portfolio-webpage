@@ -48,6 +48,7 @@ const DeveloperPrompt = () => {
                                     </>
                                 }
                                 chatData={ <ChatBubble data={ chatData.developer1 } /> }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/tank.jpg`}
                             />
                         </TabPanel>
                         <TabPanel>
@@ -75,6 +76,7 @@ const DeveloperPrompt = () => {
                                     </>
                                 }
                                 chatData={ <ChatBubble data={ chatData.developer2 } /> }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/tank.jpg`}
                             />
                         </TabPanel>
                         <TabPanel>
@@ -104,6 +106,7 @@ const DeveloperPrompt = () => {
                                         </p>
                                     </>
                                 }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/tank.jpg`}
                             />
                         </TabPanel>
                         <TabPanel>
@@ -134,6 +137,7 @@ const DeveloperPrompt = () => {
                                     </>
                                 }
                                 chatData={ <ChatBubble data={ chatData.developer4 } /> }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/tank.jpg`}
                             />
                         </TabPanel>
                     </BodyContainer>

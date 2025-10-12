@@ -67,6 +67,7 @@ const GPTAssistant = () => {
                                     </>
                                 }
                                 chatData = { <ChatBubble data={ chatData.personalizationAssistant } /> }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/modula.jpg`}
                             />
                         </TabPanel>
                         <TabPanel>
@@ -101,6 +102,7 @@ const GPTAssistant = () => {
                                 }
                                 chatData = { <ChatBubble data={ chatData.personalizationAssistant2_chat } /> }
                                 link="https://chatgpt.com/g/g-6809abb94dd48191bb8a07c01000306b-modula-gpt-personalization-assistant"
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/modula.jpg`}
                             />
                         </TabPanel>
                     </BodyContainer>

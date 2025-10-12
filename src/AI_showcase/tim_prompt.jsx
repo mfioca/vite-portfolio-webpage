@@ -55,6 +55,7 @@ const TimPrompt = () => {
                                         </p>
                                     </>
                                 }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/tim.jpg`}
                             />
                         </TabPanel>
                         <TabPanel>
@@ -82,6 +83,7 @@ const TimPrompt = () => {
                                     </>
                                 }
                                 chatData={ <ChatBubble data={ chatData.timTheEnchanter2 } /> }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/tim.jpg`}
                             />
                         </TabPanel>
                     </BodyContainer>
