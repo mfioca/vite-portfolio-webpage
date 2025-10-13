@@ -99,7 +99,7 @@ const FeaturePanel = ({ title, image, children, reverse }) => {
 
 const About = () => {
     return (
-        <div className="standard-padding-margin">
+        <div className="standard-padding-margin page-content">
             <IntroSection title="Welcome to My Story">
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;
                     This page is a window into who I am—my passions, skills, and philosophies. Whether it’s through my projects, gaming insights, 

@@ -8,7 +8,7 @@
     align-items: center;    /* center horizontally */
     justify-content: center;
     text-align: center;
-    max-width: 95%;
+    width: 95%;
     padding: 10px 20px;
 }
 
