@@ -6,20 +6,26 @@
   --margin20: 20px;
   --gap10: 10px;
   --gap20: 20px;
+  --fontfamily: 'Courier New';
+  --fontfamilyH: 'Courier New', monospace;
+  --fontfamilyNav: 'Roboto', sans-serif;
   --colortest: pink;
   --colorwhite: #ffffff;
   --colorblue: #0078d4;
+  --colorblue2: #005a9e;
   --lightgreyblue: #f8f9fa;
   --githubblue: #0366d6;
   --githubdark: #24292f;
   --chatbubbleAI: #e5e5e5;
   --chatbubbleUser: #0078d4;
-  --fontcolortest: rgb(242, 128, 147);
-  --fontcolor: #333;
-  --buttonbluehover: #005a9e;
   --goodcolor: green;
   --warningcolor: #d4aa00;
   --badcolor: red;
+  --fontcolortest: rgb(242, 128, 147);
+  --fontcolor: #333;
+  --fontblue: var(--colorblue);
+  --buttonbackground: var(--colorblue);
+  --buttonbluehover: var(--colorblue2);
   --defaultColor-1: var(--colortest);
   --bordercolor-1: var(--colortest);
   /*--defaultColor: #e0e0e0;*/
@@ -27,7 +33,7 @@
   --defaultColor-h: 0;
   --defaultColor-s: 0%;
   --defaultColor-l: 88%; /* #e0e0e0 in HSL = h:0, s:0%, l:88% */
-  /* test colors */
+  /* test color pink */
   --defaultColor-h: .97;
   --defaultColor-s: 100%;
   --defaultColor-l: 88%;  
@@ -43,12 +49,12 @@
   --navcolor: hsl(var(--nav-h), var(--nav-s), var(--nav-l));/* #282c34;*/
   --lightgrey: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) + 10%));  /*#f9f9f9;*/
   --lightgrey2: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) + 5%));
+  --markdownfont: var(--fontfamilyH);
   --chatbubbleAIFont: var(--fontcolor);
-  --tvmazegraycolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 48%)); /*#666; /* Subtle gray for less emphasis */
   --chatbubbleUserFont: var(--colorwhite);
+  --tvmazegraycolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 48%)); /*#666; /* Subtle gray for less emphasis */
   --tablemouseovercolor: var(--lightgrey);
   --graph3textsectioncolor: var(--lightgrey2);
-  --fontblue: var(--colorblue);
   --lightbackgroundcolor: var(--lightgrey);
   --tableTHbackgroundcolor: var(--defaultColor); /*#e0e0e0;*/
   --tableheaderdarkcolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 61%)); /*#444444;*/
@@ -63,10 +69,6 @@
   --boxshadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
   --thinshadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*dividerline and chat bubble */
   --textshadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
-  --fontfamily: 'Courier New';
-  --fontfamilyH: 'Courier New', monospace;
-  --markdownfont: var(--fontfamilyH);
-  --fontfamilyNav: 'Roboto', sans-serif;
 }
 
 /*
@@ -234,7 +236,7 @@ h2 {
 
 .button {
   padding: var(--default-spacing) 20px;
-  background-color: var(--fontblue);
+  background-color: var(--buttonbackground);
   color: var(--colorwhite);
   border: none;
   border-radius: var(--borderradius);
