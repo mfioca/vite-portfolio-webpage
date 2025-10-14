@@ -7,41 +7,48 @@
   --gap10: 10px;
   --gap20: 20px;
   --colortest: pink;
-  /*--defaultColor: #e0e0e0;*/
-  --defaultColor-1: var(--colortest);
-  --defaultColor-h: 0;
-  --defaultColor-s: 0%;
-  --defaultColor-l: 88%; /* #e0e0e0 in HSL = h:0, s:0%, l:88% */
-  /*--navcolor: #282c34;*/
-  --nav-h: 210;
-  --nav-s: 13%;
-  --nav-l: 18%;
-  /* --nav-color: hsl(var(--nav-h), var(--nav-s), var(--nav-l)); */
-
-  /* Constructed colors */
-  /* hsl(var(--defaultColor-h), var(--defaultColor-s), var(--defaultColor-l)); */
-  --defaultColor: hsl(var(--defaultColor-h), var(--defaultColor-s), var(--defaultColor-l)); 
-  --bordercolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 10%)); /*#ccc;*/
- 
-  --bordercolor-1: var(--colortest);
-  --navcolor: hsl(var(--nav-h), var(--nav-s), var(--nav-l));/* #282c34;*/
-  --lightgrey: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) + 10%));  /*#f9f9f9;*/
   --colorwhite: #ffffff;
   --colorblue: #0078d4;
   --lightgreyblue: #f8f9fa;
   --githubblue: #0366d6;
   --githubdark: #24292f;
   --chatbubbleAI: #e5e5e5;
-  --chatbubbleAIFont: var(--fontcolor);
   --chatbubbleUser: #0078d4;
-  --tvmazegraycolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 48%)); /*#666; /* Subtle gray for less emphasis */
-  --chatbubbleUserFont: var(--colorwhite);
-  --textsectioncolor: var(--lightgreyblue);
-  --tablemouseovercolor: var(--lightgrey);
   --fontcolortest: rgb(242, 128, 147);
   --fontcolor: #333;
-  --fontblue: var(--colorblue);
   --buttonbluehover: #005a9e;
+  --goodcolor: green;
+  --warningcolor: #d4aa00;
+  --badcolor: red;
+  --defaultColor-1: var(--colortest);
+  --bordercolor-1: var(--colortest);
+  /*--defaultColor: #e0e0e0;*/
+  /*
+  --defaultColor-h: 0;
+  --defaultColor-s: 0%;
+  --defaultColor-l: 88%; /* #e0e0e0 in HSL = h:0, s:0%, l:88% */
+  /* test colors */
+  --defaultColor-h: .97;
+  --defaultColor-s: 100%;
+  --defaultColor-l: 88%;  
+  /*--navcolor: #282c34;*/
+  --nav-h: 210;
+  --nav-s: 13%;
+  --nav-l: 18%;
+  /* Constructed colors */
+  /* hsl(var(--nav-h), var(--nav-s), var(--nav-l)); */
+  /* hsl(var(--defaultColor-h), var(--defaultColor-s), var(--defaultColor-l)); */
+  --defaultColor: hsl(var(--defaultColor-h), var(--defaultColor-s), var(--defaultColor-l)); 
+  --bordercolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 8%)); /*#ccc;*/
+  --navcolor: hsl(var(--nav-h), var(--nav-s), var(--nav-l));/* #282c34;*/
+  --lightgrey: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) + 10%));  /*#f9f9f9;*/
+  --lightgrey2: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) + 5%));
+  --chatbubbleAIFont: var(--fontcolor);
+  --tvmazegraycolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 48%)); /*#666; /* Subtle gray for less emphasis */
+  --chatbubbleUserFont: var(--colorwhite);
+  --tablemouseovercolor: var(--lightgrey);
+  --graph3textsectioncolor: var(--lightgrey2);
+  --fontblue: var(--colorblue);
   --lightbackgroundcolor: var(--lightgrey);
   --tableTHbackgroundcolor: var(--defaultColor); /*#e0e0e0;*/
   --tableheaderdarkcolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 61%)); /*#444444;*/
@@ -50,7 +57,8 @@
   --transition-opacity: opacity 0.5s ease-in-out; /* Smooth transition */;
   --transition-background-color: background-color 0.5s ease-in-out;
   --transition-color: color 0.5s;
-  --border: 2px solid var(--bordercolor); /* Light gray border */
+  --border: 2px solid var(--bordercolor); 
+  --textboxborder: 1px solid var(--bordercolor);
   --borderradius: 8px;
   --boxshadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
   --thinshadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*dividerline and chat bubble */
@@ -59,7 +67,6 @@
   --fontfamilyH: 'Courier New', monospace;
   --markdownfont: var(--fontfamilyH);
   --fontfamilyNav: 'Roboto', sans-serif;
-  /*border: 2px solid #ccc; /* Light gray border */
 }
 
 /*

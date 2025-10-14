@@ -38,17 +38,17 @@
 }
 
 .result-good {
-  color: green;
+  color: var(--goodcolor);
   font-weight: bold;
 }
 
 .result-bad {
-  color: red;
+  color: var(--badcolor);
   font-weight: bold;
 }
 
 .result-warning {
-  color: #d4aa00; /* a readable gold/yellow */
+  color: var(--warningcolor); /* a readable gold/yellow */
   font-weight: bold;
 }
 
@@ -127,7 +127,7 @@
   flex-shrink: 0;
   width: 100px;
   height: 100px;
-  background-color: #444;
+  background-color: var(--lightgrey);
 }
 
 .character-avatar {
@@ -233,7 +233,7 @@
 .debug-box {
   flex: 1 1 45%;
   min-width: 300px;
-  background-color: #fff;
+  background-color: var(--colorwhite);
   border: var(--border);
   border-radius: var(--borderradius);
   padding: 10px;
@@ -271,7 +271,7 @@
   cursor: pointer;
   top: 0; left: 0;
   right: 0; bottom: 0;
-  background-color: #ccc;
+  background-color: var(--bordercolor);
   border-radius: 26px;
   transition: 0.4s;
 }
@@ -283,7 +283,7 @@
   width: 20px;
   left: 3px;
   bottom: 3px;
-  background-color: white;
+  background-color: var(--colorwhite);
   border-radius: 50%;
   transition: 0.4s;
 }
