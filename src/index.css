@@ -5,6 +5,7 @@
   --margin: var(--default-spacing);
   --margin20: 20px;
   --gap10: 10px;
+  --gap15: 15px;
   --gap20: 20px;
   --fontfamily: 'Courier New';
   --fontfamilyH: 'Courier New', monospace;
@@ -13,6 +14,10 @@
   --colorwhite: #ffffff;
   --colorblue: #0078d4;
   --colorblue2: #005a9e;
+  /* #0078d4 */
+  --button-h: 206;
+  --button-s: 100%;
+  --button-l: 41%;
   --lightgreyblue: #f8f9fa;
   --githubblue: #0366d6;
   --githubdark: #24292f;
@@ -24,7 +29,8 @@
   --fontcolortest: rgb(242, 128, 147);
   --fontcolor: #333;
   --fontblue: var(--colorblue);
-  --buttonbackground: var(--colorblue);
+  /*--buttonbackground: var(--colorblue);*/
+  --buttonbackground: hsl(var(--button-h), var(--button-s), var(--defaultColor-l)); 
   --buttonbluehover: var(--colorblue2);
   --defaultColor-1: var(--colortest);
   --bordercolor-1: var(--colortest);
@@ -70,13 +76,6 @@
   --thinshadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*dividerline and chat bubble */
   --textshadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
-
-/*
-font-family: 'Arial', sans-serif; 
-font-family: 'Courier New', monospace; 
-font-family: 'Courier New';
-font-family: 'Roboto', sans-serif; 
-*/
 
 .gap-20 {
   gap: var(--gap20);
