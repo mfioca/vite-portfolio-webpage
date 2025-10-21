@@ -82,12 +82,6 @@
     margin-bottom: 15px;
 }
 
-.feature-text ul {
-    padding-left: 20px;
-    list-style: disc;
-    line-height: 1.6;
-}
-
 .feature-image {
     flex: 1;
     text-align: center;

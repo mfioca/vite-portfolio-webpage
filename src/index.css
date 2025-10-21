@@ -7,17 +7,17 @@
   --gap10: 10px;
   --gap15: 15px;
   --gap20: 20px;
+
+
   --fontfamily: 'Courier New';
   --fontfamilyH: 'Courier New', monospace;
   --fontfamilyNav: 'Roboto', sans-serif;
+
+
   --colortest: pink;
   --colorwhite: #ffffff;
   --colorblue: #0078d4;
   --colorblue2: #005a9e;
-  /* #0078d4 */
-  --button-h: 206;
-  --button-s: 100%;
-  --button-l: 41%;
   --lightgreyblue: #f8f9fa;
   --githubblue: #0366d6;
   --githubdark: #24292f;
@@ -29,12 +29,13 @@
   --fontcolortest: rgb(242, 128, 147);
   --fontcolor: #333;
   --fontblue: var(--colorblue);
-  /*--buttonbackground: var(--colorblue);*/
-  --buttonbackground: hsl(var(--button-h), var(--button-s), var(--defaultColor-l)); 
+  --buttonbackground: var(--colorblue);
   --buttonbluehover: var(--colorblue2);
+
+
+  /*--defaultColor: #e0e0e0;*/
   --defaultColor-1: var(--colortest);
   --bordercolor-1: var(--colortest);
-  /*--defaultColor: #e0e0e0;*/
   /*
   --defaultColor-h: 0;
   --defaultColor-s: 0%;
@@ -43,22 +44,26 @@
   --defaultColor-h: .97;
   --defaultColor-s: 100%;
   --defaultColor-l: 88%;  
+
   /*--navcolor: #282c34;*/
   --nav-h: 210;
   --nav-s: 13%;
   --nav-l: 18%;
+
   /* Constructed colors */
-  /* hsl(var(--nav-h), var(--nav-s), var(--nav-l)); */
-  /* hsl(var(--defaultColor-h), var(--defaultColor-s), var(--defaultColor-l)); */
   --defaultColor: hsl(var(--defaultColor-h), var(--defaultColor-s), var(--defaultColor-l)); 
   --bordercolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 8%)); /*#ccc;*/
   --navcolor: hsl(var(--nav-h), var(--nav-s), var(--nav-l));/* #282c34;*/
   --lightgrey: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) + 10%));  /*#f9f9f9;*/
   --lightgrey2: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) + 5%));
+
+
   --markdownfont: var(--fontfamilyH);
   --chatbubbleAIFont: var(--fontcolor);
   --chatbubbleUserFont: var(--colorwhite);
-  --tvmazegraycolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 48%)); /*#666; /* Subtle gray for less emphasis */
+
+  
+  --tvmazegraycolor: hsl(var(--defaultColor-h), var(--defaultColor-s), calc(var(--defaultColor-l) - 48%)); /*#666; Subtle gray for less emphasis */
   --tablemouseovercolor: var(--lightgrey);
   --graph3textsectioncolor: var(--lightgrey2);
   --lightbackgroundcolor: var(--lightgrey);
