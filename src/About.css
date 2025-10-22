@@ -94,19 +94,6 @@
     box-shadow: var(--thinshadow);
 }
 
-.feature-link {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: var(--colorblue);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.feature-link:hover {
-    text-decoration: underline;
-}
-
 /* Responsive tweaks */
 @media (max-width: 1000px) {
     .feature-panel {

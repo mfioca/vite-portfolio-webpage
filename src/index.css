@@ -80,6 +80,20 @@
   --boxshadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
   --thinshadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*dividerline and chat bubble */
   --textshadow: 5px 5px 7px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+
+
+
+
+/*. line-height
+
+About.css
+
+--about.feature-panel: 1.8;
+
+
+*/
+
+
 }
 
 .gap-20 {
@@ -291,6 +305,19 @@ button:hover {
   border: 2px solid #000;
   border-radius: 8px;
   text-align: center;
+}
+
+.default-link {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--colorblue);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.default-link:hover {
+  text-decoration: underline;
 }
 
 /***********************************************************************************/

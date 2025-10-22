@@ -39,7 +39,7 @@ const TvMazeShowResults = () => {
             <IntroSection title="Explore Your Favorite TV Shows">
                 <p>
                     <strong className="shadow">Welcome to the Show Details Page:</strong>&nbsp;&nbsp;Dive deeper into the world of your favorite TV shows. Here you’ll find detailed 
-                    information about casts, episodes, seasons, and more, all sourced from the incredible database at <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer">TVmaze</a>. Whether you're curious about episode summaries or want to explore a show's rich history, this page has you covered.
+                    information about casts, episodes, seasons, and more, all sourced from the incredible database at <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer" >TVmaze</a>. Whether you're curious about episode summaries or want to explore a show's rich history, this page has you covered.
                 </p>
                 <p>
                     This section is designed to be an immersive experience, bringing together clean design and the power of real-time data. Stay tuned as we continue to enhance and expand these features for even more functionality!
@@ -67,7 +67,7 @@ const TvMazeShowResults = () => {
                         <p><strong>Ended:</strong> { showDetails.ended || 'N/A' }</p>
                         { showDetails.url && (
                             <p>
-                                More details at: <a href={ showDetails.url } target="_blank" rel="noopener noreferrer">Tvmaze.com</a>
+                                More details at: <a href={ showDetails.url } target="_blank" rel="noopener noreferrer" className="default-link">Tvmaze.com</a>
                             </p>
                         )}
                     </BorderBox>

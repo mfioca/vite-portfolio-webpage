@@ -127,7 +127,7 @@ const TvMazePeopleGuestCast = ({ id }) => {
                             { credit.summary.length > 200 && (
                                 <Link 
                                     to={`/show/${ credit.id }`}  
-                                    style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 'bold' }}
+                                    className="default-link"
                                 >
                                     Read More
                                 </Link>
@@ -137,13 +137,7 @@ const TvMazePeopleGuestCast = ({ id }) => {
                             href={ `https://www.tvmaze.com/shows/${credit.id}` }  
                             target="_blank" 
                             rel="noopener noreferrer"
-                            style={{
-                                display: 'block', 
-                                marginTop: '10px', 
-                                fontSize: '0.9rem', 
-                                color: '#0078d4', 
-                                textDecoration: 'none'
-                            }}
+                            className="default-link"
                         >
                             View on TVMaze
                         </a>

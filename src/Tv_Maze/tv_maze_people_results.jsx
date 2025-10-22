@@ -82,7 +82,7 @@ const TvMazePeopleResults = () => {
                     <p><strong>Number of Shows Featured In:</strong> { personDetails._embedded?.castcredits?.length || 0 }</p>
                     <p>
                         <strong>More details at: </strong> 
-                        <a href={ personDetails.url } target="_blank" rel="noopener noreferrer">
+                        <a href={ personDetails.url } target="_blank" rel="noopener noreferrer" className="default-link">
                             TVMaze Profile
                         </a>
                     </p>

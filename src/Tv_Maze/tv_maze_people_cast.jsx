@@ -93,7 +93,7 @@ const TvMazePeopleCast = ({ id }) => {
                                 }} />
                                 <Link 
                                     to={`/show/${ show.id }`} 
-                                    style={{ color: '#0078d4', textDecoration: 'none', fontWeight: 'bold', display: 'block', marginTop: '5px' }}
+                                    className="default-link"
                                 >
                                     Read More
                                 </Link>
@@ -104,13 +104,7 @@ const TvMazePeopleCast = ({ id }) => {
                                 href={ show.url } 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                style={{
-                                    display: 'block', 
-                                    marginTop: '5px', 
-                                    fontSize: '0.9rem', 
-                                    color: '#0078d4', 
-                                    textDecoration: 'none'
-                                }}
+                                className="default-link"
                             >
                                 View on TVMaze
                             </a>

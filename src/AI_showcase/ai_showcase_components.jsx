@@ -16,12 +16,12 @@ export const ShowcaseComponent = ({ title, titleDescription, prompt, chatData, c
                 </div>
             </IntroSection>
             {link && (
-                <p style={{ textAlign: 'center', marginTop: '10px' }}>
+                <p style={{ textAlign: 'center' }}>
                     <a
-                        href={link}
+                        href={ link }
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ color: '#0078d4', textDecoration: 'underline' }}
+                        className="default-link"
                     >
                         Try this prompt on ChatGPT
                     </a>

@@ -84,7 +84,7 @@ const TvMazeEpisodes = ({ showId }) => {
                                 <p><strong>End Date:</strong> { season.endDate || 'Unknown' }</p>
                                 <p><strong>Number of Episodes:</strong> { season.episodes.length || 0 }</p>
                                 <p>
-                                    <a href={ season.url } target="_blank" rel="noopener noreferrer">
+                                    <a href={ season.url } target="_blank" rel="noopener noreferrer" className="default-link">
                                         View Season on TVMaze
                                     </a>
                                 </p>
@@ -112,7 +112,7 @@ const TvMazeEpisodes = ({ showId }) => {
                                             }}
                                         />
                                         <td>
-                                            <a href={ episode.url } target="_blank" rel="noopener noreferrer">
+                                            <a href={ episode.url } target="_blank" rel="noopener noreferrer" className="default-link">
                                                 View Episode on TVMaze
                                             </a>
                                         </td>

@@ -198,7 +198,7 @@ const About = () => {
                     The process required persistence and the ability to adapt, as I constantly refined my work to match the original design. These traits—along with my passion 
                     for tackling complex tasks—reflect how I approach professional challenges, striving for accuracy and excellence in every detail.
                 </p>
-                <Link to="/MinecraftProjects" className="feature-link">
+                <Link to="/MinecraftProjects" className="default-link">
                     View the Full Minecraft Project →
                 </Link>
             </FeaturePanel>

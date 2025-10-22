@@ -33,7 +33,7 @@ const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680",
                         {isGalleryOpen ? `▼ ${title}` : `▶ ${title}`}
                     </h2>
                 ) : (
-                    <h2 className="non-collapsable-title">{title}</h2> // Non-collapsible sections just display title
+                    <h2 className="non-collapsable-title">{ title }</h2> // Non-collapsible sections just display title
                 )}
             {/* Description Stays Visible */}
                 { description }

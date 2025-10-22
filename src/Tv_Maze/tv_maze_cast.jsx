@@ -61,13 +61,7 @@ const TvMazeCast = ({ id }) => {
                         { person.person.url && (
                             <Link 
                             to={ `/person/${ person.person.id }` }  // Navigate to the person details page
-                            style={{
-                                display: 'block', 
-                                marginTop: '10px', 
-                                fontSize: '0.9rem', 
-                                color: '#0078d4', 
-                                textDecoration: 'none'
-                            }}
+                            className="default-link"
                             >
                                 View More Details
                             </Link>
