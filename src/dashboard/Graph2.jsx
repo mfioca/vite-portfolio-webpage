@@ -57,7 +57,7 @@ const Graph2 = () => {
     }, [dispatch]);
 
     if (isLoading) {
-        return <div className="loading-overlay"><p>Loading...</p></div>; // Display loading message
+        return <div className="flex-align-center-center loading-overlay"><p>Loading...</p></div>; // Display loading message
     }
 
     if (!graphData || !graphData.labels || !graphData.datasets) {

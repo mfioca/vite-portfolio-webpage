@@ -53,7 +53,7 @@ const ScrollingQuotes = () => {
     }, []);
 
     return (
-        <BodyContainer hasBackground={ true } className="center-div scrolling-quotes">
+        <BodyContainer hasBackground={ true } className="center-div flex-align-center-center scrolling-quotes">
             <p 
                 key={ currentQuoteIndex } 
                 className="quote-text show"
@@ -76,7 +76,7 @@ const ScrollingQuotes = () => {
 
 const FeaturePanel = ({ title, image, children, reverse }) => {
     return (
-        <section className={`feature-panel ${reverse ? 'reverse' : ''}`}>
+        <section className={`flex-space-between feature-panel ${reverse ? 'reverse' : ''}`}>
             <div className="feature-text">
                 <h2>{ title }</h2>
                 { children }

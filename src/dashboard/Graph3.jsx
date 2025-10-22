@@ -109,7 +109,7 @@ const Graph3 = () => {
     }, [graphData]); // Dependency on graphData
 
     if (isLoading) {
-        return <div className="loading-overlay"><p>Loading...</p></div>; // Display loading message
+        return <div className="flex-align-center-center loading-overlay"><p>Loading...</p></div>; // Display loading message
     }
 
     if (!graphData.labels || !graphData.datasets) {

@@ -12,14 +12,31 @@
   text-align: center; /* Center the citation text */
 }
 
+.loading-overlay {
+  position: fixed; /* Fix to viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--loading-overlay); /* Lighter semi-transparent background */
+  z-index: 1000; /* Ensure it sits above other content */
+}
+
+.loading-overlay p {
+  color: var(--colorwhite); /* Text color */
+  font-size: 1.5em; /* Adjust font size */
+}
+
+.no-data-overlay {
+  text-align: center;
+  color: var(--badcolor); /* Light red or any other subtle color */
+  margin-top: 50px;
+  font-size: 1.5rem;
+}
+
 /***********************************************************************************/
 /*                   main dashboard page - 3 charts                                */
 /***********************************************************************************/
-
-.graph-flexbox-1 {
-  font-family: 'Roboto', sans-serif; /* A clean, modern font */
-  padding: 3px;
-}
 
 .graph-flexbox {
   display: flex;
@@ -41,7 +58,6 @@
 
 .text-section {
   max-width: 250px;
-  /*background-color: var(--lightgreyblue); */
   background-color: var(--graph3textsectioncolor); 
   font-size: 14px;
 }

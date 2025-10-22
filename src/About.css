@@ -3,13 +3,10 @@
 /***********************************************************************************/
 
 .scrolling-quotes {
-    display: flex;
     flex-direction: column; /* stack vertically */
-    align-items: center;    /* center horizontally */
-    justify-content: center;
     text-align: center;
     width: 95%;
-    padding: 10px 20px;
+    padding: var(--paddingv10h20);
 }
 
 .scrolling-quotes .quote-text {
@@ -26,7 +23,7 @@
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    margin-top: 8px;
+    margin-top: var(--margin);
     color: var(--fontblue);
     text-transform: none;
     text-align: center;
@@ -52,9 +49,7 @@
 /***********************************************************************************/
 
 .feature-panel {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: var(--gap20);
     max-width: var(--maxwidth);
     margin: 40px auto;
@@ -90,6 +85,7 @@
 .feature-image img {
     max-width: 100%;
     max-height: 500px;
+    max-width: 500px;
     border-radius: var(--borderradius);
     box-shadow: var(--thinshadow);
 }

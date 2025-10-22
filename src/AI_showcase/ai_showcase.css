@@ -93,7 +93,7 @@
 }
 
 .next-message-btn:disabled {
-    background-color: #c1c1c1; 
+    background-color: var(--gray-c1); 
     cursor: not-allowed;
 }
 
