@@ -1,13 +1,13 @@
 .ai-showcase-container {
   margin-top: 0; /* Center the container on the page */
   font-family: var(--fontfamily);
-  padding: 0 15px; /* Adds space on left/right */
+  padding: 0 var(--padding15); /* Adds space on left/right */
   justify-content: center;
 }
 
 @media (max-width: 768px) {
   .ai-showcase-container {
-    padding: 10px 15px; /* Adds space on left/right */
+    padding: var(--paddingv10h20);/*10px 15px; /* Adds space on left/right */
   }
 }
 
@@ -24,20 +24,19 @@
     max-height: 900px; /* Ensures the content doesn’t exceed the container height */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
     margin: 50px;
-    padding: 20px;
+    padding: var(--padding20);
 }
 
 .markdown-container h1, 
 .markdown-container h2, 
 .markdown-container h3 {
     color: var(--githubblue); /* GitHub blue for headings */
-    margin-top: var(--default-spacing);
-    margin-bottom: var(--default-spacing);
+    margin: var(--marginv10);
 }
 
 .markdown-container ul {
     list-style-type: disc;
-    padding-left: 20px;
+    padding-left: var(--padding20);
 }
 
 .markdown-container li {
@@ -55,7 +54,7 @@
 
 @media (max-width: 768px) {
     .markdown-container {
-      padding: 10px; /* Reduce padding for smaller screens */
+      padding: var(--padding); /* Reduce padding for smaller screens */
       width: 95%;
       margin: auto;
     }
@@ -88,8 +87,7 @@
 
 .next-message-btn,
 .reset-message-btn {
-    margin-top: 20px; /* Space above the button */
-    margin-bottom: 20px;
+    margin: var(--marginV20);
 }
 
 .next-message-btn:disabled {
@@ -98,7 +96,7 @@
 }
 
 .reset-message-btn:hover {
-    background-color: #e65550;
+    background-color: var(--badcolor);
 }
 
 .chat-bubble {
@@ -128,7 +126,7 @@
 .chat-bubble {
     max-width: 75%; /* Prevent bubbles from stretching too wide */
     margin-bottom: 50px;
-    padding: var(--padding) 15px;
+    padding: var(--padding) var(--padding15);
     border-radius: 15px;
     font-size: 16px;
     line-height: 1.5;
@@ -160,32 +158,13 @@
 .chat-window::-webkit-scrollbar {
     width: 8px;
 }
-/*
-.chat-window::-webkit-scrollbar-thumb {
-    background-color: #c1c1c1;
-    border-radius: var(--borderradius);
-}
-
-.chat-window::-webkit-scrollbar-track {
-    background-color: #f5f5f5;
-}
-    */
-
-/***** Typing Animation Placeholder (Optional Future Feature) 
-.typing-indicator {
-    display: inline-block;
-    margin: 10px 0;
-    font-size: 14px;
-    color: #888;
-}
-*****/
 
 .prompt-intro-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--gap20);
 }
 
 .prompt-description {

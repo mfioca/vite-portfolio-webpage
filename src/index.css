@@ -2,9 +2,14 @@
   --maxwidth: 1600px;
   --default-spacing: 10px;
   --padding: var(--default-spacing);
+  --padding15: 15px;
+  --padding20: 20px;
   --paddingv10h20: 10px 20px;
   --margin: var(--default-spacing);
   --margin20: 20px;
+  --marginv10: 10px 0;
+  --marginV15: 15px 0;
+  --marginV20: 20px 0;
   --gap10: 10px;
   --gap15: 15px;
   --gap20: 20px;
@@ -493,6 +498,11 @@ button:hover {
   transition: background-color 0.2s;
 }
 
+.grid-tablist .react-tabs__tab--selected {
+  border-color: var(--bordercolor);
+
+}
+
 @media (max-width: 768px) {
   .grid-tablist {
     gap: 5px;
@@ -532,6 +542,7 @@ button:hover {
   gap: var(--gap10);
   margin: 0 auto;
   max-width: 90%; /* Prevents it from stretching full width */
+  border-bottom: 1px solid var(--defaultColor);
 }
 
 .standard-tabs .react-tabs__tab:hover {
@@ -676,7 +687,7 @@ button:hover {
 
 .nested-tabs .react-tabs__tab-list {
   display: flex;
-  border-bottom: 1px solid var(--bordercolor);
+  border-bottom: 1px solid var(--defaultColor);
   margin: 0 0 10px;
   padding: 0;
   list-style: none;
@@ -691,7 +702,7 @@ button:hover {
   border: 1px solid var(--bordercolor);
   border-bottom: none;
   border-radius: var(--borderradius) var(--borderradius) 0 0;
-  background-color: #d5d5d5;
+  background-color: var(--lightgrey2);
   color: var(--fontcolor);
   font-family: var(--fontfamilyH);
   font-size: 1rem;
