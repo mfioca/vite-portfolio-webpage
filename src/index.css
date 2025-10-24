@@ -586,6 +586,7 @@ button:hover {
 
 /**********  VERTICAL TABS  **********/
 
+
 .vertical-tabs {
   display: flex;
   align-items: flex-start;
@@ -602,17 +603,6 @@ button:hover {
   z-index: 1;
 }
 
-.vertical-tab-content {
-  position: relative;
-  flex-grow: 1;
-  min-height: 600px; 
-  padding: var(--padding); /* Give it breathing room */
-  margin-top: -5px; /* Adjust this to align properly */
-  background-color: var(--colorwhite); /* Ensure it has a background */
-  z-index: 2; /* Make sure it's above the tab */
-}
-
-/* Tab list (left side) */
 .vertical-tabs .react-tabs__tab-list {
   display: flex;
   flex-direction: column; /* Stack tabs vertically */
@@ -621,7 +611,19 @@ button:hover {
   margin-top: -5px;
   margin-right: -12px;
   gap: 0px;
+  border: 2px solid var(--bordercolor);
+  outline: none;
 }
+
+.vertical-tab-content {
+  position: relative;
+  min-height: 600px;
+  flex-grow: 1; 
+  padding: var(--padding); /* Give it breathing room */
+  margin-top: -15px; /* Adjust this to align properly */
+  z-index: 2; /* Make sure it's above the tab */
+}
+
 
 /* Style for individual tabs */
 .vertical-tabs .react-tabs__tab {
@@ -637,23 +639,16 @@ button:hover {
   background: none;
   background-color: var(--defaultColor);
   color: var(--fontcolor);
+  outline: none;
 }
 
-/* Highlight selected tab */
-.vertical-tabs .react-tabs__tab--selected,
-.vertical-tabs .react-tabs__tab:focus,
+.vertical-tabs .react-tabs__tab--selected:focus {
+  border-bottom: 8px solid var(--bordercolor);
+}
+
 .vertical-tabs .react-tabs__tab:active,
-.vertical-tabs .react-tabs__tab:hover {
-  outline: none; /* Keeps focus from affecting layout */
-  border: var(--border); /* Make sure all borders apply */
-  border-bottom: var(--border); /* Ensure bottom border persists */
-  font-weight: bold;
+.vertical-tabs .react-tabs__tab--selected {
   background-color: var(--colorwhite);
-}
-
-/* Make sure the panel has a consistent border */
-.vertical-tabs .react-tabs__panel--selected {
-  border: var(--border);
 }
 
 @media (max-width: 768px) {
@@ -724,13 +719,6 @@ button:hover {
 /***********************************************************************************/
 /*                            Home Page Section                                    */
 /***********************************************************************************/
-
-.home-body-1  {
-  margin-bottom: 50px;
-  margin-top: 50px;
-  padding: 5px;
-  justify-content: center;
-}
 
 .home-content {
   text-shadow: var(--textshadow);
