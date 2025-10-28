@@ -74,7 +74,7 @@
     text-align: left;
     font-size: 32px;
     color: var(--fontblue);
-    margin-bottom: 15px;
+    margin-bottom: var(--margin);
 }
 
 .feature-image {

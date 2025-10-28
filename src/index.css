@@ -108,15 +108,63 @@ About.css
 
 
 
-
+h2 {
+  font-family: var(--fontfamilyH);
+  font-weight: 600; 
+  letter-spacing: 0.5px; 
+  text-align: center;
+}
 
 
 about.feature-text h2 {
     text-align: left;
     font-size: 32px;
     color: var(--fontblue);
-    margin-bottom: 15px;
 }
+
+.home-content h2 {
+  display: flex;
+  line-height: 5; 
+  justify-content: center; 
+}
+
+.dropdowns h2 {
+  font-size: 16px; 
+  margin-bottom: var(--default-spacing); 
+}
+
+.markdown-container h1, 
+.markdown-container h2, 
+.markdown-container h3 {
+    color: var(--githubblue); 
+    margin: var(--marginv10);
+}
+
+
+
+
+.cast-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--margin20);
+    color: var(--fontblue);
+    text-align: center;
+}
+
+.tvmaze-episodes-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--margin20);
+    color: var(--fontblue);
+    text-align: center;
+}
+
+
+
+ .battle-winner h2 {
+    font-size: 1rem;
+  }
+
+
+
 
 
 */
@@ -206,7 +254,7 @@ body *::-webkit-scrollbar-track {
 h2 {
   font-family: var(--fontfamilyH);
   font-weight: 600; /* Semi-bold */
-  letter-spacing: 0.5px; /* Adjust as needed */
+  letter-spacing: 0.5px; 
   text-align: center;
 }
 
@@ -288,7 +336,6 @@ h2 {
   display: flex;
   align-items: center;    
   justify-content: center;
-
 }
 
 .flex-space-between {
@@ -728,10 +775,9 @@ button:hover {
 
 .home-content h2 {
   display: flex;
-  margin-bottom: var(--default-spacing); /* Smaller space below the heading */
-  margin: 0 auto;
-  line-height: 5; /* Increase line height for readability */
   justify-content: center; /* Centers horizontally */
+  margin: var(--marginV15); /* Smaller space below the heading */
+  line-height: 5; /* Increase line height for readability */
 }
 
 .home-content p {
