@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
 import { Routes, Route } from 'react-router-dom';
 import { Link, useLocation } from 'react-router-dom';
+import ThemeSwitcher from './ThemeSwitcher';
 import './index.css';
 import Home from './Home'; 
 import Dashboard from './Dashboard';
@@ -212,6 +213,7 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <Navigation /> {/* Place Navigation here */}
+      <ThemeSwitcher />
         <Routes>
           <Route path="/" element={ <Home /> } /> 
           <Route path="/About" element={ <AboutPage /> } /> 
