@@ -26,6 +26,7 @@ const Navigation = () => {
   const location = useLocation(); // Get the current location
   const [isAcknowledgementsOpen, setIsAcknowledgementsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const [showThemeSwitcher, setShowThemeSwitcher] = useState(false);
 
   // Scroll to the top when location changes
   useEffect(() => {
@@ -90,6 +91,13 @@ const Navigation = () => {
   return (
     <nav className="index-shared flex-wrap navbar">
       <div className="navbar-brand">{ title }</div>
+      <button
+        onClick={() => setShowThemeSwitcher(!showThemeSwitcher)}
+        className="theme-toggle-button"
+        aria-label="Toggle Theme Settings"
+      >
+        &#9776;
+      </button>
       <ul className="flex-wrap navbar-links">
         <li>
           <Link to="/" className="nav-link">Home</Link>
@@ -156,6 +164,7 @@ const Navigation = () => {
           )}
         </li>
       </ul>
+      {showThemeSwitcher && <ThemeSwitcher />}
     </nav>
   );
 };
@@ -213,7 +222,6 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <Navigation /> {/* Place Navigation here */}
-      <ThemeSwitcher />
         <Routes>
           <Route path="/" element={ <Home /> } /> 
           <Route path="/About" element={ <AboutPage /> } /> 

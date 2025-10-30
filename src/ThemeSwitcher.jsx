@@ -1,64 +1,111 @@
 import React, { useState } from 'react';
 
 const ThemeSwitcher = () => {
-  const [hue, setHue] = useState(210);       // default: blue
-  const [saturation, setSaturation] = useState(13); // default: 13%
-  const [lightness, setLightness] = useState(18);   // default: 18%
+  const [hue, setHue] = useState(210);
+  const [saturation, setSaturation] = useState(13);
+  const [lightness, setLightness] = useState(18);
 
-  const handleHueChange = (e) => {
-    const newHue = e.target.value;
-    setHue(newHue);
-    document.documentElement.style.setProperty('--nav-h', newHue);
-  };
+  const [defaultHue, setDefaultHue] = useState(0.97);   // originally pink
+  const [defaultSaturation, setDefaultSaturation] = useState(100);
+  const [defaultExpanded, setDefaultExpanded] = useState(false);
 
-  const handleSaturationChange = (e) => {
-    const newS = e.target.value;
-    setSaturation(newS);
-    document.documentElement.style.setProperty('--nav-s', `${newS}%`);
-  };
 
-  const handleLightnessChange = (e) => {
-    const newL = e.target.value;
-    setLightness(newL);
-    document.documentElement.style.setProperty('--nav-l', `${newL}%`);
-  };
+  const [navExpanded, setNavExpanded] = useState(false); // ⬅️ New state for collapsible section
+
+  const handleCSSVarChange = (setter, variableName, unit = '') => (e) => {
+  const value = e.target.value;
+  setter(value);
+  document.documentElement.style.setProperty(variableName, `${value}${unit}`);
+};
 
   return (
     <div className="theme-switcher">
-      <h3>Adjust Nav Color (HSL)</h3>
+      <div className="theme-section">
+        <h3 onClick={() => setNavExpanded(!navExpanded)}>
+          Navigation Theme Color {navExpanded ? '▲' : '▼'}
+        </h3>
 
-      <label>
-        Hue: {hue}°
-        <input
-          type="range"
-          min="0"
-          max="360"
-          value={hue}
-          onChange={handleHueChange}
-        />
-      </label>
+        {navExpanded && (
+          <div className="theme-section-content">
+            <div className="theme-slider-group">
+              <label>
+                Hue: {hue}°
+                <input
+                  type="range"
+                  min="0"
+                  max="360"
+                  value={hue}
+                  onChange={handleCSSVarChange(setHue, '--nav-h')}
+                />
+              </label>
 
-      <label>
-        Saturation: {saturation}%
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value={saturation}
-          onChange={handleSaturationChange}
-        />
-      </label>
+              <label>
+                Saturation: {saturation}%
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={saturation}
+                  onChange={handleCSSVarChange(setSaturation, '--nav-s', '%')}
+                />
+              </label>
 
-      <label>
-        Lightness: {lightness}%
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value={lightness}
-          onChange={handleLightnessChange}
-        />
-      </label>
+              <label>
+                Lightness: {lightness}%
+                <input
+                  type="range"
+                  min="0"
+                  max="65"
+                  value={lightness}
+                  onChange={handleCSSVarChange(setLightness, '--nav-l', '%')}
+                />
+              </label>
+              <div style={{ fontSize: '0.85rem', color: 'var(--fontcolor)', marginTop: '4px' }}>
+                (Lightness Capped at 65% for text contrast)
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      
+      {/* Default Theme Color (lightness locked at 88%) */}
+      <div className="theme-section">
+        <h3 onClick={() => setDefaultExpanded(!defaultExpanded)}>
+          Default Theme Color {defaultExpanded ? '▲' : '▼'}
+        </h3>
+
+        {defaultExpanded && (
+          <div className="theme-section-content">
+            <div className="theme-slider-group">
+              <label>
+                Hue: {defaultHue}°
+                <input
+                  type="range"
+                  min="0"
+                  max="360"
+                  value={defaultHue}
+                  onChange={handleCSSVarChange(setDefaultHue, '--defaultColor-h')}
+                />
+              </label>
+
+              <label>
+                Saturation: {defaultSaturation}%
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={defaultSaturation}
+                  onChange={handleCSSVarChange(setDefaultSaturation, '--defaultColor-s', '%')}
+                />
+              </label>
+
+              <div style={{ fontSize: '0.85rem', color: 'var(--fontcolor)', marginTop: '6px' }}>
+                Lightness is locked at <strong>88%</strong> to preserve theme calculations.
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
