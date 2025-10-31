@@ -50,7 +50,7 @@ export const skyvale_mountain = [
     }),
 );
 
-export const skyvale_outskirts = [
+export const skyvale_outskirts1 = [
   {
     asset: "Skyhold_vale_outskirts1.jpg",
     width: 1280,
@@ -80,6 +80,65 @@ export const skyvale_outskirts = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for Skyhold_vale_outskirts5",
+  },
+  {
+    asset: "Skyhold_vale_outskirts6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_outskirts6",
+  },
+  {
+    asset: "Skyhold_vale_outskirts7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_outskirts7",
+  },
+  {
+    asset: "Skyhold_vale_outskirts8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_outskirts8",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${skyValeLink("outskirts", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const skyvale_outskirts2 = [
+  {
+    asset: "outskirts_development2_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for outskirts_development2_1",
+  },
+  {
+    asset: "outskirts_development2_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for outskirts_development2_2",
+  },
+  {
+    asset: "outskirts_development2_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for outskirts_development2_3",
+  },
+  {
+    asset: "outskirts_development2_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for outskirts_development2_4",
+  },
+  {
+    asset: "outskirts_development2_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for outskirts_development2_5",
   }
 ].map(
   ({ asset, alt, width, height }) =>
@@ -168,7 +227,25 @@ export const Random_buildings = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for Random_buildings4",
-  }
+  },
+  {
+    asset: "Random_buildings5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Random_buildings5",
+  },
+  {
+    asset: "Random_buildings6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Random_buildings6",
+  },
+  {
+    asset: "Random_buildings7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Random_buildings7",
+  },
 ].map(
   ({ asset, alt, width, height }) =>
     ({
@@ -410,7 +487,43 @@ export const skyvale_inner_city_detail_views = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for Skyhold_vale_inner_city_details21",
-  }
+  },
+  {
+    asset: "Skyhold_vale_inner_city_details22.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_details22",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_details23.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_details23",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_details24.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_details24",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_details25.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_details25",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_details26.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_details26",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_details27.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_details27",
+  },
 ].map(({ asset, alt, width, height }) => ({
   src: `${skyValeInnerCityLink("detail_views", asset, width)}`,
   alt,

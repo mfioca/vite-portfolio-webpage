@@ -53,7 +53,7 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Outskirts section 1"
-                                photos={ skyhold_vale_photos.skyvale_outskirts }
+                                photos={ skyhold_vale_photos.skyvale_outskirts1 }
                                 description={
                                     <>
                                         <p>
@@ -62,7 +62,20 @@ const SkyholdVale = () => {
                                     </>
                                 }
                             />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Outskirts section 2"
+                                photos={ skyhold_vale_photos.skyvale_outskirts2 }
+                                description={
+                                    <>
+                                        <p>
+                                            This new cluster of structures represents a second outskirts community, situated on the opposite side of the city from the original outskirts housing. These homes are modeled after a different type of default Minecraft village, slightly larger, and designed to evoke a sense of modest wealth. The area forms a small but distinct neighborhood, hinting at a more structured and possibly prosperous expansion beyond the central city.
+                                        </p>
+                                    </>
+                                }
+                            />
                         </TabPanel>
+                        <DividerLine />
                         <TabPanel>
                             <IntroSection title="Skyhold Vale Inner City">
                                 <p>
