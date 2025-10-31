@@ -13,8 +13,6 @@
   --gap10: 10px;
   --gap15: 15px;
   --gap20: 20px;
-
-
   --fontfamily: 'Courier New';
   --fontfamilyH: 'Courier New', monospace;
   --fontfamilyNav: 'Roboto', sans-serif;
@@ -22,8 +20,7 @@
 
   --colortest: pink;
   --colorwhite: #ffffff;
-  --colorblue: #0078d4;
-  --colorblue2: #005a9e;
+  --weblink: #0078d4;
   --lightgreyblue: #f8f9fa;
   --githubblue: #0366d6;
   --githubdark: #24292f;
@@ -32,14 +29,19 @@
   --goodcolor: green;
   --warningcolor: #d4aa00;
   --badcolor: red;
-  --fontcolortest: rgb(242, 128, 147);
   --fontcolor: #333;
   --loading-overlay: rgba(0, 0, 0, 0.3); /* Lighter semi-transparent background */
 
 
-  --fontblue: var(--colorblue);
-  --buttonbackground: var(--colorblue);
-  --buttonbluehover: var(--colorblue2);
+  --fontblue-h: 207;
+  --fontblue-s: 100%;
+  --fontblue-l: 42%;
+  --fontblue: hsl(var(--fontblue-h), var(--fontblue-s), var(--fontblue-l));
+  --fontblue-hover: hsl(var(--fontblue-h), var(--fontblue-s), calc(var(--fontblue-l) - 11%));
+
+  /*--fontblue: var(--colorblue);*/
+  --buttonbackground: var(--fontblue);
+  --buttonbluehover: var(--fontblue-hover);
 
 
   /*--defaultColor: #e0e0e0;*/
@@ -217,11 +219,6 @@ body *::-webkit-scrollbar-track {
   margin: var(--margin) auto;
 }
 
-
-
-
-
-
 .gap-20 {
   gap: var(--gap20);
 }
@@ -376,13 +373,100 @@ button:hover {
   display: block;
   margin-top: 10px;
   font-size: 0.9rem;
-  color: var(--colorblue);
+  color: var(--weblink);
   font-weight: bold;
   text-decoration: none;
 }
 
 .default-link:hover {
   text-decoration: underline;
+}
+
+/***********************************************************************************/
+/*                            Theme Switcher                                       */
+/***********************************************************************************/
+
+.theme-toggle-button {
+  background: none;
+  border: none;
+  color: var(--colorwhite);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  position: absolute;
+  bottom: 4px;     /* ⬅️ Moves it to the bottom */
+  left: 20px;      /* ⬅️ Aligns it left */
+  z-index: 1001;
+  outline: none;
+  box-shadow: none; 
+}
+
+.theme-toggle-button:hover {
+  color: var(--defaultColor);
+  background-color: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.theme-toggle-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.theme-switcher {
+  position: fixed;
+  top: 130px;       /* same vertical zone as the button */
+  left: 20px;      /* move to left side of screen */
+  z-index: 9998;
+  background-color: var(--lightgrey);
+  box-shadow: var(--boxshadow);
+  border-radius: var(--borderradius);
+  padding: var(--paddingv10h20);
+  max-width: 300px;
+  width: 90%;
+}
+
+.theme-section {
+  margin-bottom: var(--margin20);
+}
+
+.theme-section h3 {
+  margin-bottom: var(--margin);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--fontblue);
+}
+
+.theme-section-content {
+  display: block;
+  padding: var(--padding);
+  background-color: var(--colorwhite);
+  border-radius: var(--borderradius);
+  border: var(--textboxborder);
+  transition: max-height 0.3s ease;
+}
+
+.theme-slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap10);
+  margin-top: var(--margin);
+}
+
+.theme-slider-group label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.theme-slider-group input[type="range"] {
+  width: 100%;
+}
+
+.theme-slider-group label {
+  color: var(--fontcolor);
 }
 
 /***********************************************************************************/
@@ -812,89 +896,4 @@ button:hover {
 }
 
 
-
-/* Theme Switcher Styles */
-
-.theme-toggle-button {
-  background: none;
-  border: none;
-  color: var(--colorwhite);
-  font-size: 1.8rem;
-  cursor: pointer;
-  padding: 4px 8px;
-  position: absolute;
-  bottom: 4px;     /* ⬅️ Moves it to the bottom */
-  left: 20px;      /* ⬅️ Aligns it left */
-  z-index: 1001;
-  outline: none;
-  box-shadow: none; 
-}
-
-.theme-toggle-button:hover {
-  color: var(--defaultColor);
-  background-color: transparent !important;
-  transform: none !important;
-  box-shadow: none !important;
-}
-
-.theme-toggle-button:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-
-.theme-switcher {
-  position: fixed;
-  top: 130px;       /* same vertical zone as the button */
-  left: 20px;      /* move to left side of screen */
-  z-index: 9998;
-  background-color: var(--lightgrey);
-  box-shadow: var(--boxshadow);
-  border-radius: var(--borderradius);
-  padding: var(--paddingv10h20);
-  max-width: 300px;
-  width: 90%;
-}
-
-.theme-section {
-  margin-bottom: var(--margin20);
-}
-
-.theme-section h3 {
-  margin-bottom: var(--margin);
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: var(--fontblue);
-}
-
-.theme-section-content {
-  display: block;
-  padding: var(--padding);
-  background-color: var(--colorwhite);
-  border-radius: var(--borderradius);
-  border: var(--textboxborder);
-  transition: max-height 0.3s ease;
-}
-
-.theme-slider-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap10);
-  margin-top: var(--margin);
-}
-
-.theme-slider-group label {
-  display: flex;
-  flex-direction: column;
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-
-.theme-slider-group input[type="range"] {
-  width: 100%;
-}
-
-.theme-slider-group label {
-  color: var(--fontcolor);
-}
 
