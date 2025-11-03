@@ -39,23 +39,12 @@
   --fontblue: hsl(var(--fontblue-h), var(--fontblue-s), var(--fontblue-l));
   --fontblue-hover: hsl(var(--fontblue-h), var(--fontblue-s), calc(var(--fontblue-l) - 11%));
 
-  /*--fontblue: var(--colorblue);*/
   --buttonbackground: var(--fontblue);
   --buttonbluehover: var(--fontblue-hover);
-
-
-  /*--defaultColor: #e0e0e0;*/
-  --defaultColor-1: var(--colortest);
-  --bordercolor-1: var(--colortest);
   
   --defaultColor-h: 0;
   --defaultColor-s: 0%;
   --defaultColor-l: 88%; /* #e0e0e0 in HSL = h:0, s:0%, l:88% 
-
-  /* test color pink 
-  --defaultColor-h: .97;
-  --defaultColor-s: 100%;
-  --defaultColor-l: 88%;  */
 
   /*--navcolor: #282c34;*/
   --nav-h: 210;
