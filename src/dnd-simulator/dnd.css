@@ -1,3 +1,10 @@
+.flex-column-center-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center vertically within the box */
+  align-items: center;
+}
+
 .section-height {
   flex-grow: 1;
   height: 375px; /* or whatever feels balanced */
@@ -12,9 +19,6 @@
 }
 
 .battle-winner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 40px;
   padding: 2px;
   margin-top: var(--margin);
@@ -25,14 +29,14 @@
 }
 
 .reminder-warning {
-  background-color: var(--lightbackgroundcolor);
-  color: var(--fontcolor);
-  border-left: 4px solid var(--fontblue);
-  border-right: 4px solid var(--fontblue);
   padding: 8px 12px;
   font-weight: bold;
   text-align: center;
-  margin: 10px 0;
+  margin: var(--marginv10);
+  color: var(--fontcolor);
+  background-color: var(--lightbackgroundcolor);
+  border-left: 4px solid var(--fontblue);
+  border-right: 4px solid var(--fontblue);
   border-radius: var(--borderradius);
   box-shadow: var(--thinshadow);
 }
@@ -65,9 +69,6 @@
 /***********************************************************************************/
 
 .generate-button-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 2px;
   padding: var(--padding);
 }
@@ -75,17 +76,11 @@
 .generate-button-slot {
   max-width: 250px;
   height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .button-slot {
-  height: 40px; /* match your button height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex: 1;
+  height: 40px; /* match your button height */
 }
 
 /***********************************************************************************/
@@ -93,37 +88,24 @@
 /***********************************************************************************/
 
 .character-sheet-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* center vertically within the box */
-  align-items: center;
   max-width: 450px;
   min-width: 250px;
   width: 100%;
 }
 
 .character-sheet-wrapper {
-  display: flex;
-  flex-direction: column; /* stack vertically */
-  align-items: center;    /* center horizontally */
   width: 100%;
   box-sizing: border-box;
 }
 
 .avatar-stat-layout {
-  display: flex;
   flex-direction: row; /* 🔥 row layout */
-  justify-content: center;
-  align-items: center;
   width: 100%;
   gap: 50px;
   box-sizing: border-box;
 }
 
 .avatar-slot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-shrink: 0;
   width: 100px;
   height: 100px;
@@ -138,9 +120,6 @@
 }
 
 .stat-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: auto;
   margin: 10px;
   min-width: 150px;
@@ -154,11 +133,6 @@
 }
 
 .weapon-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;  /* ✅ centers contents horizontally */
-  text-align: center;   /* ✅ centers text inside the labels or headers */
-  word-break: break-word;
   width: 70%;
   padding: 5px 10px;
 }

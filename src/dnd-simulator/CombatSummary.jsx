@@ -125,7 +125,7 @@ const CharacterCombatBlock = ({
       { label === "Hero" && character.weapon === null && (
         <p className="reminder-warning">Reminder: Don't forget to equip a weapon.</p> // reminder to equip a weapon before attacking
       )}
-      <span className="button-slot">
+      <span className="flex-align-center-center button-slot">
       {!winner && 
         typeof currentTurn === 'string' && 
         currentTurn === label.toLowerCase() && 

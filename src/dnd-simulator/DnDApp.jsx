@@ -174,8 +174,8 @@ function Simulator() {
     <BodyContainer hasBackground = { false } className="simulator-wrapper">
       <div className="flex-column character-layout-wrapper">
         {/*<div className="flex-row-space-between gap-20">*/}
-        <div className="generate-button-row">
-          <div className="generate-button-slot">
+        <div className="flex-align-center-center generate-button-row">
+          <div className="flex-align-center-center generate-button-slot">
 {/* ------------------------------GENERATE HERO/MONSTER------------------------------*/}
           {/*   Button to generate hero stats  */}
             { !state.hero && 
@@ -187,7 +187,7 @@ function Simulator() {
               </button> 
             }
           </div>
-          <div className="generate-button-slot">
+          <div className="flex-align-center-center generate-button-slot">
             {/* 
               This button triggers after hero is generated,when there is no monster 
               generated and the hero has won the battle to continue fighting
@@ -204,7 +204,7 @@ function Simulator() {
         </div>
 {/* ------------------------------HERO CHARACTER SHEET------------------------------*/}
         <div className="flex-row-space-between gap-20 character-main-row">
-          <div className="character-sheet-container">
+          <div className="flex-column-center-center character-sheet-container">
             <CharacterSheet 
               character={ state.hero || hero }
               dispatch={ dispatch }
@@ -213,7 +213,7 @@ function Simulator() {
           </div>
 {/* ------------------------------INITIATIVE SECTION------------------------------*/}
           <BorderBox className="section-height box-background-standard standard-margin initiative">
-            <div className="button-slot">
+            <div className="flex-align-center-center button-slot">
               { 
                 !state.winner && !state.currentTurn && state.hero && state.monster && (
                   <button 
@@ -259,7 +259,7 @@ function Simulator() {
           </div>
         </div>
       </div>
-      <BorderBox className="battle-winner">
+      <BorderBox className="flex-align-center-center battle-winner">
         { state.winner && (
           <div >
             <h2 className={ state.winner === 'Hero' ? 'result-good' : 'result-bad' }>

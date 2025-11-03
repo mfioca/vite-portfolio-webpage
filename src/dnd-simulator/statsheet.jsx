@@ -8,10 +8,10 @@ const CharacterSheet = ({ character, dispatch, isRealHero }) => {
   const hpClass = getHPColorClass(combat.hitpoints, character.maxHitpoints);
 
   return (
-    <BorderBox className="section-height box-background-standard character-sheet-wrapper">
+    <BorderBox className="section-height box-background-standard flex-column-center-center character-sheet-wrapper">
       <h2>{ name }</h2>
-      <div className="avatar-stat-layout">
-        <div className="avatar-slot">
+      <div className="flex-align-center-center avatar-stat-layout">
+        <div className="flex-align-center-center avatar-slot">
           <img
             src={
               character.avatar
@@ -22,7 +22,7 @@ const CharacterSheet = ({ character, dispatch, isRealHero }) => {
             className="character-avatar"
           />
         </div>
-        <div className="stat-block">
+        <div className="flex-align-center-center stat-block">
           <table>
             <tbody>
               {Object.entries(baseStats).map(([key, value]) => (
@@ -64,7 +64,7 @@ const CharacterSheet = ({ character, dispatch, isRealHero }) => {
       </div>
 {/* drop down list to select weapon for hero only */}
       {isRealHero && character.name === "Hero" && (
-        <div className="weapon-section">
+        <div className="flex-column-center-center weapon-section">
           <label htmlFor="weapon-select">Select Weapon:</label>
           <select
             id="weapon-select"
