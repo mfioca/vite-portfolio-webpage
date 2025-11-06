@@ -5,10 +5,10 @@ const ThemeSwitcher = () => {
   const [saturation, setSaturation] = useState(13);
   const [lightness, setLightness] = useState(18);
 
-  const [defaultHue, setDefaultHue] = useState(0.97);   // originally pink
+  const [defaultHue, setDefaultHue] = useState(0.97);   
   const [defaultSaturation, setDefaultSaturation] = useState(100);
   const [defaultExpanded, setDefaultExpanded] = useState(false);
-  const [navExpanded, setNavExpanded] = useState(false); // ⬅️ New state for collapsible section
+  const [navExpanded, setNavExpanded] = useState(false); 
 
   const [fontblueHue, setFontblueHue] = useState(207);
   const [fontblueSaturation, setFontblueSaturation] = useState(100);
@@ -30,6 +30,10 @@ const ThemeSwitcher = () => {
         {navExpanded && (
           <div className="theme-section-content">
             <div className="theme-slider-group">
+              <div className="color-preview-row">
+                <div className="color-preview-label">Preview:</div>
+                <div className="color-preview" style={{ backgroundColor: 'var(--navcolor)' }} />
+              </div>
               <label>
                 Hue: { hue }°
                 <input
@@ -40,7 +44,6 @@ const ThemeSwitcher = () => {
                   onChange={handleCSSVarChange(setHue, '--nav-h')}
                 />
               </label>
-
               <label>
                 Saturation: { saturation }%
                 <input
@@ -51,7 +54,6 @@ const ThemeSwitcher = () => {
                   onChange={handleCSSVarChange(setSaturation, '--nav-s', '%')}
                 />
               </label>
-
               <label>
                 Lightness: { lightness }%
                 <input
@@ -62,7 +64,7 @@ const ThemeSwitcher = () => {
                   onChange={handleCSSVarChange(setLightness, '--nav-l', '%')}
                 />
               </label>
-              <div style={{ fontSize: '0.85rem', color: 'var(--fontcolor)', marginTop: '4px' }}>
+              <div className="theme-note">
                 (Lightness Capped at 65% for text contrast)
               </div>
             </div>
@@ -77,6 +79,10 @@ const ThemeSwitcher = () => {
         {defaultExpanded && (
           <div className="theme-section-content">
             <div className="theme-slider-group">
+              <div className="color-preview-row">
+                <div className="color-preview-label">Preview:</div>
+                <div className="color-preview" style={{ backgroundColor: 'var(--defaultColor)' }} />
+              </div>
               <label>
                 Hue: { defaultHue }°
                 <input
@@ -97,7 +103,7 @@ const ThemeSwitcher = () => {
                   onChange={handleCSSVarChange(setDefaultSaturation, '--defaultColor-s', '%')}
                 />
               </label>
-              <div style={{ fontSize: '0.85rem', color: 'var(--fontcolor)', marginTop: '6px' }}>
+              <div className="theme-note">
                 Lightness is locked at <strong>88%</strong> to preserve theme calculations.
               </div>
             </div>
@@ -111,6 +117,10 @@ const ThemeSwitcher = () => {
         {fontblueExpanded && (
           <div className="theme-section-content">
             <div className="theme-slider-group">
+              <div className="color-preview-row">
+                <div className="color-preview-label">Preview:</div>
+                <div className="color-preview" style={{ backgroundColor: 'var(--fontblue)' }} />
+              </div>
               <label>
                 Hue: { fontblueHue }°
                 <input
@@ -141,13 +151,13 @@ const ThemeSwitcher = () => {
                   onChange={handleCSSVarChange(setFontblueLightness, '--fontblue-l', '%')}
                 />
               </label>
-              <div style={{ fontSize: '0.85rem', color: 'var(--fontcolor)', marginTop: '4px' }}>
+              <div className="theme-note">
                 (Min lightness set to 13% to preserve hover contrast)
               </div>
             </div>
           </div>
         )}
-      </div>+
+      </div>
     </div>
   );
 };

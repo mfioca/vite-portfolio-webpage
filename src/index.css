@@ -458,6 +458,34 @@ button:hover {
   color: var(--fontcolor);
 }
 
+.color-preview-row {
+  display: flex;
+  align-items: center;
+  gap: var(--gap10);
+  margin-top: var(--margin);
+}
+
+.color-preview-label {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--fontcolor);
+  width: 50%;
+}
+
+.color-preview {
+  width: 50%;
+  height: 10px;
+  border-radius: var(--borderradius);
+  border: var(--textboxborder);
+  transition: background-color 0.3s ease;
+}
+
+.theme-note {
+  font-size: 0.85rem;
+  color: var(--fontcolor);
+  margin-top: 6px;
+}
+
 /***********************************************************************************/
 /*                            Nav Bar and Footer                                   */
 /***********************************************************************************/

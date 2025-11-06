@@ -23,32 +23,72 @@ function Dashboard() {
         <Provider store={ store }> 
             <div className="standard-padding-margin Dashboard">
                 <IntroSection title="Dashboard Overview">
-                    <p><strong className="shadow">Purpose:</strong>&nbsp;&nbsp;This dashboard presents a comprehensive visualization of activity data collected over 
-                        four years with a single organization. By highlighting trends in job focus and time allocation, it offers valuable insights into 
-                        how various activities contribute to overall performance. The design prioritizes user experience, transforming complex CSV data 
-                        into an organized, visually appealing format that moves beyond the clutter of traditional spreadsheets. Equipped with responsive graphs, 
-                        interactive pagination, and customizable drop-down filters, the dashboard enables users to explore their data effortlessly. 
-                        This intuitive tool empowers decision-making through clear, accessible insights.
+                    <p><strong className="shadow">Purpose:</strong>&nbsp;&nbsp;This dashboard visualizes four years of activity data from a single organization, 
+                        highlighting how job focus and time allocation evolved over time. It translates complex CSV data into clear, interactive visuals that reveal 
+                        how different activities contribute to overall performance. Designed for clarity and exploration, it features responsive graphs, pagination, 
+                        and customizable filters — making data easy to navigate and insights immediately accessible.
                     </p>
                     <DividerLine width="30%" />
-                    <p><strong className="shadow">Description:</strong>&nbsp;&nbsp;The first section of the dashboard offers a comprehensive analysis of application usage and 
-                        job focus trends over time. Through graphs, it reveals how tools like “Mode” and Google Sheets have been utilized monthly, 
-                        alongside shifts in job activities such as analytics and customer relations. The data also highlights total recorded hours, 
-                        the proportion dedicated to analytics, and year-over-year changes in focus areas. Together, these visualizations provide a clear 
-                        understanding of workflow priorities and evolving patterns, enabling users to assess productivity and refine strategies.
+                    <p><strong className="shadow">Description:</strong>&nbsp;&nbsp;The first section visualizes how my work focus evolved over time — showing the shift 
+                        from operations to analytics and how tools like Google Sheets and Mode drove that change. Monthly trends highlight total hours, analytics growth, 
+                        and changing priorities across key activity types.
                     </p>
                     <p>
-                        The second section of the dashboard shifts focus to detailed CSV data, offering powerful filtering capabilities and dynamic visualizations. 
-                        Users can refine the dataset using three intuitive dropdown filters for activity type, month, and year, tailoring the view to their specific 
-                        needs. Based on these selections, a donut chart highlights the top applications by hours, providing a clear snapshot of tool usage. 
-                        As selections are made, a bar chart appears to showcase the most time-intensive activity subtypes. Below these visualizations, the raw CSV data 
-                        is displayed in a clean, spreadsheet-like format, allowing users to explore the data in detail while maintaining ease of navigation and clarity.
+                        The second section adds interactivity, letting users explore the underlying CSV data. Filters for activity type, month, and year dynamically 
+                        update donut and bar charts to reveal where time was spent and which tools dominated. A live data table below supports deeper exploration.
                     </p>
                     <DividerLine width="30%" />
                     <p className="data-source ">Data insights in this dashboard were made possible through the use of <a href="https://www.rescuetime.com" target="_blank" rel="noopener noreferrer">RescueTime.com</a>, 
                         a powerful productivity and time management tool.
                     </p>
                 </IntroSection>
+                <DividerLine width="80%" />
+                <h2 className="dashboard-section-title">Tableau Dashboard Screenshots</h2>
+                <p className="dashboard-caption">
+                    These screenshots represent dashboards I created in Tableau as part of a broader analysis of work activity data. Each one reflects a different lens on the evolving focus of time and tools, from operational metrics to analytics-driven insight.
+                </p>
+                <div className="flex-wrap-center standard-margin">
+                    <div className="dashboard-image-row flex-wrap standard-margin">
+                        <div className="dashboard-image-column">
+                            <img
+                                src={`${import.meta.env.BASE_URL}tableau_1.png`}
+                                alt="Dashboard 1 overview"
+                            />
+                            <p className="default-list">
+                                <strong>Dashboard 1</strong> – Four-year overview of application usage and focus areas, showing the transition
+                                from operations to analytics and the growing role of tools like Google Sheets and Mode.
+                                &nbsp;
+                                <a
+                                    href="https://public.tableau.com/app/profile/mark.fioca/viz/FocusWorkActivityTrendsMonthlySubtypesOver4Years/FocusandResponsibilityChangesOverTime"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="default-link"
+                                >
+                                    View Interactive Version
+                                </a>
+                            </p>
+                        </div>
+                        <div className="dashboard-image-column">
+                            <img
+                                src={`${import.meta.env.BASE_URL}tableau_2.png`}
+                                alt="Dashboard 2 overview"
+                            />
+                            <p className="default-list">
+                                <strong>Dashboard 2</strong> – Interactive breakdown of focus and non-focus work, highlighting time allocation
+                                by category and key applications driving analytical productivity.
+                                &nbsp;
+                                <a
+                                    href="https://public.tableau.com/app/profile/mark.fioca/viz/Focusworkactivityandprogramutilizationovera4yearworkhistory/FocusandNon-FocusWorkTrendsbyCategoryandApplication"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="default-link"
+                                >
+                                    View Interactive Version
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <DividerLine />
                 <BodyContainer hasBackground = { true } className=" graph-flexbox">
                     <BorderBox className="flex-wrap standard-margin graph-container">

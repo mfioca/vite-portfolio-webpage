@@ -33,6 +33,57 @@
   font-size: 1.5rem;
 }
 
+.dashboard-section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--fontblue);
+  margin: var(--margin20) auto;
+  text-align: center;
+}
+
+.dashboard-caption {
+  font-size: 0.95rem;
+  color: var(--fontcolor);
+  text-align: center;
+  line-height: 1.5;
+  margin: var(--marginv10) auto;
+  display: block;
+}
+
+.dashboard-image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+  margin: var(--margin20) 0;
+}
+
+.dashboard-image-column {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  aspect-ratio: 1280 / 680; /* Forces 1.88:1 aspect ratio */
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.dashboard-image-column img {
+  width: 100%;
+  max-width: 500px;
+  
+  object-fit: cover;
+  border-radius: var(--borderradius);
+  box-shadow: var(--boxshadow);
+  margin-bottom: var(--margin);
+}
+
+.dashboard-image-column p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
 /***********************************************************************************/
 /*                   main dashboard page - 3 charts                                */
 /***********************************************************************************/
