@@ -63,15 +63,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  aspect-ratio: 1280 / 680; /* Forces 1.88:1 aspect ratio */
   max-width: 500px;
   margin: 0 auto;
+  min-width: 300px;             /* ✅ new: enforce a reasonable min width */
+  aspect-ratio: unset;          /* ✅ new: remove unreliable aspect-ratio */
 }
 
 .dashboard-image-column img {
   width: 100%;
   max-width: 500px;
-  
+  aspect-ratio: 16 / 9;           /* ✅ keep ratio here instead */
   object-fit: cover;
   border-radius: var(--borderradius);
   box-shadow: var(--boxshadow);
