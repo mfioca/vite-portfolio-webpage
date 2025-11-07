@@ -42,53 +42,6 @@ function Dashboard() {
                         a powerful productivity and time management tool.
                     </p>
                 </IntroSection>
-                <DividerLine width="80%" />
-                <h2 className="dashboard-section-title">Tableau Dashboard Screenshots</h2>
-                <p className="dashboard-caption">
-                    These screenshots represent dashboards I created in Tableau as part of a broader analysis of work activity data. Each one reflects a different lens on the evolving focus of time and tools, from operational metrics to analytics-driven insight.
-                </p>
-                <div className="flex-wrap-center standard-margin">
-                    <div className="dashboard-image-row flex-wrap standard-margin">
-                        <div className="dashboard-image-column">
-                            <img
-                                src={`${import.meta.env.BASE_URL}tableau_1.png`}
-                                alt="Dashboard 1 overview"
-                            />
-                            <p className="default-list">
-                                <strong>Dashboard 1</strong> – Four-year overview of application usage and focus areas, showing the transition
-                                from operations to analytics and the growing role of tools like Google Sheets and Mode.
-                                &nbsp;
-                                <a
-                                    href="https://public.tableau.com/app/profile/mark.fioca/viz/FocusWorkActivityTrendsMonthlySubtypesOver4Years/FocusandResponsibilityChangesOverTime"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="default-link"
-                                >
-                                    View Interactive Version
-                                </a>
-                            </p>
-                        </div>
-                        <div className="dashboard-image-column">
-                            <img
-                                src={`${import.meta.env.BASE_URL}tableau_2.png`}
-                                alt="Dashboard 2 overview"
-                            />
-                            <p className="default-list">
-                                <strong>Dashboard 2</strong> – Interactive breakdown of focus and non-focus work, highlighting time allocation
-                                by category and key applications driving analytical productivity.
-                                &nbsp;
-                                <a
-                                    href="https://public.tableau.com/app/profile/mark.fioca/viz/Focusworkactivityandprogramutilizationovera4yearworkhistory/FocusandNon-FocusWorkTrendsbyCategoryandApplication"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="default-link"
-                                >
-                                    View Interactive Version
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
                 <DividerLine />
                 <BodyContainer hasBackground = { true } className=" graph-flexbox">
                     <BorderBox className="flex-wrap standard-margin graph-container">
