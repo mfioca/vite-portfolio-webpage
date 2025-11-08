@@ -33,6 +33,25 @@
   font-size: 1.5rem;
 }
 
+.powerpoint-viewer {
+  max-width: 1200;
+  margin: var(--marginV20) auto;
+  text-align: center;
+}
+
+.slide-container {
+  margin: var(--margin) auto;
+}
+
+.slide-image {
+  width: 100%;
+  
+  height: auto;
+  border-radius: var(--borderradius);
+  box-shadow: var(--boxshadow);
+  margin-bottom: var(--margin);
+}
+
 /***********************************************************************************/
 /*                   main dashboard page - 3 charts                                */
 /***********************************************************************************/

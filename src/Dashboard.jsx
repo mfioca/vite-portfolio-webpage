@@ -5,6 +5,7 @@ import Graph from './dashboard/Graph.jsx';
 import SecondGraph from './dashboard/Graph2.jsx'; // Import your new graph component
 import ThirdGraph from './dashboard/Graph3.jsx'; // Import your new graph component
 import CSVdata from './dashboard/CSVdata.jsx'; // Import your new graph component
+import PowerpointViewer from './dashboard/powerpoint.jsx';
 import { DividerLine, IntroSection, BodyContainer, BorderBox } from './SharedComponents.jsx';
 
 
@@ -42,6 +43,8 @@ function Dashboard() {
                         a powerful productivity and time management tool.
                     </p>
                 </IntroSection>
+                <DividerLine />
+                <PowerpointViewer />
                 <DividerLine />
                 <BodyContainer hasBackground = { true } className=" graph-flexbox">
                     <BorderBox className="flex-wrap standard-margin graph-container">

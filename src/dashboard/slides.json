@@ -1,0 +1,92 @@
+[
+    { 
+        "asset": "Slide1.png", 
+        "width": 1920,
+        "height": 1080,
+        "alt": "Slide 1" 
+    },
+    { 
+        "asset": "Slide2.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 2" 
+    },
+    { 
+        "asset": "Slide3.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 3" 
+    },
+    { 
+        "asset": "Slide4.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 4" 
+    },
+    { 
+        "asset": "Slide5.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 5" 
+    },
+    { 
+        "asset": "Slide6.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 6" 
+    },
+    { 
+        "asset": "Slide7.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 7" 
+    },
+    { 
+        "asset": "Slide8.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 8" 
+    },
+    { 
+        "asset": "Slide9.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 9" 
+    },
+    { 
+        "asset": "Slide10.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 10" 
+    },
+    { 
+        "asset": "Slide11.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 11" 
+    },
+    { 
+        "asset": "Slide12.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 12" 
+    },
+    { 
+        "asset": "Slide13.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 13" 
+    },
+    { 
+        "asset": "Slide14.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 14" 
+    },
+    { 
+        "asset": "Slide15.png", 
+        "width": 1920,
+        "height": 1080, 
+        "alt": "Slide 15" 
+    }
+]
