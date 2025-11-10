@@ -96,12 +96,12 @@ const SkyholdVale = () => {
                             />
                             <DividerLine />
                             <MinecraftGallery
-                                title="Detail Views"
+                                title="Detail Progress"
                                 photos={ skyhold_vale_photos.skyvale_inner_city_detail_views  }
                                 description={
                                     <>
                                         <p>
-                                            These images showcase the current state of Skyhold Vale’s inner city, highlighting the row houses as they exist today. The shots include close-up views of exterior detailing, street layouts, and the surrounding wall structure—capturing the architectural character and atmosphere of the city’s urban core as it nears completion.
+                                            This section highlights how detail was gradually layered onto Skyhold Vale’s inner city — from basic structures to more finished streets, walls, and exteriors. The images capture the slow transformation of the space as depth, texture, and architectural character were added piece by piece.
                                         </p>
                                     </>
                                 }

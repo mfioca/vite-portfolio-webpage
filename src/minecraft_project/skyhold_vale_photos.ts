@@ -344,7 +344,61 @@ export const skyvale_inner_city_construction = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for Skyhold_vale_inner_city_const14",
-  }
+  },
+  {
+    asset: "Skyhold_vale_inner_city_const15.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_const15",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_const16.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_const16",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_const17.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_const17",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_const18.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_const18",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_const19.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_const19",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_const20.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_const20",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_const21.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_const21",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_const22.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_const22",
+  },
+  {
+    asset: "Skyhold_vale_inner_city_const23.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_inner_city_const23",
+  },
 ].map(
   ({ asset, alt, width, height }) =>
     ({
@@ -439,91 +493,7 @@ export const skyvale_inner_city_detail_views = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for Skyhold_vale_inner_city_details14",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details15.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details15",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details16.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details16",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details17.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details17",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details18.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details18",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details18.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details18",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details19.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details19",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details20.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details20",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details21.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details21",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details22.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details22",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details23.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details23",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details24.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details24",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details25.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details25",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details26.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details26",
-  },
-  {
-    asset: "Skyhold_vale_inner_city_details27.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_inner_city_details27",
-  },
+  }
 ].map(({ asset, alt, width, height }) => ({
   src: `${skyValeInnerCityLink("detail_views", asset, width)}`,
   alt,
