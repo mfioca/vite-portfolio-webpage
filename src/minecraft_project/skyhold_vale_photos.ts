@@ -256,9 +256,9 @@ export const Random_buildings = [
     }),
 );
 
-/***********************************************************************************/
-/*                          PORT AND MARKETPLACE                                   */
-/***********************************************************************************/
+/*************************************************************************/
+/*                          INNER CITY                                   */
+/*************************************************************************/
 
 export const skyvale_inner_city_construction = [
   {
@@ -501,4 +501,191 @@ export const skyvale_inner_city_detail_views = [
   height,
 }));
 
+export const skyvale_inner_city_final_details = [
+  {
+    asset: "inner_city_final_details_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_1",
+  },
+  {
+    asset: "inner_city_final_details_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_2",
+  },
+  {
+    asset: "inner_city_final_details_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_3",
+  },
+  {
+    asset: "inner_city_final_details_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_4",
+  },
+  {
+    asset: "inner_city_final_details_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_5",
+  },
+  {
+    asset: "inner_city_final_details_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_6",
+  },
+  {
+    asset: "inner_city_final_details_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_7",
+  },
+  {
+    asset: "inner_city_final_details_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_8",
+  },
+  {
+    asset: "inner_city_final_details_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_9",
+  },
+  {
+    asset: "inner_city_final_details_11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_11",
+  },
+  {
+    asset: "inner_city_final_details_12.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_12",
+  },
+  {
+    asset: "inner_city_final_details_13.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_13",
+  },
+  {
+    asset: "inner_city_final_details_14.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_14",
+  },
+  {
+    asset: "inner_city_final_details_15.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_15",
+  },
+  {
+    asset: "inner_city_final_details_16.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_16",
+  },
+  {
+    asset: "inner_city_final_details_17.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_17",
+  },
+  {
+    asset: "inner_city_final_details_18.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_18",
+  },
+  {
+    asset: "inner_city_final_details_19.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_19",
+  },
+  {
+    asset: "inner_city_final_details_20.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_20",
+  },
+  {
+    asset: "inner_city_final_details_21.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_21",
+  },
+  {
+    asset: "inner_city_final_details_22.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_22",
+  },
+  {
+    asset: "inner_city_final_details_23.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_23",
+  },
+  {
+    asset: "inner_city_final_details_24.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_24",
+  },
+  {
+    asset: "inner_city_final_details_25.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_25",
+  },
+  {
+    asset: "inner_city_final_details_26.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_26",
+  },
+  {
+    asset: "inner_city_final_details_27.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_27",
+  },
+  {
+    asset: "inner_city_final_details_28.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_28",
+  },
+  {
+    asset: "inner_city_final_details_29.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_29",
+  },
+  {
+    asset: "inner_city_final_details_30.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_30",
+  },
+  {
+    asset: "inner_city_final_details_31.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for inner_city_final_details_31",
+  },
+].map(({ asset, alt, width, height }) => ({
+  src: `${skyValeInnerCityLink("final_details", asset, width)}`,
+  alt,
+  width,
+  height,
+}))
 

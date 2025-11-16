@@ -106,6 +106,18 @@ const SkyholdVale = () => {
                                     </>
                                 }
                             />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Final Details"
+                                photos={ skyhold_vale_photos.skyvale_inner_city_final_details  }
+                                description={
+                                    <>
+                                        <p>
+                                            A set of close-up and street-level shots taken throughout the wall-enclosed inner city of Skyhold Vale. These images highlight the completed architecture, lived-in feel, and key details—like the central fountain and surrounding pathways—that bring the district together.
+                                        </p>
+                                    </>
+                                }
+                            />
                         </TabPanel>
                         <TabPanel>
                             <IntroSection title="Skyhold Specific buildings">
@@ -153,8 +165,8 @@ export default SkyholdVale;
 
 /*  placeholder section
 <TabPanel>
-                        <div className=" standard-padding-margin placeholder-container">
-                            <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
-                        </div>
-                        </TabPanel>
+    <div className=" standard-padding-margin placeholder-container">
+        <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
+    </div>
+</TabPanel>
 */
