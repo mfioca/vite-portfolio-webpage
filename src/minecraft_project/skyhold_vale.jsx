@@ -32,13 +32,37 @@ const SkyholdVale = () => {
                             </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
-                                title="Mountain"
-                                photos={ skyhold_vale_photos.skyvale_mountain }
+                                title="Mountain Initial Planning"
+                                photos={ skyhold_vale_photos.skyvale_mountain_planning }
                                 description={
                                     <>
                                         <p>
                                             These images capture the mountain during the early stages of construction, as the hobbit-style hillside homes were being built into the slope.  
                                             They were taken before the valley was cleared or other areas of the city had begun development, offering a focused look at the earliest phase of Skyhold Vale’s expansion.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Mountain Detail Progress"
+                                photos={ skyhold_vale_photos.skyvale_mountain_progress }
+                                description={
+                                    <>
+                                        <p>
+                                            These images capture construction progress on the hobbit homes built into the mountain, highlighting the addition of exterior details like walls, trim, and plant-based accents. The shots also show the evolving path that winds upward toward the summit, providing a backdrop as the hillside architecture takes shape.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Mountain Final Details"
+                                photos={ skyhold_vale_photos.skyvale_mountain_final_details }
+                                description={
+                                    <>
+                                        <p>
+                                            These final shots of the mountain area highlight smaller details added to complete the build — including bushes, benches, and natural accents placed along the main path. While the core structure was already in place, these finishing touches bring the hillside to life and give the space a more settled, immersive feel.
                                         </p>
                                     </>
                                 }

@@ -6,49 +6,14 @@ function skyValeLink(folder: string, asset: string, width: number) {
 function skyValeInnerCityLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}minecraft_pictures/skyhold_vale/inner_city/${folder}/${asset}?w=${width}&q=50`;
 }
-  
-export { skyValeLink, skyValeInnerCityLink };
 
-export const skyvale_mountain = [
-  {
-    asset: "Skyhold_vale_mountain1.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_mountain1",
-  },
-  {
-    asset: "Skyhold_vale_mountain2.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_mountain2",
-  },
-  {
-    asset: "Skyhold_vale_mountain3.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_mountain3",
-  },
-  {
-    asset: "Skyhold_vale_mountain4.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_mountain4",
-  },
-  {
-    asset: "Skyhold_vale_mountain5.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for Skyhold_vale_mountain5",
-  }
-].map(
-  ({ asset, alt, width, height }) =>
-    ({
-      src: `${skyValeLink("mountain", asset, width)}`,
-      alt,
-      width,
-      height,
-    }),
-);
+function skyValeMountainLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/skyhold_vale/mountain/${folder}/${asset}?w=${width}&q=50`;
+}
+  
+export { skyValeLink, skyValeInnerCityLink, skyValeMountainLink };
+
+
 
 export const skyvale_outskirts1 = [
   {
@@ -250,6 +215,218 @@ export const Random_buildings = [
   ({ asset, alt, width, height }) =>
     ({
       src: `${skyValeLink("Random_buildings", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+
+/*************************************************************************/
+/*                          MOUNTAIN                                     */
+/*************************************************************************/
+
+export const skyvale_mountain_planning = [
+  {
+    asset: "Skyhold_vale_mountain1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_mountain1",
+  },
+  {
+    asset: "Skyhold_vale_mountain2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_mountain2",
+  },
+  {
+    asset: "Skyhold_vale_mountain3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_mountain3",
+  },
+  {
+    asset: "Skyhold_vale_mountain4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_mountain4",
+  },
+  {
+    asset: "Skyhold_vale_mountain5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_mountain5",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${skyValeMountainLink("Initial_planning", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const skyvale_mountain_progress = [
+  {
+    asset: "mountain_progress1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress1",
+  },
+  {
+    asset: "mountain_progress2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress2",
+  },
+  {
+    asset: "mountain_progress3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress3",
+  },
+  {
+    asset: "mountain_progress4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress4",
+  },
+  {
+    asset: "mountain_progress5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress5",
+  },
+  {
+    asset: "mountain_progress6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress6",
+  },
+  {
+    asset: "mountain_progress7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress7",
+  },
+  {
+    asset: "mountain_progress8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress8",
+  },
+  {
+    asset: "mountain_progress9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress9",
+  },
+  {
+    asset: "mountain_progress10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress10",
+  },
+  {
+    asset: "mountain_progress11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress11",
+  },
+  {
+    asset: "mountain_progress12.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress12",
+  },
+  {
+    asset: "mountain_progress13.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress13",
+  },
+  {
+    asset: "mountain_progress14.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress14",
+  },
+  {
+    asset: "mountain_progress15.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress15",
+  },
+  {
+    asset: "mountain_progress16.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_progress16",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${skyValeMountainLink("progress", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const skyvale_mountain_final_details = [
+  {
+    asset: "mountain_final_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_1",
+  },
+  {
+    asset: "mountain_final_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_2",
+  },
+  {
+    asset: "mountain_final_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_3",
+  },
+  {
+    asset: "mountain_final_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_4",
+  },
+  {
+    asset: "mountain_final_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_5",
+  },
+  {
+    asset: "mountain_final_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_6",
+  },
+  {
+    asset: "mountain_final_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_7",
+  },
+  {
+    asset: "mountain_final_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_8",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${skyValeMountainLink("Final_details", asset, width)}`,
       alt,
       width,
       height,
