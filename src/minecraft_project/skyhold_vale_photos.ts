@@ -63,6 +63,12 @@ export const skyvale_outskirts1 = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for Skyhold_vale_outskirts8",
+  },
+  {
+    asset: "Skyhold_vale_outskirts9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for Skyhold_vale_outskirts9",
   }
 ].map(
   ({ asset, alt, width, height }) =>
@@ -104,6 +110,18 @@ export const skyvale_outskirts2 = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for outskirts_development2_5",
+  },
+  {
+    asset: "outskirts_development2_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for outskirts_development2_6",
+  },
+  {
+    asset: "outskirts_development2_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for outskirts_development2_7",
   }
 ].map(
   ({ asset, alt, width, height }) =>
