@@ -1,24 +1,74 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { BodyContainer, IntroSection, DividerLine } from '../SharedComponents';
-import MinecraftGallery from './minecraft_gallery';
-import * as skyhold_vale_photos from './skyhold_vale_photos'
+/*import MinecraftGallery from './minecraft_gallery';*/
 
 
-const SkyholdVale = () => {
+
+const PelicanTown = () => {
     return (
         <div>
             <Tabs className="vertical-tabs">
                 <div className="vertical-tabs-layout">
                     <TabList>
-                        <Tab>Mountain</Tab>
-                        <Tab>Outskirts</Tab>
-                        <Tab>Inner City</Tab>
-                        <Tab>Feature Buildings</Tab>
+                        <Tab>General</Tab>
+                        <Tab>Beach</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
-                            <IntroSection title="Skyhold Vale">
+                            <IntroSection title="Pelican Town from StarDew Valley">
+                                <p>
+                                    This project is a faithful, full-scale recreation of the Stardew Valley overworld, built block-for-tile using a grid overlay mod to match the 1:1 layout of the PC version. After scouting a large coastal location within my realm, I began terraforming the terrain to match the structure and elevation of the in-game map. The build focuses on recreating every outdoor location and building in its proper relative position, while leaving interiors out to maintain scope. Screenshots and reference captures from the original game guide each stage of the layout, terrain shaping, and construction.
+                                </p>
+                                <p><strong>Note:</strong> This section is still under construction as screenshots and layout are finalized.</p>
+                            </IntroSection>
+                            <DividerLine />
+                            <p>This section showcases reference images from Stardew Valley with the grid overlay used to plan the build layout.</p>
+
+                            <DividerLine />
+                            <p>
+                                This section features side-by-side screenshots of Stardew Valley and the Minecraft recreation, captured directly from my desktop using ShareX. These comparisons highlight structural layout, scale accuracy, and how the original design translates into block form.
+                            </p>
+
+                            <DividerLine />
+                            <p>This section includes general construction screenshots taken throughout the build process.</p>
+                        </TabPanel>
+                        <TabPanel>
+                            <IntroSection title="Pelican Town Beach">
+                                <p>
+                                    Beach section of Pelican Town
+                                </p>
+                            </IntroSection>
+                            <DividerLine />
+                            
+                            <div className=" standard-padding-margin placeholder-container">
+                                <p className="placeholder-text">project pictures will be added soon. Stay tuned!</p>
+                            </div>
+                            
+                        </TabPanel>
+                        
+                        
+                    </BodyContainer>
+                </div>
+            </Tabs>
+        </div>
+    );
+};
+
+export default PelicanTown;
+
+
+/*  placeholder section
+<TabPanel>
+    <div className=" standard-padding-margin placeholder-container">
+        <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
+    </div>
+</TabPanel>
+*/
+
+/*
+<TabPanel>
+                            <IntroSection title="Pelican Town from StarDew Valley">
                                 <p>
                                     Skyhold Vale is a sprawling vertical city nestled into the curved basin of a jungle-covered mountain. Its outer edge is framed by a dense, organically grown village—reminiscent of default Minecraft settlements—spilling up against the fortified walls of the inner city. Within those walls, 19th-century-inspired row houses rise in tightly packed clusters, with architectural echoes of old London and alpine European villages.
                                 </p>
@@ -99,97 +149,4 @@ const SkyholdVale = () => {
                                 }
                             />
                         </TabPanel>
-                        <TabPanel>
-                            <IntroSection title="Skyhold Vale Inner City">
-                                <p>
-                                    Skyhold Vale’s inner city is nestled at the base of the mountain, enclosed by protective stone walls and gently divided by a flowing river that cascades down from the upper slopes. This district serves as the heart of the settlement, featuring tightly packed row houses that reflect a blend of historical European design. The area is planned to expand with shops, inns, and pubs, creating a dense, walkable neighborhood that balances structure with charm.
-                                </p>
-                            </IntroSection>
-                            <DividerLine />
-                            <MinecraftGallery
-                                title="Construction"
-                                photos={ skyhold_vale_photos.skyvale_inner_city_construction }
-                                description={
-                                    <>
-                                        <p>
-                                            This set of images documents the early stages of building Skyhold Vale’s inner city. From terrain shaping to the gradual layout of row houses, the shots show the transition from planning to execution. Each step highlights the structural progress as the urban core begins to take form, setting the foundation for the district’s dense architectural style.
-                                        </p>
-                                    </>
-                                }
-                            />
-                            <DividerLine />
-                            <MinecraftGallery
-                                title="Detail Progress"
-                                photos={ skyhold_vale_photos.skyvale_inner_city_detail_views  }
-                                description={
-                                    <>
-                                        <p>
-                                            This section highlights how detail was gradually layered onto Skyhold Vale’s inner city — from basic structures to more finished streets, walls, and exteriors. The images capture the slow transformation of the space as depth, texture, and architectural character were added piece by piece.
-                                        </p>
-                                    </>
-                                }
-                            />
-                            <DividerLine />
-                            <MinecraftGallery
-                                title="Final Details"
-                                photos={ skyhold_vale_photos.skyvale_inner_city_final_details  }
-                                description={
-                                    <>
-                                        <p>
-                                            A set of close-up and street-level shots taken throughout the wall-enclosed inner city of Skyhold Vale. These images highlight the completed architecture, lived-in feel, and key details—like the central fountain and surrounding pathways—that bring the district together.
-                                        </p>
-                                    </>
-                                }
-                            />
-                        </TabPanel>
-                        <TabPanel>
-                            <IntroSection title="Skyhold Specific buildings">
-                                <p>
-                                    This section showcases key structures within Skyhold Vale, starting with the summit castle, a large inn nestled against the mountainside, and a stately two-story house that could serve as a mayor’s residence or city hall. Each structure adds to the architectural diversity of the city and sets the tone for future development across the inner city and surrounding districts.
-                                </p>
-                            </IntroSection>
-                            <DividerLine />
-                            <MinecraftGallery
-                                title="Castle"
-                                photos={ skyhold_vale_photos.skyvale_castle }
-                                description={
-                                    <>
-                                        <p>
-                                            The castle at the summit of Skyhold Vale was built using a tutorial by BigTonyMC and turned out to be the perfect fit for the top of the mountain. These images showcase the castle from multiple perspectives, including exterior views from both the summit and the valley floor. Several shots also highlight the view looking down from the castle over the rest of the city, emphasizing its role as a commanding presence and final architectural centerpiece of the build.
-                                        </p>
-                                        <p>
-                                            This is the initial set of castle images. More pictures will be added as the build progresses.
-                                        </p>
-                                    </>
-                                }
-                            />
-                            <DividerLine />
-                            <MinecraftGallery
-                                title="Random Buildings"
-                                photos={ skyhold_vale_photos.Random_buildings }
-                                description={
-                                    <>
-                                       <p>
-                                            This gallery features close-up exterior views of individual buildings scattered throughout Skyhold Vale. Each image highlights architectural details, material choices, and stylistic variety. New images will be added over time as more structures are completed across the city.
-                                        </p>
-                                    </>
-                                }
-                            />
-                        </TabPanel>
-                    </BodyContainer>
-                </div>
-            </Tabs>
-        </div>
-    );
-};
-
-export default SkyholdVale;
-
-
-/*  placeholder section
-<TabPanel>
-    <div className=" standard-padding-margin placeholder-container">
-        <p className="placeholder-text">After-project pictures will be added soon. Stay tuned!</p>
-    </div>
-</TabPanel>
 */

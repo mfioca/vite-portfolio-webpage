@@ -5,6 +5,7 @@ import CrowHaven from './minecraft_project/crowhaven';
 import Emberhold from './minecraft_project/emberhold';
 import RandomPlaces from './minecraft_project/random_places'
 import SkyholdVale from './minecraft_project/skyhold_vale';
+import PelicanTown from './minecraft_project/Stardew_PelicanTown';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './minecraft_project/minecraft.css';
@@ -28,8 +29,8 @@ const MinecraftProjects = () => {
                     <li>A bustling port town with markets, cargo storage, three ships, and a working lighthouse.</li>
                     <li>A second city beyond the mountains, featuring a mining district, an abandoned underground mineshaft, a town square, a fortified keep, and another port.</li>
                     <li>A crumbling abandoned house with a collapsing tower, adding mystery to the journey between cities.</li>
-                    <li>A massive 100x100 block recreation of Chichen Itza, rising from the ocean, waiting for its purpose.</li>
-                    <li>A new city in the jungle, blending hobbit hole dwellings into the mountain and featuring dense, old-European-inspired row houses in the valley below. <strong>Currently in development.</strong></li>
+                    <li>A new city in the jungle, blending hobbit hole dwellings into the mountain and featuring dense, old-European-inspired row houses in the valley below. <strong>In Final Stages</strong></li>
+                    <li>A 1:1 scale recreation of Stardew Valley’s Pelican Town, built using a grid overlay and custom terrain shaping to mirror the original game map.<strong>Currently Under Construction</strong></li>
                 </ul>
                 <p>
                     This world is constantly evolving, with every build adding new depth and character. Whether it’s medieval cities, ancient wonders, or hidden secrets, there’s always something to explore. With each new build, the world continues to expand, bringing new challenges, inspirations, and stories to life.
@@ -102,6 +103,7 @@ const MinecraftProjects = () => {
                         <Tab>Crowhaven</Tab>
                         <Tab>Emberhold</Tab>
                         <Tab>Skyhold Vale</Tab>
+                        <Tab>Pelican Town</Tab>
                         <Tab>Random Places</Tab>
                     </TabList>
                     <TabPanel>
@@ -118,6 +120,9 @@ const MinecraftProjects = () => {
                     </TabPanel>
                     <TabPanel>
                         <SkyholdVale/>
+                    </TabPanel>
+                    <TabPanel>
+                        <PelicanTown/>
                     </TabPanel>
                     <TabPanel>
                         <RandomPlaces />
