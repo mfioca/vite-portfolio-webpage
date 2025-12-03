@@ -5,7 +5,7 @@ import CrowHaven from './minecraft_project/crowhaven';
 import Emberhold from './minecraft_project/emberhold';
 import RandomPlaces from './minecraft_project/random_places'
 import SkyholdVale from './minecraft_project/skyhold_vale';
-import PelicanTown from './minecraft_project/Stardew_PelicanTown';
+import PelicanTown from './minecraft_project/PelicanTown';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './minecraft_project/minecraft.css';
