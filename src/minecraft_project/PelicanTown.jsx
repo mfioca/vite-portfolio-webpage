@@ -14,6 +14,7 @@ const PelicanTown = () => {
                     <TabList>
                         <Tab>General</Tab>
                         <Tab>Beach</Tab>
+                        <Tab>Main City</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
@@ -61,7 +62,7 @@ const PelicanTown = () => {
                             </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
-                                title="Stardew Game Grid layout Images"
+                                title="Building progress"
                                 photos={ stardew_pictures.Beach }
                                 description={
                                     <>
@@ -71,7 +72,38 @@ const PelicanTown = () => {
                                     </>
                                 }
                             />
-                        </TabPanel>     
+                        </TabPanel> 
+                        <TabPanel>
+                            <IntroSection title="Main City">
+                                <p>
+                                    This section focuses on the main city area of Pelican Town, capturing the heart of the Stardew Valley map. It includes major structures like the hospital, Pierre’s general store, the mayor’s house, the library, the blacksmith, and the local pub. Additional builds include the movie theater and a designated space for the traveling book seller. Together, these elements form the core of the town’s social and functional layout, faithfully recreated in Minecraft with attention to spacing, structure, and atmosphere.
+                                </p>
+                            </IntroSection>
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Construction"
+                                photos={ stardew_pictures.MainCityConstruction }
+                                description={
+                                    <>
+                                        <p>
+                                            This section covers the construction phase of Pelican Town’s central area, including the initial river layout, structural framing, and house placement. As the build progressed, details like fences, terrain shaping, and wall segments were added to define space and match the layout of the original map. The section also includes early work on the raised area leading up to the community center, establishing the key elevation shifts within the town.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Progress"
+                                photos={ stardew_pictures.MainCityProgress }
+                                description={
+                                    <>
+                                        <p>
+                                            This section highlights the gradual addition of details throughout the main city build, including newly placed houses, trees, fences, and terrain shaping. These in-progress shots capture how the town fills out and takes on more character over time as each area becomes more visually complete.
+                                        </p>
+                                    </>
+                                }
+                            />
+                        </TabPanel>    
                     </BodyContainer>
                 </div>
             </Tabs>

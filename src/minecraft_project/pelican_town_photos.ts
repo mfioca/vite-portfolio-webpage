@@ -2,8 +2,12 @@
 function stardewValleyGeneralLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/${folder}/${asset}?w=${width}&q=50`;
 }
+
+function stardewValleyMainCityLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/Main_city/${folder}/${asset}?w=${width}&q=50`;
+}
   
-export { stardewValleyGeneralLink };
+export { stardewValleyGeneralLink, stardewValleyMainCityLink };
 
 
 export const GridReference = [
@@ -172,6 +176,122 @@ export const Beach = [
   ({ asset, alt, width, height }) =>
     ({
       src: `${stardewValleyGeneralLink("Beach", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+/*************************************************************************/
+/*                          Main City                                    */
+/*************************************************************************/
+
+export const MainCityConstruction = [
+  {
+    asset: "lc_construction_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_1",
+  },
+  {
+    asset: "lc_construction_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_2",
+  },
+  {
+    asset: "lc_construction_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_3",
+  },
+  {
+    asset: "lc_construction_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_4",
+  },
+  {
+    asset: "lc_construction_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_5",
+  },
+  {
+    asset: "lc_construction_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_6",
+  },
+  {
+    asset: "lc_construction_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_7",
+  },
+  {
+    asset: "lc_construction_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_8",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${stardewValleyMainCityLink("Construction", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const MainCityProgress = [
+  {
+    asset: "lc_progress_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_1",
+  },
+  {
+    asset: "lc_progress_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_2",
+  },
+  {
+    asset: "lc_progress_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_3",
+  },
+  {
+    asset: "lc_progress_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_4",
+  },
+  {
+    asset: "lc_progress_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_5",
+  },
+  {
+    asset: "lc_progress_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_6",
+  },
+  {
+    asset: "lc_progress_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_7",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${stardewValleyMainCityLink("Progress", asset, width)}`,
       alt,
       width,
       height,
