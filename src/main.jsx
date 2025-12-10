@@ -15,6 +15,7 @@ import TvMazePeopleResults from './Tv_Maze/tv_maze_people_results';
 import MinecraftProjects from './minecraftProjects';
 import DndSimulator from './dnd-simulator';
 import MonsterCompendium from './dnd-simulator/monster_compendium';
+import PlaceholderPage from './chess_data';
 
 
 /***********************************************************************************/
@@ -233,6 +234,7 @@ root.render(
           <Route path="/MinecraftProjects" element={ <MinecraftProjects /> } />
           <Route path="/dnd-simulator" element={ <DndSimulator /> } />
           <Route path="/monster_compendium" element={ <MonsterCompendium /> } />
+          <Route path="/placeholder" element={<PlaceholderPage />} />
         </Routes>
       <Footer />
     </HashRouter>
