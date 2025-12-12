@@ -234,6 +234,42 @@ export const MainCityConstruction = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for lc_construction_8",
+  },
+  {
+    asset: "lc_construction_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_9",
+  },
+  {
+    asset: "lc_construction_10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_10",
+  },
+  {
+    asset: "lc_construction_11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_11",
+  },
+  {
+    asset: "lc_construction_12.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_12",
+  },
+  {
+    asset: "lc_construction_13.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_13",
+  },
+  {
+    asset: "lc_construction_14.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_14",
   }
 ].map(
   ({ asset, alt, width, height }) =>
@@ -287,6 +323,42 @@ export const MainCityProgress = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for lc_progress_7",
+  },
+  {
+    asset: "lc_progress_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_8",
+  },
+  {
+    asset: "lc_progress_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_9",
+  },
+  {
+    asset: "lc_progress_10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_10",
+  },
+  {
+    asset: "lc_progress_11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_11",
+  },
+  {
+    asset: "lc_progress_12.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_12",
+  },
+  {
+    asset: "lc_progress_13.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_13",
   }
 ].map(
   ({ asset, alt, width, height }) =>
