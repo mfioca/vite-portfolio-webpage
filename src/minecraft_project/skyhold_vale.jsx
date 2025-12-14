@@ -25,10 +25,6 @@ const SkyholdVale = () => {
                                 <p>
                                     Hobbit-style hillside homes are carved directly into the terraced slopes of the mountain, winding upward alongside a narrow stream that eventually becomes a cascading waterfall, splitting the inner city into two distinct districts. At the summit, a medieval castle commands the skyline, perched as both a protective watchtower and a crown to the city’s layered design.
                                 </p>
-                                <p>
-                                    <strong className="shadow">Status:</strong>&nbsp;&nbsp;
-                                    Skyhold Vale is still under active construction. While the core layout and major structural features are in place, many districts are evolving as new details, interior builds, and environmental touches are added. This city is being shaped section by section, with future updates planned to expand its depth, story elements, and visual cohesion.
-                                </p>
                             </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
