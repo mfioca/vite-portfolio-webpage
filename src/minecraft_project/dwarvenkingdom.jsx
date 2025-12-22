@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { BodyContainer, IntroSection, DividerLine } from '../SharedComponents';
+import { BodyContainer, IntroSection, DividerLine, YouTubeEmbed } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
 import { 
     mountain_exterior,
@@ -43,6 +43,16 @@ const DwarvenKingdom = () => {
                                 </p>
                             </IntroSection>
                             <DividerLine />
+                                {/* Embed the YouTube video here */}
+                                <h2 >YouTube Video Showcase</h2>
+                                <p className="standard-padding-margin-center">
+                                    A guided, cinematic tour of my Dwarven Kingdom, carved into a naturally formed mountain. The video opens with aerial views of the exterior and both main entrances, then flows through the vast underground districts—emphasizing scale, atmosphere, and layout through continuous visual flow.
+                                </p>
+                                <YouTubeEmbed
+                                    videoId="hdAJ8YCzqmU"
+                                    title="Dwarven Kingdom Build Showcase"
+                                />
+                                <DividerLine />
                             <MinecraftGallery
                                 title="Mountain exterior"
                                 photos = { mountain_exterior }
