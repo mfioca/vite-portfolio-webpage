@@ -1,5 +1,5 @@
 import React from 'react';
-import GameArchiveSection from './chess_dashboard/GameARchiveSection.jsx';
+import GameArchiveSection from './chess_dashboard/GameArchiveSection.jsx';
 import OpponentDataSection from './chess_dashboard/OpponentDataSection.jsx';
 import GameDataSection from './chess_dashboard/GameDataSection.jsx';
 import MoveDataSection from './chess_dashboard/MoveDataSection.jsx';
