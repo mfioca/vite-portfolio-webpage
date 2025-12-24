@@ -1,18 +1,7 @@
 import React from 'react';
 import useFetchJsonData from './useFetchJsonData';
+import BarChart from './BarChart';
 
-import { Bar } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-} from 'chart.js';
-
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 
 const formatOpponentData = (row) => {
@@ -66,50 +55,6 @@ const OpponentDataSection = () => {
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Opponent%20data"
   );
 
-const chartData = data
-  ?.filter(row => row["Opponent Rating"] && row["Avg Accuracy"])
-  .map(row => ({
-    rating: parseInt(row["Opponent Rating"]),
-    accuracy: parseFloat(row["Avg Accuracy"])
-  }))
-  .sort((a, b) => a.rating - b.rating);
-
-const barChartData = {
-  labels: chartData?.map(entry => entry.rating.toString()),
-  datasets: [
-    {
-      label: "Avg Accuracy (%)", // ✅ correct
-      data: chartData?.map(entry => entry.accuracy),
-      backgroundColor: "rgba(54, 162, 235, 0.6)",
-      borderColor: "rgba(54, 162, 235, 1)",
-      borderWidth: 1
-    }
-  ]
-};
-
-const barChartOptions = {
-  responsive: true,
-  plugins: {
-    legend: { display: false },
-    title: {
-      display: true,
-      text: "Average Accuracy by Opponent Rating"
-    },
-    tooltip: {
-      enabled: true // This shows the hover tooltip — leave it unless you want to hide it too
-    },
-      datalabels: {
-      display: false // <- disables internal data labels, even if the plugin is added later
-    }
-  },
-  scales: {
-    y: {
-      beginAtZero: true,
-      max: 100
-    }
-  }
-};
-
 
 
 
@@ -120,7 +65,15 @@ const barChartOptions = {
       {error && <p>Error: {error}</p>}
       {data && (
         <div style={{ marginBottom: "2rem" }}>
-          <Bar data={barChartData} options={barChartOptions} />
+          <BarChart
+            title="Average Accuracy by Opponent Rating"
+            rawData={data}
+            labelField="Opponent Rating"
+            valueField="Avg Accuracy"
+            color="rgba(54, 162, 235, 0.6)"
+            datalabels={false}
+            yMax={100}
+          />
         </div>
       )}
       {data && (
