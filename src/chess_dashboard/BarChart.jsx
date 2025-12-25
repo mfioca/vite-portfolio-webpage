@@ -19,7 +19,8 @@ const BarChart = ({
   valueField,
   color = 'rgba(54, 162, 235, 0.6)',
   datalabels = false,
-  yMax = 100
+  yMax = 100,
+  yMin = 0
 }) => {
 
     const cleanedData = rawData
@@ -53,8 +54,8 @@ const BarChart = ({
         },
         scales: {
             y: {
-            beginAtZero: true,
-            max: yMax
+                min: yMin,
+                max: yMax
             }
         }
     };

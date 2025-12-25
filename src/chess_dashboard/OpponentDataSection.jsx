@@ -55,9 +55,6 @@ const OpponentDataSection = () => {
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Opponent%20data"
   );
 
-
-
-
   return (
     <div className="box-style-standard standard-padding-margin">
       <h2>Opponent Data</h2>
@@ -72,6 +69,7 @@ const OpponentDataSection = () => {
             valueField="Avg Accuracy"
             color="rgba(54, 162, 235, 0.6)"
             datalabels={false}
+            yMin={50}
             yMax={100}
           />
         </div>
