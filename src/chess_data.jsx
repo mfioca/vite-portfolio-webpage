@@ -41,7 +41,7 @@ const ChessDashboard = () => {
         </h2>
 
         <p style={{ marginTop: '10px' }}>
-          The following bookmarklet is used to extract game statistics directly from
+          The following bookmarklet is used to extract game statistics directly from&nbsp;
           <a href="https://www.chess.com" className="text-body" target="_blank" rel="noopener noreferrer">Chess.com</a>.
           It scrapes accuracy, move classifications, opponent rating, and game context, then copies a TSV row to the clipboard for logging into a spreadsheet.
         </p>

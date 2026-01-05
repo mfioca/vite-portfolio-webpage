@@ -37,44 +37,46 @@ const GameArchiveSection = () => {
         </pre>
       )}*/}
       {data && Array.isArray(data) && (
-  <div className="game-archive-table-container">
-    <table className="game-archive-table">
-      <thead>
-        <tr>
-          {Object.keys(data[0]).map((key) => (
-            <th key={key}>{key}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {paginatedData.map((row, rowIndex) => (
-          <tr key={rowIndex}>
-            {Object.keys(row).map((key, colIndex) => (
-              <td key={colIndex}>{row[key]}</td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-    <div className="pagination">
-      <button className="button"
-        onClick={() => setCurrentPage(p => Math.max(p - 1, 1))}
-        disabled={currentPage === 1}
-      >
-        Previous
-      </button>
-      <span style={{ margin: '0 1rem' }}>
-        Page {currentPage} of {totalPages}
-      </span>
-      <button className="button"
-        onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))}
-        disabled={currentPage === totalPages}
-      >
-        Next
-      </button>
-    </div>
-  </div>
-)}
+        <>
+        <div className="game-archive-table-container">
+          <table className="game-archive-table">
+            <thead>
+              <tr>
+                {Object.keys(data[0]).map((key) => (
+                  <th key={key}>{key}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {paginatedData.map((row, rowIndex) => (
+                <tr key={rowIndex}>
+                  {Object.keys(row).map((key, colIndex) => (
+                    <td key={colIndex}>{row[key]}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          </div>
+          <div className="pagination">
+            <button className="button"
+              onClick={() => setCurrentPage(p => Math.max(p - 1, 1))}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            <span style={{ margin: '0 1rem' }}>
+              Page {currentPage} of {totalPages}
+            </span>
+            <button className="button"
+              onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
