@@ -85,6 +85,9 @@ const Navigation = () => {
     case location.pathname === '/monster_compendium':
         title = 'Monster Compendium';
         break;
+        case location.pathname === '/chess_data':
+        title = 'Chess Game Data';
+        break;
     default:
         title = 'Explore My Web Page'; 
   }
@@ -123,6 +126,14 @@ const Navigation = () => {
                   className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}
                 >
                   Job Activity Analysis
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/chess_data" 
+                  className="nav-link" onClick={() => setIsAcknowledgementsOpen(false)}
+                >
+                  Chess Analysis
                 </Link>
               </li>
               <li>
@@ -230,11 +241,11 @@ root.render(
           <Route path="/show/:id" element={ <TvMazeShowResults /> } />
           <Route path="/person/:id" element={ <TvMazePeopleResults /> } />
           <Route path="/Dashboard" element={ <Dashboard /> } /> 
+          <Route path="/chess_data" element={<ChessDashboard />} />
           <Route path="/AIShowcase" element={ <AIShowcase /> } />
           <Route path="/MinecraftProjects" element={ <MinecraftProjects /> } />
           <Route path="/dnd-simulator" element={ <DndSimulator /> } />
           <Route path="/monster_compendium" element={ <MonsterCompendium /> } />
-          <Route path="/placeholder" element={<ChessDashboard />} />
         </Routes>
       <Footer />
     </HashRouter>
