@@ -1,3 +1,12 @@
+.chess-body  {
+  font-family: var(--fontfamily); /* A clean sans-serif font */
+  justify-content: center;
+  margin: var(--margin);
+  padding: var(--padding);
+  min-height: 100vh;
+}
+
+
 .game-archive-table-container {
   overflow-x: auto;
   margin: var(--marginV20) 0;
@@ -12,7 +21,20 @@
   min-width: 1000px; /* Force horizontal scroll */
 }
 
-.game-archive-table th,
+.game-archive-table th {
+  white-space: normal;       /* allow wrapping */
+  word-wrap: break-word;     /* legacy support */
+  overflow-wrap: break-word; /* modern fallback */
+  text-align: center;        /* keep it neat */
+  max-width: 150px;
+  padding: 8px;              /* existing padding */
+  font-size: 0.9rem;         /* match your existing size */
+  border: var(--tableborder);
+  background-color: var(--tableheaderdarkcolor);
+  color: var(--colorwhite);
+  font-weight: bold;
+}
+
 .game-archive-table td {
   border: var(--tableborder);
   padding: 8px;
@@ -81,4 +103,31 @@
 .pagination button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+
+.bookmarklet-script-block {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+}
+
+
+
+
+.small-chart-box {
+  max-width: 400px;
+  height: 350px;
+  margin: var(--marginV20) auto;
+  padding: var(--padding);
+  background-color: var(--colorwhite);
+  border-radius: var(--borderradius);
+  box-shadow: var(--boxshadow);
 }

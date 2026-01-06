@@ -22,7 +22,7 @@ function Dashboard() {
     return (
         // Wrap the App component with Provider for Redoux functions
         <Provider store={ store }> 
-            <div className="standard-padding-margin Dashboard">
+            <div className="Dashboard">
                 <IntroSection title="Dashboard Overview">
                     <p><strong className="shadow">Purpose:</strong>&nbsp;&nbsp;This dashboard visualizes four years of activity data from a single organization, 
                         highlighting how job focus and time allocation evolved over time. It translates complex CSV data into clear, interactive visuals that reveal 

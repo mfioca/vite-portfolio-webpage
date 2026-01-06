@@ -1,6 +1,9 @@
 .Dashboard {
-  text-align: center;
-  margin-top: 10px;
+  font-family: var(--fontfamily); /* A clean sans-serif font */
+  justify-content: center;
+  margin: var(--margin);
+  padding: var(--padding);
+  min-height: 100vh;
 }
 
 /*rescuetime link */

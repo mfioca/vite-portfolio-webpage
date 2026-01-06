@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BodyContainer, DividerLine } from '../SharedComponents';
+import { PaginatedTable } from './chess_components';
 import useFetchJsonData from './useFetchJsonData';
 import BarChart from './BarChart';
 
@@ -57,38 +59,38 @@ const OpponentDataSection = () => {
 
   return (
     <div className="box-style-standard standard-padding-margin">
+      <div>
       <h2>Opponent Data</h2>
-      {loading && <p>Loading data...</p>}
-      {error && <p>Error: {error}</p>}
+      { loading && <p>Loading data...</p> }
+      { error && <p>Error: { error }</p> }
       {data && (
-        <div style={{ marginBottom: "2rem" }}>
+        <div className="small-chart-box">
           <BarChart
             title="Average Accuracy by Opponent Rating"
-            rawData={data}
+            rawData={ data }
             labelField="Opponent Rating"
             valueField="Avg Accuracy"
             color="rgba(54, 162, 235, 0.6)"
-            datalabels={false}
-            yMin={50}
-            yMax={100}
+            datalabels={ false }
+            yMin={ 50 }
+            yMax={ 100 }
           />
         </div>
       )}
-      {data && (
-        <pre style={{
-          whiteSpace: 'pre-wrap',
-          wordBreak: 'break-word',
-          background: '#f8f8f8',
-          padding: '10px',
-          borderRadius: '8px',
-          overflow: 'auto',
-          maxHeight: '400px'
-        }}>
-          {JSON.stringify(data.map(formatOpponentData), null, 2)}
-        </pre>
-      )}
+      </div>
+      <DividerLine/>
+      <div>
+        {data && (
+          <PaginatedTable
+            data={ data.map(formatOpponentData) }
+            rowsPerPage={15}
+            title="Opponent Data"
+          />
+        )}
+      </div>
     </div>
   );
 };
 
 export default OpponentDataSection;
+
