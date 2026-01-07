@@ -14,7 +14,6 @@ const formatGameArchiveData = (row) => {
   ];
 
   const fixed2dpFields = [
-    
   ];
 
 
