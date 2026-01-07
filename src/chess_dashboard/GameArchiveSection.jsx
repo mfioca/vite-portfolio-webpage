@@ -1,9 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useFetchJsonData from './useFetchJsonData';
 import { BodyContainer } from '../SharedComponents';
 import { PaginatedTable } from './chess_components.jsx';
 
+const formatGameArchiveData = (row) => {
+  const percentFields = [
+    "accuracy"
+  ]
 
+  const percent2dpFields = [
+    "move quality good",
+    "move quality bad",
+  ];
+
+  const fixed2dpFields = [
+    
+  ];
+
+
+  const formatted = {};
+  for (const key in row) {
+    let value = row[key];
+
+    if (value === "") {
+      formatted[key] = null;
+      continue;
+    }
+
+    if (percentFields.includes(key)) {
+      formatted[key] = `${Math.round(parseFloat(value))}%`;
+    } else if (percent2dpFields.includes(key)) {
+      formatted[key] = `${(parseFloat(value) * 100).toFixed(2)}%`;
+    } else if (fixed2dpFields.includes(key)) {
+      formatted[key] = parseFloat(value).toFixed(2);
+    } else {
+      formatted[key] = Number.isFinite(+value) ? parseInt(value) : value;
+    }
+  }
+
+  return formatted;
+};
 
 const GameArchiveSection = () => {
   const { data, loading, error } = useFetchJsonData(
@@ -14,11 +50,13 @@ const GameArchiveSection = () => {
     <BodyContainer>
       {loading && <p>Loading data...</p>}
       {error && <p>Error: { error }</p>}
-      <PaginatedTable
-        data={ data }
-        rowsPerPage={ 20 }
-        title="Game Archive"
-      />
+      {data && (
+        <PaginatedTable
+          data={data.map(formatGameArchiveData)}
+          rowsPerPage={20}
+          title="Game Archive"
+        />
+      )}
     </BodyContainer>
   );
 };

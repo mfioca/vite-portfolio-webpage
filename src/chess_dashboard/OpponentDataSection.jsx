@@ -5,7 +5,6 @@ import useFetchJsonData from './useFetchJsonData';
 import BarChart from './BarChart';
 
 
-
 const formatOpponentData = (row) => {
   const percentFields = [
     "Win %",
@@ -50,7 +49,6 @@ const formatOpponentData = (row) => {
 
   return formatted;
 };
-
 
 const OpponentDataSection = () => {
   const { data, loading, error } = useFetchJsonData(
