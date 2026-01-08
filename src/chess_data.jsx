@@ -52,7 +52,7 @@ const ChessDashboard = () => {
         )}
       </div>
       <DividerLine/>
-      <div className="box-style-standard standard-padding-margin base-max-width">
+      <div className="box-style-standard standard-padding-margin-center base-max-width">
         <Tabs className="standard-tabs" forceRenderTabPanel>
           <TabList className="grid-tablist">
             <Tab>Game Data</Tab>
