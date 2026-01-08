@@ -26,9 +26,9 @@ const ChessDashboard = () => {
         <p>
           All data shown here is dynamically pulled from a connected Google Sheets document using a custom script. This setup ensures the charts and tables stay up to date as new games are logged and processed.
         </p>
-        <p>
-          <strong>Note:</strong> This dashboard is still under construction. Features, layout, and visualizations may continue to evolve as more data and analysis tools are integrated.
-        </p>
+        <p className="under-construction-warning">
+  <strong>Note:</strong> This dashboard is still under construction. Features, layout, and visualizations may continue to evolve as more data and analysis tools are integrated.
+</p>
       </IntroSection>
       <DividerLine/>
       <div className="standard-padding-margin">
@@ -52,7 +52,7 @@ const ChessDashboard = () => {
         )}
       </div>
       <DividerLine/>
-      <div className="box-style-standard standard-padding-margin-center base-max-width">
+      <div className="standard-padding-margin-center base-max-width">
         <Tabs className="standard-tabs" forceRenderTabPanel>
           <TabList className="grid-tablist">
             <Tab>Game Data</Tab>

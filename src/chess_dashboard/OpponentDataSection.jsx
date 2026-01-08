@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BodyContainer, DividerLine } from '../SharedComponents';
-import { PaginatedTable } from './chess_components';
+import { PaginatedTable, BarChart } from './chess_components';
 import useFetchJsonData from './useFetchJsonData';
-import BarChart from './BarChart';
+
 
 
 const formatOpponentData = (row) => {
@@ -62,7 +62,7 @@ const OpponentDataSection = () => {
       { loading && <p>Loading data...</p> }
       { error && <p>Error: { error }</p> }
       {data && (
-        <div className="small-chart-box">
+        <div>
           <BarChart
             title="Average Accuracy by Opponent Rating"
             rawData={ data }
