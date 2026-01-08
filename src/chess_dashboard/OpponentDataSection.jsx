@@ -81,7 +81,7 @@ const OpponentDataSection = () => {
         {data && (
           <PaginatedTable
             data={ data.map(formatOpponentData) }
-            rowsPerPage={15}
+            rowsPerPage={ 15 }
             title="Opponent Data"
           />
         )}

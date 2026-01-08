@@ -16,7 +16,6 @@ const formatGameArchiveData = (row) => {
   const fixed2dpFields = [
   ];
 
-
   const formatted = {};
   for (const key in row) {
     let value = row[key];
@@ -47,12 +46,12 @@ const GameArchiveSection = () => {
 
   return (
     <BodyContainer>
-      {loading && <p>Loading data...</p>}
-      {error && <p>Error: { error }</p>}
+      { loading && <p>Loading data...</p> }
+      { error && <p>Error: { error }</p> }
       {data && (
         <PaginatedTable
-          data={data.map(formatGameArchiveData)}
-          rowsPerPage={20}
+          data={ data.map(formatGameArchiveData) }
+          rowsPerPage={ 20 }
           title="Game Archive"
         />
       )}

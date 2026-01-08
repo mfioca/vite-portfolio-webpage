@@ -60,7 +60,7 @@ const BarChart = ({
         }
     };
 
-    return <Bar data={chartData} options={chartOptions} />;
+    return <Bar data={ chartData } options={ chartOptions } />;
 };
 
 export default BarChart;

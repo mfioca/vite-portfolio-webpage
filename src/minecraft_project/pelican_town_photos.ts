@@ -270,6 +270,36 @@ export const MainCityConstruction = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for lc_construction_14",
+  },
+  {
+    asset: "lc_construction_15.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_15",
+  },
+  {
+    asset: "lc_construction_16.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_16",
+  },
+  {
+    asset: "lc_construction_17.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_17",
+  },
+  {
+    asset: "lc_construction_18.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_18",
+  },
+  {
+    asset: "lc_construction_19.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_construction_19",
   }
 ].map(
   ({ asset, alt, width, height }) =>
@@ -359,6 +389,36 @@ export const MainCityProgress = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for lc_progress_13",
+  },
+  {
+    asset: "lc_progress_14.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_14",
+  },
+  {
+    asset: "lc_progress_15.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_15",
+  },
+  {
+    asset: "lc_progress_16.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_16",
+  },
+  {
+    asset: "lc_progress_17.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_17",
+  },
+  {
+    asset: "lc_progress_18.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for lc_progress_18",
   }
 ].map(
   ({ asset, alt, width, height }) =>
