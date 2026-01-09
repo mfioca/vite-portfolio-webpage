@@ -118,21 +118,20 @@ const GameDataSection = () => {
             highField="Accuracy High"
             lowField="Accuracy Low"
           />
-          
         </>
-      )}
+        )}
+      </div>
+      <DividerLine/>
+      <div>
+        {data && (
+          <PaginatedTable
+            data={ data.map(formatGameData) }
+            rowsPerPage={ 15 }
+            title="Opponent Data"
+          />
+        )}
+      </div>
     </div>
-    <DividerLine/>
-          <div>
-            {data && (
-              <PaginatedTable
-                data={ data.map(formatGameData) }
-                rowsPerPage={ 15 }
-                title="Opponent Data"
-              />
-            )}
-          </div>
-          </div>
   );
 };
 
