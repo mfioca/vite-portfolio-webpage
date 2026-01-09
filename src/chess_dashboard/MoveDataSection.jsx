@@ -1,5 +1,87 @@
 import React from 'react';
 import useFetchJsonData from './useFetchJsonData';
+import { PaginatedTable, LineChart, StackedPercentBarChart } from './chess_components';
+
+
+const formatMoveData = (row) => {
+  const wholeNumberFields = [
+    "Opponent rating",
+    "Total Games",
+    "Average Moves White Loss",
+    "brilliant",
+    "great",
+    "best",
+    "excellent",
+    "good",
+    "book",
+    "inaccuracy",
+    "mistake",
+    "miss",
+    "blunder"
+  ];
+
+  const fixed2dpFields = [
+    "Average number of moves",
+    "Average moves White",
+    "Average Moves White Win",
+    "Average Moves Black",
+    "Average Moves Black Win",
+    "Average Book Moves",
+    "Average Good moves",
+    "Average Bad Moves"
+  ];
+
+  const percent2dpFields = [
+    "Average Move qality",
+    "Move Quality White",
+    "Move Quality White Win",
+    "Move Quality White Loss",
+    "Move Quality Black",
+    "Average Move Quality Good",
+    "Average Move Quality Bad",
+    "Move Quality White Loss",
+    "Move Quality Black Loss"
+  ];
+
+  const formatted = {};
+
+  for (const key in row) {
+    const value = row[key];
+
+    if (value === "") {
+      formatted[key] = null;
+      continue;
+    }
+
+    if (wholeNumberFields.includes(key)) {
+      formatted[key] = Number.isFinite(+value)
+        ? Math.round(Number(value))
+        : value;
+      continue;
+    }
+
+    if (fixed2dpFields.includes(key)) {
+      formatted[key] = Number.isFinite(+value)
+        ? Number(value).toFixed(2)
+        : value;
+      continue;
+    }
+
+    if (percent2dpFields.includes(key)) {
+      formatted[key] = Number.isFinite(+value)
+        ? `${(Number(value) * 100).toFixed(2)}%`
+        : value;
+      continue;
+    }
+
+    formatted[key] = value;
+  }
+
+  return formatted;
+};
+
+
+
 
 const MoveDataSection = () => {
   const { data, loading, error } = useFetchJsonData(
@@ -11,18 +93,44 @@ const MoveDataSection = () => {
       <h2>Move Data</h2>
       {loading && <p>Loading data...</p>}
       {error && <p>Error: {error}</p>}
+      <div>
+        {data && (
+          <LineChart
+            title="Average Game Length by Opponent Rating"
+            rawData={data}
+            datalabels={ false }
+            xField="Opponent rating"
+            yField="Average number of moves"
+          />
+        )}
+      </div>
+      <div>
+        {data && (
+          <StackedPercentBarChart
+            title="Move Quality Distribution by Opponent Rating"
+            rawData={data}
+            labelField="Opponent rating"
+            valueFields={[
+              "brilliant",
+              "great",
+              "best",
+              "excellent",
+              "good",
+              "book",
+              "inaccuracy",
+              "mistake",
+              "miss",
+              "blunder"
+            ]}
+          />
+        )}
+      </div>
       {data && (
-        <pre style={{
-          whiteSpace: 'pre-wrap',
-          wordBreak: 'break-word',
-          background: '#f8f8f8',
-          padding: '10px',
-          borderRadius: '8px',
-          overflow: 'auto',
-          maxHeight: '400px'
-        }}>
-          {JSON.stringify(data, null, 2)}
-        </pre>
+        <PaginatedTable
+          title="Move Data Table"
+          data={data.map(formatMoveData)}
+          rowsPerPage={25}
+        />
       )}
     </div>
   );

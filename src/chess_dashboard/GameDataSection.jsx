@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import useFetchJsonData from './useFetchJsonData';
 import { BodyContainer, DividerLine } from '../SharedComponents';
-import { CandleChart } from './chess_components';
-import { PaginatedTable } from './chess_components.jsx';
+
+import { PaginatedTable, CandleChart } from './chess_components.jsx';
 
 
 const formatGameData = (row) => {
