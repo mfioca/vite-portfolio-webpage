@@ -101,40 +101,40 @@ export const BarChart = ({
 }) => {
 
   const cleanedData = rawData
-      .filter(row => row[labelField] && row[valueField])
-      .map(row => ({
-          label: row[labelField].toString(),
-          value: parseFloat(row[valueField])
-      }))
-      .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
+    .filter(row => row[labelField] && row[valueField])
+    .map(row => ({
+        label: row[labelField].toString(),
+        value: parseFloat(row[valueField])
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
 
   const chartData = {
-  labels: cleanedData.map(entry => entry.label),
-  datasets: [
+    labels: cleanedData.map(entry => entry.label),
+    datasets: [
       {
-      label: title,
-      data: cleanedData.map(entry => entry.value),
-      backgroundColor: color,
-      borderColor: color.replace('0.6', '1'),
-      borderWidth: 1
+        label: title,
+        data: cleanedData.map(entry => entry.value),
+        backgroundColor: color,
+        borderColor: color.replace('0.6', '1'),
+        borderWidth: 1
       }
-  ]
+    ]
   };
 
   const chartOptions = {
-      responsive: true,
-      plugins: {
-          legend: { display: false },
-          title: { display: true, text: title },
-          tooltip: { enabled: true },
-          datalabels: { display: datalabels }
-      },
-      scales: {
-          y: {
-              min: yMin,
-              max: yMax
-          }
+    responsive: true,
+    plugins: {
+        legend: { display: false },
+        title: { display: true, text: title },
+        tooltip: { enabled: true },
+        datalabels: { display: datalabels }
+    },
+    scales: {
+      y: {
+        min: yMin,
+        max: yMax
       }
+    }
   };
 
   return <Bar className="bar-chart" data={ chartData } options={ chartOptions } />;
@@ -152,9 +152,9 @@ export const CandleChart = ({
   const cleanedData = rawData
     .filter(
       row =>
-        row[labelField] != null &&
-        row[highField] != null &&
-        row[lowField] != null
+      row[labelField] != null &&
+      row[highField] != null &&
+      row[lowField] != null
     )
     .map(row => ({
       x: Number(row[labelField]),        // ✅ numeric
@@ -166,7 +166,6 @@ export const CandleChart = ({
     .sort((a, b) => a.x - b.x);
 
   const data = {
-
     datasets: [
       {
         label: title,
