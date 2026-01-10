@@ -80,12 +80,30 @@ const formatMoveData = (row) => {
   return formatted;
 };
 
+const moveLengthOptions = [
+  { key: "Average Book Moves", label: "Average Book Moves" },
+  { key: "Average Good moves", label: "Average Good Moves" },
+  { key: "Average Bad Moves", label: "Average Bad Moves" }
+];
 
+const moveLengthByColorOptions = [
+  { key: "Average number of moves", label: "Average Total Moves" },
+  { key: "Average moves White", label: "Average Moves (White)" },
+  { key: "Average Moves Black", label: "Average Moves (Black)" }
+];
 
 
 const MoveDataSection = () => {
   const { data, loading, error } = useFetchJsonData(
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Move%20Data"
+  );
+
+  const [selectedMoveField, setSelectedMoveField] = React.useState(
+    moveLengthOptions[0].key
+  );
+
+  const [selectedMoveLengthField, setSelectedMoveLengthField] = React.useState(
+    moveLengthByColorOptions[0].key
   );
 
   return (
@@ -95,34 +113,73 @@ const MoveDataSection = () => {
       {error && <p>Error: {error}</p>}
       <div>
         {data && (
-          <LineChart
-            title="Average Game Length by Opponent Rating"
-            rawData={data}
-            datalabels={ false }
-            xField="Opponent rating"
-            yField="Average number of moves"
-          />
-        )}
-      </div>
-      <div>
-        {data && (
-          <StackedPercentBarChart
-            title="Move Quality Distribution by Opponent Rating"
-            rawData={data}
-            labelField="Opponent rating"
-            valueFields={[
-              "brilliant",
-              "great",
-              "best",
-              "excellent",
-              "good",
-              "book",
-              "inaccuracy",
-              "mistake",
-              "miss",
-              "blunder"
-            ]}
-          />
+          <div className="flex-wrap-center gap-20">
+
+            <div className="flex-column-center">
+
+              <select
+                value={selectedMoveLengthField}
+                onChange={(e) => setSelectedMoveLengthField(e.target.value)}
+                className="standard-margin"
+              >
+                {moveLengthByColorOptions.map(option => (
+                  <option key={option.key} value={option.key}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+
+              <LineChart
+                title="Average Game Length by Color and Opponent Rating"
+                rawData={data}
+                xField="Opponent rating"
+                yField={selectedMoveLengthField}
+              />
+
+            </div>
+            
+
+    
+            <div className="flex-column-center">
+
+              <select
+                value={selectedMoveField}
+                onChange={(e) => setSelectedMoveField(e.target.value)}
+                className="standard-margin"
+              >
+                {moveLengthOptions.map(option => (
+                  <option key={option.key} value={option.key}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+
+              <LineChart
+                title="Average Move Types per Game by Opponent Rating"
+                rawData={data}
+                xField="Opponent rating"
+                yField={selectedMoveField}
+              />
+
+            </div>
+            <StackedPercentBarChart
+              title="Move Quality Distribution by Opponent Rating"
+              rawData={data}
+              labelField="Opponent rating"
+              valueFields={[
+                "brilliant",
+                "great",
+                "best",
+                "excellent",
+                "good",
+                "book",
+                "inaccuracy",
+                "mistake",
+                "miss",
+                "blunder"
+              ]}
+            />
+          </div>
         )}
       </div>
       {data && (
@@ -137,3 +194,14 @@ const MoveDataSection = () => {
 };
 
 export default MoveDataSection;
+
+
+/*
+<div className="flex-wrap-center gap-20">
+            <LineChart
+              title="Average Game Length by Opponent Rating"
+              rawData={data}
+              xField="Opponent rating"
+              yField="Average number of moves"
+            />
+*/

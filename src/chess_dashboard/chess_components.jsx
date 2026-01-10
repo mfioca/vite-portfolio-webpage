@@ -33,9 +33,6 @@ ChartJS.register(
 );
 
 
-
-
-
 export const PaginatedTable = ({ data, rowsPerPage = 25, title }) => {
   const [currentPage, setCurrentPage] = useState(1);
 

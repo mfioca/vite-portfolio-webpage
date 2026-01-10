@@ -120,10 +120,9 @@
 }
 
 
-
-
 .bar-chart {
-  max-width: 400px;
+  width: 400px;
+  max-width: 500px;
   height: 350px;
   margin: var(--marginV20) auto;
   padding: var(--padding);
