@@ -33,6 +33,7 @@ ChartJS.register(
 );
 
 
+
 export const PaginatedTable = ({ data, rowsPerPage = 25, title }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -206,7 +207,7 @@ export const LineChart = ({
   };
 
   return (
-    <div className="bar-chart">
+    <div className="lin-chart">
       <Line data={ chartData } options={ chartOptions } />
     </div>
   );
@@ -223,20 +224,20 @@ export const CandleChart = ({
 }) => {
 
   const cleanedData = rawData
-    .filter(
-      row =>
+  .filter(
+    row =>
       row[labelField] != null &&
       row[highField] != null &&
       row[lowField] != null
-    )
-    .map(row => ({
-      x: Number(row[labelField]),        // ✅ numeric
-      o: Number(row[lowField]),
-      h: Number(row[highField]),
-      l: Number(row[lowField]),
-      c: Number(row[highField])
-    }))
-    .sort((a, b) => a.x - b.x);
+  )
+  .map(row => ({
+    x: Number(row[labelField]),
+    o: Number(row[lowField]),
+    h: Number(row[highField]),
+    l: Number(row[lowField]),
+    c: Number(row[highField])
+  }))
+  .sort((a, b) => a.x - b.x);
 
   const data = {
     datasets: [
@@ -244,6 +245,7 @@ export const CandleChart = ({
         label: title,
         type: 'candlestick',              // ✅ REQUIRED
         data: cleanedData,
+        clip: false,
         color: {
           up: '#26a69a',
           down: '#ef5350',
@@ -275,10 +277,16 @@ export const CandleChart = ({
     scales: {
       x: {
         type: 'linear',
-        ticks: { precision: 0 }
+        ticks: {
+          precision: 0,
+          autoSkip: false
+        },
+        grid: {
+          offset: false
+        }
       },
       y: {
-        min: 50,
+        min: 20,
         max: 100,
         title: { display: true, text: 'Accuracy' }
       }
@@ -297,10 +305,11 @@ export const StackedPercentBarChart = ({
   rawData = [],
   labelField,
   valueFields = [],
-  datalabels = false
+  datalabels = false,
+  colorMap = null   // ← ADD (optional)
 }) => {
   const colors = [
-    '#2ecc71', // brilliant
+    '#6c3483', // brilliant
     '#27ae60', // great
     '#3498db', // best
     '#5dade2', // excellent
@@ -335,13 +344,22 @@ export const StackedPercentBarChart = ({
     .sort((a, b) => Number(a.label) - Number(b.label));
 
 
-  const datasets = valueFields.map((field, index) => ({
-    label: field,
-    data: cleanedData.map(row => row[field]),
-    stack: 'stack1',
-    backgroundColor: colors[index],
-    borderColor: colors[index]
-  }));
+  const datasets = valueFields.map((field, index) => {
+    const color =
+      colorMap && typeof colorMap === 'object'
+        ? Array.isArray(colorMap)
+          ? colorMap[index]
+          : colorMap[field]
+        : colors[index];
+
+    return {
+      label: field,
+      data: cleanedData.map(row => row[field]),
+      stack: 'stack1',
+      backgroundColor: color,
+      borderColor: color
+    };
+  });
 
   const chartData = {
     labels: cleanedData.map(row => row.label),
@@ -357,7 +375,7 @@ export const StackedPercentBarChart = ({
       tooltip: {
         callbacks: {
           label: (ctx) =>
-            `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%`
+            `${ ctx.dataset.label }: ${ ctx.parsed.y.toFixed(1) }%`
         }
       },
       datalabels: { display: datalabels }
@@ -380,8 +398,8 @@ export const StackedPercentBarChart = ({
   };
 
   return (
-    <div className="bar-chart">
-      <Bar data={chartData} options={chartOptions} />
+    <div className="line-chart">
+      <Bar data={ chartData } options={ chartOptions } />
     </div>
   );
 };

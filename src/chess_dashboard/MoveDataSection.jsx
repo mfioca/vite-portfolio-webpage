@@ -92,6 +92,67 @@ const moveLengthByColorOptions = [
   { key: "Average Moves Black", label: "Average Moves (Black)" }
 ];
 
+const moveQualityStackOptions = [
+  {
+    key: 'all',
+    label: 'All Move Quality',
+    title: 'Move Quality Distribution by Opponent Rating',
+    fields: [
+      'brilliant',
+      'great',
+      'best',
+      'excellent',
+      'good',
+      'book',
+      'inaccuracy',
+      'mistake',
+      'miss',
+      'blunder'
+    ]
+  },
+  {
+    key: 'aboveBook',
+    label: 'Above Book Quality',
+    title: 'Above-Book Move Quality Distribution by Opponent Rating',
+    fields: [
+      'good',
+      'excellent',
+      'best',
+      'great',
+      'brilliant'
+    ]
+  },
+  {
+    key: 'belowBook',
+    label: 'Below Book Quality',
+    title: 'Below-Book Move Quality Distribution by Opponent Rating',
+    fields: [
+      'inaccuracy',
+      'mistake',
+      'miss',
+      'blunder'
+    ]
+  }
+];
+
+const ABOVE_BOOK_COLORS = {
+  good: '#85c1e9',
+  excellent: '#5dade2',
+  best: '#3498db',
+  great: '#27ae60',
+  brilliant: '#6c3483'
+};
+
+const BELOW_BOOK_COLORS = {
+  inaccuracy: '#f4d03f',
+  mistake: '#e67e22',
+  miss: '#e74c3c',
+  blunder: '#c0392b'
+};
+
+/***********************************************************************************/
+/*                          MoveDataSection Component                              */
+/***********************************************************************************/
 
 const MoveDataSection = () => {
   const { data, loading, error } = useFetchJsonData(
@@ -106,87 +167,94 @@ const MoveDataSection = () => {
     moveLengthByColorOptions[0].key
   );
 
+  const [selectedMoveQualityView, setSelectedMoveQualityView] = React.useState(
+    moveQualityStackOptions[0]
+  );
+
   return (
     <div className="box-style-standard standard-padding-margin">
       <h2>Move Data</h2>
       {loading && <p>Loading data...</p>}
-      {error && <p>Error: {error}</p>}
+      {error && <p>Error: { error }</p>}
       <div>
         {data && (
           <div className="flex-wrap-center gap-20">
-
             <div className="flex-column-center">
-
               <select
-                value={selectedMoveLengthField}
-                onChange={(e) => setSelectedMoveLengthField(e.target.value)}
+                value={ selectedMoveLengthField }
+                onChange={ (e) => setSelectedMoveLengthField(e.target.value) }
                 className="standard-margin"
               >
                 {moveLengthByColorOptions.map(option => (
-                  <option key={option.key} value={option.key}>
-                    {option.label}
+                  <option key={ option.key } value={ option.key }>
+                    { option.label }
                   </option>
                 ))}
               </select>
-
               <LineChart
                 title="Average Game Length by Color and Opponent Rating"
-                rawData={data}
+                rawData={ data }
                 xField="Opponent rating"
-                yField={selectedMoveLengthField}
+                yField={ selectedMoveLengthField }
               />
-
             </div>
-            
-
-    
             <div className="flex-column-center">
-
               <select
-                value={selectedMoveField}
-                onChange={(e) => setSelectedMoveField(e.target.value)}
+                value={ selectedMoveField }
+                onChange={ (e) => setSelectedMoveField(e.target.value) }
                 className="standard-margin"
               >
                 {moveLengthOptions.map(option => (
-                  <option key={option.key} value={option.key}>
-                    {option.label}
+                  <option key={ option.key } value={ option.key }>
+                    { option.label }
                   </option>
                 ))}
               </select>
-
               <LineChart
                 title="Average Move Types per Game by Opponent Rating"
-                rawData={data}
+                rawData={ data }
                 xField="Opponent rating"
-                yField={selectedMoveField}
+                yField={ selectedMoveField }
               />
-
             </div>
-            <StackedPercentBarChart
-              title="Move Quality Distribution by Opponent Rating"
-              rawData={data}
-              labelField="Opponent rating"
-              valueFields={[
-                "brilliant",
-                "great",
-                "best",
-                "excellent",
-                "good",
-                "book",
-                "inaccuracy",
-                "mistake",
-                "miss",
-                "blunder"
-              ]}
-            />
+            <div className="flex-column-center">
+              <select
+                value={ selectedMoveQualityView.key }
+                onChange={(e) =>
+                  setSelectedMoveQualityView(
+                    moveQualityStackOptions.find(opt => opt.key === e.target.value)
+                  )
+                }
+                className="standard-margin"
+              >
+                {moveQualityStackOptions.map(option => (
+                  <option key={ option.key } value={ option.key }>
+                    { option.label }
+                  </option>
+                ))}
+              </select>
+              <StackedPercentBarChart
+                title={ selectedMoveQualityView.title }
+                rawData={ data }
+                labelField="Opponent rating"
+                valueFields={ selectedMoveQualityView.fields }
+                colorMap={
+                  selectedMoveQualityView.key === 'aboveBook'
+                    ? ABOVE_BOOK_COLORS
+                    : selectedMoveQualityView.key === 'belowBook'
+                    ? BELOW_BOOK_COLORS
+                    : null
+                }
+              />
+            </div>
           </div>
         )}
       </div>
       {data && (
         <PaginatedTable
           title="Move Data Table"
-          data={data.map(formatMoveData)}
-          rowsPerPage={25}
+          data={ data.map(formatMoveData) }
+          rowsPerPage={ 25 }
         />
       )}
     </div>
@@ -204,4 +272,22 @@ export default MoveDataSection;
               xField="Opponent rating"
               yField="Average number of moves"
             />
+<StackedPercentBarChart
+              title="Move Quality Distribution by Opponent Rating"
+              rawData={data}
+              labelField="Opponent rating"
+              valueFields={[
+                "brilliant",
+                "great",
+                "best",
+                "excellent",
+                "good",
+                "book",
+                "inaccuracy",
+                "mistake",
+                "miss",
+                "blunder"
+              ]}
+            />
+          </div>
 */

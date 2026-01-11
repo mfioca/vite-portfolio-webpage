@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useFetchJsonData from './useFetchJsonData';
 import { BodyContainer, DividerLine } from '../SharedComponents';
 
-import { PaginatedTable, CandleChart } from './chess_components.jsx';
+import { PaginatedTable, CandleChart, LineChart } from './chess_components.jsx';
 
 
 const formatGameData = (row) => {
@@ -96,19 +96,151 @@ const formatGameData = (row) => {
   return formatted;
 };
 
+const accuracyRangeOptions = [
+  {
+    key: 'all',
+    label: 'All Games',
+    title: 'Accuracy Range by Opponent Rating',
+    highField: 'Accuracy High',
+    lowField: 'Accuracy Low'
+  },
+  {
+    key: 'white',
+    label: 'White Games',
+    title: 'Accuracy Range by Opponent Rating (As White)',
+    highField: 'Accuracy White High',
+    lowField: 'Accuracy White Low'
+  },
+  {
+    key: 'black',
+    label: 'Black Games',
+    title: 'Accuracy Range by Opponent Rating (As Black)',
+    highField: 'Accuracy Black High',
+    lowField: 'Accuracy Black Low'
+  }
+];
+
+const accuracyAverageOptions = [
+  {
+    key: 'all',
+    label: 'All Games',
+    title: 'Average Accuracy by Opponent Rating',
+    valueField: 'Accuracy'
+  },
+  {
+    key: 'white',
+    label: 'White Games',
+    title: 'Average Accuracy by Opponent Rating (As White)',
+    valueField: 'Accuracy White'
+  },
+  {
+    key: 'black',
+    label: 'Black Games',
+    title: 'Average Accuracy by Opponent Rating (As Black)',
+    valueField: 'Accuracy Black'
+  }
+];
+
+/***********************************************************************************/
+/*                          GameDataSection Component                               */
+/***********************************************************************************/
+
 
 const GameDataSection = () => {
   const { data, loading, error } = useFetchJsonData(
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Game%20Data"
   );
 
+  const [selectedAccuracyRange, setSelectedAccuracyRange] = useState(
+    accuracyRangeOptions[0]
+  );
+
+  const [selectedAccuracyAverage, setSelectedAccuracyAverage] = React.useState(
+    accuracyAverageOptions[0]
+  );
+
   return (
     <div className="box-style-standard standard-padding-margin">
       <div>
-      <h2>Game Data</h2>
-      { loading && <p>Loading data...</p>}
-      { error && <p>Error: {error}</p>}
-      {data && (
+        <h2>Game Data</h2>
+        { loading && <p>Loading data...</p>}
+        { error && <p>Error: {error}</p>}
+        {data && (
+          <div className="flex-wrap-center gap-20">
+            <div className="flex-column-center">
+              <select
+                value={ selectedAccuracyRange.key }
+                onChange={(e) =>
+                  setSelectedAccuracyRange(
+                    accuracyRangeOptions.find(opt => opt.key === e.target.value)
+                  )
+                }
+                className="standard-margin"
+              >
+                {accuracyRangeOptions.map(opt => (
+                  <option key= {opt.key } value={ opt.key }>
+                    { opt.label }
+                  </option>
+                ))}
+              </select>
+              <div className="flex-column-center test-box">
+                <CandleChart
+                  title={ selectedAccuracyRange.title }
+                  rawData={ data }
+                  datalabels={ false }
+                  labelField="Opponent rating"
+                  highField={ selectedAccuracyRange.highField }
+                  lowField={ selectedAccuracyRange.lowField }
+                />
+              </div>
+            </div>
+            <div className="flex-column-center  ">
+              <select
+                value={ selectedAccuracyAverage.key }
+                onChange={(e) =>
+                  setSelectedAccuracyAverage(
+                    accuracyAverageOptions.find(opt => opt.key === e.target.value)
+                  )
+                }
+                className="standard-margin test-box"
+              >
+                {accuracyAverageOptions.map(opt => (
+                  <option key={ opt.key } value={ opt.key }>
+                    { opt.label }
+                  </option>
+                ))}
+              </select>
+              <LineChart
+                title={ selectedAccuracyAverage.title }
+                rawData={ data }
+                xField="Opponent rating"
+                yField={ selectedAccuracyAverage.valueField }
+                yMin={ 0 }
+                yMax={ 100 }
+              />
+            </div>
+          </div>
+        )}
+      </div>
+      <DividerLine/>
+      <div>
+        {data && (
+          <PaginatedTable
+            data={ data.map(formatGameData) }
+            rowsPerPage={ 15 }
+            title="Game Data"
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default GameDataSection;
+
+
+/*
+{data && (
         <>
           <CandleChart
             title="Accuracy Highs and Lows by Opponent Rating"
@@ -120,19 +252,4 @@ const GameDataSection = () => {
           />
         </>
         )}
-      </div>
-      <DividerLine/>
-      <div>
-        {data && (
-          <PaginatedTable
-            data={ data.map(formatGameData) }
-            rowsPerPage={ 15 }
-            title="Opponent Data"
-          />
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default GameDataSection;
+*/
