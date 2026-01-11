@@ -207,7 +207,7 @@ export const LineChart = ({
   };
 
   return (
-    <div className="lin-chart">
+    <div className="line-chart">
       <Line data={ chartData } options={ chartOptions } />
     </div>
   );

@@ -217,7 +217,7 @@ const MoveDataSection = () => {
                 yField={ selectedMoveField }
               />
             </div>
-            <div className="flex-column-center">
+            <div className="flex-column-center ">
               <select
                 value={ selectedMoveQualityView.key }
                 onChange={(e) =>
