@@ -194,7 +194,7 @@ const GameDataSection = () => {
                 />
               </div>
             </div>
-            <div className="flex-column-center  ">
+            <div className="flex-column-center">
               <select
                 value={ selectedAccuracyAverage.key }
                 onChange={(e) =>
@@ -202,7 +202,7 @@ const GameDataSection = () => {
                     accuracyAverageOptions.find(opt => opt.key === e.target.value)
                   )
                 }
-                className="standard-margin test-box"
+                className="standard-margin"
               >
                 {accuracyAverageOptions.map(opt => (
                   <option key={ opt.key } value={ opt.key }>
@@ -210,14 +210,16 @@ const GameDataSection = () => {
                   </option>
                 ))}
               </select>
-              <LineChart
-                title={ selectedAccuracyAverage.title }
-                rawData={ data }
-                xField="Opponent rating"
-                yField={ selectedAccuracyAverage.valueField }
-                yMin={ 0 }
-                yMax={ 100 }
-              />
+              <div className="flex-column-center test-box">
+                <LineChart
+                  title={ selectedAccuracyAverage.title }
+                  rawData={ data }
+                  xField="Opponent rating"
+                  yField={ selectedAccuracyAverage.valueField }
+                  yMin={ 0 }
+                  yMax={ 100 }
+                />
+              </div>
             </div>
           </div>
         )}
