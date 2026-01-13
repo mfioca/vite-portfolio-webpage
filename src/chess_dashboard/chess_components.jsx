@@ -36,6 +36,83 @@ ChartJS.register(
 
 export const PaginatedTable = ({ data, rowsPerPage = 25, title }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [isTableOpen, setisTableOpen] = useState(false);
+
+  if (!data || data.length === 0) {
+    return <p>No data available.</p>;
+  }
+
+  const totalPages = Math.ceil(data.length / rowsPerPage);
+  const paginatedData = data.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
+
+  const keys = Object.keys(data[0]);
+
+  return (
+    <>
+      <h2
+        className="toggle-gallery-title"
+        onClick={() => setisTableOpen(prev => !prev)}
+        style={{ cursor: "pointer" }}
+      >
+        {isTableOpen ? `▼ ${title}` : `▶ ${title}`}
+      </h2>
+      <p style={{ textAlign: 'center', marginTop: '10px' }}>
+        ( <i>Click to view full data table</i> )
+      </p>
+      {isTableOpen && (
+        <>
+
+      
+      <div className="game-archive-table-container">
+        <table className="game-archive-table">
+          <thead>
+            <tr>
+              {keys.map((key) => (
+                <th key={ key }>{ key }</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {paginatedData.map((row, rowIndex) => (
+              <tr key={ rowIndex }>
+                {keys.map((key, colIndex) => (
+                  <td key={ colIndex }>{ row[key] }</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="pagination">
+        <button
+          className="button"
+          onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+          disabled={ currentPage === 1 }
+        >
+          Previous
+        </button>
+        <span style={{ margin: '0 1rem' }}>
+          Page { currentPage } of { totalPages }
+        </span>
+        <button
+          className="button"
+          onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+          disabled={ currentPage === totalPages }
+        >
+          Next
+        </button>
+      </div>
+      </>
+      )}
+    </>
+  );
+};
+
+export const GameArchiveTable = ({ data, rowsPerPage = 25, title }) => {
+  const [currentPage, setCurrentPage] = useState(1);
 
   if (!data || data.length === 0) {
     return <p>No data available.</p>;
@@ -147,6 +224,63 @@ export const BarChart = ({
 
   return (
   <div className="chart-container">
+    <Bar  data={ chartData } options={ chartOptions } />
+  </div>
+  );
+};
+
+
+
+export const FullWidthBarChart = ({
+  title,
+  rawData = [],
+  labelField,
+  valueField,
+  color = 'rgba(54, 162, 235, 0.6)',
+  datalabels = false,
+  yMax = 100,
+  yMin = 0
+}) => {
+  const cleanedData = rawData
+      .filter(row => row[labelField] && row[valueField])
+      .map(row => ({
+          label: row[labelField].toString(),
+          value: parseFloat(row[valueField])
+      }))
+      .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
+
+  const chartData = {
+  labels: cleanedData.map(entry => entry.label),
+  datasets: [
+      {
+      label: title,
+      data: cleanedData.map(entry => entry.value),
+      backgroundColor: color,
+      borderColor: color.replace('0.6', '1'),
+      borderWidth: 1
+      }
+  ]
+  };
+
+  const chartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+          legend: { display: false },
+          title: { display: false, text: title },
+          tooltip: { enabled: true },
+          datalabels: { display: datalabels }
+      },
+      scales: {
+          y: {
+              min: yMin,
+              max: yMax
+          }
+      }
+  };
+
+  return (
+  <div className="full-width-chart-container">
     <Bar  data={ chartData } options={ chartOptions } />
   </div>
   );

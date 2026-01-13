@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useFetchJsonData from './useFetchJsonData';
 import { BodyContainer } from '../SharedComponents';
-import { PaginatedTable } from './chess_components.jsx';
+import { GameArchiveTable } from './chess_components.jsx';
 
 const formatGameArchiveData = (row) => {
   const percentFields = [
@@ -49,7 +49,7 @@ const GameArchiveSection = () => {
       { loading && <p>Loading data...</p> }
       { error && <p>Error: { error }</p> }
       {data && (
-        <PaginatedTable
+        <GameArchiveTable
           data={ data.map(formatGameArchiveData) }
           rowsPerPage={ 20 }
           title="Game Archive"

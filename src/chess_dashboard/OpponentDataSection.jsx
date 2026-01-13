@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import { BodyContainer, DividerLine } from '../SharedComponents';
-import { PaginatedTable, BarChart } from './chess_components';
+import { PaginatedTable, BarChart, FullWidthBarChart } from './chess_components';
 import useFetchJsonData from './useFetchJsonData';
 
 
@@ -61,9 +62,19 @@ const OpponentDataSection = () => {
       <h2>Opponent Data</h2>
       { loading && <p>Loading data...</p> }
       { error && <p>Error: { error }</p> }
+      <p
+        style={{
+          textAlign: 'center',
+          fontWeight: 'bold',
+          marginBottom: '0px',
+          marginTop: '4px'
+        }}
+      >
+        Average Accuracy by Opponent Rating
+      </p>
       {data && (
-        <div>
-          <BarChart
+        <div className="chart-scroll-x">
+          <FullWidthBarChart
             title="Average Accuracy by Opponent Rating"
             rawData={ data }
             labelField="Opponent"
