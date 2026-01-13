@@ -146,9 +146,83 @@ export const BarChart = ({
   };
 
   return (
-  <div className="bar-chart">
-    <Bar  data={ chartData } options={ chartOptions } />;
+  <div className="chart-container">
+    <Bar  data={ chartData } options={ chartOptions } />
   </div>
+  );
+};
+
+export const GroupedBarChart = ({
+  title,
+  rawData = [],
+  labelField,
+  valueFields = [],   // e.g. ['Average moves Win', 'Average moves Loss']
+  datalabels = false,
+  yMin = 0,
+  yMax,
+  yTickFormatter = null   // ← ADD THIS
+}) => {
+
+  // group by labelField
+  const grouped = {};
+
+  rawData.forEach(row => {
+    const label = row[labelField];
+    if (label == null) return;
+
+    if (!grouped[label]) grouped[label] = {};
+
+    valueFields.forEach(field => {
+      const value = Number(row[field]);
+      if (!Number.isFinite(value)) return;
+      grouped[label][field] = value;
+    });
+  });
+
+  const labels = Object.keys(grouped)
+    .sort((a, b) => Number(a) - Number(b));
+
+  const datasets = valueFields.map((field, index) => ({
+    label: field,
+    data: labels.map(label => grouped[label]?.[field] ?? null),
+    backgroundColor: index === 0
+      ? 'rgba(54, 162, 235, 0.6)'
+      : 'rgba(231, 76, 60, 0.6)',
+    borderColor: index === 0
+      ? 'rgba(54, 162, 235, 1)'
+      : 'rgba(231, 76, 60, 1)',
+    borderWidth: 1
+  }));
+
+  const chartData = { labels, datasets };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true },
+      title: { display: true, text: title },
+      tooltip: { enabled: true },
+      datalabels: { display: datalabels }
+    },
+    scales: {
+      x: {
+        title: { display: true, text: labelField }
+      },
+      y: {
+        min: yMin,
+        max: yMax,
+        ticks: yTickFormatter
+          ? { callback: yTickFormatter }
+          : undefined
+      }
+    }
+  };
+
+  return (
+    <div className="chart-container">
+      <Bar data={ chartData } options={ chartOptions } />
+    </div>
   );
 };
 
@@ -207,7 +281,7 @@ export const LineChart = ({
   };
 
   return (
-    <div className="line-chart">
+    <div className="chart-container">
       <Line data={ chartData } options={ chartOptions } />
     </div>
   );
@@ -294,7 +368,7 @@ export const CandleChart = ({
   };
 
   return (
-    <div className="candlestick-chart">
+    <div className="chart-container">
       <Chart type="candlestick" data={ data } options={ options } />
     </div>
   );
@@ -398,7 +472,7 @@ export const StackedPercentBarChart = ({
   };
 
   return (
-    <div className="line-chart">
+    <div className="chart-container">
       <Bar data={ chartData } options={ chartOptions } />
     </div>
   );

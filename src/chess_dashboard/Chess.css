@@ -119,9 +119,15 @@
   line-height: 1.4;
 }
 
+.sheet-script-container {
+  max-width: 800px;   /* or 700px if you want it tighter */
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.bar-chart {
-  width: 400px;
+
+.chart-container {
+  width: 500px;
   max-width: 500px;
   height: 350px;
   margin: var(--marginV20) auto;
@@ -131,28 +137,18 @@
   box-shadow: var(--boxshadow);
 }
 
-.candlestick-chart {
-  max-width: 500px;
-  height: 350px;
-  margin: var(--marginV20) auto;
+.chart-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
   padding: var(--padding);
-  background-color: var(--colorwhite);
-  border-radius: var(--borderradius);
-  box-shadow: var(--boxshadow);
+  margin: var(--margin) auto;
 }
 
-.test-box {
-  width: 500px;
-  height: 400px;
-}
-
-
-.line-chart {
-  width: 500px;
-  height: 350px;
-  margin: var(--marginV20) auto;
-  padding: var(--padding);
-  background-color: var(--colorwhite);
-  border-radius: var(--borderradius);
-  box-shadow: var(--boxshadow);
+.chart-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap10);
+  
 }

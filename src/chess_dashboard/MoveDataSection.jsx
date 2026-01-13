@@ -1,6 +1,7 @@
 import React from 'react';
 import useFetchJsonData from './useFetchJsonData';
-import { PaginatedTable, LineChart, StackedPercentBarChart } from './chess_components';
+import { BodyContainer, DividerLine } from '../SharedComponents';
+import { PaginatedTable, LineChart, StackedPercentBarChart, GroupedBarChart } from './chess_components';
 
 
 const formatMoveData = (row) => {
@@ -8,6 +9,8 @@ const formatMoveData = (row) => {
     "Opponent rating",
     "Total Games",
     "Average Moves White Loss",
+    "Average moves Win",
+    "Average moves Loss",
     "brilliant",
     "great",
     "best",
@@ -33,6 +36,8 @@ const formatMoveData = (row) => {
 
   const percent2dpFields = [
     "Average Move qality",
+    "Average Move quality Win",
+    "Average Move Quality Loss",
     "Move Quality White",
     "Move Quality White Win",
     "Move Quality White Loss",
@@ -178,8 +183,8 @@ const MoveDataSection = () => {
       {error && <p>Error: { error }</p>}
       <div>
         {data && (
-          <div className="flex-wrap-center gap-20">
-            <div className="flex-column-center">
+          <div className="chart-wrap">
+            <div className="chart-box">
               <select
                 value={ selectedMoveLengthField }
                 onChange={ (e) => setSelectedMoveLengthField(e.target.value) }
@@ -198,7 +203,7 @@ const MoveDataSection = () => {
                 yField={ selectedMoveLengthField }
               />
             </div>
-            <div className="flex-column-center">
+            <div className="chart-box">
               <select
                 value={ selectedMoveField }
                 onChange={ (e) => setSelectedMoveField(e.target.value) }
@@ -217,7 +222,7 @@ const MoveDataSection = () => {
                 yField={ selectedMoveField }
               />
             </div>
-            <div className="flex-column-center ">
+            <div className="chart-box">
               <select
                 value={ selectedMoveQualityView.key }
                 onChange={(e) =>
@@ -247,9 +252,45 @@ const MoveDataSection = () => {
                 }
               />
             </div>
+            <div className="chart-box">
+              <div className="standard-margin" style={{ fontWeight: 'bold', textAlign: 'center' }}>
+                Game Length Win vs Loss
+              </div>
+              <GroupedBarChart
+                title="Average Moves by Outcome"
+                rawData={data}
+                labelField="Opponent rating"
+                valueFields={[
+                  "Average moves Win",
+                  "Average moves Loss"
+                ]}
+              />
+            </div>
+            <div className="chart-box">
+              <div
+                className="standard-margin"
+                style={{ fontWeight: 'bold', textAlign: 'center' }}
+              >
+                Move Quality Win vs Loss
+              </div>
+
+              <GroupedBarChart
+                title="Average Move Quality by Outcome"
+                rawData={data}
+                labelField="Opponent rating"
+                valueFields={[
+                  "Average Move quality Win",
+                  "Average Move Quality Loss"
+                ]}
+                yMin={0}
+                yMax={1}
+                yTickFormatter={(v) => `${Math.round(v * 100)}%`}
+              />
+            </div>
           </div>
         )}
       </div>
+      <DividerLine/>
       {data && (
         <PaginatedTable
           title="Move Data Table"

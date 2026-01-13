@@ -66,7 +66,7 @@ const OpponentDataSection = () => {
           <BarChart
             title="Average Accuracy by Opponent Rating"
             rawData={ data }
-            labelField="Opponent Rating"
+            labelField="Opponent"
             valueField="Avg Accuracy"
             color="rgba(54, 162, 235, 0.6)"
             datalabels={ false }

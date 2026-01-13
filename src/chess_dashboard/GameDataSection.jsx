@@ -166,8 +166,8 @@ const GameDataSection = () => {
         { loading && <p>Loading data...</p>}
         { error && <p>Error: {error}</p>}
         {data && (
-          <div className="flex-wrap-center gap-20">
-            <div className="flex-column-center">
+          <div className="chart-wrap">
+            <div className="chart-box">
               <select
                 value={ selectedAccuracyRange.key }
                 onChange={(e) =>
@@ -183,7 +183,6 @@ const GameDataSection = () => {
                   </option>
                 ))}
               </select>
-              <div className="flex-column-center test-box">
                 <CandleChart
                   title={ selectedAccuracyRange.title }
                   rawData={ data }
@@ -192,9 +191,9 @@ const GameDataSection = () => {
                   highField={ selectedAccuracyRange.highField }
                   lowField={ selectedAccuracyRange.lowField }
                 />
-              </div>
+              
             </div>
-            <div className="flex-column-center">
+            <div className="chart-box">
               <select
                 value={ selectedAccuracyAverage.key }
                 onChange={(e) =>
@@ -210,7 +209,7 @@ const GameDataSection = () => {
                   </option>
                 ))}
               </select>
-              <div className="flex-column-center test-box">
+            
                 <LineChart
                   title={ selectedAccuracyAverage.title }
                   rawData={ data }
@@ -219,7 +218,7 @@ const GameDataSection = () => {
                   yMin={ 0 }
                   yMax={ 100 }
                 />
-              </div>
+              
             </div>
           </div>
         )}

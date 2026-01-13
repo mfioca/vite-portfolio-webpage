@@ -10,6 +10,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const ChessDashboard = () => {
   const [isBookmarkletOpen, setIsBookmarkletOpen] = useState(false);
+  const [isSheetScriptOpen, setIsSheetScriptOpen] = useState(false);
 
   return (
     <div className="chess-body">
@@ -40,7 +41,7 @@ const ChessDashboard = () => {
           { isBookmarkletOpen ? "▼ Bookmarklet Script" : "▶ Bookmarklet Script" }
         </h2>
 
-        <p style={{ marginTop: '10px' }}>
+        <p style={{ textAlign: 'center', marginTop: '10px' }}>
           The following bookmarklet is used to extract game statistics directly from&nbsp;
           <a href="https://www.chess.com" className="text-body" target="_blank" rel="noopener noreferrer">Chess.com</a> directly from the game review page.
           It scrapes accuracy, move classifications, opponent rating, and game context, then copies a TSV row to the clipboard for logging into a spreadsheet.
@@ -51,6 +52,74 @@ const ChessDashboard = () => {
           </pre>
         )}
       </div>
+      <DividerLine/>
+
+<div className="standard-padding-margin">
+  <h2
+    className="toggle-gallery-title"
+    onClick={() => setIsSheetScriptOpen(prev => !prev)}
+    style={{ cursor: "pointer" }}
+  >
+    { isSheetScriptOpen ? "▼ Google Sheets App Script" : "▶ Google Sheets App Script" }
+  </h2>
+  
+  <p style={{ textAlign: 'center', marginTop: '10px' }}>
+    This Google Apps Script exposes spreadsheet data as JSON via a simple
+    <code> doGet </code> endpoint. It allows the dashboard to dynamically
+    fetch structured game data directly from Google Sheets.
+  </p>
+  
+  {isSheetScriptOpen && (
+    <pre className=" sheet-script-container bookmarklet-script-block">
+      {`function doGet(e) {
+        const sheetName = e.parameter.sheet;
+        if (!sheetName) {
+          return ContentService
+            .createTextOutput("Missing 'sheet' parameter")
+            .setMimeType(ContentService.MimeType.TEXT);
+        }
+
+        const sheet = SpreadsheetApp
+          .getActiveSpreadsheet()
+          .getSheetByName(sheetName);
+
+        if (!sheet) {
+          return ContentService
+            .createTextOutput("Sheet not found")
+            .setMimeType(ContentService.MimeType.TEXT);
+        }
+
+        const data = sheet.getDataRange().getValues();
+        const headers = data[0];
+        const rows = [];
+
+        for (let i = 1; i < data.length; i++) {
+          const row = data[i];
+
+          // Skip row if column A is blank
+          if (row[0] === "") continue;
+
+          const entry = {};
+          for (let j = 0; j < headers.length; j++) {
+            entry[headers[j]] = row[j];
+          }
+          rows.push(entry);
+        }
+
+        return ContentService
+          .createTextOutput(JSON.stringify(rows))
+          .setMimeType(ContentService.MimeType.JSON);
+      }`}
+    </pre>
+  )}
+</div>
+
+
+
+
+
+
+
       <DividerLine/>
       <div className="standard-padding-margin-center base-max-width">
         <Tabs className="standard-tabs" forceRenderTabPanel>
