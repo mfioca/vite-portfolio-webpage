@@ -16,16 +16,22 @@ const ChessDashboard = () => {
     <div className="chess-body">
       <IntroSection title="Chess Analysis Dashboard">
         <p>
-          This dashboard presents a multi-layered analysis of over 500 games played primarily against chess bots and coaches on <a href="https://www.chess.com" target="_blank" rel="noopener noreferrer" className="text-body">Chess.com</a>. The data was extracted using a custom-built bookmarklet, then processed and grouped by opponent rating to surface performance trends.
+          This dashboard presents a multi-layered analysis of games played primarily against chess bots and coaches on&nbsp;
+          <a
+            href="https://www.chess.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-body"
+          >
+            Chess.com
+          </a>.
+          All data shown here is dynamically pulled from a connected Google Sheets document using a custom script, ensuring charts and tables stay up to date as new games are logged and processed. Data is extracted into the spreadsheet using a custom-built bookmarklet, then processed and grouped by opponent rating to surface performance trends.
         </p>
         <p>
-          Explore detailed metrics across three tabs: overall game stats, opponent-specific insights, and move quality breakdowns. Each section includes sortable tables and interactive charts for quick comparisons. Data visualizations update dynamically as new games are added to the tracking spreadsheet.
+          Explore detailed metrics across three tabs—game stats, opponent insights, and move quality breakdowns—using sortable tables and interactive charts. Whether you're evaluating accuracy, win rates, or blunder frequency, the visualizations update automatically as new games are logged to the tracking spreadsheet.
         </p>
         <p>
-          Whether you're evaluating accuracy, win rates, or blunder frequency, this dashboard gives a structured look into play patterns over time — and the tools used to track them.
-        </p>
-        <p>
-          All data shown here is dynamically pulled from a connected Google Sheets document using a custom script. This setup ensures the charts and tables stay up to date as new games are logged and processed.
+          <strong>Data integrity note:</strong> For data validity, all games included here are played under strict conditions: no engine hints, no analysis assistance, and no intentional undo or takebacks used to improve a position.
         </p>
         <p className="under-construction-warning">
           <strong>Note:</strong> This dashboard is still under construction. Features, layout, and visualizations may continue to evolve as more data and analysis tools are integrated.
@@ -42,7 +48,7 @@ const ChessDashboard = () => {
         </h2>
         <p style={{ textAlign: 'center', marginTop: '10px' }}>
           The following bookmarklet is used to extract game statistics directly from&nbsp;
-          <a href="https://www.chess.com" className="text-body" target="_blank" rel="noopener noreferrer">Chess.com</a> directly from the game review page.
+          <a href="https://www.chess.com" className="text-body" target="_blank" rel="noopener noreferrer">Chess.com</a> from the game review page.
           It scrapes accuracy, move classifications, opponent rating, and game context, then copies a TSV row to the clipboard for logging into a spreadsheet.
         </p>
         {isBookmarkletOpen && (
@@ -52,7 +58,6 @@ const ChessDashboard = () => {
         )}
       </div>
       <DividerLine/>
-
       <div className="standard-padding-margin">
         <h2
           className="toggle-gallery-title"
@@ -61,13 +66,11 @@ const ChessDashboard = () => {
         >
           { isSheetScriptOpen ? "▼ Google Sheets App Script" : "▶ Google Sheets App Script" }
         </h2>
-        
         <p style={{ textAlign: 'center', marginTop: '10px' }}>
           This Google Apps Script exposes spreadsheet data as JSON via a simple
           <code> doGet </code> endpoint. It allows the dashboard to dynamically
           fetch structured game data directly from Google Sheets.
         </p>
-        
         {isSheetScriptOpen && (
           <pre className=" sheet-script-container bookmarklet-script-block">
             {`function doGet(e) {

@@ -238,6 +238,7 @@ export const FullWidthBarChart = ({
   valueField,
   color = 'rgba(54, 162, 235, 0.6)',
   datalabels = false,
+  yTickFormatter,
   yMax = 100,
   yMin = 0
 }) => {
@@ -255,8 +256,16 @@ export const FullWidthBarChart = ({
       {
       label: title,
       data: cleanedData.map(entry => entry.value),
-      backgroundColor: color,
-      borderColor: color.replace('0.6', '1'),
+      backgroundColor: cleanedData.map(d =>
+        d.value < 0
+          ? 'rgba(231, 76, 60, 0.6)'   // negative
+          : color                      // positive
+      ),
+      borderColor: cleanedData.map(d =>
+        d.value < 0
+          ? 'rgba(231, 76, 60, 1)'
+          : color.replace('0.6', '1')
+      ),
       borderWidth: 1
       }
   ]
@@ -273,8 +282,12 @@ export const FullWidthBarChart = ({
       },
       scales: {
           y: {
-              min: yMin,
-              max: yMax
+            min: yMin,
+            max: yMax,
+            beginAtZero: false,
+            ticks: yTickFormatter
+              ? { callback: yTickFormatter }
+              : undefined
           }
       }
   };

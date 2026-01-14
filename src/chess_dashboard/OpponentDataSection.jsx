@@ -11,9 +11,7 @@ const formatOpponentData = (row) => {
     "Win %",
     "Draw %",
     "Loss %",
-    "Brilliant Move Frequency By Game",
-    "Expected Win Rate vs This Opponent",
-    "Performance Delta"
+    "Brilliant Move Frequency By Game"
   ];
 
   const percent2dpFields = [
@@ -26,6 +24,14 @@ const formatOpponentData = (row) => {
   const fixed2dpFields = [
     "Move Count Consistency (StdDev)",
     "Accuracy Variability (Consistency Score)"
+  ];
+
+  const percentAlreadyFields = [
+    "Expected Win Rate vs This Opponent"
+  ];
+
+  const ratioPercentFields = [
+    "Performance Delta"
   ];
 
   const formatted = {};
@@ -43,6 +49,10 @@ const formatOpponentData = (row) => {
       formatted[key] = `${parseFloat(value).toFixed(2)}%`;
     } else if (fixed2dpFields.includes(key)) {
       formatted[key] = parseFloat(value).toFixed(2);
+    } else if (percentAlreadyFields.includes(key)) {
+      formatted[key] = `${parseFloat(value).toFixed(2)}%`;
+    } else if (ratioPercentFields.includes(key)) {
+      formatted[key] = `${Math.round(parseFloat(value) * 100)}%`; 
     } else {
       formatted[key] = Number.isFinite(+value) ? parseInt(value) : value;
     }
@@ -51,10 +61,51 @@ const formatOpponentData = (row) => {
   return formatted;
 };
 
+const opponentMetricOptions = [
+  {
+    key: 'performanceDelta',
+    label: 'Performance Delta',
+    displayTitle: 'Performance Delta by Opponent',
+    valueField: 'Performance Delta',
+    yMin: -1,
+    yMax: 1,
+    yTickFormatter: (v) => `${(v * 100).toFixed(2)}%`
+  },
+  {
+    key: 'expectedWinRate',
+    label: 'Expected Win Rate',
+    displayTitle: 'Expected Win Rate by Opponent',
+    valueField: 'Expected Win Rate vs This Opponent',
+    yMin: 0,
+    yMax: 100,
+    yTickFormatter: (v) => `${v}%`
+  },
+  {
+    key: 'moveQualityRatio',
+    label: 'Move Quality Ratio',
+    displayTitle: 'Move Quality Ratio by Opponent',
+    valueField: 'Move Quality Ratio',
+    yMin: 0,
+    yMax: 100,              
+    yTickFormatter: (v) => v.toFixed(1)
+  },
+  {
+    key: 'avgAccuracy',
+    label: 'Avg Accuracy',
+    displayTitle: 'Average Accuracy by Opponent',
+    valueField: 'Avg Accuracy',
+    yMin: 50,
+    yMax: 100,
+    yTickFormatter: (v) => `${v}%`
+  }
+];
+
 const OpponentDataSection = () => {
   const { data, loading, error } = useFetchJsonData(
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Opponent%20data"
   );
+
+  const [selectedMetric, setSelectedMetric] = useState(opponentMetricOptions[0]);
 
   return (
     <div className="box-style-standard standard-padding-margin">
@@ -62,6 +113,21 @@ const OpponentDataSection = () => {
       <h2>Opponent Data</h2>
       { loading && <p>Loading data...</p> }
       { error && <p>Error: { error }</p> }
+      <select
+        value={selectedMetric.key}
+        onChange={(e) =>
+          setSelectedMetric(
+            opponentMetricOptions.find(opt => opt.key === e.target.value)
+          )
+        }
+        className="standard-margin center-margin"
+      >
+        {opponentMetricOptions.map(opt => (
+          <option key={opt.key} value={opt.key}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
       <p
         style={{
           textAlign: 'center',
@@ -70,19 +136,19 @@ const OpponentDataSection = () => {
           marginTop: '4px'
         }}
       >
-        Average Accuracy by Opponent Rating
+        { selectedMetric.displayTitle }
       </p>
       {data && (
         <div className="chart-scroll-x">
           <FullWidthBarChart
-            title="Average Accuracy by Opponent Rating"
             rawData={ data }
             labelField="Opponent"
-            valueField="Avg Accuracy"
+            valueField={ selectedMetric.valueField }
             color="rgba(54, 162, 235, 0.6)"
             datalabels={ false }
-            yMin={ 50 }
-            yMax={ 100 }
+            yMin={ selectedMetric.yMin }
+            yMax={ selectedMetric.yMax }
+            yTickFormatter={ selectedMetric.yTickFormatter }
           />
         </div>
       )}

@@ -25,3 +25,22 @@ const useFetchJsonData = (url) => {
 };
 
 export default useFetchJsonData;
+
+
+
+/*
+{data && (
+  <pre
+    style={{
+      maxHeight: '600px',
+      overflow: 'auto',
+      background: '#f9f9f9',
+      padding: '10px',
+      fontSize: '0.8rem',
+      textAlign: 'left'
+    }}
+  >
+    {JSON.stringify(data, null, 2)}
+  </pre>
+)}
+*/
