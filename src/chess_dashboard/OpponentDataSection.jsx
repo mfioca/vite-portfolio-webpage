@@ -63,6 +63,15 @@ const formatOpponentData = (row) => {
 
 const opponentMetricOptions = [
   {
+    key: 'avgAccuracy',
+    label: 'Avg Accuracy',
+    displayTitle: 'Average Accuracy by Opponent',
+    valueField: 'Avg Accuracy',
+    yMin: 50,
+    yMax: 100,
+    yTickFormatter: (v) => `${v}%`
+  },
+  {
     key: 'performanceDelta',
     label: 'Performance Delta',
     displayTitle: 'Performance Delta by Opponent',
@@ -88,15 +97,6 @@ const opponentMetricOptions = [
     yMin: 0,
     yMax: 100,              
     yTickFormatter: (v) => v.toFixed(1)
-  },
-  {
-    key: 'avgAccuracy',
-    label: 'Avg Accuracy',
-    displayTitle: 'Average Accuracy by Opponent',
-    valueField: 'Avg Accuracy',
-    yMin: 50,
-    yMax: 100,
-    yTickFormatter: (v) => `${v}%`
   }
 ];
 
@@ -111,8 +111,6 @@ const OpponentDataSection = () => {
     <div className="box-style-standard standard-padding-margin">
       <div>
       <h2>Opponent Data</h2>
-      { loading && <p>Loading data...</p> }
-      { error && <p>Error: { error }</p> }
       <select
         value={selectedMetric.key}
         onChange={(e) =>
@@ -139,7 +137,7 @@ const OpponentDataSection = () => {
         { selectedMetric.displayTitle }
       </p>
       {data && (
-        <div className="chart-scroll-x">
+        <div className="chart2-scroll-x">
           <FullWidthBarChart
             rawData={ data }
             labelField="Opponent"

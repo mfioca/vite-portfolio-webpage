@@ -163,11 +163,9 @@ const GameDataSection = () => {
     <div className="box-style-standard standard-padding-margin">
       <div>
         <h2>Game Data</h2>
-        { loading && <p>Loading data...</p>}
-        { error && <p>Error: {error}</p>}
         {data && (
-          <div className="chart-wrap">
-            <div className="chart-box">
+          <div className="chart2-wrap">
+            <div className="chart2-box">
               <select
                 value={ selectedAccuracyRange.key }
                 onChange={(e) =>
@@ -193,7 +191,7 @@ const GameDataSection = () => {
                 />
               
             </div>
-            <div className="chart-box">
+            <div className="chart2-box">
               <select
                 value={ selectedAccuracyAverage.key }
                 onChange={(e) =>

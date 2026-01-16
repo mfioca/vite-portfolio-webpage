@@ -46,7 +46,7 @@ function Dashboard() {
                 <DividerLine />
                 <PowerpointViewer />
                 <DividerLine />
-                <BodyContainer hasBackground = { true } className=" graph-flexbox">
+                <BodyContainer hasBackground = { true } className=" graph-flexbox base-max-width">
                     <BorderBox className="flex-wrap standard-margin graph-container">
                         <Graph />
                         <TextSection>

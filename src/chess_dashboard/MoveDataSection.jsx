@@ -179,12 +179,10 @@ const MoveDataSection = () => {
   return (
     <div className="box-style-standard standard-padding-margin">
       <h2>Move Data</h2>
-      {loading && <p>Loading data...</p>}
-      {error && <p>Error: { error }</p>}
       <div>
         {data && (
-          <div className="chart-wrap">
-            <div className="chart-box">
+          <div className="chart2-wrap">
+            <div className="chart2-box">
               <select
                 value={ selectedMoveLengthField }
                 onChange={ (e) => setSelectedMoveLengthField(e.target.value) }
@@ -203,7 +201,21 @@ const MoveDataSection = () => {
                 yField={ selectedMoveLengthField }
               />
             </div>
-            <div className="chart-box">
+            <div className="chart2-box">
+              <div className="standard-margin" style={{ fontWeight: 'bold', textAlign: 'center' }}>
+                Game Length Win vs Loss
+              </div>
+              <GroupedBarChart
+                title="Average Moves by Outcome"
+                rawData={data}
+                labelField="Opponent rating"
+                valueFields={[
+                  "Average moves Win",
+                  "Average moves Loss"
+                ]}
+              />
+            </div>
+            <div className="chart2-box">
               <select
                 value={ selectedMoveField }
                 onChange={ (e) => setSelectedMoveField(e.target.value) }
@@ -222,7 +234,7 @@ const MoveDataSection = () => {
                 yField={ selectedMoveField }
               />
             </div>
-            <div className="chart-box">
+            <div className="chart2-box">
               <select
                 value={ selectedMoveQualityView.key }
                 onChange={(e) =>
@@ -252,21 +264,8 @@ const MoveDataSection = () => {
                 }
               />
             </div>
-            <div className="chart-box">
-              <div className="standard-margin" style={{ fontWeight: 'bold', textAlign: 'center' }}>
-                Game Length Win vs Loss
-              </div>
-              <GroupedBarChart
-                title="Average Moves by Outcome"
-                rawData={data}
-                labelField="Opponent rating"
-                valueFields={[
-                  "Average moves Win",
-                  "Average moves Loss"
-                ]}
-              />
-            </div>
-            <div className="chart-box">
+            
+            <div className="chart2-box">
               <div
                 className="standard-margin"
                 style={{ fontWeight: 'bold', textAlign: 'center' }}

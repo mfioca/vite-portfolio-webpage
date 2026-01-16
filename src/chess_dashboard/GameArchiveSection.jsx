@@ -44,10 +44,24 @@ const GameArchiveSection = () => {
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Game%20Archive"
   );
 
+  if (loading) {
+    return (
+      <div className="flex-align-center-center loading-overlay">
+        <p>Loading chess data…</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="no-data-overlay">
+        <p>Error loading chess data</p>
+      </div>
+    );
+  }
+
   return (
     <BodyContainer>
-      { loading && <p>Loading data...</p> }
-      { error && <p>Error: { error }</p> }
       {data && (
         <GameArchiveTable
           data={ data.map(formatGameArchiveData) }
