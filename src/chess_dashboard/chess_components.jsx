@@ -293,7 +293,7 @@ export const FullWidthBarChart = ({
   };
 
   return (
-  <div className="full-width-chart2-container">
+  <div className="full-width-chart-container">
     <Bar  data={ chartData } options={ chartOptions } />
   </div>
   );
