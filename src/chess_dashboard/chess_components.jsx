@@ -307,7 +307,7 @@ export const GroupedBarChart = ({
   datalabels = false,
   yMin = 0,
   yMax,
-  yTickFormatter = null   // ← ADD THIS
+  yTickFormatter = null   
 }) => {
 
   // group by labelField
@@ -377,6 +377,7 @@ export const LineChart = ({
   title,
   rawData = [],
   datalabels = false,
+  metricLabel,
   xField,
   yField,
   yMin,
@@ -420,7 +421,7 @@ export const LineChart = ({
         ticks: { precision: 0 }
       },
       y: {
-        title: { display: true, text: 'Average number of moves' },
+        title: { display: true, text: metricLabel },
         min: yMin,
         max: yMax
       }
@@ -442,6 +443,9 @@ export const CandleChart = ({
   highField,
   lowField,
   datalabels = false,
+  metricLabel,
+  yMax = 100,
+  yMin = 0
 }) => {
 
   const cleanedData = rawData
@@ -489,7 +493,7 @@ export const CandleChart = ({
         callbacks: {
           label: (ctx) => {
             const { x, l, h } = ctx.raw;
-            return `Rating: ${x} | Accuracy: ${l.toFixed(1)}–${h.toFixed(1)}`;
+            return `Rating: ${x} | ${metricLabel}: ${l.toFixed(0)}–${h.toFixed(0)}`;
           }
         }
       },
@@ -498,6 +502,7 @@ export const CandleChart = ({
     scales: {
       x: {
         type: 'linear',
+        title: { display: true, text: 'Opponent Rating' },
         ticks: {
           precision: 0,
           autoSkip: false
@@ -507,9 +512,9 @@ export const CandleChart = ({
         }
       },
       y: {
-        min: 20,
-        max: 100,
-        title: { display: true, text: 'Accuracy' }
+        min: yMin,
+        max: yMax,
+        title: { display: true, text: metricLabel }
       }
     }
   };

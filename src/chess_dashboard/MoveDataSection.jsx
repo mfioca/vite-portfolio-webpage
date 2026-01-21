@@ -197,6 +197,7 @@ const MoveDataSection = () => {
               <LineChart
                 title="Average Game Length by Color and Opponent Rating"
                 rawData={ data }
+                metricLabel="Average Number of Moves"
                 xField="Opponent rating"
                 yField={ selectedMoveLengthField }
               />
@@ -230,8 +231,10 @@ const MoveDataSection = () => {
               <LineChart
                 title="Average Move Types per Game by Opponent Rating"
                 rawData={ data }
+                metricLabel="Average Number of Moves"
                 xField="Opponent rating"
                 yField={ selectedMoveField }
+                yMax= {10}
               />
             </div>
             <div className="chart2-box">

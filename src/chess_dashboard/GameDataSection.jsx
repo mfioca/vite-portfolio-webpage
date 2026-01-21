@@ -185,9 +185,12 @@ const GameDataSection = () => {
                   title={ selectedAccuracyRange.title }
                   rawData={ data }
                   datalabels={ false }
+                  metricLabel="Accuracy"
                   labelField="Opponent rating"
                   highField={ selectedAccuracyRange.highField }
                   lowField={ selectedAccuracyRange.lowField }
+                  yMin = {20}
+                  yMax = {100}
                 />
               
             </div>
@@ -207,16 +210,39 @@ const GameDataSection = () => {
                   </option>
                 ))}
               </select>
-            
                 <LineChart
                   title={ selectedAccuracyAverage.title }
                   rawData={ data }
+                  metricLabel="Average Game Accuracy"
                   xField="Opponent rating"
                   yField={ selectedAccuracyAverage.valueField }
                   yMin={ 0 }
                   yMax={ 100 }
                 />
-              
+            </div>
+            <div className="chart2-box">
+              <CandleChart
+                title="Game Rating Range by Opponent Rating"
+                rawData={ data }
+                datalabels={ false }
+                metricLabel="Game Rating"
+                labelField="Opponent rating"
+                highField="Game Rating High"
+                lowField="Game Rating Low"
+                yMin= {100}
+                yMax = {2000}
+              />
+            </div>
+            <div className="chart2-box">
+              <LineChart
+                title="Average Game Rating by Opponent Rating"
+                rawData={ data }
+                metricLabel="Average Game Rating"
+                xField="Opponent rating"
+                yField="Game Rating"
+                yMin={ 100 }
+                yMax={ 2000 }
+              />
             </div>
           </div>
         )}
