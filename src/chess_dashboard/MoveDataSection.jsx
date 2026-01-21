@@ -234,7 +234,7 @@ const MoveDataSection = () => {
                 metricLabel="Average Number of Moves"
                 xField="Opponent rating"
                 yField={ selectedMoveField }
-                yMax= {10}
+                yMax= { 10 }
               />
             </div>
             <div className="chart2-box">
@@ -284,8 +284,8 @@ const MoveDataSection = () => {
                   "Average Move quality Win",
                   "Average Move Quality Loss"
                 ]}
-                yMin={0}
-                yMax={1}
+                yMin={ 0 }
+                yMax={ 1 }
                 yTickFormatter={(v) => `${Math.round(v * 100)}%`}
               />
             </div>
