@@ -208,7 +208,7 @@ const MoveDataSection = () => {
               </div>
               <GroupedBarChart
                 title="Average Moves by Outcome"
-                rawData={data}
+                rawData={ data }
                 labelField="Opponent rating"
                 valueFields={[
                   "Average moves Win",
@@ -278,7 +278,7 @@ const MoveDataSection = () => {
 
               <GroupedBarChart
                 title="Average Move Quality by Outcome"
-                rawData={data}
+                rawData={ data }
                 labelField="Opponent rating"
                 valueFields={[
                   "Average Move quality Win",

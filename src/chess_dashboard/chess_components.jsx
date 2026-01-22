@@ -64,48 +64,46 @@ export const PaginatedTable = ({ data, rowsPerPage = 25, title }) => {
       </p>
       {isTableOpen && (
         <>
-
-      
-      <div className="game-archive-table-container">
-        <table className="game-archive-table">
-          <thead>
-            <tr>
-              {keys.map((key) => (
-                <th key={ key }>{ key }</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {paginatedData.map((row, rowIndex) => (
-              <tr key={ rowIndex }>
-                {keys.map((key, colIndex) => (
-                  <td key={ colIndex }>{ row[key] }</td>
+          <div className="game-archive-table-container">
+            <table className="game-archive-table">
+              <thead>
+                <tr>
+                  {keys.map((key) => (
+                    <th key={ key }>{ key }</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {paginatedData.map((row, rowIndex) => (
+                  <tr key={ rowIndex }>
+                    {keys.map((key, colIndex) => (
+                      <td key={ colIndex }>{ row[key] }</td>
+                    ))}
+                  </tr>
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="pagination">
-        <button
-          className="button"
-          onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-          disabled={ currentPage === 1 }
-        >
-          Previous
-        </button>
-        <span style={{ margin: '0 1rem' }}>
-          Page { currentPage } of { totalPages }
-        </span>
-        <button
-          className="button"
-          onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-          disabled={ currentPage === totalPages }
-        >
-          Next
-        </button>
-      </div>
-      </>
+              </tbody>
+            </table>
+          </div>
+          <div className="pagination">
+            <button
+              className="button"
+              onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+              disabled={ currentPage === 1 }
+            >
+              Previous
+            </button>
+            <span style={{ margin: '0 1rem' }}>
+              Page { currentPage } of { totalPages }
+            </span>
+            <button
+              className="button"
+              onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+              disabled={ currentPage === totalPages }
+            >
+              Next
+            </button>
+          </div>
+        </>
       )}
     </>
   );
@@ -185,50 +183,49 @@ export const BarChart = ({
 }) => {
 
   const cleanedData = rawData
-      .filter(row => row[labelField] && row[valueField])
-      .map(row => ({
-          label: row[labelField].toString(),
-          value: parseFloat(row[valueField])
-      }))
-      .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
+    .filter(row => row[labelField] && row[valueField])
+    .map(row => ({
+      label: row[labelField].toString(),
+      value: parseFloat(row[valueField])
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
 
   const chartData = {
   labels: cleanedData.map(entry => entry.label),
   datasets: [
-      {
+    {
       label: title,
       data: cleanedData.map(entry => entry.value),
       backgroundColor: color,
       borderColor: color.replace('0.6', '1'),
       borderWidth: 1
-      }
+    }
   ]
   };
 
   const chartOptions = {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-          legend: { display: false },
-          title: { display: true, text: title },
-          tooltip: { enabled: true },
-          datalabels: { display: datalabels }
-      },
-      scales: {
-          y: {
-              min: yMin,
-              max: yMax
-          }
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      title: { display: true, text: title },
+      tooltip: { enabled: true },
+      datalabels: { display: datalabels }
+    },
+    scales: {
+      y: {
+        min: yMin,
+        max: yMax
       }
+    }
   };
 
   return (
-  <div className="chart2-container">
-    <Bar  data={ chartData } options={ chartOptions } />
-  </div>
+    <div className="chart2-container">
+      <Bar  data={ chartData } options={ chartOptions } />
+    </div>
   );
 };
-
 
 
 export const FullWidthBarChart = ({
@@ -243,53 +240,53 @@ export const FullWidthBarChart = ({
   yMin = 0
 }) => {
   const cleanedData = rawData
-      .filter(row => row[labelField] && row[valueField])
-      .map(row => ({
-          label: row[labelField].toString(),
-          value: parseFloat(row[valueField])
-      }))
-      .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
+    .filter(row => row[labelField] && row[valueField])
+    .map(row => ({
+        label: row[labelField].toString(),
+        value: parseFloat(row[valueField])
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
 
   const chartData = {
-  labels: cleanedData.map(entry => entry.label),
-  datasets: [
+    labels: cleanedData.map(entry => entry.label),
+    datasets: [
       {
-      label: title,
-      data: cleanedData.map(entry => entry.value),
-      backgroundColor: cleanedData.map(d =>
-        d.value < 0
-          ? 'rgba(231, 76, 60, 0.6)'   // negative
-          : color                      // positive
-      ),
-      borderColor: cleanedData.map(d =>
-        d.value < 0
-          ? 'rgba(231, 76, 60, 1)'
-          : color.replace('0.6', '1')
-      ),
-      borderWidth: 1
+        label: title,
+        data: cleanedData.map(entry => entry.value),
+        backgroundColor: cleanedData.map(d =>
+          d.value < 0
+            ? 'rgba(231, 76, 60, 0.6)'   // negative
+            : color                      // positive
+        ),
+        borderColor: cleanedData.map(d =>
+          d.value < 0
+            ? 'rgba(231, 76, 60, 1)'
+            : color.replace('0.6', '1')
+        ),
+        borderWidth: 1
       }
-  ]
+    ]
   };
 
   const chartOptions = {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-          legend: { display: false },
-          title: { display: false, text: title },
-          tooltip: { enabled: true },
-          datalabels: { display: datalabels }
-      },
-      scales: {
-          y: {
-            min: yMin,
-            max: yMax,
-            beginAtZero: false,
-            ticks: yTickFormatter
-              ? { callback: yTickFormatter }
-              : undefined
-          }
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      title: { display: false, text: title },
+      tooltip: { enabled: true },
+      datalabels: { display: datalabels }
+    },
+    scales: {
+      y: {
+        min: yMin,
+        max: yMax,
+        beginAtZero: false,
+        ticks: yTickFormatter
+          ? { callback: yTickFormatter }
+          : undefined
       }
+    }
   };
 
   return (
@@ -309,7 +306,6 @@ export const GroupedBarChart = ({
   yMax,
   yTickFormatter = null   
 }) => {
-
   // group by labelField
   const grouped = {};
 
@@ -468,7 +464,7 @@ export const CandleChart = ({
     datasets: [
       {
         label: title,
-        type: 'candlestick',              // ✅ REQUIRED
+        type: 'candlestick',              
         data: cleanedData,
         clip: false,
         color: {
@@ -568,7 +564,6 @@ export const StackedPercentBarChart = ({
       };
     })
     .sort((a, b) => Number(a.label) - Number(b.label));
-
 
   const datasets = valueFields.map((field, index) => {
     const color =

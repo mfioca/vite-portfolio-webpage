@@ -189,7 +189,14 @@ const Footer = () =>{
   return (
     <div className="index-shared footer">
       <footer className="footer-content">
-        <p>Contact Me: <a href="mailto:mfioca@gmail.com" className="contact-link">mfioca@gmail.com</a></p>
+        <p>
+          <a
+            href="mailto:mfioca@gmail.com"
+            className="linkedin-link"
+          >
+            Contact Me
+          </a>
+        </p>
         <p>
           <a 
             href="https://www.linkedin.com/in/mark-fioca/" 
@@ -218,6 +225,21 @@ const Footer = () =>{
               className="github-icon"
             />
             GitHub Profile
+          </a>
+        </p>
+        <p>
+          <a 
+            href="https://www.youtube.com/@franknmullet" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="youtube-link"
+          >
+            <img 
+              src={`${import.meta.env.BASE_URL}youtube_red_digital.png`} 
+              alt="Youtube Channel" 
+              className="youtube-icon"
+            />
+            Youtube Channel
           </a>
         </p>
       </footer>

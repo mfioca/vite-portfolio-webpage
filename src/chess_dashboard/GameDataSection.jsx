@@ -141,6 +141,51 @@ const accuracyAverageOptions = [
   }
 ];
 
+const gameRatingRangeOptions = [
+  {
+    key: 'all',
+    label: 'All Games',
+    title: 'Game Rating Range by Opponent Rating',
+    highField: 'Game Rating High',
+    lowField: 'Game Rating Low'
+  },
+  {
+    key: 'white',
+    label: 'White Games',
+    title: 'Game Rating Range by Opponent Rating (As White)',
+    highField: 'Game Rating White High',
+    lowField: 'Game Rating White Low'
+  },
+  {
+    key: 'black',
+    label: 'Black Games',
+    title: 'Game Rating Range by Opponent Rating (As Black)',
+    highField: 'Game Rating Black High',
+    lowField: 'Game Rating Black Low'
+  }
+];
+
+const gameRatingAverageOptions = [
+  {
+    key: 'all',
+    label: 'All Games',
+    title: 'Average Game Rating by Opponent Rating',
+    valueField: 'Game Rating'
+  },
+  {
+    key: 'white',
+    label: 'White Games',
+    title: 'Average Game Rating by Opponent Rating (As White)',
+    valueField: 'Game Rating White'
+  },
+  {
+    key: 'black',
+    label: 'Black Games',
+    title: 'Average Game Rating by Opponent Rating (As Black)',
+    valueField: 'Game Rating Black'
+  }
+];
+
 /***********************************************************************************/
 /*                          GameDataSection Component                               */
 /***********************************************************************************/
@@ -155,14 +200,24 @@ const GameDataSection = () => {
     accuracyRangeOptions[0]
   );
 
-  const [selectedAccuracyAverage, setSelectedAccuracyAverage] = React.useState(
+  const [selectedAccuracyAverage, setSelectedAccuracyAverage] = useState(
     accuracyAverageOptions[0]
+  );
+
+  const [selectedGameRatingRange, setSelectedGameRatingRange] = useState(
+    gameRatingRangeOptions[0]
+  );
+
+  const [selectedGameRatingAverage, setSelectedGameRatingAverage] = useState(
+    gameRatingAverageOptions[0]
   );
 
   return (
     <div className="box-style-standard standard-padding-margin">
       <div>
         <h2>Game Data</h2>
+        { loading && <p>Loading data...</p>}
+        { error && <p>Error: { error }</p>}
         {data && (
           <div className="chart2-wrap">
             <div className="chart2-box">
@@ -189,10 +244,9 @@ const GameDataSection = () => {
                   labelField="Opponent rating"
                   highField={ selectedAccuracyRange.highField }
                   lowField={ selectedAccuracyRange.lowField }
-                  yMin = {20}
-                  yMax = {100}
+                  yMin = { 20 }
+                  yMax = { 100 }
                 />
-              
             </div>
             <div className="chart2-box">
               <select
@@ -221,28 +275,58 @@ const GameDataSection = () => {
                 />
             </div>
             <div className="chart2-box">
-              <CandleChart
-                title="Game Rating Range by Opponent Rating"
-                rawData={ data }
-                datalabels={ false }
-                metricLabel="Game Rating"
-                labelField="Opponent rating"
-                highField="Game Rating High"
-                lowField="Game Rating Low"
-                yMin= {100}
-                yMax = {2000}
-              />
+              <select
+                value={ selectedGameRatingRange.key }
+                onChange={(e) =>
+                  setSelectedGameRatingRange(
+                    gameRatingRangeOptions.find(opt => opt.key === e.target.value)
+                  )
+                }
+                className="standard-margin"
+              >
+                {gameRatingRangeOptions.map(opt => (
+                  <option key= {opt.key } value={ opt.key }>
+                    { opt.label }
+                  </option>
+                ))}
+              </select>
+                <CandleChart
+                  title={ selectedGameRatingRange.title }
+                  rawData={ data }
+                  datalabels={ false }
+                  metricLabel="Game Rating"
+                  labelField="Opponent rating"
+                  highField={ selectedGameRatingRange.highField }
+                  lowField={ selectedGameRatingRange.lowField }
+                  yMin = { 100 }
+                  yMax = { 2000 }
+                />
             </div>
             <div className="chart2-box">
-              <LineChart
-                title="Average Game Rating by Opponent Rating"
-                rawData={ data }
-                metricLabel="Average Game Rating"
-                xField="Opponent rating"
-                yField="Game Rating"
-                yMin={ 100 }
-                yMax={ 2000 }
-              />
+              <select
+                value={ selectedGameRatingAverage.key }
+                onChange={(e) =>
+                  setSelectedGameRatingAverage(
+                    gameRatingAverageOptions.find(opt => opt.key === e.target.value)
+                  )
+                }
+                className="standard-margin"
+              >
+                {gameRatingAverageOptions.map(opt => (
+                  <option key={ opt.key } value={ opt.key }>
+                    { opt.label }
+                  </option>
+                ))}
+              </select>
+                <LineChart
+                  title={ selectedGameRatingAverage.title }
+                  rawData={ data }
+                  metricLabel="Average Game Rating"
+                  xField="Opponent rating"
+                  yField={ selectedGameRatingAverage.valueField }
+                  yMin={ 100 }
+                  yMax={ 2000 }
+                />
             </div>
           </div>
         )}
