@@ -16,6 +16,7 @@ const PelicanTown = () => {
                         <Tab>Beach</Tab>
                         <Tab>Main City</Tab>
                         <Tab>Farm and Bus Area</Tab>
+                        <Tab>Cindersap Forest</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
@@ -131,6 +132,37 @@ const PelicanTown = () => {
                                     <>
                                         <p>
                                             This section focuses on the refinement phase of the farm and bus station area, highlighting the addition of visual and environmental details once the main layout was established. The images emphasize completed paths, fencing along the farm boundary, road details near the bus stop, and the placement of trees, flowers, and terrain accents throughout the area. Together, these finishing touches help solidify the transition between the farm, the bus station, and the surrounding paths, bringing the space closer to its final, fully realized form.
+                                        </p>
+                                    </>
+                                }
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                            <IntroSection title="Cindersap Forest">
+                                <p>
+                                    This section focuses on the Cindersap Forest region, a dense and organically shaped area that sits south of Pelican Town and plays a central role in exploration, foraging, and progression throughout the game. The build emphasizes natural terrain flow, irregular paths, and layered vegetation to reflect the forest’s less structured layout. Care was taken to preserve the feeling of enclosure and depth that defines this area in Stardew Valley while translating it into a cohesive three-dimensional space in Minecraft.
+                                </p>
+                            </IntroSection>
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Construction"
+                                photos={ stardew_pictures.ForestConstruction }
+                                description={
+                                    <>
+                                        <p>
+                                            This section documents the construction phase of the Cindersap Forest, starting with the macro layout and landmark placement before moving into terrain shaping and route definition. Early work focused on establishing the region’s navigational logic—river bends and crossings, the main pond, and the placement of key structures like the Wizard’s Tower, the Hat Mouse’s house, and the ranch area. From there, the build progresses into elevation work and boundary shaping, translating Stardew’s softer curves into Minecraft’s grid-based terrain while keeping the overall flow and relationships intact.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Progress"
+                                photos={ stardew_pictures.ForestProgress }
+                                description={
+                                    <>
+                                        <p>
+                                            This section highlights the refinement phase of the Cindersap Forest as the area becomes more visually cohesive and recognizable. The images emphasize improved shoreline and river detailing, clearer path flow through the main landmarks, and the gradual addition of trees, ground cover, and natural breaks to soften hard edges where Minecraft forces sharper transitions. These progress shots focus on bringing the region closer to its final form, reinforcing the forest’s structure and spacing so it reads as a coherent slice of the original Stardew Valley map rather than a generic woodland build.
                                         </p>
                                     </>
                                 }

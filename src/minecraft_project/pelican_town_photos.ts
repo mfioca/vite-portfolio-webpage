@@ -10,8 +10,12 @@ function stardewValleyMainCityLink(folder: string, asset: string, width: number)
 function stardewValleyFarmBusPathLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/farm_bus_path/${folder}/${asset}?w=${width}&q=50`;
 }
+
+function stardewValleyForestLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/forest/${folder}/${asset}?w=${width}&q=50`;
+}
   
-export { stardewValleyGeneralLink, stardewValleyMainCityLink, stardewValleyFarmBusPathLink };
+export { stardewValleyGeneralLink, stardewValleyMainCityLink, stardewValleyFarmBusPathLink, stardewValleyForestLink };
 
 
 export const GridReference = [
@@ -527,11 +531,181 @@ export const FarmBusPathProgress = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for farm_bus_prog_6",
+  },
+  {
+    asset: "farm_bus_prog_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_prog_7",
+  },
+  {
+    asset: "farm_bus_prog_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_prog_8",
   }
 ].map(
   ({ asset, alt, width, height }) =>
     ({
       src: `${stardewValleyFarmBusPathLink("progress", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+/*************************************************************************/
+/*                             Forest                                    */
+/*************************************************************************/
+
+export const ForestConstruction = [
+  {
+    asset: "forest_const_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_1",
+  },
+  {
+    asset: "forest_const_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_2",
+  },
+  {
+    asset: "forest_const_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_3",
+  },
+  {
+    asset: "forest_const_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_4",
+  },
+  {
+    asset: "forest_const_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_5",
+  },
+  {
+    asset: "forest_const_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_6",
+  },
+  {
+    asset: "forest_const_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_7",
+  },
+  {
+    asset: "forest_const_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_8",
+  },
+  {
+    asset: "forest_const_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_9",
+  },
+  {
+    asset: "forest_const_10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_10",
+  },
+  {
+    asset: "forest_const_11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_11",
+  },
+  {
+    asset: "forest_const_12.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_12",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${stardewValleyForestLink("construction", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const ForestProgress = [
+  {
+    asset: "forest_prog_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_1",
+  },
+  {
+    asset: "forest_prog_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_2",
+  },
+  {
+    asset: "forest_prog_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_3",
+  },
+  {
+    asset: "forest_prog_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_4",
+  },
+  {
+    asset: "forest_prog_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_5",
+  },
+  {
+    asset: "forest_prog_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_6",
+  },
+  {
+    asset: "forest_prog_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_7",
+  },
+  {
+    asset: "forest_prog_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_8",
+  },
+  {
+    asset: "forest_prog_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_9",
+  },
+  {
+    asset: "forest_prog_10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_10",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${stardewValleyForestLink("progress", asset, width)}`,
       alt,
       width,
       height,
