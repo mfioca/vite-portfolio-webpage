@@ -6,8 +6,12 @@ function stardewValleyGeneralLink(folder: string, asset: string, width: number) 
 function stardewValleyMainCityLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/Main_city/${folder}/${asset}?w=${width}&q=50`;
 }
+
+function stardewValleyFarmBusPathLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/farm_bus_path/${folder}/${asset}?w=${width}&q=50`;
+}
   
-export { stardewValleyGeneralLink, stardewValleyMainCityLink };
+export { stardewValleyGeneralLink, stardewValleyMainCityLink, stardewValleyFarmBusPathLink };
 
 
 export const GridReference = [
@@ -424,6 +428,110 @@ export const MainCityProgress = [
   ({ asset, alt, width, height }) =>
     ({
       src: `${stardewValleyMainCityLink("Progress", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+/*************************************************************************/
+/*                      Farm Bus Path                                    */
+/*************************************************************************/
+
+export const FarmBusPathConstruction = [
+  {
+    asset: "farm_bus_const_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_const_1",
+  },
+  {
+    asset: "farm_bus_const_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_const_2",
+  },
+  {
+    asset: "farm_bus_const_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_const_3",
+  },
+  {
+    asset: "farm_bus_const_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_const_4",
+  },
+  {
+    asset: "farm_bus_const_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_const_5",
+  },
+  {
+    asset: "farm_bus_const_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_const_6",
+  },
+  {
+    asset: "farm_bus_const_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_const_7",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${stardewValleyFarmBusPathLink("construction", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const FarmBusPathProgress = [
+  {
+    asset: "farm_bus_prog_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_prog_1",
+  },
+  {
+    asset: "farm_bus_prog_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_prog_2",
+  },
+  {
+    asset: "farm_bus_prog_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_prog_3",
+  },
+  {
+    asset: "farm_bus_prog_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_prog_4",
+  },
+  {
+    asset: "farm_bus_prog_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_prog_5",
+  },
+  {
+    asset: "farm_bus_prog_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for farm_bus_prog_6",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${stardewValleyFarmBusPathLink("progress", asset, width)}`,
       alt,
       width,
       height,

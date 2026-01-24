@@ -15,6 +15,7 @@ const PelicanTown = () => {
                         <Tab>General</Tab>
                         <Tab>Beach</Tab>
                         <Tab>Main City</Tab>
+                        <Tab>Farm and Bus Area</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
@@ -99,6 +100,37 @@ const PelicanTown = () => {
                                     <>
                                         <p>
                                             This section highlights the gradual addition of details throughout the main city build, including newly placed houses, trees, fences, and terrain shaping. These in-progress shots capture how the town fills out and takes on more character over time as each area becomes more visually complete.
+                                        </p>
+                                    </>
+                                }
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                            <IntroSection title="Farm and Bus Area">
+                                <p>
+                                    This section covers the farm area and the northern edge of Pelican Town, including the bus station and the main path leading toward Robin’s House. These spaces serve as key transition zones between the town, the player’s farm, and the broader valley. The build emphasizes accurate spacing, path flow, and elevation changes, recreating how these areas connect and guide movement in the original Stardew Valley map while adapting them naturally to the surrounding Minecraft terrain.
+                                </p>
+                            </IntroSection>
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Construction"
+                                photos={ stardew_pictures.FarmBusPathConstruction }
+                                description={
+                                    <>
+                                        <p>
+                                            This section captures the construction phase of the farm outskirts and northern access route, focusing on the bus station area and the path leading above the tunnel. The images show the terrain being gradually built up to match the original elevation changes, followed by early framing work along the southeastern border of the farm and the river that flows down toward the forest. As the layout takes shape, trees, paths, and small landscape details are added to help define the route and make the transition between zones feel natural and accurate.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Progress"
+                                photos={ stardew_pictures.FarmBusPathProgress }
+                                description={
+                                    <>
+                                        <p>
+                                            This section focuses on the refinement phase of the farm and bus station area, highlighting the addition of visual and environmental details once the main layout was established. The images emphasize completed paths, fencing along the farm boundary, road details near the bus stop, and the placement of trees, flowers, and terrain accents throughout the area. Together, these finishing touches help solidify the transition between the farm, the bus station, and the surrounding paths, bringing the space closer to its final, fully realized form.
                                         </p>
                                     </>
                                 }
