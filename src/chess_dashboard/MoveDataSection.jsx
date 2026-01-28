@@ -234,7 +234,7 @@ const MoveDataSection = () => {
                 metricLabel="Average Number of Moves"
                 xField="Opponent rating"
                 yField={ selectedMoveField }
-                yMax= { 10 }
+                yMax= { 100 }
               />
             </div>
             <div className="chart2-box">
@@ -267,7 +267,6 @@ const MoveDataSection = () => {
                 }
               />
             </div>
-            
             <div className="chart2-box">
               <div
                 className="standard-margin"

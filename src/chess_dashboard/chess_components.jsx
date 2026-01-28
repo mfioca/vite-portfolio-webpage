@@ -274,7 +274,14 @@ export const FullWidthBarChart = ({
     plugins: {
       legend: { display: false },
       title: { display: false, text: title },
-      tooltip: { enabled: true },
+      tooltip: {
+        callbacks: {
+          afterLabel: (ctx) => {
+            const games = rawData[ctx.dataIndex]?.["Games Played"];
+            return games != null ? `Games Played: ${games}` : null;
+          }
+        }
+      },
       datalabels: { display: datalabels }
     },
     scales: {

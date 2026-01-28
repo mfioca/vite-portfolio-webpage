@@ -97,6 +97,15 @@ const opponentMetricOptions = [
     yMin: 0,
     yMax: 100,              
     yTickFormatter: (v) => v.toFixed(1)
+  },
+  {
+    key: 'errorSuppressionScore',
+    label: 'Error Suppression Score',
+    displayTitle: 'Error Suppression Score by Opponent',
+    valueField: 'Error Suppression Score',
+    yMin: 0,
+    yMax: 100,              
+    yTickFormatter: (v) => v.toFixed(1)
   }
 ];
 
