@@ -212,12 +212,56 @@ const GameDataSection = () => {
     gameRatingAverageOptions[0]
   );
 
+  const avgAccuracy =
+    data && data.length
+      ? (
+          data.reduce(
+            (sum, row) => sum + (Number(row["Accuracy"]) || 0),
+            0
+          ) / data.length
+        ).toFixed(2)
+      : null;
+
+  const avgGameRating =
+    data && data.length
+      ? Math.round(
+          data.reduce(
+            (sum, row) => sum + (Number(row["Game Rating"]) || 0),
+            0
+          ) / data.length
+        )
+      : null;
+
   return (
     <div className="box-style-standard standard-padding-margin">
       <div>
         <h2>Game Data</h2>
         { loading && <p>Loading data...</p>}
         { error && <p>Error: { error }</p>}
+        {data && (
+          <div className="game-data-summary">
+            <div className="game-data-summary-item">
+              <div className="game-data-summary-item">
+                <span className="game-data-summary-label">
+                  Average Accuracy
+                </span>
+                <span className="game-data-summary-value">
+                  { avgAccuracy }%
+                </span>
+              </div>
+            </div>
+            <div className="game-data-summary-item">
+              <div className="game-data-summary-item">
+                <span className="game-data-summary-label">
+                  Average Game Rating
+                </span>
+                <span className="game-data-summary-value">
+                  { avgGameRating }
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
         {data && (
           <div className="chart2-wrap">
             <div className="chart2-box">

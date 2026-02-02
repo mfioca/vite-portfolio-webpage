@@ -52,8 +52,120 @@ const ChessDashboard = () => {
           It scrapes accuracy, move classifications, opponent rating, and game context, then copies a TSV row to the clipboard for logging into a spreadsheet.
         </p>
         {isBookmarkletOpen && (
-          <pre className="bookmarklet-script-block">
-            {`javascript:(function(){try{const pgn=window.chesscom?.analysis?.pgn||'',isWhite=pgn.includes('[White "franknmullet"]');const opponent=(pgn.match(isWhite?/$begin:math:display$Black \"\(\.\+\?\)\"$end:math:display$/:/$begin:math:display$White \"\(\.\+\?\)\"$end:math:display$/)?.[1])||'UNKNOWN';let rating=[...document.querySelectorAll('*')].map(e=>e.textContent.trim()).find(t=>t.includes(opponent)&&t.includes('(')&&t.includes(')'))?.match(/$begin:math:text$\(\\d\{3\,4\}\)$end:math:text$/)?.[1]||'';if(!rating){rating=pgn.match(isWhite?/$begin:math:display$BlackElo \"\(\\d\+\)\"$end:math:display$/:/$begin:math:display$WhiteElo \"\(\\d\+\)\"$end:math:display$/)?.[1]||''}const colorMine=isWhite?'White':'Black',colorBot=isWhite?'Black':'White';let spans=[...document.querySelectorAll('span')].map(e=>e.textContent.trim()).filter(t=>/^\d{1,3}\.\d$/.test(t));let accuracy=isWhite?spans[1]:spans[2];const allText=[...document.querySelectorAll('*')].map(e=>e.textContent.trim());const block=allText.find(t=>t.includes('Accuracy')&&t.includes('Brilliant'))||'';if(!accuracy){const accM=block.match(/Accuracy\s+(\d{1,3}\.\d)\s+(\d{1,3}\.\d)/);if(accM)accuracy=isWhite?accM[1]:accM[2]}const rx=/(Brilliant|Great|Best|Excellent|Good|Book|Inaccuracy|Mistake|Miss|Blunder)\s+(\d+)\s+(\d+)/g;const stats={};const pageText=document.body.innerText.replace(/\s+/g,' ');for(const[,lab,w,b]of pageText.matchAll(rx)){const v=parseInt(isWhite?w:b,10);stats[lab]=(stats[lab]||0)+v}if(stats.Miss==null){const body=document.body.innerText.replace(/\s+/g,' ');const pair=body.match(/Miss(?:\s|[^\d]){0,40}(\d+)(?:\s|[^\d]){0,40}(\d+)/);if(pair){stats.Miss=parseInt(isWhite?pair[1]:pair[2],10)}else{const singles=[...body.matchAll(/Miss\s+(\d+)/g)].map(m=>parseInt(m[1],10));stats.Miss=singles.length?Math.max(...singles):0}}const total=Object.values(stats).reduce((s,v)=>s+(v||0),0);const result=prompt('Enter result (Win / Loss / Draw):');const gameRating=prompt('Enter Game Rating (e.g. 1450):');const row=[opponent,rating,colorBot,colorMine,result,accuracy,total,gameRating,stats.Brilliant||0,stats.Great||0,stats.Best||0,stats.Excellent||0,stats.Good||0,stats.Book||0,stats.Inaccuracy||0,stats.Mistake||0,stats.Miss||0,stats.Blunder||0].join('\\t');navigator.clipboard.writeText(row).then(()=>alert('✅ TSV row copied to clipboard!'))}catch(e){alert('❌ Script failed. See console.');console.error(e);}})();`}
+          <pre className="sheet-script-container bookmarklet-script-block">
+            {`javascript:(function(){
+              try{
+                const pgn=window.chesscom?.analysis?.pgn||'',
+                      isWhite=pgn.includes('[White "franknmullet"]');
+
+                const opponent=
+                  (pgn.match(
+                    isWhite
+                      ?/$begin:math:display$Black "(.+?)"$end:math:display$/
+                      :/$begin:math:display$White "(.+?)"$end:math:display$/
+                  )?.[1])||'UNKNOWN';
+
+                let rating=
+                  [...document.querySelectorAll('*')]
+                    .map(e=>e.textContent.trim())
+                    .find(t=>t.includes(opponent)&&t.includes('(')&&t.includes(')'))
+                    ?.match(/$begin:math:text$(\d{3,4})$end:math:text$/)?.[1]||'';
+
+                if(!rating){
+                  rating=pgn.match(
+                    isWhite
+                      ?/$begin:math:display$BlackElo "(\d+)"$end:math:display$/
+                      :/$begin:math:display$WhiteElo "(\d+)"$end:math:display$/
+                  )?.[1]||'';
+                }
+
+                const colorMine=isWhite?'White':'Black',
+                      colorBot=isWhite?'Black':'White';
+
+                let spans=
+                  [...document.querySelectorAll('span')]
+                    .map(e=>e.textContent.trim())
+                    .filter(t=>/^d{1,3}.d$/.test(t));
+
+                let accuracy=isWhite?spans[1]:spans[2];
+
+                const allText=
+                  [...document.querySelectorAll('*')]
+                    .map(e=>e.textContent.trim());
+
+                const block=
+                  allText.find(
+                    t=>t.includes('Accuracy')&&t.includes('Brilliant')
+                  )||'';
+
+                if(!accuracy){
+                  const accM=block.match(/Accuracys+(d{1,3}.d)s+(d{1,3}.d)/);
+                  if(accM)accuracy=isWhite?accM[1]:accM[2];
+                }
+
+                const rx=
+                  /(Brilliant|Great|Best|Excellent|Good|Book|Inaccuracy|Mistake|Miss|Blunder)s+(d+)s+(d+)/g;
+
+                const stats={};
+                const pageText=document.body.innerText.replace(/s+/g,' ');
+
+                for(const[,lab,w,b]of pageText.matchAll(rx)){
+                  const v=parseInt(isWhite?w:b,10);
+                  stats[lab]=(stats[lab]||0)+v;
+                }
+
+                if(stats.Miss==null){
+                  const body=document.body.innerText.replace(/s+/g,' ');
+                  const pair=body.match(
+                    /Miss(?:s|[^d]){0,40}(d+)(?:s|[^d]){0,40}(d+)/
+                  );
+
+                  if(pair){
+                    stats.Miss=parseInt(isWhite?pair[1]:pair[2],10);
+                  }else{
+                    const singles=
+                      [...body.matchAll(/Misss+(d+)/g)]
+                        .map(m=>parseInt(m[1],10));
+                    stats.Miss=singles.length?Math.max(...singles):0;
+                  }
+                }
+
+                const total=
+                  Object.values(stats).reduce((s,v)=>s+(v||0),0);
+
+                const result=prompt('Enter result (Win / Loss / Draw):');
+                const gameRating=prompt('Enter Game Rating (e.g. 1450):');
+
+                const row=[
+                  opponent,
+                  rating,
+                  colorBot,
+                  colorMine,
+                  result,
+                  accuracy,
+                  total,
+                  gameRating,
+                  stats.Brilliant||0,
+                  stats.Great||0,
+                  stats.Best||0,
+                  stats.Excellent||0,
+                  stats.Good||0,
+                  stats.Book||0,
+                  stats.Inaccuracy||0,
+                  stats.Mistake||0,
+                  stats.Miss||0,
+                  stats.Blunder||0
+                ].join('\\t');
+
+                navigator.clipboard
+                  .writeText(row)
+                  .then(()=>alert('✅ TSV row copied to clipboard!'));
+
+              }catch(e){
+                alert('❌ Script failed. See console.');
+                console.error(e);
+              }
+            })();`}
           </pre>
         )}
       </div>
@@ -72,7 +184,7 @@ const ChessDashboard = () => {
           fetch structured game data directly from Google Sheets.
         </p>
         {isSheetScriptOpen && (
-          <pre className=" sheet-script-container bookmarklet-script-block">
+          <pre className="sheet-script-container bookmarklet-script-block">
             {`function doGet(e) {
               const sheetName = e.parameter.sheet;
               if (!sheetName) {
@@ -117,7 +229,8 @@ const ChessDashboard = () => {
       </div>
       <DividerLine/>
       <div className="standard-padding-margin-center base-max-width">
-        <Tabs className="standard-tabs" forceRenderTabPanel>
+        {/* forced render loads all data in each tab */}
+        <Tabs className="standard-tabs" forceRenderTabPanel> 
           <TabList className="grid-tablist">
             <Tab>Game Data</Tab>
             <Tab>Opponent Data</Tab>

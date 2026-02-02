@@ -7,6 +7,48 @@
 }
 
 
+
+
+
+.game-data-summary {
+  display: flex;
+  width: 100%;
+}
+
+.game-data-summary-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.game-data-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.game-data-summary-label {
+  font-size: 1.25rem;
+  font-weight: bold;
+  
+  margin-bottom: 4px;
+}
+
+.game-data-summary-value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--buttonbackground);
+  
+}
+
+
+
+
+
+
 .game-archive-table-container {
   overflow-x: auto;
   margin: var(--marginV20) 0;
@@ -120,7 +162,7 @@
 }
 
 .sheet-script-container {
-  max-width: 800px;   /* or 700px if you want it tighter */
+  max-width: 850px;   /* or 700px if you want it tighter */
   margin-left: auto;
   margin-right: auto;
 }
