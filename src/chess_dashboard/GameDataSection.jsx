@@ -263,8 +263,8 @@ const GameDataSection = () => {
           </div>
         )}
         {data && (
-          <div className="chart2-wrap">
-            <div className="chart2-box">
+          <div className="chesschart-wrap">
+            <div className="chesschart-box">
               <select
                 value={ selectedAccuracyRange.key }
                 onChange={(e) =>
@@ -292,7 +292,7 @@ const GameDataSection = () => {
                   yMax = { 100 }
                 />
             </div>
-            <div className="chart2-box">
+            <div className="chesschart-box">
               <select
                 value={ selectedAccuracyAverage.key }
                 onChange={(e) =>
@@ -318,7 +318,7 @@ const GameDataSection = () => {
                   yMax={ 100 }
                 />
             </div>
-            <div className="chart2-box">
+            <div className="chesschart-box">
               <select
                 value={ selectedGameRatingRange.key }
                 onChange={(e) =>
@@ -346,7 +346,7 @@ const GameDataSection = () => {
                   yMax = { 2000 }
                 />
             </div>
-            <div className="chart2-box">
+            <div className="chesschart-box">
               <select
                 value={ selectedGameRatingAverage.key }
                 onChange={(e) =>

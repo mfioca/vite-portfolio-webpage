@@ -221,7 +221,7 @@ export const BarChart = ({
   };
 
   return (
-    <div className="chart2-container">
+    <div className="chesschart-container">
       <Bar  data={ chartData } options={ chartOptions } />
     </div>
   );
@@ -370,7 +370,7 @@ export const GroupedBarChart = ({
   };
 
   return (
-    <div className="chart2-container">
+    <div className="chesschart-container">
       <Bar data={ chartData } options={ chartOptions } />
     </div>
   );
@@ -432,7 +432,7 @@ export const LineChart = ({
   };
 
   return (
-    <div className="chart2-container">
+    <div className="chesschart-container">
       <Line data={ chartData } options={ chartOptions } />
     </div>
   );
@@ -523,7 +523,7 @@ export const CandleChart = ({
   };
 
   return (
-    <div className="chart2-container">
+    <div className="chesschart-container">
       <Chart type="candlestick" data={ data } options={ options } />
     </div>
   );
@@ -626,7 +626,7 @@ export const StackedPercentBarChart = ({
   };
 
   return (
-    <div className="chart2-container">
+    <div className="chesschart-container">
       <Bar data={ chartData } options={ chartOptions } />
     </div>
   );

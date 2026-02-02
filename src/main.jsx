@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Link, useLocation } from 'react-router-dom';
 import ThemeSwitcher from './ThemeSwitcher';
 import './index.css';
+import './tabs.css';
 import Home from './Home'; 
 import Dashboard from './Dashboard';
 import AboutPage from './About'; 

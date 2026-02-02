@@ -146,7 +146,7 @@ const OpponentDataSection = () => {
         { selectedMetric.displayTitle }
       </p>
       {data && (
-        <div className="chart2-scroll-x">
+        <div className="chesschart-scroll-x">
           <FullWidthBarChart
             rawData={ data }
             labelField="Opponent"

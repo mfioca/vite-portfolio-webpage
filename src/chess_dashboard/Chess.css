@@ -6,9 +6,23 @@
   min-height: 100vh;
 }
 
+.script-container {
+  max-width: 850px;   
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.script-block {
+  background-color: #f4f4f4;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.4;
+}
 
-
+/*************************************************************************/
+/*                       Game Summary                                    */
+/*************************************************************************/
 
 .game-data-summary {
   display: flex;
@@ -19,34 +33,25 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100px;
-}
-
-.game-data-summary-item {
-  display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100px;
+  font-weight: bold;
 }
-
 
 .game-data-summary-label {
   font-size: 1.25rem;
-  font-weight: bold;
-  
   margin-bottom: 4px;
 }
 
 .game-data-summary-value {
   font-size: 1.6rem;
-  font-weight: bold;
   color: var(--buttonbackground);
-  
 }
 
-
-
-
+/*************************************************************************/
+/*                    Game Archive Main Table                            */
+/*************************************************************************/
 
 
 .game-archive-table-container {
@@ -60,21 +65,43 @@
 .game-archive-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 1000px; /* Force horizontal scroll */
+  min-width: 1000px; 
 }
 
 .game-archive-table th {
-  white-space: normal;       /* allow wrapping */
-  word-wrap: break-word;     /* legacy support */
-  overflow-wrap: break-word; /* modern fallback */
-  text-align: center;        /* keep it neat */
+  white-space: normal;       
+  word-wrap: break-word;     
+  overflow-wrap: break-word; 
+  text-align: center;        
   max-width: 150px;
-  padding: 8px;              /* existing padding */
-  font-size: 0.9rem;         /* match your existing size */
+  padding: 8px;              
+  font-size: 0.9rem;         
   border: var(--tableborder);
   background-color: var(--tableheaderdarkcolor);
   color: var(--colorwhite);
   font-weight: bold;
+}
+
+.game-archive-table th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background-color: var(--tableheaderdarkcolor);
+  color: var(--colorwhite);
+}
+
+.game-archive-table th:first-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 2px;
+  height: 100%;
+  background-color: black;
+}
+
+.game-archive-table tr:hover {
+  background-color: var(--tablemouseovercolor);
 }
 
 .game-archive-table td {
@@ -103,37 +130,6 @@
   background-color: black;
 }
 
-.game-archive-table th:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 2;
-  background-color: var(--tableheaderdarkcolor);
-  color: var(--colorwhite);
-}
-
-.game-archive-table th:first-child::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -1px;
-  width: 2px;
-  height: 100%;
-  background-color: black;
-}
-
-.game-archive-table th {
-  position: sticky;
-  top: 0;
-  background-color: var(--tableheaderdarkcolor);
-  color: var(--colorwhite);
-  font-weight: bold;
-  text-align: center;
-}
-
-.game-archive-table tr:hover {
-  background-color: var(--tablemouseovercolor);
-}
-
 .pagination {
   display: flex;
   justify-content: center;
@@ -147,28 +143,7 @@
   cursor: not-allowed;
 }
 
-
-.bookmarklet-script-block {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f4f4f4;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  white-space: pre-wrap;
-  word-break: break-word;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  line-height: 1.4;
-}
-
-.sheet-script-container {
-  max-width: 850px;   /* or 700px if you want it tighter */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.chart2-container {
+.chesschart-container {
   width: 500px;
   max-width: 500px;
   height: 350px;
@@ -179,18 +154,7 @@
   box-shadow: var(--boxshadow);
 }
 
-.full-width-chart-container {
-  width: 2500px;
-  
-  height: 600px;
-  margin: var(--marginV20) auto;
-  padding: var(--padding);
-  background-color: var(--colorwhite);
-  border-radius: var(--borderradius);
-  box-shadow: var(--boxshadow);
-}
-
-.chart2-wrap {
+.chesschart-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -199,14 +163,25 @@
   margin: var(--margin) auto;
 }
 
-.chart2-box {
+.chesschart-box {
   display: flex;
   flex-direction: column;
   gap: var(--gap10);
   
 }
 
-.chart2-scroll-x {
+.chesschart-scroll-x {
   overflow-x: auto;
   width: 100%;
 }
+
+.full-width-chart-container {
+  width: 2500px;
+  height: 600px;
+  margin: var(--marginV20) auto;
+  padding: var(--padding);
+  background-color: var(--colorwhite);
+  border-radius: var(--borderradius);
+  box-shadow: var(--boxshadow);
+}
+

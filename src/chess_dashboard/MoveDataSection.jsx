@@ -181,8 +181,8 @@ const MoveDataSection = () => {
       <h2>Move Data</h2>
       <div>
         {data && (
-          <div className="chart2-wrap">
-            <div className="chart2-box">
+          <div className="chesschart-wrap">
+            <div className="chesschart-box">
               <select
                 value={ selectedMoveLengthField }
                 onChange={ (e) => setSelectedMoveLengthField(e.target.value) }
@@ -202,7 +202,7 @@ const MoveDataSection = () => {
                 yField={ selectedMoveLengthField }
               />
             </div>
-            <div className="chart2-box">
+            <div className="chesschart-box">
               <div className="standard-margin" style={{ fontWeight: 'bold', textAlign: 'center' }}>
                 Game Length Win vs Loss
               </div>
@@ -216,7 +216,7 @@ const MoveDataSection = () => {
                 ]}
               />
             </div>
-            <div className="chart2-box">
+            <div className="chesschart-box">
               <select
                 value={ selectedMoveField }
                 onChange={ (e) => setSelectedMoveField(e.target.value) }
@@ -237,7 +237,7 @@ const MoveDataSection = () => {
                 yMax= { 100 }
               />
             </div>
-            <div className="chart2-box">
+            <div className="chesschart-box">
               <select
                 value={ selectedMoveQualityView.key }
                 onChange={(e) =>
@@ -267,7 +267,7 @@ const MoveDataSection = () => {
                 }
               />
             </div>
-            <div className="chart2-box">
+            <div className="chesschart-box">
               <div
                 className="standard-margin"
                 style={{ fontWeight: 'bold', textAlign: 'center' }}
