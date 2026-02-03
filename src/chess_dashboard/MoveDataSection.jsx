@@ -234,7 +234,7 @@ const MoveDataSection = () => {
                 metricLabel="Average Number of Moves"
                 xField="Opponent rating"
                 yField={ selectedMoveField }
-                yMax= { 100 }
+                yMax= { 70 }
               />
             </div>
             <div className="chesschart-box">
