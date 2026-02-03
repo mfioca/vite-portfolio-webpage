@@ -20,7 +20,6 @@
 
 .grid-tablist .react-tabs__tab--selected {
   border-color: var(--bordercolor);
-
 }
 
 @media (max-width: 768px) {
