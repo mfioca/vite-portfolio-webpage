@@ -240,26 +240,22 @@ const GameDataSection = () => {
         { error && <p>Error: { error }</p>}
         {data && (
           <div className="game-data-summary">
-            
-              <div className="game-data-summary-item">
-                <span className="game-data-summary-label">
-                  Average Accuracy
-                </span>
-                <span className="game-data-summary-value">
-                  { avgAccuracy }%
-                </span>
-              
+            <div className="game-data-summary-item">
+              <span className="game-data-summary-label">
+                Average Accuracy
+              </span>
+              <span className="game-data-summary-value">
+                { avgAccuracy }%
+              </span>
             </div>
-            
-              <div className="game-data-summary-item">
-                <span className="game-data-summary-label">
-                  Average Game Rating
-                </span>
-                <span className="game-data-summary-value">
-                  { avgGameRating }
-                </span>
-              </div>
-            
+            <div className="game-data-summary-item">
+              <span className="game-data-summary-label">
+                Average Game Rating
+              </span>
+              <span className="game-data-summary-value">
+                { avgGameRating }
+              </span>
+            </div>
           </div>
         )}
         {data && (
