@@ -110,9 +110,21 @@ const opponentMetricOptions = [
 ];
 
 const OpponentDataSection = () => {
-  const { data, loading, error } = useFetchJsonData(
+  const {
+    data: data,
+    loading: loading,
+    error: error
+  } = useFetchJsonData(
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Opponent%20data"
   );
+
+  const {
+    data: altdata
+    
+  } = useFetchJsonData(
+    "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Opponent%20Data%202"
+  );
+
 
   const [selectedMetric, setSelectedMetric] = useState(opponentMetricOptions[0]);
 
@@ -167,6 +179,14 @@ const OpponentDataSection = () => {
             data={ data.map(formatOpponentData) }
             rowsPerPage={ 15 }
             title="Opponent Data"
+          />
+        )}
+        
+        {data && (
+          <PaginatedTable
+            data={ altdata.map(formatOpponentData) }
+            rowsPerPage={ 15 }
+            title="Opponent Data 2"
           />
         )}
       </div>
