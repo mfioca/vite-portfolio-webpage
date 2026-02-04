@@ -630,6 +630,36 @@ export const ForestConstruction = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for forest_const_12",
+  },
+  {
+    asset: "forest_const_13.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_13",
+  },
+  {
+    asset: "forest_const_14.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_14",
+  },
+  {
+    asset: "forest_const_15.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_15",
+  },
+  {
+    asset: "forest_const_16.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_16",
+  },
+  {
+    asset: "forest_const_17.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_const_17",
   }
 ].map(
   ({ asset, alt, width, height }) =>
@@ -701,6 +731,30 @@ export const ForestProgress = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for forest_prog_10",
+  },
+  {
+    asset: "forest_prog_11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_11",
+  },
+  {
+    asset: "forest_prog_12.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_12",
+  },
+  {
+    asset: "forest_prog_13.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_13",
+  },
+  {
+    asset: "forest_prog_14.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for forest_prog_14",
   }
 ].map(
   ({ asset, alt, width, height }) =>
