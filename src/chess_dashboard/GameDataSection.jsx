@@ -240,7 +240,7 @@ const GameDataSection = () => {
         { error && <p>Error: { error }</p>}
         {data && (
           <div className="game-data-summary">
-            <div className="game-data-summary-item">
+            
               <div className="game-data-summary-item">
                 <span className="game-data-summary-label">
                   Average Accuracy
@@ -248,9 +248,9 @@ const GameDataSection = () => {
                 <span className="game-data-summary-value">
                   { avgAccuracy }%
                 </span>
-              </div>
+              
             </div>
-            <div className="game-data-summary-item">
+            
               <div className="game-data-summary-item">
                 <span className="game-data-summary-label">
                   Average Game Rating
@@ -259,7 +259,7 @@ const GameDataSection = () => {
                   { avgGameRating }
                 </span>
               </div>
-            </div>
+            
           </div>
         )}
         {data && (

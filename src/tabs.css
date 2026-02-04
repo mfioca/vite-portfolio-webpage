@@ -26,6 +26,8 @@
   .grid-tablist {
     gap: 5px;
     margin-bottom: var(--gap10);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .grid-tablist .react-tabs__tab {

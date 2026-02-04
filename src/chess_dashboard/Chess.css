@@ -42,11 +42,13 @@
 .game-data-summary-label {
   font-size: 1.25rem;
   margin-bottom: 4px;
+  text-align: center;
 }
 
 .game-data-summary-value {
   font-size: 1.6rem;
   color: var(--buttonbackground);
+  
 }
 
 /*************************************************************************/
@@ -166,13 +168,14 @@
 .chesschart-box {
   display: flex;
   flex-direction: column;
-  gap: var(--gap10);
-  
+  gap: var(--gap10); 
 }
 
 .chesschart-scroll-x {
-  overflow-x: auto;
   width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .full-width-chart-container {
@@ -185,3 +188,33 @@
   box-shadow: var(--boxshadow);
 }
 
+@media (max-width: 768px) {
+  .chesschart-wrap {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .chesschart-container {
+    width: 100%;
+    max-width: 90%;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .chesschart-box {
+    width: 100%;
+    align-items: center;
+  }
+
+  select {
+    width: 90%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .full-width-chart-container {
+    min-width: 1800px;
+    height: 350px;
+  }
+}
