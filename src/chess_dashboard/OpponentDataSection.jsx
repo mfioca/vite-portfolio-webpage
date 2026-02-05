@@ -275,13 +275,8 @@ const OpponentDataSection = () => {
                   />
                 </div>
               )}
-              {data && (
-                <PaginatedTable
-                  data={ altdata.map(formatOpponentData) }
-                  rowsPerPage={ 15 }
-                  title="Opponent Data Table"
-                />
-              )}
+              
+              
             </BodyContainer>
           </TabPanel>
         </Tabs>
