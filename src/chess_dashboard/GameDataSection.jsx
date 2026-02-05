@@ -231,7 +231,7 @@ const GameDataSection = () => {
           ) / data.length
         )
       : null;
-
+  
   return (
     <div className="box-style-standard standard-padding-margin">
       <div>
