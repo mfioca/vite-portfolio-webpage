@@ -235,7 +235,7 @@ const OpponentDataSection = () => {
             </BodyContainer>
           </TabPanel>
           <TabPanel>
-            <BodyContainer>
+            <BodyContainer hasBackground = { false }>
               <select
                 value={ selectedMetric.key }
                 onChange={(e) =>
@@ -275,8 +275,14 @@ const OpponentDataSection = () => {
                   />
                 </div>
               )}
-              
-              
+              <DividerLine/>
+              {altdata && (
+                <PaginatedTable
+                  data={ altdata.map(formatOpponentData) }
+                  rowsPerPage={ 15 }
+                  title="Opponent Data Table"
+                />
+              )}
             </BodyContainer>
           </TabPanel>
         </Tabs>
