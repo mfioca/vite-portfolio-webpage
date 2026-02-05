@@ -168,7 +168,6 @@ const OpponentDataSection = () => {
 
   const {
     data: altdata
-    
   } = useFetchJsonData(
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Opponent%20Data%202"
   );
@@ -185,9 +184,9 @@ const OpponentDataSection = () => {
             <Tab>By Opponent (Condensed)</Tab>
           </TabList>
           <TabPanel>
-            <BodyContainer hasBackground = {true}>
+            <BodyContainer hasBackground = { true }>
               <select
-                value={selectedMetric.key}
+                value={ selectedMetric.key }
                 onChange={(e) =>
                   setSelectedMetric(
                     opponentMetricOptions.find(opt => opt.key === e.target.value)
@@ -196,8 +195,8 @@ const OpponentDataSection = () => {
                 className="standard-margin center-margin"
               >
                 {opponentMetricOptions.map(opt => (
-                  <option key={opt.key} value={opt.key}>
-                    {opt.label}
+                  <option key={ opt.key } value={ opt.key }>
+                    { opt.label }
                   </option>
                 ))}
               </select>
@@ -225,10 +224,7 @@ const OpponentDataSection = () => {
                   />
                 </div>
               )}
-            
             <DividerLine/>
-            
-            
             {data && (
               <PaginatedTable
                 data={ data.map(formatOpponentData) }
@@ -240,9 +236,8 @@ const OpponentDataSection = () => {
           </TabPanel>
           <TabPanel>
             <BodyContainer>
-            
-<select
-                value={selectedMetric.key}
+              <select
+                value={ selectedMetric.key }
                 onChange={(e) =>
                   setSelectedMetric(
                     opponentAltMetricOptions.find(opt => opt.key === e.target.value)
@@ -251,8 +246,8 @@ const OpponentDataSection = () => {
                 className="standard-margin center-margin"
               >
                 {opponentAltMetricOptions.map(opt => (
-                  <option key={opt.key} value={opt.key}>
-                    {opt.label}
+                  <option key={ opt.key } value={ opt.key }>
+                    { opt.label }
                   </option>
                 ))}
               </select>
@@ -266,11 +261,7 @@ const OpponentDataSection = () => {
               >
                 { selectedMetric.displayTitle }
               </p>
-
-
-
-
-            {altdata && (
+              {altdata && (
                 <div className="chesschart-scroll-x">
                   <FullWidthBarChart
                     rawData={ altdata }
@@ -284,13 +275,13 @@ const OpponentDataSection = () => {
                   />
                 </div>
               )}
-            {data && (
-              <PaginatedTable
-                data={ altdata.map(formatOpponentData) }
-                rowsPerPage={ 15 }
-                title="Opponent Data Table"
-              />
-            )}
+              {data && (
+                <PaginatedTable
+                  data={ altdata.map(formatOpponentData) }
+                  rowsPerPage={ 15 }
+                  title="Opponent Data Table"
+                />
+              )}
             </BodyContainer>
           </TabPanel>
         </Tabs>
