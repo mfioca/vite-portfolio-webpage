@@ -235,7 +235,7 @@ const OpponentDataSection = () => {
             </BodyContainer>
           </TabPanel>
           <TabPanel>
-            <BodyContainer hasBackground = { false }>
+            <BodyContainer hasBackground = { true }>
               <select
                 value={ selectedMetric.key }
                 onChange={(e) =>
