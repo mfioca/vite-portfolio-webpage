@@ -386,19 +386,3 @@ const GameDataSection = () => {
 };
 
 export default GameDataSection;
-
-
-/*
-{data && (
-        <>
-          <CandleChart
-            title="Accuracy Highs and Lows by Opponent Rating"
-            rawData={ data }
-            datalabels={ false }
-            labelField="Opponent rating"
-            highField="Accuracy High"
-            lowField="Accuracy Low"
-          />
-        </>
-        )}
-*/

@@ -304,32 +304,3 @@ const MoveDataSection = () => {
 };
 
 export default MoveDataSection;
-
-
-/*
-<div className="flex-wrap-center gap-20">
-            <LineChart
-              title="Average Game Length by Opponent Rating"
-              rawData={data}
-              xField="Opponent rating"
-              yField="Average number of moves"
-            />
-<StackedPercentBarChart
-              title="Move Quality Distribution by Opponent Rating"
-              rawData={data}
-              labelField="Opponent rating"
-              valueFields={[
-                "brilliant",
-                "great",
-                "best",
-                "excellent",
-                "good",
-                "book",
-                "inaccuracy",
-                "mistake",
-                "miss",
-                "blunder"
-              ]}
-            />
-          </div>
-*/

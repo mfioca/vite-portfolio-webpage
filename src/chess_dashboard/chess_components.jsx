@@ -32,7 +32,9 @@ ChartJS.register(
   CandlestickElement
 );
 
-
+/*************************************************************************/
+/*                             Tables                                    */
+/*************************************************************************/
 
 export const PaginatedTable = ({ data, rowsPerPage = 25, title }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -170,6 +172,9 @@ export const GameArchiveTable = ({ data, rowsPerPage = 25, title }) => {
   );
 };
 
+/*************************************************************************/
+/*                            Bar Charts                                 */
+/*************************************************************************/
 
 export const BarChart = ({
   title,
@@ -240,12 +245,13 @@ export const FullWidthBarChart = ({
   yMin = 0
 }) => {
   const cleanedData = rawData
-    .filter(row => row[labelField] && row[valueField])
-    .map(row => ({
-        label: row[labelField].toString(),
-        value: parseFloat(row[valueField])
-    }))
-    .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
+  .filter(row => row[labelField] && row[valueField])
+  .map(row => ({
+    label: row[labelField].toString(),
+    value: parseFloat(row[valueField]),
+    games: row["Games Played"]
+  }))
+  .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
 
   const chartData = {
     labels: cleanedData.map(entry => entry.label),
@@ -277,7 +283,7 @@ export const FullWidthBarChart = ({
       tooltip: {
         callbacks: {
           afterLabel: (ctx) => {
-            const games = rawData[ctx.dataIndex]?.["Games Played"];
+            const games = cleanedData[ctx.dataIndex]?.games;
             return games != null ? `Games Played: ${games}` : null;
           }
         }
@@ -372,159 +378,6 @@ export const GroupedBarChart = ({
   return (
     <div className="chesschart-container">
       <Bar data={ chartData } options={ chartOptions } />
-    </div>
-  );
-};
-
-export const LineChart = ({
-  title,
-  rawData = [],
-  datalabels = false,
-  metricLabel,
-  xField,
-  yField,
-  yMin,
-  yMax
-}) => {
-
-  const cleanedData = rawData
-    .filter(row => row[xField] != null && row[yField] != null)
-    .map(row => ({
-      x: Number(row[xField]),
-      y: Number(row[yField])
-    }))
-    .sort((a, b) => a.x - b.x);
-
-  const chartData = {
-    datasets: [
-      {
-        label: title,
-        data: cleanedData,
-        borderColor: 'rgba(54, 162, 235, 1)',
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        tension: 0.2,
-        pointRadius: 3
-      }
-    ]
-  };
-
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      title: { display: true, text: title },
-      tooltip: { enabled: true },
-      datalabels: { display: datalabels }
-    },
-    scales: {
-      x: {
-        type: 'linear',
-        title: { display: true, text: 'Opponent rating' },
-        ticks: { precision: 0 }
-      },
-      y: {
-        title: { display: true, text: metricLabel },
-        min: yMin,
-        max: yMax
-      }
-    }
-  };
-
-  return (
-    <div className="chesschart-container">
-      <Line data={ chartData } options={ chartOptions } />
-    </div>
-  );
-};
-
-
-export const CandleChart = ({
-  title,
-  rawData = [],
-  labelField,
-  highField,
-  lowField,
-  datalabels = false,
-  metricLabel,
-  yMax = 100,
-  yMin = 0
-}) => {
-
-  const cleanedData = rawData
-  .filter(
-    row =>
-      row[labelField] != null &&
-      row[highField] != null &&
-      row[lowField] != null
-  )
-  .map(row => ({
-    x: Number(row[labelField]),
-    o: Number(row[lowField]),
-    h: Number(row[highField]),
-    l: Number(row[lowField]),
-    c: Number(row[highField])
-  }))
-  .sort((a, b) => a.x - b.x);
-
-  const data = {
-    datasets: [
-      {
-        label: title,
-        type: 'candlestick',              
-        data: cleanedData,
-        clip: false,
-        color: {
-          up: '#26a69a',
-          down: '#ef5350',
-          unchanged: '#999'
-        }
-      }
-    ]
-  };
-
-  const options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      title: { display: true, text: title },
-      tooltip: {
-        enabled: true,
-        mode: 'nearest',
-        intersect: false,
-        callbacks: {
-          label: (ctx) => {
-            const { x, l, h } = ctx.raw;
-            return `Rating: ${x} | ${metricLabel}: ${l.toFixed(0)}–${h.toFixed(0)}`;
-          }
-        }
-      },
-      datalabels: { display: datalabels }
-    },
-    scales: {
-      x: {
-        type: 'linear',
-        title: { display: true, text: 'Opponent Rating' },
-        ticks: {
-          precision: 0,
-          autoSkip: false
-        },
-        grid: {
-          offset: false
-        }
-      },
-      y: {
-        min: yMin,
-        max: yMax,
-        title: { display: true, text: metricLabel }
-      }
-    }
-  };
-
-  return (
-    <div className="chesschart-container">
-      <Chart type="candlestick" data={ data } options={ options } />
     </div>
   );
 };
@@ -631,3 +484,165 @@ export const StackedPercentBarChart = ({
     </div>
   );
 };
+
+/*************************************************************************/
+/*                             Line Charts                               */
+/*************************************************************************/
+
+export const LineChart = ({
+  title,
+  rawData = [],
+  datalabels = false,
+  metricLabel,
+  xField,
+  yField,
+  yMin,
+  yMax
+}) => {
+
+  const cleanedData = rawData
+    .filter(row => row[xField] != null && row[yField] != null)
+    .map(row => ({
+      x: Number(row[xField]),
+      y: Number(row[yField])
+    }))
+    .sort((a, b) => a.x - b.x);
+
+  const chartData = {
+    datasets: [
+      {
+        label: title,
+        data: cleanedData,
+        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        tension: 0.2,
+        pointRadius: 3
+      }
+    ]
+  };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      title: { display: true, text: title },
+      tooltip: { enabled: true },
+      datalabels: { display: datalabels }
+    },
+    scales: {
+      x: {
+        type: 'linear',
+        title: { display: true, text: 'Opponent rating' },
+        ticks: { precision: 0 }
+      },
+      y: {
+        title: { display: true, text: metricLabel },
+        min: yMin,
+        max: yMax
+      }
+    }
+  };
+
+  return (
+    <div className="chesschart-container">
+      <Line data={ chartData } options={ chartOptions } />
+    </div>
+  );
+};
+
+
+/*************************************************************************/
+/*                             Candle Charts                              */
+/*************************************************************************/
+
+export const CandleChart = ({
+  title,
+  rawData = [],
+  labelField,
+  highField,
+  lowField,
+  datalabels = false,
+  metricLabel,
+  yMax = 100,
+  yMin = 0
+}) => {
+
+  const cleanedData = rawData
+  .filter(
+    row =>
+      row[labelField] != null &&
+      row[highField] != null &&
+      row[lowField] != null
+  )
+  .map(row => ({
+    x: Number(row[labelField]),
+    o: Number(row[lowField]),
+    h: Number(row[highField]),
+    l: Number(row[lowField]),
+    c: Number(row[highField])
+  }))
+  .sort((a, b) => a.x - b.x);
+
+  const data = {
+    datasets: [
+      {
+        label: title,
+        type: 'candlestick',              
+        data: cleanedData,
+        clip: false,
+        color: {
+          up: '#26a69a',
+          down: '#ef5350',
+          unchanged: '#999'
+        }
+      }
+    ]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      title: { display: true, text: title },
+      tooltip: {
+        enabled: true,
+        mode: 'nearest',
+        intersect: false,
+        callbacks: {
+          label: (ctx) => {
+            const { x, l, h } = ctx.raw;
+            return `Rating: ${x} | ${metricLabel}: ${l.toFixed(0)}–${h.toFixed(0)}`;
+          }
+        }
+      },
+      datalabels: { display: datalabels }
+    },
+    scales: {
+      x: {
+        type: 'linear',
+        title: { display: true, text: 'Opponent Rating' },
+        ticks: {
+          precision: 0,
+          autoSkip: false
+        },
+        grid: {
+          offset: false
+        }
+      },
+      y: {
+        min: yMin,
+        max: yMax,
+        title: { display: true, text: metricLabel }
+      }
+    }
+  };
+
+  return (
+    <div className="chesschart-container">
+      <Chart type="candlestick" data={ data } options={ options } />
+    </div>
+  );
+};
+
