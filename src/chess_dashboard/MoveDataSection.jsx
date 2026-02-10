@@ -1,7 +1,7 @@
 import React from 'react';
 import useFetchJsonData from './useFetchJsonData';
 import { BodyContainer, DividerLine } from '../SharedComponents';
-import { PaginatedTable, LineChart, StackedPercentBarChart, GroupedBarChart } from './chess_components';
+import { ChessSectionTable, LineChart, StackedPercentBarChart, GroupedBarChart } from './chess_components';
 
 
 const formatMoveData = (row) => {
@@ -203,7 +203,7 @@ const MoveDataSection = () => {
               />
             </div>
             <div className="chesschart-box">
-              <div className="standard-margin" style={{ fontWeight: 'bold', textAlign: 'center' }}>
+              <div className="standard-margin dropdown-replacement" >
                 Game Length Win vs Loss
               </div>
               <GroupedBarChart
@@ -268,13 +268,9 @@ const MoveDataSection = () => {
               />
             </div>
             <div className="chesschart-box">
-              <div
-                className="standard-margin"
-                style={{ fontWeight: 'bold', textAlign: 'center' }}
-              >
+              <div className="standard-margin dropdown-replacement">
                 Move Quality Win vs Loss
               </div>
-
               <GroupedBarChart
                 title="Average Move Quality by Outcome"
                 rawData={ data }
@@ -293,10 +289,10 @@ const MoveDataSection = () => {
       </div>
       <DividerLine/>
       {data && (
-        <PaginatedTable
+        <ChessSectionTable
           title="Move Data Table"
           data={ data.map(formatMoveData) }
-          rowsPerPage={ 25 }
+          rowsPerPage={ 15 }
         />
       )}
     </div>

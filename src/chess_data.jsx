@@ -4,7 +4,7 @@ import GameArchiveSection from './chess_dashboard/GameArchiveSection.jsx';
 import OpponentDataSection from './chess_dashboard/OpponentDataSection.jsx';
 import GameDataSection from './chess_dashboard/GameDataSection.jsx';
 import MoveDataSection from './chess_dashboard/MoveDataSection.jsx';
-import { IntroSection, DividerLine, BodyContainer } from './SharedComponents';
+import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
@@ -46,7 +46,7 @@ const ChessDashboard = () => {
         >
           { isBookmarkletOpen ? "▼ Bookmarklet Script" : "▶ Bookmarklet Script" }
         </h2>
-        <p style={{ textAlign: 'center', marginTop: '10px' }}>
+        <p className="base-max-width center-margin">
           The following bookmarklet is used to extract game statistics directly from&nbsp;
           <a href="https://www.chess.com" className="text-body" target="_blank" rel="noopener noreferrer">Chess.com</a> from the game review page.
           It scrapes accuracy, move classifications, opponent rating, and game context, then copies a TSV row to the clipboard for logging into a spreadsheet.
@@ -178,7 +178,7 @@ const ChessDashboard = () => {
         >
           { isSheetScriptOpen ? "▼ Google Sheets App Script" : "▶ Google Sheets App Script" }
         </h2>
-        <p style={{ textAlign: 'center', marginTop: '10px' }}>
+        <p className="base-max-width center-margin">
           This Google Apps Script exposes spreadsheet data as JSON via a simple
           <code> doGet </code> endpoint. It allows the dashboard to dynamically
           fetch structured game data directly from Google Sheets.

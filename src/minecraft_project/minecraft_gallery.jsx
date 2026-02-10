@@ -30,7 +30,7 @@ const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680",
                         onClick={() => setIsGalleryOpen(!isGalleryOpen)}
                         style={{ cursor: "pointer" }}
                     >
-                        {isGalleryOpen ? `▼ ${title}` : `▶ ${title}`}
+                        {isGalleryOpen ? `▼ ${ title}` : `▶ ${ title}`}
                     </h2>
                 ) : (
                     <h2 className="non-collapsable-title">{ title }</h2> // Non-collapsible sections just display title

@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { BodyContainer, DividerLine } from '../SharedComponents';
-import { PaginatedTable, BarChart, FullWidthBarChart } from './chess_components';
+import { ChessSectionTable, FullWidthBarChart } from './chess_components';
 import useFetchJsonData from './useFetchJsonData';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -200,14 +199,7 @@ const OpponentDataSection = () => {
                   </option>
                 ))}
               </select>
-              <p
-                style={{
-                  textAlign: 'center',
-                  fontWeight: 'bold',
-                  marginBottom: '0px',
-                  marginTop: '4px'
-                }}
-              >
+              <p className="dropdown-replacement">
                 { selectedMetric.displayTitle }
               </p>
               {data && (
@@ -226,7 +218,7 @@ const OpponentDataSection = () => {
               )}
             <DividerLine/>
             {data && (
-              <PaginatedTable
+              <ChessSectionTable
                 data={ data.map(formatOpponentData) }
                 rowsPerPage={ 15 }
                 title="Opponent Data Table"
@@ -251,14 +243,7 @@ const OpponentDataSection = () => {
                   </option>
                 ))}
               </select>
-              <p
-                style={{
-                  textAlign: 'center',
-                  fontWeight: 'bold',
-                  marginBottom: '0px',
-                  marginTop: '4px'
-                }}
-              >
+              <p className="dropdown-replacement">
                 { selectedMetric.displayTitle }
               </p>
               {altdata && (
@@ -277,7 +262,7 @@ const OpponentDataSection = () => {
               )}
               <DividerLine/>
               {altdata && (
-                <PaginatedTable
+                <ChessSectionTable
                   data={ altdata.map(formatOpponentData) }
                   rowsPerPage={ 15 }
                   title="Opponent Data Table"
@@ -294,71 +279,3 @@ const OpponentDataSection = () => {
 export default OpponentDataSection;
 
 
-
-/*
-return (
-    <div className="box-style-standard standard-padding-margin">
-      <div>
-      <h2>Opponent Data</h2>
-      <select
-        value={selectedMetric.key}
-        onChange={(e) =>
-          setSelectedMetric(
-            opponentMetricOptions.find(opt => opt.key === e.target.value)
-          )
-        }
-        className="standard-margin center-margin"
-      >
-        {opponentMetricOptions.map(opt => (
-          <option key={opt.key} value={opt.key}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
-      <p
-        style={{
-          textAlign: 'center',
-          fontWeight: 'bold',
-          marginBottom: '0px',
-          marginTop: '4px'
-        }}
-      >
-        { selectedMetric.displayTitle }
-      </p>
-      {data && (
-        <div className="chesschart-scroll-x">
-          <FullWidthBarChart
-            rawData={ data }
-            labelField="Opponent"
-            valueField={ selectedMetric.valueField }
-            color="rgba(54, 162, 235, 0.6)"
-            datalabels={ false }
-            yMin={ selectedMetric.yMin }
-            yMax={ selectedMetric.yMax }
-            yTickFormatter={ selectedMetric.yTickFormatter }
-          />
-        </div>
-      )}
-      </div>
-      <DividerLine/>
-      <div>
-        {data && (
-          <PaginatedTable
-            data={ data.map(formatOpponentData) }
-            rowsPerPage={ 15 }
-            title="Opponent Data"
-          />
-        )}
-        
-        {data && (
-          <PaginatedTable
-            data={ altdata.map(formatOpponentData) }
-            rowsPerPage={ 15 }
-            title="Opponent Data 2"
-          />
-        )}
-      </div>
-    </div>
-  );
-};
-*/

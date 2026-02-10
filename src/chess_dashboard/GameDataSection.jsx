@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useFetchJsonData from './useFetchJsonData';
 import { BodyContainer, DividerLine } from '../SharedComponents';
 
-import { PaginatedTable, CandleChart, LineChart } from './chess_components.jsx';
+import { ChessSectionTable, CandleChart, LineChart } from './chess_components.jsx';
 
 
 const formatGameData = (row) => {
@@ -284,8 +284,8 @@ const GameDataSection = () => {
                   labelField="Opponent rating"
                   highField={ selectedAccuracyRange.highField }
                   lowField={ selectedAccuracyRange.lowField }
-                  yMin = { 20 }
-                  yMax = { 100 }
+                  yMin ={ 20 }
+                  yMax ={ 100 }
                 />
             </div>
             <div className="chesschart-box">
@@ -338,8 +338,8 @@ const GameDataSection = () => {
                   labelField="Opponent rating"
                   highField={ selectedGameRatingRange.highField }
                   lowField={ selectedGameRatingRange.lowField }
-                  yMin = { 100 }
-                  yMax = { 2000 }
+                  yMin ={ 100 }
+                  yMax ={ 2000 }
                 />
             </div>
             <div className="chesschart-box">
@@ -374,7 +374,7 @@ const GameDataSection = () => {
       <DividerLine/>
       <div>
         {data && (
-          <PaginatedTable
+          <ChessSectionTable
             data={ data.map(formatGameData) }
             rowsPerPage={ 15 }
             title="Game Data"

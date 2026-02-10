@@ -36,7 +36,7 @@ ChartJS.register(
 /*                             Tables                                    */
 /*************************************************************************/
 
-export const PaginatedTable = ({ data, rowsPerPage = 25, title }) => {
+export const ChessSectionTable = ({ data, rowsPerPage = 25, title }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isTableOpen, setisTableOpen] = useState(false);
 
@@ -59,7 +59,7 @@ export const PaginatedTable = ({ data, rowsPerPage = 25, title }) => {
         onClick={() => setisTableOpen(prev => !prev)}
         style={{ cursor: "pointer" }}
       >
-        {isTableOpen ? `▼ ${title}` : `▶ ${title}`}
+        {isTableOpen ? `▼ ${ title }` : `▶ ${ title }`}
       </h2>
       <p style={{ textAlign: 'center', marginTop: '10px' }}>
         ( <i>Click to view full data table</i> )
