@@ -39,6 +39,8 @@
   }
 }
 
+
+
 .standard-tabs .tabs-container:focus {
   outline: none;
 }
@@ -138,7 +140,7 @@
 
 .vertical-tab-content {
   position: relative;
-  min-height: 600px;
+  min-height: 1000px;
   flex-grow: 1; 
   padding: var(--padding); /* Give it breathing room */
   margin-top: -15px; /* Adjust this to align properly */

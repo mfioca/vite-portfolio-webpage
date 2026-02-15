@@ -17,6 +17,7 @@ const PelicanTown = () => {
                         <Tab>Main City</Tab>
                         <Tab>Farm and Bus Area</Tab>
                         <Tab>Cindersap Forest</Tab>
+                        <Tab>Mountain Lake Areas</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
@@ -167,7 +168,38 @@ const PelicanTown = () => {
                                     </>
                                 }
                             />
-                        </TabPanel>    
+                        </TabPanel>
+                        <TabPanel>
+                            <IntroSection title="Mountain Lake Areas">
+                                <p>
+                                    The Mountain Lake region marks the northeastern edge of Pelican Town, bringing together several of the valley’s most recognizable landmarks. This area includes Robin’s house, Linus’s tent, the mountain lake with the mine entrance, the Adventurer’s Guild, the rock quarry, and the nearby railroad tracks. Unlike the more structured layout of the main city, this region blends open water, elevated terrain, and scattered structures into a layered environment that feels both functional and secluded. The build emphasizes accurate landmark placement, elevation shifts, and path connections to preserve the navigational logic and spatial relationships of the original Stardew Valley map while adapting it naturally into Minecraft’s three-dimensional terrain.
+                                </p>
+                            </IntroSection>
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Construction"
+                                photos={ stardew_pictures.MountainLakeConstruction }
+                                description={
+                                    <>
+                                        <p>
+                                            The construction phase of the Mountain Lake region introduced several terrain and layout challenges that required careful adaptation. Recreating the sloped elevation near Robin’s house involved accounting for the camera-facing incline in Stardew Valley, which naturally conceals Linus’s tent and shapes the surrounding hillside. The placement of Robin’s house relative to the Community Center also required designing a blended pathway that feels organic while preserving navigational logic. Similar adjustments were necessary for the route connecting the bus area to the mountain region. Decisions regarding how the streams feed into the lake and how the trench between the lake and rock quarry should be formed are still in progress, with the goal of integrating these features naturally into the existing Minecraft terrain rather than constructing an entirely artificial mountain structure.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Progress"
+                                photos={ stardew_pictures.MountainLakeProgress }
+                                description={
+                                    <>
+                                        <p>
+                                            This section highlights the continued refinement of the Mountain Lake region as structural work transitions into environmental detailing. The screenshots show incremental additions such as the shortcut connecting the rock quarry to the area just north of the movie theater, helping reinforce logical traversal between zones. Within the quarry itself, Minecraft ore and varied stone blocks were introduced to enhance realism and give the space a more natural geological feel. Throughout this phase, the focus remained on blending each addition seamlessly into the surrounding terrain, ensuring that paths, elevations, and material transitions feel integrated with the broader Minecraft landscape rather than appearing artificially constructed.
+                                        </p>
+                                    </>
+                                }
+                            />
+                        </TabPanel>   
                     </BodyContainer>
                 </div>
             </Tabs>

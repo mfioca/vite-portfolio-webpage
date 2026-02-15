@@ -14,8 +14,17 @@ function stardewValleyFarmBusPathLink(folder: string, asset: string, width: numb
 function stardewValleyForestLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/forest/${folder}/${asset}?w=${width}&q=50`;
 }
+
+function stardewValleyMountainLakeLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/Mountain_train/${folder}/${asset}?w=${width}&q=50`;
+}
   
-export { stardewValleyGeneralLink, stardewValleyMainCityLink, stardewValleyFarmBusPathLink, stardewValleyForestLink };
+export { stardewValleyGeneralLink, 
+  stardewValleyMainCityLink, 
+  stardewValleyFarmBusPathLink, 
+  stardewValleyForestLink, 
+  stardewValleyMountainLakeLink 
+};
 
 
 export const GridReference = [
@@ -760,6 +769,140 @@ export const ForestProgress = [
   ({ asset, alt, width, height }) =>
     ({
       src: `${stardewValleyForestLink("progress", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+/*************************************************************************/
+/*                          Mountain Lake                                */
+/*************************************************************************/
+
+export const MountainLakeConstruction = [
+  {
+    asset: "mountain_const_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_1",
+  },
+  {
+    asset: "mountain_const_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_2",
+  },
+  {
+    asset: "mountain_const_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_3",
+  },
+  {
+    asset: "mountain_const_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_4",
+  },
+  {
+    asset: "mountain_const_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_5",
+  },
+  {
+    asset: "mountain_const_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_6",
+  },
+  {
+    asset: "mountain_const_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_7",
+  },
+  {
+    asset: "mountain_const_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_8",
+  },
+  {
+    asset: "mountain_const_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_9",
+  },
+  {
+    asset: "mountain_const_10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_10",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${stardewValleyMountainLakeLink("construction", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
+
+export const MountainLakeProgress = [
+  {
+    asset: "mount_prog_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_1",
+  },
+  {
+    asset: "mount_prog_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_2",
+  },
+  {
+    asset: "mount_prog_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_3",
+  },
+  {
+    asset: "mount_prog_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_4",
+  },
+  {
+    asset: "mount_prog_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_5",
+  },
+  {
+    asset: "mount_prog_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_6",
+  },
+  {
+    asset: "mount_prog_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_7",
+  },
+  {
+    asset: "mount_prog_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_8",
+  }
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${stardewValleyMountainLakeLink("progress", asset, width)}`,
       alt,
       width,
       height,
