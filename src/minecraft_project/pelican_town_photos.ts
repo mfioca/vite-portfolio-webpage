@@ -839,6 +839,36 @@ export const MountainLakeConstruction = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for mountain_const_10",
+  },
+  {
+    asset: "mountain_const_11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_11",
+  },
+  {
+    asset: "mountain_const_12.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_12",
+  },
+  {
+    asset: "mountain_const_13.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_13",
+  },
+  {
+    asset: "mountain_const_14.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_14",
+  },
+  {
+    asset: "mountain_const_15.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_const_15",
   }
 ].map(
   ({ asset, alt, width, height }) =>
@@ -898,6 +928,24 @@ export const MountainLakeProgress = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for mount_prog_8",
+  },
+  {
+    asset: "mount_prog_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_9",
+  },
+  {
+    asset: "mount_prog_10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_10",
+  },
+  {
+    asset: "mount_prog_11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mount_prog_11",
   }
 ].map(
   ({ asset, alt, width, height }) =>

@@ -88,7 +88,6 @@ const formatGameData = (row) => {
       continue;
     }
 
-
     // Default passthrough for now
     formatted[key] = value;
   }
