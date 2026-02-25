@@ -76,23 +76,53 @@ export const GridReference = [
 
 export const SidebySide = [
   {
-    asset: "side_by_side1.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for side_by_side1",
+    asset: "side_by_side_1.jpg",
+    width: 900,
+    height: 1140,
+    alt: "Placeholder description for side_by_side_1",
   },
   {
-    asset: "side_by_side2.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for side_by_side2",
+    asset: "side_by_side_2.jpg",
+    width: 900,
+    height: 1140,
+    alt: "Placeholder description for side_by_side_2",
   },
   {
-    asset: "side_by_side3.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for side_by_side3",
+    asset: "side_by_side_3.jpg",
+    width: 900,
+    height: 1140,
+    alt: "Placeholder description for side_by_side_3",
   },
+  {
+    asset: "side_by_side_4.jpg",
+    width: 900,
+    height: 1140,
+    alt: "Placeholder description for side_by_side_4",
+  },
+  {
+    asset: "side_by_side_5.jpg",
+    width: 900,
+    height: 1140,
+    alt: "Placeholder description for side_by_side_5",
+  },
+  {
+    asset: "side_by_side_6.jpg",
+    width: 900,
+    height: 1140,
+    alt: "Placeholder description for side_by_side_6",
+  },
+  {
+    asset: "side_by_side_7.jpg",
+    width: 900,
+    height: 1140,
+    alt: "Placeholder description for side_by_side_7",
+  },
+  {
+    asset: "side_by_side_8.jpg",
+    width: 900,
+    height: 1140,
+    alt: "Placeholder description for side_by_side_8",
+  }
 ].map(
   ({ asset, alt, width, height }) =>
     ({

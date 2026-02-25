@@ -46,6 +46,8 @@ const PelicanTown = () => {
                             <MinecraftGallery
                                 title="Stardew / Minecraft Side by Side Comparison"
                                 photos={ stardew_pictures.SidebySide }
+                                testprop="900 / 1140"
+                                gridRowHeight="auto"
                                 description={
                                     <>
                                         <p>
