@@ -211,23 +211,29 @@ const GameDataSection = () => {
     gameRatingAverageOptions[0]
   );
 
+  const filteredRows =
+    data?.filter(
+      row =>
+        Number(row["Opponent rating"]) >= 1200
+    ) || [];
+
   const avgAccuracy =
-    data && data.length
+    filteredRows.length
       ? (
-          data.reduce(
+          filteredRows.reduce(
             (sum, row) => sum + (Number(row["Accuracy"]) || 0),
             0
-          ) / data.length
+          ) / filteredRows.length
         ).toFixed(2)
       : null;
 
   const avgGameRating =
-    data && data.length
+    filteredRows.length
       ? Math.round(
-          data.reduce(
+          filteredRows.reduce(
             (sum, row) => sum + (Number(row["Game Rating"]) || 0),
             0
-          ) / data.length
+          ) / filteredRows.length
         )
       : null;
   
@@ -235,6 +241,9 @@ const GameDataSection = () => {
     <div className="box-style-standard standard-padding-margin">
       <div>
         <h2>Game Data</h2>
+        <p className="game-data-annotation">
+          * Average calculations exclude opponents below 1200 rating to reflect more current performance.
+        </p>
         { loading && <p>Loading data...</p>}
         { error && <p>Error: { error }</p>}
         {data && (

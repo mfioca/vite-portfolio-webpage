@@ -25,6 +25,14 @@
   text-align: center;
 }
 
+.game-data-annotation {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--tvmazegraycolor);
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
 /*************************************************************************/
 /*                       Game Summary                                    */
 /*************************************************************************/
