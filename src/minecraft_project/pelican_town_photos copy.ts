@@ -1,8 +1,30 @@
-function stardewValleyLink(region: string, folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/${region}/${folder}/${asset}?w=${width}&q=50`;
+
+function stardewValleyGeneralLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/${folder}/${asset}?w=${width}&q=50`;
 }
 
-export { stardewValleyLink };
+function stardewValleyMainCityLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/Main_city/${folder}/${asset}?w=${width}&q=50`;
+}
+
+function stardewValleyFarmBusPathLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/farm_bus_path/${folder}/${asset}?w=${width}&q=50`;
+}
+
+function stardewValleyForestLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/forest/${folder}/${asset}?w=${width}&q=50`;
+}
+
+function stardewValleyMountainLakeLink(folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/Mountain_train/${folder}/${asset}?w=${width}&q=50`;
+}
+  
+export { stardewValleyGeneralLink, 
+  stardewValleyMainCityLink, 
+  stardewValleyFarmBusPathLink, 
+  stardewValleyForestLink, 
+  stardewValleyMountainLakeLink 
+};
 
 
 export const GridReference = [
@@ -45,7 +67,7 @@ export const GridReference = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("","Stardew_grid", asset, width)}`,
+      src: `${stardewValleyGeneralLink("Stardew_grid", asset, width)}`,
       alt,
       width,
       height,
@@ -104,7 +126,7 @@ export const SidebySide = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("", "side_by_side", asset, width)}`,
+      src: `${stardewValleyGeneralLink("side_by_side", asset, width)}`,
       alt,
       width,
       height,
@@ -200,7 +222,7 @@ export const Beach = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("","Beach", asset, width)}`,
+      src: `${stardewValleyGeneralLink("Beach", asset, width)}`,
       alt,
       width,
       height,
@@ -329,7 +351,7 @@ export const MainCityConstruction = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("Main_city", "Construction", asset, width)}`,
+      src: `${stardewValleyMainCityLink("Construction", asset, width)}`,
       alt,
       width,
       height,
@@ -448,7 +470,7 @@ export const MainCityProgress = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("Main_city", "Progress", asset, width)}`,
+      src: `${stardewValleyMainCityLink("Progress", asset, width)}`,
       alt,
       width,
       height,
@@ -505,7 +527,7 @@ export const FarmBusPathConstruction = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("farm_bus_path", "construction", asset, width)}`,
+      src: `${stardewValleyFarmBusPathLink("construction", asset, width)}`,
       alt,
       width,
       height,
@@ -564,7 +586,7 @@ export const FarmBusPathProgress = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("farm_bus_path", "progress", asset, width)}`,
+      src: `${stardewValleyFarmBusPathLink("progress", asset, width)}`,
       alt,
       width,
       height,
@@ -681,7 +703,7 @@ export const ForestConstruction = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("forest", "construction", asset, width)}`,
+      src: `${stardewValleyForestLink("construction", asset, width)}`,
       alt,
       width,
       height,
@@ -776,7 +798,7 @@ export const ForestProgress = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("forest", "progress", asset, width)}`,
+      src: `${stardewValleyForestLink("progress", asset, width)}`,
       alt,
       width,
       height,
@@ -881,7 +903,7 @@ export const MountainLakeConstruction = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("Mountain_train", "construction", asset, width)}`,
+      src: `${stardewValleyMountainLakeLink("construction", asset, width)}`,
       alt,
       width,
       height,
@@ -958,85 +980,9 @@ export const MountainLakeProgress = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${stardewValleyLink("Mountain_train", "progress", asset, width)}`,
+      src: `${stardewValleyMountainLakeLink("progress", asset, width)}`,
       alt,
       width,
       height,
     }),
 );
-
-/*************************************************************************/
-/*                          Desert Area                                  */
-/*************************************************************************/
-
-export const DesertConstruction = [
-  {
-    asset: "desert_const_1.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_1",
-  },
-  {
-    asset: "desert_const_2.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_2",
-  },
-  {
-    asset: "desert_const_3.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_3",
-  },
-  {
-    asset: "desert_const_4.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_4",
-  },
-  {
-    asset: "desert_const_5.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_5",
-  },
-  {
-    asset: "desert_const_6.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_6",
-  },
-    {
-    asset: "desert_const_7.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_7",
-  },
-  {
-    asset: "desert_const_8.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_8",
-  },
-  {
-    asset: "desert_const_9.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_9",
-  },
-  {
-    asset: "desert_const_10.jpg",
-    width: 1280,
-    height: 704,
-    alt: "Placeholder description for desert_const_10",
-  },
-].map(
-  ({ asset, alt, width, height }) =>
-    ({
-      src: `${stardewValleyLink("Desert_area", "construction", asset, width)}`,
-      alt,
-      width,
-      height,
-    }),
-);
-

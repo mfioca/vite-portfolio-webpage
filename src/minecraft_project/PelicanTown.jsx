@@ -18,6 +18,7 @@ const PelicanTown = () => {
                         <Tab>Farm and Bus Area</Tab>
                         <Tab>Cindersap Forest</Tab>
                         <Tab>Mountain Lake Areas</Tab>
+                        <Tab>Desert Area</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
@@ -197,6 +198,25 @@ const PelicanTown = () => {
                                     <>
                                         <p>
                                             This section highlights the continued refinement of the Mountain Lake region as structural work transitions into environmental detailing. The screenshots show incremental additions such as the shortcut connecting the rock quarry to the area just north of the movie theater, helping reinforce logical traversal between zones. Within the quarry itself, Minecraft ore and varied stone blocks were introduced to enhance realism and give the space a more natural geological feel. Throughout this phase, the focus remained on blending each addition seamlessly into the surrounding terrain, ensuring that paths, elevations, and material transitions feel integrated with the broader Minecraft landscape rather than appearing artificially constructed.
+                                        </p>
+                                    </>
+                                }
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                            <IntroSection title="Desert Area">
+                                <p>
+                                    The Desert area represents the distant Calico Desert region from Stardew Valley, an area that becomes accessible later in the game after the player restores transportation to the region. Once unlocked, the desert introduces several unique locations and challenges, including the entrance to the more dangerous Skull Cavern mines, the Oasis shop which offers rare seeds and items not available elsewhere in the valley, and access to the hidden casino beneath the shop. While smaller than many other regions of the map, the desert serves as an important late-game destination, expanding exploration opportunities and providing resources that support continued progression.
+                                </p>
+                            </IntroSection>
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Construction"
+                                photos={ stardew_pictures.DesertConstruction }
+                                description={
+                                    <>
+                                        <p>
+                                            Building the desert area required adapting the Calico Desert layout from Stardew Valley to terrain that more closely resembles a coastal biome within the Minecraft realm. To preserve the recognizable boundaries of the original map, the desert space was recessed slightly below the surrounding terrain, allowing the area to feel contained without drastically reshaping the natural landscape. Because the surrounding environment is closer to a beach than a true desert biome, the focus during construction was on shaping the terrain so the location still reads clearly as the Stardew Valley desert while blending naturally into the existing world. A roadway connecting the bus stop area to the desert entrance was also introduced so travel between regions feels believable within the realm while still respecting the spatial relationships of the original map.
                                         </p>
                                     </>
                                 }
