@@ -2,7 +2,8 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { BodyContainer, IntroSection, DividerLine } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
-import * as stardew_pictures from './pelican_town_photos'
+import * as stardew_pictures from './pelican_town_photos';
+import { PelicanTownOverview } from "./pelican_town_photos";
 
 
 
@@ -30,6 +31,12 @@ const PelicanTown = () => {
                                  Despite the challenges of translating a 2D perspective into 3D space, the spatial relationships and structure of Pelican Town remain highly accurate. Paths, yards, building placements, shoreline transitions, and even elevation shifts read clearly and match the original layout — reinforcing the town’s recognizable geometry while adapting it to the block-based medium.
                                 </p>
                                 <p><strong>Note:</strong> This section is still under construction as screenshots and layout are finalized.</p>
+                                <img
+                                    className="townpicture"
+                                    src={PelicanTownOverview.src}
+                                    
+                                    alt={PelicanTownOverview.alt}
+                                />
                             </IntroSection>
                             <DividerLine />
                             <MinecraftGallery
@@ -58,7 +65,17 @@ const PelicanTown = () => {
                                 }
                             />
                             <DividerLine />
-                            <p>This section includes general construction screenshots taken throughout the build process.</p>
+                            <MinecraftGallery
+                                title="Showcase Pictures"
+                                photos={ stardew_pictures.ShowcasePictures }
+                                description={
+                                    <>
+                                        <p>
+                                            This gallery highlights a set of finished showcase views from around the completed Pelican Town build. Rather than focusing on individual construction steps, these images present the areas as they appear after major work and detailing were completed. Each screenshot captures a different region of the town and surrounding landscape, offering a broader look at how the full-scale recreation of Stardew Valley translates into Minecraft’s three-dimensional environment.
+                                        </p>
+                                    </>
+                                }
+                            />
                         </TabPanel>
                         <TabPanel>
                             <IntroSection title="Pelican Town Beach">

@@ -5,6 +5,13 @@ function stardewValleyLink(region: string, folder: string, asset: string, width:
 export { stardewValleyLink };
 
 
+export const PelicanTownOverview = {
+  src: `${import.meta.env.BASE_URL}minecraft_pictures/pelican_town/Pelican_Town.jpg`,
+  width: 1600,
+  height: 900,
+  alt: "Full overview screenshot of the Pelican Town build",
+};
+
 export const GridReference = [
   {
     asset: "Stardew_reference_1.jpg",
@@ -205,6 +212,32 @@ export const Beach = [
       width,
       height,
     }),
+);
+
+/*************************************************************************/
+/*                         Showcase Pictures                             */
+/*************************************************************************/
+
+export const ShowcasePictures = [
+  { asset: "town.jpg", width: 1280, height: 704, alt: "Pelican Town overview" },
+  { asset: "community_center.jpg", width: 1280, height: 704, alt: "Community Center area" },
+  { asset: "beach.jpg", width: 1280, height: 704, alt: "Pelican Town beach" },
+  { asset: "bus_stop.jpg", width: 1280, height: 704, alt: "Bus stop area" },
+  { asset: "farm.jpg", width: 1280, height: 704, alt: "Farm area" },
+  { asset: "forest.jpg", width: 1280, height: 704, alt: "Cindersap forest overview" },
+  { asset: "forest_1.jpg", width: 1280, height: 704, alt: "Cindersap forest detail" },
+  { asset: "secret_forest.jpg", width: 1280, height: 704, alt: "Secret forest area" },
+  { asset: "mountain_lake.jpg", width: 1280, height: 704, alt: "Mountain lake region" },
+  { asset: "rock_quarry.jpg", width: 1280, height: 704, alt: "Rock quarry area" },
+  { asset: "train.jpg", width: 1280, height: 704, alt: "Railroad area" },
+  { asset: "desert.jpg", width: 1280, height: 704, alt: "Calico desert recreation" },
+].map(
+  ({ asset, alt, width, height }) => ({
+    src: `${stardewValleyLink("", "showcase_pictures", asset, width)}`,
+    alt,
+    width,
+    height,
+  }),
 );
 
 /*************************************************************************/

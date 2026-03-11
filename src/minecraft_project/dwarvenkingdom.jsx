@@ -8,7 +8,6 @@ import {
     great_forge_district,
     bath_houses,
     under_cave
-    
  } from './dwarvenkingdom_photos';
 
 
