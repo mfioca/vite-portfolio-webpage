@@ -50,6 +50,7 @@ const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680",
                                 style={{ aspectRatio: testprop }}
                                 className="custom-gallery-image"
                                 loading="lazy"
+                                decoding="async"
                             />
                         </div>
                     ))}
@@ -60,10 +61,11 @@ const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680",
                 close={ () => setLightboxOpen(false) }
                 slides={ lightboxImages }
                 index={ currentSlide }
-                plugins={ [Fullscreen, Slideshow, Thumbnails, Zoom] }
+                plugins={ [Fullscreen, Thumbnails] }
             />
         </div>
     );
 };
 
 export default MinecraftGallery;
+
