@@ -1,18 +1,8 @@
-
-function skyValeLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/skyhold_vale/${folder}/${asset}?w=${width}&q=50`;
-}
-
-function skyValeInnerCityLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/skyhold_vale/inner_city/${folder}/${asset}?w=${width}&q=50`;
-}
-
-function skyValeMountainLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/skyhold_vale/mountain/${folder}/${asset}?w=${width}&q=50`;
+function skyValeLink(region: string, folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/skyhold_vale/${region}/${folder}/${asset}?w=${width}&q=50`;
 }
   
-export { skyValeLink, skyValeInnerCityLink, skyValeMountainLink };
-
+export { skyValeLink };
 
 
 export const skyvale_outskirts1 = [
@@ -73,7 +63,7 @@ export const skyvale_outskirts1 = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${skyValeLink("outskirts", asset, width)}`,
+      src: `${skyValeLink("outskirts", "details", asset, width)}`,
       alt,
       width,
       height,
@@ -126,7 +116,7 @@ export const skyvale_outskirts2 = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${skyValeLink("outskirts", asset, width)}`,
+      src: `${skyValeLink("outskirts", "development", asset, width)}`,
       alt,
       width,
       height,
@@ -179,7 +169,7 @@ export const skyvale_castle = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${skyValeLink("castle", asset, width)}`,
+      src: `${skyValeLink("castle", "", asset, width)}`,
       alt,
       width,
       height,
@@ -232,7 +222,7 @@ export const Random_buildings = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${skyValeLink("Random_buildings", asset, width)}`,
+      src: `${skyValeLink("Random_buildings", "", asset, width)}`,
       alt,
       width,
       height,
@@ -278,7 +268,7 @@ export const skyvale_mountain_planning = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${skyValeMountainLink("Initial_planning", asset, width)}`,
+      src: `${skyValeLink("mountain", "Initial_planning", asset, width)}`,
       alt,
       width,
       height,
@@ -385,7 +375,7 @@ export const skyvale_mountain_progress = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${skyValeMountainLink("progress", asset, width)}`,
+      src: `${skyValeLink("mountain", "progress", asset, width)}`,
       alt,
       width,
       height,
@@ -444,7 +434,7 @@ export const skyvale_mountain_final_details = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${skyValeMountainLink("Final_details", asset, width)}`,
+      src: `${skyValeLink("mountain", "Final_details", asset, width)}`,
       alt,
       width,
       height,
@@ -597,7 +587,7 @@ export const skyvale_inner_city_construction = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${skyValeInnerCityLink("construction", asset, width)}`,
+      src: `${skyValeLink("inner_city", "construction", asset, width)}`,
       alt,
       width,
       height,
@@ -690,7 +680,7 @@ export const skyvale_inner_city_detail_views = [
     alt: "Placeholder description for Skyhold_vale_inner_city_details14",
   }
 ].map(({ asset, alt, width, height }) => ({
-  src: `${skyValeInnerCityLink("detail_views", asset, width)}`,
+  src: `${skyValeLink("inner_city", "detail_views", asset, width)}`,
   alt,
   width,
   height,
@@ -878,7 +868,7 @@ export const skyvale_inner_city_final_details = [
     alt: "Placeholder description for inner_city_final_details_31",
   },
 ].map(({ asset, alt, width, height }) => ({
-  src: `${skyValeInnerCityLink("final_details", asset, width)}`,
+  src: `${skyValeLink("inner_city", "final_details", asset, width)}`,
   alt,
   width,
   height,

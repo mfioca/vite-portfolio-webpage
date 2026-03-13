@@ -1,17 +1,8 @@
-
-function whiterunConstructionLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/whiterun/whiterun_building_city/${folder}/${asset}?w=${width}&q=50`;
-}
-
-function whiterunSplitScreenLink(asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/whiterun/whiterun_minecraft_split_screen/${asset}?w=${width}&q=50`;
-}
-
-function whiterundetailLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/whiterun/whiterun_city_after/${folder}/${asset}?w=${width}&q=50`;
+function whiterunLink(region: string, folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/whiterun/${region}/${folder}/${asset}?w=${width}&q=50`;
 }
   
-export { whiterunConstructionLink, whiterunSplitScreenLink, whiterundetailLink };
+export { whiterunLink };
 
 export const building_enterance = [
   {
@@ -77,7 +68,7 @@ export const building_enterance = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterunConstructionLink("enterance", asset, width)}`,
+      src: `${whiterunLink("whiterun_building_city", "enterance", asset, width)}`,
       alt,
       width,
       height,
@@ -202,7 +193,7 @@ export const building_section_1 = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterunConstructionLink("section_1", asset, width)}`,
+      src: `${whiterunLink("whiterun_building_city", "section_1", asset, width)}`,
       alt,
       width,
       height,
@@ -351,7 +342,7 @@ export const building_section_2 = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterunConstructionLink("section_2", asset, width)}`,
+      src: `${whiterunLink("whiterun_building_city", "section_2", asset, width)}`,
       alt,
       width,
       height,
@@ -446,7 +437,7 @@ export const building_keep = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterunConstructionLink("keep", asset, width)}`,
+      src: `${whiterunLink("whiterun_building_city", "keep", asset, width)}`,
       alt,
       width,
       height,
@@ -493,7 +484,7 @@ export const building_random_extras = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterunConstructionLink("random_extras", asset, width)}`,
+      src: `${whiterunLink("whiterun_building_city", "random_extras", asset, width)}`,
       alt,
       width,
       height,
@@ -641,7 +632,7 @@ export const side_by_side = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterunSplitScreenLink(asset, width)}&t=${Date.now()}`,
+      src: `${whiterunLink("whiterun_minecraft_split_screen", "", asset, width)}`,
       alt,
       width,
       height,
@@ -753,7 +744,7 @@ export const city_gates_details = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterundetailLink("city_gates", asset, width)}`,
+      src: `${whiterunLink("whiterun_city_after", "city_gates", asset, width)}`,
       alt,
       width,
       height,
@@ -914,7 +905,7 @@ export const section_1_details = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterundetailLink("section_1", asset, width)}`,
+      src: `${whiterunLink("whiterun_city_after", "section_1", asset, width)}`,
       alt,
       width,
       height,
@@ -1117,7 +1108,7 @@ export const section_2_details = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterundetailLink("section_2", asset, width)}`,
+      src: `${whiterunLink("whiterun_city_after", "section_2", asset, width)}`,
       alt,
       width,
       height,
@@ -1206,7 +1197,7 @@ export const keep_external_details = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterundetailLink("keep", asset, width)}`,
+      src: `${whiterunLink("whiterun_city_after", "keep", asset, width)}`,
       alt,
       width,
       height,
@@ -1331,7 +1322,7 @@ export const keep_interior_details = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${whiterundetailLink("keep", asset, width)}`,
+      src: `${whiterunLink("whiterun_city_after", "keep", asset, width)}`,
       alt,
       width,
       height,

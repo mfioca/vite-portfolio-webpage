@@ -1,17 +1,8 @@
-
 function dwarvenKingdomLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}minecraft_pictures/dwarven_kingdom/${folder}/${asset}?w=${width}&q=50`;
 }
-
-function whiterunSplitScreenLink(asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/whiterun_minecraft_split_screen/${asset}?w=${width}&q=50`;
-}
-
-function whiterundetailLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/whiterun_city_after/${folder}/${asset}?w=${width}&q=50`;
-}
   
-export { dwarvenKingdomLink, whiterunSplitScreenLink, whiterundetailLink };
+export { dwarvenKingdomLink };
 
 export const mountain_exterior = [
   {

@@ -1,13 +1,8 @@
-
-function portCityTownLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/crowhaven/town/${folder}/${asset}?w=${width}&q=50`;
-}
-
-function portCityPortLink(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/crowhaven/port/${folder}/${asset}?w=${width}&q=50`;
+function portCityLink(region: string, folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/crowhaven/${region}/${folder}/${asset}?w=${width}&q=50`;
 }
   
-export { portCityTownLink, portCityPortLink };
+export { portCityLink };
 
 export const town_generalviews = [
   {
@@ -79,7 +74,7 @@ export const town_generalviews = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${portCityTownLink("general_views", asset, width)}`,
+      src: `${portCityLink("town","general_views", asset, width)}`,
       alt,
       width,
       height,
@@ -198,7 +193,7 @@ export const town_buildings = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${portCityTownLink("buildings", asset, width)}`,
+      src: `${portCityLink("town","buildings", asset, width)}`,
       alt,
       width,
       height,
@@ -275,7 +270,7 @@ export const town_scenery = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${portCityTownLink("detail", asset, width)}`,
+      src: `${portCityLink("town","detail", asset, width)}`,
       alt,
       width,
       height,
@@ -326,7 +321,7 @@ export const port_general_views = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${portCityPortLink("general_views", asset, width)}`,
+      src: `${portCityLink("port","general_views", asset, width)}`,
       alt,
       width,
       height,
@@ -407,7 +402,7 @@ export const port_buildings_details = [
     alt: "Placeholder description for buildings_dets_12",
   },
 ].map(({ asset, alt, width, height }) => ({
-  src: `${portCityPortLink("buildings_and_details", asset, width)}`,
+  src: `${portCityLink("port","buildings_and_details", asset, width)}`,
   alt,
   width,
   height,
@@ -451,7 +446,7 @@ export const port_boats = [
     alt: "Placeholder description for boats_106",
   },
 ].map(({ asset, alt, width, height }) => ({
-  src: `${portCityPortLink("boats", asset, width)}`,
+  src: `${portCityLink("port","boats", asset, width)}`,
   alt,
   width,
   height,

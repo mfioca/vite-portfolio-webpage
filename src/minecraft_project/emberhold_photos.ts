@@ -1,17 +1,8 @@
-
-function emberholdSectionOne(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/emberhold/general_views_fort/${folder}/${asset}?w=${width}&q=50`;
-}
-
-function emberholdSectionTwo(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/emberhold/commercial_districts/${folder}/${asset}?w=${width}&q=50`;
-}
-
-function emberholdSectionThree(folder: string, asset: string, width: number) {
-  return `${import.meta.env.BASE_URL}minecraft_pictures/emberhold/residential_sections/${folder}/${asset}?w=${width}&q=50`;
+function emberholdLink(region: string, folder: string, asset: string, width: number) {
+  return `${import.meta.env.BASE_URL}minecraft_pictures/emberhold/${region}/${folder}/${asset}?w=${width}&q=50`;
 }
   
-export { emberholdSectionOne, emberholdSectionTwo, emberholdSectionThree };
+export { emberholdLink };
 
 
 export const emberhold_general_views = [
@@ -66,7 +57,7 @@ export const emberhold_general_views = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${emberholdSectionOne("general_views", asset, width)}`,
+      src: `${emberholdLink("general_views_fort", "general_views", asset, width)}`,
       alt,
       width,
       height,
@@ -107,7 +98,7 @@ export const emberhold_fort = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${emberholdSectionOne("fort", asset, width)}`,
+      src: `${emberholdLink("general_views_fort", "fort", asset, width)}`,
       alt,
       width,
       height,
@@ -176,7 +167,7 @@ export const mining_district = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${emberholdSectionTwo("mining_district", asset, width)}`,
+      src: `${emberholdLink("commercial_districts", "mining_district", asset, width)}`,
       alt,
       width,
       height,
@@ -241,7 +232,7 @@ export const town_hall = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${emberholdSectionTwo("town_hall", asset, width)}`,
+      src: `${emberholdLink("commercial_districts", "town_hall", asset, width)}`,
       alt,
       width,
       height,
@@ -300,7 +291,7 @@ export const town_square = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${emberholdSectionTwo("town_square", asset, width)}`,
+      src: `${emberholdLink("commercial_districts", "town_square", asset, width)}`,
       alt,
       width,
       height,
@@ -412,7 +403,7 @@ export const residential_sections = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${emberholdSectionThree("general_pictures", asset, width)}`,
+      src: `${emberholdLink("residential_sections", "general_pictures", asset, width)}`,
       alt,
       width,
       height,
@@ -496,7 +487,7 @@ export const residential_buildings = [
 ].map(
   ({ asset, alt, width, height }) =>
     ({
-      src: `${emberholdSectionThree("specific_buildings", asset, width)}`,
+      src: `${emberholdLink("residential_sections", "specific_buildings", asset, width)}`,
       alt,
       width,
       height,

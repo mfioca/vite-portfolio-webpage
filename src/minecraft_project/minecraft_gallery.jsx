@@ -4,9 +4,7 @@ import 'yet-another-react-lightbox/styles.css';
 
 // Lightbox plugins
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
-import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
-import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
 const MinecraftGallery = ({ photos, title, description, testprop = "1280 / 680", gridRowHeight = "150px", collapsible = true}) => {
