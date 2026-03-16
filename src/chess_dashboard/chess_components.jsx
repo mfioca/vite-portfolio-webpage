@@ -152,20 +152,38 @@ export const GameArchiveTable = ({ data, rowsPerPage = 25, title }) => {
       <div className="pagination">
         <button
           className="button"
-          onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+          onClick={ () => setCurrentPage(1) }
+          disabled={ currentPage === 1 }
+        >
+          First
+        </button>
+
+        <button
+          className="button"
+          onClick={ () => setCurrentPage((p) => Math.max(p - 1, 1)) }
           disabled={ currentPage === 1 }
         >
           Previous
         </button>
+
         <span style={{ margin: '0 1rem' }}>
           Page { currentPage } of { totalPages }
         </span>
+
         <button
           className="button"
-          onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+          onClick={ () => setCurrentPage((p) => Math.min(p + 1, totalPages)) }
           disabled={ currentPage === totalPages }
         >
           Next
+        </button>
+
+        <button
+          className="button"
+          onClick={ () => setCurrentPage(totalPages) }
+          disabled={ currentPage === totalPages }
+        >
+          Last
         </button>
       </div>
     </>
