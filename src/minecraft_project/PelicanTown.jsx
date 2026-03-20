@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { BodyContainer, IntroSection, DividerLine } from '../SharedComponents';
+import { BodyContainer, IntroSection, DividerLine, YouTubeEmbed } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
 import * as stardew_pictures from './pelican_town_photos';
 import { PelicanTownOverview } from "./pelican_town_photos";
@@ -31,13 +31,16 @@ const PelicanTown = () => {
                                  Despite the challenges of translating a 2D perspective into 3D space, the spatial relationships and structure of Pelican Town remain highly accurate. Paths, yards, building placements, shoreline transitions, and even elevation shifts read clearly and match the original layout — reinforcing the town’s recognizable geometry while adapting it to the block-based medium.
                                 </p>
                                 <p><strong>Note:</strong> This section is still under construction as screenshots and layout are finalized.</p>
-                                <img
-                                    className="townpicture"
-                                    src={PelicanTownOverview.src}
-                                    
-                                    alt={PelicanTownOverview.alt}
-                                />
                             </IntroSection>
+                            <DividerLine />
+                            <h2 >YouTube Video Showcase</h2>
+                            <p className="standard-padding-margin-center">
+                                This showcase video provides a full visual tour of the Pelican Town build, beginning with a wide, circling aerial pass that mirrors the familiar Stardew Valley perspective while pulling back far enough to capture the entire layout. It then transitions into a first-person walkthrough, following the same paths and routes players commonly take through the town, highlighting how the map translates into a fully navigable 3D space. The video concludes with a brief slideshow of build progress images, offering a quick look at how the project developed from early layout work to its final form.
+                            </p>
+                            <YouTubeEmbed
+                                videoId="ZQunM-O3iuE"
+                                title="Pelican Town Build Showcase"
+                            />
                             <DividerLine />
                             <MinecraftGallery
                                 title="Stardew Game Grid layout Images"
@@ -256,4 +259,5 @@ export default PelicanTown;
     </div>
 </TabPanel>
 */
+
 
