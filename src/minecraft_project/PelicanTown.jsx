@@ -28,7 +28,7 @@ const PelicanTown = () => {
                                     This project is a faithful, full-scale recreation of the Stardew Valley overworld, built block-for-tile using a grid overlay mod to match the 1:1 layout of the PC version. After scouting a large coastal location within my realm, I began terraforming the terrain to match the structure and elevation of the in-game map. The build focuses on recreating every outdoor location and building in its proper relative position, while leaving interiors out to maintain scope. Screenshots and reference captures from the original game guide each stage of the layout, terrain shaping, and construction.
                                 </p>
                                 <p>
-                                 Despite the challenges of translating a 2D perspective into 3D space, the spatial relationships and structure of Pelican Town remain highly accurate. Paths, yards, building placements, shoreline transitions, and even elevation shifts read clearly and match the original layout — reinforcing the town’s recognizable geometry while adapting it to the block-based medium.
+                                    Despite the challenges of translating a 2D perspective into 3D space, the spatial relationships and structure of Pelican Town remain highly accurate. Paths, yards, building placements, shoreline transitions, and even elevation shifts read clearly and match the original layout — reinforcing the town’s recognizable geometry while adapting it to the block-based medium.
                                 </p>
                                 <p><strong>Note:</strong> This section is still under construction as screenshots and layout are finalized.</p>
                             </IntroSection>
