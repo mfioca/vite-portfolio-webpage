@@ -26,7 +26,6 @@
     margin-bottom: var(--default-spacing);
 }
 
-
 .youtube-embed-wrapper {
   width: 100%;
   max-width: 900px; /* Or whatever upper limit you want */
