@@ -34,6 +34,7 @@ const formatGameData = (row) => {
     "Accuracy Black Win",
     "Accuracy Black Win High",
     "Accuracy Black Win Low",
+    "Average Accuracy for games after the first 500",
   ];
 
   const wholeNumberFields = [
@@ -48,6 +49,7 @@ const formatGameData = (row) => {
     "Game Rating Black Win",
     "Game Rating White Lost",
     "Game Rating Black Lost",
+    "Average Game Rating for games after the first 500",
   ];
 
   const percent2dpFields = [
@@ -216,7 +218,7 @@ const GameDataSection = () => {
       row =>
         Number(row["Opponent rating"]) >= 1200
     ) || [];
-
+/*
   const avgAccuracy =
     filteredRows.length
       ? (
@@ -236,13 +238,50 @@ const GameDataSection = () => {
           ) / filteredRows.length
         )
       : null;
+*/
+
+  const validAccuracyRows = data
+  ? data.filter(row => {
+      const val = row["Average Accuracy for games after the first 500"];
+      return val !== null && val !== "" && !isNaN(parseFloat(val));
+    })
+  : [];
+
+const avgAccuracy =
+  validAccuracyRows.length
+    ? (
+        validAccuracyRows.reduce(
+          (sum, row) =>
+            sum + parseFloat(row["Average Accuracy for games after the first 500"]),
+          0
+        ) / validAccuracyRows.length
+      ).toFixed(2)
+    : null;
+
+const validGameRatingRows = data
+  ? data.filter(row => {
+      const val = row["Average Game Rating for games after the first 500"];
+      return val !== null && val !== "" && !isNaN(Number(val));
+    })
+  : [];
+
+const avgGameRating =
+  validGameRatingRows.length
+    ? Math.round(
+        validGameRatingRows.reduce(
+          (sum, row) =>
+            sum + Number(row["Average Game Rating for games after the first 500"]),
+          0
+        ) / validGameRatingRows.length
+      )
+    : null;
   
   return (
     <div className="box-style-standard standard-padding-margin">
       <div>
         <h2>Game Data</h2>
         <p className="game-data-annotation">
-          * Average calculations exclude opponents below 1200 rating to reflect more current performance.
+          * Average calculations reflect games after the first 500 entries to emphasize more recent performance.
         </p>
         { loading && <p>Loading data...</p>}
         { error && <p>Error: { error }</p>}
