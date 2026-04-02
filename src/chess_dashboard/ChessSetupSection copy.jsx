@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { DividerLine } from '../SharedComponents';
 import './Chess.css';
 
-const ChessSetupSection = () => {
+const ChessSetupSectionadjusted= () => {
     const [isBookmarkletOpen, setIsBookmarkletOpen] = useState(false);
-    const [isSheetScriptOpen, setIsSheetScriptOpen] = useState(false);
 
     return(
         <>
@@ -233,4 +232,4 @@ const ChessSetupSection = () => {
     )
 };
 
-export default ChessSetupSection
+export default ChessSetupSectionadjusted
