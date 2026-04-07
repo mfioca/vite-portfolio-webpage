@@ -6,24 +6,14 @@ const Home = () => {
     return (
         <div className="standard-padding-margin page-content">      
             <IntroSection title="Welcome to to my home page">
-                <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;This web page began as a personal project to explore 
-                    the capabilities of OpenAI’s ChatGPT and delve into prompt engineering and customizations. I chose this as a foundation because 
-                    of my prior experience learning React during a six-month self-study period. It provided a practical starting point to expand my 
-                    skills while building something meaningful.
+                <p>
+                    This site is a collection of projects that reflect how I approach systems, workflows, and problem-solving.
                 </p>
                 <p>
-                    Nearly every feature on this page was developed in close collaboration with ChatGPT, with adjustments and customizations made by me. 
-                    During this process, I integrated several advanced libraries, including React Router DOM, React Redux, Reducer, PapaParse, React Charts, react-tabs, Axios for API handling, and Swiper. 
-                    Prior to this project, I had no experience with these tools, which underscores how effective proper collaboration and customization 
-                    can be when working with ChatGPT.
+                    I built it as a hands-on way to explore AI tools, data workflows, and front-end development while applying them to real use cases. The focus isn’t on visual design, but on building functional, structured solutions that make complex problems easier to understand and manage.
                 </p>
                 <p>
-                    This web page serves as both a showcase and a testament to the potential of combining AI-driven assistance with hands-on learning, 
-                    demonstrating how even challenging concepts can be tackled with the right tools and support.
-                </p>
-                <p>
-                    This site is not intended to showcase cutting-edge web design because, frankly, that is not my expertise. Instead, it is built with a focus on functionality, clarity, and effectively presenting my projects. 
-                    The styling may not be flashy, but the content speaks for itself.
+                    The projects here range from operational analysis and data visualization to AI-driven tools and long-form builds. Together, they demonstrate how I approach ambiguous problems, break them into manageable pieces, and build systems that work in practice.
                 </p>
             </IntroSection>
             <DividerLine />
