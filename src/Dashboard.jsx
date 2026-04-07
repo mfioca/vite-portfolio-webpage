@@ -1,10 +1,10 @@
 import './dashboard/Dashboard.css';
-import { Provider } from 'react-redux'; // Import Provider
-import store from './store.js'; // Adjust the path to your store file
+import { Provider } from 'react-redux'; 
+import store from './store.js'; 
 import Graph from './dashboard/Graph.jsx';
-import SecondGraph from './dashboard/Graph2.jsx'; // Import your new graph component
-import ThirdGraph from './dashboard/Graph3.jsx'; // Import your new graph component
-import CSVdata from './dashboard/CSVdata.jsx'; // Import your new graph component
+import SecondGraph from './dashboard/Graph2.jsx'; 
+import ThirdGraph from './dashboard/Graph3.jsx'; 
+import CSVdata from './dashboard/CSVdata.jsx'; 
 import PowerpointViewer from './dashboard/powerpoint.jsx';
 import { DividerLine, IntroSection, BodyContainer, BorderBox } from './SharedComponents.jsx';
 
@@ -24,19 +24,16 @@ function Dashboard() {
         <Provider store={ store }> 
             <div className="Dashboard">
                 <IntroSection title="Dashboard Overview">
-                    <p><strong className="shadow">Purpose:</strong>&nbsp;&nbsp;This dashboard visualizes four years of activity data from a single organization, 
-                        highlighting how job focus and time allocation evolved over time. It translates complex CSV data into clear, interactive visuals that reveal 
-                        how different activities contribute to overall performance. Designed for clarity and exploration, it features responsive graphs, pagination, 
-                        and customizable filters — making data easy to navigate and insights immediately accessible.
+                    <p><strong className="shadow">Purpose:</strong>&nbsp;&nbsp;This dashboard visualizes four years of activity data, showing how job focus and time allocation evolved over time. 
+                        It transforms raw CSV data into interactive visuals that highlight performance patterns and make insights easy to explore through filtering and responsive charts.
                     </p>
                     <DividerLine width="30%" />
-                    <p><strong className="shadow">Description:</strong>&nbsp;&nbsp;The first section visualizes how my work focus evolved over time — showing the shift 
-                        from operations to analytics and how tools like Google Sheets and Mode drove that change. Monthly trends highlight total hours, analytics growth, 
-                        and changing priorities across key activity types.
+                    <p><strong className="shadow">Description:</strong>&nbsp;&nbsp;The first section shows how my work focus shifted over time, from operations to analytics, 
+                        along with changes in tools and priorities across key activities.
                     </p>
                     <p>
-                        The second section adds interactivity, letting users explore the underlying CSV data. Filters for activity type, month, and year dynamically 
-                        update donut and bar charts to reveal where time was spent and which tools dominated. A live data table below supports deeper exploration.
+                        The second section adds interactivity, allowing users to explore the underlying data through filters for activity type, month, and year. 
+                        Charts and a data table update dynamically to show how time was spent and where focus was concentrated.
                     </p>
                     <DividerLine width="30%" />
                     <p className="data-source ">Data insights in this dashboard were made possible through the use of <a href="https://www.rescuetime.com" target="_blank" rel="noopener noreferrer">RescueTime.com</a>, 

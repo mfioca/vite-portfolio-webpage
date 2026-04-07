@@ -20,7 +20,7 @@ const MinecraftProjects = () => {
             <IntroSection title="Welcome to My Minecraft Realm">
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;
                     This section showcases a 4+ year-old Minecraft Bedrock creative realm that is a sprawling world filled with detailed cities, epic landscapes, and rich history. 
-                    Every build tells a story, from grand dwarven halls carved into mountains to the meticulously recreated city of Whiterun from <i>The Elder Scrolls: Skyrim</i>.
+                    Every build tells a story, from grand dwarven halls carved into mountains to the meticulously recreated city of Whiterun from <i>The Elder Scrolls: Skyrim</i>. This project also reflects long-term planning, spatial design, and the ability to execute large, multi-phase builds over time.
                 </p>
                 <h3>Key locations include:</h3>
                 <ul className= "default-list">
@@ -30,7 +30,7 @@ const MinecraftProjects = () => {
                     <li>A second city beyond the mountains, featuring a mining district, an abandoned underground mineshaft, a town square, a fortified keep, and another port.</li>
                     <li>A crumbling abandoned house with a collapsing tower, adding mystery to the journey between cities.</li>
                     <li>A new city in the jungle, blending hobbit hole dwellings into the mountain and featuring dense, old-European-inspired row houses in the valley below. <strong>In Final Stages</strong></li>
-                    <li>A 1:1 scale recreation of Stardew Valley’s Pelican Town, built using a grid overlay and custom terrain shaping to mirror the original game map.<strong>Currently Under Construction</strong></li>
+                    <li>A 1:1 scale recreation of Stardew Valley’s Pelican Town, built using a grid overlay and custom terrain shaping to mirror the original game map.<strong> In Final Stages</strong></li>
                 </ul>
                 <p>
                     This world is constantly evolving, with every build adding new depth and character. Whether it’s medieval cities, ancient wonders, or hidden secrets, there’s always something to explore. With each new build, the world continues to expand, bringing new challenges, inspirations, and stories to life.

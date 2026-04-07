@@ -160,6 +160,7 @@
 .dashboard-hub {
   background-color: var(--defaultColor);
   font-family: 'Roboto', sans-serif; /* A clean, modern font */
+  text-align: center;
 }
 
 .dropdowns {

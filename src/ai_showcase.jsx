@@ -18,10 +18,10 @@ const AIShowcase = () => {
         <div className="standard-padding-margin">
             <IntroSection title="AI Showcase">
                 <p>
-                    <strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase serves as a demonstration of advanced prompt engineering and AI  collaboration techniques. This page highlights a curated collection of interactive conversations designed to showcase the power of OpenAI’s language models when combined with creative and technical expertise. Each example illustrates unique prompts, custom-tailored to generate engaging, insightful, and dynamic interactions.
+                    <strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The AI Showcase demonstrates how I approach prompt engineering and AI collaboration. It includes a set of interactive examples that show how structured prompts can shape model behavior and produce consistent, useful outputs.
                 </p>
                 <p>
-                    By exploring this page, you’ll gain insight into how carefully crafted prompts can shape AI behavior, enabling applications in storytelling, education, decision support, and more. The AI Showcase is not just a testament to the potential of AI but also a reflection of the innovative approaches used to push its boundaries.
+                    The goal is to highlight practical applications, from structured conversations to decision support, and show how AI can be used as a tool within real workflows.
                 </p>
             </IntroSection>
             <DividerLine />

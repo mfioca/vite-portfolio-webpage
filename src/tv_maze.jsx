@@ -54,13 +54,12 @@ const TvMaze = () => {
         <div className="tvmaze-body">
             <IntroSection title="TV Show Explorer">
                 <p>
-                    <strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The TV Show Explorer allows users to search for and discover information about their favorite TV shows, 
-                    leveraging data from the <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer">TVmaze</a> database. This feature showcases the integration of third-party 
-                    APIs into a React-based web application, demonstrating seamless interaction between front-end design and dynamic data sources.
+                    <strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;The TV Show Explorer allows users to search for and discover information about TV shows using data from the 
+                    <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer">TVmaze</a> database. It demonstrates integration of a third-party API within a React application, 
+                    highlighting how front-end design interacts with dynamic data sources.
                 </p>
                 <p>
-                    TVmaze provides a rich repository of TV show data, and this page highlights its capabilities by enabling users to explore show summaries, details, and links. The goal is to 
-                    deliver an intuitive and engaging experience, blending technical functionality with a clean and accessible design.
+                    The page enables users to explore show summaries, details, and external links, with a focus on delivering a clean, intuitive experience.
                 </p>
             </IntroSection>
             <DividerLine />

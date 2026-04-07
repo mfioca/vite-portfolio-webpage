@@ -24,13 +24,13 @@ const ChessDashboard = () => {
           >
             Chess.com
           </a>.
-          All data shown here is dynamically pulled from a connected Google Sheets document using a custom script, ensuring charts and tables stay up to date as new games are logged and processed. Data is extracted into the spreadsheet using a custom-built bookmarklet, then processed and grouped by opponent rating to surface performance trends.
+          All data is pulled from a connected Google Sheets document using a custom script, keeping charts and tables up to date as new games are logged. Data is captured via a custom bookmarklet and grouped by opponent rating to surface performance trends.
         </p>
         <p>
-          Explore detailed metrics across three tabs—game stats, opponent insights, and move quality breakdowns—using sortable tables and interactive charts. Whether you're evaluating accuracy, win rates, or blunder frequency, the visualizations update automatically as new games are logged to the tracking spreadsheet.
+          Explore metrics across three tabs—game stats, opponent insights, and move quality breakdowns—using sortable tables and interactive charts. Visualizations update automatically as new games are added to the tracking sheet.
         </p>
         <p>
-          <strong>Data integrity note:</strong> For data validity, all games included here are played under strict conditions: no engine hints, no analysis assistance, and no intentional undo or takebacks used to improve a position.
+          <strong>Data integrity note:</strong> All games included here are played under strict conditions: no engine hints, no analysis assistance, and no intentional undo or takebacks used to improve a position.
         </p>
         <p className="under-construction-warning">
           <strong>Note:</strong> This dashboard is still under construction. Features, layout, and visualizations may continue to evolve as more data and analysis tools are integrated.
