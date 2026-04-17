@@ -32,9 +32,14 @@ const ChessDashboard = () => {
         <p>
           <strong>Data integrity note:</strong> All games included here are played under strict conditions: no engine hints, no analysis assistance, and no intentional undo or takebacks used to improve a position.
         </p>
-        <p className="under-construction-warning">
-          <strong>Note:</strong> This dashboard is still under construction. Features, layout, and visualizations may continue to evolve as more data and analysis tools are integrated.
-        </p>
+        <div className="under-construction-warning">
+          <p>
+            <strong>Note:</strong> This dashboard is still under construction. Features, layout, and visualizations may continue to evolve as more data and analysis tools are integrated.
+          </p>
+          <p>
+            Data is pulled live from an active spreadsheet and may occasionally be in an editing state, which can affect how data or graphs load.
+          </p>
+        </div>
       </IntroSection>
       <DividerLine/>
       <ChessSetupSection/>
