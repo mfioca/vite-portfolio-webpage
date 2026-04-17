@@ -151,14 +151,21 @@ const About = () => {
                 image="/skyrim_theme.jpg"
             >
                 <p>
-                    My journey into UI design began with exploring Rainmeter, a powerful customization platform. Through extensive work with .ini and .inc files, 
-                    I developed a highly intricate custom UI theme, featuring advanced widgets and a centralized setup tool that controls nearly all variables. 
-                    This setup spans almost 10,000 lines of meticulously crafted code, showcasing my ability to create cohesive, functional, dynamic, 
-                    and visually compelling interfaces. The theme was uploaded to DeviantArt, where it received over 500 downloads within a few months 
-                    and is available&nbsp;
+                    My journey into UI design began with Rainmeter, a powerful desktop customization platform. Through extensive work with <code>.ini</code> and <code>.inc</code> files, 
+                    I designed and built a highly intricate custom UI theme featuring advanced widgets and a centralized configuration system capable of controlling nearly all aspects of the interface.
+                </p>
+                <p>
+                    The system spans nearly 10,000 lines of code and includes dynamic layout switching, theme customization, and interactive UI behaviors, demonstrating my ability to create cohesive, 
+                    functional, and responsive interfaces within a constrained environment.
+                </p>
+                <p>
+                    The project was published on DeviantArt, where it received over 500 downloads within a few months, and is available&nbsp;
                     <a href="https://www.deviantart.com/franknmullet/art/Skyrim-Theme-1-0-651760185" target="_blank" rel="noopener noreferrer" className="text-body">
-                        available here
+                        here
                     </a>.
+                </p>
+                <p>
+                    This project marked my first deep dive into building complex, user-driven interfaces from the ground up.
                 </p>
             </FeaturePanel>
             <FeaturePanel
