@@ -66,8 +66,8 @@ export const ChessSectionTable = ({ data, rowsPerPage = 25, title }) => {
       </p>
       {isTableOpen && (
         <>
-          <div className="game-archive-table-container">
-            <table className="game-archive-table">
+          <div className="chess-section-table-container">
+            <table className="chess-section-table">
               <thead>
                 <tr>
                   {keys.map((key) => (

@@ -218,27 +218,6 @@ const GameDataSection = () => {
       row =>
         Number(row["Opponent rating"]) >= 1200
     ) || [];
-/*
-  const avgAccuracy =
-    filteredRows.length
-      ? (
-          filteredRows.reduce(
-            (sum, row) => sum + (Number(row["Accuracy"]) || 0),
-            0
-          ) / filteredRows.length
-        ).toFixed(2)
-      : null;
-
-  const avgGameRating =
-    filteredRows.length
-      ? Math.round(
-          filteredRows.reduce(
-            (sum, row) => sum + (Number(row["Game Rating"]) || 0),
-            0
-          ) / filteredRows.length
-        )
-      : null;
-*/
 
   const validAccuracyRows = data
   ? data.filter(row => {

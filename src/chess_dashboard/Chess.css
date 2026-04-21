@@ -67,6 +67,93 @@
 /*                    Game Archive Main Table                            */
 /*************************************************************************/
 
+/* Container */
+.chess-section-table-container {
+  overflow-x: auto;
+  margin: var(--marginV20) 0;
+  background-color: var(--colorwhite);
+  border-radius: var(--borderradius);
+  border: var(--border);
+}
+
+/* Table */
+.chess-section-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px; 
+}
+
+/* Header */
+.chess-section-table th {
+  white-space: normal;       
+  word-wrap: break-word;     
+  overflow-wrap: break-word; 
+  text-align: center;        
+  min-width: 100px;
+  max-width: 150px;
+  padding: 8px;              
+  font-size: 0.9rem;         
+  border: var(--tableborder);
+  background-color: var(--tableheaderdarkcolor);
+  color: var(--colorwhite);
+  font-weight: bold;
+}
+
+/* Freeze first header cell */
+.chess-section-table th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background-color: var(--tableheaderdarkcolor);
+  color: var(--colorwhite);
+}
+
+.chess-section-table th:first-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 2px;
+  height: 100%;
+  background-color: black;
+}
+
+/* Rows */
+.chess-section-table tr:hover {
+  background-color: var(--tablemouseovercolor);
+}
+
+/* Cells */
+.chess-section-table td {
+  border: var(--tableborder);
+  padding: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Freeze first data cell */
+.chess-section-table td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: var(--colorwhite);
+  z-index: 1;
+}
+
+.chess-section-table td:first-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 2px;
+  height: 100%;
+  background-color: black;
+}
+
+/*************************************************************************/
+/*                    Game Archive Main Table                            */
+/*************************************************************************/
+
 
 .game-archive-table-container {
   overflow-x: auto;
@@ -121,7 +208,7 @@
 .game-archive-table td {
   border: var(--tableborder);
   padding: 8px;
-  text-align: left;
+  text-align: center;
   font-size: 0.9rem;
   white-space: nowrap;
 }
@@ -148,7 +235,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: var(--default-spacing);
+  padding: var(--padding);
+  margin: var(--default-spacing);
   gap: 10px;
 }
 
