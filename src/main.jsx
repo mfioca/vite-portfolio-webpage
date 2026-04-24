@@ -193,8 +193,14 @@ const Footer = () =>{
         <p>
           <a
             href="mailto:mfioca@gmail.com"
+            style={{ paddingRight: '22px' }}
             className="linkedin-link"
           >
+            <img 
+              src={`${import.meta.env.BASE_URL}email.png`} 
+              alt="GitHub Profile" 
+              className="github-icon"
+            />
             Contact Me
           </a>
         </p>
@@ -206,7 +212,7 @@ const Footer = () =>{
             className="linkedin-link"
           >
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png" 
+              src={`${import.meta.env.BASE_URL}InBug-White.png`}  
               alt="LinkedIn" 
               className="linkedin-icon" 
             />
