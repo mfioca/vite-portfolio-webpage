@@ -260,7 +260,7 @@ const avgGameRating =
       <div>
         <h2>Game Data</h2>
         <p className="game-data-annotation">
-          * Average calculations reflect games after the first 500 entries to emphasize more recent performance.
+          * Average calculations reflect games after the first 500 entries and exclude opponents rated below 1000 to emphasize more current performance.
         </p>
         { loading && <p>Loading data...</p>}
         { error && <p>Error: { error }</p>}
