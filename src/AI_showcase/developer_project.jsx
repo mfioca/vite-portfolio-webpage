@@ -16,10 +16,11 @@ const DeveloperPrompt = () => {
             <Tabs className="vertical-tabs">
                 <div className="vertical-tabs-layout">
                     <TabList>
-                        <Tab>Developer Prompt</Tab>
-                        <Tab>Developer 2.0 Prompt</Tab>
-                        <Tab>Developer 3.0 Prompt</Tab>
-                        <Tab>Developer 4.0 Prompt</Tab>
+                        <Tab>Developer Assistant</Tab>
+                        <Tab>Developer 2.0 Assistant</Tab>
+                        <Tab>Developer 3.0 Assistant</Tab>
+                        <Tab>Developer 4.0 Assistant</Tab>
+                        <Tab>Developer 5.0 Assistant</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
@@ -137,6 +138,30 @@ const DeveloperPrompt = () => {
                                     </>
                                 }
                                 chatData={ <ChatBubble data={ chatData.developer4 } /> }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/tank.jpg`}
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                            <ShowcaseComponent
+                                title= "Developer Assitant 5.0"
+                                titleDescription = {
+                                    <>
+                                        <p>
+                                            The Developer 5.0 prompt, known as Tank 5.0, refines the assistant from a rules-driven technical collaborator into a more natural, grounded working partner. Where Developer 4.0 focused heavily on responsiveness, minimalism, and user-led control, Version 5 keeps those strengths while giving Tank a clearer identity, tone, and sense of judgment.
+                                        </p>
+                                        <p>
+                                            This version places more emphasis on conversational rhythm, scope awareness, and knowing when not to act. It sharpens the distinction between a user asking for help and a user simply sharing context, helping the assistant avoid unnecessary correction, expansion, or troubleshooting. The result is a steadier prompt architecture that feels less procedural and more aligned with real collaboration.
+                                        </p>
+                                    </>
+                                }
+                                prompt = { tank.DeveloperPrompt5 }
+                                chatDescription = {
+                                    <>
+                                        <p>
+                                            A Tank 5.0 chat example is still being selected. For now, this section marks where the transcript will live and keeps the full showcase structure visible while the prompt is being reviewed in context.
+                                        </p>
+                                    </>
+                                }
                                 avatar={`${import.meta.env.BASE_URL}ai_avatars/tank.jpg`}
                             />
                         </TabPanel>

@@ -18,6 +18,7 @@ const TimPrompt = () => {
                     <TabList>
                         <Tab>Tim 1.0</Tab>
                         <Tab>Tim 2.0</Tab>
+                        <Tab>Tim 3.0</Tab>
                     </TabList>
                     <BodyContainer hasBackground = { true } className="vertical-tab-content">
                         <TabPanel>
@@ -83,6 +84,33 @@ const TimPrompt = () => {
                                     </>
                                 }
                                 chatData={ <ChatBubble data={ chatData.timTheEnchanter2 } /> }
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/tim.jpg`}
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                            <ShowcaseComponent
+                                title= "Tim 3.0"
+                                titleDescription = {
+                                    <>
+                                        <p>
+                                            Tim 3.0 sharpens the original concept into a more natural conversational presence. This version keeps the dry humor, absurdity, and casual charm, but gives Tim better judgment around when to help, when to joke, when to listen, and when not to turn a passing comment into a tiny PowerPoint presentation from the Ministry of Unrequested Assistance.
+                                        </p>
+                                        <p>
+                                            Compared to earlier versions, this prompt places more emphasis on reading social intent, preserving personality, and avoiding over-helpful assistant behavior. The result is a more balanced conversational partner: useful when asked, funny when it fits, and much less likely to mistake every complaint for a troubleshooting ticket.
+                                        </p>
+                                    </>
+                                }
+                                prompt = { tim.TimTheEnchanterPrompt3 }
+                                chatDescription = {
+                                    <>
+                                        <p>
+                                            A dedicated Tim 3.0 chat example has not been selected yet. This section is reserved for a conversation that shows the updated prompt doing what it was built for: responding naturally, keeping its personality intact, and recognizing the difference between a real request and a casual remark.
+                                        </p>
+                                        <p>
+                                            The ideal example should highlight Tim’s improved conversational rhythm, especially in moments involving humor, venting, or quick back-and-forth where a generic assistant would probably arrive with a checklist and ruin the furniture.
+                                        </p>
+                                    </>
+                                }
                                 avatar={`${import.meta.env.BASE_URL}ai_avatars/tim.jpg`}
                             />
                         </TabPanel>
