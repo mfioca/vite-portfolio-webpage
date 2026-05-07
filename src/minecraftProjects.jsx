@@ -85,6 +85,11 @@ const MinecraftProjects = () => {
                                         LionCheater
                                     </a> – Creator of functional and aesthetic survival builds with cozy, compact design work.
                                 </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@armun" target="_blank" rel="noopener noreferrer">
+                                        armun
+                                    </a> – Creates impressive Minecraft builds with clear tutorials, thoughtful layouts, and a strong eye for atmosphere and detail.
+                                </li>
                             </ul>
                             <p>
                                 These creators' work has provided both guidance and inspiration throughout the construction of my Minecraft 
