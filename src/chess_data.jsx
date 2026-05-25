@@ -30,7 +30,7 @@ const ChessDashboard = () => {
           Explore metrics across three tabs—game stats, opponent insights, and move quality breakdowns—using sortable tables and interactive charts. Visualizations update automatically as new games are added to the tracking sheet.
         </p>
         <p>
-          <strong>Data integrity note:</strong> All games included here are played under strict conditions: no engine hints, no analysis assistance, and no intentional undo or takebacks used to improve a position.
+          <strong>Data integrity note:</strong> All games included here are played under strict conditions: no engine analysis assistance, no hints that significantly alter the outcome of a game, and no intentional undo/takebacks used to improve a position.
         </p>
         <div className="under-construction-warning">
           <p>
