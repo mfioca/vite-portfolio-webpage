@@ -229,6 +229,76 @@ export const Random_buildings = [
     }),
 );
 
+export const shrine_area = [
+  {
+    asset: "shrine_area_1.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+  {
+    asset: "shrine_area_2.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+  {
+    asset: "shrine_area_3.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+  {
+    asset: "shrine_area_4.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+  {
+    asset: "shrine_area_5.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+  {
+    asset: "shrine_area_6.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+  {
+    asset: "shrine_area_7.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+  {
+    asset: "shrine_area_8.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+  {
+    asset: "shrine_area_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+  {
+    asset: "shrine_area_10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Cherry blossom shrine area in Skyhold Vale",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+    ({
+      src: `${skyValeLink("shrine_area", "", asset, width)}`,
+      alt,
+      width,
+      height,
+    }),
+);
 
 /*************************************************************************/
 /*                          MOUNTAIN                                     */
@@ -430,6 +500,24 @@ export const skyvale_mountain_final_details = [
     width: 1280,
     height: 704,
     alt: "Placeholder description for mountain_final_8",
+  },
+  {
+    asset: "mountain_final_9.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_9",
+  },
+  {
+    asset: "mountain_final_10.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_10",
+  },
+  {
+    asset: "mountain_final_11.jpg",
+    width: 1280,
+    height: 704,
+    alt: "Placeholder description for mountain_final_11",
   }
 ].map(
   ({ asset, alt, width, height }) =>

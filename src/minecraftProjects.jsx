@@ -1,4 +1,4 @@
-import React, { useState,  } from 'react';
+import React, { useState, } from 'react';
 import WhiterunProject from './minecraft_project/whiteruncity';
 import DwarvenKingdom from './minecraft_project/dwarvenkingdom';
 import CrowHaven from './minecraft_project/crowhaven';
@@ -9,7 +9,7 @@ import PelicanTown from './minecraft_project/PelicanTown';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './minecraft_project/minecraft.css';
-import 'react-tabs/style/react-tabs.css'; 
+import 'react-tabs/style/react-tabs.css';
 
 
 const MinecraftProjects = () => {
@@ -19,11 +19,11 @@ const MinecraftProjects = () => {
         <div className="minecraft-body">
             <IntroSection title="Welcome to My Minecraft Realm">
                 <p><strong className="shadow">About This Web Page:</strong>&nbsp;&nbsp;
-                    This section showcases a 4+ year-old Minecraft Bedrock creative realm that is a sprawling world filled with detailed cities, epic landscapes, and rich history. 
+                    This section showcases a 4+ year-old Minecraft Bedrock creative realm that is a sprawling world filled with detailed cities, epic landscapes, and rich history.
                     Every build tells a story, from grand dwarven halls carved into mountains to the meticulously recreated city of Whiterun from <i>The Elder Scrolls: Skyrim</i>. This project also reflects long-term planning, spatial design, and the ability to execute large, multi-phase builds over time.
                 </p>
                 <h3>Key locations include:</h3>
-                <ul className= "default-list">
+                <ul className="default-list">
                     <li>A massive underground dwarven kingdom, featuring a maze inspired by <i>The Shining</i>, a great forge reminiscent of <i>WoW’s Ironforge</i>, a <i>Skyrim</i> dragon logo, and other pop culture nods.</li>
                     <li>A carefully recreated Whiterun city from <i>The Elder Scrolls: Skyrim</i>, capturing the city’s iconic layout, structures, and atmosphere.</li>
                     <li>A bustling port town with markets, cargo storage, three ships, and a working lighthouse.</li>
@@ -36,8 +36,8 @@ const MinecraftProjects = () => {
                     This world is constantly evolving, with every build adding new depth and character. Whether it’s medieval cities, ancient wonders, or hidden secrets, there’s always something to explore. With each new build, the world continues to expand, bringing new challenges, inspirations, and stories to life.
                 </p>
                 <div className="collapsible-section">
-                    <h3 
-                        className="toggle-gallery-title" 
+                    <h3
+                        className="toggle-gallery-title"
                         onClick={() => setIsAcknowledgementsOpen(!isAcknowledgementsOpen)}
                     >
                         {isAcknowledgementsOpen ? `▼ Creator Special Thanks & Acknowledgements` : `▶ Creator Special Thanks & Acknowledgements`}
@@ -45,8 +45,8 @@ const MinecraftProjects = () => {
                     {isAcknowledgementsOpen && (
                         <div className="collapsible-content">
                             <p>
-                                Many of the structures and towns in my Minecraft realm were heavily influenced by or directly inspired by 
-                                the incredible work of several Minecraft builders. Their detailed tutorials and design insights played a 
+                                Many of the structures and towns in my Minecraft realm were heavily influenced by or directly inspired by
+                                the incredible work of several Minecraft builders. Their detailed tutorials and design insights played a
                                 key role in shaping various aspects of my world.
                             </p>
                             <ul className="default-list">
@@ -90,9 +90,26 @@ const MinecraftProjects = () => {
                                         armun
                                     </a> – Creates impressive Minecraft builds with clear tutorials, thoughtful layouts, and a strong eye for atmosphere and detail.
                                 </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@MrMattRanger" target="_blank" rel="noopener noreferrer">
+                                        MrMattRanger
+                                    </a> – Creates beautifully detailed Minecraft builds with a focus on Japanese architecture, temples, and immersive landscaping.
+                                </li>
+
+                                <li>
+                                    <a href="https://www.youtube.com/@PolarCat22" target="_blank" rel="noopener noreferrer">
+                                        Polar Cat
+                                    </a> – Known for elegant Minecraft house designs and approachable tutorials that blend creativity with practical building techniques.
+                                </li>
+
+                                <li>
+                                    <a href="https://www.youtube.com/@Cortezerino" target="_blank" rel="noopener noreferrer">
+                                        Cortezerino
+                                    </a> – Creates detailed landscaping and decorative Minecraft builds, with an emphasis on natural environments and thoughtful design.
+                                </li>
                             </ul>
                             <p>
-                                These creators' work has provided both guidance and inspiration throughout the construction of my Minecraft 
+                                These creators' work has provided both guidance and inspiration throughout the construction of my Minecraft
                                 realm. Their tutorials helped refine details, improve layouts, and bring ambitious ideas to life.
                             </p>
                         </div>
@@ -112,7 +129,7 @@ const MinecraftProjects = () => {
                         <Tab>Random Places</Tab>
                     </TabList>
                     <TabPanel>
-                        <WhiterunProject/>
+                        <WhiterunProject />
                     </TabPanel>
                     <TabPanel>
                         <DwarvenKingdom />
@@ -124,10 +141,10 @@ const MinecraftProjects = () => {
                         <Emberhold />
                     </TabPanel>
                     <TabPanel>
-                        <SkyholdVale/>
+                        <SkyholdVale />
                     </TabPanel>
                     <TabPanel>
-                        <PelicanTown/>
+                        <PelicanTown />
                     </TabPanel>
                     <TabPanel>
                         <RandomPlaces />

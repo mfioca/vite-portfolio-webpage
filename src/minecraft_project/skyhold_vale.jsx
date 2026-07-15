@@ -16,7 +16,7 @@ const SkyholdVale = () => {
                         <Tab>Inner City</Tab>
                         <Tab>Feature Buildings</Tab>
                     </TabList>
-                    <BodyContainer hasBackground = { true } className="vertical-tab-content">
+                    <BodyContainer hasBackground={true} className="vertical-tab-content">
                         <TabPanel>
                             <IntroSection title="Skyhold Vale">
                                 <p>
@@ -29,11 +29,11 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Mountain Initial Planning"
-                                photos={ skyhold_vale_photos.skyvale_mountain_planning }
+                                photos={skyhold_vale_photos.skyvale_mountain_planning}
                                 description={
                                     <>
                                         <p>
-                                            These images capture the mountain during the early stages of construction, as the hobbit-style hillside homes were being built into the slope.  
+                                            These images capture the mountain during the early stages of construction, as the hobbit-style hillside homes were being built into the slope.
                                             They were taken before the valley was cleared or other areas of the city had begun development, offering a focused look at the earliest phase of Skyhold Vale’s expansion.
                                         </p>
                                     </>
@@ -42,7 +42,7 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Mountain Detail Progress"
-                                photos={ skyhold_vale_photos.skyvale_mountain_progress }
+                                photos={skyhold_vale_photos.skyvale_mountain_progress}
                                 description={
                                     <>
                                         <p>
@@ -54,7 +54,7 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Mountain Final Details"
-                                photos={ skyhold_vale_photos.skyvale_mountain_final_details }
+                                photos={skyhold_vale_photos.skyvale_mountain_final_details}
                                 description={
                                     <>
                                         <p>
@@ -73,11 +73,11 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Outskirts section 1"
-                                photos={ skyhold_vale_photos.skyvale_outskirts1 }
+                                photos={skyhold_vale_photos.skyvale_outskirts1}
                                 description={
                                     <>
                                         <p>
-                                            This first set of images highlights the initial efforts to expand Skyhold Vale’s outskirts. Building outward from the original generated village, this section captures early progress in adapting and extending the default structures to establish a cohesive edge around the city’s perimeter. 
+                                            This first set of images highlights the initial efforts to expand Skyhold Vale’s outskirts. Building outward from the original generated village, this section captures early progress in adapting and extending the default structures to establish a cohesive edge around the city’s perimeter.
                                         </p>
                                     </>
                                 }
@@ -85,7 +85,7 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Outskirts section 2"
-                                photos={ skyhold_vale_photos.skyvale_outskirts2 }
+                                photos={skyhold_vale_photos.skyvale_outskirts2}
                                 description={
                                     <>
                                         <p>
@@ -104,7 +104,7 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Construction"
-                                photos={ skyhold_vale_photos.skyvale_inner_city_construction }
+                                photos={skyhold_vale_photos.skyvale_inner_city_construction}
                                 description={
                                     <>
                                         <p>
@@ -116,7 +116,7 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Detail Progress"
-                                photos={ skyhold_vale_photos.skyvale_inner_city_detail_views  }
+                                photos={skyhold_vale_photos.skyvale_inner_city_detail_views}
                                 description={
                                     <>
                                         <p>
@@ -128,7 +128,7 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Final Details"
-                                photos={ skyhold_vale_photos.skyvale_inner_city_final_details  }
+                                photos={skyhold_vale_photos.skyvale_inner_city_final_details}
                                 description={
                                     <>
                                         <p>
@@ -147,7 +147,7 @@ const SkyholdVale = () => {
                             <DividerLine />
                             <MinecraftGallery
                                 title="Castle"
-                                photos={ skyhold_vale_photos.skyvale_castle }
+                                photos={skyhold_vale_photos.skyvale_castle}
                                 description={
                                     <>
                                         <p>
@@ -161,11 +161,26 @@ const SkyholdVale = () => {
                             />
                             <DividerLine />
                             <MinecraftGallery
-                                title="Random Buildings"
-                                photos={ skyhold_vale_photos.Random_buildings }
+                                title="Shrine Area"
+                                photos={skyhold_vale_photos.shrine_area}
                                 description={
                                     <>
-                                       <p>
+                                        <p>
+                                            Near the summit of Skyhold Vale, beside the castle, sits a cherry blossom-inspired shrine district built around a small dividing wall and torii gate entrance. A branching path divides the space into several smaller areas, including a quiet enclosed park with a fountain and benches, a traditional Japanese-style house with paper sliding doors, and a long koi pond crossed by a small bridge leading toward the main temple.
+                                        </p>
+                                        <p>
+                                            Behind the temple, the path opens into a grassy overlook anchored by a large cherry blossom tree, while another route winds past the house toward a second tree-lined area. These quieter spaces are still open to future development, but for now they give the district room to breathe and help frame the temple, pond, and surrounding architecture.
+                                        </p>
+                                    </>
+                                }
+                            />
+                            <DividerLine />
+                            <MinecraftGallery
+                                title="Random Buildings"
+                                photos={skyhold_vale_photos.Random_buildings}
+                                description={
+                                    <>
+                                        <p>
                                             This gallery features close-up exterior views of individual buildings scattered throughout Skyhold Vale. Each image highlights architectural details, material choices, and stylistic variety. New images will be added over time as more structures are completed across the city.
                                         </p>
                                     </>
