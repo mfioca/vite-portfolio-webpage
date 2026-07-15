@@ -4,7 +4,7 @@ import { BodyContainer } from '../SharedComponents.jsx';
 import { ChatBubble, ShowcaseComponent } from './ai_showcase_components.jsx';
 import './ai_showcase.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css'; 
+import 'react-tabs/style/react-tabs.css';
 import { Link } from 'react-router-dom';
 
 import * as pa from './prompts/personalization_prompts.jsx';
@@ -12,13 +12,13 @@ import chatData from './chats/personalization_chats.json';
 
 
 const ghostsLink = (
-    <Link 
+    <Link
         to={`/show/46573`}
         style={{
-            display: 'inline-block', 
-            marginTop: '10px', 
-            fontSize: '0.9rem', 
-            color: '#0078d4', 
+            display: 'inline-block',
+            marginTop: '10px',
+            fontSize: '0.9rem',
+            color: '#0078d4',
             textDecoration: 'none'
         }}
     >
@@ -34,12 +34,13 @@ const GPTAssistant = () => {
                     <TabList>
                         <Tab>Personalization Assistant 1.0</Tab>
                         <Tab>Personalization Assistant 2.0</Tab>
+                        <Tab>Personalization Assistant 3.0</Tab>
                     </TabList>
-                    <BodyContainer hasBackground = { true } className="vertical-tab-content">
+                    <BodyContainer hasBackground={true} className="vertical-tab-content">
                         <TabPanel>
                             <ShowcaseComponent
                                 title="Personalization Assistant 1.0"
-                                titleDescription = {
+                                titleDescription={
                                     <>
                                         <p>
                                             The Personalization Assistant was designed to help users craft their ideal ChatGPT experience by guiding them through the customization process. It focuses on the two key personalization questions within ChatGPT, ensuring responses align with each user's tone, communication style, and specific needs.
@@ -52,8 +53,8 @@ const GPTAssistant = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { pa.PersonalizationAssistant }
-                                chatDescription = {
+                                prompt={pa.PersonalizationAssistant}
+                                chatDescription={
                                     <>
                                         <p>
                                             The chat simulation below showcases a playful test of the Personalization Assistant prompt, featuring Flower from the US version of <em>Ghosts</em>. Both the assistant and I thought pretending to be Flower, a free-spirited, effortlessly whimsical, and delightfully scatterbrained character, would be a fun and unique way to push the prompt’s limits.
@@ -62,18 +63,18 @@ const GPTAssistant = () => {
                                             Flower’s distinct personality, with her spontaneous energy and tendency to drift into tangents, created the perfect challenge to test how well the prompt could adapt to unconventional and unpredictable responses. The assistant had to balance guiding Flower through the personalization process while keeping up with her eccentric charm and offbeat observations.
                                         </p>
                                         <p>
-                                            This interaction highlights the prompt's ability to remain structured yet flexible, demonstrating how it can navigate even the quirkiest conversations while staying focused on the task. You can learn more about the show <em>Ghosts</em> and its colorful cast of characters by visiting the&nbsp;{ ghostsLink }
+                                            This interaction highlights the prompt's ability to remain structured yet flexible, demonstrating how it can navigate even the quirkiest conversations while staying focused on the task. You can learn more about the show <em>Ghosts</em> and its colorful cast of characters by visiting the&nbsp;{ghostsLink}
                                         </p>
                                     </>
                                 }
-                                chatData = { <ChatBubble data={ chatData.personalizationAssistant } /> }
+                                chatData={<ChatBubble data={chatData.personalizationAssistant} />}
                                 avatar={`${import.meta.env.BASE_URL}ai_avatars/modula.jpg`}
                             />
                         </TabPanel>
                         <TabPanel>
                             <ShowcaseComponent
                                 title="Modula - GPT Personalization Assistant"
-                                titleDescription = {
+                                titleDescription={
                                     <>
                                         <p>
                                             Personalization Assistant 2.0 builds on the original by aligning more closely with ChatGPT’s latest customization settings. The update reflects a deeper understanding of how prompt structure influences assistant behavior and user experience.
@@ -86,8 +87,8 @@ const GPTAssistant = () => {
                                         </p>
                                     </>
                                 }
-                                prompt = { pa.PersonalizationAssistant_2 }
-                                chatDescription = {
+                                prompt={pa.PersonalizationAssistant_2}
+                                chatDescription={
                                     <>
                                         <p>
                                             This chat simulation showcases a live walkthrough of the updated Personalization Assistant prompt, tested within a brand-new ChatGPT account. Unlike prior sessions, this interaction took place in an environment with no saved long-term memory or behavioral history.
@@ -100,7 +101,31 @@ const GPTAssistant = () => {
                                         </p>
                                     </>
                                 }
-                                chatData = { <ChatBubble data={ chatData.personalizationAssistant2_chat } /> }
+                                chatData={<ChatBubble data={chatData.personalizationAssistant2_chat} />}
+                                avatar={`${import.meta.env.BASE_URL}ai_avatars/modula.jpg`}
+                            />
+                        </TabPanel>
+                        <TabPanel>
+                            <ShowcaseComponent
+                                title="Modula - GPT Personalization Assistant"
+                                titleDescription={
+                                    <>
+                                        <p>
+                                            Personalization Assistant 3.0 updates the prompt to match ChatGPT’s revised personalization settings, replacing the earlier traits-focused format with the newer <em>Custom instructions</em> and <em>More about you</em> fields. This required restructuring both the interview process and the final output so the generated responses align directly with the current form.
+                                        </p>
+                                        <p>
+                                            Version 3 also adds a clearer fast path, stronger language and formatting controls, first-person output, multilingual support, and a more precise final confirmation process. Compared with Version 2, it is less general, more tightly constrained, and better equipped to produce concise, copy-ready settings that reflect the user’s actual tone and priorities.
+                                        </p>
+                                    </>
+                                }
+                                prompt={pa.PersonalizationAssistant_3}
+                                chatDescription={
+                                    <>
+                                        <p>
+                                            A chat example for this version is still in development. Once a conversation is selected that best reflects the prompt's capabilities and intended behavior, it will be added here.
+                                        </p>
+                                    </>
+                                }
                                 link="https://chatgpt.com/g/g-6809abb94dd48191bb8a07c01000306b-modula-gpt-personalization-assistant"
                                 avatar={`${import.meta.env.BASE_URL}ai_avatars/modula.jpg`}
                             />
