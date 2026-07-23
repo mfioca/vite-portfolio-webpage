@@ -1,5 +1,6 @@
-.chess-body  {
-  font-family: var(--fontfamily); /* A clean sans-serif font */
+.chess-body {
+  font-family: var(--fontfamily);
+  /* A clean sans-serif font */
   justify-content: center;
   margin: var(--margin);
   padding: var(--padding);
@@ -7,7 +8,7 @@
 }
 
 .script-container {
-  max-width: 850px;   
+  max-width: 850px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -80,19 +81,19 @@
 .chess-section-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 1000px; 
+  min-width: 1000px;
 }
 
 /* Header */
 .chess-section-table th {
-  white-space: normal;       
-  word-wrap: break-word;     
-  overflow-wrap: break-word; 
-  text-align: center;        
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
   min-width: 100px;
   max-width: 150px;
-  padding: 8px;              
-  font-size: 0.9rem;         
+  padding: 8px;
+  font-size: 0.9rem;
   border: var(--tableborder);
   background-color: var(--tableheaderdarkcolor);
   color: var(--colorwhite);
@@ -166,17 +167,17 @@
 .game-archive-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 1000px; 
+  min-width: 1000px;
 }
 
 .game-archive-table th {
-  white-space: normal;       
-  word-wrap: break-word;     
-  overflow-wrap: break-word; 
-  text-align: center;        
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
   max-width: 150px;
-  padding: 8px;              
-  font-size: 0.9rem;         
+  padding: 8px;
+  font-size: 0.9rem;
   border: var(--tableborder);
   background-color: var(--tableheaderdarkcolor);
   color: var(--colorwhite);
@@ -237,12 +238,21 @@
   align-items: center;
   padding: var(--padding);
   margin: var(--default-spacing);
-  gap: 10px;
+  gap: 1px;
 }
 
 .pagination button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.game-archive-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding);
+  margin: var(--default-spacing);
+  gap: 10px;
 }
 
 .chesschart-container {
@@ -268,7 +278,7 @@
 .chesschart-box {
   display: flex;
   flex-direction: column;
-  gap: var(--gap10); 
+  gap: var(--gap10);
 }
 
 .chesschart-scroll-x {
@@ -317,4 +327,27 @@
     min-width: 1800px;
     height: 350px;
   }
+
+  .game-archive-pagination {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: 6px;
+    padding: var(--padding);
+    margin: var(--default-spacing);
+  }
+
+  .game-archive-pagination span {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: center;
+    margin: 0;
+  }
+
+  .game-archive-pagination button {
+    min-width: 0;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
 }

@@ -7,8 +7,8 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
-  LineElement,      
-  PointElement,     
+  LineElement,
+  PointElement,
   Title,
   Tooltip,
   Legend
@@ -23,8 +23,8 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
-  LineElement,      
-  PointElement,     
+  LineElement,
+  PointElement,
   Title,
   Tooltip,
   Legend,
@@ -59,7 +59,7 @@ export const ChessSectionTable = ({ data, rowsPerPage = 25, title }) => {
         onClick={() => setisTableOpen(prev => !prev)}
         style={{ cursor: "pointer" }}
       >
-        {isTableOpen ? `▼ ${ title }` : `▶ ${ title }`}
+        {isTableOpen ? `▼ ${title}` : `▶ ${title}`}
       </h2>
       <p style={{ textAlign: 'center', marginTop: '10px' }}>
         ( <i>Click to view full data table</i> )
@@ -71,15 +71,15 @@ export const ChessSectionTable = ({ data, rowsPerPage = 25, title }) => {
               <thead>
                 <tr>
                   {keys.map((key) => (
-                    <th key={ key }>{ key }</th>
+                    <th key={key}>{key}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {paginatedData.map((row, rowIndex) => (
-                  <tr key={ rowIndex }>
+                  <tr key={rowIndex}>
                     {keys.map((key, colIndex) => (
-                      <td key={ colIndex }>{ row[key] }</td>
+                      <td key={colIndex}>{row[key]}</td>
                     ))}
                   </tr>
                 ))}
@@ -90,19 +90,19 @@ export const ChessSectionTable = ({ data, rowsPerPage = 25, title }) => {
             <button
               className="button"
               onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-              disabled={ currentPage === 1 }
+              disabled={currentPage === 1}
             >
-              Previous
+              &lsaquo;
             </button>
             <span style={{ margin: '0 1rem' }}>
-              Page { currentPage } of { totalPages }
+              Page {currentPage} of {totalPages}
             </span>
             <button
               className="button"
               onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-              disabled={ currentPage === totalPages }
+              disabled={currentPage === totalPages}
             >
-              Next
+              &rsaquo;
             </button>
           </div>
         </>
@@ -128,62 +128,62 @@ export const GameArchiveTable = ({ data, rowsPerPage = 25, title }) => {
 
   return (
     <>
-      <h2>{ title }</h2>
+      <h2>{title}</h2>
       <div className="game-archive-table-container">
         <table className="game-archive-table">
           <thead>
             <tr>
               {keys.map((key) => (
-                <th key={ key }>{ key }</th>
+                <th key={key}>{key}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {paginatedData.map((row, rowIndex) => (
-              <tr key={ rowIndex }>
+              <tr key={rowIndex}>
                 {keys.map((key, colIndex) => (
-                  <td key={ colIndex }>{ row[key] }</td>
+                  <td key={colIndex}>{row[key]}</td>
                 ))}
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <div className="pagination">
+      <div className="game-archive-pagination">
         <button
           className="button"
-          onClick={ () => setCurrentPage(1) }
-          disabled={ currentPage === 1 }
+          onClick={() => setCurrentPage(1)}
+          disabled={currentPage === 1}
         >
-          First
+          &laquo;
         </button>
 
         <button
           className="button"
-          onClick={ () => setCurrentPage((p) => Math.max(p - 1, 1)) }
-          disabled={ currentPage === 1 }
+          onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+          disabled={currentPage === 1}
         >
-          Previous
+          &lsaquo;
         </button>
 
         <span style={{ margin: '0 1rem' }}>
-          Page { currentPage } of { totalPages }
+          Page {currentPage} of {totalPages}
         </span>
 
         <button
           className="button"
-          onClick={ () => setCurrentPage((p) => Math.min(p + 1, totalPages)) }
-          disabled={ currentPage === totalPages }
+          onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+          disabled={currentPage === totalPages}
         >
-          Next
+          &rsaquo;
         </button>
 
         <button
           className="button"
-          onClick={ () => setCurrentPage(totalPages) }
-          disabled={ currentPage === totalPages }
+          onClick={() => setCurrentPage(totalPages)}
+          disabled={currentPage === totalPages}
         >
-          Last
+          &raquo;
         </button>
       </div>
     </>
@@ -214,16 +214,16 @@ export const BarChart = ({
     .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
 
   const chartData = {
-  labels: cleanedData.map(entry => entry.label),
-  datasets: [
-    {
-      label: title,
-      data: cleanedData.map(entry => entry.value),
-      backgroundColor: color,
-      borderColor: color.replace('0.6', '1'),
-      borderWidth: 1
-    }
-  ]
+    labels: cleanedData.map(entry => entry.label),
+    datasets: [
+      {
+        label: title,
+        data: cleanedData.map(entry => entry.value),
+        backgroundColor: color,
+        borderColor: color.replace('0.6', '1'),
+        borderWidth: 1
+      }
+    ]
   };
 
   const chartOptions = {
@@ -245,7 +245,7 @@ export const BarChart = ({
 
   return (
     <div className="chesschart-container">
-      <Bar  data={ chartData } options={ chartOptions } />
+      <Bar data={chartData} options={chartOptions} />
     </div>
   );
 };
@@ -263,13 +263,13 @@ export const FullWidthBarChart = ({
   yMin = 0
 }) => {
   const cleanedData = rawData
-  .filter(row => row[labelField] && row[valueField])
-  .map(row => ({
-    label: row[labelField].toString(),
-    value: parseFloat(row[valueField]),
-    games: row["Games Played"]
-  }))
-  .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
+    .filter(row => row[labelField] && row[valueField])
+    .map(row => ({
+      label: row[labelField].toString(),
+      value: parseFloat(row[valueField]),
+      games: row["Games Played"]
+    }))
+    .sort((a, b) => a.label.localeCompare(b.label, undefined, { numeric: true }));
 
   const chartData = {
     labels: cleanedData.map(entry => entry.label),
@@ -321,9 +321,9 @@ export const FullWidthBarChart = ({
   };
 
   return (
-  <div className="full-width-chart-container">
-    <Bar  data={ chartData } options={ chartOptions } />
-  </div>
+    <div className="full-width-chart-container">
+      <Bar data={chartData} options={chartOptions} />
+    </div>
   );
 };
 
@@ -335,7 +335,7 @@ export const GroupedBarChart = ({
   datalabels = false,
   yMin = 0,
   yMax,
-  yTickFormatter = null   
+  yTickFormatter = null
 }) => {
   // group by labelField
   const grouped = {};
@@ -395,7 +395,7 @@ export const GroupedBarChart = ({
 
   return (
     <div className="chesschart-container">
-      <Bar data={ chartData } options={ chartOptions } />
+      <Bar data={chartData} options={chartOptions} />
     </div>
   );
 };
@@ -474,7 +474,7 @@ export const StackedPercentBarChart = ({
       tooltip: {
         callbacks: {
           label: (ctx) =>
-            `${ ctx.dataset.label }: ${ ctx.parsed.y.toFixed(1) }%`
+            `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%`
         }
       },
       datalabels: { display: datalabels }
@@ -498,7 +498,7 @@ export const StackedPercentBarChart = ({
 
   return (
     <div className="chesschart-container">
-      <Bar data={ chartData } options={ chartOptions } />
+      <Bar data={chartData} options={chartOptions} />
     </div>
   );
 };
@@ -564,7 +564,7 @@ export const LineChart = ({
 
   return (
     <div className="chesschart-container">
-      <Line data={ chartData } options={ chartOptions } />
+      <Line data={chartData} options={chartOptions} />
     </div>
   );
 };
@@ -587,26 +587,26 @@ export const CandleChart = ({
 }) => {
 
   const cleanedData = rawData
-  .filter(
-    row =>
-      row[labelField] != null &&
-      row[highField] != null &&
-      row[lowField] != null
-  )
-  .map(row => ({
-    x: Number(row[labelField]),
-    o: Number(row[lowField]),
-    h: Number(row[highField]),
-    l: Number(row[lowField]),
-    c: Number(row[highField])
-  }))
-  .sort((a, b) => a.x - b.x);
+    .filter(
+      row =>
+        row[labelField] != null &&
+        row[highField] != null &&
+        row[lowField] != null
+    )
+    .map(row => ({
+      x: Number(row[labelField]),
+      o: Number(row[lowField]),
+      h: Number(row[highField]),
+      l: Number(row[lowField]),
+      c: Number(row[highField])
+    }))
+    .sort((a, b) => a.x - b.x);
 
   const data = {
     datasets: [
       {
         label: title,
-        type: 'candlestick',              
+        type: 'candlestick',
         data: cleanedData,
         clip: false,
         color: {
@@ -659,7 +659,7 @@ export const CandleChart = ({
 
   return (
     <div className="chesschart-container">
-      <Chart type="candlestick" data={ data } options={ options } />
+      <Chart type="candlestick" data={data} options={options} />
     </div>
   );
 };
