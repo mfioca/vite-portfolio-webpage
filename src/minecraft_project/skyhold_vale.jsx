@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { BodyContainer, IntroSection, DividerLine } from '../SharedComponents';
+import { BodyContainer, IntroSection, DividerLine, YouTubeEmbed } from '../SharedComponents';
 import MinecraftGallery from './minecraft_gallery';
 import * as skyhold_vale_photos from './skyhold_vale_photos'
 
@@ -26,6 +26,15 @@ const SkyholdVale = () => {
                                     Hobbit-style hillside homes are carved directly into the terraced slopes of the mountain, winding upward alongside a narrow stream that eventually becomes a cascading waterfall, splitting the inner city into two distinct districts. At the summit, a medieval castle commands the skyline, perched as both a protective watchtower and a crown to the city’s layered design.
                                 </p>
                             </IntroSection>
+                            <DividerLine />
+                            <h2>YouTube Video Showcase</h2>
+                            <p className="standard-padding-margin-center">
+                                A cinematic tour of Skyhold Vale, showcasing the city’s layered design, mountain architecture, surrounding districts, and major landmarks.
+                            </p>
+                            <YouTubeEmbed
+                                videoId="o2E4gYd7noc"
+                                title="Skyhold Vale Build Showcase"
+                            />
                             <DividerLine />
                             <MinecraftGallery
                                 title="Mountain Initial Planning"
