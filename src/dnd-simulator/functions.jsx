@@ -133,9 +133,7 @@ export function generateCharacter(name = "Hero") {
   const strength = rollStat();
   const constitution = rollStat();
   const dexterity = rollStat();
-  const baseSource = name === "Hero"
-    ? hero
-    : monsters.find(({ name: monsterName }) => monsterName === name) ?? monsters[0];
+  const baseSource = hero;
   const THACO = baseSource.baseStats?.THACO;
   const strengthAdjustment = getStrengthAdjustment(strength);
   const constitutionAdjustment = getConstitutionAdjustment(constitution);
@@ -247,4 +245,3 @@ export function applyDamage(defender, attacker, isCriticalHit = false) {
     debugDamageCalc: `${ weapon.name } → rolled [${ individualRolls.join(', ') }] (${ dice }d${ sides }) + ${ damageAdjustment } = ${ adjustedDamage }`
   };
 }
-
