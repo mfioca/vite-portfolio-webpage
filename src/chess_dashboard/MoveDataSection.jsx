@@ -1,6 +1,6 @@
 import React from 'react';
 import useFetchJsonData from './useFetchJsonData';
-import { BodyContainer, DividerLine } from '../SharedComponents';
+import { DividerLine } from '../SharedComponents';
 import { ChessSectionTable, LineChart, StackedPercentBarChart, GroupedBarChart } from './chess_components';
 
 
@@ -160,7 +160,7 @@ const BELOW_BOOK_COLORS = {
 /***********************************************************************************/
 
 const MoveDataSection = () => {
-  const { data, loading, error } = useFetchJsonData(
+  const { data } = useFetchJsonData(
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Move%20Data"
   );
 

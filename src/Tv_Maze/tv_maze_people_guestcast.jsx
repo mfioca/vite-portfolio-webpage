@@ -55,7 +55,7 @@ const TvMazePeopleGuestCast = ({ id }) => {
                 
                         // Fetch and store the summary
                         groupedShows[showId].summary = showResponse.data.summary ? showResponse.data.summary : 'No summary available.';
-                    } catch (err) {
+                    } catch {
                         console.error(`Error fetching details for show ${showId}`);
                         groupedShows[showId].image = null;
                         groupedShows[showId].summary = 'No summary available.';
@@ -72,7 +72,7 @@ const TvMazePeopleGuestCast = ({ id }) => {
                 );
 
                 setError('');
-            } catch (err) {
+            } catch {
                 setError('Error fetching guest cast credits. Please try again later.');
             }
         };

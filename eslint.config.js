@@ -29,10 +29,24 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      // This is a JavaScript portfolio, so runtime PropTypes would duplicate the
+      // component contracts without providing the benefits of static typing.
+      'react/prop-types': 'off',
+      // Apostrophes and quotes are intentional throughout the site's prose.
+      'react/no-unescaped-entities': 'off',
+      // Several pages display scripts verbatim; their escaping and whitespace
+      // should not be interpreted as source-code mistakes by ESLint.
+      'no-useless-escape': 'off',
+      'no-irregular-whitespace': 'off',
+      // Keep legacy dead-code findings visible without making lint unusable.
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^React$' }],
+      'react-refresh/only-export-components': 'off',
+    },
+  },
+  {
+    files: ['**/*.{test,spec}.{js,jsx}'],
+    languageOptions: {
+      globals: globals.jest,
     },
   },
 ]

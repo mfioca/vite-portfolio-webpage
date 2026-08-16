@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useFetchJsonData from './useFetchJsonData';
-import { BodyContainer, DividerLine } from '../SharedComponents';
+import { DividerLine } from '../SharedComponents';
 
 import { ChessSectionTable, CandleChart, LineChart } from './chess_components.jsx';
 
@@ -212,12 +212,6 @@ const GameDataSection = () => {
   const [selectedGameRatingAverage, setSelectedGameRatingAverage] = useState(
     gameRatingAverageOptions[0]
   );
-
-  const filteredRows =
-    data?.filter(
-      row =>
-        Number(row["Opponent rating"]) >= 1200
-    ) || [];
 
   const validAccuracyRows = data
   ? data.filter(row => {

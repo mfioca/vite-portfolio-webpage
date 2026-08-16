@@ -15,7 +15,7 @@ const TvMazeCast = ({ id }) => {
                 const response = await axios.get(`https://api.tvmaze.com/shows/${id}/cast`);
                 setCast(response.data); // Save the cast information
                 setError('');
-            } catch (err) {
+            } catch {
                 setError('Error fetching cast information. Please try again later.');
             }
         };
@@ -74,4 +74,3 @@ const TvMazeCast = ({ id }) => {
 };
 
 export default TvMazeCast;
-

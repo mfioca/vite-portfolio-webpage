@@ -28,7 +28,7 @@ const TvMazeEpisodes = ({ showId }) => {
 
                 setSeasons(mergedData);
                 setError('');
-            } catch (err) {
+            } catch {
                 setError('Error fetching season or episode data. Please try again later.');
             }
         };

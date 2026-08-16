@@ -13,7 +13,7 @@ const TvMazePeopleCast = ({ id }) => {
                 const response = await axios.get(`https://api.tvmaze.com/people/${id}/castcredits?embed=show`);
                 setCastCredits(response.data); // Save the cast credits information
                 setError('');
-            } catch (err) {
+            } catch {
                 setError('Error fetching cast credits. Please try again later.');
             }
         };
@@ -117,7 +117,6 @@ const TvMazePeopleCast = ({ id }) => {
 };
 
 export default TvMazePeopleCast;
-
 
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BodyContainer } from '../SharedComponents.jsx';
-import { ChatBubble, ShowcaseComponent, ShowcaseComponentTabs } from './ai_showcase_components.jsx';
+import { ChatBubble, ShowcaseComponent } from './ai_showcase_components.jsx';
 import './ai_showcase.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; 

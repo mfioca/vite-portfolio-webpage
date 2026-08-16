@@ -3,7 +3,7 @@ import weapons from './weapons.json';
 import monsters from './monsters.json';
 import CharacterSheet from './statsheet';
 import CombatSummary from './CombatSummary';
-import { hero, generateCharacter, rollInitiative, calculateLevel, AvatarTest } from './functions';
+import { hero, generateCharacter, rollInitiative, calculateLevel } from './functions';
 import { BodyContainer, BorderBox, NavButton } from '../SharedComponents.jsx';
 
 

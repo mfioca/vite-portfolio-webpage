@@ -39,7 +39,7 @@ const fetchTvMazeData = async ( searchTerm, searchType, setResults, setError ) =
 
         setResults(results);
         setError('');
-    } catch (err) {
+    } catch {
         setError('Error fetching data. Please try again later.');
         setResults([]);
     }
@@ -160,5 +160,4 @@ const TvMaze = () => {
 };
 
 export default TvMaze;
-
 

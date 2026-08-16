@@ -18,7 +18,7 @@ const TvMazeShowResults = () => {
                 const response = await axios.get(`https://api.tvmaze.com/shows/${id}`);
                 setShowDetails(response.data); // Save the show details
                 setError('');
-            } catch (err) {
+            } catch {
                 setError('Error fetching show details. Please try again later.');
             }
         };
@@ -102,4 +102,3 @@ const TvMazeShowResults = () => {
 };
 
 export default TvMazeShowResults;
-

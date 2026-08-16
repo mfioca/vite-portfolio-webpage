@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useFetchJsonData from './useFetchJsonData';
 import { BodyContainer } from '../SharedComponents';
 import { GameArchiveTable } from './chess_components.jsx';

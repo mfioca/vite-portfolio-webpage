@@ -6,7 +6,7 @@ import { applyDamage,
   
 } from './functions';
 import weapons from './weapons.json';
-import { BorderBox, BodyContainer }from '../SharedComponents.jsx';
+import { BodyContainer }from '../SharedComponents.jsx';
 
 
  /*function created to test attack roll results

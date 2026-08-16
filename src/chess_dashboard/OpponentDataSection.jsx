@@ -157,11 +157,7 @@ const opponentAltMetricOptions = [
 ];
 
 const OpponentDataSection = () => {
-  const {
-    data: data,
-    loading: loading,
-    error: error
-  } = useFetchJsonData(
+  const { data } = useFetchJsonData(
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Opponent%20data"
   );
 
@@ -277,5 +273,4 @@ const OpponentDataSection = () => {
 };
 
 export default OpponentDataSection;
-
 

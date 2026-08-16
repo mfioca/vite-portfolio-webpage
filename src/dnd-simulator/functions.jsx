@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React from "react";
 import weapons from './weapons.json';
 import monsters from './monsters.json';
 
@@ -133,7 +133,9 @@ export function generateCharacter(name = "Hero") {
   const strength = rollStat();
   const constitution = rollStat();
   const dexterity = rollStat();
-  const baseSource = name === "Hero" ? hero : monster;
+  const baseSource = name === "Hero"
+    ? hero
+    : monsters.find(({ name: monsterName }) => monsterName === name) ?? monsters[0];
   const THACO = baseSource.baseStats?.THACO;
   const strengthAdjustment = getStrengthAdjustment(strength);
   const constitutionAdjustment = getConstitutionAdjustment(constitution);
@@ -165,11 +167,6 @@ export function generateCharacter(name = "Hero") {
     maxHitpoints: baseHP,
   };
 }
-
-const initialState = {
-  hero: null,
-  monster: null,
-};
 
 /***********************************************************************************/
 /*                        Attack Roll Functions                                    */
@@ -240,9 +237,6 @@ export function applyDamage(defender, attacker, isCriticalHit = false) {
 
   const newHP = Math.max(0, currentHP - adjustedDamage);
 
-  //debug calculations to display everything to test systems.
-  debugDamageCalc: `${ weapon.name } → rolled [${ individualRolls.join(', ')}] (${ dice }d${ sides }) + ${ damageAdjustment } = ${ adjustedDamage }`
-
   return {
     ...defender,
     combat: {
@@ -253,5 +247,4 @@ export function applyDamage(defender, attacker, isCriticalHit = false) {
     debugDamageCalc: `${ weapon.name } → rolled [${ individualRolls.join(', ') }] (${ dice }d${ sides }) + ${ damageAdjustment } = ${ adjustedDamage }`
   };
 }
-
 
