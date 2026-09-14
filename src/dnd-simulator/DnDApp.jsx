@@ -12,6 +12,7 @@ import { BodyContainer, BorderBox, NavButton } from '../SharedComponents.jsx';
 /***********************************************************************************/
 
 const initialState = {
+  encounterId: 0,
   hero: null,
   heroWins: 0,
   monster: null,
@@ -27,8 +28,8 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case 'GENERATE_HERO':
-      return { 
-        ...state, 
+      return {
+        ...state,
         hero: {
           ...action.payload,
           exp: state.hero?.exp || 0,
@@ -41,7 +42,7 @@ function reducer(state, action) {
 
     case 'GENERATE_MONSTER':
       return { ...state, monster: action.payload };
-    
+
     case 'UPDATE_HERO_WEAPON':
       if (!state.hero) return state; // ignore if hero hasn't been created yet
 
@@ -102,28 +103,29 @@ function reducer(state, action) {
         heroWins: action.payload === 'Hero' ? state.heroWins + 1 : state.heroWins
       };
 
-      case 'APPLY_EXP_GAIN': {
-        if (!state.hero || !action.payload) return state;
+    case 'APPLY_EXP_GAIN': {
+      if (!state.hero || !action.payload) return state;
 
-        const newExp = state.hero.exp + action.payload;
-        const newLevel = calculateLevel(newExp);
+      const newExp = state.hero.exp + action.payload;
+      const newLevel = calculateLevel(newExp);
 
-        return {
-          ...state,
-          hero: {
-            ...state.hero,
-            exp: newExp,
-            baseStats: {
-              ...state.hero.baseStats,
-              level: newLevel
-            }
+      return {
+        ...state,
+        hero: {
+          ...state.hero,
+          exp: newExp,
+          baseStats: {
+            ...state.hero.baseStats,
+            level: newLevel
           }
-        };
-      }
-    
+        }
+      };
+    }
+
     case 'RESET_FOR_NEW_MONSTER':
       return {
         ...state,
+        encounterId: state.encounterId + 1,
         winner: null,
         currentTurn: null,
         heroHasAttacked: false,
@@ -132,7 +134,7 @@ function reducer(state, action) {
         monsterInitiative: null,
         round: 1
       };
-    
+
     default:
       return state;
   }
@@ -171,20 +173,20 @@ function Simulator() {
   };
 
   return (
-    <BodyContainer hasBackground = { false } className="simulator-wrapper">
+    <BodyContainer hasBackground={false} className="simulator-wrapper">
       <div className="flex-column character-layout-wrapper">
         {/*<div className="flex-row-space-between gap-20">*/}
         <div className="flex-align-center-center generate-button-row">
           <div className="flex-align-center-center generate-button-slot">
-{/* ------------------------------GENERATE HERO/MONSTER------------------------------*/}
-          {/*   Button to generate hero stats  */}
-            { !state.hero && 
-              <button 
-                className="center-div center-margin button" 
-                onClick={ handleGenerateHero } 
+            {/* ------------------------------GENERATE HERO/MONSTER------------------------------*/}
+            {/*   Button to generate hero stats  */}
+            {!state.hero &&
+              <button
+                className="center-div center-margin button"
+                onClick={handleGenerateHero}
               >
                 Generate Hero
-              </button> 
+              </button>
             }
           </div>
           <div className="flex-align-center-center generate-button-slot">
@@ -192,32 +194,32 @@ function Simulator() {
               This button triggers after hero is generated,when there is no monster 
               generated and the hero has won the battle to continue fighting
             */}
-            { state.hero && (!state.monster || state.winner === "Hero") && (
-              <button 
-                className="center-div center-margin button" 
-                onClick={ handleGenerateMonster }
+            {state.hero && (!state.monster || state.winner === "Hero") && (
+              <button
+                className="center-div center-margin button"
+                onClick={handleGenerateMonster}
               >
                 Generate Monster
               </button>
             )}
           </div>
         </div>
-{/* ------------------------------HERO CHARACTER SHEET------------------------------*/}
+        {/* ------------------------------HERO CHARACTER SHEET------------------------------*/}
         <div className="flex-row-space-between gap-20 character-main-row">
           <div className="flex-column-center-center character-sheet-container">
-            <CharacterSheet 
-              character={ state.hero || hero }
-              dispatch={ dispatch }
-              isRealHero={ !!state.hero }
+            <CharacterSheet
+              character={state.hero || hero}
+              dispatch={dispatch}
+              isRealHero={!!state.hero}
             />
           </div>
-{/* ------------------------------INITIATIVE SECTION------------------------------*/}
+          {/* ------------------------------INITIATIVE SECTION------------------------------*/}
           <BorderBox className="section-height box-background-standard standard-margin initiative">
             <div className="flex-align-center-center button-slot">
-              { 
+              {
                 !state.winner && !state.currentTurn && state.hero && state.monster && (
-                  <button 
-                    className="center-div center-margin button" 
+                  <button
+                    className="center-div center-margin button"
                     onClick={handleRollInitiative}
                   >
                     Roll Initiative
@@ -226,73 +228,74 @@ function Simulator() {
               }
             </div>
             <h4>Initiative Results</h4>
-            <p>Round: { state.round }</p>
-            <p>Hero Initiative: { state.heroInitiative ?? 0 }</p>
-            <p>Monster Initiative: { state.monsterInitiative ?? 0 }</p>
+            <p>Round: {state.round}</p>
+            <p>Hero Initiative: {state.heroInitiative ?? 0}</p>
+            <p>Monster Initiative: {state.monsterInitiative ?? 0}</p>
             <p className={
               state.currentTurn === 'hero'
                 ? 'result-good'
                 : state.currentTurn === 'monster'
-                ? 'result-bad'
-                : ''
+                  ? 'result-bad'
+                  : ''
             }>
-              Current Turn: { state.currentTurn ? (state.currentTurn === 'hero' ? 'Hero' : 'Monster') : '' }
+              Current Turn: {state.currentTurn ? (state.currentTurn === 'hero' ? 'Hero' : 'Monster') : ''}
             </p>
             <p className="reminder-warning">
               Hero Win streak:
               <span style={{ marginLeft: '0.5rem' }}>
-                <b className="result-good">{ state.heroWins }</b>
+                <b className="result-good">{state.heroWins}</b>
               </span>
             </p>
           </BorderBox>
-{/* ------------------------------MONSTER CHARACTER SHEET------------------------------*/}
+          {/* ------------------------------MONSTER CHARACTER SHEET------------------------------*/}
           <div className="character-sheet-container">
-            <CharacterSheet character={state.monster || 
-              { 
-                name: 'Monster', baseStats: { strength: 0, constitution: 0, dexterity: 0, THACO: 0 }, 
-                combat: { armorClass: 0, hitpoints: 0 },
-                weapon: "Unarmed"
-              }}
-              dispatch={ dispatch } 
-              isRealHero={ false }
+            <CharacterSheet character={state.monster ||
+            {
+              name: 'Monster', baseStats: { strength: 0, constitution: 0, dexterity: 0, THACO: 0 },
+              combat: { armorClass: 0, hitpoints: 0 },
+              weapon: "Unarmed"
+            }}
+              dispatch={dispatch}
+              isRealHero={false}
             />
           </div>
         </div>
       </div>
       <BorderBox className="flex-align-center-center battle-winner">
-        { state.winner && (
+        {state.winner && (
           <div >
-            <h2 className={ state.winner === 'Hero' ? 'result-good' : 'result-bad' }>
-              { state.winner } wins the battle!
+            <h2 className={state.winner === 'Hero' ? 'result-good' : 'result-bad'}>
+              {state.winner} wins the battle!
             </h2>
           </div>
         )}
       </BorderBox>
-{/* ------------------------------COMBAT SECTION------------------------------*/}
+      {/* ------------------------------COMBAT SECTION------------------------------*/}
       <div className="combat-summary-wrapper">
-        <CombatSummary 
-          hero={ state.hero || { combat: { hitpoints: 0, armorClass: 0 } } }
-          monster={ state.monster || { combat: { hitpoints: 0, armorClass: 0 } } }
-          currentTurn={ state.currentTurn }
-          heroHasAttacked={ state.heroHasAttacked }
-          monsterHasAttacked={ state.monsterHasAttacked }
-          dispatch={ dispatch }
-          winner={ state.winner }
+        <CombatSummary
+          key={state.encounterId}
+          hero={state.hero || { combat: { hitpoints: 0, armorClass: 0 } }}
+          monster={state.monster || { combat: { hitpoints: 0, armorClass: 0 } }}
+          currentTurn={state.currentTurn}
+          heroHasAttacked={state.heroHasAttacked}
+          monsterHasAttacked={state.monsterHasAttacked}
+          dispatch={dispatch}
+          winner={state.winner}
         />
       </div>
       <NavButton to="/monster_compendium" label="Monster Compendium" />
-{/* ------------------------------DEBUG SECTION------------------------------*/}
+      {/* ------------------------------DEBUG SECTION------------------------------*/}
       <div className="toggle-wrapper">
         <label className="toggle-switch">
           <input
             type="checkbox"
-            checked={ debugVisible }
+            checked={debugVisible}
             onChange={() => setDebugVisible(prev => !prev)}
           />
           <span className="slider" />
         </label>
         <span className="toggle-label">
-          Debug { debugVisible ? 'On' : 'Off' }
+          Debug {debugVisible ? 'On' : 'Off'}
         </span>
       </div>
       {debugVisible && (
@@ -313,7 +316,7 @@ function Simulator() {
             {state.monster && (
               <div className="debug-box">
                 <h4>Debug: Monster Data</h4>
-                <pre>{ JSON.stringify(state.monster, null, 2) }</pre>
+                <pre>{JSON.stringify(state.monster, null, 2)}</pre>
               </div>
             )}
           </div>

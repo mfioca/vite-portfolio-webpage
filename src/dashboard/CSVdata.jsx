@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import loadDataForGraphs from '../dataloader'; // Import the data loader function
 import { Doughnut } from 'react-chartjs-2';
@@ -7,14 +7,14 @@ import { Chart, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElem
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { BodyContainer, BorderBox } from '../SharedComponents.jsx';
 
- 
-Chart.register( ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, ChartDataLabels );
+
+Chart.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, ChartDataLabels);
 
 /***************************************************/
 /* Custom charts based on dropdown box filtering   */
 /***************************************************/
 
-const createChartData = ( top5Applications ) => {
+const createChartData = (top5Applications) => {
     return {
         labels: top5Applications.map(app => app.name), // Names of the applications
         datasets: [
@@ -40,15 +40,15 @@ const createChartData = ( top5Applications ) => {
     };
 };
 
-const createBarChartData = ( top5ActivitySubtypes ) => {
+const createBarChartData = (top5ActivitySubtypes) => {
     return {
         labels: top5ActivitySubtypes.map(subtype => subtype.name), // Names of the activity subtypes
         datasets: [
             {
                 label: 'Hours Spent',
                 data: top5ActivitySubtypes.map(subtype => subtype.hours), // All hours in a single dataset
-                backgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${ 75 + index * 30 }, ${ 192 - index * 30 }, 192, 0.6)`), // Generate colors dynamically
-                hoverBackgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${ 75 + index * 30 }, ${ 192 - index * 30 }, 192, 1)`), // Hover colors
+                backgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${75 + index * 30}, ${192 - index * 30}, 192, 0.6)`), // Generate colors dynamically
+                hoverBackgroundColor: top5ActivitySubtypes.map((_, index) => `rgba(${75 + index * 30}, ${192 - index * 30}, 192, 1)`), // Hover colors
             },
         ],
     };
@@ -64,48 +64,45 @@ const CSVdata = () => {
     const [selectedActivityType, setSelectedActivityType] = useState('');
     const [selectedMonth, setSelectedMonth] = useState('');
     const [selectedYear, setSelectedYear] = useState('');
-    const [activityTypes, setActivityTypes] = useState([]);
-    const [months, setMonths] = useState([]);
-    const [years, setYears] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 100; // Number of rows to display per page
 
     // Load data using the data loader function
     useEffect(() => {
         const fetchData = async () => {
-            await loadDataForGraphs(dispatch); 
+            await loadDataForGraphs(dispatch);
         };
         fetchData();
     }, [dispatch]);
 
-    // Set unique activity types, months, and years from the raw data
-    useEffect(() => {
-        if (data.length > 0) {
-            const uniqueActivityTypes = [...new Set(data.map(row => row.activity_type))];
-            setActivityTypes(uniqueActivityTypes); // Set unique activity types
+    // Derive dropdown options from the raw data.
+    const { activityTypes, months, years } = useMemo(() => {
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
 
-            const monthNames = [
-                "January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"
-            ];
-            
-            const uniqueMonths = new Set();
-            data.forEach(row => {
-                const dateStr = row.timestamp; 
-                if (dateStr) {
-                    const monthIndex = new Date(dateStr).getMonth();
-                    uniqueMonths.add(monthNames[monthIndex]); 
-                }
-            });
-            setMonths(Array.from(uniqueMonths)); // Set unique months for dropdown
+        const uniqueActivityTypes = new Set();
+        const uniqueMonths = new Set();
+        const uniqueYears = new Set();
 
-            const uniqueYears = new Set();
-            data.forEach(row => {
-                const year = new Date(row.timestamp).getFullYear();
-                uniqueYears.add(year);
-            });
-            setYears([...uniqueYears]); // Set unique years for dropdown
-        }
+        data.forEach(row => {
+            uniqueActivityTypes.add(row.activity_type);
+
+            if (!row.timestamp) return;
+
+            const date = new Date(row.timestamp);
+            if (Number.isNaN(date.getTime())) return;
+
+            uniqueMonths.add(monthNames[date.getMonth()]);
+            uniqueYears.add(date.getFullYear());
+        });
+
+        return {
+            activityTypes: [...uniqueActivityTypes],
+            months: [...uniqueMonths],
+            years: [...uniqueYears],
+        };
     }, [data]);
 
     // Define filteredData based on selected filters
@@ -136,15 +133,15 @@ const CSVdata = () => {
         }
 
         // Update activity subtype hours
-            // Only update activity subtype hours if an activity type is selected
-    if (selectedActivityType) {
-        const subtypeIndex = topActivitySubtypes.findIndex(subtype => subtype.name === row.activity_subtype);
-        if (subtypeIndex > -1) {
-            topActivitySubtypes[subtypeIndex].hours += hours;
-        } else {
-            topActivitySubtypes.push({ name: row.activity_subtype, hours });
+        // Only update activity subtype hours if an activity type is selected
+        if (selectedActivityType) {
+            const subtypeIndex = topActivitySubtypes.findIndex(subtype => subtype.name === row.activity_subtype);
+            if (subtypeIndex > -1) {
+                topActivitySubtypes[subtypeIndex].hours += hours;
+            } else {
+                topActivitySubtypes.push({ name: row.activity_subtype, hours });
+            }
         }
-    }
     });
 
     // Sort and get top 5 applications and subtypes
@@ -160,54 +157,54 @@ const CSVdata = () => {
     const startIndex = (currentPage - 1) * rowsPerPage;
     const endIndex = startIndex + rowsPerPage;
     const currentData = filteredData.slice(startIndex, endIndex);
- 
+
     return (
-        <BodyContainer hasBackground = { true } className="flex-column-center dashboard_flexbox">
-            <BorderBox className="dashboard-hub center-text">        
+        <BodyContainer hasBackground={true} className="flex-column-center dashboard_flexbox">
+            <BorderBox className="dashboard-hub center-text">
                 <h2 className="shadow">Dashboard</h2>
                 <p>Main data display sourced from the CSV, with graphs dynamically adjusting based on dropdown selections.</p>
                 <p><strong>How to Use:</strong></p>
-                    <ul className="default-list">
-                        <li>Use the dropdowns to filter data by activity type, month, or year.</li>
-                        <li>The charts will dynamically update based on your selections, providing insights into your productivity patterns.</li>
-                    </ul>
-                    <p><strong>Data Visualizations:</strong></p>
-                    <ul className="default-list">
-                        <li>The Donut Chart displays the proportion of time spent on different applications.</li>
-                        <li>The Bar Chart shows detailed breakdowns of activity subtypes, enabling you to identify trends and focus areas.</li>
-                    </ul>
+                <ul className="default-list">
+                    <li>Use the dropdowns to filter data by activity type, month, or year.</li>
+                    <li>The charts will dynamically update based on your selections, providing insights into your productivity patterns.</li>
+                </ul>
+                <p><strong>Data Visualizations:</strong></p>
+                <ul className="default-list">
+                    <li>The Donut Chart displays the proportion of time spent on different applications.</li>
+                    <li>The Bar Chart shows detailed breakdowns of activity subtypes, enabling you to identify trends and focus areas.</li>
+                </ul>
                 <div className="flex-wrap dropdowns">
                     <div>
                         <h2>Select Activity Type</h2>
-                        <select value={ selectedActivityType } onChange={ (e) => setSelectedActivityType(e.target.value) }>
+                        <select value={selectedActivityType} onChange={(e) => setSelectedActivityType(e.target.value)}>
                             <option value="">All Activity Types</option>
-                            { activityTypes.map((type, index) => (
-                                <option key={ index } value={ type }>
-                                    { type }
+                            {activityTypes.map((type, index) => (
+                                <option key={index} value={type}>
+                                    {type}
                                 </option>
                             ))}
                         </select>
                     </div>
                     <div>
                         <h2>Select Month</h2>
-                        <select value={ selectedMonth } onChange={ (e) => setSelectedMonth(e.target.value) }> 
+                        <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}>
                             <option value="">All Months</option>
-                            { months.map((month, index) => (
-                                <option key={ index } value={ month }>
-                                    { month }
+                            {months.map((month, index) => (
+                                <option key={index} value={month}>
+                                    {month}
                                 </option>
                             ))}
                         </select>
                     </div>
                     <div>
                         <h2>Select Year</h2>
-                        <select 
-                            value={ selectedYear } 
-                            onChange={ (e) => setSelectedYear(e.target.value) }>
+                        <select
+                            value={selectedYear}
+                            onChange={(e) => setSelectedYear(e.target.value)}>
                             <option value="">All Years</option>
-                            { years.map((year, index) => (
-                                <option key={ index } value={ year }>
-                                    { year }
+                            {years.map((year, index) => (
+                                <option key={index} value={year}>
+                                    {year}
                                 </option>
                             ))}
                         </select>
@@ -216,11 +213,11 @@ const CSVdata = () => {
                 <div className="flex-wrap graph-wrapper">
                     <div className="standard-padding-margin csv-chart">
                         <div className="center-div csv-chart-title">
-                        <h3>Top Applications</h3>
+                            <h3>Top Applications</h3>
                         </div>
                         <div className="center-div csv-chart-content">
                             <Doughnut
-                                data={ createChartData(top5Applications) }
+                                data={createChartData(top5Applications)}
                                 options={{
                                     plugins: {
                                         tooltip: {
@@ -244,16 +241,16 @@ const CSVdata = () => {
                     </div>
                     {top5ActivitySubtypes.length === 0 ? (
                         <div className="standard-padding-margin csv-chart">
-                        <div className="center-div csv-chart-title">
+                            <div className="center-div csv-chart-title">
                                 <h3>Top Activity Subtypes</h3>
-                        </div>
-                        {/*<h3 >Top Activity Subtypes</h3>
+                            </div>
+                            {/*<h3 >Top Activity Subtypes</h3>
                         <p>Filter Activity Types for more analytical data.</p>*/}
-                        <div className="center-div csv-chart-content">
-                        <p>
-                            Filter Activity Types for more analytical data.
-                        </p>
-                        </div>
+                            <div className="center-div csv-chart-content">
+                                <p>
+                                    Filter Activity Types for more analytical data.
+                                </p>
+                            </div>
                         </div>
                     ) : (
                         <div className="standard-padding-margin csv-chart">
@@ -261,42 +258,42 @@ const CSVdata = () => {
                                 <h3>Top Activity Subtypes</h3>
                             </div>
                             <div className="center-div csv-chart-content">
-                            <Bar
-                                data={createBarChartData(top5ActivitySubtypes)}
-                                options={{
-                                    plugins: {
-                                        legend: {
-                                            display: false, // Hide the legend
-                                        },
-                                        datalabels: {
-                                            display: true, // Show data labels for the bar chart
-                                            color: 'black', // Color of the data labels
-                                            anchor: 'end', // Positioning of the labels
-                                            align: (context) => {
-                                                const value = context.dataset.data[context.dataIndex]; // Get the value of the current data point
-                                                const thresholdValue = 4; // Define a threshold value (e.g., 10 hours)
-                                        
-                                                // Determine the alignment based on the value
-                                                return value > thresholdValue ? 'bottom' : 'top'; 
+                                <Bar
+                                    data={createBarChartData(top5ActivitySubtypes)}
+                                    options={{
+                                        plugins: {
+                                            legend: {
+                                                display: false, // Hide the legend
                                             },
-                                            formatter: (value) => `${value.toFixed(2)} hours`,
+                                            datalabels: {
+                                                display: true, // Show data labels for the bar chart
+                                                color: 'black', // Color of the data labels
+                                                anchor: 'end', // Positioning of the labels
+                                                align: (context) => {
+                                                    const value = context.dataset.data[context.dataIndex]; // Get the value of the current data point
+                                                    const thresholdValue = 4; // Define a threshold value (e.g., 10 hours)
+
+                                                    // Determine the alignment based on the value
+                                                    return value > thresholdValue ? 'bottom' : 'top';
+                                                },
+                                                formatter: (value) => `${value.toFixed(2)} hours`,
+                                            },
                                         },
-                                    },
-                                }}
-                            />
+                                    }}
+                                />
                             </div>
                         </div>
                     )}
                 </div>
             </BorderBox>
             <div className="filtered-data">
-                { currentData.length > 0 ? (
+                {currentData.length > 0 ? (
                     <table className="csv-data">
                         <thead>
                             <tr>
                                 {Object.keys(currentData[0]).map((key, index) => {
                                     if (key !== 'timestamp' && key !== 'hour') {
-                                        return <th key={ index }>{ key }</th>; // Table headers
+                                        return <th key={index}>{key}</th>; // Table headers
                                     }
                                     return null; // Exclude timestamp from headers
                                 })}
@@ -304,10 +301,10 @@ const CSVdata = () => {
                         </thead>
                         <tbody>
                             {currentData.map((row, index) => (
-                                <tr key={ index }>
-                                    { Object.keys(row).map((key) => {
+                                <tr key={index}>
+                                    {Object.keys(row).map((key) => {
                                         if (key !== 'timestamp' && key !== 'hour') {
-                                            return <td key={ key }>{row[key]}</td>; // Table data cells
+                                            return <td key={key}>{row[key]}</td>; // Table data cells
                                         }
                                         return null; // Exclude timestamp from data
                                     })}
@@ -320,19 +317,19 @@ const CSVdata = () => {
                 )}
             </div>
             <div className="pagination">
-                <button 
+                <button
                     className="button"
-                    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
+                    onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                     disabled={currentPage === 1}>
                     Previous
                 </button>
                 <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 10px' }}>
-                    Page { currentPage } of { totalPages }
+                    Page {currentPage} of {totalPages}
                 </span>
-                <button 
+                <button
                     className="button"
-                    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
-                    disabled={ currentPage === totalPages }>
+                    onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                    disabled={currentPage === totalPages}>
                     Next
                 </button>
             </div>

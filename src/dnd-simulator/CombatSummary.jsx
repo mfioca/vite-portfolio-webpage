@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { applyDamage, 
   applyCriticalMiss, 
   getHPColorClass,
@@ -187,13 +187,6 @@ const CombatSummary = ({
 }) => {
   const [heroResult, setHeroResult] = useState({});
   const [monsterResult, setMonsterResult] = useState({});
-
-  useEffect(() => {
-    if (!winner) {
-      setHeroResult({});
-      setMonsterResult({});
-    }
-  }, [winner]);
 
   return (
     <div className="flex-column gap-20">

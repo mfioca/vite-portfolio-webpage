@@ -6,14 +6,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import loadDataForGraphs from '../dataloader'; // Import the data loader
 
 
-Chart.register( CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend );
+Chart.register(CategoryScale, LinearScale, BarController, BarElement, Title, Tooltip, Legend);
 
 const Graph3 = () => {
     const dispatch = useDispatch(); // Initialize dispatch
     const graphData = useSelector((state) => state.graphData.graph3)  // Access Redux state for graph3
     const [textBoxContent, setTextBoxContent] = useState(''); // State for text box content
-    const [percentages, setPercentages] = useState([]); // State for percentages
     const [isLoading, setIsLoading] = useState(true); // State for loading
+
+    // Calculate tooltip percentages from the chart data.
+    const percentages = useMemo(() => {
+        const totalWorkDurations = graphData?.datasets?.[0]?.data;
+        const analyticsDurations = graphData?.datasets?.[1]?.data;
+
+        if (!totalWorkDurations || !analyticsDurations) {
+            return [];
+        }
+
+        return analyticsDurations.map((duration, index) => {
+            const total = totalWorkDurations[index] || 1;
+            return (duration / total) * 100;
+        });
+    }, [graphData]);
 
     // Chart options configuration
     const options = useMemo(() => ({
@@ -50,7 +64,7 @@ const Graph3 = () => {
                         const value = context.parsed.y || 0; // Get the value for the y-axis
                         const index = context.dataIndex; // Get the index for the current data point
                         const percentage = percentages[index] ? percentages[index].toFixed(1) : 0; // Get the percentage
-                        
+
                         return `${label}: ${value} hours (${percentage}%)`; // Format the label
                     },
                 },
@@ -72,41 +86,17 @@ const Graph3 = () => {
                 },
             },
         },
-        
+
     }), [percentages]); // Dependency on percentages
 
     useEffect(() => {
         const fetchData = async () => {
-            setIsLoading(true); // Set loading to true
             await loadDataForGraphs(dispatch, 'graph3', setTextBoxContent); // Load data for graphs
             setIsLoading(false); // Set loading to false
         };
 
         fetchData();
     }, [dispatch]); // Ensure dispatch is included in the dependency array
-
-    // Calculate percentages for the datasets after loading data
-    useEffect(() => {
-        if (graphData.labels && graphData.datasets.length > 0) {
-            const totalWorkDurations = graphData.datasets[0].data; // Total work data
-            const analyticsDurations = graphData.datasets[1].data; // Analytics data
-
-            const tempPercentages = analyticsDurations.map((duration, index) => {
-                const total = totalWorkDurations[index] || 1; // Avoid division by zero
-                return (duration / total) * 100; // Calculate percentage
-            });
-
-            setPercentages(tempPercentages); // Update percentages state
-
-            // Prepare text for the box with percentages
-            const yearText = graphData.labels.map((year, index) => {
-                const percentage = tempPercentages[index].toFixed(1); // Use tempPercentages here
-                return `${year}: Analytics ${percentage}%`;
-            }).join('\n');
-
-            setTextBoxContent(`${ yearText }\n\n`); // Set the text box content
-        }
-    }, [graphData]); // Dependency on graphData
 
     if (isLoading) {
         return <div className="flex-align-center-center loading-overlay"><p>Loading...</p></div>; // Display loading message
@@ -120,9 +110,9 @@ const Graph3 = () => {
         <BorderBox className="chart-container">
             <h2 className="shadow">Analytics Activity by Year vs Total Work</h2>
             <div className="chart3-data-box">
-                { textBoxContent }
+                {textBoxContent}
             </div>
-            <Bar data={ graphData } options={ options } width={ 350 } height={ 250 } /> 
+            <Bar data={graphData} options={options} width={350} height={250} />
         </BorderBox>
     );
 };
