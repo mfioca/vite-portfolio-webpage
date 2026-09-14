@@ -166,7 +166,18 @@
 }
 
 .vertical-tabs .react-tabs__tab--selected:focus {
-  border-bottom: 8px solid var(--bordercolor);
+  border-bottom: var(--border);
+}
+
+/* Remove the library's white strip beneath focused tabs. */
+.vertical-tabs .react-tabs__tab:focus::after {
+  content: none;
+}
+
+/* Keep keyboard focus visible without changing the tab's size. */
+.vertical-tabs .react-tabs__tab:focus-visible {
+  outline: 2px solid var(--fontblue);
+  outline-offset: -4px;
 }
 
 .vertical-tabs .react-tabs__tab:active,

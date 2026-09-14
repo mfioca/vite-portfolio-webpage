@@ -34,6 +34,11 @@
   margin-bottom: 10px;
 }
 
+.chess-body .pagination button:hover,
+.chess-body .game-archive-pagination button:hover {
+  transform: none;
+}
+
 /*************************************************************************/
 /*                       Game Summary                                    */
 /*************************************************************************/
@@ -71,7 +76,7 @@
 /* Container */
 .chess-section-table-container {
   overflow-x: auto;
-  margin: var(--marginV20) 0;
+  margin: var(--marginV20);
   background-color: var(--colorwhite);
   border-radius: var(--borderradius);
   border: var(--border);
@@ -158,7 +163,7 @@
 
 .game-archive-table-container {
   overflow-x: auto;
-  margin: var(--marginV20) 0;
+  margin: var(--marginV20);
   background-color: var(--colorwhite);
   border-radius: var(--borderradius);
   border: var(--border);

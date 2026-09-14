@@ -254,8 +254,8 @@ const avgGameRating =
       <div>
         <h2>Game Data</h2>
         <p className="game-data-annotation">
-          * Average calculations reflect games after the first 500 entries and exclude opponents rated below 1000 to emphasize more current performance.
-        </p>
+          * Average Accuracy includes all logged games. Average Game Rating includes only logged games against opponents rated 1100 or higher.
+        </p> 
         { loading && <p>Loading data...</p>}
         { error && <p>Error: { error }</p>}
         {data && (
