@@ -5,6 +5,7 @@ import OpponentDataSection from './chess_dashboard/OpponentDataSection.jsx';
 import GameDataSection from './chess_dashboard/GameDataSection.jsx';
 import MoveDataSection from './chess_dashboard/MoveDataSection.jsx';
 import ChessSetupSection from './chess_dashboard/ChessSetupSection.jsx';
+import TimedGameData from './chess_dashboard/timed_game_data.jsx';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -41,30 +42,34 @@ const ChessDashboard = () => {
           </p>
         </div>
       </IntroSection>
-      <DividerLine/>
-      <ChessSetupSection/>
-      <DividerLine/>
+      <DividerLine />
+      <ChessSetupSection />
+      <DividerLine />
       <div className="standard-padding-margin-center base-max-width">
         {/* forced render loads all data in each tab */}
-        <Tabs className="standard-tabs" forceRenderTabPanel> 
+        <Tabs className="standard-tabs" forceRenderTabPanel>
           <TabList className="grid-tablist">
             <Tab>Game Data</Tab>
             <Tab>Opponent Data</Tab>
             <Tab>Move Data</Tab>
+            <Tab>Time Control Game Data</Tab>
           </TabList>
           <TabPanel>
-            <GameDataSection/>
+            <GameDataSection />
           </TabPanel>
           <TabPanel>
-            <OpponentDataSection/>
+            <OpponentDataSection />
           </TabPanel>
           <TabPanel>
-            <MoveDataSection/>
+            <MoveDataSection />
+          </TabPanel>
+          <TabPanel>
+            <TimedGameData />
           </TabPanel>
         </Tabs>
       </div>
-      <DividerLine/>     
-      <GameArchiveSection/>
+      <DividerLine />
+      <GameArchiveSection />
     </div>
   );
 };

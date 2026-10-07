@@ -569,6 +569,106 @@ export const LineChart = ({
   );
 };
 
+export const MultiLineChart = ({
+  title,
+  rawData = [],
+  xField,
+  xLabel = 'Opponent rating',
+  series = [],
+  metricLabel,
+  datalabels = false,
+  yMin,
+  yMax
+}) => {
+  const defaultColors = [
+    'rgba(54, 162, 235, 1)',
+    'rgba(230, 126, 34, 1)',
+    'rgba(155, 89, 182, 1)'
+  ];
+
+  // Keep valid numeric x-values and sort by opponent rating.
+  const sortedRows = rawData
+    .filter(row =>
+      row[xField] != null &&
+      row[xField] !== '' &&
+      Number.isFinite(Number(row[xField]))
+    )
+    .slice()
+    .sort((a, b) => Number(a[xField]) - Number(b[xField]));
+
+  const datasets = series.map((item, index) => {
+    const color = item.color || defaultColors[index % defaultColors.length];
+
+    return {
+      label: item.label || item.field,
+      data: sortedRows.map(row => {
+        const value = row[item.field];
+        const validValue =
+          value != null &&
+          value !== '' &&
+          Number.isFinite(Number(value));
+
+        return {
+          x: Number(row[xField]),
+          y: validValue ? Number(value) : null
+        };
+      }),
+      borderColor: color,
+      backgroundColor: color,
+      borderDash: item.borderDash || [],
+      borderWidth: 2,
+      tension: 0,
+      pointRadius: 3,
+      spanGaps: false,
+      fill: false
+    };
+  });
+
+  const chartData = { datasets };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: {
+      mode: 'index',
+      intersect: false
+    },
+    plugins: {
+      legend: { display: true },
+      title: { display: true, text: title },
+      tooltip: {
+        callbacks: {
+          label: (context) => {
+            const value = context.parsed.y;
+            return value == null
+              ? `${context.dataset.label}: No data`
+              : `${context.dataset.label}: ${value.toFixed(2)}`;
+          }
+        }
+      },
+      datalabels: { display: datalabels }
+    },
+    scales: {
+      x: {
+        type: 'linear',
+        title: { display: true, text: xLabel },
+        ticks: { precision: 0 }
+      },
+      y: {
+        title: { display: true, text: metricLabel },
+        min: yMin,
+        max: yMax
+      }
+    }
+  };
+
+  return (
+    <div className="chesschart-container">
+      <Line data={ chartData } options={ chartOptions } />
+    </div>
+  );
+};
+
 
 /*************************************************************************/
 /*                             Candle Charts                              */
