@@ -335,7 +335,8 @@ export const GroupedBarChart = ({
   datalabels = false,
   yMin = 0,
   yMax,
-  yTickFormatter = null
+  yTickFormatter = null,
+  colors = []
 }) => {
   // group by labelField
   const grouped = {};
@@ -359,12 +360,16 @@ export const GroupedBarChart = ({
   const datasets = valueFields.map((field, index) => ({
     label: field,
     data: labels.map(label => grouped[label]?.[field] ?? null),
-    backgroundColor: index === 0
-      ? 'rgba(54, 162, 235, 0.6)'
-      : 'rgba(231, 76, 60, 0.6)',
-    borderColor: index === 0
-      ? 'rgba(54, 162, 235, 1)'
-      : 'rgba(231, 76, 60, 1)',
+    backgroundColor: colors[index] ?? (
+      index === 0
+        ? 'rgba(54, 162, 235, 0.6)'
+        : 'rgba(231, 76, 60, 0.6)'
+    ),
+    borderColor: colors[index] ?? (
+      index === 0
+        ? 'rgba(54, 162, 235, 1)'
+        : 'rgba(231, 76, 60, 1)'
+    ),
     borderWidth: 1
   }));
 
@@ -664,7 +669,7 @@ export const MultiLineChart = ({
 
   return (
     <div className="chesschart-container">
-      <Line data={ chartData } options={ chartOptions } />
+      <Line data={chartData} options={chartOptions} />
     </div>
   );
 };

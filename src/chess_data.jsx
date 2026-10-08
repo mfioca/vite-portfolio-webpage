@@ -5,7 +5,8 @@ import OpponentDataSection from './chess_dashboard/OpponentDataSection.jsx';
 import GameDataSection from './chess_dashboard/GameDataSection.jsx';
 import MoveDataSection from './chess_dashboard/MoveDataSection.jsx';
 import ChessSetupSection from './chess_dashboard/ChessSetupSection.jsx';
-import TimedGameData from './chess_dashboard/timed_game_data.jsx';
+import TimedGameData from './chess_dashboard/TimedGameData.jsx';
+import TimedGameMoveData from './chess_dashboard/TimedGameMoveData.jsx';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -53,6 +54,7 @@ const ChessDashboard = () => {
             <Tab>Opponent Data</Tab>
             <Tab>Move Data</Tab>
             <Tab>Time Control Game Data</Tab>
+            <Tab>Time Control Move Data</Tab>
           </TabList>
           <TabPanel>
             <GameDataSection />
@@ -65,6 +67,9 @@ const ChessDashboard = () => {
           </TabPanel>
           <TabPanel>
             <TimedGameData />
+          </TabPanel>
+          <TabPanel>
+            <TimedGameMoveData />
           </TabPanel>
         </Tabs>
       </div>
