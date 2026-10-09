@@ -1,4 +1,3 @@
-import React from 'react';
 import './chess_dashboard/Chess.css';
 import GameArchiveSection from './chess_dashboard/GameArchiveSection.jsx';
 import OpponentDataSection from './chess_dashboard/OpponentDataSection.jsx';
@@ -7,6 +6,7 @@ import MoveDataSection from './chess_dashboard/MoveDataSection.jsx';
 import ChessSetupSection from './chess_dashboard/ChessSetupSection.jsx';
 import TimedGameData from './chess_dashboard/TimedGameData.jsx';
 import TimedGameMoveData from './chess_dashboard/TimedGameMoveData.jsx';
+import TimedGameOpponentData from './chess_dashboard/TimedGameOpponentData.jsx';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -47,29 +47,51 @@ const ChessDashboard = () => {
       <ChessSetupSection />
       <DividerLine />
       <div className="standard-padding-margin-center base-max-width">
-        {/* forced render loads all data in each tab */}
+        {/* Force rendering preserves loading all six sections upfront. */}
         <Tabs className="standard-tabs" forceRenderTabPanel>
           <TabList className="grid-tablist">
-            <Tab>Game Data</Tab>
-            <Tab>Opponent Data</Tab>
-            <Tab>Move Data</Tab>
-            <Tab>Time Control Game Data</Tab>
-            <Tab>Time Control Move Data</Tab>
+            <Tab>Non-Time Control</Tab>
+            <Tab>Time Control</Tab>
           </TabList>
+          <DividerLine />
           <TabPanel>
-            <GameDataSection />
+            <Tabs className="nested-tabs" forceRenderTabPanel>
+              <TabList className="grid-tablist">
+                <Tab>Game Data</Tab>
+                <Tab>Opponent Data</Tab>
+                <Tab>Move Data</Tab>
+              </TabList>
+
+              <TabPanel>
+                <GameDataSection />
+              </TabPanel>
+              <TabPanel>
+                <OpponentDataSection />
+              </TabPanel>
+              <TabPanel>
+                <MoveDataSection />
+              </TabPanel>
+            </Tabs>
           </TabPanel>
+
           <TabPanel>
-            <OpponentDataSection />
-          </TabPanel>
-          <TabPanel>
-            <MoveDataSection />
-          </TabPanel>
-          <TabPanel>
-            <TimedGameData />
-          </TabPanel>
-          <TabPanel>
-            <TimedGameMoveData />
+            <Tabs className="nested-tabs" forceRenderTabPanel>
+              <TabList className="grid-tablist">
+                <Tab>Game Data</Tab>
+                <Tab>Opponent Data</Tab>
+                <Tab>Move Data</Tab>
+              </TabList>
+
+              <TabPanel>
+                <TimedGameData />
+              </TabPanel>
+              <TabPanel>
+                <TimedGameOpponentData />
+              </TabPanel>
+              <TabPanel>
+                <TimedGameMoveData />
+              </TabPanel>
+            </Tabs>
           </TabPanel>
         </Tabs>
       </div>

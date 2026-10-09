@@ -16,7 +16,7 @@ const formatGameData = (row) => {
     "Accuracy Loss",
     "Accuracy Loss High",
     "Accuracy Loss Low",
-    
+
     "Accuracy White",
     "Accuracy White High",
     "Accuracy White Low",
@@ -197,6 +197,10 @@ const GameDataSection = () => {
     "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Game%20Data"
   );
 
+  const { data: recentPerformanceData } = useFetchJsonData(
+    "https://script.google.com/macros/s/AKfycbzl5xXecAfMN-31CL25nj-pzl9JBuTvnAwEXffO3lZOLKazeCD7Iw9nMYkusj9NHXl-bw/exec?sheet=Recent%20Performance"
+  );
+
   const [selectedAccuracyRange, setSelectedAccuracyRange] = useState(
     accuracyRangeOptions[0]
   );
@@ -213,76 +217,80 @@ const GameDataSection = () => {
     gameRatingAverageOptions[0]
   );
 
-  const validAccuracyRows = data
-  ? data.filter(row => {
-      const val = row["Average Accuracy for games after the first 500"];
-      return val !== null && val !== "" && !isNaN(parseFloat(val));
-    })
-  : [];
+  const performanceSummaries = ['recent', 'lifetime']
+    .map(period =>
+      (recentPerformanceData ?? []).find(row => row.period === period)
+    )
+    .filter(Boolean);
 
-const avgAccuracy =
-  validAccuracyRows.length
-    ? (
-        validAccuracyRows.reduce(
-          (sum, row) =>
-            sum + parseFloat(row["Average Accuracy for games after the first 500"]),
-          0
-        ) / validAccuracyRows.length
-      ).toFixed(2)
-    : null;
+  const formatSummaryValue = (value, decimals = 0, suffix = '') => {
+    if (value === '' || value == null || !Number.isFinite(Number(value))) {
+      return '—';
+    }
 
-const validGameRatingRows = data
-  ? data.filter(row => {
-      const val = row["Average Game Rating for games after the first 500"];
-      return val !== null && val !== "" && !isNaN(Number(val));
-    })
-  : [];
+    return `${Number(value).toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    })}${suffix}`;
+  };
 
-const avgGameRating =
-  validGameRatingRows.length
-    ? Math.round(
-        validGameRatingRows.reduce(
-          (sum, row) =>
-            sum + Number(row["Average Game Rating for games after the first 500"]),
-          0
-        ) / validGameRatingRows.length
-      )
-    : null;
-  
   return (
     <div className="box-style-standard standard-padding-margin">
       <div>
         <h2>Game Data</h2>
-        <p className="game-data-annotation">
-          * Average Accuracy includes all logged games. Average Game Rating includes only logged games against opponents rated 1100 or higher.
-        </p> 
-        { loading && <p>Loading data...</p>}
-        { error && <p>Error: { error }</p>}
-        {data && (
-          <div className="game-data-summary">
-            <div className="game-data-summary-item">
-              <span className="game-data-summary-label">
-                Average Accuracy
-              </span>
-              <span className="game-data-summary-value">
-                { avgAccuracy }%
-              </span>
-            </div>
-            <div className="game-data-summary-item">
-              <span className="game-data-summary-label">
-                Average Game Rating
-              </span>
-              <span className="game-data-summary-value">
-                { avgGameRating }
-              </span>
-            </div>
+        {loading && <p>Loading data...</p>}
+        {error && <p>Error: {error}</p>}
+
+        {performanceSummaries.length > 0 && (
+          <div className="chesschart-wrap">
+            {performanceSummaries.map(summary => (
+              <div className="chesschart-box" key={summary.period}>
+                <h3 className="game-data-summary-label">
+                  {summary.period === 'recent'
+                    ? `Recent ${formatSummaryValue(summary.window_games)} Games`
+                    : 'Lifetime'}
+                </h3>
+
+                <div className="game-data-summary">
+                  <div className="game-data-summary-item">
+                    <span className="game-data-summary-label">
+                      Average Accuracy
+                    </span>
+                    <span className="game-data-summary-value">
+                      {formatSummaryValue(summary.accuracy_mean, 2, '%')}
+                    </span>
+                    <small>
+                      {formatSummaryValue(summary.accuracy_count)} games
+                    </small>
+                  </div>
+
+                  <div className="game-data-summary-item">
+                    <span className="game-data-summary-label">
+                      Average Game Rating
+                    </span>
+                    <span className="game-data-summary-value">
+                      {formatSummaryValue(summary.game_rating_mean)}
+                    </span>
+                    <small>
+                      {formatSummaryValue(summary.game_rating_count)} games
+                    </small>
+                  </div>
+                </div>
+
+                <p className="game-data-annotation">
+                  {formatSummaryValue(summary.games_in_window)} games in this period.
+                  {' '}Game rating includes opponents rated{' '}
+                  {formatSummaryValue(summary.opponent_rating_min)} or higher.
+                </p>
+              </div>
+            ))}
           </div>
         )}
         {data && (
           <div className="chesschart-wrap">
             <div className="chesschart-box">
               <select
-                value={ selectedAccuracyRange.key }
+                value={selectedAccuracyRange.key}
                 onChange={(e) =>
                   setSelectedAccuracyRange(
                     accuracyRangeOptions.find(opt => opt.key === e.target.value)
@@ -291,26 +299,26 @@ const avgGameRating =
                 className="standard-margin"
               >
                 {accuracyRangeOptions.map(opt => (
-                  <option key= {opt.key } value={ opt.key }>
-                    { opt.label }
+                  <option key={opt.key} value={opt.key}>
+                    {opt.label}
                   </option>
                 ))}
               </select>
-                <CandleChart
-                  title={ selectedAccuracyRange.title }
-                  rawData={ data }
-                  datalabels={ false }
-                  metricLabel="Accuracy"
-                  labelField="Opponent rating"
-                  highField={ selectedAccuracyRange.highField }
-                  lowField={ selectedAccuracyRange.lowField }
-                  yMin ={ 20 }
-                  yMax ={ 100 }
-                />
+              <CandleChart
+                title={selectedAccuracyRange.title}
+                rawData={data}
+                datalabels={false}
+                metricLabel="Accuracy"
+                labelField="Opponent rating"
+                highField={selectedAccuracyRange.highField}
+                lowField={selectedAccuracyRange.lowField}
+                yMin={20}
+                yMax={100}
+              />
             </div>
             <div className="chesschart-box">
               <select
-                value={ selectedAccuracyAverage.key }
+                value={selectedAccuracyAverage.key}
                 onChange={(e) =>
                   setSelectedAccuracyAverage(
                     accuracyAverageOptions.find(opt => opt.key === e.target.value)
@@ -319,24 +327,24 @@ const avgGameRating =
                 className="standard-margin"
               >
                 {accuracyAverageOptions.map(opt => (
-                  <option key={ opt.key } value={ opt.key }>
-                    { opt.label }
+                  <option key={opt.key} value={opt.key}>
+                    {opt.label}
                   </option>
                 ))}
               </select>
-                <LineChart
-                  title={ selectedAccuracyAverage.title }
-                  rawData={ data }
-                  metricLabel="Average Game Accuracy"
-                  xField="Opponent rating"
-                  yField={ selectedAccuracyAverage.valueField }
-                  yMin={ 0 }
-                  yMax={ 100 }
-                />
+              <LineChart
+                title={selectedAccuracyAverage.title}
+                rawData={data}
+                metricLabel="Average Game Accuracy"
+                xField="Opponent rating"
+                yField={selectedAccuracyAverage.valueField}
+                yMin={0}
+                yMax={100}
+              />
             </div>
             <div className="chesschart-box">
               <select
-                value={ selectedGameRatingRange.key }
+                value={selectedGameRatingRange.key}
                 onChange={(e) =>
                   setSelectedGameRatingRange(
                     gameRatingRangeOptions.find(opt => opt.key === e.target.value)
@@ -345,26 +353,26 @@ const avgGameRating =
                 className="standard-margin"
               >
                 {gameRatingRangeOptions.map(opt => (
-                  <option key= {opt.key } value={ opt.key }>
-                    { opt.label }
+                  <option key={opt.key} value={opt.key}>
+                    {opt.label}
                   </option>
                 ))}
               </select>
-                <CandleChart
-                  title={ selectedGameRatingRange.title }
-                  rawData={ data }
-                  datalabels={ false }
-                  metricLabel="Game Rating"
-                  labelField="Opponent rating"
-                  highField={ selectedGameRatingRange.highField }
-                  lowField={ selectedGameRatingRange.lowField }
-                  yMin ={ 100 }
-                  yMax ={ 2000 }
-                />
+              <CandleChart
+                title={selectedGameRatingRange.title}
+                rawData={data}
+                datalabels={false}
+                metricLabel="Game Rating"
+                labelField="Opponent rating"
+                highField={selectedGameRatingRange.highField}
+                lowField={selectedGameRatingRange.lowField}
+                yMin={100}
+                yMax={2000}
+              />
             </div>
             <div className="chesschart-box">
               <select
-                value={ selectedGameRatingAverage.key }
+                value={selectedGameRatingAverage.key}
                 onChange={(e) =>
                   setSelectedGameRatingAverage(
                     gameRatingAverageOptions.find(opt => opt.key === e.target.value)
@@ -373,30 +381,30 @@ const avgGameRating =
                 className="standard-margin"
               >
                 {gameRatingAverageOptions.map(opt => (
-                  <option key={ opt.key } value={ opt.key }>
-                    { opt.label }
+                  <option key={opt.key} value={opt.key}>
+                    {opt.label}
                   </option>
                 ))}
               </select>
-                <LineChart
-                  title={ selectedGameRatingAverage.title }
-                  rawData={ data }
-                  metricLabel="Average Game Rating"
-                  xField="Opponent rating"
-                  yField={ selectedGameRatingAverage.valueField }
-                  yMin={ 100 }
-                  yMax={ 2000 }
-                />
+              <LineChart
+                title={selectedGameRatingAverage.title}
+                rawData={data}
+                metricLabel="Average Game Rating"
+                xField="Opponent rating"
+                yField={selectedGameRatingAverage.valueField}
+                yMin={100}
+                yMax={2000}
+              />
             </div>
           </div>
         )}
       </div>
-      <DividerLine/>
+      <DividerLine />
       <div>
         {data && (
           <ChessSectionTable
-            data={ data.map(formatGameData) }
-            rowsPerPage={ 15 }
+            data={data.map(formatGameData)}
+            rowsPerPage={15}
             title="Game Data"
           />
         )}

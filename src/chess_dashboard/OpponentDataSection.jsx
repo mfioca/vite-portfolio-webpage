@@ -52,7 +52,7 @@ const formatOpponentData = (row) => {
     } else if (percentAlreadyFields.includes(key)) {
       formatted[key] = `${parseFloat(value).toFixed(2)}%`;
     } else if (ratioPercentFields.includes(key)) {
-      formatted[key] = `${Math.round(parseFloat(value) * 100)}%`; 
+      formatted[key] = `${Math.round(parseFloat(value) * 100)}%`;
     } else {
       formatted[key] = Number.isFinite(+value) ? parseInt(value) : value;
     }
@@ -95,7 +95,7 @@ const opponentMetricOptions = [
     displayTitle: 'Move Quality Ratio by Opponent',
     valueField: 'Move Quality Ratio',
     yMin: 0,
-    yMax: 50,              
+    yMax: 50,
     yTickFormatter: (v) => v.toFixed(1)
   },
   {
@@ -104,7 +104,7 @@ const opponentMetricOptions = [
     displayTitle: 'Error Suppression Score by Opponent',
     valueField: 'Error Suppression Score',
     yMin: 0,
-    yMax: 100,              
+    yMax: 100,
     yTickFormatter: (v) => v.toFixed(1)
   }
 ];
@@ -169,6 +169,8 @@ const OpponentDataSection = () => {
 
   const [selectedMetric, setSelectedMetric] = useState(opponentMetricOptions[0]);
 
+  const [selectedAltMetric, setSelectedAltMetric] = useState(opponentAltMetricOptions[0]);
+
   return (
     <div className="box-style-standard standard-padding-margin">
       <div>
@@ -179,9 +181,9 @@ const OpponentDataSection = () => {
             <Tab>By Opponent (Condensed)</Tab>
           </TabList>
           <TabPanel>
-            <BodyContainer hasBackground = { true }>
+            <BodyContainer hasBackground={true}>
               <select
-                value={ selectedMetric.key }
+                value={selectedMetric.key}
                 onChange={(e) =>
                   setSelectedMetric(
                     opponentMetricOptions.find(opt => opt.key === e.target.value)
@@ -190,77 +192,79 @@ const OpponentDataSection = () => {
                 className="standard-margin center-margin"
               >
                 {opponentMetricOptions.map(opt => (
-                  <option key={ opt.key } value={ opt.key }>
-                    { opt.label }
+                  <option key={opt.key} value={opt.key}>
+                    {opt.label}
                   </option>
                 ))}
               </select>
               <p className="dropdown-replacement">
-                { selectedMetric.displayTitle }
+                {selectedMetric.displayTitle}
               </p>
               {data && (
                 <div className="chesschart-scroll-x">
                   <FullWidthBarChart
-                    rawData={ data }
+                    rawData={data}
                     labelField="Opponent"
-                    valueField={ selectedMetric.valueField }
+                    valueField={selectedMetric.valueField}
                     color="rgba(54, 162, 235, 0.6)"
-                    datalabels={ false }
-                    yMin={ selectedMetric.yMin }
-                    yMax={ selectedMetric.yMax }
-                    yTickFormatter={ selectedMetric.yTickFormatter }
+                    datalabels={false}
+                    yMin={selectedMetric.yMin}
+                    yMax={selectedMetric.yMax}
+                    yTickFormatter={selectedMetric.yTickFormatter}
                   />
                 </div>
               )}
-            <DividerLine/>
-            {data && (
-              <ChessSectionTable
-                data={ data.map(formatOpponentData) }
-                rowsPerPage={ 15 }
-                title="Opponent Data Table"
-              />
-            )}
+              <DividerLine />
+              {data && (
+                <ChessSectionTable
+                  data={data.map(formatOpponentData)}
+                  rowsPerPage={15}
+                  title="Opponent Data Table"
+                />
+              )}
             </BodyContainer>
           </TabPanel>
           <TabPanel>
-            <BodyContainer hasBackground = { true }>
+            <BodyContainer hasBackground={true}>
               <select
-                value={ selectedMetric.key }
+                value={selectedAltMetric.key}
                 onChange={(e) =>
-                  setSelectedMetric(
+                  setSelectedAltMetric(
                     opponentAltMetricOptions.find(opt => opt.key === e.target.value)
                   )
                 }
                 className="standard-margin center-margin"
               >
                 {opponentAltMetricOptions.map(opt => (
-                  <option key={ opt.key } value={ opt.key }>
-                    { opt.label }
+                  <option key={opt.key} value={opt.key}>
+                    {opt.label}
                   </option>
                 ))}
               </select>
+
               <p className="dropdown-replacement">
-                { selectedMetric.displayTitle }
+                {selectedAltMetric.displayTitle}
               </p>
+
               {altdata && (
                 <div className="chesschart-scroll-x">
                   <FullWidthBarChart
-                    rawData={ altdata }
+                    rawData={altdata}
                     labelField="Opponent"
-                    valueField={ selectedMetric.valueField }
+                    valueField={selectedAltMetric.valueField}
                     color="rgba(54, 162, 235, 0.6)"
-                    datalabels={ false }
-                    yMin={ selectedMetric.yMin }
-                    yMax={ selectedMetric.yMax }
-                    yTickFormatter={ selectedMetric.yTickFormatter }
+                    datalabels={false}
+                    yMin={selectedAltMetric.yMin}
+                    yMax={selectedAltMetric.yMax}
+                    yTickFormatter={selectedAltMetric.yTickFormatter}
                   />
                 </div>
               )}
-              <DividerLine/>
+              <DividerLine />
               {altdata && (
                 <ChessSectionTable
-                  data={ altdata.map(formatOpponentData) }
-                  rowsPerPage={ 15 }
+                  data={altdata.map(formatOpponentData)}
+                  rowsPerPage={15}
                   title="Opponent Data Table"
                 />
               )}

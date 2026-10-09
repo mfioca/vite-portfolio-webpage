@@ -69,6 +69,32 @@
   color: var(--buttonbackground);
 }
 
+.performance-summary-select {
+  box-sizing: border-box;
+  width: 280px;
+  max-width: 100%;
+  padding: 10px 16px;
+  margin: 0;
+  font-family: var(--fontfamilyH);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--fontcolor);
+  background-color: var(--colorwhite);
+  border: 2px solid var(--bordercolor);
+  border-radius: var(--borderradius);
+  cursor: pointer;
+}
+
+.performance-summary-label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px auto;
+  font-weight: 700;
+}
+
 /*************************************************************************/
 /*                    Game Archive Main Table                            */
 /*************************************************************************/
