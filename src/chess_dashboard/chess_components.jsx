@@ -86,7 +86,7 @@ export const ChessSectionTable = ({ data, rowsPerPage = 25, title }) => {
               </tbody>
             </table>
           </div>
-          <div className="pagination">
+          <div className="game-archive-pagination">
             <button
               className="button"
               onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}

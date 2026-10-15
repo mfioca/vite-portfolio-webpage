@@ -14,7 +14,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 const ChessDashboard = () => {
 
   return (
-    <div className="chess-body">
+    <div className="chess-body standard-padding-margin">
       <IntroSection title="Chess Analysis Dashboard">
         <p>
           This dashboard presents a multi-layered analysis of games played primarily against chess bots and coaches on&nbsp;

@@ -160,7 +160,7 @@ const TimedGameData = () => {
             <h2>Time Control Game Data</h2>
             {performanceSummaries.length > 0 && (
                 <>
-                    <label className="game-data-summary-label performance-summary-label">
+                    <label className="flex-wrap-center game-data-summary-label performance-summary-label">
                         Time Control
                         <select
                             value={activeSummaryTimeControl}

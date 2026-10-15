@@ -1,9 +1,10 @@
 .chess-body {
+  --chess-table-min-width: 1000px;
+  --chess-table-cell-padding: 8px;
+  --chess-table-font-size: 0.9rem;
+  --chess-table-header-max-width: 150px;
   font-family: var(--fontfamily);
-  /* A clean sans-serif font */
   justify-content: center;
-  margin: var(--margin);
-  padding: var(--padding);
   min-height: 100vh;
 }
 
@@ -51,8 +52,8 @@
 .game-data-summary-item {
   flex: 1;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   height: 100px;
   font-weight: bold;
@@ -73,30 +74,26 @@
   box-sizing: border-box;
   width: 280px;
   max-width: 100%;
-  padding: 10px 16px;
+  padding: var(--paddingv10h20);
   margin: 0;
   font-family: var(--fontfamilyH);
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--fontcolor);
   background-color: var(--colorwhite);
-  border: 2px solid var(--bordercolor);
+  border: var(--border);
   border-radius: var(--borderradius);
   cursor: pointer;
 }
 
 .performance-summary-label {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin: 20px auto;
+  gap: var(--gap15);
   font-weight: 700;
 }
 
 /*************************************************************************/
-/*                    Game Archive Main Table                            */
+/*                    Chess-Section-Table                                */
 /*************************************************************************/
 
 /* Container */
@@ -112,7 +109,7 @@
 .chess-section-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 1000px;
+  min-width: var(--chess-table-min-width);
 }
 
 /* Header */
@@ -122,13 +119,13 @@
   overflow-wrap: break-word;
   text-align: center;
   min-width: 100px;
-  max-width: 150px;
-  padding: 8px;
-  font-size: 0.9rem;
+  max-width: var(--chess-table-header-max-width);
   border: var(--tableborder);
   background-color: var(--tableheaderdarkcolor);
   color: var(--colorwhite);
+  font-size: var(--chess-table-font-size);
   font-weight: bold;
+  padding: var(--chess-table-cell-padding);
 }
 
 /* Freeze first header cell */
@@ -158,9 +155,9 @@
 /* Cells */
 .chess-section-table td {
   border: var(--tableborder);
-  padding: 8px;
+  padding: var(--chess-table-cell-padding);
   text-align: center;
-  font-size: 0.9rem;
+  font-size: var(--chess-table-font-size);
   white-space: nowrap;
 }
 
@@ -263,15 +260,6 @@
   background-color: black;
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: var(--padding);
-  margin: var(--default-spacing);
-  gap: 1px;
-}
-
 .pagination button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -285,6 +273,10 @@
   margin: var(--default-spacing);
   gap: 10px;
 }
+
+/*************************************************************************/
+/*                        Charts                                         */
+/*************************************************************************/
 
 .chesschart-container {
   width: 500px;
