@@ -1,8 +1,78 @@
 function dwarvenKingdomLink(folder: string, asset: string, width: number) {
   return `${import.meta.env.BASE_URL}minecraft_pictures/dwarven_kingdom/${folder}/${asset}?w=${width}&q=50`;
 }
-  
+
 export { dwarvenKingdomLink };
+
+export const maze_levels = [
+  {
+    asset: "minecraft_maze_level_1.jpeg",
+    width: 1000,
+    height: 871,
+    alt: "Dwarven Kingdom maze floor plan, level 1",
+  },
+  {
+    asset: "minecraft_maze_level_2.jpeg",
+    width: 1000,
+    height: 871,
+    alt: "Dwarven Kingdom maze floor plan, level 2",
+  },
+  {
+    asset: "minecraft_maze_level_3.jpeg",
+    width: 1000,
+    height: 871,
+    alt: "Dwarven Kingdom maze floor plan, level 3",
+  },
+  {
+    asset: "minecraft_maze_level_4.jpeg",
+    width: 1000,
+    height: 871,
+    alt: "Dwarven Kingdom maze floor plan, level 4",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+  ({
+    src: `${dwarvenKingdomLink("maze", asset, width)}`,
+    alt,
+    width,
+    height,
+  })
+);
+
+export const maze_solutions = [
+  {
+    asset: "minecraft maze solution level1.jpeg",
+    width: 778,
+    height: 800,
+    alt: "Dwarven Kingdom maze solution, level 1",
+  },
+  {
+    asset: "minecraft maze solution level2.jpeg",
+    width: 778,
+    height: 800,
+    alt: "Dwarven Kingdom maze solution, level 2",
+  },
+  {
+    asset: "minecraft maze solution level3.jpeg",
+    width: 778,
+    height: 800,
+    alt: "Dwarven Kingdom maze solution, level 3",
+  },
+  {
+    asset: "minecraft maze solution level4.jpg",
+    width: 778,
+    height: 800,
+    alt: "Dwarven Kingdom maze solution, level 4",
+  },
+].map(
+  ({ asset, alt, width, height }) =>
+  ({
+    src: `${dwarvenKingdomLink("maze", asset, width)}`,
+    alt,
+    width,
+    height,
+  })
+);
 
 export const mountain_exterior = [
   {
@@ -61,12 +131,12 @@ export const mountain_exterior = [
   },
 ].map(
   ({ asset, alt, width, height }) =>
-    ({
-      src: `${dwarvenKingdomLink("exterior", asset, width)}`,
-      alt,
-      width,
-      height,
-    })
+  ({
+    src: `${dwarvenKingdomLink("exterior", asset, width)}`,
+    alt,
+    width,
+    height,
+  })
 );
 
 export const governance_district = [
@@ -218,12 +288,12 @@ export const governance_district = [
   },
 ].map(
   ({ asset, alt, width, height }) =>
-    ({
-      src: `${dwarvenKingdomLink("governance_district", asset, width)}`,
-      alt,
-      width,
-      height,
-    })
+  ({
+    src: `${dwarvenKingdomLink("governance_district", asset, width)}`,
+    alt,
+    width,
+    height,
+  })
 );
 
 export const great_forge_district = [
@@ -319,12 +389,12 @@ export const great_forge_district = [
   },
 ].map(
   ({ asset, alt, width, height }) =>
-    ({
-      src: `${dwarvenKingdomLink("great_forge_district", asset, width)}`,
-      alt,
-      width,
-      height,
-    })
+  ({
+    src: `${dwarvenKingdomLink("great_forge_district", asset, width)}`,
+    alt,
+    width,
+    height,
+  })
 );
 
 export const bath_houses = [
@@ -378,12 +448,12 @@ export const bath_houses = [
   },
 ].map(
   ({ asset, alt, width, height }) =>
-    ({
-      src: `${dwarvenKingdomLink("bath_houses", asset, width)}`,
-      alt,
-      width,
-      height,
-    })
+  ({
+    src: `${dwarvenKingdomLink("bath_houses", asset, width)}`,
+    alt,
+    width,
+    height,
+  })
 );
 
 export const under_cave = [
@@ -443,10 +513,10 @@ export const under_cave = [
   },
 ].map(
   ({ asset, alt, width, height }) =>
-    ({
-      src: `${dwarvenKingdomLink("under_cave", asset, width)}`,
-      alt,
-      width,
-      height,
-    })
+  ({
+    src: `${dwarvenKingdomLink("under_cave", asset, width)}`,
+    alt,
+    width,
+    height,
+  })
 );

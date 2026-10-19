@@ -6,6 +6,7 @@ import Emberhold from './minecraft_project/emberhold';
 import RandomPlaces from './minecraft_project/random_places'
 import SkyholdVale from './minecraft_project/skyhold_vale';
 import PelicanTown from './minecraft_project/PelicanTown';
+import HowToBuild from './minecraft_project/HowToBuild';
 import { IntroSection, DividerLine } from './SharedComponents';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './minecraft_project/minecraft.css';
@@ -127,6 +128,7 @@ const MinecraftProjects = () => {
                         <Tab>Skyhold Vale</Tab>
                         <Tab>Pelican Town</Tab>
                         <Tab>Random Places</Tab>
+                        <Tab>How to Build Videos</Tab>
                     </TabList>
                     <TabPanel>
                         <WhiterunProject />
@@ -148,6 +150,9 @@ const MinecraftProjects = () => {
                     </TabPanel>
                     <TabPanel>
                         <RandomPlaces />
+                    </TabPanel>
+                    <TabPanel>
+                        <HowToBuild />
                     </TabPanel>
                 </Tabs>
             </div>

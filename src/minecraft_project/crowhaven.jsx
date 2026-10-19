@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { BodyContainer, IntroSection, DividerLine } from '../SharedComponents';
-import MinecraftGallery from './minecraft_gallery';
+import { MinecraftGallery } from './minecraft_gallery';
 import { 
     town_generalviews,
     town_buildings,
