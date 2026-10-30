@@ -14,13 +14,10 @@
   text-align: center; /* Center the citation text */
 }
 
-
-
-
-
 .powerpoint-viewer {
-  max-width: 1200;
-  margin: var(--marginV20) auto;
+  max-width: 1200px;
+  margin: var(--marginV20);
+  margin-inline: auto;
   text-align: center;
 }
 
