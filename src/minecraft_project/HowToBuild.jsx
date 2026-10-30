@@ -35,7 +35,21 @@ const HowToBuild = () => {
                                 title="How to Build the Skyrim Dragon Logo in Minecraft"
                             />
                             <DividerLine />
-
+                            <IntroSection title="How to Build The Shining Hedge Maze in Minecraft">
+                                <p>
+                                    Every dwarven kingdom needs somewhere to get hopelessly lost.
+                                    Inspired by the hedge maze from <i>The Shining</i>, this build
+                                    brings a little of the Overlook Hotel into my Minecraft world.
+                                    This tutorial shows how to build your own version, whether it
+                                    belongs in an underground kingdom or outside a suspiciously
+                                    quiet hotel.
+                                </p>
+                            </IntroSection>
+                            <YouTubeEmbed
+                                videoId="ow0ExBnZjSo"
+                                title="How to Build The Shining Hedge Maze in Minecraft"
+                            />
+                            <DividerLine />
                         </TabPanel>
                     </BodyContainer>
                 </div>
