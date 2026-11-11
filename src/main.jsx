@@ -186,73 +186,42 @@ const Navigation = () => {
 /*                            Footer                                               */
 /***********************************************************************************/
 
-const Footer = () =>{
-  return (
-    <div className="index-shared footer">
-      <footer className="footer-content">
-        <p>
+
+const footerLinks = [
+  { label: 'Contact Me', href: 'mailto:mfioca@gmail.com', icon: 'email.png' },
+  { label: 'Chess.com Profile', href: 'https://www.chess.com/member/franknmullet', icon: 'chess.com.logo.png' },
+  { label: 'LinkedIn Profile', href: 'https://www.linkedin.com/in/mark-fioca/', icon: 'InBug-White.png' },
+  { label: 'YouTube Channel', href: 'https://www.youtube.com/@franknmullet', icon: 'youtube_red_digital.png' },
+  { label: 'GitHub Profile', href: 'https://github.com/mfioca', icon: 'github-white.png' },
+];
+
+const Footer = () => (
+  <footer className="index-shared">
+    <div className="footer-content">
+      {footerLinks.map(({ label, href, icon }) => {
+        const external = href.startsWith('https://');
+
+        return (
           <a
-            href="mailto:mfioca@gmail.com"
-            style={{ paddingRight: '22px' }}
-            className="linkedin-link"
+            key={href}
+            className="footer-link"
+            href={href}
+            target={external ? '_blank' : undefined}
+            rel={external ? 'noopener noreferrer' : undefined}
           >
-            <img 
-              src={`${import.meta.env.BASE_URL}email.png`} 
-              alt="GitHub Profile" 
-              className="github-icon"
-            />
-            Contact Me
+            <img src={`${import.meta.env.BASE_URL}${icon}`} alt="" />
+            {label}
           </a>
-        </p>
-        <p>
-          <a 
-            href="https://www.linkedin.com/in/mark-fioca/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="linkedin-link"
-          >
-            <img 
-              src={`${import.meta.env.BASE_URL}InBug-White.png`}  
-              alt="LinkedIn" 
-              className="linkedin-icon" 
-            />
-            LinkedIn Profile
-          </a>
-        </p>
-        <p>
-          <a 
-            href="https://github.com/mfioca" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="linkedin-link"
-          >
-            <img 
-              src={`${import.meta.env.BASE_URL}github-white.png`} 
-              alt="GitHub Profile" 
-              className="github-icon"
-            />
-            GitHub Profile
-          </a>
-        </p>
-        <p>
-          <a 
-            href="https://www.youtube.com/@franknmullet" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="youtube-link"
-          >
-            <img 
-              src={`${import.meta.env.BASE_URL}youtube_red_digital.png`} 
-              alt="Youtube Channel" 
-              className="youtube-icon"
-            />
-            Youtube Channel
-          </a>
-        </p>
-      </footer>
+        );
+      })}
     </div>
-  )
-};
+  </footer>
+);
+
+
+/***********************************************************************************/
+/*                              Root                                               */
+/***********************************************************************************/
 
 
 
